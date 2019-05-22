@@ -1,0 +1,187 @@
+%% LLT: Turn off some annoying warnings...
+\RequirePackage{silence}
+\WarningFilter{titlesec}{Non standard sectioning command}
+\WarningFilter{scrreprt}{Usage of package}
+\WarningFilter{scrreprt}{Activating an ugly workaround}
+
+% !TEX TS–program = pdflatexmk
+
+% **************************************************
+% Document Class Definition
+% **************************************************
+\documentclass[%
+	paper=A4,					% paper size --> A4 is default in Germany
+	twoside=true,				% onesite or twoside printing
+	openright,					% doublepage cleaning ends up right side
+	parskip=full,				% spacing value / method for paragraphs
+	chapterprefix=true,			% prefix for chapter marks
+	11pt,						% font size
+	headings=normal,			% size of headings
+	bibliography=totoc,			% include bib in toc
+	listof=totoc,				% include listof entries in toc
+	titlepage=on,				% own page for each title page
+	captions=tableabove,		% display table captions above the float env
+	draft=false,				% value for draft version
+]{scrreprt}%
+	
+% **************************************************
+% Debug LaTeX Information
+% **************************************************
+%\listfiles
+
+% **************************************************
+% Load and Configure Packages
+% **************************************************
+\usepackage[utf8]{inputenc}		% defines file's character encoding
+\usepackage[english]{babel} % babel system, adjust the language of the content
+\usepackage[					% clean thesis style
+	figuresep=colon,%
+	sansserif=false,%
+	hangfigurecaption=false,%
+	hangsection=true,%
+	hangsubsection=true,%
+	colorize=full,%
+	colortheme=bluemagenta,%
+% LLT: Use biber if using UTF8 encoding
+% 	bibsys=bibtex,%
+	bibsys=biber,%
+	bibfile=./bib-refs.bib,%
+	bibstyle=alphabetic,%
+]{cleanthesis}
+
+
+\hypersetup{					% setup the hyperref-package options
+	%pdftitle={\thesisTitle},	% 	- title (PDF meta)   (VG : ne fonctionne pas)
+	%pdfsubject={\thesisSubject},% 	- subject (PDF meta) (VG : ne fonctionne pas)
+	%pdfauthor={\thesisName},	% 	- author (PDF meta) (VG : ne fonctionne pas)
+	plainpages=false,			% 	-
+	colorlinks=false,			% 	- colorize links?
+	pdfborder={0 0 0},			% 	-
+	breaklinks=true,			% 	- allow line break inside links
+	bookmarksnumbered=true,		%
+	bookmarksopen=true			%
+}
+
+
+% **************************************************
+% Information and Commands for Reuse
+% **************************************************
+\newcommand{\thesisTitle}{Représentation et contrôle dans le design interactif des instruments de musique numériques}
+\newcommand{\thesisName}{Vincent Goudard}
+\newcommand{\thesisSubject}{Ecole doctorale SMAER}
+\newcommand{\thesisDate}{19 juin 2019}
+\newcommand{\thesisVersion}{2019.05.22.01}
+
+\newcommand{\thesisFirstReviewer}{Jane Doe}
+\newcommand{\thesisFirstReviewerUniversity}{\protect{Clean Thesis Style University}}
+\newcommand{\thesisFirstReviewerDepartment}{Department of Clean Thesis Style}
+
+\newcommand{\thesisSecondReviewer}{John Doe}
+\newcommand{\thesisSecondReviewerUniversity}{\protect{Clean Thesis Style University}}
+\newcommand{\thesisSecondReviewerDepartment}{Department of Clean Thesis Style}
+
+\newcommand{\thesisFirstSupervisor}{Pierre Couprie}
+\newcommand{\thesisSecondSupervisor}{Jean-Dominique Polack}
+\newcommand{\thesisFirstAdvisor}{Hugues Genevois}
+
+
+\newcommand{\thesisUniversity}{\protect{Sorbonne Université}}
+\newcommand{\thesisUniversityDepartment}{Equipe Lutherie Acoustique Musique - Institut $\partial$'Alembert}
+\newcommand{\thesisUniversityInstitute}{Institut de Recherche en Musicologie (IReMus)}
+%\newcommand{\thesisUniversityGroup}{Collegium Musicæ}
+\newcommand{\thesisUniversityCity}{PARIS}
+\newcommand{\thesisUniversityStreetAddress}{4, Place Jussieu}
+\newcommand{\thesisUniversityPostalCode}{75252}
+
+
+\graphicspath{{./gfx/}} %Where the figures folder is located
+
+% **************************************************
+% Document CONTENT
+% **************************************************
+\begin{document}
+
+% --------------------------
+% rename document parts
+% --------------------------
+%\renewcaptionname{ngerman}{\figurename}{Abb.}
+%\renewcaptionname{ngerman}{\tablename}{Tab.}
+\renewcaptionname{english}{\figurename}{Fig.}
+\renewcaptionname{english}{\tablename}{Tab.}
+
+% --------------------------
+% Front matter
+% --------------------------
+\pagenumbering{roman}			% roman page numbing (invisible for empty page style)
+\pagestyle{empty}				% no header or footers
+\input{content/titlepages}		% INCLUDE: all titlepages
+
+%\cleardoublepage
+
+\pagestyle{plain}				% display just page numbers
+\input{content/abstract}		% INCLUDE: the abstracts (english and german)
+
+%\cleardoublepage %
+
+\input{content/acknowledgement} % INCLUDE: acknowledgement
+
+%\cleardoublepage%
+
+\setcounter{tocdepth}{2}		% define depth of toc
+\tableofcontents				% display table of contents
+
+%\cleardoublepage%
+
+% --------------------------
+% Body matter
+% --------------------------
+\pagenumbering{arabic}			% arabic page numbering
+\setcounter{page}{1}			% set page counter
+\pagestyle{maincontentstyle} 	% fancy header and footer
+
+\input{content/ch1-preamble} % INCLUDE: preamble
+\input{content/ch2-introduction} % INCLUDE: introduction
+\input{content/ch3-interfaces} % INCLUDE: interface
+\input{content/ch4-mapping}	% INCLUDE: mapping
+\input{content/ch5-synthesis} % INCLUDE: synthesis
+\input{content/ch6-visual_representation} % INCLUDE: visual_representatio
+\input{content/ch7-notation} % INCLUDE: notation
+\input{content/chapter-conclusion} % INCLUDE: conclusion
+
+% \cleardoublepage
+
+% --------------------------
+% Back matter
+% --------------------------
+{%
+\setstretch{1.1}
+\renewcommand{\bibfont}{\normalfont\small}
+\setlength{\biblabelsep}{0pt}
+\setlength{\bibitemsep}{0.5\baselineskip plus 0.5\baselineskip}
+\printbibliography[title={Références}, nottype=online]
+\printbibliography[heading=subbibliography,title={Sites web},type=online,prefixnumbers={@}]
+}
+
+\clearpage
+
+\listoffigures
+
+\clearpage
+
+\listoftables
+
+\clearpage
+
+\input{content/colophon}
+
+%\cleardoublepage
+
+\input{content/declaration}
+\clearpage
+\newpage
+\mbox{}
+
+% **************************************************
+% End of Document CONTENT
+% **************************************************
+\end{document}
