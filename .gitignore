@@ -23,6 +23,7 @@
 *.ind
 *.lof
 *.lot
+*.maf
 *.mtc
 *.mtc1
 *.out
