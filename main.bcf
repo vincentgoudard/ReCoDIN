@@ -1992,18 +1992,33 @@
   <!-- CITATION DATA -->
   <!-- SECTION 0 -->
   <bcf:bibdata section="0">
-    <bcf:datasource type="file" datatype="bibtex">./bib-refs.bib</bcf:datasource>
+    <bcf:datasource type="file" datatype="bibtex">./thesis.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">seve2013a</bcf:citekey>
     <bcf:citekey order="2">3</bcf:citekey>
-    <bcf:citekey order="3">33</bcf:citekey>
-    <bcf:citekey order="4">24</bcf:citekey>
-    <bcf:citekey order="5">33</bcf:citekey>
-    <bcf:citekey order="6">Zby07</bcf:citekey>
-    <bcf:citekey order="7">Ale09</bcf:citekey>
-    <bcf:citekey order="8">Fels02</bcf:citekey>
-    <bcf:citekey order="9">bin_show_2018</bcf:citekey>
+    <bcf:citekey order="3">morreale_design_2017</bcf:citekey>
+    <bcf:citekey order="4">Jorda:2004</bcf:citekey>
+    <bcf:citekey order="5">morreale_design_2017</bcf:citekey>
+    <bcf:citekey order="6">mamedes_composing_2014</bcf:citekey>
+    <bcf:citekey order="7">mays_notation_2014</bcf:citekey>
+    <bcf:citekey order="8">schnell_introducing_2002</bcf:citekey>
+    <bcf:citekey order="9">hajdu_disposable_2016</bcf:citekey>
+    <bcf:citekey order="10">bhagwati_vexations_2017</bcf:citekey>
+    <bcf:citekey order="11">freeman_extreme_2008</bcf:citekey>
+    <bcf:citekey order="12">collins_semiconducting_2013</bcf:citekey>
+    <bcf:citekey order="13">slade_made_2006</bcf:citekey>
+    <bcf:citekey order="14">hajdu_disposable_2016</bcf:citekey>
+    <bcf:citekey order="15">seve_instrument_2013</bcf:citekey>
+    <bcf:citekey order="16">cascone_aesthetics_2000</bcf:citekey>
+    <bcf:citekey order="17">bowers_not_2005</bcf:citekey>
+    <bcf:citekey order="18">bowers_creating_2006</bcf:citekey>
+    <bcf:citekey order="19">schwarz_sound_2012</bcf:citekey>
+    <bcf:citekey order="20">tubb_divergent_2014</bcf:citekey>
+    <bcf:citekey order="21">Fels02</bcf:citekey>
+    <bcf:citekey order="22">bin_show_2018</bcf:citekey>
+    <bcf:citekey order="23">Zby07</bcf:citekey>
+    <bcf:citekey order="24">Ale09</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">
