@@ -45,7 +45,7 @@
 % LLT: Use biber if using UTF8 encoding
 % 	bibsys=bibtex,%
 	bibsys=biber,%
-	bibfile=./bib-refs.bib,%
+	bibfile=./thesis.bib,%
 	bibstyle=alphabetic,%
 ]{cleanthesis}
 
@@ -104,7 +104,7 @@
 % --------------------------
 % rename document parts
 % --------------------------
-%\renewcaptionname{ngerman}{\figurename}{Abb.}
+%\renewcaptionname{ngerman}{\figurename}{Abb.}	
 %\renewcaptionname{ngerman}{\tablename}{Tab.}
 \renewcaptionname{english}{\figurename}{Fig.}
 \renewcaptionname{english}{\tablename}{Tab.}
@@ -140,12 +140,13 @@
 \pagestyle{maincontentstyle} 	% fancy header and footer
 
 \input{content/ch1-preamble} % INCLUDE: preamble
-\input{content/ch2-introduction} % INCLUDE: introduction
 \input{content/ch2a-ephemeral_instruments} % INCLUDE: introduction
-\input{content/ch3-interfaces} % INCLUDE: interface
+\input{content/ch2-introduction} % INCLUDE: introduction
+%\input{content/ch-morphodynamisme} % INCLUDE: interface
 \input{content/ch-transparency} % INCLUDE: interface
+\input{content/ch3-interfaces} % INCLUDE: interface
 \input{content/ch4-mapping}	% INCLUDE: mapping
-\input{content/ch5-synthesis} % INCLUDE: synthesis
+%\input{content/ch5-synthesis} % INCLUDE: synthesis
 \input{content/ch6-visual_representation} % INCLUDE: visual_representatio
 \input{content/ch7-notation} % INCLUDE: notation
 \input{content/chapter-conclusion} % INCLUDE: conclusion
