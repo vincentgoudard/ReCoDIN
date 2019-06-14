@@ -33,7 +33,7 @@
 % Load and Configure Packages
 % **************************************************
 \usepackage[utf8]{inputenc}		% defines file's character encoding
-\usepackage[english]{babel} % babel system, adjust the language of the content
+\usepackage[french, english]{babel} % babel system, adjust the language of the content
 \usepackage[					% clean thesis style
 	figuresep=colon,%
 	sansserif=false,%
@@ -126,7 +126,7 @@
 \input{content/acknowledgement} % INCLUDE: acknowledgement
 
 \clearpage
-
+\selectlanguage{french}
 \setcounter{tocdepth}{2}		% define depth of toc
 \tableofcontents				% display table of contents
 
@@ -141,8 +141,7 @@
 
 \input{content/ch1-preamble} % INCLUDE: preamble
 \input{content/ch2a-ephemeral_instruments} % INCLUDE: introduction
-\input{content/ch2-introduction} % INCLUDE: introduction
-%\input{content/ch-morphodynamisme} % INCLUDE: interface
+%\input{content/ch2-introduction} % INCLUDE: introduction
 \input{content/ch-transparency} % INCLUDE: interface
 \input{content/ch3-interfaces} % INCLUDE: interface
 \input{content/ch4-mapping}	% INCLUDE: mapping
