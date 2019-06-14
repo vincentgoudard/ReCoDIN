@@ -1995,7 +1995,7 @@
     <bcf:datasource type="file" datatype="bibtex">./thesis.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">seve2013a</bcf:citekey>
+    <bcf:citekey order="1">seve_instrument_2013</bcf:citekey>
     <bcf:citekey order="2">3</bcf:citekey>
     <bcf:citekey order="3">morreale_design_2017</bcf:citekey>
     <bcf:citekey order="4">Jorda:2004</bcf:citekey>
@@ -2015,7 +2015,7 @@
     <bcf:citekey order="18">bowers_creating_2006</bcf:citekey>
     <bcf:citekey order="19">schwarz_sound_2012</bcf:citekey>
     <bcf:citekey order="20">tubb_divergent_2014</bcf:citekey>
-    <bcf:citekey order="21">Fels02</bcf:citekey>
+    <bcf:citekey order="21">fels_mapping_2002</bcf:citekey>
     <bcf:citekey order="22">bin_show_2018</bcf:citekey>
     <bcf:citekey order="23">Zby07</bcf:citekey>
     <bcf:citekey order="24">Ale09</bcf:citekey>
