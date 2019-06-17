@@ -44,3 +44,6 @@ Thumbs.db
 # test folders #
 ################
 _gitignored
+main.fdb_latexmk
+main.fls
+main.bcf
