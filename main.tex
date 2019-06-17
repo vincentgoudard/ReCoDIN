@@ -64,12 +64,21 @@
 
 
 % **************************************************
+% Glossary of acronyms
+% **************************************************
+\usepackage[acronym]{glossaries}
+\makeglossaries
+\loadglsentries{content/glossary}
+\glstoctrue
+
+
+% **************************************************
 % Information and Commands for Reuse
 % **************************************************
 \newcommand{\thesisTitle}{Représentation et contrôle dans le design interactif des instruments de musique numériques}
 \newcommand{\thesisName}{Vincent Goudard}
 \newcommand{\thesisSubject}{Ecole doctorale SMAER}
-\newcommand{\thesisDate}{19 juin 2019}
+\newcommand{\thesisDate}{\today}
 \newcommand{\thesisVersion}{2019.05.22.01}
 
 \newcommand{\thesisFirstReviewer}{Jane Doe}
@@ -121,7 +130,7 @@
 \pagestyle{plain}				% display just page numbers
 \input{content/abstract}		% INCLUDE: the abstracts (english and german)
 
-\clearpage %
+%\clearpage %
 
 \input{content/acknowledgement} % INCLUDE: acknowledgement
 
@@ -138,6 +147,9 @@
 \pagenumbering{arabic}			% arabic page numbering
 \setcounter{page}{1}			% set page counter
 \pagestyle{maincontentstyle} 	% fancy header and footer
+%\clearpage
+
+
 
 \input{content/01.preamble} % INCLUDE: preamble
 \input{content/02.ephemeral_instruments} % INCLUDE: introduction
@@ -150,7 +162,11 @@
 \input{content/07.notation} % INCLUDE: notation
 \input{content/conclusion} % INCLUDE: conclusion
 
+\printglossaries
+
 % \cleardoublepage
+
+
 
 % --------------------------
 % Back matter
@@ -167,10 +183,12 @@
 \clearpage
 
 \listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
 
 \clearpage
 
 \listoftables
+\addcontentsline{toc}{chapter}{\listtablename}
 
 \clearpage
 
