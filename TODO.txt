@@ -1,0 +1,9 @@
+TODO final :
+- scanner le document pour les termes du glossaire
+- mettre les énumérations au même format 
+	\vspace{-1em}
+	\begin{itemize}[noitemsep]
+		\item one
+		\item two
+	\end{itemize}
+
