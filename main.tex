@@ -63,7 +63,6 @@
 	bookmarksopen=true			%
 }
 
-
 % **************************************************
 % Glossary of acronyms
 % **************************************************
@@ -73,7 +72,7 @@
 \glstoctrue
 
 %% modsuper glossary display style (pour ne pas avoir de marge à gauche)
-%% cf. https://tex.stackexchange.com/questions/415275/flush-glossaries-super-style-to-left
+%% cf. : https://tex.stackexchange.com/questions/415275/flush-glossaries-super-style-to-left
 \newglossarystyle{modsuper}{%
 \glossarystyle{super}%
 \renewenvironment{theglossary}%
@@ -85,11 +84,20 @@
 \glsentryitem{##1}\glstarget{##1}{##2} & ##3\glspostdescription\space ##5\\[2pt]}%
 }
 
-
 % **************************************************
 % Annexes
 % **************************************************
 \usepackage[toc,page]{appendix}
+
+% **************************************************
+% TODOs
+% **************************************************
+\usepackage{marginnote}
+\newcommand\note[1]{\textcolor{blue}{\scriptsize#1}}
+\newcommand\unsure[1]{\marginpar{\scriptsize\textcolor{magenta}{#1}}}
+\newcommand\info[1]{\marginpar{\scriptsize\textcolor{ForestGreen}{#1}}}
+\newcommand\todo[1]{\marginpar{\scriptsize\textcolor{blue}{TODO:\\#1}}}
+
 
 % **************************************************
 % Information and Commands for Reuse
@@ -171,7 +179,7 @@
 
 
 \input{content/01.preamble} % INCLUDE: preamble
-%\input{content/02.ephemeral_instruments} % INCLUDE: introduction
+\input{content/02.ephemeral_instruments} % INCLUDE: introduction
 \input{content/03.musical_gesture} % INCLUDE: interface
 \input{content/04.interfaces} % INCLUDE: interface
 \input{content/05.algorithms}	% INCLUDE: mapping
@@ -222,16 +230,16 @@
 % End of Document CONTENT
 % **************************************************
 
-\begin{appendices}
-\input{content/appendix.bernier} 
-\input{content/appendix.collins}
-\input{content/appendix.dumeaux} 
-\input{content/appendix.delaubier}
-\input{content/appendix.fernandez} 
-\input{content/appendix.mamoumani} 
-\input{content/appendix.saintdenis} 
-\input{content/appendix.turchet} 
-\input{content/appendix.zamborlin} 
-\end{appendices}
+%\begin{appendices}
+%\input{content/appendix.bernier} 
+%\input{content/appendix.collins}
+%\input{content/appendix.dumeaux} 
+%\input{content/appendix.delaubier}
+%\input{content/appendix.fernandez} 
+%\input{content/appendix.mamoumani} 
+%\input{content/appendix.saintdenis} 
+%\input{content/appendix.turchet} 
+%\input{content/appendix.zamborlin} 
+%\end{appendices}
 
 \end{document}
