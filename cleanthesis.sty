@@ -304,10 +304,13 @@
 % Text Format
 % **************************************************
 \setstretch{1.2}					% value for line spacing, use \setstretch{} or \singlespacing or \onehalfspacing or \doublespacing
-\setlength{\parindent}{0em}			% value for paragraph indentation
+\setlength{\parindent}{1.5em}			% value for paragraph indentation // change by VG (was 0em)
 \clubpenalty = 10000				% prevent single lines at the beginning of a paragraph (Schusterjungen)
 \widowpenalty = 10000				% prevent single lines at the end of a paragraph (Hurenkinder)
 \displaywidowpenalty = 10000		%
+
+ %\setlength{\parskip}{0mm}			% added by VG : remove space between /par
+
 
 % **************************************************
 % List Definitions
@@ -605,6 +608,10 @@
 %	}
 \fi
 %
+
+% > formats: \subsubsection
+\titlespacing\subsubsection{-15pt}{0pt plus 0pt minus 0pt}{-15pt plus 0pt minus 0pt} % added by VG : less space between subsubsections
+
 % > formats: \paragraph
 \titlespacing{\paragraph}{0pt}{\parsep}{1em}%[0pt]
 % \titleformat{\paragraph}[runin]%
