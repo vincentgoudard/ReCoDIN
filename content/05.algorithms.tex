@@ -206,9 +206,21 @@ Ces développements sont également menés pour répondre à d'autres questions 
 \section{Sagrada : extension de MP au DSP}
 \label{sec:algorithms:sagrada}
 
+
 L’atomisation jusqu’au sample, plutôt que séparation entre DSP et messages de contrôle
 => faust, gen~ et cie : l’export vers des plateformes multiples.
 
+%----------------------------------------------------------------------------------------------------------
+\subsection{Synthèse sonore ou contrôle}
+
+On a tendance à séparer, dans la description et le design des DMI, ce qui est du côté de la synthèse, souvent associé voire confondue à son support de \textit{signal}, de ce qui est du côté du contrôle, souvent associé à des données de type \textit{messages asyncrones} (e.g. typiquement, des messages MIDI).\\
+Il existe une différence de nature assez profonde entre ces deux types de données, l'une étant un signal synchrone, et se proposant souvent comme l'i\textit{mage d'un signal analogique échantillonné} avec l'idée de continuité qui lui est associée.\\
+L'autre un signal asynchrone, se présentant souvent comme l'image d'un ordre d'éxecution (e.g. note-on). \\
+Cependant, du point de vue de leur utilisation, les frontières entre ces deux types de données numériques d'une part, et ces deux natures d'objets conceptuel (le signal continu et l'ordre événementiel) ne se recouvrent pas exactement.
+
+
+
+L'arrivée du multi-canal dans le logiciel Max a également conforté cette notion d'utilisation de signaux audio comme messages de contrôle.
 
 %----------------------------------------------------------------------------------------------------------
 \subsection{motivations et contexte}
