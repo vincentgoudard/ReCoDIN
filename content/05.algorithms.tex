@@ -36,10 +36,18 @@ Test : \gls{API}  puis \gls{API} puis \glspl{API} \\
 \gls{GDIF}  puis \gls{GDIF}
 
 
-On a tendance à séparer \todo{réf?}, dans la description et le design des DMI, une partie \gls{DSP}, traitant un \textit{signal synchrone}, souvent associée voire confondue à la synthèse audio, et une partie \textit{contrôle}, souvent associé à des données de type \textit{messages asyncrones} (e.g. typiquement, des messages MIDI).\\
-Il existe une différence de nature assez profonde entre ces deux types de données, à la fois du côté de leur implémentation technique (programmation synchrone vs. asynchrone) mais également dans leur et se proposant souvent comme l'\textit{image d'un signal analogique échantillonné} avec l'idée de continuité qui lui est associée.\\
-L'autre un signal asynchrone, se présentant souvent comme l'image d'un ordre d'éxecution (e.g. note-on). \\
-Cependant, du point de vue de leur utilisation, les frontières entre ces deux types de données numériques d'une part, et ces deux natures d'objets conceptuel (le signal continu et l'ordre événementiel) ne se recouvrent pas exactement.
+On a tendance à séparer \todo{réf?}, dans la description et le design des DMI, une partie \gls{DSP}, traitant un \textit{signal synchrone}, souvent associée voire confondue à la synthèse audio, et une partie \textit{contrôle}, souvent associé à des données de type \textit{messages asyncrones} (e.g. typiquement, des messages MIDI) venant contrôler le DSP.\\
+Il existe une différence de nature assez profonde entre ces deux types de données, à la fois du côté de leur implémentation technique\footnote{programmation synchrone vs. asynchrone, priorité d'horloge, etc.} mais également dans leur rôle et leur fonction dans l'interaction musicale. 
+Ainsi, le signal se présente souvent comme l'\textit{image d'un signal analogique échantillonné} avec l'idée de continuité qui lui est associée. L'autre un graphe asynchrone, se présentant souvent comme l'image d'un ordre d'éxecution (e.g. note-on). \\
+D'un côté on a un signal continu et monophonique (un seul échantillon est traité à la fois), de l'autre un signal sporadique et potentiellement polyphonique (plusieurs messages peuvent être envoyé au même instant logique).\\
+
+Cependant, du point de vue de leur utilisation, les frontières entre ces deux types de données numériques d'une part, et ces deux natures d'objets conceptuel (le signal continu et l'ordre événementiel) ne se recouvrent pas exactement. \\
+D'une part, il est courant d'utiliser les messages asynchrones de Max pour convoyer des variables continues (telles que les données d'un contrôle MIDI-CC ou d'un capteur envoyé par OSC).\\
+
+\todo{Mettre une explication et une ref vers FTM.}
+
+D'autre part, il est également possible d'utiliser un signal synchrone pour déclencher des événements (musicaux) discrets. C'est par exemple le cas lors qu'on envoie une impulsion dans une synthèse de type \gls{KarplusStrong}, ou quand on utilise directement une impulsion audio pour déclencher une enveloppe ou la lecture d'un échantillon.
+Cette technique notamment utilisée dans \cite{bascou_gmu_2005} permet de déclencher des flux de grains à haute fréquence (plus rapidement que le système de message de Max ne le permet), ce qui permet notamment de le passage progressif entre flux rythmique et son continu (ref Stockhausen Kontakte)
 
 
 L'arrivée du multi-canal dans le logiciel Max a également conforté cette notion d'utilisation de signaux audio comme messages de contrôle.
@@ -238,12 +246,26 @@ Ces développements sont également menés pour répondre à d'autres questions 
 
 %----------------------------------------------------------------------------------------------------------
 \subsection{motivations et contexte}
-
+Possibilité de délencher des grains à une fréquence égale au sample rate (par rapport à SR/2 dans le cas d'un déclenchement au zéro-crossing tel que pratiqué dans GMU)
 %----------------------------------------------------------------------------------------------------------
-\subsection{Le package sagrada pour Max}
+\subsection{Implémentation}
+\subsubsection{Horloge et assignation de voix}
+Sagrada fonctionne selon le principe que chaque impulsion arrivant sur une entrée audio incrémente un compteur qui définit la voix de polyphonie qui sera activée. Un objet Max dédié ``sagrada.trigger\~'' peut ainsi être controlé soit de manière asynchrone (e.g. en transformant un message MIDI en impulsion (delta de Kronecker), soit en envoyant un train d'impulsion synchrone contrôlé en fréquence.
+
+Notons qu'il est ainsi possible de déclencher plusieurs grain
+
+\subsubsection{Busy}
+Les synthètiseurs polyphoniques peuvent généralement fonctionner sous deux modes: soit ils permettent qu'une nouvelle voix soit attribuée en volant éventuellement une .
+L'utilisation d'un fonctionnement par ``buffer'' comme dans le cas de la librairie GMU permet de savoir à l'avance le temps que va durer un grain
 
 %----------------------------------------------------------------------------------------------------------
 \subsection{Performances comparée}
-bufgranul
+bufgranul : permet de générer des grains à une fréquence double. Approche modulaire permetttant l'application de n'importe quel effet par grain.
+
 gen~ OLA
+
 granularized
+
+ftm
+
+mc.*
