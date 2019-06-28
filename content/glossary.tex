@@ -1,36 +1,150 @@
 % !TEX root = ../thesis-example.tex
 %
-
 % usage : \gls{IRCAM} 
 
-\newacronym{DMI}{DMI}{Instrument de musique numérique (\textit{Digital Musical Instrument})}
+% \newglossaryentry{API_g}{name={API}, description={An Application Programming Interface (API) is a particular set of rules and specifications that a software program can follow to access and make use of the services and resources provided by another particular software program that implements that API}}
 
-\newacronym{GRM}{GRM}{Groupe de recherches musicales}
+% \newglossaryentry{API}{type=\acronymtype, name={API}, description={Application
+% Programming Interface}, first={Application
+% Programming Interface (API)\glsadd{API_g}}, see=[Glossaire:]{apig}}
 
-\newacronym{IRCAM}{IRCAM}{Institut de Recherche et Coordination Acoustique/Musique}
 
-\newacronym{MIDI}{MIDI}{\textit{Musical Instrument Digital Interface}}
 
-\newacronym{OSC}{OSC}{\textit{Open Sound Control}}
-
-\newacronym{MPE}{MPE}{\textit{Multidimensional Polyphonic Expression}}
-
-\newacronym{rtpMIDI}{rtpMIDI}{\textit{Real-time Protocol MIDI}:  (également connu sous le nom « AppleMIDI ») est un protocole destiné au transport de messages MIDI dans des messages RTP (Real-Time Protocol), sur des réseaux Ethernet et Wi-Fi.}
-
-\newacronym{NIME}{NIME}{\textit{New Interfaces for Musical Expression}}
-
-\newacronym{mapping}{mapping}{\textit{c'est le mapping}}
-
-\newacronym{HCI}{HCI}{Interface Homme-Machine (\textit{Human Computer Interface})}
-
-\newacronym{IHM}{IHM}{Interface Homme-Machine}
-
-\newacronym{CNMAT}{CNMAT}{Center for New Music and Audio Technologies: multidisciplinary research center within University of California, Berkeley Department of Music}
-
-\newacronym{GDIF}{GDIF}{Gesture Description Interchange Format: un format développé pour le streaming et l'enresgistrement de données de mouvement en relation à la musique}
-
-\newacronym{UDP}{UDP}{User Datagram Protocol: protocole asynchrone de transmission de données sur réseau, utilisant un mode de transmission sans accusé de réception}
-
-\newacronym{MMA}{MMA}{MIDI Manufacturer Association:  organisation professionnelle sans profit, composée principalement de développeur de solutions matérielles et logicielles et travaillant sur les standards liés à la norme MIDI.}
-
-\newacronym{LFO}{LFO}{Low Frequency Oscillator: circuit électronique (ou simulé en numérique) permettant la modulation d'un signal à des fréquences inférieures aux fréquences audio, permettant notamment des effets tel que le vibrato.}
+\newglossaryentry{API}
+{
+    name={API},
+    description={\textit{\glsentrylong{API}}: une interface de programmation d’application est un ensemble normalisé de classes, de méthodes ou de fonctions qui sert de façade par laquelle un logiciel offre des services à d'autres logiciels},
+    long={Application Programming Interface},
+    first={\glsentrylong{API}} (\glsentryname{API}),
+    firstplural={\glsentrylong{API}\glspluralsuffix\ (\glsentryname{API}\glspluralsuffix)}
+}
+\newglossaryentry{CNMAT}
+{
+    name={CNMAT},
+    description={\textit{\glsentrylong{CNMAT}}: Center for New Music and Audio Technologies (CNMAT) : un centre de recherche multidisciplinaire du Departement de Musique de l'Université de Californie, Berkeley, USA},
+    long={Center for New Music and Audio Technologies},
+    first={\glsentrylong{CNMAT}} (\glsentryname{CNMAT}),
+}
+\newglossaryentry{DMI}
+{
+    name={DMI},
+    description={\textit{\glsentrylong{DMI}}: instrument de musique numérique},
+    long={Digital Musical Instrument},
+    first={\glsentrylong{DMI}} (\glsentryname{DMI}),
+    firstplural={\glsentrylong{DMI}\glspluralsuffix\ (\glsentryname{DMI}\glspluralsuffix)}
+}
+\newglossaryentry{DSP}
+{
+    name={DSP},
+    description={\textit{\glsentrylong{DSP}}: Processeur de signal numérique},
+    long={Digital Signal Processor},
+    first={\glsentrylong{DSP}} (\glsentryname{DSP}),
+    firstplural={\glsentrylong{DSP}\glspluralsuffix\ (\glsentryname{DSP}\glspluralsuffix)}
+}
+\newglossaryentry{mapping}
+{
+    name={mapping},
+    description={\textit{\glsentrylong{mapping}}:Terme utilisé pour désigner la mise en relation de variables d'entrées (e.g. des données issues de capteurs) à des variables de sortie (e.g. des paramètres de synthèse audio)},
+    long={mapping}
+}
+\newglossaryentry{GDIF}
+{
+    name={GDIF},
+    description={\textit{\glsentrylong{GDIF}}: format développé pour le streaming et l'enresgistrement de données de mouvement en relation à la musique},
+    long={Gesture Description Interchange Format},
+    first={\glsentrylong{GDIF}} (\glsentryname{GDIF})
+}
+\newglossaryentry{GRM}
+{
+    name={GRM},
+    description={\textit{\glsentrylong{GRM}}: Centre de recherche musicale dans le domaine du son et des musiques électroacoustiques fondé par Pierre Schaeffer en 1958 à Paris, France},
+    long={Groupe de recherches musicales},
+    first={\glsentrylong{GRM}} (\glsentryname{GRM})
+}
+\newglossaryentry{HCI}
+{
+    name={HCI},
+    description={\textit{\glsentrylong{HCI}}: Interface Homme-Machine},
+    long={Human-Computer Interface},
+    first={\glsentrylong{HCI}} (\glsentryname{HCI}),
+    firstplural={\glsentrylong{HCI}\glspluralsuffix\ (\glsentryname{HCI}\glspluralsuffix)}
+}
+\newglossaryentry{IHM}
+{
+    name={IHM},
+    description={\textit{\glsentrylong{IHM}}},
+    long={Interface Homme-Machine},
+    first={\glsentrylong{IHM}} (\glsentryname{IHM}),
+    firstplural={\glsentrylong{IHM}\glspluralsuffix\ (\glsentryname{IHM}\glspluralsuffix)}
+}
+\newglossaryentry{IRCAM}
+{
+    name={IRCAM},
+    description={\textit{\glsentrylong{IRCAM}}: Centre français de recherche scientifique, d'innovation technologique et de création musicale, fondé par Pierre Boulez en 1970 à Paris, France},
+    long={Institut de Recherche et Coordination Acoustique/Musique},
+    first={\glsentrylong{IRCAM}} (\glsentryname{IRCAM}),
+    firstplural={\glsentrylong{IRCAM}\glspluralsuffix\ (\glsentryname{IRCAM}\glspluralsuffix)}
+}
+\newglossaryentry{LFO}
+{
+    name={LFO},
+    description={\textit{\glsentrylong{LFO}}: circuit électronique (ou simulé en numérique) permettant la modulation d'un signal à des fréquences inférieures aux fréquences audio, permettant notamment des effets tel que le vibrato},
+    long={Low Frequency Oscillator},
+    first={\glsentrylong{LFO}} (\glsentryname{LFO}),
+    firstplural={\glsentrylong{LFO}\glspluralsuffix\ (\glsentryname{LFO}\glspluralsuffix)}
+}
+\newglossaryentry{MIDI}
+{
+    name={MIDI},
+    description={\textit{\glsentrylong{MIDI}}: protocole de communication et format de fichier créés en 1984, dédiés à la musique, et utilisés pour la communication entre instruments électroniques, contrôleurs, séquenceurs, et logiciels de musique},
+    long={Musical Instrument Digital Interface},
+   	first={\glsentrylong{MIDI}} (\glsentryname{MIDI}),
+    firstplural={\glsentrylong{MIDI}\glspluralsuffix\ (\glsentryname{MIDI}\glspluralsuffix)}
+}
+\newglossaryentry{MMA}
+{
+    name={MMA},
+    description={\textit{\glsentrylong{MMA}}: organisation professionnelle sans profit, composée principalement de développeur de solutions matérielles et logicielles et travaillant sur les standards liés à la norme MIDI},
+    long={MIDI Manufacturer Association},
+    first={\glsentrylong{MMA}} (\glsentryname{MMA}),
+    firstplural={\glsentrylong{MMA}\glspluralsuffix\ (\glsentryname{MMA}\glspluralsuffix)}
+}
+\newglossaryentry{MPE}
+{
+    name={MPE},
+    description={\textit{\glsentrylong{MPE}}: méthode d'utilisation du protocole MIDI qui permet d'ajuster de manière continue et polyphonique le pitch bend ainsi que d'autres dimensions de contrôle expressif},
+    long={Multidimensional Polyphonic Expression},
+   	first={\glsentrylong{MPE}} (\glsentryname{MPE}),
+    firstplural={\glsentrylong{MPE}\glspluralsuffix\ (\glsentryname{MPE}\glspluralsuffix)}
+}
+\newglossaryentry{rtpMIDI}
+{
+    name={rtpMIDI},
+    description={\textit{\glsentrylong{rtpMIDI}}: (également connu sous le nom `'AppleMIDI') est un protocole destiné au transport de messages MIDI dans des messages RTP (Real-Time Protocol), sur des réseaux Ethernet et Wi-Fi},
+    long={Real-time Protocol MIDI},
+    first={\glsentrylong{rtpMIDI}} (\glsentryname{rtpMIDI}),
+    firstplural={\glsentrylong{rtpMIDI}\glspluralsuffix\ (\glsentryname{rtpMIDI}\glspluralsuffix)}
+}
+\newglossaryentry{NIME}
+{
+    name={NIME},
+    description={\textit{\glsentrylong{NIME}}: Nouvelles Interfaces pour l'Expression Musicale, désignant aussi bien ces interfaces que la conférence éponyme qui leur est consacrée},
+    long={New Interfaces for Musical Expression},
+    first={\glsentrylong{NIME}} (\glsentryname{NIME}),
+    firstplural={\glsentrylong{NIME}\glspluralsuffix\ (\glsentryname{NIME}\glspluralsuffix)}
+}
+\newglossaryentry{OSC}
+{
+    name={OSC},
+    description={\textit{\glsentrylong{OSC}}: format de transmission de données entre ordinateurs, synthétiseurs, robots ou tout autre matériel ou logiciel compatible, conçu pour le contrôle en temps réel. Il utilise le réseau au travers des protocoles UDP ou TCP et apporte des améliorations en termes de rapidité et flexibilité par rapport à l'ancienne norme MIDI},
+    long={Open Sound Control},
+    first={\glsentrylong{OSC}} (\glsentryname{OSC}),
+    firstplural={\glsentrylong{OSC}\glspluralsuffix\ (\glsentryname{OSC}\glspluralsuffix)}
+}
+\newglossaryentry{UDP}
+{
+    name={UDP},
+    description={\textit{\glsentrylong{UDP}}: protocole asynchrone de transmission de données sur réseau, utilisant un mode de transmission sans accusé de réception},
+    first={\glsentrylong{UDP}} (\glsentryname{UDP}),
+    firstplural={\glsentrylong{UDP}\glspluralsuffix\ (\glsentryname{UDP}\glspluralsuffix)}
+}
