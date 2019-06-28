@@ -82,6 +82,7 @@
     </requires>
     <requires type="editable">
       <file>./thesis.bib</file>
+      <file>thesis.bib</file>
     </requires>
   </external>
 </requests>
