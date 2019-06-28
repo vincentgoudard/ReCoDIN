@@ -10,24 +10,23 @@ musician's attention as free as possible.
 Firstly, a quick review of the context of screen-based
 scores will help situate this research in the history of contemporary music notation. Then I will trace back how improvisation sessions led to John's particular “notational perspective”. A brief description of the software will precede a discussion about the various aspects guiding its design.
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notes sur la partition}
 
 %----------------------------------------------------------------------------------------------------------
 \subsection{Des partitions traditionnelles aux partitions graphiques}
-The score is generally considered as a tool for the composer to create a musical work for an interpreter. It describes the expected sonic result and prescribes the gestures to perform \footnote{Eric Maestri proposes the terms “phonographic” and “ergographic” to describe both these aspects \cite{maestri_notation_2016}.}. It thus stands as mnemonic mean to keep track of what is independent from the context of the performance \footnote{Acknowledging here that the interpretation belongs to the contextual.} and often, is assimilated to the artwork itself in Western musical tradition.
+The score is generally considered as a tool for the composer to create a musical work for an interpreter. It describes the expected sonic result and prescribes the gestures to perform \footnote{Eric Maestri proposes the terms “phonographic” and “ergographic” to describe both these aspects .}. It thus stands as mnemonic mean to keep track of what is independent from the context of the performance \footnote{Acknowledging here that the interpretation belongs to the contextual.} and often, is assimilated to the artwork itself in Western musical tradition.
 
 Scores fulfill yet many other functions. It allows in particular to transpose the musical time into a visual space, enabling the composer to arrange musical elements “out of time” in order to produce pieces that could not be conceived without this visual support\footnote{A notorious example is the rondeau “Ma fin est mon commencement” (14th century) from Machaut in which the two voices are each other's retrograde.}.
 
 If the Western notational system invented by Guido d'Arezzo in the 11th century has continuously evolved, improving with new symbols and techniques until the early 20th century, the technological and cultural revolutions that followed subverted both the means of production and the range of musical expression, now extended to noise and the whole sound spectrum.
 
-We can notice the development of so-called “graphic scores” \footnote{... that is, using graphic signs other than the usual symbols of the conventional notation of notes on a staff.} in the middle of the 20th century, that reflects this musical evolution for which the traditional notation is insufficient. For reasons that might seem opposite, the graphic score helped to push both the limits of what was possible to “fix” in a composition — by specifying it entirely on a synthesis system, and the limits of what it was conceivable to vary — the part entrusted to the performer's interpretation. The scores for Iannis Xenakis' Mycene Alpha and Earle Brown's December 1952 highlight both these directions (see Figure \ref{fig:notation:brown-xenakis}).
+We can notice the development of so-called “graphic scores” \footnote{... that is, using graphic signs other than the usual symbols of the conventional notation of notes on a staff.} in the middle of the 20th century, that reflects this musical evolution for which the traditional notation is insufficient. For reasons that might seem opposite, the graphic score helped to push both the limits of what was possible to “fix” in a composition — by specifying it entirely on a synthesis system, and the limits of what it was conceivable to vary — the part entrusted to the performer's interpretation. The scores for Iannis Xenakis' Mycene Alpha and Earle Brown's December 1952 highlight both these directions (see Figure \ref{fig:notation:brown-xenakis}).
 
 %-------------------------- Figure : Brown-Xenakis ----------------------------------
 \begin{figure}[htb]
 	\includegraphics[width=\textwidth]{gfx/notation/Brown-Xenakis-Paysage.png}
-	\caption{Extraits des partitions de \textit{December 1952} de Earle Brown (à gauche) et \textit{Mycène Alpha} de Iannis Xénakis (à droite)}
+	\caption{Extraits des partitions de \textit{December 1952} de Earle Brown (à gauche) et \textit{Mycène Alpha} de Iannis Xénakis (à droite)}
 	\label{fig:notation:brown-xenakis}
 \end{figure}
 
@@ -37,7 +36,7 @@ Within this continuum of possibilities between fixed work and free improvisation
 
 %----------------------------------------------------------------------------------------------------------
 \subsection{Screen scores}
-The increasing availability of digital devices led to the development of several applications meant for the creation of scores on-screen. As Lindsay Vickery notes in \cite{vickery_limitations_2014} :
+The increasing availability of digital devices led to the development of several applications meant for the creation of scores on-screen. As Lindsay Vickery notes in \cite{vickery_limitations_2014} :
 
 \begin{quotation}
 These developments suggest a trend, particularly amongst young composers whose practice has developed exclusively on computer, to take the logical step to present notated materials on screen.
@@ -47,7 +46,10 @@ Cat Hope summarizes the main features offered by this new medium with the follow
 
 Using computer graphics for the purposes of musical representation seems a medium of choice to enrich the possibilities of writing graphic scores. Especially, the fluidity of adaptation of the virtual medium makes it possible to envisage multiple “views” of the same score according to the contexts for which it is intended. Thus the composition, the performance, or the analysis of a musical work do not necessarily require the same representations. In terms of musical performance, we can add a distinction between the interpretation of a score by a human and a machine, these two types of “interpreters” affording relatively different abilities.
 
-In the same way that digital technologies have atomized the musical instrument by decoupling its various constituents (gestural controller, mapping, synthesis, etc. becoming modular), they have also atomized the score into its various functions, supporting composition, performance or analysis. It is then necessary to specify which use case is at play and Cat Hope defines for this purpose the term “screen-score” as the medium presented to the musicians for a performance in \cite{hope_screen_2011} :
+In the same way that digital technologies have atomized the musical instrument by decoupling its various constituents (gestural controller, mapping, synthesis, etc. becoming modular), they have also atomized the score into its various functions, supporting composition, performance or analysis. It is then necessary to specify which use case is at play and Cat Hope defines for this purpose the term “screen-score” as the medium presented to the musicians for a performance in \cite{hope_screen_2011} :
+
+
+
 
 Screen-scores are notated music compositions devised to be performed; and are not to be confused with visual representations of music or the musical interpretation of visual art.
 
@@ -55,7 +57,7 @@ The concept of screen-scores has been investigated in depth by several authors, 
 
 These studies offer relevant and valuable descriptions to the composer who wishes to work with screen-scores. However, it seems that they can be supplemented by a different approach to the score than those considered in most of the literature, in which the point of view is often that of the composer. The design of a screen-score system is consequently polarized by the central importance of the score, itself considered as a prerequisite for musical performance, a situation that also reflects a strong tradition of Western classical music\footnote{A notable exception is the contribution of Georg Hajdu \cite{hajdu_disposable_2016} who proposes the concept of "disposable music" to qualify musical forms “\textit{that rely on a lesser degree on fully notated scores, such as "comprovisation” or laptop performance}”. However, even as “\textit{disposable}” as it is, the score plays here again a prior role to the performance and remains central to the attention, differing from our approach.}.
 
-In the case of ONE's performances (Figure \ref{fig:notation:one-fullband}), which are based on a practice of free improvisation devoid of prior composition, the focus moves towards the instrumentalist's side. The central element is not the score but the listening and understanding of sound and other musicians. The score (if it is still possible to call it so) often emerges after the improvisation sessions and its presence should not be at the expense of mutual attention. From this perspective, it is possible to envisage that the musician themselves adapts the musical representation to their own needs, depending on the parts they have to play, their personal preferences, the various movements of the score, etc.
+In the case of ONE's performances (Figure \ref{fig:notation:one-fullband}), which are based on a practice of free improvisation devoid of prior composition, the focus moves towards the instrumentalist's side. The central element is not the score but the listening and understanding of sound and other musicians. The score (if it is still possible to call it so) often emerges after the improvisation sessions and its presence should not be at the expense of mutual attention. From this perspective, it is possible to envisage that the musician themselves adapts the musical representation to their own needs, depending on the parts they have to play, their personal preferences, the various movements of the score, etc.
 
 In the particular case where the instruments are digital and programmable, the use of a networked score system finally offers the possibility of delegating certain parameters of the instrument to an outsourced control supported by the score. In a situation of improvisation, the negotiation between this automated control and the choice of the musician implies a mediation that I will discuss later.
 
@@ -73,7 +75,7 @@ The seven musicians of ONE (fig. \ref{fig:notation:one-fullband}) are all deeply
 
 Several improvisation sessions were opportunities to discover our sounds, our playing styles, our musical vocabulary. These moments of rehearsal were first and foremost the occasion of anarchic performances, guided only by the thread of our listening, to confront, to merge, to burst, to collide spaces, objects, soundtracks, along with moments of discussion and adjustments of our musical setup.
 
-These sessions were also subject to classic improvisation exercises : searching for timbral fusion and counterpoints, fugal passages among musicians, accompanying a soloist, working on the pianissimo nuances, or playing “in the style” of a piece we knew. Eventually, audio recordings allowed us to play back the sometimes long and uninterrupted improvisations to extract interesting ideas.
+These sessions were also subject to classic improvisation exercises : searching for timbral fusion and counterpoints, fugal passages among musicians, accompanying a soloist, working on the pianissimo nuances, or playing “in the style” of a piece we knew. Eventually, audio recordings allowed us to play back the sometimes long and uninterrupted improvisations to extract interesting ideas.
 
 The issue of large musical movements appeared before ONE's first public concert. The lack of a score structuring the concert's duration led us to follow a narrative scenario inspired by a novel by Jules Verne. Thus, the concert consisted of a series of chapters, simply identified by inter-titles in lieu of exotic and imaginary soundscapes to be explored.
 
@@ -83,7 +85,7 @@ The origin of John's development is related to the desire to find a way to struc
 
 In addition, we were looking for ways to stimulate the exploration of unusual combinations and musical ideas pushing us out of our “comfort zone”. The proposal to mathematically divide time into sequences to allow all possible ensembles of solo, duet, trio, up to the tutti, was the first impetus for the development of a score generator able to automatically produce such distributions.
 
-As the opinions diverged within the band on the balance between rules and absence of rules, a key principle did find a ground of agreement : John is a semi-conductor. This means that scores created using John are just a proposition that each member of the group is free to follow or not, depending on the musical context that only takes shape during the very moment of the performance. Listening remains the primary rule of the game, prevailing over a blind follow-up of the score. In particular, the articulation between the different parts of the score, whether they are tiled or disjointed, or the act of playing when not supposed to, etc. is left to the appreciation of each musician.
+As the opinions diverged within the band on the balance between rules and absence of rules, a key principle did find a ground of agreement : John is a semi-conductor. This means that scores created using John are just a proposition that each member of the group is free to follow or not, depending on the musical context that only takes shape during the very moment of the performance. Listening remains the primary rule of the game, prevailing over a blind follow-up of the score. In particular, the articulation between the different parts of the score, whether they are tiled or disjointed, or the act of playing when not supposed to, etc. is left to the appreciation of each musician.
 
 This principle has the direct consequence of a streamlined design whose purpose is to allow each player to situate oneself within the score at a glance, without monopolizing her/his attention to the detriment of the other musicians. The goal is therefore very different from the one pursued in other screen-based musical notation systems such as those explored in works involving (extreme) sight-reading \cite{freeman_extreme_2008}.
 
@@ -103,7 +105,7 @@ John relies on a client / server architecture, in which each musician is visuali
 %----------------------------------------------------------------------------------------------------------
 \subsection{Générateur de partitions}
 
-The score generator makes it possible to very quickly create musical propositions by specifying only global constraints :
+The score generator makes it possible to very quickly create musical propositions by specifying only global constraints :
 \begin{itemize}[noitemsep]
 \item overall duration of the score;
 \item minimum and maximum number of players;
@@ -117,11 +119,11 @@ Once these constraints are specified, the score generator produces a random prop
 %----------------------------------------------------------------------------------------------------------
 \subsection{Visualisation interactive}
 
-This interface represents blocks on a timeline. It consists of a reduced \textit{global view} on one hand, giving a shared overview of the whole score, and a zoomed \textit{local view}, located above the global view. On the global view is a playhead that is common and synchronous to all clients (in red on Figure \ref{fig:notation:john-snapshot}), as well as a window (in blue on Figure \ref{fig:notation:john-snapshot}) defining the time span displayed in the local view. This window is defined individually by each musician on their client and is typically ranging from ten seconds to a few minutes depending on the temporal granularity of the score and the preference of each.
+This interface represents blocks on a timeline. It consists of a reduced \textit{global view} on one hand, giving a shared overview of the whole score, and a zoomed \textit{local view}, located above the global view. On the global view is a playhead that is common and synchronous to all clients (in red on Figure \ref{fig:notation:john-snapshot}), as well as a window (in blue on Figure \ref{fig:notation:john-snapshot}) defining the time span displayed in the local view. This window is defined individually by each musician on their client and is typically ranging from ten seconds to a few minutes depending on the temporal granularity of the score and the preference of each.
 
-All controls are accessible in all clients, so that anyone can edit the score : generating a new score, moving and changing the duration of the blocks and their content (\textit{karma} and \textit{nuance}), starting playback, changing the playback speed, moving the playhead to start at a given moment of the score. These changes will be immediately reported to all other John's clients.
+All controls are accessible in all clients, so that anyone can edit the score : generating a new score, moving and changing the duration of the blocks and their content (\textit{karma} and \textit{nuance}), starting playback, changing the playback speed, moving the playhead to start at a given moment of the score. These changes will be immediately reported to all other John's clients.
 
-The user can also define local parameters which will only affect their own client interface : the various tracks visibility, the duration of one's \textit{local view} and the synchronization (or not) of one's local view to the reading cursor with the \textit{link} toggle-button.
+The user can also define local parameters which will only affect their own client interface : the various tracks visibility, the duration of one's \textit{local view} and the synchronization (or not) of one's local view to the reading cursor with the \textit{link} toggle-button.
 
 %----------------------------------------------------------------------------------------------------------
 \subsection{Implementation}
@@ -134,7 +136,7 @@ Scores are saved in JSON format as a list of events with a unique identifier, a 
 %----------------------------------------------------------------------------------------------------------
 \subsection{Composition générative}
 
-The score generator saved a lot of time during the rehearsals, giving us an immediate possible musical structure like an empty shell. As arbitrary as it is, its main function is to stimulate the musical performance with the most minimal prescription : play (or don't). Thus the proposals are often tried as they come before being adjusted collectively according to what members of the band find interesting or not. We can then evolve this musical structure, with apparently more efficiency than if we were to start out from nothing.
+The score generator saved a lot of time during the rehearsals, giving us an immediate possible musical structure like an empty shell. As arbitrary as it is, its main function is to stimulate the musical performance with the most minimal prescription : play (or don't). Thus the proposals are often tried as they come before being adjusted collectively according to what members of the band find interesting or not. We can then evolve this musical structure, with apparently more efficiency than if we were to start out from nothing.
 %----------------------------------------------------------------------------------------------------------
 \subsection{Distribution de la participation}
 
@@ -164,7 +166,7 @@ John's design has been driven by an economy of cognitive load for musicians. Bei
 %----------------------------------------------------------------------------------------------------------
 \subsection{Partitions pour humains \emph{et} machines}
 
-During the score playback, the server sends data to clients as events begin or end (Figure 4). This information can be used by the musician's instrument (according this DMI is connected to the network). But, as John is only a “semi-conductor”, it may as well be subject to the musician/client approval to allow some flexibility in the way the musician sticks to the score. Thus, it could have been devised that a specific \textit{karma} recalls a corresponding preset of sounds in the musician's instrument, suitable for the \textit{karma's} mood. But if the musician is still playing a previous other \textit{karma}, s/he probably will not want this notification to automatically change the preset before s/he finishes one's current phrase. This “loose control” makes John's usage a little different from traditional sequencers.
+During the score playback, the server sends data to clients as events begin or end (Figure 4). This information can be used by the musician's instrument (according this DMI is connected to the network). But, as John is only a “semi-conductor”, it may as well be subject to the musician/client approval to allow some flexibility in the way the musician sticks to the score. Thus, it could have been devised that a specific \textit{karma} recalls a corresponding preset of sounds in the musician's instrument, suitable for the \textit{karma's} mood. But if the musician is still playing a previous other \textit{karma}, s/he probably will not want this notification to automatically change the preset before s/he finishes one's current phrase. This “loose control” makes John's usage a little different from traditional sequencers.
 
 %----------------------------------------------------------------------------------------------------------
 \subsection{Montrer la partition ?}
