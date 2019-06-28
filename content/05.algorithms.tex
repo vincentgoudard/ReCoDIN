@@ -6,13 +6,43 @@
 \cleanchapterquote{One general effect of the digital revolution is that avant-garde aesthetic strategies became embedded in the commands and interface metaphors of computer software. In short, the avant-garde became materialized in a computer.}{Lev Manovitch}{The language of the new media}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{interaction instrumentale}
+\section{interaction instrumentale : signal continu vs. événement discret}
 
-\paragraph{keywords}{ergodynamisme, résonance, mapping.\\En général, découplage conceptuel (et logiciel) entre la partie DSP et la partie "contrôle". Dans la réalité, ce n'est pas si simple et c'est la raison pour laquelle ce qui est habituellement rangé du côté "mapping" et du côté "synthèse" est rassemblé dans un seul et même chapitre.} 
+\textbf{keywords} ergodynamisme, résonance, mapping.\\
+En général, découplage conceptuel (et logiciel) entre la partie DSP et la partie "contrôle". Dans la réalité, ce n'est pas si simple et c'est la raison pour laquelle ce qui est habituellement rangé du côté "mapping" et du côté "synthèse" est rassemblé dans un seul et même chapitre.
 
-Si la partie "hard" d'un instrument (sa prise en main, son poids, sa forme, la disposition de ses cordes, etc.) est intimement couplée à sa résonance dans la plupart des instruments acoustiques, cette relation n'est pas de mise dans le cas d'un DMI. Une sorte d'équivalent à la résonnance de l'instrument 
+Si la partie "hard" d'un instrument (sa prise en main, son poids, sa forme, la disposition de ses cordes, etc.) est intimement couplée à sa résonance dans la plupart des instruments acoustiques, cette relation n'est pas de mise dans le cas d'un DMI. Une sorte d'équivalent à la résonance de l'instrument 
+
+\todo{Présentation de MP, de sagrada et de leur articulation (et par là même de l'articulation entre contrôle et synthèse)}
+
+L’atomisation jusqu’au sample, plutôt que séparation entre DSP et messages de contrôle
+=> faust, gen~ et cie : l’export vers des plateformes multiples.
+
+%----------------------------------------------------------------------------------------------------------
+\subsection{Sons de synthèses ou échantillons ?}
+
+On m'a souvent posé la question, concernant la synthèse sonore de DMIs que je fabrique, s'ils utilisaient des sons de synthèse ou des sons enregistrés; question à laquelle j'avais toujours du mal à répondre tant ces deux catégories "idéales" ne correspondent pas à la réalité des médias. 
+Peut-être cette distinction provient-elle d'une analogie avec la différence qu'il existe en image vectorielle, composée de primitives géométrique qui la définisse et une image matricielle, définie directement par la matrice de ses pixels.
+\todo{reformuler ça}
+
+%----------------------------------------------------------------------------------------------------------
+\subsection{Synthèse sonore ou contrôle}
+
+Test : \gls{API}  puis \gls{API} puis \glspl{API} \\
+\glspl{DSP} puis \glspl{DSP}
+
+\textit{\gls{mapping}}\\
+
+\gls{GDIF}  puis \gls{GDIF}
 
 
+On a tendance à séparer \todo{réf?}, dans la description et le design des DMI, une partie \gls{DSP}, traitant un \textit{signal synchrone}, souvent associée voire confondue à la synthèse audio, et une partie \textit{contrôle}, souvent associé à des données de type \textit{messages asyncrones} (e.g. typiquement, des messages MIDI).\\
+Il existe une différence de nature assez profonde entre ces deux types de données, à la fois du côté de leur implémentation technique (programmation synchrone vs. asynchrone) mais également dans leur et se proposant souvent comme l'\textit{image d'un signal analogique échantillonné} avec l'idée de continuité qui lui est associée.\\
+L'autre un signal asynchrone, se présentant souvent comme l'image d'un ordre d'éxecution (e.g. note-on). \\
+Cependant, du point de vue de leur utilisation, les frontières entre ces deux types de données numériques d'une part, et ces deux natures d'objets conceptuel (le signal continu et l'ordre événementiel) ne se recouvrent pas exactement.
+
+
+L'arrivée du multi-canal dans le logiciel Max a également conforté cette notion d'utilisation de signaux audio comme messages de contrôle.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,11 +111,11 @@ MP ("Modular Polyphony")\footnote{ Disponible sur: https://github.com/LAM-IJLRA/
 MP se compose de blocs de traitement polyphonique nommés \textit{mp-blocks}, communiquant par des messages asynchrones nommés \textit{mp-messages} et représentant des objets temporels abstraits nommés \textit{mp-events}. Les sections suivantes décrivent ces éléments en détail.
 
 \subsubsection{mp-events}
-Un \textit{mp-event} est un objet temporel abstrait qui peut être traité par des \textit{mp-blocks}. Il est défini par un ensemble de \textit{mp-messages} (figure TODO ref figure). Ces messages sont composés de paramètres de contrôle précédés par un identifiant unique propre au mp-event. Le format de message est minimaliste et tous les messages utilisent la même syntaxe : un identifiant unique, un nom de paramètre suivi d'une liste de valeurs. Par exemple :
+Un \textit{mp-event} est un objet temporel abstrait qui peut être traité par des \textit{mp-blocks}. Il est défini par un ensemble de \textit{mp-messages} (figure TODO ref figure). Ces messages sont composés de paramètres de contrôle précédés par un identifiant unique propre au mp-event. Le format de message est minimaliste et tous les messages utilisent la même syntaxe : un identifiant unique, un nom de paramètre suivi d'une liste de valeurs. Par exemple :
 
 \begin{itemize}[noitemsep]
-	\item{[42 pitch 112] : le mp-event \#42 règle le paramètre de pitch à la valeur 112;}
-	\item{[123 scale 0 2 4 5 7 9 11] : mp-event \#123 définit une gamme diatonique.}
+	\item{[42 pitch 112] : le mp-event \#42 règle le paramètre de pitch à la valeur 112;}
+	\item{[123 scale 0 2 4 5 7 9 11] : mp-event \#123 définit une gamme diatonique.}
 \end{itemize}
 
 Deux noms de paramètre sont réservés pour un usage particulier: \textit{state} et \textit{guests}. Ils seront détaillés dans les prochaines sections. Nous verrons également qu'un mp-event peut suivre plusieurs chemins de traitement en parallèle et être fusionné avec d'autres mp-events. 
@@ -108,25 +138,25 @@ Les paramètres peuvent ensuite être interprétés de trois façons :
 	\item state 0 : fin de modulation de paramètre.	
 \end{itemize}
 
-Le modèle musical sous-jacent envisage un mp-event comme la modulation d'un ensemble de paramètres et prend en compte les phénomènes transitoires qui peuvent apparaître au début et/ou à la fin d'une modulation\footnote{  Un exemple évident est l'attaque d'un son, mais en ce qui concerne un processus non-sonore comme le filtrage de données, cela peut concerner l'initialisation du filtre.}. Ces discontinuités peuvent causer des réponses non-linéaires, trop rapides pour être contrôlées manuellement et parfois mieux traitées séparément.
+Le modèle musical sous-jacent envisage un mp-event comme la modulation d'un ensemble de paramètres et prend en compte les phénomènes transitoires qui peuvent apparaître au début et/ou à la fin d'une modulation\footnote{  Un exemple évident est l'attaque d'un son, mais en ce qui concerne un processus non-sonore comme le filtrage de données, cela peut concerner l'initialisation du filtre.}. Ces discontinuités peuvent causer des réponses non-linéaires, trop rapides pour être contrôlées manuellement et parfois mieux traitées séparément.
 
-Au niveau du processus, ces états peuvent correspondre à l'initialisation de variables internes, l'activation d'un lissage (\textit{portamento}) entre deux valeurs consécutives, le déclenchement d'un processus transitoire spécifique (e.g. l'attaque d'un son), etc.. Tout paramètre peut donc être envoyé à un mp-block en spécifiant s'il doit être considéré comme le début, la continuation ou la fin d'une phrase de modulation\footnote{ La confusion entre le \textit{pitch} et l'identifiant de note dans le protocole MIDI rend le résultat de la même opération incertain : alors que certains synthétiseurs re-déclencheront la même voix, d'autres alloueront une nouvelle voix et attendront le même nombre de \textit{note-off} qu'il y a eu de \textit{note-on}.}.
+Au niveau du processus, ces états peuvent correspondre à l'initialisation de variables internes, l'activation d'un lissage (\textit{portamento}) entre deux valeurs consécutives, le déclenchement d'un processus transitoire spécifique (e.g. l'attaque d'un son), etc.. Tout paramètre peut donc être envoyé à un mp-block en spécifiant s'il doit être considéré comme le début, la continuation ou la fin d'une phrase de modulation\footnote{ La confusion entre le \textit{pitch} et l'identifiant de note dans le protocole MIDI rend le résultat de la même opération incertain : alors que certains synthétiseurs re-déclencheront la même voix, d'autres alloueront une nouvelle voix et attendront le même nombre de \textit{note-off} qu'il y a eu de \textit{note-on}.}.
 
-Ce modèle à 3 états semble correspondre par ailleurs aux intentions de la MMA qui a annoncé un message de \textit{note-update} dans le futur protocole MIDI-HD\footnote{  Rapporté par (dernier accès janvier 2017) : \url{http://www.synthtopia.com/content/2013/01/20/midi-manufacturers-testing-new-high-definition-midi-protocol/}}.
+Ce modèle à 3 états semble correspondre par ailleurs aux intentions de la MMA qui a annoncé un message de \textit{note-update} dans le futur protocole MIDI-HD\footnote{  Rapporté par (dernier accès janvier 2017) : \url{http://www.synthtopia.com/content/2013/01/20/midi-manufacturers-testing-new-high-definition-midi-protocol/}}.
 
 Notons toutefois que dans notre cas, le message d'état peut être rattaché à n'importe quel paramètre, ce qui a des conséquences différentes du MIDI en ce qui concerne l'allocation de voix. Alors que le premier message \textit{state 1} reçu pour un ID causera l'allocation d'une voix dans le mp-block, le message \textit{state 0} ne libérera pas nécessairement cette voix, cette décision revenant au processus en cours, comme nous le verrons plus loin.
 
 \paragraph{Guest-list}
 La spécification MP ne suit pas d'organisation hiérarchique telle que les canaux MIDI ou les familles d'instruments de ZIPI. A la place, elle laisse la possibilité à tout mp-event de déclarer une \textit{liste d'invités} (\textit{guestlist}) à la volée. Ces invités pourront avoir accès à la voix allouée à un mp-event et contrôler ses paramètres. Cette fonctionnalité nous offre une solution flexible pour le groupement d'événements, permettant un nombre arbitraire de niveaux hiérarchiques, sans pour autant être limité par une relation de subsumption.
-Cette fonctionnalité peut être utilisée dans le cas de mp-blocks génératifs, où l'ID du mp-event peut être ajouté à la guestlist des mp-events « enfants ». Ceci permet une modulation cohérente de plusieurs voix associées à des mp-events générés par une même source. Des exemples concrets de cette situation sont les pistes MIDI ou la hiérarchie orchestre/famille/instrument/note proposée par ZIPI. Ils correspondent à un mapping divergent dans le schéma proposé par Rovan, Wanderley, Dubnov et al. \cite{rovan_instrumental_1997}.
+Cette fonctionnalité peut être utilisée dans le cas de mp-blocks génératifs, où l'ID du mp-event peut être ajouté à la guestlist des mp-events « enfants ». Ceci permet une modulation cohérente de plusieurs voix associées à des mp-events générés par une même source. Des exemples concrets de cette situation sont les pistes MIDI ou la hiérarchie orchestre/famille/instrument/note proposée par ZIPI. Ils correspondent à un mapping divergent dans le schéma proposé par Rovan, Wanderley, Dubnov et al. \cite{rovan_instrumental_1997}.
 
-Un  mapping "convergent" est également possible : plusieurs mp-events peuvent être déclarés comme guests d'un mp-event tiers. Par exemple, un objet graphique virtuel (représenté par un mp-event) peut être "touché" par plusieurs mp-events représentant des contacts sur une surface TUI.
+Un  mapping "convergent" est également possible : plusieurs mp-events peuvent être déclarés comme guests d'un mp-event tiers. Par exemple, un objet graphique virtuel (représenté par un mp-event) peut être "touché" par plusieurs mp-events représentant des contacts sur une surface TUI.
 
 \paragraph{Master-ID}
 Le paramètre guests ne nous laisse toutefois pas un accès aisé à l'ensemble des voix de polyphonies d'un mp-block. A cette fin, un identifiant spécifique : "0" permet ce contrôle global. Il revient implicitement à considérer que le mp-event \#0 (nommé master-ID) fait systématiquement partie de la guestlist de tout mp-event. Dans le cas où les mp-events, ses guests et le master-ID tentent de modifier les mêmes paramètres, le mp-event hôte conservera la priorité sur les guests et le master-ID.
 
 \paragraph{Ordonnancement des mp-messages}
-Le cycle de vie de la voix d'un mp-event suit la séquence suivante de mp-messages :
+Le cycle de vie de la voix d'un mp-event suit la séquence suivante de mp-messages :
 \begin{enumerate}[noitemsep]
 	\item envoi des paramètres de début de modulation;
 	\item envoi du message state 1;
@@ -138,7 +168,7 @@ Le cycle de vie de la voix d'un mp-event suit la séquence suivante de mp-messag
 Cependant, comme la libération d'une voix ne suit pas nécessairement un message state 0 (dans le cas où le processus a sa propre stratégie d'extinction), il est possible d'envoyer différents messages d'état plusieurs fois durant la durée de vie d'une voix, jusqu'à ce que la voix soit effectivement libérée.
 
 \subsubsection{mp-blocks}
-Un mp-block se compose de deux parties : le routeur et le traitement polyphonique que nous décrivons ici.
+Un mp-block se compose de deux parties : le routeur et le traitement polyphonique que nous décrivons ici.
 \paragraph{Le routeur}
 Le routeur a pour missions :
 \begin{itemize}[noitemsep]
@@ -147,13 +177,13 @@ Le routeur a pour missions :
 	\item le routage éventuel des paramètres des guests;
 	\item d'enregistrer la libération de la voix;
 \end{itemize}
-L'ordonnancement des messages envoyés à la voix de traitement assure une synchronisation du calcul afin qu'il ne soit fait qu'une seule fois. Ainsi, la séquence suivante est envoyée par le routeur à la voix cible :
+L'ordonnancement des messages envoyés à la voix de traitement assure une synchronisation du calcul afin qu'il ne soit fait qu'une seule fois. Ainsi, la séquence suivante est envoyée par le routeur à la voix cible :
 \begin{enumerate}[noitemsep]
-	\item start X state Y : ce message permet à la voix de se préparer à traiter les paramètres à venir selon l'état Y;
+	\item start X state Y : ce message permet à la voix de se préparer à traiter les paramètres à venir selon l'état Y;
 	\item tous les paramètres du master-ID;
 	\item tous les paramètres des guests;
 	\item tous les paramètres du mp-event déclencheur;
-	\item end X state Y : ce dernier message clôt la séquence et sert de signal d'horloge déclenchant le calcul.
+	\item end X state Y : ce dernier message clôt la séquence et sert de signal d'horloge déclenchant le calcul.
 \end{enumerate}
 L'allocation de voix est réalisée à l'arrivée du premier message state 1 pour un mp-event donné. La libération de la voix intervient quand le processus de traitement indique au routeur qu'il a terminé sa tâche. Trois scénarios sont alors possibles :
 \begin{itemize}[noitemsep]
@@ -168,28 +198,28 @@ Le traitement par voix est un patch chargé dans les multiples voix d'un objet M
 \paragraph{Paramètres d'un mp-block}
 Les mp-blocks répondent à une liste de paramètres contrôlant le processus de traitement par voix. Ces paramètres sont stockés par identifiant dans le routeur jusqu'à ce qu'un message d'état soit reçu. Ce message entrainera l'allocation d'une voix (si disponible et si elle n'est pas déjà active), puis l'envoi de tous les paramètres partageant cet identifiant à cette voix.
  
-Il est possible d'envoyer d'autres paramètres que ceux contrôlant le processus. Dans ce cas il traverseront le mp-block inchangés, tout en restant synchrones avec d'éventuels autres paramètres générés par le processus. Dans le cas où ce processus génère de nouveaux mp-events, ces paramètres peuvent automatiquement être ajoutés à chaque mp-event généré, en une sorte d'héritage similaire à celui opéré par la librairie « o. » décrit dans \cite{goudard_dynamic_2011} (TODO :renvoyer plutôt à la section qui parle des MID).
+Il est possible d'envoyer d'autres paramètres que ceux contrôlant le processus. Dans ce cas il traverseront le mp-block inchangés, tout en restant synchrones avec d'éventuels autres paramètres générés par le processus. Dans le cas où ce processus génère de nouveaux mp-events, ces paramètres peuvent automatiquement être ajoutés à chaque mp-event généré, en une sorte d'héritage similaire à celui opéré par la librairie « o. » décrit dans \cite{goudard_dynamic_2011} (TODO :renvoyer plutôt à la section qui parle des MID).
 
 \subsection{Exemples}
-Les exemples proposés dans cette section donnent des cas concrets d'utilisation du système MP ; il sont implémentés dans le logiciel Max.
+Les exemples proposés dans cette section donnent des cas concrets d'utilisation du système MP ; il sont implémentés dans le logiciel Max.
 \subsubsection{Mapping encapsulé}
 Cet exemple (figure TOTO ref) montre l'utilisation la plus simple du système MP. À partir de données TUIO issues d'une interface multitouch, on contrôle les valeurs de vélocité et de cutoff sur l'axe vertical tandis que l'axe horizontal contrôle le pitch.
 Le module  mp-embedded-mapping-demoSynth est constitué d'un routeur et d'un objet poly contenant à la fois le mapping et la synthèse. Ici, l'avantage d'utiliser MP est de bénéficier d'un système d'adressage similaire au \gls{MPE} sans être limité par le typage, la précision et l'espace de nommage des données.
 
 \subsubsection{Mapping dé-encapsulé}
 
-Dans cet exemple (figure TODO ref), nous avons sorti tout le mapping en dehors du module de synthèse. Examinons quelques éléments de ce patch :
+Dans cet exemple (figure TODO ref), nous avons sorti tout le mapping en dehors du module de synthèse. Examinons quelques éléments de ce patch :
 \begin{itemize}[noitemsep]
 	\item à gauche, le module \textit{mp.note2chord} génère un ensemble de mp-events "enfants". Le premier niveau en génère deux et le deuxième niveau en génère 3. Le résultat final est la génération d'un accord de six notes à partir d'un seul mp-event;
 	\item à droite, le mp-event venant de \textit{mp.TUIO.input} est envoyé sur deux chemins où ses valeurs sont mises à l'échelle par le module mp-scale pour définir la fréquence et l'offset d'un LFO respectivement. Le LFO contrôlera ensuite la fréquence de coupure d'un filtre passe-bas du module de synthèse;
-	\item nous avons deux occurrences d'un contrôle global avec le Master-ID : une pour le paramètre \textit{depth} du LFO et une pour la transposition du deuxième étage \textit{note2chord};
+	\item nous avons deux occurrences d'un contrôle global avec le Master-ID : une pour le paramètre \textit{depth} du LFO et une pour la transposition du deuxième étage \textit{note2chord};
 	\item en dernier lieu, nous dirigeons les messages résultants de ces deux chemins vers un système de représentation graphique. La position d'objets graphiques est assignée aux valeurs de pitch des mp-events générés, tandis que leur couleur est associée au mp-event parent. Ceci résulte en une représentation graphique de toutes les hauteurs en tant qu'objets dont la couleur nous dit à quelle source commune (ici le contact d'un doigt sur un écran) ils sont rattachés
 \end{itemize}
 
 \subsubsection*{Mapping many[guests]-to-one}
 Alors que les exemples précédents nous montrent une utilisation de la guestlist comme hiérarchie de subsumption, ce dernier exemple fournit un exemple concret de relation \textit{many-to-one}. Ici, les mp-events arrivant d'une TUI et représentant la position des doigts (les points) causeront l'apparition d'un arc si la distance entre eux passe sous un certain seuil.
 
-Le mp-event « arc » ainsi généré aura les deux mp-events « points » dans sa guestlist, de telle sorte que toute modification sur les points affectera le traitement aval du mp-event représenté par l'arc.
+Le mp-event « arc » ainsi généré aura les deux mp-events « points » dans sa guestlist, de telle sorte que toute modification sur les points affectera le traitement aval du mp-event représenté par l'arc.
 
 \subsection{Limitations et optimisations}
 Séparer les différents processus de traitement d'un design d'interaction polyphonique a l'avantage de permettre une meilleure modularité, et par suite une meilleure stabilité des processus mis en œuvre qui n'auront pas à être modifiés en interne. Le choix a également été fait de ne pas s'appuyer sur une mémoire globale (e.g. pour sauver la guestlist) de sorte que les mp-blocks soient réellement indépendants et autonomes et que le design d'interaction général puisse être réparti sur plusieurs applications et/ou machines en réseau.
@@ -205,22 +235,6 @@ Ces développements sont également menés pour répondre à d'autres questions 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sagrada : extension de MP au DSP}
 \label{sec:algorithms:sagrada}
-
-
-L’atomisation jusqu’au sample, plutôt que séparation entre DSP et messages de contrôle
-=> faust, gen~ et cie : l’export vers des plateformes multiples.
-
-%----------------------------------------------------------------------------------------------------------
-\subsection{Synthèse sonore ou contrôle}
-
-On a tendance à séparer, dans la description et le design des DMI, ce qui est du côté de la synthèse, souvent associé voire confondue à son support de \textit{signal}, de ce qui est du côté du contrôle, souvent associé à des données de type \textit{messages asyncrones} (e.g. typiquement, des messages MIDI).\\
-Il existe une différence de nature assez profonde entre ces deux types de données, l'une étant un signal synchrone, et se proposant souvent comme l'i\textit{mage d'un signal analogique échantillonné} avec l'idée de continuité qui lui est associée.\\
-L'autre un signal asynchrone, se présentant souvent comme l'image d'un ordre d'éxecution (e.g. note-on). \\
-Cependant, du point de vue de leur utilisation, les frontières entre ces deux types de données numériques d'une part, et ces deux natures d'objets conceptuel (le signal continu et l'ordre événementiel) ne se recouvrent pas exactement.
-
-
-
-L'arrivée du multi-canal dans le logiciel Max a également conforté cette notion d'utilisation de signaux audio comme messages de contrôle.
 
 %----------------------------------------------------------------------------------------------------------
 \subsection{motivations et contexte}
