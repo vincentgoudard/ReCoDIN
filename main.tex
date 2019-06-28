@@ -49,6 +49,8 @@
 	bibstyle=alphabetic,%
 ]{cleanthesis}
 
+\bibliography{thesis.bib}
+
 \usepackage[yyyymmdd,hhmmss]{datetime}
 
 \hypersetup{					% setup the hyperref-package options
@@ -62,6 +64,29 @@
 	bookmarksnumbered=true,		%
 	bookmarksopen=true			%
 }
+
+% **************************************************
+% tcolorbox to make nice framed texts
+% **************************************************
+
+\definecolor{akindofblue}{RGB}{0,101,152} % same color as titles
+
+\usepackage{tcolorbox}% http://ctan.org/pkg/tcolorbox
+
+\newtcolorbox{textbox}{colback=red!5!white,colframe=red!75!black}
+\newtcolorbox{titlebox}[1]{colback=akindofblue!5!white,colframe=akindofblue,fonttitle=\bfseries,title=#1}
+\newtcolorbox{notebox}[1]{colback=gray!5!white,colframe=gray!75!black, boxrule=1pt,leftrule=10pt,arc=0pt,auto outer arc}
+
+% todo box
+\newtcolorbox{todobox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1, left=0pt,right=0pt,top=0pt,bottom=0pt, boxrule=.5pt}
+\newcommand\todo[1]{
+	\marginpar{
+		\begin{todobox}{\flushleft TODO}
+			\flushleft\scriptsize\textcolor{black}{#1}
+		\end{todobox}
+	}
+}
+
 
 % **************************************************
 % Glossary of acronyms
@@ -96,7 +121,9 @@
 \newcommand\note[1]{\textcolor{blue}{\scriptsize#1}}
 \newcommand\unsure[1]{\marginpar{\scriptsize\textcolor{magenta}{#1}}}
 \newcommand\info[1]{\marginpar{\scriptsize\textcolor{ForestGreen}{#1}}}
-\newcommand\todo[1]{\marginpar{\scriptsize\textcolor{blue}{TODO:\\#1}}}
+%\newcommand\todo[1]{\marginpar{\flushleft\scriptsize\textcolor{red}{TODO:\\#1}}}
+
+%\newcommand\test[1]{\noindent\fbox{\parbox{\textwidth}{#1}}}
 
 
 % **************************************************
@@ -136,6 +163,9 @@
 % Document CONTENT
 % **************************************************
 \begin{document}
+
+% (un)comment this to switch from/to dark mode
+\pagecolor{gray!30}
 
 % --------------------------
 % rename document parts
@@ -241,5 +271,7 @@
 %\input{content/appendix.turchet} 
 %\input{content/appendix.zamborlin} 
 %\end{appendices}
+
+\input{content/latexsandbox}
 
 \end{document}
