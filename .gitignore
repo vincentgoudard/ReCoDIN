@@ -47,3 +47,6 @@ _gitignored
 main.fdb_latexmk
 main.fls
 main.bcf
+
+*.fdb_latexmk
+*.fls
