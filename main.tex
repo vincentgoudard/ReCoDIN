@@ -125,7 +125,19 @@
 
 %\newcommand\test[1]{\noindent\fbox{\parbox{\textwidth}{#1}}}
 
+% **************************************************
+% Inline quotes style
+% **************************************************
+\DeclareQuoteStyle{inlinequote}
+    {\itshape\textquotedblleft}
+    [\textquotedblleft]
+    {\textquotedblright}
+    	[0.05em]
+    {\textquoteleft}
+    {\textquoteright}
 
+\newcommand{\iquote}[1]{{\setquotestyle{inlinequote}\enquote{#1}}}
+ 
 % **************************************************
 % Information and Commands for Reuse
 % **************************************************
@@ -165,7 +177,7 @@
 \begin{document}
 
 % (un)comment this to switch from/to dark mode
-\pagecolor{gray!40}
+%\pagecolor{gray!40}
 
 % --------------------------
 % rename document parts
@@ -260,18 +272,18 @@
 % End of Document CONTENT
 % **************************************************
 
-%\begin{appendices}
-%\input{content/appendix.bernier} 
-%\input{content/appendix.collins}
-%\input{content/appendix.dumeaux} 
-%\input{content/appendix.delaubier}
-%\input{content/appendix.fernandez} 
-%\input{content/appendix.mamoumani} 
-%\input{content/appendix.saintdenis} 
-%\input{content/appendix.turchet} 
-%\input{content/appendix.zamborlin} 
-%\end{appendices}
+% \begin{appendices}
+% \input{content/appendix.bernier} 
+% \input{content/appendix.collins}
+% \input{content/appendix.dumeaux} 
+% \input{content/appendix.delaubier}
+% \input{content/appendix.fernandez} 
+% \input{content/appendix.mamoumani} 
+% \input{content/appendix.saintdenis} 
+% \input{content/appendix.turchet} 
+% \input{content/appendix.zamborlin} 
+% \end{appendices}
 
-\input{content/latexsandbox}
+%\input{content/latexsandbox}
 
 \end{document}
