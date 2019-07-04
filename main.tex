@@ -87,6 +87,8 @@
 	}
 }
 
+\newcommand{\hl}[1]{{\colorbox{yellow}{#1}}}
+
 
 % **************************************************
 % Glossary of acronyms
@@ -159,7 +161,6 @@
 \newcommand{\thesisSecondSupervisor}{Jean-Dominique Polack}
 \newcommand{\thesisFirstAdvisor}{Hugues Genevois}
 
-
 \newcommand{\thesisUniversity}{\protect{Sorbonne Université}}
 \newcommand{\thesisUniversityDepartment}{Equipe Lutherie Acoustique Musique - Institut $\partial$'Alembert}
 \newcommand{\thesisUniversityInstitute}{Institut de Recherche en Musicologie (IReMus)}
@@ -170,6 +171,14 @@
 
 
 \graphicspath{{./gfx/}} %Where the figures folder is located
+
+% do not indent each first paragraph after a \section
+% cf. https://latex.org/forum/viewtopic.php?t=23250
+% \titlespacing{\command}{left}{before-sep}{after-sep}[right-sep]
+%\titlespacing*{\section}{0em}{.75em}{.2em}[0pt]
+%\titlespacing*{\subsection}{0em}{.75em}{.2em}[0pt]
+%\titlespacing*{\subsubsection}{-1.5em}{0em}{-1.5em}[0pt]
+
 
 % **************************************************
 % Document CONTENT
@@ -219,13 +228,15 @@
 %\clearpage
 
 
-
+%\part{Partie I} 
 \input{content/01.preamble} % INCLUDE: preamble
 \input{content/02.ephemeral_instruments} % INCLUDE: introduction
 \input{content/03.musical_gesture} % INCLUDE: interface
 \input{content/04.interfaces} % INCLUDE: interface
+%\part{Partie II} 
 \input{content/05.algorithms}	% INCLUDE: mapping
 \input{content/06.visual_representation} % INCLUDE: visual_representatio
+%\part{Partie III} 
 \input{content/07.notation} % INCLUDE: notation
 \input{content/conclusion} % INCLUDE: conclusion
 
@@ -272,18 +283,18 @@
 % End of Document CONTENT
 % **************************************************
 
-% \begin{appendices}
-% \input{content/appendix.bernier} 
-% \input{content/appendix.collins}
-% \input{content/appendix.dumeaux} 
-% \input{content/appendix.delaubier}
-% \input{content/appendix.fernandez} 
-% \input{content/appendix.mamoumani} 
-% \input{content/appendix.saintdenis} 
-% \input{content/appendix.turchet} 
-% \input{content/appendix.zamborlin} 
-% \end{appendices}
+\begin{appendices}
+%\input{content/appendix.bernier} 
+%\input{content/appendix.collins} % ok
+%\input{content/appendix.dumeaux} 
+%\input{content/appendix.delaubier}
+%\input{content/appendix.fernandez} 
+\input{content/appendix.mamoumani} % ok
+%\input{content/appendix.saintdenis} % ok
+%\input{content/appendix.turchet} % ok
+%\input{content/appendix.zamborlin} % en cours
+\end{appendices}
 
-%\input{content/latexsandbox}
+\input{content/latexsandbox}
 
 \end{document}
