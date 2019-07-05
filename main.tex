@@ -23,7 +23,11 @@
 	captions=tableabove,		% display table captions above the float env
 	draft=false,				% value for draft version
 ]{scrreprt}%
-	
+
+
+% for highlight
+\usepackage{soulutf8}
+
 % **************************************************
 % Debug LaTeX Information
 % **************************************************
@@ -65,7 +69,9 @@
 	bookmarksopen=true			%
 }
 
+% for multiple figures
 \usepackage{subcaption}
+
 
 % **************************************************
 % tcolorbox to make nice framed texts
@@ -89,7 +95,7 @@
 	}
 }
 
-\newcommand{\hl}[1]{{\colorbox{yellow}{#1}}}
+%\newcommand{\hl}[1]{{\colorbox{yellow}{\parbox{\textidth}{10cm}}{#1}}}
 
 
 % **************************************************
@@ -216,7 +222,7 @@
 
 \input{content/acknowledgement} % INCLUDE: acknowledgement
 
-\clearpage
+\cleardoublepage
 \selectlanguage{french}
 \setcounter{tocdepth}{2}		% define depth of toc
 \tableofcontents				% display table of contents
@@ -290,15 +296,15 @@
 % **************************************************
 
 \begin{appendices}
-%\input{content/appendix.bernier} 
-%\input{content/appendix.collins} % ok
-%\input{content/appendix.dumeaux} 
-%\input{content/appendix.delaubier}
-%\input{content/appendix.fernandez} 
-%\input{content/appendix.mamoumani} % ok
-%\input{content/appendix.saintdenis} % ok
-%\input{content/appendix.turchet} % ok
-%\input{content/appendix.zamborlin} % en cours
+\input{content/appendix.bernier} 
+\input{content/appendix.collins} % ok
+\input{content/appendix.dumeaux} 
+\input{content/appendix.delaubier}
+\input{content/appendix.fernandez} 
+\input{content/appendix.mamoumani} % ok
+\input{content/appendix.saintdenis} % ok
+\input{content/appendix.turchet} % ok
+\input{content/appendix.zamborlin} % en cours
 \end{appendices}
 
 \input{content/latexsandbox}
