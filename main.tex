@@ -65,6 +65,8 @@
 	bookmarksopen=true			%
 }
 
+\usepackage{subcaption}
+
 % **************************************************
 % tcolorbox to make nice framed texts
 % **************************************************
@@ -93,7 +95,8 @@
 % **************************************************
 % Glossary of acronyms
 % **************************************************
-\usepackage[acronym]{glossaries}
+\usepackage[acronym, nogroupskip]{glossaries}
+\setlength{\glsdescwidth}{0.5\textwidth}
 \makenoidxglossaries
 \loadglsentries{content/glossary}
 \glstoctrue
@@ -101,14 +104,14 @@
 %% modsuper glossary display style (pour ne pas avoir de marge à gauche)
 %% cf. : https://tex.stackexchange.com/questions/415275/flush-glossaries-super-style-to-left
 \newglossarystyle{modsuper}{%
-\glossarystyle{super}%
-\renewenvironment{theglossary}%
-    {\tablehead{}\tabletail{}%
-     \begin{supertabular}{@{}lp{\glsdescwidth}}}%<----no margin
-    {\end{supertabular}}%
-\renewcommand{\glsgroupskip}{}%
-\renewcommand*{\glossaryentryfield}[5]{%
-\glsentryitem{##1}\glstarget{##1}{##2} & ##3\glspostdescription\space ##5\\[2pt]}%
+	\glossarystyle{super}%
+	\renewenvironment{theglossary}%
+		{\tablehead{}\tabletail{}%
+    	 \begin{supertabular}{@{}lp{\glsdescwidth}}}%<----no margin
+    	{\end{supertabular}}%
+		\renewcommand{\glsgroupskip}{}%
+		\renewcommand*{\glossaryentryfield}[5]{%
+			\glsentryitem{##1}\glstarget{##1}{##2} & ##3\glspostdescription\space ##5\\[2pt]}%nogroupskip
 }
 
 % **************************************************
@@ -241,8 +244,10 @@
 \input{content/07.notation} % INCLUDE: notation
 \input{content/conclusion} % INCLUDE: conclusion
 
-\printnoidxglossaries
 
+%\setlength{\parskip}{0mm} % moins d'espace entre les items (mais affect la suite ?)
+\printnoidxglossaries
+%\printglossaries
 % \cleardoublepage
 
 
@@ -256,7 +261,7 @@
 \setlength{\biblabelsep}{0pt}
 \setlength{\bibitemsep}{0.5\baselineskip plus 0.5\baselineskip}
 \printbibliography[title={Références}, nottype=online]
-\printbibliography[heading=subbibliography,title={Sites web},type=online,prefixnumbers={@}]
+%\printbibliography[heading=subbibliography,title={Sites web},type=online,prefixnumbers={@}]
 }
 
 \clearpage
