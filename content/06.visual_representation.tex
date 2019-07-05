@@ -29,7 +29,7 @@ La conception d'un instrument englobe plusieurs aspects qui affectent son aspect
 
 \subsection{liés à la production du son}
 
-La conception des instruments se préoccupe de la qualité du son. Bien que cela soit particulièrement évident pour les instruments acoustiques dont la forme a des conséquences directes sur le rendement sonore (comme le montre la figure 1, à gauche), les formes particulières issues de la lutherie traditionnelle ont également donné naissance à un certain nombre d'éléments iconiques (par exemple, les trous en F) et de facteurs de forme (par exemple, une taille plus grande donne un ton grave) associés à l'idée d'un instrument. De plus, les DMI peuvent intégrer des transducteurs acoustiques, tels que des microphones piézoélectriques ou des haut-parleurs tactiles, qui influencent la conception acoustique de leurs composants matériels.
+La conception des instruments se préoccupe de la qualité du son. Bien que cela soit particulièrement évident pour les instruments acoustiques dont la forme a des conséquences directes sur le rendement sonore (comme le montre la figure \ref{fig:visual_representation:fhole}), les formes particulières issues de la lutherie traditionnelle ont également donné naissance à un certain nombre d'éléments iconiques (par exemple, les ouïes du violons) et de facteurs de forme (par exemple, une taille plus grande donne un ton grave) associés à l'idée d'un instrument. De plus, les DMI peuvent intégrer des transducteurs acoustiques, tels que des microphones piézoélectriques ou des haut-parleurs tactiles, qui influencent la conception acoustique de leurs composants matériels.
 
 %------------ Figure : f-hole et boehm -----------
 \begin{figure}
@@ -48,15 +48,54 @@ La conception des instruments se préoccupe de la qualité du son. Bien que cela
 	\end{minipage}
 \end{figure}
 
-\subsection{Adapting to the body}
+\subsection{Adaptations ergonomiques}
 
-L'instrument s'adapte également au corps. Un exemple intéressant est l'évolution du traverso vers la flûte de concert occidentale, à l'aide du système Boehm dans les années 1840 (cf. Figure 1, à droite). Ce système de clavetage découple la topologie gestuelle de la topologie du flux d'air et de la topologie de résonance. En utilisant des manches et des platines, il permettait d'améliorer le son en faisant des trous plus grands et en les plaçant à des endroits adéquats pour la résonance, tandis que les touches pouvaient être placées à des endroits pratiques pour les mains de la flûtiste.
+L'instrument s'adapte également au corps. Un exemple intéressant est l'évolution du traverso vers la flûte de concert occidentale, à l'aide du système Boehm dans les années 1840 (cf. figure \ref{fig:visual_representation:boehm}). Ce système de clavetage découple la topologie gestuelle de la topologie du flux d'air et de la topologie de résonance. En utilisant des manches et des platines, il permettait d'améliorer le son en faisant des trous plus grands et en les plaçant à des endroits adéquats pour la résonance, tandis que les touches pouvaient être placées à des endroits pratiques pour les mains de la flûtiste.
 Le système Boehm peut être qualifié de "modèle intermédiaire" entre le geste et la production sonore, fait d'un système mécanique dans ce cas. La plupart des instruments combinent divers "modèles intermédiaires" pour amplifier, enrichir, déplacer, focaliser, multiplier les gestes des interprètes et générer des mouvements hors du champ des possibilités du corps humain : pédales de grosse caisse, marteaux et amortisseurs pour piano, archets et plectras, etc.
 
-\subsection{Adapting to music theory}
-\subsection{Adapting to the context}
-\subsection{Adapting to the experiment}
+\subsection{Intégration de la théorie musicale}
 
+Les instruments de musique intègrent également des éléments de théorie musicale. Par exemple, la partie supérieure d'un clavier (touches noir et blanc) représente la gamme chromatique, tandis que la partie inférieure (touches blanches seulement) représente la gamme diatonique en do majeur. Le dimensionnement et le positionnement de ces touches est un compromis intéressant entre les contraintes mécaniques du système de marteaux et une représentation uniforme des échelles diatonique et chromatique. De plus, la largeur de l'octave est telle qu'elle tient sous une main tendue, ce qui permet de jouer n'importe quel intervalle à l'intérieur d'une octave avec une seule main, reflétant en quelque sorte l'équivalence des octaves. Les claviers ont fait l'objet de nombreuses expérimentations avec des systèmes de hauteur micro-tonale, des intonations et des mises en page de notes, utilisant des grilles hexagonales ou plusieurs couches de touches (figure \ref{fig:visual_representation:MersenneKeyboard}). En tant que système symbolique, une telle théorie musicale peut être facilement encodée dans les ordinateurs. Les logiciels de production musicale contiennent tellement de fonctions et de règles basées sur la théorie musicale qu'elles s'adaptent difficilement à l'interface. Thor Magnusson parle d'" outils épistémiques " pour décrire le DMI, affirmant qu'il est conçu avec " un tel degré de pertinence symbolique qu'il devient un système de connaissance et de pensée dans ses propres termes " (Magnusson, 2009). En tant que tel, ce "système de connaissances" est un paysage imaginaire à explorer, un territoire sonore pour lequel l'interface et la cartographie de l'instrument peuvent métaphoriquement se présenter comme une carte.
+
+%------------ Figure : keyboard et TUI - scale -----------
+\begin{figure}
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/06_visual_representation/Mersenne_clavier.png}
+		\caption{Twenty-seven-steps keyboard invented by Mersenne (1636)}
+		\label{fig:visual_representation:MersenneKeyboard}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/mpTUI_pitchgrid_72dpi.png}
+		\caption{Une grille de hauteur avec une représentation micro-tonale réalisée avec mp.TUI. La luminosité des lignes verticales varie en fonction de la quantité de quantification.}
+		\label{fig:visual_representation:pitch_grid}
+	\end{minipage}
+\end{figure}
+
+\subsection{Adaptations au contexte de performance}
+Si l'on élargit un peu la notion d'instrument de musique pour les considérer simplement comme des outils pour faire de la musique, alors les partitions, les salles de concert, le public et plus généralement, le contexte de la performance participent aussi et influencent la conception des instruments. Les partitions orientées (figure \ref{fig:visual_representation:table_music}) sont un exemple d'adaptation de la partition au contexte de la "musique de table", permettant dans ce cas aux musiciens de lire la partition lorsqu'ils sont assis autour d'une table. De même, les DMI sur écran peuvent adapter leur disposition au nombre d'interprètes en présentant à chacun d'eux un groupe d'éléments d'interface utilisateur orientés vers eux (figure \ref{fig:visual_representation:multi_orientation}).
+
+%------------ Figure : keyboard et TUI - scale -----------
+\begin{figure}
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/06_visual_representation/Dowland-firstBookOfSonges.png}
+		\caption{Twenty-seven-steps keyboard invented by Mersenne (1636)}
+		\label{fig:visual_representation:table_music}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/mpTUI_multi-orientation.png}
+		\caption{Instrument simple adaptée pour 6 joueurs située autour d'une interface commune.}
+		\label{fig:visual_representation:multi_orientation}
+	\end{minipage}
+\end{figure}
+
+\subsection{Adaptations à l'expérimentation}
+En fin de compte, le processus de conception des instruments de musique contient une grande part de travail empirique. Le processus d'ajustement des réglages d'un instrument nécessitera souvent une rétroaction directe pour les réglages fins faits à la main, jusqu'à ce qu'il sonne et se prête au jeu.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -113,6 +152,7 @@ citations :
 The  keyboards  were  always  there...  for  some  reason  or  other  it  looks  good  if  you’re playing a keyboard. People understand then you’re making music.” Robert Moog in Trevor Pinch, “Why You Go to a Piano Store to Buy a Synthesizer: Path Dependence and the Social Construction of Technology,” in Path Dependence and Creation
 
 
+NIME 2019 : ``From Mondrian to Modular Synth: Rendering NIME using Generative Adversarial Networks''
 
 \begin{quote}
 Visual language is one of the oldest forms of knowledge representation and predates conventional written language by almost 25,000 years
