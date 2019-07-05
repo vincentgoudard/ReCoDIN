@@ -8,6 +8,59 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{le cockpit du musicien?}
+Si un DMI présente une une certaine ergonomie physique, avec un agencement stable de certains éléments d'interaction, les écrans permettent l'affichage d'un certain nombre d'éléments dynamiques qui peuvent également être support d'interaction, que cela soit avec le clavier, la souris, une interface de contrôle MIDI ou encore l'écran lui-même quand il est tactile.
+
+Ces éléments virtuels permettent :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item d'étendre considérablement le champ des opérations possibles, en proposant un espace virtuel beaucoup plus grand, grâce à des systèmes d'onglets, de fenêtres multiples, de menus condensant différentes options;
+	\item d'afficher des éléments dynamiques tels que l'état d'avancement d'un séquenceur;
+	\item d'adapter l'ergonomie de l'interface à un contexte particulier, e.g. en duplicant des éléments de GUI pour permettre un jeu à plusieurs sur une même interface;
+	\item la modulation individuelle des notes est fastidieuse;
+	\item sa nomenclature fait référence aux instruments acoustiques.
+\end{itemize}
+
+à la fois d'afficher des contenus dynamiques tels que l'état d'avancement d'un séquenceur
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aspects visuels du design d'instrument}
+
+La conception d'un instrument englobe plusieurs aspects qui affectent son aspect visuel. Je passerai en revue quelques-uns de ces aspects, en prenant des exemples des instruments acoustiques, comme rétrospective sur ce qui nous a conduit aux développements que nous sommes en train de faire avec les \glspl{DMI}.
+
+\subsection{liés à la production du son}
+
+La conception des instruments se préoccupe de la qualité du son. Bien que cela soit particulièrement évident pour les instruments acoustiques dont la forme a des conséquences directes sur le rendement sonore (comme le montre la figure 1, à gauche), les formes particulières issues de la lutherie traditionnelle ont également donné naissance à un certain nombre d'éléments iconiques (par exemple, les trous en F) et de facteurs de forme (par exemple, une taille plus grande donne un ton grave) associés à l'idée d'un instrument. De plus, les DMI peuvent intégrer des transducteurs acoustiques, tels que des microphones piézoélectriques ou des haut-parleurs tactiles, qui influencent la conception acoustique de leurs composants matériels.
+
+%------------ Figure : f-hole et boehm -----------
+\begin{figure}
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/06_visual_representation/f-hole.png}
+		\caption{évolution de la forme des ouïes du violon d'après \cite{nia_evolution_2015}}
+		\label{fig:visual_representation:fhole}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/Julliot_patent.png}
+		\caption{Extrait du brevet de J. Djalma sur \iquote{l'amélioration du clétage des flûtes de Boehm}, 1908.}
+		\label{fig:visual_representation:boehm}
+	\end{minipage}
+\end{figure}
+
+\subsection{Adapting to the body}
+
+L'instrument s'adapte également au corps. Un exemple intéressant est l'évolution du traverso vers la flûte de concert occidentale, à l'aide du système Boehm dans les années 1840 (cf. Figure 1, à droite). Ce système de clavetage découple la topologie gestuelle de la topologie du flux d'air et de la topologie de résonance. En utilisant des manches et des platines, il permettait d'améliorer le son en faisant des trous plus grands et en les plaçant à des endroits adéquats pour la résonance, tandis que les touches pouvaient être placées à des endroits pratiques pour les mains de la flûtiste.
+Le système Boehm peut être qualifié de "modèle intermédiaire" entre le geste et la production sonore, fait d'un système mécanique dans ce cas. La plupart des instruments combinent divers "modèles intermédiaires" pour amplifier, enrichir, déplacer, focaliser, multiplier les gestes des interprètes et générer des mouvements hors du champ des possibilités du corps humain : pédales de grosse caisse, marteaux et amortisseurs pour piano, archets et plectras, etc.
+
+\subsection{Adapting to music theory}
+\subsection{Adapting to the context}
+\subsection{Adapting to the experiment}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{le cockpit du musicien?}
 \label{sec:visual_representation:sec1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,10 +104,7 @@ La possibilité de concevoir des objets audiovisuels en Max en étroite relation
 	\end{minipage}
 \end{figure}
 
-\blindtext
-\blindtext
 
-\blindtext
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{miscellanées (temporaire à supprimer)}
