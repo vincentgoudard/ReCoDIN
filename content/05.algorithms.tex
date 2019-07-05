@@ -80,6 +80,7 @@ Un certain nombre de protocoles dédiés au contrôle temps-réel de la synthès
 \subsubsection{MIDI}
 Le \gls{MIDI} a fêté son trentième anniversaire en restant le protocole le plus répandu pour le contrôle de la synthèse audio. La profusion de nouvelles interfaces et applications l'auront tout juste fait évoluer pour permettre la prise en charge de nouvelles technologies de réseau (rtpMIDI\footnote{ Encapsulation du MIDI dans des messages RTP permettant une communication sur des réseaux ethernet et WiFi.}) ou de nouvelles interfaces (\gls{MPE}, voire sections suivantes)).
 Les limitations du MIDI ont pourtant été identifiées peu de temps après son apparition \cite{mcmillen_zipi_1994}\cite{moore_dysfunctions_1988}\cite{selfridge-field_beyond_1997}, notamment :
+\vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item sa précision et son espace de nommage sont limités;
 	\item l'identifiant d'une note est assimilé à son (éventuelle) hauteur;
@@ -120,7 +121,7 @@ MP se compose de blocs de traitement polyphonique nommés \textit{mp-blocks}, co
 
 \subsubsection{mp-events}
 Un \textit{mp-event} est un objet temporel abstrait qui peut être traité par des \textit{mp-blocks}. Il est défini par un ensemble de \textit{mp-messages} (figure TODO ref figure). Ces messages sont composés de paramètres de contrôle précédés par un identifiant unique propre au mp-event. Le format de message est minimaliste et tous les messages utilisent la même syntaxe : un identifiant unique, un nom de paramètre suivi d'une liste de valeurs. Par exemple :
-
+\vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item{[42 pitch 112] : le mp-event \#42 règle le paramètre de pitch à la valeur 112;}
 	\item{[123 scale 0 2 4 5 7 9 11] : mp-event \#123 définit une gamme diatonique.}
@@ -134,12 +135,14 @@ L'ID est présent dans tous les mp-messages pour éviter toute erreur de routage
 
 \paragraph{Etat}
 Le message d'état est un message réservé qui remplit deux missions :
+\vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item il sert d'horloge asynchrone en déclenchant l'envoi de paramètres au processus;
 	\item il spécifie la manière dont le processus doit interpréter ces paramètres.
 \end{itemize}
 
 Les paramètres peuvent ensuite être interprétés de trois façons :
+\vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item state 1 : début de modulation de paramètre;
 	\item state 2 : mise à jour de paramètre;
@@ -179,6 +182,7 @@ Cependant, comme la libération d'une voix ne suit pas nécessairement un messag
 Un mp-block se compose de deux parties : le routeur et le traitement polyphonique que nous décrivons ici.
 \paragraph{Le routeur}
 Le routeur a pour missions :
+\vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item l'allocation de voix pour un nouvel mp-event;
 	\item le routage des paramètres à cette voix;
@@ -186,6 +190,7 @@ Le routeur a pour missions :
 	\item d'enregistrer la libération de la voix;
 \end{itemize}
 L'ordonnancement des messages envoyés à la voix de traitement assure une synchronisation du calcul afin qu'il ne soit fait qu'une seule fois. Ainsi, la séquence suivante est envoyée par le routeur à la voix cible :
+\vspace{-1em}
 \begin{enumerate}[noitemsep]
 	\item start X state Y : ce message permet à la voix de se préparer à traiter les paramètres à venir selon l'état Y;
 	\item tous les paramètres du master-ID;
@@ -194,6 +199,7 @@ L'ordonnancement des messages envoyés à la voix de traitement assure une synch
 	\item end X state Y : ce dernier message clôt la séquence et sert de signal d'horloge déclenchant le calcul.
 \end{enumerate}
 L'allocation de voix est réalisée à l'arrivée du premier message state 1 pour un mp-event donné. La libération de la voix intervient quand le processus de traitement indique au routeur qu'il a terminé sa tâche. Trois scénarios sont alors possibles :
+\vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item Le processus se termine dès qu'un message state 0 est reçu. Ce sera le cas, par exemple, pour un processus tel qu'une addition ou un filtre médian. Ce scénario est pris en compte de manière automatique en spécifiant un attribut "@automute 1" au routeur;
 	\item Le processus déclenche son extinction à la réception d'un message state 0, typiquement le release d'une enveloppe ADSR;
@@ -217,6 +223,7 @@ Le module  mp-embedded-mapping-demoSynth est constitué d'un routeur et d'un obj
 \subsubsection{Mapping dé-encapsulé}
 
 Dans cet exemple (figure TODO ref), nous avons sorti tout le mapping en dehors du module de synthèse. Examinons quelques éléments de ce patch :
+\vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item à gauche, le module \textit{mp.note2chord} génère un ensemble de mp-events "enfants". Le premier niveau en génère deux et le deuxième niveau en génère 3. Le résultat final est la génération d'un accord de six notes à partir d'un seul mp-event;
 	\item à droite, le mp-event venant de \textit{mp.TUIO.input} est envoyé sur deux chemins où ses valeurs sont mises à l'échelle par le module mp-scale pour définir la fréquence et l'offset d'un LFO respectivement. Le LFO contrôlera ensuite la fréquence de coupure d'un filtre passe-bas du module de synthèse;
