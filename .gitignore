@@ -50,3 +50,4 @@ main.bcf
 
 *.fdb_latexmk
 *.fls
+main.synctex(busy)
