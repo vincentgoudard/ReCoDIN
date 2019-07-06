@@ -8,6 +8,9 @@
 % Programming Interface}, first={Application
 % Programming Interface (API)\glsadd{API_g}}, see=[Glossaire:]{apig}}
 
+
+% TODO : enelver les éventuels point à la fin des description, ils sont automatiquement ajoutés par le formatage.
+
 \newglossaryentry{ANR}
 {
     name={ANR},
@@ -30,6 +33,20 @@
     description={\textit{\glsentrylong{CNMAT}}: Center for New Music and Audio Technologies (CNMAT) : un centre de recherche multidisciplinaire du Departement de Musique de l'Université de Californie, Berkeley, USA},
     long={Center for New Music and Audio Technologies},
     first={\glsentrylong{CNMAT}} (\glsentryname{CNMAT}),
+}
+\newglossaryentry{CLI}
+{
+    name={CLI},
+    description={\textit{Command Line Interface} interface homme-machine dans laquelle la communication entre l'utilisateur et l'ordinateur s'effectue en mode texte},
+    first={\glsentrylong{CLI}} (\glsentryname{CLI}),
+    firstplural={interfaces en ligne de commande(\glsentryname{API}\glspluralsuffix)}
+}
+\newglossaryentry{CPU}
+{
+    name={CPU},
+    description={\textit{Central processing Unit} (micro)processeur central d'un ordinateur},
+    long={Processeur Central},
+    first={\glsentrylong{CPU}} (\glsentryname{CPU}),
 }
 \newglossaryentry{DIY}
 {
@@ -60,6 +77,12 @@
     description={\textit{\glsentrylong{e-bow}}:(littéralement "archet électronique") accessoire pour guitare inventé par Greg Heet en 1969, et commercialisé par \textit{Heet Sound Products}, fonctionnant comme un excitateur électromagnétique portatif permettant d'obtenir des sons entretenus rappelant ceux produits par un archet sur des cordes},
     long={e-bow}
 }
+\newglossaryentry{firewire}
+{
+    name={firewire},
+    description={nom commercial donné par Apple à une interface série multiplexée, aussi connue sous la norme IEEE 1394 et également connue sous le nom d'interface i.LINK, nom commercial utilisé par Sony. Il s'agit d'un bus informatique véhiculant à la fois des données et des signaux de commandes des différents appareils qu'il relie},
+    long={\textit{firewire}}
+}
 \newglossaryentry{GDIF}
 {
     name={GDIF},
@@ -73,6 +96,20 @@
     description={\textit{\glsentrylong{GRM}}: Centre de recherche musicale dans le domaine du son et des musiques électroacoustiques fondé par Pierre Schaeffer en 1958 à Paris, France},
     long={Groupe de recherches musicales},
     first={\glsentrylong{GRM}} (\glsentryname{GRM})
+}
+\newglossaryentry{GPU}
+{
+    name={GPU},
+    description={\textit{Graphics Processing Unit} (micro)processeur principal d'une carte graphique, assurant les fonctions de calcul de l'affichage, optimisé pour le calcul d'image 2D et 3D par une structure de traitement parallèle de blocs de données telles que des matrices},
+    long={processeur graphique},
+    first={\glsentrylong{GPU}} (\glsentryname{GPU}),
+}
+\newglossaryentry{GUI}
+{
+    name={GUI},
+    description={\textit{Graphical User Interface}: dispositif de dialogue homme-machine, dans lequel les objets à manipuler sont dessinés sous forme de pictogrammes à l'écran, de sorte que l'usager peut utiliser en imitant la manipulation physique de ces objets avec un dispositif de pointage, le plus souvent une souris. Ce type d'interface est apparu dans les années 1970 pour remplacer notamment les interfaces \gls{CLI}, moins facile d'utilisation.},
+    long={interface graphique},
+    first={\glsentrylong{GUI}} (\glsentryname{GUI}),
 }
 \newglossaryentry{HCI}
 {
@@ -194,11 +231,26 @@
 {
     name={TCP},
     description={\textit{\glsentrylong{TCP}}: protocole asynchrone de transmission de données sur réseau, utilisant un mode de transmission avec accusé de réception},
-    first={\glsentrylong{TCP}} (\glsentryname{TCP}),
+    long={Transmission Control Protocol},
+    first={\glsentrylong{TCP}} (\glsentryname{TCP})
+}
+\newglossaryentry{TUI}
+{
+    name={TUI},
+    description={\textit{Tangible User Interface}: interface utilisateur dans laquelle l'utilisateur interagit avec l'information numérique en agissant directement sur une représentation visuelle de celle-ci. L'objectif de développement des interfaces utilisateur tangibles est d'encourager la collaboration, l'éducation et le design (conception) en donnant à l'information digitale une forme physique, profitant ainsi des capacités humaines de saisir et de manipuler des objets physiques et des matériaux.},
+    long={interface utilisateur tangible},
+    first={\glsentrylong{TUI}} (\glsentryname{TUI})
+}
+\newglossaryentry{TUIO}
+{
+    name={TUIO},
+    description={contraction de \gls{TUI} et IO (\textit{Input/Output}): protocole de communication conçu pour le développement de la ReacTable, permettant de récupérer les coordonnées d'une multitude de pointeurs, tels que des doigts ou des objets étiquetés.},
+    first={\glsentryname{TUIO}}
 }
 \newglossaryentry{UDP}
 {
     name={UDP},
     description={\textit{\glsentrylong{UDP}}: protocole asynchrone de transmission de données sur réseau, utilisant un mode de transmission sans accusé de réception},
-    first={\glsentrylong{UDP}} (\glsentryname{UDP}),
+    long={User Datagram Protocol},
+    first={\glsentrylong{UDP}} (\glsentryname{UDP})
 }
