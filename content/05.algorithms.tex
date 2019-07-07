@@ -6,7 +6,7 @@
 \cleanchapterquote{One general effect of the digital revolution is that avant-garde aesthetic strategies became embedded in the commands and interface metaphors of computer software. In short, the avant-garde became materialized in a computer.}{Lev Manovitch}{The language of the new media}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{interaction instrumentale : signal continu vs. événement discret}
+\section{interaction instrumentale et mapping}
 
 \textbf{keywords} ergodynamisme, résonance, mapping.\\
 En général, découplage conceptuel (et logiciel) entre la partie DSP et la partie "contrôle". Dans la réalité, ce n'est pas si simple et c'est la raison pour laquelle ce qui est habituellement rangé du côté "mapping" et du côté "synthèse" est rassemblé dans un seul et même chapitre.
@@ -16,24 +16,37 @@ Si la partie "hard" d'un instrument (sa prise en main, son poids, sa forme, la d
 \todo{Présentation de MP, de sagrada et de leur articulation (et par là même de l'articulation entre contrôle et synthèse)}
 
 L’atomisation jusqu’au sample, plutôt que séparation entre DSP et messages de contrôle
-=> faust, gen~ et cie : l’export vers des plateformes multiples.
+=> faust, gen\textasciitilde{ } et cie : l’export vers des plateformes multiples.
 
-%----------------------------------------------------------------------------------------------------------
+\subsection{La notion de mapping}
+
+\iquote{the liaison or correspondence between control parameters (derived from performer actions) and sound synthesis parameters} \cite{hunt_towards_2000}
+
+D'après Hunt et Wanderley \cite{hunt_mapping_2002}, deux directions dans le design de mapping :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{generative mechanisms}, such as neural networks to perform mapping;
+	\item \textbf{explicitly defined mapping strategies}.
+\end{itemize}
+
+Exemples de schéma de mapping de Wanderley.
+
+%-----------------------------------
 \subsection{Sons de synthèses ou échantillons ?}
 
 On m'a souvent posé la question, concernant la synthèse sonore de DMIs que je fabrique, s'ils utilisaient des sons de synthèse ou des sons enregistrés; question à laquelle j'avais toujours du mal à répondre tant ces deux catégories "idéales" ne correspondent pas à la réalité des médias. 
 Peut-être cette distinction provient-elle d'une analogie avec la différence qu'il existe en image vectorielle, composée de primitives géométrique qui la définisse et une image matricielle, définie directement par la matrice de ses pixels.
 \todo{reformuler ça}
 
-%----------------------------------------------------------------------------------------------------------
+%---------------------------------------
 \subsection{Synthèse sonore ou contrôle}
 
-Test : \gls{API}  puis \gls{API} puis \glspl{API} \\
+Test : \gls{API} puis \gls{API} puis \glspl{API} \\
 \glspl{DSP} puis \glspl{DSP}
 
 \textit{\gls{mapping}}\\
 
-\gls{GDIF}  puis \gls{GDIF}
+\gls{GDIF} puis \gls{GDIF}
 
 
 On a tendance à séparer \todo{réf?}, dans la description et le design des DMI, une partie \gls{DSP}, traitant un \textit{signal synchrone}, souvent associée voire confondue à la synthèse audio, et une partie \textit{contrôle}, souvent associé à des données de type \textit{messages asyncrones} (e.g. typiquement, des messages MIDI) venant contrôler le DSP.\\
@@ -107,7 +120,7 @@ Dans cette brève revue, il faut mentionner TUIO \cite{kaltenbrunner_tuio:_2005}
 
 Il se distingue également de la logique des événements MIDI —dont l'utilisation de messages distincts pour les note-on et -off peut produire des notes qui restent "bloquées" si un message note-off est perdu— en proposant une solution simple et pratique pour résoudre l'incertitude d'arrivée des messages envoyés sur UDP et consistant à envoyer systématiquement la liste des événements actifs.
 
-\subsubsection{\gls{MPE}:  MIDI Polyphonic Expression}
+\subsubsection{\gls{MPE}: MIDI Polyphonic Expression}
 La dernière évolution du MIDI a été motivée par la commercialisation récente d'interfaces dites expressives\footnote{ Citons le LinnStrument, Roli Seabord, Haken Audio’s Continuum, Eigenharp Alpha, Madrona Labs’ Soundplane, le KMI K-Board Pro4 ou prochainement Joué.}, c'est à dire permettant la modulation indépendante de chaque note jouée. Bien qu'elles ne soient pas les premières interfaces permettant un tel contrôle, un effort conjoint a été entrepris par plusieurs fabricants pour définir standard nommé Multidimensional Polyphonic Expression (\gls{MPE}). Cette évolution n'est cependant qu'une normalisation de l'usage des canaux MIDI actuels permettant un tel contrôle dans le cadre existant, et non un nouveau protocole qui dépasserait les limitations intrinsèques au MIDI.
 
 %----------------------------------------------------------------------------------------------------------
@@ -148,11 +161,11 @@ Les paramètres peuvent ensuite être interprétés de trois façons :
 	\item state 0 : fin de modulation de paramètre.	
 \end{itemize}
 
-Le modèle musical sous-jacent envisage un mp-event comme la modulation d'un ensemble de paramètres et prend en compte les phénomènes transitoires qui peuvent apparaître au début et/ou à la fin d'une modulation\footnote{  Un exemple évident est l'attaque d'un son, mais en ce qui concerne un processus non-sonore comme le filtrage de données, cela peut concerner l'initialisation du filtre.}. Ces discontinuités peuvent causer des réponses non-linéaires, trop rapides pour être contrôlées manuellement et parfois mieux traitées séparément.
+Le modèle musical sous-jacent envisage un mp-event comme la modulation d'un ensemble de paramètres et prend en compte les phénomènes transitoires qui peuvent apparaître au début et/ou à la fin d'une modulation\footnote{ Un exemple évident est l'attaque d'un son, mais en ce qui concerne un processus non-sonore comme le filtrage de données, cela peut concerner l'initialisation du filtre.}. Ces discontinuités peuvent causer des réponses non-linéaires, trop rapides pour être contrôlées manuellement et parfois mieux traitées séparément.
 
 Au niveau du processus, ces états peuvent correspondre à l'initialisation de variables internes, l'activation d'un lissage (\textit{portamento}) entre deux valeurs consécutives, le déclenchement d'un processus transitoire spécifique (e.g. l'attaque d'un son), etc.. Tout paramètre peut donc être envoyé à un mp-block en spécifiant s'il doit être considéré comme le début, la continuation ou la fin d'une phrase de modulation\footnote{ La confusion entre le \textit{pitch} et l'identifiant de note dans le protocole MIDI rend le résultat de la même opération incertain : alors que certains synthétiseurs re-déclencheront la même voix, d'autres alloueront une nouvelle voix et attendront le même nombre de \textit{note-off} qu'il y a eu de \textit{note-on}.}.
 
-Ce modèle à 3 états semble correspondre par ailleurs aux intentions de la MMA qui a annoncé un message de \textit{note-update} dans le futur protocole MIDI-HD\footnote{  Rapporté par (dernier accès janvier 2017) : \url{http://www.synthtopia.com/content/2013/01/20/midi-manufacturers-testing-new-high-definition-midi-protocol/}}.
+Ce modèle à 3 états semble correspondre par ailleurs aux intentions de la MMA qui a annoncé un message de \textit{note-update} dans le futur protocole MIDI-HD\footnote{ Rapporté par (dernier accès janvier 2017) : \url{http://www.synthtopia.com/content/2013/01/20/midi-manufacturers-testing-new-high-definition-midi-protocol/}}.
 
 Notons toutefois que dans notre cas, le message d'état peut être rattaché à n'importe quel paramètre, ce qui a des conséquences différentes du MIDI en ce qui concerne l'allocation de voix. Alors que le premier message \textit{state 1} reçu pour un ID causera l'allocation d'une voix dans le mp-block, le message \textit{state 0} ne libérera pas nécessairement cette voix, cette décision revenant au processus en cours, comme nous le verrons plus loin.
 
@@ -160,7 +173,7 @@ Notons toutefois que dans notre cas, le message d'état peut être rattaché à 
 La spécification MP ne suit pas d'organisation hiérarchique telle que les canaux MIDI ou les familles d'instruments de ZIPI. A la place, elle laisse la possibilité à tout mp-event de déclarer une \textit{liste d'invités} (\textit{guestlist}) à la volée. Ces invités pourront avoir accès à la voix allouée à un mp-event et contrôler ses paramètres. Cette fonctionnalité nous offre une solution flexible pour le groupement d'événements, permettant un nombre arbitraire de niveaux hiérarchiques, sans pour autant être limité par une relation de subsumption.
 Cette fonctionnalité peut être utilisée dans le cas de mp-blocks génératifs, où l'ID du mp-event peut être ajouté à la guestlist des mp-events « enfants ». Ceci permet une modulation cohérente de plusieurs voix associées à des mp-events générés par une même source. Des exemples concrets de cette situation sont les pistes MIDI ou la hiérarchie orchestre/famille/instrument/note proposée par ZIPI. Ils correspondent à un mapping divergent dans le schéma proposé par Rovan, Wanderley, Dubnov et al. \cite{rovan_instrumental_1997}.
 
-Un  mapping "convergent" est également possible : plusieurs mp-events peuvent être déclarés comme guests d'un mp-event tiers. Par exemple, un objet graphique virtuel (représenté par un mp-event) peut être "touché" par plusieurs mp-events représentant des contacts sur une surface TUI.
+Un mapping "convergent" est également possible : plusieurs mp-events peuvent être déclarés comme guests d'un mp-event tiers. Par exemple, un objet graphique virtuel (représenté par un mp-event) peut être "touché" par plusieurs mp-events représentant des contacts sur une surface TUI.
 
 \paragraph{Master-ID}
 Le paramètre guests ne nous laisse toutefois pas un accès aisé à l'ensemble des voix de polyphonies d'un mp-block. A cette fin, un identifiant spécifique : "0" permet ce contrôle global. Il revient implicitement à considérer que le mp-event \#0 (nommé master-ID) fait systématiquement partie de la guestlist de tout mp-event. Dans le cas où les mp-events, ses guests et le master-ID tentent de modifier les mêmes paramètres, le mp-event hôte conservera la priorité sur les guests et le master-ID.
@@ -218,7 +231,7 @@ Il est possible d'envoyer d'autres paramètres que ceux contrôlant le processus
 Les exemples proposés dans cette section donnent des cas concrets d'utilisation du système MP ; il sont implémentés dans le logiciel Max.
 \subsubsection{Mapping encapsulé}
 Cet exemple (figure TOTO ref) montre l'utilisation la plus simple du système MP. À partir de données TUIO issues d'une interface multitouch, on contrôle les valeurs de vélocité et de cutoff sur l'axe vertical tandis que l'axe horizontal contrôle le pitch.
-Le module  mp-embedded-mapping-demoSynth est constitué d'un routeur et d'un objet poly contenant à la fois le mapping et la synthèse. Ici, l'avantage d'utiliser MP est de bénéficier d'un système d'adressage similaire au \gls{MPE} sans être limité par le typage, la précision et l'espace de nommage des données.
+Le module mp-embedded-mapping-demoSynth est constitué d'un routeur et d'un objet poly contenant à la fois le mapping et la synthèse. Ici, l'avantage d'utiliser MP est de bénéficier d'un système d'adressage similaire au \gls{MPE} sans être limité par le typage, la précision et l'espace de nommage des données.
 
 \subsubsection{Mapping dé-encapsulé}
 
