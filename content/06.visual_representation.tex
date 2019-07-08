@@ -97,27 +97,43 @@ En fin de compte, le processus de conception des instruments de musique contient
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{le cockpit du musicien?}
 \label{sec:visual_representation:sec1}
+\cite{vertegaal_towards_1996}
+Interfaces héritées de l'ingénierie sonore avec leur quantité de commandes indépendantes et ordonnées.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Guides, carte, fretting}
+
+Apprendre indépendamment de la transposition
+\iquote{I love the piano sound but not the difficulty of learning the variations from one key to another.  The LinnStrument with its 4th tuning avoids all of those issues.} Jeff Moen about the linnstrument (\url{http://jeffmoen.com/how_i_got_here.html})
+
+Passage du "savoir le contenu" à "savoir que ce contenu existe" et "savoir le chercher".
+Savoir cartographique.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{représentation de l'objet/processus virtuel}
 La musique recourt parfois à l'utilisation de processus pour le développement musical. 
 \subsection{visualisation pour le public}
-cf. De Laubier: Bach
+cf. De Laubier: Bach déploiement de la forme et cadence rendues visibles.
 
 \subsection{interaction avec la visualisation}
-cf. Goudard: FIBR
+cf. Goudard: FIB\_R
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{intégration de la partition dans l'interface}
+Screen scores, patterns de séquenceur, cues de déclenchement, presets
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{aspects esthétiques / instruments visuels}
+En tant qu'élément scénographique, la représentation visuelle joue un rôle dans l'esthétique et la poésie de l'instrument. Le design de l'interface visuelle de l'instrument ne se résume ainsi pas à un design fonctionnel\\
+
+Exemple dans FIB\_R : toute la performance visuelle re-projetée sur l'écran correspond à ce que les instrumentistes ont face à eux sur leur tablette. A la fois espace d'interaction et création visuelle esthétique/poétique.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{La librairie mp.TUI pour Max}
+
+\subsection{Utilisation de MP pour le contrôle multitouch de GUI}
 
 La bibliothèque mp.TUI\footnote{Sources disponible sur \url{https://github.com/LAM-IJLRA/ModularPolyphony-TUI/}.} est construite sur le protocole MP (cf. \ref{sec:algorithms:MP}). Elle fournit un cadre basé sur les logiques de patch de Max pour créer de nouveaux composants d'interface utilisateur multitouch dans un contexte OpenGL et surmonter certaines limitations de l'interface graphique native de l'environnement de patching de Max. Par exemple, les interfaces graphiques sont généralement orientées sur une disposition horizontale/verticale avec une orientation de lecture du haut vers le bas alors qu'on peut souhaiter avoir plusieurs orientations, comme dans la situation présentée sur la figure \ref{fig:visual_representation:multi_orientation}. La superposition de divers composants peut nécessiter des couleurs et des transparents personnalisés, et l'on peut souhaiter inclure des interfaces visuelles plus complexes que les curseurs et les boutons, par exemple des particules, des vidéos, des modèles 3d, des shaders (cf. figure \ref{fig:visual_representation:phonetogramme}), etc.
 
@@ -128,6 +144,8 @@ Les composants de la bibliothèque sont d'un ensemble d'abstractions de trois ty
 	\item \textbf{des éléments de GUI}, qui sont des instances prêtes à l'emploi de widgets courants ou moins courants tels que curseurs, claviers, graphes, etc.;
 	\item \textbf{des outils}, un ensemble d'abstractions qui permettent de créer facilement de nouveaux composants en proposant des fonctions utiles pour la conception d'interaction (transformation de la visualisation, gestion de la polyphonie sur un élément, interaction tels que pinch-zoom, calcul de dérivées, etc.).
 \end{itemize}
+
+\subsection{Les composants de la librairie mp.TUI}
 
 Les composants utilisent des transformations géométriques hiérarchiques\footnote{à l'aide de l'objet jit.anim.node de Max}, qui permet d'obtenir des coordonnées relatives au monde ou à l'objet indépendamment de la position, de l'échelle et de l'orientation du composant de l'interface utilisateur. Cela permet également de créer des groupes de composants, comme on le ferait dans n'importe quel logiciel de CAO. Suivant la nature empirique de la lutherie numérique revendiquée ci-dessus, un "mode édition" est également disponible pour manipuler rapidement à la main la position, l'échelle et l'orientation des composants de l'interface utilisateur (figure \ref{fig:visual_representation:groups_patch} et \ref{fig:visual_representation:groups}).
 
@@ -157,6 +175,10 @@ La possibilité de concevoir des objets audiovisuels en Max en étroite relation
 	}
 	\caption{Un simple slider dans la librairie mp.TUI}
 \end{figure}
+
+
+\subsection{Outils pour l'interaction multitouch}
+
 
 %-------------------------- Figure : mp.TUI overview ------------------------
 \begin{figure}[!htbp]
@@ -197,6 +219,12 @@ La possibilité de concevoir des objets audiovisuels en Max en étroite relation
 		\label{fig:visual_representation:groups}
 	\end{minipage}
 \end{figure}
+
+\subsection{Instanciations dynamiques}
+
+Utilisation de la librairie MP pour créer dynamiquement des instances éphémères de composant UI.
+Exemple avec mp.TUI.canvas ou l'on vient ``piocher'' un slider créé via un objet mp.TUID.slider.
+Considération pour la gestion de la destruction de ces instances.
 
 
 \subsection{Performances}

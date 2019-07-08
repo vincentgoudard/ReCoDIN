@@ -283,3 +283,26 @@ granularized
 ftm
 
 mc.*
+
+
+\section*{extra material}
+
+la production de hauteur dans les instruments acoustique est systématiquement liée à un phénomène de résonance, c'est à dire un phénomène de bouclage, de feedback. 
+
+La sélection de différentes hauteurs peut ensuite être obtenue 
+- en jouant sur une multitude d'éléments accordés différemment (les cordes d'une harpe, les lames
+d'un marimba, etc.) ;
+- en modifiant les caractéristiques d'un élément résonnant, le plus souvent sa longueur (tube des
+instruments à vent, corde d'un violoncelle) ;
+- en sélectionnant des harmoniques précis d'un son riche (didgeridoo, chant diphonique).
+
+
+Dans les DIMs la production de hauteur est essentiellement possible de deux manières: 
+- par la lecture, éventuellement en boucle, d'une table d'onde
+- par le délai de réinjection d'un filtre résonnant (synthèse soustractive, Karplus, etc.)
+- par un calcul mathématique impliquant des fonctions périodiques (telles que les sinus dans la FFT)
+
+L'acoustique physique présente naturellement des non-linéarité qui contribuent à la richesse du son et l'identité de son timbre. L'électronique analogique permet également d'obtenir —sur l'espace restreint d'un signal mono-dimensionnel par rapport à l'acoustique physique généralement bi- ou tri-dimensionnelle— des systèmes résonants non-linéaire et stables, via l'utilisation de composants électronique passifs.
+
+Les choses sont plus compliquées pour le son numérique, s'il est possible d'obtenir des systèmes résonant stables (en maintenant les pôles dans le cercle unitaire du le plan complexe), la garantie de stabilité devient très complexe à évaluer dès que l'on introduit de la non-linéarité.
+Malgré de récentes avancées dans ce domaine (cf. travaux de Thomas Hélie sur les systèmes Hamiltoniens à ports)
