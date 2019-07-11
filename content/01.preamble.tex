@@ -28,19 +28,57 @@ Ce travail de recherche a commencé après plus de 15 ans passés à concevoir, 
 
 \section{Une thèse interdisciplinaire}
 
+sciences exactes + sciences humaines + pratique musicale
+
+Cette thèse a été l'objet d'un contrat doctoral soutenu par le Collegium Musicæ, dont la mission est de promouvoir l'interdisciplinarité entre différents acteurs institutionnels œuvrant dans le champ de la musique. En l'occurence, cette thèse codirigée par Pierre Couprie, musicologue à l'\gls{IReMus} et Jean-Dominique Polack et Hugues Genevois, chercheurs de l'équipe \gls{LAM}.
 En se situant entre les domaines relativement distincts des sciences et de l'ingénierie d'une part et de la musicologie d'autre part, cette thèse est la tentative d'une étude des instruments de musique numériques prenant ces deux dimensions en compte.
-Usages, formats et conférences relativement différentes et séparées dans ces domaines. 
-Evolution vers une interdisciplinarité nécessaire à la compréhension mutuelle.
+
+Par ailleurs, ce travail de recherche théorique est soutenu par des développements techniques disponibles librement sur Internet et dont j'espère qu'ils pourront profiter à la communauté des musiciens intéressés par ces outils.
+Egalement, cette thèse est soutenue par une pratique musicale utilisant ces développements pour confronter la théorie à la pratique tout autant que pour stimuler la théorie en partant de la pratique. (cf.``practice-based research'')
 
 + ajouter un mot sur le Collegium Musicæ.
 
+ajouer (éventuellement?) un mot sur les usages, formats et conférences relativement différentes et séparées dans ces domaines. 
+Evolution vers une interdisciplinarité nécessaire à la compréhension mutuelle. Cf. présence d'article musicologie dans NIME.
 
-\section{A propos du titre}
 
+\section{Qu'entend on par ...}
 
-\subsection{instrument}
+Il s'agit ici de donner quelques éléments permettant de préciser la signification donnée à un certain nombre de termes dans ce document.
+
+\subsection*{``Représentation...}
+
+Le terme ``représentation'' recouvre un très vaste champ sémantique. Si son étymologie évoque le fait de ``rendre présent'', `de nouveau'', la représentation passe aussi par l'idée de l'image—réelle ou mentale—, distincte de l'originale représenté, que l'on se fait de quelque chose.
+
+La question de la réprésentation (ou plutôt, des représentations) dans les lutheries numériques est envisagée sous différents angles, et présente ainsi des significations variables dans ce document : 
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+\item la représentation organologique des instruments de musique numériques, en particulier les manières variées dont il se présente comme agencements modulaires (ch. \ref{ch:ephemeral}) en contraste avec les représentations plus monolithiques de l'instrument classique;
+\item la représentation de ce que l'on appelle communément ``le geste musical'' du point de vue des \gls{DMI}(ch. \ref{ch:musical_gesture});
+\item la représentation de l'instrument en tant qu'interface, en particulier son aspect visuel dynamique lié à l'usage de l'infographie (ch. \ref{ch:visual_representation});
+\item la représentation proposée par le langage informatique dans lequel s'exprime le design de l'interaction musicale dans les \gls{DMI}, en particulier la manière dont s'articulent les messages venant représenter les données (gestuelles, audio, visuelles, etc.) à l'œuvre dans un DMI, sous forme de signaux continus ou d'événements discrets (ch. \ref{ch:algorithms});
+\item la représentation de la musique électroacoustique jouée avec ces instruments numériques, à travers la notation (ch. \ref{ch:notation}), notamment en ce qu'elle permet de se référer collectivement et ``hors temps de jeu'' à une performance musicale passée ou à venir.
+\end{itemize}
+
+\subsection*{...et...}
+car le contrôle est éminnement lié à la question de la représentation, ce couple formant deux versants complémentaires du phénomènes d'interaction.
+
+\subsection*{...contrôle...}
+
+Ces deux aspects d'action et de perception se retrouvent dans ces termes de contrôle et de représentation. En l'occurence, si dans le cas des instruments acoustiques, on agit sur l'instrument dans le but de contrôler le son qu'il produit, on agit dans le cas des \gls{DMI} sur une représentation du son encodé sous la forme de données numériques.
+
+\subsection*{...dans...}
+Le terme ``dans'' est ici utilisé pour signifier que ces aspects de représentation et de contrôle sont étudiés dans la perspective de leur prise en compte concrète ``dans'' le travail de lutherie numérique.
+
+\subsection*{...le design interactif...}
+Le terme ``design interactif'' est un emprunt à l'anglais \iquote{interactive design}, généralement employé pour désigner le design de l'interaction, c'est à dire la conception et la réalisation des fonctions qui assurent l'aspect interactif de l'objet que l'on conçoit. Cependant, sa (semi-)traduction littérale laisse entendre l'aspect interactif du processus de design lui même, ce qui reflète dans une grande mesure la manière dont le développement d'un \gls{DMI} (et des instruments de musique, de manière plus générale) se passe : dans un jeu permanent entre la fabrication, la programmation et l'écoute, la pratique.
+
+\subsection*{...des...}
+foisonnement et multiplicité des instruments numériques
+
+\subsection*{...instruments...}
 Une définition simple et efficace des instruments de musique serait la suivante : ``tout dispositif dont on se sert pour musiquer''.\\
-Cette définition qui peut apparaître comme un truisme présente l'intérêt de ne pas définir les instruments en fonction de leur nature ou de leur caractéristiques techniques, mais en fonction de leur usage. En particulier, l'utilisation du terme ``jouer'' vient préciser que, si de nombreux objets techniques permettent depuis le XXème siècle de ``produire'' de la musique à partir d'enregistrement, il ne sont envisageable en tant ``d'instruments de musique'' que s'ils sont joués, et non simplement ``utilisés''. Ainsi, la platine vinyle est un instrument de reproduction sonore quand elle est utilisée par le mélomane dans son salon, mais le même objet sera un instrument de musique s'il est joué.\\
+Cette définition qui peut apparaître comme un truisme présente l'intérêt de ne pas définir les instruments en fonction de leur nature ou de leur caractéristiques techniques, mais en fonction de leur usage. En particulier, l'utilisation du terme ``jouer'' vient préciser que, si de nombreux objets techniques permettent depuis le XXème siècle de ``produire'' de la musique à partir d'enregistrement, il ne sont envisageable en tant ``d'instruments de musique'' que s'ils sont joués, et non simplement ``utilisés''. Ainsi, la platine vinyle est un instrument de reproduction sonore quand elle est utilisée par le mélomane dans son salon, mais le même objet sera un instrument de musique s'il est joué.
 
 On pourrait alors poser la question des contours que recouvrent le terme jouer
 Les instruments de musique ne sauraient donc être définis qu'à l'aune de la définition que l'on veut bien donner au terme musique. Une perspective intéressante du terme ``instrument'' cependant est sa double polarité d'objet qui sert à la fois à agir sur le monde (l'instrument-outil) et à le sentir (l'instrument de mesure).
@@ -51,12 +89,19 @@ Etymologie : \textit{struo} = construire, disposer, empiler, tramer.  \textit{in
 
 The digital has engendered a sense of novelty, curiosity, and originality in terms of performance, sound and music. The musical \textit{results} are strongly dependant on the instrument, and they often \textit{are} the instruments. Magnusson, Sonic Writing, p.61
 
-\subsection{musique} 
-\subsubsection{définition intrinsèque}
+Les instruments de musique sont des instrument pour jouer de la musique (ou pour musiquer, dirait Christopher Small \cite{small_musicking:_1998}). Cette apparente évidence est nécessaire pour signaler qu'il ne s'agit pas simplement de faire des notes, ou même du son. La musique implique également notre \textit{mémoire du son}, l'imagination que nous en avons, les aspects visuels qui se rattachent à la notion de musicalité, et d'autres dimensions esthétiques et culturelles. \todo{être plus précis}
+
+La performance musicale a cela de particulier qu'elle ne possède pas de cahier des charges préalables (la partition ne saurait être considérée comme telle!) et que loin de se plier à la nécessité d'exécuter une tâche précise, comme il pourrait être le cas dans le design d'autres interfaces homme-machine, les instruments sont des objets techniques dont les musiciens abusent (plus qu'ils en usent), dont les artefacts peuvent être appréciables et souhaitables, dont la compréhension n'est pas un préalable requis pour leur utilisation, pas davantage que leur fiabilité n'est garante d'une performance musicale intéressante.
+%
+Le design des DMI, ainsi que le design des outils-mêmes du luthier numérique, doivent être informés de ces particularités propres à la création artistique si l'on souhaite qu'ils se prêtent à la création de musiques nouvelles et à l'exploration de territoires sonores inexplorés.
+
+
+\subsection*{...de musique...} 
+\subsubsection*{définition intrinsèque}
 La musique est un concept difficile à définir et comme le dit le musicologue Pierre Billard en intoduction de la définition donnée par l'encyclopédie Universalis \iquote{plus notre connaissance de la musique est étendue et moins nous savons, en fin de compte, ce qu'elle est.}
 
 Définir la musique sur la base de son contenu est probablement la perspective la moins consensuelle qui soit et dont l'intérêt principal est peut-être qu'elle qualifie surtout l'opinion de celui (ou du groupe) qui la définit ainsi : musique de son purs, musique de bruits, sons organisés de Varèse.
-\subsubsection{définition intrinsèque}
+\subsubsection*{définition intrinsèque}
 
 On peut définir la musique du point de vue de celui qui la produit (compositeur, instrumentiste) : « Tout corps sonore utilisé par le compositeur est un instrument de musique. » Berlioz, 1843, Grand Traité d'instrumentation et d'orchestration modernes
 
@@ -64,43 +109,24 @@ Définir la musique du point de vue de celui qui l'écoute : est musique tout ce
 
 La musique est un art de la résonance, qu'elle soit d'ordre acoustique et physique, ou d'ordre plus intellectuelle et spirituelle. La musique fait écho.
 
-
-\subsection{contrôle}
-
-Ces deux aspects d'action et de perception se retrouvent dans ces termes de contrôle et de représentation. En l'occurence, si dans le cas des instruments acoustiques, on agit sur l'instrument dans le but de contrôler le son qu'il produit, on agit dans le cas des \gls{DMI} sur une représentation du son encodé sous la forme de données numériques.
-
-\subsection{représentation}
-
-Le terme ``représentation'' recouvre un très vaste champ sémantique. Si son étymologie évoque le fait de ``rendre présent'', `de nouveau'', la représentation passe aussi par l'idée de l'image, distincte de l'originale, que l'on se fait de quelque chose.
-
-Le terme présente des significations variable dans ce document : 
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-\item la représentation organolgique du concept d'instrument de musique numérique, en particulier les manières variées dont il se présente comme agencements modulaires (ch. \ref{ch:ephemeral}) en contraste avec les représentations plus monolithique de l'instrument classique;
-\item la représentation de l'instrument en tant qu'interface, en particulier son aspect visuel dynamique lié à l'usage de l'infographie (ch. \ref{ch:visual_representation});
-\item la représentation du langage informatique dans lequel s'exprime le design de l'interaction musicale dans les \gls{DMI}, en particulier la manière dont s'expriment et s'articulent les messages sous forme de signaux continus ou d'événements discrets (ch. \ref{ch:algorithms});
-\item la représentation de la musique électroacoustique jouée avec ces instruments numériques, à travers la notation (ch. \ref{ch:notation}), notamment en ce qu'elle permet de se référer collectivement et ``hors temps de jeu'' à une performance musicale passée ou à venir.
-\end{itemize}
-
-\subsection{design interactif}
-Le terme ``design interactif'' est un emprunt à l'anglais \iquote{interactive design}, généralement employé pour désigner le design de l'interaction, c'est à dire la conception et la réalisation des fonctions qui assurent l'aspect interactif de l'objet que l'on conçoit. Cependant, sa (semi-)traduction littérale laisse entendre l'aspect interactif du processus de design lui même, ce qui reflète dans une grande mesure la manière dont le développement d'un \gls{DMI} (et des instruments de musique, de manière plus générale) se passe : dans un jeu permanent entre la fabrication, la programmation et l'écoute, la pratique.
+\subsection*{...numériques ?} 
+Numériques au pluriel car ce sont les instruments qui le sont, pas la musique.
+C'est ici ce qu'amène le numérique qui m'intéresse, c'est à dire ( TODO) l'utilisation d'une forme symbolique automatisée et traitable en grande quantité par les ordinateurs. Ce que cela apporte aux instruments, ce qui unit ou sépare les différents types d'instruments numériques ensemble et par rapport aux lutheries classiques.
 
 
 \section{Problématique}
 
 \Pierre{ Je ne vois pas de problématique présentée. La problématique est la question que tu poses dans ta thèse ainsi que les questions annexes ou sous-questions.}
 
-Les instruments de musique ont la particularité de pouvoir s'envisager sous ces deux aspects et bien qu'il soit possible de ne s'intéresser qu'à l'un des deux, nous croyons fortement qu'une étude des motivations qui poussent à leur design ne saurait faire abstraction des conditions particulières de leur inscription dans le domaine socio-culturel.
-
-\Pierre{ "domaine socio-culturel" : es-tu sûr de vouloir te placer sur un niveau sociologique ? }
-
-Les instruments de musique sont des instrument pour faire de la musique (ou pour musiquer, dirait Christopher Small \cite{small_musicking:_1998}). Cette apparente évidence est nécessaire pour signaler qu'il ne s'agit pas simplement de faire des notes, ou même du son. La musique implique également notre \textit{mémoire du son}, l'imagination que nous en avons, les aspects visuels qui se rattachent à la notion de musicalité, et d'autres dimensions esthétiques et culturelles. \todo{être plus précis}
-
-La performance musicale a cela de particulier qu'elle ne possède pas de cahier des charges préalables (la partition ne saurait être considérée comme telle!) et que loin de se plier à la nécessité d'exécuter une tâche précise, comme il pourrait être le cas dans le design d'autres interfaces homme-machine, les instruments sont des objets techniques dont les musiciens abusent (plus qu'ils en usent), dont les artefacts peuvent être appréciables et souhaitables, dont la compréhension n'est pas un préalable requis pour leur utilisation, pas davantage que leur fiabilité n'est garante d'une performance musicale intéressante.
-%
-Le design des DMI, ainsi que le design des outils-mêmes du luthier numérique, doivent être informés de ces particularités propres à la création artistique si l'on souhaite qu'ils se prêtent à la création de musiques nouvelles et à l'exploration de territoires sonores inexplorés.
-
 Nécessité de prendre en compte la part expérientielle de la performance musicale, notamment dans sa dimension subversive.
+
+
+\subsection{} 
+Ce travail vise à étudier comment s'articulent le design des interfaces de jeu, notamment dans le cas des interfaces graphiques, avec la représentation des processus à l'œuvre dans le mapping.
+
+
+Comment la polyphonie gestuelle (notamment celle des doigts) retrouve sa place dans les interfaces numériques.
+
 
 \section{Enjeux et hypothèses}
 
