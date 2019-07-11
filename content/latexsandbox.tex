@@ -83,7 +83,6 @@ ou bien
 	\caption{A figure with four subfigures}
 \end{figure}
 
-/blindtext
 
 \begin{figure}[!htbp]
 	\centering
@@ -114,3 +113,18 @@ ou bien
 		\caption{second figure}
 	\end{minipage}
 \end{figure}
+
+
+\blindtext
+\blindtext
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+	\captionsetup{format =plain}%
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{gfx/03_gesture/Fels-transparency.pdf}
+  \end{center}
+  \caption{test de warp avec un caption assez long pour voir ce qu'il se passe au retour de ligne}
+\end{wrapfigure}
+
+\blindtext
+\blindtext
