@@ -57,8 +57,12 @@ Si l'on considère la relation geste/instrument/musique comme un réseau multi-d
 
 Notons enfin que les mouvements peuvent survenir également en interaction avec le public\footnote{This reveals that passion-of-the-knob moments and other actions are not interior to the musician’s world, but rather are intensely meaningful communications: they reverberate outward to the audience and then are reflected back to the stage as formative elements of a milieu whose participants seek to actively cultivate and sustain liveness. in \cite{butler_playing_2014}} 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Revue des théories sur le geste instrumental}
+
+\subsection{Le geste instrumental chez Cadoz, Wanderley}
 
 Auteurs : Cadoz, Godoy, Leman, Wanderley, Camurri 
 
@@ -105,7 +109,7 @@ Quatre catégories de gestes ont été distinguées dans \cite{jensenius_musical
 \end{itemize}
 
 
-Notons que dans leur classification, Cadoz et Wanderley [] définissent le geste instrumental comme un geste \iquote{appliqué à un objet matériel et en interaction physique avec lui}, ajoutant que \iquote{les gestes nus (empty-handed gestures) ne sont pas des gestes instrumentaux pour la raison qu'il ne possède qu'une fonction sémiotique}.
+Notons que dans leur classification, Cadoz et Wanderley \cite{todo} définissent le geste instrumental comme un geste \iquote{appliqué à un objet matériel et en interaction physique avec lui}, ajoutant que \iquote{les gestes nus (empty-handed gestures) ne sont pas des gestes instrumentaux pour la raison qu'il ne possède qu'une fonction sémiotique}.
 
 La description des gestes musicaux par Cadoz et Wanderley s'appuie sur une étude du geste sur les instruments acoustiques —les instruments numériques étant encore naissants à cette époque\footnote{hormis les clavier MIDI de synthétiseurs, mais ce cas précis d'instruments adopte un mimétisme avec le fonctionnement de l'orgue}— pour lesquels la relation entre le geste et le son passe nécessairement par le contact physique entre le corps excitateur et le corps résonant. Le ``geste effecteur'' et le son sont unis dans une relation causale et liés par une continuum de transfert energétique. 
 
@@ -123,17 +127,9 @@ Dans le cas des instruments numérique, la relation entre le geste et le son se 
 
 Remarquons à ce propos que si l'on a beaucoup utilisé le terme de ``temps-réel''\footnote{Comme par exemple dans la dénomination de l'équipe de l'IRCAM dévolue au développement d'objets pour le traitement du son en ``temps-réel'', nommée successivement ``Equipe Application Temps-Réel'', puis ``Interactions Musicale Temps-Réel'', afin de finalement abandonner ce terme de temps-réel pour s'appeler ``Sound Music Movement Interaction''.} quand les premiers dispostifs de synthèse permettant un calcul du son à une fréquence plus rapide que celle de son échantillonage, l'ordinateur n'a pas tant introduit le ``temps-réel'' que le ``temps différé''
 
+\iquote{Nous appelons ici gestes de l’instrumentiste les actions physiques effectuées par le musicien en situation de jeu instrumentale.} \cite{wanderley_controle_1999}
 
-
-
-
-Concept de \textit{g-son} proposé par Bricout \cite{bricout_les_2011}, à partir du concept d'i-son (\textit{image-son}) proposé par Bayle, comme ``dépassement de la suggestion de l'image par le son lui ajoutant de manière beaucoup plus évidente la suggestion du geste, de l'élan physique.''
-
-\Pierre{ "image-de-son" : à développer mais attention, c'est assez hard à comprendre !}
-
-Cf. également les UST.
-
-
+Delalande suggests that accompanist gestures should not be analyzed strictly from a motor control point of view — he considers that its function is as related to imagination as to the effective production of the sound. (in \cite{cadoz_gesture_2000})
 
 Mulder \cite{mulder_mulder_2000} propose pour sa part une classification des gestes selon les caractéristiques physiques de l'objet manipulé
 \vspace{-1em}
@@ -145,7 +141,34 @@ Mulder \cite{mulder_mulder_2000} propose pour sa part une classification des ges
 \end{itemize}
 
 
-Delalande suggests that accompanist gestures should not be analyzed strictly from a motor control point of view — he considers that its function is as related to imagination as to the effective production of the sound. (in \cite{cadoz_gesture_2000})
+%------------------------------------------------------------
+\subsection{Le geste métaphorique : Bayle, i-son, g-son, UST}
+Si le geste est un mouvement accompagné d'intention, il faut prendre en compte cette partie intentionelle et essayer de la qualifier, dans la perspective des conséquences qu'elle porte au design des \glspl{DMI}.
+
+\subsubsection{Bayle, de l'i-son au g-son}
+
+Concept de \textit{g-son} proposé par Bricout \cite{bricout_les_2011}, à partir du concept d'i-son (\textit{image-son}) proposé par Bayle, comme ``dépassement de la suggestion de l'image par le son lui ajoutant de manière beaucoup plus évidente la suggestion du geste, de l'élan physique.''
+
+\Pierre{ "image-de-son" : à développer mais attention, c'est assez hard à comprendre !}
+
+
+\subsubsection{Les unités sémiotiques temporelles}
+
+La définition des UST est donnée dans \cite{timsit-berthier_les_2004}:
+\iquote{Les UST sont des segments musicaux, qui possèdent une signification temporelle en raison de leur organisation morphologique et cinétique. Elles peuvent êtres considérés comme des représentations iconiques qui entretiennent des rapports de ressemblance avec des modèles temporels naturels. L’UST ne traduit pas le phénomène musical à son niveau acoustique, mais cherche à y trouver en quelque sorte une intentionnalité.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Les limites d'une analyse des DMIs en terme de HCI}
+\label{sec:gesture:limitesHCI}
+
+%-------------------------------------------
+\subsection{Geste produit, capté, perçu}
+
+%-------------------------------------------
+\subsection{Les musiciens ne sont \emph{pas} des utilisateurs d'instruments}
 
 Le problème de toute catégorisation est qu'elle peine à rendre compte des chevauchements et intersection entre ses catégories. Nommément, les gestes subversifs peuvent être de nature excitatoire tout en jouant sur le \textit{pré-geste} (sound-facilitating) pour lui faire dire le contraire.
 
@@ -156,11 +179,17 @@ D'un certain point de vue, on pourrait dire que cela n'a pas de sens de vouoir j
 
 Il a été souvent déclaré comme critère de design des DMIs qu'ils se devaient d'être très réactifs. Cependant, si cette caractéristique est éminnement présente dans les instruments acoustiques où l'énergie gestuelle est transformée et traduite de manière continue et instantanée dans le son, ce n'est pas le cas des instruments numériques. Mais au lieu de voir cela comme un défaut, considérons cette caractéristique qui en découle : le fait de ne pas constamment devoir agir pour entretenir un son sur un DMI libère l'esprit pour so'ccuper de gérer des formes à plus long terme. Le live-coding (ou plutôt, les musiques séquencées, de manière générale) est quasi uniquement dans ce mode d'interaction ou les actions sur le clavier n'ont de conséquence sur le son qu'un fois les commandes validées et que l'état du séquenceur permet la prise en considération de la modification du pattern.
 
-
 %-------------------------------------------
-\subsection{Le geste comme action}
+\subsection{La scène et le laboratoire}
+lisibilité, répétabilité, fiabilité
+Les instruments ne sont pas des \textit{interfaces utilisateurs}.
 
-\iquote{Nous appelons ici gestes de l’instrumentiste les actions physiques effectuées par le musicien en situation de jeu instrumentale.} \cite{wanderley_controle_1999}
+Passé d'un rapport à la musique enregistrée du disque qui cherche une fidélité par rapport à l'enregistrement à la performance qui cherche à être fidèle au disque. \cite{??} 
+Large développement d'outils pour la gestion "offline" de la musique (déplacement, copié/collé,etc) et de l'ergonomie de ces outils.
+Hybridation des instruments entre du controle instrumental direct ("traditionnel") et des techniques issues de la production musicale offline.
+
+
+accorde à la musique le droit de \iquote{tromper l'oreille} (et la vue).
 
 
 
@@ -178,30 +207,29 @@ Pendant longtemps (TODO : combien?), les instrumentistes utilisant des \glspl{DM
 
 Expliquer en quoi le découplage énergétique, qui a amené à "un sens de la discontinuité avec la tradition, aliénation et manque de compréhension par le public en ce qui concerne ce que l'instrumentiste ou l'instrument fait en réalité". (T Magnusson, in \cite{magnusson_sonic_2019} pp. 61) a amené à une contre-réaction faisant passer la lisibilité de la relation geste/son comme un critère pertinent de design instrumental.
 
-%-------------------------------------------
-\subsection{Le geste perçu}
 
 
 \iquote{Si ça se trouve, cette notion que dans quelques années, ``tout sera possible avec la technologie'' fera que cela sera compliqué de créer un mystère entier et profond, parce que les gens du coup diront ``oui, j'en ai entendu parler, maintenant on peut faire ça''.
  J'ai un ami (...) qui a fait voler un espèce de morceau de tulle au dessus des gens avec des principes mécaniques, et beaucoup de gens disaient ``ah oui, c'était incroyable mais je pense que c'était un drône'', alors que pas du tout. Mais je me suis dit, c'est vrai que d'ici quelques années, un objet qui vole tout seul en silence dans l'espace, n'aura plus le même pouvoir de mystère qu'il y a quelques années.} Yann Frish dans \url{https://www.youtube.com/watch?v=5BqHXbQC36M}
 
 
-\subsection{Le geste interactif}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Geste programmé, geste de résonance : TODO autre titre}
+\label{sec:gesture:program_resonance}
+
+%-------------------------------------------
+\subsection{Le geste programmé}
+
+
+\subsection{Le geste de résonance}
 Ces deux catégories de geste d'action et de gestes perçu sont emprunt de la théorie de l'information proposée par Shannon \cite{shannon_mathematical_1948} qui envisage la communication comme un système émetteur-message-récepteur unidirectionnel. 
 L'inconvenient d'envisager le geste comme simple émetteur d'un signal (qu'il soit travail ou signe) est qu'il empêche de considérer le geste dans la rétroaction dans laquelle il s'inscrit avec l'instrument. En particulier dans la performance musicale, la rétroaction multimodale (par l'ouïe, la vue, le toucher) entre les geste d'un instrumentiste et son instrument, le son et le public est essentielle.
 
-%-------------------------- Figure : Shannon ----------------------------------
-\begin{figure}[!htbp]
-	\includegraphics[width=\textwidth]{gfx/03_gesture/ShannonCommunicationSystem.png}
-	\caption{Diagramme schématique d'un système général de communication, tel que proposé par Shannon.}
-	\label{fig:gesture:shannon}
-\end{figure}
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Les limites d'une analyse des DMIs en terme de HCI}
-\label{sec:gesture:limitesHCI}
+
 
 Plusieurs articles des NIME analyse les DMI comme \gls{HCI} : 
 Louange de la transparence : \cite{fels_mapping_2002}
@@ -232,7 +260,7 @@ gestes incongruent (Musical gestures, Godoy, p.48)
 
 \subsection{Le geste programmé}
 
-Il existe par ailleurs des mouvements produits par la machine, que cela soit sous forme d'enregistrements (samples, courbes d'automation (cf. Figure \ref{fig:gesture:automation}), etc.) ou de processus algorithmiques génératifs. Si toutefois la définition du geste implique que le mouvement soit associé à une intention, on ne peut prêter une intention à la machine qu'à travers la ``programmation'' de ce mouvement machinique par le luthier numérique.
+Il existe par ailleurs des mouvements produits par la machine, que cela soit sous forme d'enregistrements (samples, courbes d'automation, etc. (cf. Figure \ref{fig:gesture:automation})) ou de processus algorithmiques génératifs. Si toutefois la définition du geste implique que le mouvement soit associé à une intention, on ne peut prêter une intention à la machine qu'à travers la ``programmation'' de ce mouvement machinique par le compositeur\/luthier numérique.
 
 %------------------ Figure : geste programmé ---------------------
 \begin{figure}[!htbp]
@@ -253,45 +281,36 @@ Il existe par ailleurs des mouvements produits par la machine, que cela soit sou
 
 Stiegler développe le concept de ``gramme'' comme \iquote{corps organisé de signes et de symboles} et emprunte à Sylvain Auroux \cite{auroux_revolution_1994} le concept de ``grammatisation'' comme \iquote{le processus par lequel le continuum temporel des comportements humains est transformé en un spatial discret, qui permet de les intégrer dans les outils}.
 
-Pour Stiegler, les objets sont des enregistrements\footnote{Stiegler utilise les termes de ``rétentions tertiaires'' pour décrire cette inscription de la mémoire dans les objets, afin de la mettre en perspective des ``rétentions primaires'' que sont la conscience du flux temporel et les ``rétentions secondaires'' que sont les souvenirs qui constitue l'expérience d'un individu.}, dans laquelle la mémoire de ce que nous faisons est déposée sous la forme d'une mémoire technique. Ainsi de l'instrument qui a enregistré le travail du luthier, ainsi de la partition qui a enregistré le travail du compositeur.
-On voit dans ce concept de ``geste programmé'', la rencontre du travail du luthier et du compositeur qui fait écho à la frontière devenue floue entre ces deux aspect de la création musicale.
+Pour Stiegler, les objets sont des enregistrements\footnote{Stiegler utilise les termes de ``rétentions tertiaires'' pour décrire cette inscription de la mémoire dans les objets, afin de la mettre en perspective des ``rétentions primaires'' que sont la conscience du flux temporel et les ``rétentions secondaires'' que sont les souvenirs qui constitue l'expérience d'un individu.}, dans laquelle la mémoire de ce que nous faisons est déposée sous la forme d'une mémoire technique. Ainsi de l'instrument qui incorpore la mémoire du luthier à travers son ergodynamisme, ainsi de la partition qui a enregistré le travail du compositeur\footnote{Jean-Paul Olive parlerait de ``gestes sédimentés'' du compositeur \cite{olive_expression_2013}}.
+
+On voit dans ce concept de ``geste programmé'', la rencontre du travail du luthier et du compositeur qui fait écho à la frontière devenue floue entre ces deux aspect de la création musicale: l'instrument est ``composé''  \cite{schnell_introducing_2002}, la partition est ``instrumentalisée''\footnote{Voir à ce sujet le travail explicite de Enrique Tomás sur les ``partitions tangibles'' \cite{tomas_tangible_2014}}.
 
 \iquote{Quant à la duction de l'instrumentiste, elle vient retemporaliser ce qui ne peut être que spatial : le travail de la composition, ce n'est que spatial, c'est du temps spatialisé, et en cela, essentiellement en défaut d'être. C'est du virtuel pur. C'est du temps discrétisé et détemporalisé dans cette mesure. Discrétisé, il devient manipulable dans sa détemporalisation temporaire telle que la pratique le com­positeur, mais il n'est que virtuel. Il ne peut devenir actuel qu'avec l'interprète, qui doit le re-temporaliser.} B. Stiegler dans \cite{stiegler_circuit_2004}
 
-Cependant, il ne faudrait pas prendre ces ``gestes programmé'' pour de simples enregistrements à repoduire tels quels. La perspective de performance musicale à partir de ces gestes programmé suppose un ``jeu'' avec le geste enregistré, sinon ce ne serait pas un musicien mais justement un utilisateur qui démarre, par exemple, la lecture d'un enresgitrement audio. La performance musicale consiste justement à faire entendre ce qui n'est pas calculable comme le dit Stiegler \cite{stiegler_circuit_2004}:
+Cependant, il ne faudrait pas prendre ces ``gestes programmé'' pour de simples enregistrements à repoduire tels quels. La perspective de performance musicale à partir de ces gestes programmé suppose un ``jeu'' avec le geste enregistré, sinon ce ne serait pas un musicien mais, justement, un utilisateur qui démarre, par exemple, la lecture d'un enregistrement audio. La performance musicale consiste justement à faire entendre ce qui n'est pas calculable comme le dit Stiegler \cite{stiegler_circuit_2004}:
  
  \iquote{Un musicien, c'est quelqu'un qui d'abord entend, c'est-à-dire qu'il est primordialement affecté par l'oreille, une oreille qui a cependant des yeux et des mains, et un corps qui les relie. Il ne se contente pas de calculer. Il peut calculer, il doit même calculer, mais s'il le fait, c'est pour donner à entendre ce qu'il a lui-même entendu comme l'incalculable même.}
 
  Ces gestes programmés ne sont donc pas de simple enregistrements linéaire, mais des modèles complexes et dynamiques qui invitent à des gestes de re-sonnance (voir section suivante) et auxquels la notion de ``modèle intermédiaire dynamique'' (cf. \ref{sec:algorithms:MID}) fait écho.
 
 \textbf{Extra notes}\\
-Enrique Tomás- tangible score \cite{tomas_tangible_2014}\\
-Cette notion de geste programmé fait écho à la notion d'instrument composé par Battier et Schnell. \cite{schnell_introducing_2002}\\
+
 Geste composé (écrit, enregistré, extrait d'analyse, ...) sous forme intensive ou extensive et produit par les machines.\\
 Mouvement des machines (cf. Patrick Saint Denis machines mobiles)\\
-Mouvement dans l'image (cf. Serge de Laubier musique visuelle => festival, \iquote{amplifier l'écoute par l'image})
-
-
+Mouvement dans l'image (cf. Serge de Laubier musique visuelle => festival, \iquote{amplifier l'écoute par l'image})\\
+\iquote{Musique, Incarnation, physique, informatique, voilà quatre fusions de l'alliage dur-doux. (...) Nous nous étonnons devant dces quatre miracles, ces quatre fusions, parce que nous manquons d'une philosophie du mélange} Michel Serres, Musique
 %-------------------------------------------
 \subsection{Le geste de ré-sonance}
 
-Dans le cas de l'instrument acoustique, le système est passif et la re-sonance est pure résonance acoustique dans la mesure où l'instrumentiste agit sur les modes acoustiques qui conditionne la durée de vie (ou d'extinction, selon la persepctive adoptée) du son. \\
+Nous avons vu que le geste musical peut se retrouver incorporé dans le corps de l'instrumrnt sous forme de geste programmé. Ce geste programmé appelle à la mise en mouvement temporelle par le musicien.
+Dans le cas de l'instrument acoustique, l'instrument pris isolément est un système passif dont la résonance est purement acoustique : les modes de vibrations propres des corps résonant de l'instruments répondent aux gestes d'excitation et il est possible de modéliser cette résonance acoustique en mesurant la réponse impulsionelle de l'instrument.
+
+Cependant, l'instrument ne joue pas seul et le couple instrument/instrumentiste n'est plus un système passif puisque l'instrumentiste apporte une énergie et vient moduler le son on modifiant 
+
+dans la mesure où l'instrumentiste agit sur les modes acoustiques qui conditionne la durée de vie (ou d'extinction, selon la persepctive adoptée) du son. \\
 Dans le cas de l'instrument numérique, le système est actif et le geste de re-sonance est un geste de manipulation interactive du geste\/son programmé.
 Il s'agit à la fois de faire sonner ce qui est latent dans le son, mais également de trouver la relation spatio-temporelle d'interaction qui va permettre à l'instrument de sonner comme on le souhaite et de ``jouer'' avec le geste programmé.
 
-%-------------------------------------------
-\subsection{Les musiciens ne sont \emph{pas} des utilisateurs d'instruments}
-%-------------------------------------------
-\subsection{La scène et le laboratoire}
-
-Les instruments ne sont pas des \textit{interfaces utilisateurs}.
-
-Passé d'un rapport à la musique enregistrée du disque qui cherche une fidélité par rapport à l'enregistrement à la performance qui cherche à être fidèle au disque. \cite{??} 
-Large développement d'outils pour la gestion "offline" de la musique (déplacement, copié/collé,etc) et de l'ergonomie de ces outils.
-Hybridation des instruments entre du controle instrumental direct ("traditionnel") et des techniques issues de la production musicale offline.
-
-
-accorde à la musique le droit de \iquote{tromper l'oreille} (et la vue).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -610,3 +629,11 @@ le jeu ``avec'' et le jeu ``contre'' qui consiste à jouer en ``interférence'',
 \iquote{J'appelle  technique un acte traditionnel  efficace  (et  vous  voyez  qu'en  ceci  il  n'est  pas  différent  de  l'acte magique, religieux, symbolique). Il faut qu'il soit traditionnel  et  efficace. Il n'y a pas de technique et pas de transmission, s'il n'y a pas de tradition.} Marcel Mausse, les techniques du corps
 
 Il manque un élément important dans cette considération de la tradition. Pour qu'une tradition soit transmise, il faut que des individus la transmette. Cela peut se faire par la contrainte ou un système doctrinal (e.g. un système religieux), mais en cette absence de coercition physique ou mentale, la tradition sera transmise à la condition que les individus croient en la valeur de cette tradition, c'est à dire qu'il lui accorde de l'importance, c'est à dire qu'il l'aime.
+
+
+%-------------------------- Figure : Shannon ----------------------------------
+\begin{figure}[!htbp]
+	\includegraphics[width=\textwidth]{gfx/03_gesture/ShannonCommunicationSystem.png}
+	\caption{Diagramme schématique d'un système général de communication, tel que proposé par Shannon.}
+	\label{fig:gesture:shannon}
+\end{figure}
