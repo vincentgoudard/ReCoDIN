@@ -21,36 +21,85 @@ Komponieren heißt: nicht sich gehen, sondern sich kommen lassen.\\
 
 %--------------------------------------------------------------
 \section{Interface gestuelle ou interface sensible?}
-Il est souvent question d'\textit{interface gestuelle} lorsqu'on pense aux IHM utilisées pour l'interaction musicale. Pourtant, si le geste occupe une part importante de l'interaction musicale, les interfaces de jeu ne se restreignent pas nécessairement à la captation du geste : elle peuvent être sensible à la température, la lumière \footnote{Voir par exemple les œuvres \textit{Light Thing} de Leaf Cutter John (\url{https://youtu.be/2jIlLHfSEfs}), ou encore \textit{Light Music} de Thierry de Mey}, à la couleur, et réagir de manière générale à différentes conditions environnementales.
+Il est souvent question d'\textit{interface gestuelle} lorsqu'on pense aux IHM utilisées pour l'interaction musicale. Comme nous l'avons vu au chapitre précédant, le geste occupe une part importante de l'interaction musicale mais les interfaces de jeu ne se restreignent pas nécessairement à la captation du geste : elle peuvent être sensible à la température, la lumière \footnote{Voir par exemple les œuvres \textit{Light Thing} de Leaf Cutter John (\url{https://youtu.be/2jIlLHfSEfs}), ou encore \textit{Light Music} de Thierry de Mey}, à la couleur, et réagir de manière générale à différentes conditions environnementales.
 
 Par ailleurs, le geste possède un certain nombre de qualités qui ne sont pas forcément captées par l'interface, alors qu'elle sont effectivement vues et ressenties par le musicien et par le public, et contribuent ainsi à la performance.
 
-Enfin, le "geste" qui vient contrôler les processus sonores dans les DMIs peut être de nature virtuelle, prendre la forme de motifs pré-enregistrés qui peuvent être issus de toute sorte de source de données interprétées en tant que flux temporels, tels que peut -être le cas dans la sonification de données ou l'utilisation de modèles intermédiaire. Cet aspect là se décrit plus en détail dans le chapitre \ref{ch:algorithms}.
+Enfin, le "geste" qui vient contrôler les processus sonores dans les DMIs peut être de nature virtuelle, prendre la forme de motifs pré-enregistrés qui peuvent être issus de toute sorte de source de données interprétées en tant que flux temporels, tels que peut-être le cas dans la sonification de données ou l'utilisation de modèles intermédiaire. Cet aspect là sera décrit plus en détail dans le chapitre \ref{ch:algorithms}.
 
-Il semble ainsi préférable de parler de \textit{l'interface sensible}, plutôt que de \textit{l'interface gestuelle} pour décrire les interfaces d'interaction numériques pour la musique, en tant que leur caractéristique commune est l'usage de capteurs (\textit{sensors}).
+Il semble ainsi préférable de parler d'\textit{interface sensible}, plutôt que d'\textit{interface gestuelle} pour décrire les dispositifs d'interaction numériques pour la musique, leur caractéristique commune étant l'usage de capteurs (\textit{sensors}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Interface pour composer/interpréter/improviser en live}
 Articulation entre grandes formes et immédiateté : la gestion du temps de l’interaction à différentes échelles.
 La performance musicale avec un DMI permet d’articuler une partie compositionnelle (échelle de temps longue) et une partie interprétation/improvisation (immédiateté de l’instant). 
-Quelle design d’interface permet de répondre à l’articulation de ces 2 pôles ? 
+Quelle design d’interface permet de répondre à l’articulation de ces 2 pôles ?
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Qualité ergodynamiques}
 
+
 \subsection{Proprioception}
 La proprioception désigne la perception de la position des différentes parties du corps dans l'espace, recouvrant le sens du mouvement (\textit{kinesthésie}) et le sens de la posture (\textit{statesthésie}).
+
+
 %------------------------------------------------------------
 \subsection{Ergodynamisme}
 cf. définition de Thor Magnusson
-choix des capteurs, latence
 agencement de l’interface, représentation visuelle, repères tactile, frettage
+
+\subsubsection{Choix des capteurs et latence}
+
+
+
+
+\subsubsection{Topologie spatiale}
+
+La topologie des capteurs dans l'espace:
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item topologie corpo-centrée (e.g. exosquelette du MI3)
+	\item topologie objet, qu'on peut prendre, secouer, etc. (e.g. ``The Sponge'' de Martin Marier)
+	\item topologie ``sur table'' objet qu'on ne peut pas déplacer mais autour duquel on peut tourner (e.g. claviers, pad, machine intona rumori de Bernier/Messier ...)
+	\item topologie immersive : installation, vidéo, danse (e.g.) (e.g. ``Machine variation'' de Bernier/Messier)
+\end{itemize}
+
+
+
+\subsubsection{Intégration de l'instrument}
+
+Est-ce que l'instrument est plug'n'play ou va-t-il va falloir connecter ses différents éléments ? Connections : 
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item entre les capteurs et l'interface de digitalisation (arduino, carte son, etc.)
+	\item entre l'interface ADC et l'ordinateur
+	\item entre l'ordinateur et la carte son
+	\item entre la carte son et les haut-parleurs
+\end{itemize}
+
+Les deux premières étapes sont absentes dans le cas du live-coding.
+
+
+\subsubsection{Temps de montage}
+
+La topologie et l'agencement des capteurs sur l'instrument entraine une facilité variable de transportabilité et un temps de démontage/remontage de l'instrument avant qu'il soit possible de le ``démarrer''.
+Par ailleurs, les instruments électrifiés nécessitent souvent d'être branchés (sauf s'ils fonctionnent entièrement sur batterie). Ces branchement prennent du temps, nécessitent d'avoir des alimentations en courant à proximité et d'une puissance suffisante. Pour les outils numériques se rajoute à cela le ``temps de lancement'', c'est à dire généralement le temps de démarrer l'ordinateur, de lancer le(s) logiciel(s) nécessaire(s), d'ouvrir le patch ou le script adéquat, et éventuellement de l'initialiser avec la bonne configuration.
+
+L'idéal d'un instrument numérique est souvent qualifié de ``plug'n play'', mais rare sont les cas d'instrument qui s'affranchissent du ``plug''. Il est important de prendre en compte cette durée dans le design d'un DMI, car tout le temps passé sur la partie de montage technique est souvent pris au détriment du temps de répétition (cf. Nicolas Bernier interview). 
+
+Notons toutefois que les DMIs ne nécessitent généralement pas de temps d'accordage, et ne sont pas généralement pas sujets aux conditions de température et d'hygrométrie qui nécessite le ré-accordage des instruments acoustique et le temps de chauffe, particulièrement important pour les cuivres.
+
+
 
 %-------------------------------------------------------------
 
 \subsection{facteur de forme et topologie: héritage et transpositions}
 Héritage culturel (c.f. interview Dumeaux)
 Héritage des techniques de jeu et du répertoire : cf. interview Adrien MM et Lucas Turchet) => interêt commercial  
+
+
+
 %-------------------------------------------------------------
 \subsection{retour audio-tactile}
 Intégration de HP tactile
