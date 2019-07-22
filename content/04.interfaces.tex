@@ -29,6 +29,9 @@ Enfin, le "geste" qui vient contrôler les processus sonores dans les DMIs peut 
 
 Il semble ainsi préférable de parler d'\textit{interface sensible}, plutôt que d'\textit{interface gestuelle} pour décrire les dispositifs d'interaction numériques pour la musique, leur caractéristique commune étant l'usage de capteurs (\textit{sensors}).
 
+\iquote{One has to think of overall systems to get a musically useful thing-you can’t really develop a sensor without relating it to the programs that you’re going to use it with}, Max Mathews, cité dans  Chadabe 1997, p. 230)
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Interface pour composer/interpréter/improviser en live}
 Articulation entre grandes formes et immédiateté : la gestion du temps de l’interaction à différentes échelles.
@@ -166,6 +169,11 @@ ajout de carte/frettage de la tablette (aux crayon et feutres)
 
 Problème de devoir tout démonter l'instrument pour changer la feuille de frettage. => solution graphique ?
 
+Utilisation du haut-parleur tactile pour un frêttage virtuel de la table (envoi d'une impulsion au passage d'un repère)
+
+
+freetingSignal = sig(P)*cycle(130)*
+
 %-------------------------- Figure : filigramophone ----------------------------------
 \begin{figure}[!htbp]
 	\includegraphics[width=\textwidth]{gfx/filigramophone/filigramophone_overview.jpg}
@@ -176,18 +184,22 @@ Problème de devoir tout démonter l'instrument pour changer la feuille de frett
 %----------------------------------------------------------------------------------------------------------
 \subsection{de la tablette à l'écran graphique multitouch}
 
+Format valise-cabine
+
 \subsubsection{première version}
 Multitouch overlay de PQlabs, technologie IR, renvoie directement les coordonnées en TUIO. Sensible à la poussière,
+%-------------------------- Figure : xypre ----------------------------------
+\begin{figure}[!htbp]
+	\includegraphics[width=\textwidth]{gfx/04_interfaces/xypre-v1_72dpi.jpg}
+	\caption{xypre v1 inauguré durant une performance avec ONE}
+	\label{fig:interface:xyprev1_jeu}
+\end{figure}
 
 Detecte tout ce qui est en contact (pas seulement les doigts mais aussi les objets) => permet de positionner des éléments de manière stable.
 
+TOTO: insérer photo de la 1ère version (version concert)
 
 \subsubsection{deuxième version}
-
- Ecran multitouch capacitif : détecte les doigts uniquement, pas les objets => motivation pour développer des objets positionnables de manière statique dans mp.TUI
-
- Besoin d'un driver payant pour récupérer le TUIO.
-
 
 %-------------------------- Figure : xypre ----------------------------------
 \begin{figure}[!htbp]
@@ -203,9 +215,15 @@ Detecte tout ce qui est en contact (pas seulement les doigts mais aussi les obje
 	\label{fig:interface:xypre}
 \end{figure}
 
-Perte de la pression comme paramètre expressif :
-=> intégration de capteur de pression (FSR) et de distance (IR)
-=> utilisation d'un Bela pour une latence très faible du son
+Ecran multitouch capacitif : détecte les doigts uniquement, pas les objets => motivation pour développer des objets positionnables de manière statique dans mp.TUI
+
+Besoin d'un driver payant pour récupérer le TUIO.
+
+Perte de la pression comme paramètre expressif :\\
+intégration de capteur de pression (FSR) et de distance (IR)\\
+Utilisation d'un Bela pour une latence très faible du son et un instrument autonome (needs raspberry for the display)\\
+Possible extension par l'ordinateur.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -214,26 +232,9 @@ Perte de la pression comme paramètre expressif :
 
 \section*{extra material}
 
-Classification des controleurs gestuels dans \cite{wanderley_controle_1999}:
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-\item \textbf{Instrument-like controllers},where the input device design tends to reproduce each feature of an existing (acoustic) instrument in detail. Many examples can be cited, such as electronic keyboards, guitars, sax- ophones, marimbas, and so on.
-\item \textbf{Instrument-inspired controllers} that although largely inspired by the existing instrument’s design, are conceived for another use [62]. Fig. 3 presents one example of such controller, the SuperPolm violin developed by S. Goto, A. Terrier, and P. Pierrot [63], [64], where the input device is loosely based on a violin shape, but is used as a general device to control granular synthesis. => emprunts variés de formes et de fonctions.
-\item \textbf{Extended instruments} are instruments augmented by the addition of extra sensors [58], [65]. Commercial augmented instruments included the Yamaha Disklavier, used, for instance, in pieces by J.-C. Risset[66], [67]. Other examples include the flute [68]–[70] and the trumpet [71]–[73], but any existing acoustic instrument may be extended to different degrees by the addition of sensors.
-\item \textbf{Alternate controllers} (see, e.g., Fig. 4), whose design does not follow that of an established instrument. Some examples include the Hands [52], graphic drawing tablets [74] (cf. Fig. 5), etc. For instance, an unorthodox gestural controller using the shape of the oral cavity has been proposed in [75].
-\end{itemize}
-
-These controllers can furthermore be classified into dif- ferent categories.
-\begin{itemize}[noitemsep]
-\item \textbf{Touch, expanded range, or immersive} controllers [76], depending on the amount of physical contact required from the performer. Mulder also [76] separates immersive controllers into internal, external, and symbolic controllers according to the possibilities of visualization of the control surface. In a different approach, Piringer [77] classifies immmersive controllers into partial or completely immersive controllers.
-\item \textbf{Individual or collaborativecontrollers}[78],depending on whether the instrument is performed by one or mul- tiple performers at one time.
-\item \textbf{Metaphorical} or \item{ad hoc} controllers, and so on.
-\end{itemize}
-
 
 
 %%%%%%%%%%%%%%
 
-\iquote{Though there is a huge range of performer decision, history, and knowledge that will de- termine their exact method of playing (as established by Jorda [12]), the physical design of the DMI impacts this gesture repertoire by presenting certain affordances.} \cite{bin_hands_2017}
+\iquote{Though there is a huge range of performer decision, history, and knowledge that will determine their exact method of playing (as established by Jorda [12]), the physical design of the DMI impacts this gesture repertoire by presenting certain affordances.} \cite{bin_hands_2017}
 
-\iquote{One has to think of overall systems to get a musically useful thing-you can’t really develop a sensor without relating it to the programs that you’re going to use it with}, Max Mathews, cité dans  Chadabe 1997, p. 230)
