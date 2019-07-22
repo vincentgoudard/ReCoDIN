@@ -61,6 +61,14 @@ La proprioception désigne la perception de la position des différentes parties
 cf. définition de Thor Magnusson
 agencement de l’interface, représentation visuelle, repères tactile, frettage
 
+\subsubsection{Le poids du hardware}
+Le hardware, comme son nom l'indique, est solide, matériel, ``dur''. Sa matérialité, son poids affecte sa transportabilité et constitue un facteur contraignant pour le musicien. Sa dématérialisation dans des alternative logicielles —\textit{soft}, plus douces et légères— permet ou non d'intégrer dans les limites acceptables pour leur transport des fonctionnalités offertes par les équipements \textit{hard}.
+En particulier, la virtualisation des outils traditionnellement utilisés par les ingénieurs du son (table de mixage, équaliseurs, compresseurs et autres effets) permet leur intégration dans l'instrument lui-même.
+
+(Cf. interview Mamou-Mani.)
+Ainsi, Serge de Laubier qui utilisait une table de mixage Yamaha O2R (31kg) motorisée et contrôlée directement depuis son Méta-Instrument, ainsi qu'un échantilloneur EMU (4,5kg) a progressivement conçu des émulation logicielles de ces équipements pour alléger le transport. Par ailleurs, les émulations logicielles permettent de réaliser d'autres fonctions qui n'étaient pas présentes dans les modèles originaux.
+
+
 \subsubsection{Choix des capteurs et latence}
 
 
@@ -102,6 +110,24 @@ L'idéal d'un instrument numérique est souvent qualifié de ``plug'n play'', ma
 
 Notons toutefois que les DMIs ne nécessitent généralement pas de temps d'accordage, et ne sont pas généralement pas sujets aux conditions de température et d'hygrométrie qui nécessite le ré-accordage des instruments acoustique et le temps de chauffe, particulièrement important pour les cuivres.
 
+
+\subsection{se repérer au toucher}
+Un grand défaut des interfaces graphiques ``tactile'' est que leur surface est par défaut dépourvue de repère tactile: aucune aspérité ne vient guider la main pour qu'elle trouve ses repères et son chemin sans l'aide de la vue. Différentes stratégies peuvent venir partiellement compenser cette carence. Leur application dépend à la fois de la technologie de captation du multitouch, ainsi que du type de repère, statique ou dynamique, que l'on souhaite :
+
+\subsubsection{rajout de repères statiques}
+L'ajout de repères statiques ad-hoc et interchageables aide le toucher à sentir une position de repère sur l'écran tacile, ou encore les contours d'une zone d'interaction. Les interfaces ``Joué''\footnote{\url{https://www.play-joue.com}} ou ``Sensel Morph''\footnote{\url{https://sensel.com}} commercialisent différents revêtements (\textit{overlays}) pour leur surface multitouch. Ces surfaces ne sont toutefois pas pourvue d'un écran graphique, ce qui évacue le problème de la transparence de ces repères.\\
+Une solution bon marché consiste à utiliser de la bande adhésive (cf. figure todo). Un intermédiaire plus fin entre l'éphémère bande adhésive et une solution fixe consiste à utiliser une plaque de plexiglass intermédiaire entre le doigt et la surface tactile, qui permet de graver des motifs potentiellement plus complexes. Cette dernière option n'est toutefois pas toujours réalisable sur les écrans à technologie capacitive, qui nécessite parfois que le doigt soit effectivement en contact.\\
+
+
+TODO : mettre une photo de la wacom dans sa version avec les scotch et une photo de la plaque de plexiglass
+
+
+\subsubsection{repère dynamique : fretting audiotactile}
+Le déclenchement d'impulsion dans un haut-parleur tactile peut aider à sentir les paliers dans la progression d'un geste continu (e.g. les différentes ``notes'' d'une échelle de hauteur). Ce type de retour tactile fonctionne uniquement en réponse à un mouvement, le repère n'est pas sensible de manière statique. Son avantage par rapport à un repère physique (e.g. adhésif) .\\
+TODO : mettre une photo de la wacom dans sa version avec les scotch.
+
+\subsubsection{vérouillage des composants GUI}
+Une solution logicielle partielle à ce problème et largement utilisée dans les systèmes de GUI consiste à vérouiller l'interaction avec le composant GUI tant que le doigt est en contact avec la surface tactile, ce qui permet d'utiliser l'intégralité de l'écran tactile pour l'interaction et d'avoir des gestes plus amples. Ce solution nécessite toutefois que le composant ait bien été ciblé au moment du contact initial.
 
 
 %-------------------------------------------------------------
