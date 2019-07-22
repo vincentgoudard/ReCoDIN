@@ -1,0 +1,31 @@
+\chapter{Algorithms}
+\label{appendix:algorithms}
+
+\section*{}
+\subsection*{}
+\subsubsection*{audio fretting}
+
+Algorithme pour déclencher des impulsions audio pour donner l'impression de frettes virtuelles.
+Valeurs normalisé entre 0 et 1.
+
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+\item  S = série ordonnée des valeur de position de frettes\\
+\item  x[n] = position x du stylet, sous forme de signal audio, au temps n. \\
+\item  p[n] = pression du stylet, sous forme de signal audio, au temps n.\\
+\end{itemize}
+
+Détecter la frette courante :
+ $$zone[n] = \sum_{i=1}^{length(S)} x[n]>S(i) $$ 
+
+Détecter un changement de frette :
+ $$absdelta[n] = abs(zone[n] - zone[n-1]) $$ 
+
+Créer une enveloppe à partir de cette impulsion :
+ $$pulse[n] = pulse[n-1] + \frac{(absdelta[n] - pulse[n-1])}{slide} $$ 
+
+Modulante d'impulsion de fréquence fmod :
+$$cycle130[n] = sin(2\pi\frac{fmod}{SR})$$
+
+Signal audio de frettage, avec P[n] la pression :
+$$fretsignal[n] = P[n] * cycle130[n] * pulse[n]$$
