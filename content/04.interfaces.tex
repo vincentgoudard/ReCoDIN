@@ -20,32 +20,59 @@ Komponieren heißt: nicht sich gehen, sondern sich kommen lassen.\\
 
 %--------------------------------------------------------------
 \section{Interface gestuelle ou interface sensible?}
-Il est souvent question ``d'interface gestuelle'' lorsqu'on pense aux \glspl{IHM} utilisées pour l'interaction musicale. Comme nous l'avons vu au chapitre précédant, le geste occupe une part importante de l'interaction musicale mais les interfaces de jeu ne se restreignent pas nécessairement à la captation du geste : elle peuvent être sensible à la température, la lumière\footnote{Voir par exemple les œuvres \textit{Light Thing} de Leaf Cutter John (\url{https://youtu.be/2jIlLHfSEfs}), ou encore \textit{Light Music} de Thierry de Mey}, à la couleur, et réagir de manière générale à différentes conditions environnementales.
-
-Par ailleurs, le geste possède un certain nombre de qualités qui ne sont pas forcément captées par l'interface, alors qu'elle sont effectivement vues et ressenties par le musicien et par le public, et contribuent ainsi à la performance.
-
-Enfin, le "geste" qui vient contrôler les processus sonores dans les DMIs peut être de nature virtuelle, prendre la forme de motifs pré-enregistrés qui peuvent être issus de toute sorte de source de données interprétées en tant que flux temporels, tels que peut-être le cas dans la sonification de données ou l'utilisation de modèles intermédiaire. Cet aspect là sera décrit plus en détail dans le chapitre \ref{ch:algorithms}.
-
-Il semble ainsi préférable de parler d'\textit{interface sensible}, plutôt que d'\textit{interface gestuelle} pour décrire les dispositifs d'interaction numériques pour la musique, leur caractéristique commune étant l'usage de capteurs (\textit{sensors}).
-
-\iquote{One has to think of overall systems to get a musically useful thing-you can’t really develop a sensor without relating it to the programs that you’re going to use it with}, Max Mathews, cité dans  Chadabe 1997, p. 230)
+`
+\noindent Il est souvent question ``d'interface gestuelle'' lorsqu'on pense aux \glspl{IHM} utilisées pour l'interaction musicale. Comme nous l'avons vu au chapitre précédant, le geste occupe une part importante de l'interaction musicale mais les interfaces de jeu ne se restreignent pas nécessairement à la captation du geste : elle peuvent être sensible à la température, la lumière\footnote{Voir par exemple les œuvres \textit{Light Thing} de Leaf Cutter John (\url{https://youtu.be/2jIlLHfSEfs}), ou encore \textit{Light Music} de Thierry de Mey}, à la couleur, et réagir de manière générale à différentes conditions environnementales.
+\indent Par ailleurs, le geste possède un certain nombre de qualités qui ne sont pas forcément captées par l'interface, alors qu'elle sont effectivement vues et ressenties par le musicien et par le public, et contribuent ainsi à la performance, comme nous l'avons présenté au chapitre précédent.
+\indent Enfin, le "geste" qui vient contrôler les processus sonores dans les \glspl{DMI} peut être de nature virtuelle, prendre la forme de motifs pré-enregistrés qui peuvent être issus de toute sorte de source de données interprétées en tant que flux temporels, tels que peut-être le cas dans la sonification de données ou l'utilisation de modèles intermédiaire. Cet aspect là sera décrit plus en détail dans le chapitre \ref{ch:algorithms}.
+\indent Il semble ainsi préférable de parler d'\textit{interface sensible}, plutôt que d'\textit{interface gestuelle} pour décrire les dispositifs d'interaction numériques pour la musique, leur caractéristique commune étant l'usage de capteurs (\textit{sensors}).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Interface pour composer/interpréter/improviser en live}
-Articulation entre grandes formes et immédiateté : la gestion du temps de l’interaction à différentes échelles.
-La performance musicale avec un DMI permet d’articuler une partie compositionnelle (échelle de temps longue) et une partie interprétation/improvisation (immédiateté de l’instant). 
-Quelle design d’interface permet de répondre à l’articulation de ces 2 pôles ?
+
+\noindent Les \glspl{DMI} intègrent généralement des matériaux pré-composés, que le musicien peut lancer et qui pourront tourner ``tout seul'' (paysages sonores, processus génératifs, drônes, etc.) et une part créée plus directement qu'elle soit de la synthèse ou de la transformation de matériau.
+\indent Les différents accès de l'interface de jeu doivent ainsi permettrent d'articuler au mieux ces deux pôles et permettre la gestion du temps à différentes échelles. En particulier, les interfaces multitouch, si elles permettent de gérer aisément de multiples processus lents (qu'on pourra visualiser et ajuster), ne permettent guère une réactivité ``percussive'', telle que le permet un pad \gls{MIDI} ou mieux encore, le microphone.
+\indent La ``granularité'' du contrôle joue également un rôle important dans cette perspective. Entre une note \gls{MIDI} qui ne déclenche qu'un événement ponctuel, un contrôleur continu qui envoie des données chaque fois qu'il est modifié et un capteur échantilloné qui envoie des informations en continu, les possibilités de contrôle en aval seront différentes en terme de réactivité et de finesse de modulation. Il faut donc prévoir les capteurs adéquat pour le type de contrôle que l'on souhaite en aval. 
+
+Comme le faisait remarquer Max Mathews, cité par Joel Chadabe dans \cite{chadabe_electric_1996}:
+\begin{quotation}
+Il faut penser aux systèmes dans leur globalité pour obtenir une quelque chose d'utilisable musicalement - on ne peut pas vraiment développer un capteur sans le mettre en perspective des programmes avec lesquels on va l'utiliser. \footnote{``One has to think of overall systems to get a musically useful thing — you can't really develop a sensor without relating it to the programs that you're going to use it with.'', p. 230}
+\end{quotation}
+
+\noindent Ceci n'est pas sans poser problème dans la perspective de modularité d'un \gls{DMI} que l'on aimerait pouvoir faire évoluer et adapter à différent contextes. Un compromis consiste à disposer d'une palette de capteurs différents et de les agencer selon une ergonomie adaptée aux gestes qu'ils invitent, et d'adapter le logiciel, plus souple, à cette configuration.
 
 \section{La part acoustique (de l'interface des DMIs)}
-Rappelons tout d'abord que les \glspl{DMI}, s'ils se caractérisent par l'usage de la computation numérique, sont aussi nécessairement des instruments électroniques, électriques et acoustiques. 
-Dans le cas le plus trivial, leur acoustique se limite à la membrane du haut-parleur qui transforme \textit{in fine} le signal audio-numérique en son acoustique\footnote{Le choix des haut-parleurs peut jouer un rôle primordial, comme c'est le cas dans la musique acousmatique diffusée sur orchestre de haut-parleur ou ``acousmonium''. Voir en particulier \cite{mooney_sound_2006}}. Notons qu'à la différence des instruments acoustiques, la diffusion et la projection du son est séparée de l'interface gestuelle et, bien souvent, distante du musicien quand elle est ``spatialisée''.
 
-La dimension acoustique peut également exister en entrée de l'instrument, au niveau son interface. L'usage de microphones, notamment de capsule piezo dites ``microphone de contact'', vient redonner une composante acoustique au corps sinon purement structurel de l'agencement instrumental.
+Rappelons tout d'abord que les \glspl{DMI}, s'ils se caractérisent par l'usage de la computation numérique, sont aussi nécessairement des instruments électroniques, électriques et acoustiques. Si le système acoustique est omnidirectionnel, l'électronique numérique introduit une distinction entre ce qui est ``entrée'' et ``sortie''. Cette dimension acoustique, dans le cas de \glspl{DMI} s'intègre donc dans un circuit ouvert ou fermé avec le système de computation via des transducteurs acoustiques, qu'ils soient microphones en entrée ou haut-parleurs, en sortie.
+
+\subsection{la captation : microphones et transducteurs piezo}
+
+La possibilité de pouvoir directement entrer du son acoustique dans un système électroacoustique est une envie très fréquente chez les musiciens électroacoustique.
+
+L'usage de microphones, notamment de transducteur piezo dites ``microphone de contact'', vient redonner une composante acoustique au corps sinon purement structurel de l'agencement instrumental.
 
 Cette part acoustique a une place particulière en tant qu'elle affecte 
 
 
+\subsection{la diffusion : haut-parleur et transducteur tactile}
+
+Dans le cas le plus trivial, leur acoustique se limite à la membrane du haut-parleur qui transforme \textit{in fine} le signal audio-numérique en son acoustique\footnote{Le choix des haut-parleurs peut jouer un rôle primordial, comme c'est le cas dans la musique acousmatique diffusée sur orchestre de haut-parleur ou ``acousmonium''. Voir en particulier \cite{mooney_sound_2006}}. A la différence des instruments acoustiques, la diffusion et la projection du son est souvent séparée de l'interface gestuelle et, bien souvent, distante du musicien quand elle est ``spatialisée''. La spatialisation du son a en effet joué un rôle essentiel dans la motivation de faire des concert en direct, à une époque où l'arrivée du CD et de l'écoute de salon ``haute-définition'', comme le raconte Serge de Laubier en parlant des origines du PSO\footnote{``Processeur Spatial Octophonique'', système de spatialisation inventé par De Laubier en 1986.} et du Méta-Instrument (cf. annexe \ref{appendix:delaubier}) dans les années 1980 : 
+\begin{quotation}
+	Si on entend mieux chez soi, c'est pas la peine de faire des concerts, donc il faut qu'au concert, il y ait une expérience unique qui vaille le coup de se déplacer, d'où réfléchir à un système de spatialisation.
+\end{quotation}
+
+L'essor progressif des transcducteurs tactiles à large bande audio depuis la dernière décennie a cependant entrainé l'intégration des haut-parleurs dans le corps de l'instrument, en particulier dans les instruments augmentés tels que la Smart Guitar de HyVibe\footnote{\url{https://www.hyvibe.audio}}. Ce retour acoustique présente plusieurs intérêts :
+
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item offrir au musicien un retour vibratoire qui lui permet de mieux sentir le résultat sonore et pouvoir plus facilement identifier sa propre production sonore dans le cas de musique d'ensemble;
+	\item faciliter l'identification de la source et accroître la cohésion de localisation entre geste et son et pour le public;
+	\item bénéficier des propriétés acoustiques des matériaux, notamment leur rayonnement, beaucoup plus singulier que celui des haut-parleurs;
+	\item introduire du feedback dans le corps de l'instrument en recaptant cette vibration. Traité avec une latence suffisamment faible, cette possibilité laisse la possibilité de transformer dynamiquement les propriétés acoustiques des matériaux, comme le fait le système HyVibe;
+	\item communiquer des informations à l'instrumentiste via un retour vibratoire (cf. TODO mettre un lien vers le développement du frettage virtuel)
+\end{itemize}
+
+J'ai utilisé 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Qualité ergodynamiques}
@@ -61,7 +88,8 @@ cf. définition de Thor Magnusson
 agencement de l’interface, représentation visuelle, repères tactile, frettage
 
 \subsubsection{Le poids du hardware}
-Le hardware, comme son nom l'indique, est solide, matériel, ``dur''. Sa matérialité, son poids affecte sa transportabilité et constitue un facteur contraignant pour le musicien. Sa dématérialisation dans des alternative logicielles —\textit{soft}, plus douces et légères— permet ou non d'intégrer dans les limites acceptables pour leur transport des fonctionnalités offertes par les équipements \textit{hard}.
+
+\noindent Le hardware, comme son nom l'indique, est solide, matériel, ``dur''. Sa matérialité, son poids affecte sa transportabilité et constitue un facteur contraignant pour le musicien. Sa dématérialisation dans des alternative logicielles —\textit{soft}, plus douces et légères— permet ou non d'intégrer dans les limites acceptables pour leur transport des fonctionnalités offertes par les équipements \textit{hard}.
 En particulier, la virtualisation des outils traditionnellement utilisés par les ingénieurs du son (table de mixage, équaliseurs, compresseurs et autres effets) permet leur intégration dans l'instrument lui-même.
 
 (Cf. interview Mamou-Mani.)
