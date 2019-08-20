@@ -28,7 +28,7 @@ Komponieren heißt: nicht sich gehen, sondern sich kommen lassen.\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Interface pour composer/interpréter/improviser en live}
+\section{Composer, interpréter, improviser en live}
 
 \noindent Les \glspl{DMI} intègrent généralement des matériaux pré-composés, que le musicien peut lancer et qui pourront tourner ``tout seul'' (paysages sonores, processus génératifs, drônes, etc.) et une part créée plus directement, qu'elle soit synthèse ou transformation de matériaux.\\
 \indent Les différents accès de l'interface de jeu doivent ainsi permettrent d'articuler au mieux ces deux pôles et permettre la gestion du temps à différentes échelles. En particulier, les interfaces multitouch, si elles permettent de gérer aisément de multiples processus lents (qu'on pourra visualiser et ajuster à l'écran), ne permettent guère une réactivité ``percussive'', telle que le permet un pad \gls{MIDI} ou mieux encore, le microphone.\\
@@ -53,11 +53,26 @@ Komponieren heißt: nicht sich gehen, sondern sich kommen lassen.\\
 
 \subsubsection{Utilisation des piezo dans les différentes DMIs réalisés}
 \todo{déplacer cette section dans 4.5?}
-\indent \textbf{Sur le Filigramophone}, des cellules piezo sont placées entre une vitre en plexiglass et le chassis contenant la tablette graphique (cf. Figure todo). Cela permet des gestes percussifs, de frottements ou l'utilisation d'objet mis en mouvement (toupies, dés, diques) directement sur la surface, tout en conservant —à travers le plexiglass— l'usage de la tablette qui renvoit les coordonnées horizontale et verticale ainsi que la pression du stylet. Ces transducteurs piezo permettent de capter les différents timbres de la surface plexi, qui présente une certaine élasticité (par rapport au verre) en étant sertie uniquement sur ses bords, et dont la hauteur spectrale est plus grave au centre et plus aigüe sur les bords. Il est également possible de frapper sur le chassis, ce qui permet d'obtenir une autre nuance de timbre (cf. Figure todo).\\
+\indent \textbf{Sur le Filigramophone}, des cellules piezo sont placées entre une vitre en plexiglass et le chassis contenant la tablette graphique (cf. Figure todo). Cela permet des gestes percussifs, de frottements ou l'utilisation d'objet mis en mouvement (toupies, dés, diques) directement sur la surface, tout en conservant —à travers le plexiglass— l'usage de la tablette qui renvoit les coordonnées horizontale et verticale ainsi que la pression du stylet. Ces transducteurs piezo permettent de capter les différents timbres de la surface plexi, qui présente une certaine élasticité (par rapport au verre) en étant sertie uniquement sur ses bords, et dont la hauteur spectrale est plus grave au centre et plus aigüe sur les bords. Il est également possible de frapper sur le chassis, ce qui permet d'obtenir une autre nuance de timbre (cf. Figure \ref{fig:interface:filigramophone-piezo}).\\
+%------------ Figure : filigramophone et xypre piezo -----------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/05_interfaces/filigramophone-piezo_72dpi.jpg}
+		\caption{Transducteur piezo entre la vitre et le chassis sur le Filigramophone}
+		\label{fig:interface:filigramophone-piezo}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/05_interfaces/xypre-piezo_72dpi.jpg}
+		\caption{Transducteur piezo pseudo-symétrique dans le côté du chassis sur le Xypre v2 (plaque extérieur démontée)}
+		\label{fig:interface:xypre_v2-piezo}
+	\end{minipage}
+\end{figure}
+%------------ Figure : filigramophone et xypre piezo -----------
 \indent \textbf{Sur le Xypre v1}, la technologie infra-rouge du cadre de détection du multitouch permet d'insérer une vitre plexiglass pour un fonctionnement similaire à celui développé sur le Filigramophone. L'inconvienient qui en résulte est la transmission des vibrations au cadre de détection multitouch et les bruits de plastique qui en résultent.\\
-\indent \textbf{Sur le Xypre v2}, l'écran multitouch ne permet pas l'ajout d'un plexiglass les cellules piezo ont été placées sur le côté du chassis, pré-contraints entre le chassis et une plaque de bois plus fine servant de surface de percussion, permettant là-encore de récupérer différentes nuances de hauteur spectrale, utilisée pour la synthèse en aval (cf. Figure todo). La pré-contrainte du piezo est en partie dûe à l'orientation verticale du piezo (qui chueterait, autrement) mais permet également d'utiliser une technique de pseudo-symétrisation du signal du piezo (cf. Figure \ref{fig:interface:balancedPiezo} et todo photo), qui s'avère très utile quand les transducteurs piezo sont utilisés à proximité d'un écran, source de perturbations électromagnétiques. Romain Michon a étudié les différentes possibilités d'ajouter la possibilité de gestes percussifs sur une tablette multitouch dans \cite{michon_nuance_2016}, ainsi que proposé une solution hybride par l'ajout de capteurs \gls{FSR} placés sous l'iPad, modulés en amplitude et récupéré via l'entrée audio d'un iPad. L'intérêt de cette solution est de permettre le calcul de la vélocité des gestes percussifs, en plus de l'aftertouch, mais la combinaison des informations de pression et de coordonnées X/Y, bien que judicieusement contournée par une triangulation des différents \gls{FSR}, reste problématique. Par ailleurs, cette solution utilisant des capteurs de pression, sous la surface rigide de l'iPad ne permet pas d'exploiter la variation de hauteur spectrale en fonction du lieu de frappe, la surface de l'iPad étant trop rigide et les \gls{FSR} inadaptés à cette gamme de fréquences. C'est cette dernière raison qui a motivé la conception du Xypre v2 avec une séparation entre la surface percussive des piezo et la surface de contrôle sur l'écran multitouch.
-
-
+\indent \textbf{Sur le Xypre v2}, l'écran multitouch ne permet pas l'ajout d'un plexiglass les cellules piezo ont été placées sur le côté du chassis, pré-contraints entre le chassis et une plaque de bois plus fine servant de surface de percussion, permettant là-encore de récupérer différentes nuances de hauteur spectrale, utilisée pour la synthèse en aval (cf. figure \ref{fig:interface:xypre_v2-piezo}). La pré-contrainte du piezo est en partie dûe à l'orientation verticale du piezo (qui chuterait, autrement) mais permet également d'utiliser une technique de pseudo-symétrisation du signal du piezo (cf. schéma fonctionnel figure \ref{fig:interface:balancedPiezo} et aperçu figure \ref{fig:interface:xypre_v2-piezo}), qui s'avère très utile quand les transducteurs piezo sont utilisés à proximité d'un écran, source de perturbations électromagnétiques. Romain Michon a étudié les différentes possibilités d'ajouter la possibilité de gestes percussifs sur une tablette multitouch dans \cite{michon_nuance_2016}, ainsi que proposé une solution hybride par l'ajout de capteurs \gls{FSR} placés sous un iPad, modulés en amplitude et récupéré via l'entrée audio d'un iPad. L'intérêt de cette solution est de permettre le calcul de la vélocité des gestes percussifs, en plus de l'aftertouch, mais la combinaison des informations de pression et de coordonnées X/Y, bien que judicieusement contournée par une triangulation des différents \gls{FSR}, reste problématique. Par ailleurs, cette solution utilisant des capteurs de pression, sous la surface rigide de l'iPad ne permet pas d'exploiter la variation de hauteur spectrale en fonction du lieu de frappe, la surface de l'iPad étant trop rigide et les \gls{FSR} inadaptés à cette gamme de fréquences. C'est cette dernière raison qui a motivé la conception du Xypre v2 avec une séparation entre la surface percussive des piezo et la surface de contrôle sur l'écran multitouch.
 
 %-------------------------- Figure : balanced piezo ----------------------------------
 \begin{figure}[!htbp]
@@ -65,13 +80,12 @@ Komponieren heißt: nicht sich gehen, sondern sich kommen lassen.\\
 	\caption{Montage pseudo-symétrique de transducteurs piezo-électriques}
 	\label{fig:interface:balancedPiezo}
 \end{figure}
-
+%-------------------------- Figure : balanced piezo ----------------------------------
 
 \subsection{la diffusion : haut-parleur et transducteur tactile}
 
-Dans le cas le plus trivial, l'acoustique des \glspl{DMI} se limite à la membrane du haut-parleur qui transforme \textit{in fine} le signal audio-numérique en son acoustique\footnote{Le choix des haut-parleurs peut jouer un rôle primordial, comme c'est le cas dans la musique acousmatique diffusée sur orchestre de haut-parleur ou ``acousmonium''. Voir en particulier \cite{mooney_sound_2006}}. A la différence des instruments acoustiques, la diffusion et la projection du son est souvent séparée de l'interface gestuelle et, bien souvent, distante du musicien quand elle est ``spatialisée''. La spatialisation du son a en effet joué un rôle essentiel dans la motivation de faire des concert en direct, à une époque où l'arrivée du \gls{CD} et de l'écoute de salon ``haute-définition'', comme le raconte Serge de Laubier en parlant des origines du PSO\footnote{``Processeur Spatial Octophonique'', système de spatialisation inventé par De Laubier en 1986.} et du Méta-Instrument (cf. annexe \ref{appendix:delaubier}) dans les années 1980 : \iquote{Si on entend mieux chez soi, c'est pas la peine de faire des concerts, donc il faut qu'au concert, il y ait une expérience unique qui vaille le coup de se déplacer, d'où réfléchir à un système de spatialisation.}
-
-L'essor progressif des transducteurs tactiles à large bande audio depuis la dernière décennie a cependant entrainé l'intégration des haut-parleurs dans le corps de l'instrument, en particulier dans les instruments augmentés tels que la Smart Guitar de HyVibe\footnote{\url{https://www.hyvibe.audio}}. Ce retour acoustique présente plusieurs intérêts :
+\noindent Dans le cas le plus trivial, l'acoustique des \glspl{DMI} se limite à la membrane du haut-parleur qui transforme \textit{in fine} le signal audio-numérique en son acoustique\footnote{Le choix des haut-parleurs peut jouer un rôle primordial, comme c'est le cas dans la musique acousmatique diffusée sur orchestre de haut-parleur ou ``acousmonium''. Voir en particulier \cite{mooney_sound_2006}}. A la différence des instruments acoustiques, la diffusion et la projection du son est souvent séparée de l'interface gestuelle et, bien souvent, distante du musicien quand elle est ``spatialisée''. La spatialisation du son a en effet joué un rôle essentiel dans la motivation de faire des concert en direct, à une époque où l'arrivée du \gls{CD} et de l'écoute de salon ``haute-définition'', comme le raconte Serge de Laubier en parlant des origines du PSO\footnote{``Processeur Spatial Octophonique'', système de spatialisation inventé par De Laubier en 1986.} et du Méta-Instrument (cf. annexe \ref{appendix:delaubier}) dans les années 1980 : \iquote{Si on entend mieux chez soi, c'est pas la peine de faire des concerts, donc il faut qu'au concert, il y ait une expérience unique qui vaille le coup de se déplacer, d'où réfléchir à un système de spatialisation.}\\
+\indent L'essor progressif des transducteurs tactiles à large bande audio depuis la dernière décennie a cependant entrainé l'intégration des haut-parleurs dans le corps de l'instrument, en particulier dans les instruments augmentés tels que la Smart Guitar de HyVibe\footnote{\url{https://www.hyvibe.audio}}. Ce retour acoustique présente plusieurs intérêts :
 
 \vspace{-1em}
 \begin{itemize}[noitemsep]
@@ -82,6 +96,7 @@ L'essor progressif des transducteurs tactiles à large bande audio depuis la der
 	\item \textbf{communiquer des informations} à l'instrumentiste via un retour vibratoire (cf. TODO mettre un lien vers le développement du frettage virtuel)
 \end{itemize}
 
+Sur le Filigramophone, un haut-parleur tactile a été fixé sur la vitre de plexiglass et utilisé à la fois pour le retour vibratoire et la communication d'information, en particulier par frettage virtuel de la surface (cf. section TODO:ref). Le retour vibratoire de l'instrument se distingue toutefois de l'envoi pur et simple du signal audio, la perception tactile ne lui étant pas directement liée. Au lieu de cela, un signal sinusoidal à 70Hz, correspondant à une fréquence de résonnance de la vitre de plexiglass, modulé par l'enveloppe du son final, ainsi que par sa dérivée spectrale, afin de mieux sentir dans les doigts les transitions et les ruptures du son (cf. figure TODO : schéma de principe du patch / développement dans une autre partie ?).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Qualité ergodynamiques}
@@ -163,35 +178,37 @@ Le déclenchement d'impulsion dans un haut-parleur tactile peut aider à sentir 
 TODO : mettre une photo de la wacom dans sa version avec les scotch.
 
 \subsubsection{vérouillage des composants GUI}
-Une solution logicielle partielle à ce problème et largement utilisée dans les systèmes de GUI consiste à vérouiller l'interaction avec le composant GUI tant que le doigt est en contact avec la surface tactile, ce qui permet d'utiliser l'intégralité de l'écran tactile pour l'interaction et d'avoir des gestes plus amples. Ce solution nécessite toutefois que le composant ait bien été ciblé au moment du contact initial.
+Une solution logicielle partielle à ce problème et largement utilisée dans les systèmes de \gls{GUI} consiste à vérouiller l'interaction avec le composant GUI tant que le doigt est en contact avec la surface tactile, ce qui permet d'utiliser l'intégralité de l'écran tactile pour l'interaction et d'avoir des gestes plus amples. Ce solution nécessite toutefois que le composant ait bien été ciblé au moment du contact initial.
 
 
 %-------------------------------------------------------------
 
-\subsection{facteur de forme et topologie: héritage et transpositions}
+\subsection{facteurs de formes: héritages et transpositions}
 
 \subsubsection{héritage instrumental}
 
-\noindent Les \glspl{DMI} en partie libérés\footnote{cf. § \ref{sec:interfaces:part_acoustique}} des contraintes de facteur de forme liées à l'acoustique, présentent un agencement et une topologie liés à des questions d'ergonomie d'une part mais aussi d'héritages, instrumentaux ou non. L'héritage le plus évident est celui des techniques de jeu et du répertoire, qui prend une importance considérable dans le design des \glspl{DMI} inspirés d'instruments pré-existants, en particulier les instruments dits augmentés (cf. Annexes \ref{appendix:mamou-mani} et \ref{appendix:turchet}).\\
+\noindent Les \glspl{DMI}, en partie libérés\footnote{cf. § \ref{sec:interfaces:part_acoustique}} des contraintes de facteur de forme liées à l'acoustique, présentent un agencement et une topologie liés à des questions d'ergonomie d'une part mais aussi d'héritages, instrumentaux ou non. L'héritage le plus évident est celui des techniques de jeu et du répertoire, qui prend une importance considérable dans le design des \glspl{DMI} inspirés d'instruments pré-existants, en particulier les instruments dits augmentés (cf. Annexes \ref{appendix:turchet} et \ref{appendix:mamou-mani}). Cet héritage est le plus manifeste dans les instruments destinés au commerce, en permettant un effet dilligence\footnote{notion définie par le médiologue Jacques Perriault, décrivant les protocoles mis en place pour l'adaptation d'une innovation en vue de son acceptation sociale (``Les premiers wagons avaient la forme des diligences.'')} entre instruments classiques et instruments nouveaux.\\
 
-Héritage des techniques de jeu et du répertoire : cf. interview Adrien MM et Lucas Turchet) => interêt commercial  
+TODO : inclure une image de la HyVibe et/ou de l'hyper mandoline de Turchet.\\
+Héritage des techniques de jeu et du répertoire : cf. interview Adrien MM et Lucas Turchet) 
 
 
 \subsubsection{héritage du corps}
-L'ergonomie, pensée en dehors de l'organologie classique, nous amène à considérer directement le corps, et plus particulièrement les mains. Comme l'explique Serge de Laubier (cf. Annexe \ref{appendix:delaubier}) :\\
+\noindent L'ergonomie, pensée en dehors de l'organologie classique, nous amène à considérer directement le corps, et plus particulièrement les mains. Comme l'explique Serge de Laubier (cf. Annexe \ref{appendix:delaubier}) :\\
 \iquote{(...) quand on fabrique un instrument il y a une contrainte, c'est le corps et donc forcément, il faut que les instruments, en tout cas ceux qui fonctionnent bien, soient quand même relativement bien adaptés au corps... relativement parce que, même les instruments acoustiques, les instrumentistes se détruisent pas mal mais quand même, malgré tout, il arrivent à les pratiquer pendant des années, plusieurs heures par jour, et en général ils tiennent... donc la contrainte du corps est importante et la première contrainte c'est celle des mains, avant la contrainte du corps... parce que c'est le plus agile je pense, le plus agile, rapide, réactif}\\
 
 Un certain nombre d'instruments comme ``The Hands'' de Michel Waisvisz ou le Méta-Instrument de Serge De Laubier sont ainsi directement conçus à partir de l'ergonomie de la main, de la mécanique du corps.
 
 \subsubsection{héritage de l'objet}
 
-L'instrument est également un objet de scénographie et c'est parfois sa fonction scénographique qui initie et oriente le développement de l'instrument. C'est par exemple le cas dans l'usage d'objets détournés, tels que ``The Sponge'' de Martin Marier \cite{marier_sponge_2010}, ou dans les installations de Patrick Saint-Denis qui \iquote{part de l'objet} et \iquote{poursuit l'idée des objets animés par le son} (cf. Annexe \ref{appendix:saint-denis}).
+\noindent L'instrument est également un objet de scénographie et c'est parfois sa fonction scénographique qui initie et oriente le développement de l'instrument. C'est par exemple le cas dans l'usage d'objets détournés, tels que ``The Sponge'' de Martin Marier \cite{marier_sponge_2010}, ou dans les installations de Patrick Saint-Denis qui \iquote{part de l'objet} et \iquote{poursuit l'idée des objets animés par le son} (cf. Annexe \ref{appendix:saint-denis}).\\
 
+TODO : mettre une image de The Sponge et des accordéons de Patrick Saint Denis
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{héritage poétique}
 
-\noindent Une autre forme d'héritage est celui de l'imaginaire, porteur de souvenirs, d'une poésie, d'évocations qui dépassent le strict cadre fonctionnel de l'instrument. Cet imaginaire polarise le jeu du musicien et l'écoute du public, \iquote{comme s'il y avait un arrière plan imaginaire de tout ce que ça draine d'histoire, de projections} (cf. Annexe \ref{appendix:dumeaux}). On retrouve la même fonction de détournement d'objets et d'association imaginaire dans ``l'Olitherpe'', instrument joué par Patricia Dallio, qui se présente comme un agencement de capteurs intégrés dans des objets de récupération. 
+\noindent Une autre forme d'héritage est celui de l'imaginaire, de la force d'évocation poétique des objets, qui dépasse le strict cadre fonctionnel de la relation instrumentale. Cet imaginaire polarise le jeu du musicien et l'écoute du public, \iquote{comme s'il y avait un arrière plan imaginaire de tout ce que ça draine d'histoire, de projections} (cf. Annexe \ref{appendix:dumeaux}). On retrouve la même fonction de détournement d'objets et d'association imaginaire dans ``l'Olitherpe'', instrument joué par Patricia Dallio, qui se présente comme un agencement de capteurs intégrés dans des objets de récupération. 
 
 \begin{quotation}
 	J'ai l'habitude de récupérer des objets qui me parlent. Je ne sais pas pourquoi il me parlent, mais ils me parlent. J'ai pu associer des mouvements aux formes des objets. (...) Le mouvement m'inspirait l'objet, ou l'objet était en corrélation avec le mouvement. C'est aussi une de mes habitudes de récupérer et de savoir ce que j'ai dans mes affaires et de pouvoir l'intégrer à quelque chose d'utile et de pratique qui n'est pas forcément son but d'origine.
