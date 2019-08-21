@@ -32,10 +32,12 @@ Komponieren heißt: nicht sich gehen, sondern sich kommen lassen.\\
 \label{sec:interfaces:part_acoustique}
 
 \noindent Il faut ici rappeler que les \glspl{DMI}, s'ils se caractérisent par l'usage de la computation numérique, sont aussi nécessairement des instruments électroniques, électriques et acoustiques. Il portent l'héritage et les contraintes propres à ces différents médias. Mais le phénomène acoustique, omnidirectionnel et tri-dimensionnel dans le monde physique, est réduit dans l'électronique numérique à un signal mono-dimensionnel\footnote{Nicolas Collins, dressant une liste de traits distinctifs entre hardware et software dans \cite{collins_semiconducting_2013} notait: ``Traditional acoustic instruments are three-dimensional objects, radiating sound in every direction, filling the volume of architectural space like syrup spreading over a waffle. Electronic circuits are much flatter, essentially two-dimensional. Software is inherently linear, every program a one-dimensional string of code.''} et mono-directionnel, introduisant une distinction entre les ``entrées'' d'une part et les ``sorties'' d'autre part. La dimension acoustique des \glspl{DMI} s'intègre donc dans un circuit ouvert ou fermé avec le système de computation via des transducteurs acoustiques, qu'ils soient microphones, en entrée, ou haut-parleurs, en sortie.\\
+\indent Par ailleurs, la vibration acoustique peut-être ressentie de manière auditive, quand sa transmission est aérienne, ou tactile lorsqu'elle sa transmission est solidienne. Ces deux types de vibrations correspondent généralement à deux types de transducteurs différents
+
 \indent Paradoxalement, si le résultat acoustique d'un instrument est \textit{in fine} ce qui nous intéresse le plus, la part acoustique de l'instrument numérique est aussi sa part maudite. Les phénomènes de résonnance et de rétro-action qui se produisent dans l'instrument acoustique et qui sont également exploités dans les instruments électriques analogiques (e.g. le feedback entre une guitare électrique et un amplificateur), posent un certain nombre de problèmes lorsqu'on introduit un élément de computation numérique dans un tel système\footnote{Une des raisons à ce problème est l'instabilité consubstantielle aux systèmes bouclés discrets et non-linéaires, mais également, de manière plus générale, la transition entre le domaine continu de l'acoustique et le domaine symbolique de l'informatique implique une analyse du son qui nécessite une modélisation des phénomènes perceptifs, tels que la hauteur, le rythme, etc. utilisés pour le contrôle}.\\
 \extra{nombreux synthétiseurs analogiques ont été mis sur le marché, qui articulent cette part d'électronique analogique (pour les filtres et la synthèse) et numérique (pour le  contrôle), afin de pouvoir bénéficier des avantages des deux domaines.}
 
-\subsection{la captation : microphones et transducteurs piezo}
+\subsection{captation : microphones et transducteurs piezo}
 
 \noindent La possibilité de pouvoir introduire du son acoustique dans un système électroacoustique est une pratique très courante chez les musiciens électroacoustiques, et permet des séquences de jeu en prise directe avec des objets concrets dont on pourra transformer le son. En particulier, l'usage de microphones, notamment de transducteur piezo dites ``microphone de contact'', vient redonner une composante acoustique au corps même de l'agencement instrumental. L'intérêt principal réside dans la richesse du signal capté, comme le note Miller Puckette dans \cite{puckette_infuriating_2011}: \iquote{(...) il y a peu chance que le frottement de balais sur un pad de batterie produise quoi que ce soit d'intéressant, alors que faire la même chose sur un instrument qui fonctionne directement avec le signal audio du microphone de contact (comme nous le faisons ici) offre la possibilité de créer une large gamme de sons musicaux utiles\footnote{``(...) sliding a brush over a drum trigger isn’t likely to produce  anything  useful,  whereas  doing  the  same  thingon an instrument that operates directly on the audio signal from the contact microphone (as we do here) has the possibility to create a wide range of useful musical sounds.''}.} L'usage d'algorithmes d'analyse en temps-réel permet, au delà d'effets déjà existants dans le domaine électroacoustique, d'utiliser les caractéristiques du son comme paramètre de contrôle. Une telle approche a été utilisé notamment dans \cite{schwarz_rich_2014} et l'interface Mogees\footnote{\url{https://www.mogees.co.uk}, voir également l'Annexe \ref{appendix:zamborlin}} est principalement basée sur ce principe. 
 
@@ -43,7 +45,7 @@ Komponieren heißt: nicht sich gehen, sondern sich kommen lassen.\\
 
 \subsubsection{Utilisation des piezo dans les différentes DMIs réalisés}
 \todo{déplacer cette section dans 4.5?}
-\indent \textbf{Sur le Filigramophone}, des cellules piezo sont placées entre une vitre en plexiglass et le chassis contenant la tablette graphique (cf. Figure todo). Cela permet des gestes percussifs, de frottements ou l'utilisation d'objet mis en mouvement (toupies, dés, diques) directement sur la surface, tout en conservant —à travers le plexiglass— l'usage de la tablette qui renvoit les coordonnées horizontale et verticale ainsi que la pression du stylet. Ces transducteurs piezo permettent de capter les différents timbres de la surface plexi, qui présente une certaine élasticité (par rapport au verre) en étant sertie uniquement sur ses bords, et dont la hauteur spectrale est plus grave au centre et plus aigüe sur les bords. Il est également possible de frapper sur le chassis, ce qui permet d'obtenir une autre nuance de timbre (cf. Figure \ref{fig:interface:filigramophone-piezo}).\\
+\indent \textbf{Sur le Filigramophone}, des cellules piezo sont placées entre une vitre en plexiglass et le chassis contenant la tablette graphique (cf. Figure todo). Cela permet des gestes percussifs, de frottements ou l'utilisation d'objet mis en mouvement (toupies, dés, diques) directement sur la surface, tout en conservant —à travers le plexiglass— l'usage de la tablette qui renvoit les coordonnées horizontale et verticale ainsi que la pression du stylet. Ces transducteurs piezo permettent de capter les différents timbres de la surface plexi, qui présente une certaine élasticité (par rapport au verre) en étant sertie uniquement sur ses bords, et dont la hauteur spectrale est plus grave au centre et plus aigüe sur les bords. Il est également possible de frapper sur le chassis, ce qui permet d'obtenir une autre nuance de timbre (cf. Figure \ref{fig:interface:filigramophone-piezo1}).\\
 %------------ Figure : filigramophone et xypre piezo -----------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
@@ -57,7 +59,7 @@ Komponieren heißt: nicht sich gehen, sondern sich kommen lassen.\\
 	\begin{minipage}[t]{0.48\textwidth}
 	    \includegraphics[width=\linewidth]{gfx/05_interfaces/xypre-piezo_72dpi.jpg}
 		\caption{Transducteur piezo pseudo-symétrique dans le côté du chassis sur le Xypre v2 (plaque extérieur démontée)}
-		\label{fig:interface:xypre_v2-piezo}
+		\label{fig:interface:xypre_v2-piezo1}
 	\end{minipage}
 \end{figure}
 %------------ Figure : filigramophone et xypre piezo -----------
@@ -72,7 +74,7 @@ Komponieren heißt: nicht sich gehen, sondern sich kommen lassen.\\
 \end{figure}
 %-------------------------- Figure : balanced piezo ----------------------------------
 
-\subsection{la diffusion : haut-parleur et transducteur tactile}
+\subsection{diffusion : haut-parleur et transducteur tactile}
 
 \noindent Dans le cas le plus trivial, l'acoustique des \glspl{DMI} se limite à la membrane du haut-parleur qui transforme \textit{in fine} le signal audio-numérique en son acoustique\footnote{Le choix des haut-parleurs peut jouer un rôle primordial, comme c'est le cas dans la musique acousmatique diffusée sur orchestre de haut-parleur ou ``acousmonium''. Voir en particulier \cite{mooney_sound_2006}}. A la différence des instruments acoustiques, la diffusion et la projection du son est souvent séparée de l'interface gestuelle et, bien souvent, distante du musicien quand elle est ``spatialisée''. La spatialisation du son a en effet joué un rôle essentiel dans la motivation de faire des concert en direct, à une époque où l'arrivée du \gls{CD} et de l'écoute de salon ``haute-définition'', comme le raconte Serge de Laubier en parlant des origines du PSO\footnote{``Processeur Spatial Octophonique'', système de spatialisation inventé par De Laubier en 1986.} et du Méta-Instrument (cf. annexe \ref{appendix:delaubier}) dans les années 1980 : \iquote{Si on entend mieux chez soi, c'est pas la peine de faire des concerts, donc il faut qu'au concert, il y ait une expérience unique qui vaille le coup de se déplacer, d'où réfléchir à un système de spatialisation.}\\
 \indent L'essor progressif des transducteurs tactiles à large bande audio depuis la dernière décennie a cependant entrainé l'intégration des haut-parleurs dans le corps de l'instrument, en particulier dans les instruments augmentés tels que la Smart Guitar de HyVibe\footnote{\url{https://www.hyvibe.audio}}. Ce retour acoustique présente plusieurs intérêts :
@@ -87,34 +89,43 @@ Komponieren heißt: nicht sich gehen, sondern sich kommen lassen.\\
 \end{itemize}
 
 \noindent Sur le Filigramophone, un haut-parleur tactile a été fixé sur la vitre de plexiglass (cf. figure \ref{fig:interface:filigramophone-hp}) et utilisé à la fois pour le retour vibratoire et la communication d'information, en particulier par frettage virtuel de la surface (cf. section TODO:ref). Le retour vibratoire de l'instrument se distingue toutefois de l'envoi pur et simple du signal audio, la perception tactile ne lui étant pas directement liée. Au lieu de cela, un signal sinusoidal à 70Hz, correspondant à une fréquence de résonnance de la vitre de plexiglass, modulé par l'enveloppe du son final, ainsi que par sa dérivée spectrale, afin de mieux sentir dans les doigts les transitions et les ruptures du son (cf. figure TODO : schéma de principe du patch / développement dans une autre partie ?).\\
-\indent Sur le Xypre, la séparation entre la surface percussive et l'interface multitouch de l'écran a conduit à placer le haut-parleur tactile sur une plaque de bois (contreplaqué) à l'avant du chassis ((cf. figure \ref{fig:interface:xypre-hp})). Il se trouve ainsi relié acoustiquement à un transducteur piezo (cf. figure todo), tandis que l'autre transducteur est (relativement) isolé acoustiquement en étant positionné orthogonalement.
+\indent Sur le Xypre, la séparation entre la surface percussive et l'interface multitouch de l'écran a conduit à placer le haut-parleur tactile sur une plaque de bois (contreplaqué) à l'avant du chassis (cf. figure \ref{fig:interface:xypre_v2-hp}). Il se trouve ainsi relié acoustiquement au transducteur piezo \#2 (cf. figure \ref{fig:interface:xypre_v2-hppiezo}), tandis que l'autre transducteur (figure \ref{fig:interface:xypre_v2-piezo1}) est (relativement) isolé acoustiquement en étant positionné orthogonalement.
 
-%------------ Figure : filigramophone et xypre piezo -----------
+%------------ Figure : filigramophone et xypre HP -----------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/05_interfaces/filigramophone_hp_72dpi.jpg}
-		\caption{Haut-parleur tactile sur le Filigramophone}
+		\caption{HP tactile sur le Filigramophone}
 		\label{fig:interface:filigramophone-hp}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
-	    \includegraphics[width=\linewidth]{gfx/dummy.pdf}
-		\caption{Haut-parleur tactile sur le Xypre}
+	    \includegraphics[width=\linewidth]{gfx/05_interfaces/Xypre_HP_144dpi.jpg}
+		\caption{HP tactile sur le Xypre}
 		\label{fig:interface:xypre_v2-hp}
 	\end{minipage}
 \end{figure}
-%------------ Figure : filigramophone et xypre piezo -----------
+%------------ Figure : filigramophone et xypre HP -----------
+
+%-------------------------- Figure : xypre HP et piezo ----------------------------------
+\begin{figure}[!htbp]
+	\includegraphics[width=\textwidth]{gfx/05_interfaces/Xypre_FrontPanel_144dpi.jpg}
+	\caption{Liaison acoustique entre piezo et haut-parleur tactile sur le Xypre}
+	\label{fig:interface:xypre_v2-hppiezo}
+\end{figure}
+%-------------------------- Figure : xypre HP et piezo ----------------------------------
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Qualité ergodynamiques}
 
 
 \subsection{Proprioception}
-\noindent La proprioception désigne la perception de la position des différentes parties du corps dans l'espace, recouvrant le sens du mouvement (\textit{kinesthésie}) et le sens de la posture (\textit{statesthésie}). Dans le cas des \gls{DMI}, cette proprioception edt double : il s'agit à la fois d'intégrer la topologie réelle de l'instrument (disposition des capteurs, espace du mouvement autour de ceux-ci, course sensible et courbes de réponse) mais également la topologie virtuelle des algorithmes manipulés. 
-En ce qui concerne la topologie réelle de l'instrument, un aller-retour s'opère entre des gestes impliqués par le positionnement des capteurs et des gestes trouvés durant la confrontation avec l'instrument.
-Par exemple, le positionnement des capteurs dans Xypre v2 a été revus en fonction de gestes qui venaient naturellement lors du jeu avec le filigramophone. Par exemple, le geste de percussion sur le côté du chassis venait naturellement dans la course du bras pivotant autour de l'articulation de l'épaule, alors qu'aucun capteur n'avait été positionné là. C'est d'ailleurs un geste de percussion qu'on retrouve dans des instruments de percussion comme le Pakhavaj indien ou dans la pratique de la percussion en fanfare (la grosse caisse, frappée de côté).
+\noindent La proprioception désigne la perception de la position des différentes parties du corps dans l'espace, recouvrant le sens du mouvement (\textit{kinesthésie}) et le sens de la posture (\textit{statesthésie}). Dans le cas des \glspl{DMI}, cette proprioception est double : il s'agit à la fois d'intégrer la topologie réelle de l'instrument (disposition des capteurs, espace du mouvement autour de ceux-ci, course sensible et courbes de réponse...) mais également la topologie virtuelle des algorithmes manipulés. 
+En ce qui concerne la topologie réelle de l'instrument, un aller-retour s'opère entre des gestes impliqués par le positionnement des capteurs et des gestes trouvés durant la confrontation avec l'instrument.\\
+\indent Ainsi, le positionnement des capteurs dans Xypre v2 a été revu en fonction de gestes qui venaient naturellement lors du jeu avec le filigramophone. Par exemple, le geste de percussion sur le côté du chassis venait naturellement dans la course du bras pivotant autour de l'articulation de l'épaule, alors qu'aucun capteur n'avait été positionné là. C'est par ailleurs un geste de percussion qu'on retrouve dans des instruments de percussion comme le Mridang indien, et que l'auteur ayant pratiqué le tabla trouvait relativement aisé.
 
 %------------------------------------------------------------
 \subsection{Ergodynamisme}
@@ -135,18 +146,18 @@ Ainsi, Serge de Laubier qui utilisait une table de mixage Yamaha O2R (31kg) moto
 
 
 
-\subsubsection{Topologie spatiale}
+\subsubsection{Portabilité et manipulation de l'interface}
 
-La topologie des capteurs dans l'espace:
+Les instruments peuvent prendre différentes formes, plus ou moins grandes, qui définissent à la fois leur portabilité ainsi que la posture du musicien envers son instrument.
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item topologie corpo-centrée (e.g. exosquelette du MI3, Myo Atau Tanaka)
-	\item topologie objet, qu'on peut prendre, secouer, etc. (e.g. ``The Sponge'' de Martin Marier)
-	\item topologie ``sur table'' objet qu'on ne peut pas déplacer mais autour duquel on peut tourner (e.g. claviers, pad, machine intona rumori de Bernier/Messier ...)
-	\item topologie immersive : installation, vidéo, danse (e.g.) (e.g. ``Machine variation'' de Bernier/Messier)
+	\item interfaces portables, centrée sur le corps (e.g. exosquelette du MI3, Myo Atau Tanaka). L'instrument est \textit{porté} (un peu comme un habit) et les mouvements du corps sont directement, et en permanence captés par l'instrument.
+	\item interfaces objets, topologie objet, qu'on peut prendre, secouer, etc. (e.g. ``The Sponge'' de Martin Marier) L'instrument est \textit{tenu} ou \textit{posé} (un peu comme un ustensile) avec les mains et manipulé ainsi.
+	\item interfaces ``sur table'' objet qu'on ne peut pas déplacer mais autour duquel on peut tourner (e.g. claviers, pad, machine intona rumori de Bernier/Messier ...)
+	\item interfaces immersives : installation, vidéo, danse (e.g.) (e.g. ``Machine variation'' de Bernier/Messier)
 \end{itemize}
 
-
+A noter que ces catégories ne sont pas étanches; par exemple, une guitare peut être portée, à l'aide d'une sangle, ou posée sur le genou et jouée à plat. 
 
 \subsubsection{Intégration de l'instrument}
 
@@ -154,7 +165,7 @@ Est-ce que l'instrument est plug'n'play ou va-t-il va falloir connecter ses diff
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item entre les capteurs et l'interface de digitalisation (arduino, carte son, etc.)
-	\item entre l'interface ADC et l'ordinateur
+	\item entre le convertisseur analogique/numérique et l'ordinateur
 	\item entre l'ordinateur et la carte son
 	\item entre la carte son et les haut-parleurs
 \end{itemize}
@@ -177,11 +188,26 @@ Un grand défaut des interfaces graphiques ``tactile'' est que leur surface est 
 
 \subsubsection{rajout de repères statiques}
 L'ajout de repères statiques ad-hoc et interchageables aide le toucher à sentir une position de repère sur l'écran tacile, ou encore les contours d'une zone d'interaction. Les interfaces ``Joué''\footnote{\url{https://www.play-joue.com}} ou ``Sensel Morph''\footnote{\url{https://sensel.com}} commercialisent différents revêtements (\textit{overlays}) pour leur surface multitouch. Ces surfaces ne sont toutefois pas pourvue d'un écran graphique, ce qui évacue le problème de la transparence de ces repères.\\
-Une solution bon marché consiste à utiliser de la bande adhésive (cf. figure todo). Un intermédiaire plus fin entre l'éphémère bande adhésive et une solution fixe consiste à utiliser une plaque de plexiglass intermédiaire entre le doigt et la surface tactile, qui permet de graver des motifs potentiellement plus complexes. Cette dernière option n'est toutefois pas toujours réalisable sur les écrans à technologie capacitive, qui nécessite parfois que le doigt soit effectivement en contact.\\
+Une solution bon marché consiste à utiliser de la bande adhésive (cf. figure \ref{fig:interface:filigramophone-adhesif}
+). Un intermédiaire plus fin entre l'éphémère bande adhésive et une solution fixe consiste à utiliser une plaque de plexiglass (cf. figure \ref{fig:interface:filigramophone-plexigravure}) intermédiaire entre le doigt et la surface tactile, qui permet de graver des motifs potentiellement plus complexes. Cette dernière option n'est toutefois pas toujours réalisable sur les écrans à technologie capacitive, qui nécessite parfois que le doigt soit directement en contact avec l'écran.\\
 
-
-TODO : mettre une photo de la wacom dans sa version avec les scotch et une photo de la plaque de plexiglass
-
+%------------ Figure : repères statique -----------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/05_interfaces/filigramophone-adhesif_72dpi.jpg}
+		\caption{Bande adhésive permettant de sentir le contour de la zone sensible de la tablette}
+		\label{fig:interface:filigramophone-adhesif}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/05_interfaces/Filigramophone_gravure_72dpi.jpg}
+		\caption{Gravure d'une ligne médiane sur la plaque de plexiglass}
+		\label{fig:interface:filigramophone-plexigravure}
+	\end{minipage}
+\end{figure}
+%------------ Figure : filigramophone et xypre piezo -----------
 
 \subsubsection{repère dynamique : fretting audiotactile}
 Le déclenchement d'impulsion dans un haut-parleur tactile peut aider à sentir les paliers dans la progression d'un geste continu (e.g. les différentes ``notes'' d'une échelle de hauteur). Ce type de retour tactile fonctionne uniquement en réponse à un mouvement, le repère n'est pas sensible de manière statique. Son avantage par rapport à un repère physique (e.g. adhésif) .\\
