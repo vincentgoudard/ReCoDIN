@@ -8,11 +8,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{interaction instrumentale et mapping}
 
-Dans le domaine des lutheries numériques, le terme de ``mapping'' est très couramment utilisé pour décrire la relation entre les données issues des capteurs (en particulier de l'interface gestuelle) et les paramètres de la synthèse sonore. 
-Le terme de mapping est issu des mathématiques dans lequel il se traduit en français par le terme d'``application'', c'est à dire de relation entre deux ensembles pour lequel chaque élément du premier (appelé ensemble de départ) est relié à un unique élément du second.
-Ce terme a glissé dans l'usage du design d'instrument numérique en raison de la relative simplicité des relations dans les premiers développements et est restée utilisée alors que les relations de correspondance sont aujourd'hui bien plus complexe.
+\noindent Dans le domaine des lutheries numériques, le terme de ``mapping'' est très couramment utilisé pour décrire la relation entre les données issues des capteurs (en particulier de l'interface gestuelle) et les paramètres de la synthèse sonore. 
+Le terme de mapping est issu des mathématiques dans lequel il se traduit en français par le terme d'``application'', c'est à dire de relation entre deux ensembles pour lequel chaque élément du premier (appelé ensemble de départ) est relié à un unique élément du second. Andrew Hunt le définit donc ainsi dans \cite{hunt_mapping_2002}: \iquote{(...) we define mapping as the act of taking real-time performance data from an input device and using it to control the parameters of a synthesis engine.}
 
- \iquote{In this paper we define mapping as the act of taking real-time performance data from an input device and using it to control the parameters of a synthesis engine.} \cite{hunt_mapping_2002}
+\indent Ce terme a glissé dans l'usage du design d'instrument numérique en raison de la relative simplicité des relations dans les premiers développements et est resté en usage alors que les relations de correspondance sont aujourd'hui bien plus complexes:
 
 
 \textbf{keywords} ergodynamisme, résonance, mapping.\\
@@ -44,7 +43,9 @@ Exemples de schéma de mapping de Wanderley dans \cite{wanderley_escher-modeling
 \subsection{Sons de synthèses ou échantillons ?}
 
 On m'a souvent posé la question, concernant la synthèse sonore de DMIs que je fabrique, s'ils utilisaient des sons de synthèse ou des sons enregistrés; question à laquelle j'avais toujours du mal à répondre tant ces deux catégories "idéales" ne correspondent pas à la réalité des médias. 
-Peut-être cette distinction provient-elle d'une analogie avec la différence qu'il existe en image vectorielle, composée de primitives géométrique qui la définisse et une image matricielle, définie directement par la matrice de ses pixels.
+Peut-être cette distinction provient-elle d'une analogie avec la différence qu'il existe en image vectorielle, composée de primitives géométrique qui la définisse et une image matricielle, définie directement par la matrice de ses pixels.\\
+synthèse extensive ou intesive.
+
 \todo{reformuler ça}
 
 %---------------------------------------
@@ -73,6 +74,40 @@ L'arrivée du multi-canal dans le logiciel Max a également conforté cette noti
 \section{modèles intermédiaires}
 \label{sec:algorithms:MID}
 Articles du la notion de DIM (@SMC), article sur le jeu de pitch (@ICMC)
+
+\subsection{Motivations}
+Les modèles paramétrique peuvent s'avérer trop complexe à gérer (en terme de nombre de paramètres, ainsi qu'au niveau cognitif). Les modèles génératifs peuvent amener à une liaison trop incertaine entre le geste et le résultat. Les modèles physiques (e.g. \gls{STK}) sont une alternative qui pallie ces deux problèmes en offrant à la fois un modèle intermédiaire entre le geste et le résultat qui réduit le potentiellement grand nombre de paramètres de synthèse à un plus petit nombre de paramètres gestuels. 
+Problème des modèles physiques : instabilité d'une part et d'autre part, la cohérence de la relation entre le geste et le son ne s'appuie pas nécessairement sur des règles obéissant à la physique. 
+E.g. mouvement de l'algorithme Roulette, qui représente un modèle que l'on pourrait représenter par des paramètres physique (masse, force, etc.), mais dont on souhaite par exemple contrôler le mouvement en terme de rythme, avec des durées de déplacement variables, qui ne répondent plus à une ``cohérence physique''.
+
+\subsection{Caractéristiques souhaitées}
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item to enrich the sensed gesture with modulations operating at frequencies beyond human gesture frequencies (e.g. fast bounces);
+	\item contrôler plusieurs paramètres à partir d'un seul geste d'entrée, car une synthèse audio vivante nécessite souvent plus de paramètres que ce que l'on peut gérer en temps réel;
+	\item une intégration facile dans une architecture logicielle modulaire, qui permette de tester et ajuster ses modèles en direct;
+	\item la possibilité de piloter simultanément différents moteurs de synthèse et de rendu avec les mêmes algorithmes, afin d'améliorer la cohérence de l'ensemble;
+	\item être bidirectionnel : le modèle intermédiaire doit pouvoir communiquer dans les deux sens avec l'interface, les autres DIM ou le moteur de synthèse (cf. Fig. 1) afin de réguler les interactions (non linéaires) entre les différents étages.
+\end{itemize}
+
+Les processus à l'œuvre dans un modèle intermédiaire agissent sur plusieurs aspects de la transduction de mouvement attendue dans un instrument de musique.
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item qualité du mouvement: Pour donner un exemple acoustique, un plectrum pour une corde
+offre une qualité de pincement particulière et son attaque est différente de celle des doigts. De plus, la position des cordes sur le corps de l'instrument permet de transformer le mouvement apparemment linéaire de la main en une variation de ce mouvement particulier, à savoir une succession de pincées dont le rythme est lié à l'espacement des cordes. Les dispositifs d'interaction sont souvent dépourvus de rugosité de surface (par exemple, une tablette à stylo n'a pas la rugosité du crin d'un archet). Un DIM devra intégrer cet "aspect de surface" de l'objet virtuel.
+	\item mouvements non linéaires : La richesse du son est en partie liée à l'ensemble des phénomènes non linéaires en action dans un instrument de musique et contribue à rendre le son riche et subtil. Ces non-linéarités dues en partie aux matériaux des instruments acoustiques (et électroniques) manquent souvent des valeurs numériques standardisées des paramètres des instruments logiciels. Dans le domaine numérique, les non-linéarités se retrouvent en effet souvent dans les bugs et les abus de codecs, toutes sortes de "pépins" qui sont précisément recherchés par une veine de musique électronique portant désormais ce nom, pour produire des sonorités riches et des paysages sonores imprévus. Le DIM devrait donc réintroduire la saturation, les courbes exponentielles, la distorsion et autres gigue dans les fonctions de transfert des instruments numériques. 
+	\item Mouvement augmenté : En agissant sur des modèles complexes, un modèle unidimensionnel
+peut être convertie en un mouvement polyphonique multidimensionnel. Par exemple, sur un instrument à cordes, les nombreuses notes d'un accord peuvent être jouées d'une seule touche. Ce renforcement du mouvement peut agir sur les dimensions verticales (poly-phoniques), horizontales (polyrythmiques) ou sur les nombreuses dimensions du timbre. On peut par exemple contrôler un "paramètre cible" qu'un ensemble d'éléments atteindrait par une logique de déplacement qui leur est propre.
+\end{itemize}
+
+\subsection{Implémentation}
+Première implémentation en 2009.
+Re-implémentation avec MP.
+
+\subsection{Evaluation}
+Utilisation dans la MM. Utilisation dans FIB\_R pour contrôler image et son.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{MP : un protocole de connexion modulaire, polyphonique, expressif}
