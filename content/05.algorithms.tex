@@ -5,10 +5,19 @@
 
 \cleanchapterquote{One general effect of the digital revolution is that avant-garde aesthetic strategies became embedded in the commands and interface metaphors of computer software. In short, the avant-garde became materialized in a computer.}{Lev Manovitch}{The language of the new media}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{matériaux algorithmiques}
 
-\noindent Le code est l'élément central définissant le fonctionnement d'un \gls{DMI}. Dans le cas des \glspl{DMI}, les donnée sont essentiellement :
+\noindent La citation de Lev Manovitch en exergue de ce chapitre en reflète la question centrale: le code est l'élément définissant le fonctionnement d'un \gls{DMI} et si sa nature virtuelle rend son usage très malléable, la nature des objets virtuels que l'on manipule est en grande partie conditionnée par les représentations informatique ou musicale. Cependant, les machines ont aussi leur contraintes et limitations, qui influencent la conception des protocoles et les choix d'implémentation. Après avoir présenté le contexte informatique dans lequel s'inscrivent les développements logiciels d'informatique musicale temps-réel, je détaillerai trois développements en lien avec ces questions : 
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{le concept de ``modèle intermédiaire dynamique''}, qui au dela des questions de mise en relation de variables, propose un modèle abstrait pour l'interaction geste/son;
+	\item \textbf{le protocole MP}, qui tentent de répondre aux questions d'agencement et de connexions de modules de traitement en dépassant les limitations du MIDI;
+	\item \textbf{la librairie \textit{sagrada}}, qui propose un système original de synthèse granulaire modulaire;
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Matériaux algorithmiques}
+
+\noindent Dans le cas des \glspl{DMI}, les données sont essentiellement :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{des signaux audio}, enregistrés dans des tables d'ondes ou sous forme de flux;
@@ -17,7 +26,7 @@
 
 Dans les environnements de programmation audio, les données sont généralement séparées en deux types majeurs\footnote{C'est notamment le cas dans Max, SuperCollider, Ableton Live, Csound ... qui traitent le signal par blocs plutôt qu'échantillon par échantillon, pour des raisons d'optimisation. Chuck est une exception à cette règle.} : 
 \begin{itemize}[noitemsep]
-	\item \textbf{des signaux synchrones}, généralement traités dans un \gls{DSP} à la fréquence d'échantillongage audio;
+	\item \textbf{des signaux synchrones}, représentant par exemple des signaux audio, échantillonés à une fréquence précise, et traités généralement par bloc dans un \gls{DSP};
 	\item \textbf{des événements asynchrones}, arrivant de manière sporadique, tels que les messages \gls{MIDI}, \gls{OSC} ou d'autres types de messages propres au programme;
 \end{itemize}
 
@@ -36,14 +45,9 @@ L’atomisation jusqu’au sample, plutôt que séparation entre DSP et messages
 \subsection{La notion de mapping}
 
 \noindent Dans le domaine des lutheries numériques, le terme de ``mapping'' est très couramment utilisé pour décrire la relation entre les données issues des capteurs (en particulier de l'interface gestuelle) et les paramètres de la synthèse sonore. 
-Le terme de mapping est issu des mathématiques dans lequel il se traduit en français par le terme d'``application'', c'est à dire de relation entre deux ensembles pour lequel chaque élément du premier (appelé ensemble de départ) est relié à un unique élément du second. Andy Hunt le définit donc ainsi dans \cite{hunt_mapping_2002}: \iquote{(...) we define mapping as the act of taking real-time performance data from an input device and using it to control the parameters of a synthesis engine.}
-
-\indent Ce terme a glissé dans l'usage du design d'instrument numérique en raison de la relative simplicité des relations dans les premiers développements et est resté en usage alors que les relations de correspondance sont aujourd'hui bien plus complexes.
-\iquote{Mapping describes the way a control is connected to a variable. But as instruments become more complex to include large amounts of data, context sensitivity, and music as well as sound-generating capabilities, the concept of mapping becomes more abstract and does not describe the more complex realities of electronic instruments.} Chadabe dans \cite{chadabe_limitations_2002}
-
-\iquote{the liaison or correspondence between control parameters (derived from performer actions) and sound synthesis parameters} \cite{hunt_towards_2000}
-
-D'après Hunt et Wanderley \cite{hunt_mapping_2002}, deux directions dans le design de mapping :
+Le terme de mapping est issu des mathématiques dans lequel il se traduit en français par le terme ``d'application'', c'est à dire de relation entre deux ensembles pour lequel chaque élément du premier (appelé ensemble de départ) est relié à un unique élément du second. Andy Hunt le définit donc dans \cite{hunt_towards_2000} comme \iquote{la liaison ou la correspondance entre les paramètres de contrôle (dérivés des actions de l'interprète) et les paramètres de synthèse sonore}\footnote{``the liaison or correspondence between control parameters (derived from performer actions) and sound synthesis parameters''}.\\
+\indent Ce terme a glissé dans l'usage du design d'instrument numérique en raison de la relative simplicité des relations dans les premiers développements et est resté en usage alors que les relations de correspondance sont aujourd'hui bien plus complexes, comme le notait déjà Joel Chadabe en 2002, dans \cite{chadabe_limitations_2002}: \iquote{Le mapping décrit la façon dont un contrôle est connecté à une variable. Mais à mesure que les instruments deviennent de plus en plus complexes pour inclure de grandes quantités de données, une sensibilité au contexte, ainsi que des capacités de génération sonore et musicale, le concept de mapping devient plus abstrait et ne décrit pas les réalités plus complexes des instruments électroniques\footnote{Mapping describes the way a control is connected to a variable. But as instruments become more complex to include large amounts of data, context sensitivity, and music as well as sound-generating capabilities, the concept of mapping becomes more abstract and does not describe the more complex realities of electronic instruments.}.}\\
+\indent D'après Hunt et Wanderley \cite{hunt_mapping_2002}, deux directions dans le design de mapping :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{generative mechanisms}, such as neural networks to perform mapping;
@@ -52,11 +56,13 @@ D'après Hunt et Wanderley \cite{hunt_mapping_2002}, deux directions dans le des
 
 Exemples de schéma de mapping de Wanderley dans \cite{wanderley_escher-modeling_1998}.
 
+\extra{\cite{hunt_mapping_2002}: \iquote{(...) we define mapping as the act of taking real-time performance data from an input device and using it to control the parameters of a synthesis engine.}}
+
 %-----------------------------------
 \subsection{Sons de synthèses ou échantillons ?}
 
-On m'a souvent posé la question, concernant la synthèse sonore de DMIs que je fabrique, s'ils utilisaient des sons de synthèse ou des sons enregistrés; question à laquelle j'avais toujours du mal à répondre tant ces deux catégories "idéales" ne correspondent pas à la réalité des médias. 
-Peut-être cette distinction provient-elle d'une analogie avec la différence qu'il existe en image vectorielle, composée de primitives géométrique qui la définisse et une image matricielle, définie directement par la matrice de ses pixels.\\
+\noindent On m'a souvent posé la question, concernant la synthèse sonore de DMIs que je fabrique, s'ils utilisaient des sons de synthèse ou des sons enregistrés; question à laquelle j'avais toujours du mal à répondre tant ces deux catégories "idéales" ne correspondent pas à la réalité des médias.\\
+\indent Peut-être cette distinction provient-elle d'une analogie avec la différence qu'il existe en image vectorielle, composée de primitives géométrique qui la définisse et une image matricielle, définie directement par la matrice de ses pixels.\\
 synthèse extensive ou intesive.
 
 \todo{reformuler ça}
@@ -66,37 +72,37 @@ synthèse extensive ou intesive.
 
 Sound  \cite{di_scipio_sound_2003}
 
-On a tendance à séparer \todo{réf?}, dans la description et le design des \glspl{DMI}, une partie \gls{DSP}, traitant un \textit{signal synchrone}, souvent associée voire confondue à la synthèse audio, et une partie \textit{contrôle}, souvent associé à des données de type \textit{messages asyncrones} (e.g. typiquement, des messages \gls{MIDI}) venant contrôler le \gls{DSP}.\\
-Il existe une différence de nature assez profonde entre ces deux types de données, à la fois du côté de leur implémentation technique\footnote{programmation synchrone vs. asynchrone, priorité d'horloge, etc.} mais également dans leur rôle et leur fonction dans l'interaction musicale. 
+\noindent On a tendance à séparer \todo{réf?}, dans la description et le design des \glspl{DMI}, une partie \gls{DSP}, traitant un \textit{signal synchrone}, souvent associée voire confondue à la synthèse audio, et une partie \textit{contrôle}, souvent associé à des données de type \textit{messages asyncrones} (e.g. typiquement, des messages \gls{MIDI}) venant contrôler le \gls{DSP}.\\
+\indent Il existe une différence de nature assez profonde entre ces deux types de données, à la fois du côté de leur implémentation technique\footnote{programmation synchrone vs. asynchrone, priorité d'horloge, etc.} mais également dans leur rôle et leur fonction dans l'interaction musicale. 
 Ainsi, le signal se présente souvent comme l'\textit{image d'un signal analogique échantillonné} avec l'idée de continuité qui lui est associée. L'autre un graphe asynchrone, se présentant souvent comme l'image d'un ordre d'éxecution (e.g. note-on). \\
-D'un côté on a un signal continu et monophonique (un seul échantillon est traité à la fois), de l'autre un signal sporadique et potentiellement polyphonique (plusieurs messages peuvent être envoyé au même instant logique).\\
-
-Cependant, du point de vue de leur utilisation, les frontières entre ces deux types de données numériques d'une part, et ces deux natures d'objets conceptuel (le signal continu et l'ordre événementiel) ne se recouvrent pas exactement. \\
-D'une part, il est courant d'utiliser les messages asynchrones de Max pour convoyer des variables continues (telles que les données d'un contrôle MIDI-CC ou d'un capteur envoyé par \gls{OSC}).\\
+\indent D'un côté on a un signal continu et monophonique (un seul échantillon est traité à la fois), de l'autre un signal sporadique et potentiellement polyphonique (plusieurs messages peuvent être envoyé au même instant logique).\\
+\indent Cependant, du point de vue de leur utilisation, les frontières entre ces deux types de données numériques d'une part, et ces deux natures d'objets conceptuel (le signal continu et l'ordre événementiel) ne se recouvrent pas exactement. \\
+\indent D'une part, il est courant d'utiliser les messages asynchrones de Max pour convoyer des variables continues (telles que les données d'un contrôle MIDI-CC ou d'un capteur envoyé par \gls{OSC}).\\
 
 \todo{Mettre une explication et une ref vers FTM.}
 
-D'autre part, il est également possible d'utiliser un signal synchrone pour déclencher des événements (musicaux) discrets. C'est par exemple le cas lors qu'on envoie une impulsion dans une synthèse de type \gls{KarplusStrong}, ou quand on utilise directement une impulsion audio pour déclencher une enveloppe ou la lecture d'un échantillon.
-Cette technique notamment utilisée dans \cite{bascou_gmu_2005} permet de déclencher des flux de grains à haute fréquence (plus rapidement que le système de message de Max ne le permet), ce qui permet notamment de le passage progressif entre flux rythmique et son continu (ref Stockhausen Kontakte)
-
-
-L'arrivée du multi-canal dans le logiciel Max a également conforté cette notion d'utilisation de signaux audio comme messages de contrôle.
+\indent D'autre part, il est également possible d'utiliser un signal synchrone pour déclencher des événements (musicaux) discrets. C'est par exemple le cas lors qu'on envoie une impulsion dans une synthèse de type \gls{KarplusStrong}, ou quand on utilise directement une impulsion audio pour déclencher une enveloppe ou la lecture d'un échantillon.
+Cette technique notamment utilisée dans \cite{bascou_gmu_2005} permet de déclencher des flux de grains à haute fréquence (plus rapidement que le système de message de Max ne le permet), ce qui permet notamment de le passage progressif entre flux rythmique et son continu (ref Stockhausen Kontakte)\\
+\indent L'arrivée du multi-canal dans le logiciel Max a également conforté cette notion d'utilisation de signaux audio comme messages de contrôle.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{modèles intermédiaires}
+\section{Modèles intermédiaires}
 \label{sec:algorithms:MID}
 Articles du la notion de DIM (@SMC), article sur le jeu de pitch (@ICMC)
 
 \subsection{Motivations}
-Les modèles paramétrique peuvent s'avérer trop complexe à gérer (en terme de nombre de paramètres, ainsi qu'au niveau cognitif). Les modèles génératifs peuvent amener à une liaison trop incertaine entre le geste et le résultat. Les modèles physiques (e.g. \gls{STK}) sont une alternative qui pallie ces deux problèmes en offrant à la fois un modèle intermédiaire entre le geste et le résultat qui réduit le potentiellement grand nombre de paramètres de synthèse à un plus petit nombre de paramètres gestuels. 
-Problème des modèles physiques : instabilité d'une part et d'autre part, la cohérence de la relation entre le geste et le son ne s'appuie pas nécessairement sur des règles obéissant à la physique. 
+
+\noindent Les modèles paramétrique peuvent s'avérer trop complexe à gérer (en terme de nombre de paramètres, ainsi qu'au niveau cognitif). Les modèles génératifs peuvent amener à une liaison trop incertaine entre le geste et le résultat. Les modèles physiques (e.g. \gls{STK}) sont une alternative qui pallie ces deux problèmes en offrant à la fois un modèle intermédiaire entre le geste et le résultat qui réduit le potentiellement grand nombre de paramètres de synthèse à un plus petit nombre de paramètres gestuels.\\
+\indent Problème des modèles physiques : instabilité d'une part et d'autre part, la cohérence de la relation entre le geste et le son ne s'appuie pas nécessairement sur des règles obéissant à la physique. 
 E.g. mouvement de l'algorithme Roulette, qui représente un modèle que l'on pourrait représenter par des paramètres physique (masse, force, etc.), mais dont on souhaite par exemple contrôler le mouvement en terme de rythme, avec des durées de déplacement variables, qui ne répondent plus à une ``cohérence physique''.
 
 \subsection{Caractéristiques souhaitées}
+
+\noindent Les MIDs sont ainsi définis par les caractéristiques suivantes:
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item to enrich the sensed gesture with modulations operating at frequencies beyond human gesture frequencies (e.g. fast bounces);
+	\item enrichir le geste capté avec des modulations opérant à des fréquences au-delà des fréquences gestuelles humaines (par ex. rebonds rapides);
 	\item contrôler plusieurs paramètres à partir d'un seul geste d'entrée, car une synthèse audio vivante nécessite souvent plus de paramètres que ce que l'on peut gérer en temps réel;
 	\item une intégration facile dans une architecture logicielle modulaire, qui permette de tester et ajuster ses modèles en direct;
 	\item la possibilité de piloter simultanément différents moteurs de synthèse et de rendu avec les mêmes algorithmes, afin d'améliorer la cohérence de l'ensemble;
@@ -131,11 +137,10 @@ Nous présentons le système MP, un protocole et un ensemble d'outils facilitant
 \indent Nous avons vu dans la section précédente comment le concept de modèle intermédiaire dynamiques pouvait enrichir le geste capté et améliorer l’ergonomie des instruments de musique numériques. Cependant, un des facteurs critiques rencontré lors de ces développements se situait dans la manière de faire communiquer différents modules polyphoniques\footnote{ Par « module polyphonique », on entend ici des processeurs traitant simultanément plusieurs flux de données de contrôle de même nature en parallèle, e.g. le filtrage des points de contact sur une interface multi-touch ou encore la modulation des différentes notes d'un accord.} entre eux. Le défi était de rendre cette communication polyphonique, tout en gardant la trace de l'identité et l'ordonnancement des événements permettant que le calcul s'effectue correctement.
 
 %---------------------------------------------------------------------------
-\subsection{motivations et revue des protocoles existants}
+\subsection{Motivations et revue des protocoles existants}
 
-\noindent Les protocoles de contrôles que nous envisageons ici sont asynchrones, fondés sur l’idée que les systèmes musicaux envisagés dans les lutheries actuelles sont des systèmes complexes composés d’éléments hétérogènes et intégrant notamment des interfaces hardware elle- mêmes asynchrones. Bien que la synthèse audio soit un processus synchrone, le design global d'un \gls{DMI} est le plus souvent un système "globalement asynchrone, localement synchrone" tel que défini par Daniel M. Chapiro \cite{chapiro_globally-asynchronous_1984}.
-
-\indent Un certain nombre de protocoles dédiés au contrôle temps-réel de la synthèse numérique ont vu le jour depuis les années 1980. Au delà de proposer des solutions techniques au problème du contrôle, ces protocoles sont porteurs d’un modèle implicite représentant les objets en présence dans l’interaction geste/son. Une brève revue montrera comment ceux-ci se sont progressivement ouverts, à mesure que les capacités de calcul se sont accrues et que la notion même d’instrument s’élargissait à de nouveaux champs tels que les installations sonores ou les applications musicales interactives.
+\noindent Les protocoles de contrôles que nous envisageons ici sont asynchrones, fondés sur l’idée que les systèmes musicaux envisagés dans les lutheries actuelles sont des systèmes complexes composés d’éléments hétérogènes et intégrant notamment des interfaces hardware elle- mêmes asynchrones. Bien que la synthèse audio soit un processus synchrone, le design global d'un \gls{DMI} est le plus souvent un système \iquote{globalement asynchrone, localement synchrone}, tel que défini par Daniel M. Chapiro \cite{chapiro_globally-asynchronous_1984}.\\
+\indent Un certain nombre de protocoles dédiés au contrôle temps-réel de la synthèse numérique ont vu le jour depuis les années 1980. Au delà de proposer des solutions techniques concrètes, ces protocoles sont porteurs d’un modèle implicite représentant les objets en présence dans l’interaction geste/son. Une brève revue montrera comment ceux-ci se sont progressivement ouverts, à mesure que les capacités de calcul se sont accrues et que la notion même d’instrument s’élargissait à de nouveaux champs tels que les installations sonores ou les applications musicales interactives.
 
 \subsubsection{MIDI}
 
@@ -153,26 +158,28 @@ Les limitations du \gls{MIDI} ont pourtant été identifiées peu de temps aprè
 \noindent Le \gls{MIDI} élude une partie de la question du mapping en reliant intrinsèquement le geste à la production sonore à travers le concept de note \gls{MIDI}\footnote{ Une note \gls{MIDI} est composée d'une valeur de pitch et d'une valeur de vélocité associées à canal \gls{MIDI}.} qui assimile les deux côtés de l'interaction : la notion de vélocité se rapportant au geste et celle de pitch au son.
 
 \subsubsection{ZIPI}
-\noindent En 1994, Zeta Instruments et le \gls{CNMAT} proposèrent \gls{ZIPI}\cite{mcmillen_zipi_1994} pour dépasser les limitations du MIDI. \gls{ZIPI} fait ainsi la distinction entre note, hauteur, canal et vélocité, augmente la précision des données, introduit des messages de modulation par note, la possibilité d'un réseau en étoile (plutôt que le chaînage linéaire \gls{MIDI}) ainsi qu'une méthode d'interrogation des instruments connectés.
 
+\noindent En 1994, Zeta Instruments et le \gls{CNMAT} proposèrent \gls{ZIPI}\cite{mcmillen_zipi_1994} pour dépasser les limitations du MIDI. \gls{ZIPI} fait ainsi la distinction entre note, hauteur, canal et vélocité, augmente la précision des données, introduit des messages de modulation par note, la possibilité d'un réseau en étoile (plutôt que le chaînage linéaire \gls{MIDI}) ainsi qu'une méthode d'interrogation des instruments connectés.\\
 \indent \gls{ZIPI} propose également une organisation hiérarchique à trois niveaux héritée d'une classification traditionnelle où des \iquote{orchestres} sont des ensembles de \iquote{familles d'instruments}, composées \iquote{d'instruments}, proposants un ensemble de \iquote{notes}. ZIPI introduit enfin deux espaces de nommage distincts pour la description du geste d'une part et de la synthèse audio d'autre part.\\
 Malheureusement, le public ciblé —les fabricants et utilisateurs de synthétiseurs hardware— n'était pas prêt pour un tel changement alors que l'avènement du protocole \gls{firewire} cette même année palliait le faible débit de données du \gls{MIDI}\footnote{ Le débit d'un bus \gls{MIDI} était jusqu'alors de 31,25 kbit/s en connection DIN uni-directionnelle; le \gls{firewire} proposait jusqu'à 400Mbit/s tout en étant bi-directionnel.}.
 
 \subsubsection{OSC : Open Sound Control}
-En 1997 au \gls{CNMAT}, un groupe incluant d'anciens concepteurs de ZIPI ré-utilisa la recherche menée pour développer le protocole \gls{OSC} \cite{wright_open_1997}, motivé par le besoin de répondre à l'évolution des technologies de réseau et l'extension des types de données alimenté par l'utilisation grandissante de logiciels comme Max. En proposant une syntaxe intelligible et facile à utiliser, \gls{OSC} a connu un certain succès: il a été adopté par un certain nombre de logiciels et interfaces hardware\footnote{ Comme le Lemur, le Monome ou l'Ethersense.} et utilisé pour définir d'autres protocoles tels que \gls{GDIF}, \gls{TUIO}, ou encore la librairie ``o.''\footnote{ « Oh dot » : package pour Max, développée au \gls{CNMAT}.}.
 
-Cependant, sa relative lourdeur en terme de débit comparé au \gls{MIDI} \cite{fraietta_open_2008} et une absence de nomenclature rendant fastidieuse les branchements plug'n play l'ont pour l'instant privé d'une adoption par l'industrie et le grand public.
+\noindent En 1997 au \gls{CNMAT}, un groupe incluant d'anciens concepteurs de ZIPI ré-utilisa la recherche menée pour développer le protocole \gls{OSC} \cite{wright_open_1997}, motivé par le besoin de répondre à l'évolution des technologies de réseau et l'extension des types de données alimenté par l'utilisation grandissante de logiciels comme Max. En proposant une syntaxe intelligible et facile à utiliser, \gls{OSC} a connu un certain succès: il a été adopté par un certain nombre de logiciels et interfaces hardware\footnote{ Comme le Lemur, le Monome ou l'Ethersense.} et utilisé pour définir d'autres protocoles tels que \gls{GDIF}, \gls{TUIO}, ou encore la librairie ``o.''\footnote{ « Oh dot » : package pour Max, développée au \gls{CNMAT}.}.\\
+\indent Cependant, sa relative lourdeur en terme de débit comparé au \gls{MIDI} \cite{fraietta_open_2008} et une absence de nomenclature rendant fastidieuse les branchements plug'n play l'ont pour l'instant privé d'une adoption par l'industrie et le grand public.
 
 \subsubsection{TUIO: Tangible User Interface I/O}
-Dans cette brève revue, il faut mentionner \gls{TUIO} \cite{kaltenbrunner_tuio:_2005} (fondé sur \gls{OSC}) comme le premier protocole\todo{vérifier à quel point c'est le premier} à introduire un indice incrémentiel pour identifier de manière unique des événements dynamiques et éphémères tels que les touchés de doigt sur une interface utilisateur tangible (\gls{TUI}).
 
-Il se distingue également de la logique des événements \gls{MIDI} —dont l'utilisation de messages distincts pour les note-on et -off peut produire des notes qui restent "bloquées" si un message note-off est perdu— en proposant une solution simple et pratique pour résoudre l'incertitude d'arrivée des messages envoyés sur \gls{UDP} et consistant à envoyer systématiquement la liste des événements actifs.
+\noindent Dans cette brève revue, il faut mentionner \gls{TUIO} \cite{kaltenbrunner_tuio:_2005} (fondé sur \gls{OSC}) comme le premier protocole\todo{vérifier à quel point c'est le premier} à introduire un indice incrémentiel pour identifier de manière unique des événements dynamiques et éphémères tels que les touchés de doigt sur une interface utilisateur tangible (\gls{TUI}).\\
+\indent Il se distingue également de la logique des événements \gls{MIDI} —dont l'utilisation de messages distincts pour les note-on et -off peut produire des notes qui restent "bloquées" si un message note-off est perdu— en proposant une solution simple et pratique pour résoudre l'incertitude d'arrivée des messages envoyés sur \gls{UDP} et consistant à envoyer systématiquement la liste des événements actifs.
 
 \subsubsection{\gls{MPE}: MIDI Polyphonic Expression}
-La dernière évolution du \gls{MIDI} a été motivée par la commercialisation récente d'interfaces dites expressives\footnote{ Citons le LinnStrument, Roli Seabord, Haken Audio’s Continuum, Eigenharp Alpha, Madrona Labs’ Soundplane, le KMI K-Board Pro4 ou prochainement Joué.}, c'est à dire permettant la modulation indépendante de chaque note jouée. Bien qu'elles ne soient pas les premières interfaces permettant un tel contrôle, un effort conjoint a été entrepris par plusieurs fabricants pour définir standard nommé \gls{MPE}. Cette évolution n'est cependant qu'une normalisation de l'usage des canaux \gls{MIDI} actuels permettant un tel contrôle dans le cadre existant, et non un nouveau protocole qui dépasserait les limitations intrinsèques au \gls{MIDI}.
+
+\noindent La dernière évolution du \gls{MIDI} a été motivée par la commercialisation récente d'interfaces dites expressives\footnote{ Citons le LinnStrument, Roli Seabord, Haken Audio’s Continuum, Eigenharp Alpha, Madrona Labs’ Soundplane, le KMI K-Board Pro4 ou prochainement Joué.}, c'est à dire permettant la modulation indépendante de chaque note jouée. Bien qu'elles ne soient pas les premières interfaces permettant un tel contrôle, un effort conjoint a été entrepris par plusieurs fabricants pour définir standard nommé \gls{MPE}. Cette évolution n'est cependant qu'une normalisation de l'usage des canaux \gls{MIDI} actuels permettant un tel contrôle dans le cadre existant, et non un nouveau protocole qui dépasserait les limitations intrinsèques au \gls{MIDI}.
 
 \subsubsection{Le signal}
-S'il n'est traditionnellement pas envisagé tant comme un signal de contrôle que comme un support pour le signal audio, le signal peut être considéré comme un signal de contrôle synchrone, en valeur flottante. quote David Zicarelli lors de la présentation de mc.* présentant le signal comme outil de contrôle.
+
+\noindent S'il n'est traditionnellement pas envisagé tant comme un signal de contrôle que comme un support pour le signal audio, le signal peut être considéré comme un signal de contrôle synchrone, en valeur flottante. quote David Zicarelli lors de la présentation de mc.* présentant le signal comme outil de contrôle.
 
 
 %-----------------------------------------------------------------------------------
@@ -183,7 +190,7 @@ S'il n'est traditionnellement pas envisagé tant comme un signal de contrôle qu
 
 
 %-----------------------------------------------------------------------------------
-\subsection{mp-events}
+\subsection{MP-events}
 
 \noindent Un \textit{mp-event} est un objet temporel abstrait qui peut être traité par des \textit{mp-blocks}. Il est défini par un ensemble de \textit{mp-messages} (figure TODO ref figure). Ces messages sont composés de paramètres de contrôle précédés par un identifiant unique propre au mp-event. Le format de message est minimaliste et tous les messages utilisent la même syntaxe : un identifiant unique, un nom de paramètre suivi d'une liste de valeurs. Par exemple :
 \vspace{-1em}
@@ -193,7 +200,7 @@ S'il n'est traditionnellement pas envisagé tant comme un signal de contrôle qu
 \end{itemize}
 \todo{formater les messages code en verbatim et ou avec une box}
 
-Deux noms de paramètre sont réservés pour un usage particulier: \textit{state} et \textit{guests}. Ils seront détaillés dans les prochaines sections. Nous verrons également qu'un mp-event peut suivre plusieurs chemins de traitement en parallèle et être fusionné avec d'autres mp-events. 
+\noindent Deux noms de paramètre sont réservés pour un usage particulier: \textit{state} et \textit{guests}. Ils seront détaillés dans les prochaines sections. Nous verrons également qu'un mp-event peut suivre plusieurs chemins de traitement en parallèle et être fusionné avec d'autres mp-events. 
 
 \subsubsection{Identifiant}
 
@@ -209,7 +216,8 @@ L'ID est présent dans tous les mp-messages pour éviter toute erreur de routage
 	\item il spécifie la manière dont le processus doit interpréter ces paramètres.
 \end{itemize}
 
-Les paramètres peuvent ensuite être interprétés de trois façons :
+\noindent Les paramètres peuvent ensuite être interprétés de trois façons :
+
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item state 1 : début de modulation de paramètre;
@@ -247,7 +255,7 @@ Les paramètres peuvent ensuite être interprétés de trois façons :
 \noindent Cependant, comme la libération d'une voix ne suit pas nécessairement un message state 0 (dans le cas où le processus a sa propre stratégie d'extinction), il est possible d'envoyer différents messages d'état plusieurs fois durant la durée de vie d'une voix, jusqu'à ce que la voix soit effectivement libérée.
 
 %-----------------------------------------------------------------------------------
-\subsection{mp-blocks}
+\subsection{MP-blocks}
 
 \noindent Un mp-block se compose de deux parties : le routeur et le traitement polyphonique que nous décrivons ici.
 \paragraph{Le routeur}
@@ -277,7 +285,7 @@ L'allocation de voix est réalisée à l'arrivée du premier message state 1 pou
 \end{itemize}
 
 \subsubsection{Traitement par voix}
-\noindent Le traitement par voix est effectué par un patch chargé dans les multiples voix d'un objet Max poly\~. En dehors des fonctions permettant le traitement à proprement parler, un objet nommé \textit{mp-muter} permet de dispatcher les messages envoyés par le routeur en fonction du message d'état (tel que décrit à la section TODO:ref section) et de renvoyer au routeur l'information de fin de tâche que le processus doit fournir dans le cas où il possède une extinction propre (mode \textit{@automute 0}). Ce principe est exposé sur la figure TODO, dans laquelle l'objet adsr~ vient notifier l'objet \textit{mp.muter} de la fin de l'enveloppe.
+\noindent Le traitement par voix est effectué par un patch chargé dans les multiples voix d'un objet Max poly\textasciitilde{ }. En dehors des fonctions permettant le traitement à proprement parler, un objet nommé \textit{mp-muter} permet de dispatcher les messages envoyés par le routeur en fonction du message d'état (tel que décrit à la section TODO:ref section) et de renvoyer au routeur l'information de fin de tâche que le processus doit fournir dans le cas où il possède une extinction propre (mode \textit{@automute 0}). Ce principe est exposé sur la figure TODO, dans laquelle l'objet adsr\textasciitilde{ } vient notifier l'objet \textit{mp.muter} de la fin de l'enveloppe.
 
 \subsubsection{Paramètres d'un mp-block}
 \noindent Les mp-blocks répondent à une liste de paramètres contrôlant le processus de traitement par voix. Ces paramètres sont stockés par identifiant dans le routeur jusqu'à ce qu'un message d'état soit reçu. Ce message entrainera l'allocation d'une voix (si disponible et si elle n'est pas déjà active), puis l'envoi de tous les paramètres partageant cet identifiant à cette voix.\\
@@ -323,12 +331,12 @@ Ces développements sont également menés pour répondre à d'autres questions 
 \label{sec:algorithms:sagrada}
 
 %----------------------------------------------------------------------------------------------------------
-\subsection{motivations et contexte}
+\subsection{Motivations et contexte}
 Possibilité de délencher des grains à une fréquence égale au sample rate (par rapport à SR/2 dans le cas d'un déclenchement au zéro-crossing tel que pratiqué dans GMU)
 %----------------------------------------------------------------------------------------------------------
 \subsection{Implémentation}
 \subsubsection{Horloge et assignation de voix}
-Sagrada fonctionne selon le principe que chaque impulsion arrivant sur une entrée audio incrémente un compteur qui définit la voix de polyphonie qui sera activée. Un objet Max dédié ``sagrada.trigger\~'' peut ainsi être controlé soit de manière asynchrone (e.g. en transformant un message \gls{MIDI} en impulsion (delta de Kronecker), soit en envoyant un train d'impulsion synchrone contrôlé en fréquence.
+Sagrada fonctionne selon le principe que chaque impulsion arrivant sur une entrée audio incrémente un compteur qui définit la voix de polyphonie qui sera activée. Un objet Max dédié ``sagrada.trigger\textasciitilde{ }'' peut ainsi être controlé soit de manière asynchrone (e.g. en transformant un message \gls{MIDI} en impulsion (delta de Kronecker), soit en envoyant un train d'impulsion synchrone contrôlé en fréquence.
 
 Notons qu'il est ainsi possible de déclencher plusieurs grain
 
@@ -340,7 +348,7 @@ L'utilisation d'un fonctionnement par ``buffer'' comme dans le cas de la librair
 \subsection{Performances comparée}
 bufgranul : permet de générer des grains à une fréquence double. Approche modulaire permetttant l'application de n'importe quel effet par grain.
 
-gen~ OLA
+gen\textasciitilde{ } OLA
 
 granularized
 
