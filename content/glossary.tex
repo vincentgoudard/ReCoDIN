@@ -145,7 +145,7 @@
 \newglossaryentry{FM}
 {
     name={FM},
-    description={\textit{Frequency Modulation}: type de synthèse sonore inventée par John Chowning en 1973 au \gls{CCRMA}, utilisant la modulation de fréquence. Elle a notamment été utilisée dans le célèbre synthétiseur DX7 de Yamaha},
+    description={\textit{Frequency Modulation}: Technique de traitement de signal consistant à moduler un signal basse fréquence par un autre de fréquence plus élevée (appelé onde porteuse), généralement utilisée à des fins de télécommunication, comme par exemple dans le cas de la bande radiophonique ``FM''. Cette même technique est à la base d'une synthèse sonore inventée par John Chowning en 1973 au \gls{CCRMA}, notamment utilisée dans le célèbre synthétiseur DX7 de Yamaha},
     long={modulation de fréquence},
     first={\glsentrylong{FM} (\glsentryname{FM})},
     firstplural={modulations de fréquence (FM)}
@@ -334,7 +334,7 @@
 \newglossaryentry{mapping}
 {
     name={mapping},
-    description={Terme utilisé pour désigner la mise en relation de variables d'entrées (e.g. des données issues de capteurs) à des variables de sortie (e.g. des paramètres de synthèse audio)},
+    description={Terme utilisé pour désigner la mise en relation de variables d'entrées (e.g. des données issues de capteurs) à des variables de sortie (e.g. des paramètres de synthèse audio). Cf. section TODO},
     long={mapping}
 }
 \newglossaryentry{Meta-Instrument}
@@ -434,6 +434,13 @@
     description={\textit{\glsentrylong{SQL}}: langage informatique servant à exploiter des bases de données relationnelles créé en 1974},
     long={Structured Query Language},
     first={\glsentrylong{SQL}} (\glsentryname{SQL}),
+}
+\newglossaryentry{STK}
+{
+    name={STK},
+    description={\textit{\glsentrylong{STK}}: \gls{API} pour la synthèse audio en temps réel, orientée en particulier vers la synthèse par modèle physique. Ecrite en C++ et maintenue depuis 1995 par Perry R. Cook et Gary Scavone, elle contient à la fois des classes de synthèse et de traitement du signal de bas niveau (oscillateurs, filtres, etc.) et des classes d'instruments de niveau supérieur qui contiennent des exemples de la plupart des algorithmes de modélisation physique actuellement disponibles en usage. STK est un \gls{LogicielLibre}, mais un certain nombre de ses classes, en particulier certains algorithmes de modélisation physique, sont couverts par des brevets détenus par l'Université de Stanford et Yamaha.},
+    long={Synthesis ToolKit},
+    first={\glsentrylong{STK}} (\glsentryname{STK}),
 }
 \newglossaryentry{TCP}
 {
