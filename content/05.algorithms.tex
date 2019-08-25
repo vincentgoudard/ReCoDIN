@@ -6,20 +6,27 @@
 \cleanchapterquote{One general effect of the digital revolution is that avant-garde aesthetic strategies became embedded in the commands and interface metaphors of computer software. In short, the avant-garde became materialized in a computer.}{Lev Manovitch}{The language of the new media}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{interaction instrumentale et mapping}
+\section{matériaux algorithmiques}
 
-\noindent Dans le domaine des lutheries numériques, le terme de ``mapping'' est très couramment utilisé pour décrire la relation entre les données issues des capteurs (en particulier de l'interface gestuelle) et les paramètres de la synthèse sonore. 
-Le terme de mapping est issu des mathématiques dans lequel il se traduit en français par le terme d'``application'', c'est à dire de relation entre deux ensembles pour lequel chaque élément du premier (appelé ensemble de départ) est relié à un unique élément du second. Andrew Hunt le définit donc ainsi dans \cite{hunt_mapping_2002}: \iquote{(...) we define mapping as the act of taking real-time performance data from an input device and using it to control the parameters of a synthesis engine.}
+\noindent Le code est l'élément central définissant le fonctionnement d'un \gls{DMI}. Dans le cas des \glspl{DMI}, les donnée sont essentiellement :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{des signaux audio}, enregistrés dans des tables d'ondes ou sous forme de flux;
+	\item \textbf{des algorithmes}, définissant les opérations mathématisques à effectuer pour traiter les données audio
+\end{itemize}
 
-\indent Ce terme a glissé dans l'usage du design d'instrument numérique en raison de la relative simplicité des relations dans les premiers développements et est resté en usage alors que les relations de correspondance sont aujourd'hui bien plus complexes:
+Dans les environnements de programmation audio, les données sont généralement séparées en deux types majeurs : 
+\begin{itemize}[noitemsep]
+	\item \textbf{des signaux synchrones}, enregistrés dans des tables d'ondes ou sous forme de flux;
+	\item \textbf{des événements asynchrones}, arrivant de manière sporadique, tels que les messages \gls{MIDI}, \gls{OSC} ou d'autres types de messages propres au programme;
+\end{itemize}
 
+ cette information peut être un enregistrement ou un flux.
 
 \textbf{keywords} ergodynamisme, résonance, mapping.\\
+
 En général, découplage conceptuel (et logiciel) entre la partie DSP et la partie "contrôle". Dans la réalité, ce n'est pas si simple et c'est la raison pour laquelle ce qui est habituellement rangé du côté "mapping" et du côté "synthèse" est rassemblé dans un seul et même chapitre.
 
-\iquote{Mapping describes the way a control is connected to a variable. But as instruments become more complex to include large amounts of data, context sensitivity, and music as well as sound-generating capabilities, the concept of mapping becomes more abstract and does not describe the more complex realities of electronic instruments.} Chadabe dans \cite{chadabe_limitations_2002}
-
-Si la partie "hard" d'un instrument (sa prise en main, son poids, sa forme, la disposition de ses cordes, etc.) est intimement couplée à sa résonance dans la plupart des instruments acoustiques, cette relation n'est pas de mise dans le cas d'un DMI. Une sorte d'équivalent à la résonance de l'instrument 
 
 \todo{Présentation de MP, de sagrada et de leur articulation (et par là même de l'articulation entre contrôle et synthèse)}
 
@@ -27,6 +34,12 @@ L’atomisation jusqu’au sample, plutôt que séparation entre DSP et messages
 => faust, gen\textasciitilde{ } et cie : l’export vers des plateformes multiples.
 
 \subsection{La notion de mapping}
+
+\noindent Dans le domaine des lutheries numériques, le terme de ``mapping'' est très couramment utilisé pour décrire la relation entre les données issues des capteurs (en particulier de l'interface gestuelle) et les paramètres de la synthèse sonore. 
+Le terme de mapping est issu des mathématiques dans lequel il se traduit en français par le terme d'``application'', c'est à dire de relation entre deux ensembles pour lequel chaque élément du premier (appelé ensemble de départ) est relié à un unique élément du second. Andy Hunt le définit donc ainsi dans \cite{hunt_mapping_2002}: \iquote{(...) we define mapping as the act of taking real-time performance data from an input device and using it to control the parameters of a synthesis engine.}
+
+\indent Ce terme a glissé dans l'usage du design d'instrument numérique en raison de la relative simplicité des relations dans les premiers développements et est resté en usage alors que les relations de correspondance sont aujourd'hui bien plus complexes.
+\iquote{Mapping describes the way a control is connected to a variable. But as instruments become more complex to include large amounts of data, context sensitivity, and music as well as sound-generating capabilities, the concept of mapping becomes more abstract and does not describe the more complex realities of electronic instruments.} Chadabe dans \cite{chadabe_limitations_2002}
 
 \iquote{the liaison or correspondence between control parameters (derived from performer actions) and sound synthesis parameters} \cite{hunt_towards_2000}
 
