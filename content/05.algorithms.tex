@@ -6,12 +6,12 @@
 \cleanchapterquote{One general effect of the digital revolution is that avant-garde aesthetic strategies became embedded in the commands and interface metaphors of computer software. In short, the avant-garde became materialized in a computer.}{Lev Manovitch}{The language of the new media}
 
 
-\noindent La citation de Lev Manovitch en exergue de ce chapitre en reflète la question centrale: le code est l'élément définissant le fonctionnement d'un \gls{DMI} et si sa nature virtuelle rend son usage très malléable, la nature des objets virtuels que l'on manipule est en grande partie conditionnée par les représentations informatique ou musicale. Cependant, les machines ont aussi leur contraintes et limitations, qui influencent la conception des protocoles et les choix d'implémentation. Après avoir présenté le contexte informatique dans lequel s'inscrivent les développements logiciels d'informatique musicale temps-réel, je détaillerai trois développements en lien avec ces questions : 
+\noindent La citation de Lev Manovitch en exergue de ce chapitre en reflète la question centrale: le code est l'élément définissant le fonctionnement d'un \gls{DMI} et si sa nature virtuelle rend son usage très malléable, la nature des objets virtuels que l'on manipule est en grande partie conditionnée par les représentations que l'on se fait de l'interaction musicale. Cependant, les machines ont aussi leur contraintes et limitations, qui influencent la conception des protocoles et les choix d'implémentation. Après avoir présenté le contexte informatique dans lequel s'inscrivent les développements logiciels d'informatique musicale temps-réel, je détaillerai trois développements en lien avec ces questions : 
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{le concept de ``modèle intermédiaire dynamique''}, qui au dela des questions de mise en relation de variables, propose un modèle abstrait pour l'interaction geste/son;
 	\item \textbf{le protocole MP}, qui tentent de répondre aux questions d'agencement et de connexions de modules de traitement en dépassant les limitations du MIDI;
-	\item \textbf{la librairie \textit{sagrada}}, qui propose un système original de synthèse granulaire modulaire;
+	\item \textbf{la librairie \textit{sagrada}}, qui propose un système original de synthèse granulaire modulaire dans Maxcontrôlée de manière semi-synchrone;
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,15 +22,19 @@
 \begin{itemize}[noitemsep]
 	\item \textbf{des signaux audio}, enregistrés dans des tables d'ondes ou sous forme de flux;
 	\item \textbf{des algorithmes}, définissant les opérations mathématisques à effectuer pour traiter les données audio
+	\item \textbf{des objets}, définissant les opérateurs, les réglages et xxx todo;
+	\item \textbf{un graphe}, définissant l'agencement des opérateurs.
 \end{itemize}
 
-Dans les environnements de programmation audio, les données sont généralement séparées en deux types majeurs\footnote{C'est notamment le cas dans Max, SuperCollider, Ableton Live, Csound ... qui traitent le signal par blocs plutôt qu'échantillon par échantillon, pour des raisons d'optimisation. Chuck est une exception à cette règle.} : 
+Dans les environnements de programmation audio, les flux de données sont généralement séparées en deux types majeurs\footnote{C'est notamment le cas dans Max, SuperCollider, Ableton Live, Csound ... qui traitent le signal par blocs plutôt qu'échantillon par échantillon, pour des raisons d'optimisation.} : 
+\vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{des signaux synchrones}, représentant par exemple des signaux audio, échantillonés à une fréquence précise, et traités généralement par bloc dans un \gls{DSP};
 	\item \textbf{des événements asynchrones}, arrivant de manière sporadique, tels que les messages \gls{MIDI}, \gls{OSC} ou d'autres types de messages propres au programme;
 \end{itemize}
 
- cette information peut être un enregistrement ou un flux.
+\noindent Ces deux types de flux sont généralement associé aux notions d'\textit{audio-rate} et de \textit{control-rate}, définissant deux granularité indépendantes dans le traitement du signal.
+
 
 \textbf{keywords} ergodynamisme, résonance, mapping.\\
 
@@ -192,7 +196,7 @@ Malheureusement, le public ciblé —les fabricants et utilisateurs de synthéti
 %-----------------------------------------------------------------------------------
 \subsection{MP-events}
 
-\noindent Un \textit{mp-event} est un objet temporel abstrait qui peut être traité par des \textit{mp-blocks}. Il est défini par un ensemble de \textit{mp-messages} (figure TODO ref figure). Ces messages sont composés de paramètres de contrôle précédés par un identifiant unique propre au mp-event. Le format de message est minimaliste et tous les messages utilisent la même syntaxe : un identifiant unique, un nom de paramètre suivi d'une liste de valeurs. Par exemple :
+\noindent Un \textit{MP-event} est un objet temporel abstrait qui peut être traité par des \textit{MP-blocks}. Il est défini par un ensemble de \textit{MP-messages} (figure \ref{fig:algorithms:MP-event-model}). Ces messages sont composés de paramètres de contrôle précédés par un identifiant unique propre au \textit{MP-event}. Le format de message est minimaliste et tous les messages utilisent la même syntaxe : un identifiant unique, un nom de paramètre suivi d'une liste de valeurs. Par exemple :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item{[42 pitch 112] : le mp-event \#42 règle le paramètre de pitch à la valeur 112;}
@@ -200,11 +204,39 @@ Malheureusement, le public ciblé —les fabricants et utilisateurs de synthéti
 \end{itemize}
 \todo{formater les messages code en verbatim et ou avec une box}
 
-\noindent Deux noms de paramètre sont réservés pour un usage particulier: \textit{state} et \textit{guests}. Ils seront détaillés dans les prochaines sections. Nous verrons également qu'un mp-event peut suivre plusieurs chemins de traitement en parallèle et être fusionné avec d'autres mp-events. 
+\noindent Deux noms de paramètre sont réservés pour un usage particulier: \textit{state} et \textit{guests}. Ils seront détaillés dans les prochaines sections. Nous verrons également qu'un \textit{MP-event} peut suivre plusieurs chemins de traitement en parallèle et être fusionné avec d'autres \textit{MP-event}. 
+
+%------------------ Figure : MP-event et MP-block ---------------------
+%\begin{figure}[!htbp]
+%	\captionsetup{format=plain}%
+%	\centering
+%	\begin{minipage}[t]{0.48\textwidth}
+%		\includegraphics[width=\linewidth]{gfx/04_algorithms/MP-event-model.pdf}
+%		\caption[Représentation schématique d'un \textit{MP-event}]{Représentation schématique d'un \%textit{MP-event}. Les cercles pleins représentent les états \textit{on}, les cercles vides les %états \textit{off} et les lignes continues les états \textit{update}.}
+%		\label{fig:algorithms:MP-event-model}
+%	\end{minipage}
+%	\hspace{.02\linewidth}
+%	\begin{minipage}[t]{0.48\textwidth}
+%	  \includegraphics[width=\linewidth]{gfx/dummy.pdf}
+%		\caption[dummy]{dummy}
+%		\label{fig:algorithms:dummy-1}
+%	\end{minipage}
+%\end{figure}
+%------------------ Figure : MP-event et MP-block ---------------------
+
+%------------------ Figure : MP-event ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}
+	\includegraphics[width=\textwidth]{gfx/04_algorithms/MP-event-model.pdf}
+	\caption[Représentation schématique d'un \textit{MP-event}]{Représentation schématique d'un \textit{MP-event}. Les cercles représentent des \textit{MP-messages}, les courbes représentent l'évolution du paramètre dans le processus. Noter que les paramètres ne sont pris en compte que lorsqu'un message \textit{state} est reçu.}
+	\label{fig:algorithms:MP-event-model}
+\end{figure}
+%------------------ Figure : MP-event ---------------------
+
 
 \subsubsection{Identifiant}
 
-\noindent L'identifiant unique ("ID") sert à identifier un mp-event tout au long de ses traitements. Le mp-event peut provenir d'un capteur physique (e.g. une touche de clavier) ou d'une source virtuelle (e.g. représentant un contact sur une \gls{TUI} ou un produit par un algorithme génératif).
+\noindent L'identifiant unique (ID) sert à identifier un mp-event tout au long de ses traitements. Le mp-event peut provenir d'un capteur physique (e.g. une touche de clavier) ou d'une source virtuelle (e.g. représentant un contact sur une \gls{TUI} ou un produit par un algorithme génératif).
 L'ID est présent dans tous les mp-messages pour éviter toute erreur de routage dans le cas où un mp-block serait attaqué par plusieurs sources de mp-events indépendantes.
 
 \subsubsection{Etat}
@@ -257,8 +289,20 @@ L'ID est présent dans tous les mp-messages pour éviter toute erreur de routage
 %-----------------------------------------------------------------------------------
 \subsection{MP-blocks}
 
-\noindent Un mp-block se compose de deux parties : le routeur et le traitement polyphonique que nous décrivons ici.
-\paragraph{Le routeur}
+\noindent Un mp-block se compose de deux parties (cf. figure \ref{fig:algorithms:MP-block-model}) : le routeur et le traitement polyphonique que nous décrivons ici.
+
+%------------------ Figure : MP-block ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}
+	\includegraphics[width=\textwidth]{gfx/04_algorithms/MP-block-model.pdf}
+	\caption[Représentation schématique d'un \textit{MP-block}]{Représentation schématique d'un \textit{MP-block} avec le fonctionnement du routeur.}
+	\label{fig:algorithms:MP-block-model}
+\end{figure}
+%------------------ Figure : MP-block ---------------------
+
+
+\subsubsection{Le routeur}
+
 Le routeur a pour missions :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
@@ -285,9 +329,11 @@ L'allocation de voix est réalisée à l'arrivée du premier message state 1 pou
 \end{itemize}
 
 \subsubsection{Traitement par voix}
+
 \noindent Le traitement par voix est effectué par un patch chargé dans les multiples voix d'un objet Max poly\textasciitilde{ }. En dehors des fonctions permettant le traitement à proprement parler, un objet nommé \textit{mp-muter} permet de dispatcher les messages envoyés par le routeur en fonction du message d'état (tel que décrit à la section TODO:ref section) et de renvoyer au routeur l'information de fin de tâche que le processus doit fournir dans le cas où il possède une extinction propre (mode \textit{@automute 0}). Ce principe est exposé sur la figure TODO, dans laquelle l'objet adsr\textasciitilde{ } vient notifier l'objet \textit{mp.muter} de la fin de l'enveloppe.
 
 \subsubsection{Paramètres d'un mp-block}
+
 \noindent Les mp-blocks répondent à une liste de paramètres contrôlant le processus de traitement par voix. Ces paramètres sont stockés par identifiant dans le routeur jusqu'à ce qu'un message d'état soit reçu. Ce message entrainera l'allocation d'une voix (si disponible et si elle n'est pas déjà active), puis l'envoi de tous les paramètres partageant cet identifiant à cette voix.\\
  \indent Il est possible d'envoyer d'autres paramètres que ceux contrôlant le processus. Dans ce cas il traverseront le mp-block inchangés, tout en restant synchrones avec d'éventuels autres paramètres générés par le processus. Dans le cas où ce processus génère de nouveaux mp-events, ces paramètres peuvent automatiquement être ajoutés à chaque mp-event généré, en une sorte d'héritage similaire à celui opéré par la librairie ``o.'' décrit dans \cite{goudard_dynamic_2011} (TODO :renvoyer plutôt à la section qui parle des MID).
 
