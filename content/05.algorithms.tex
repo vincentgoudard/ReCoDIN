@@ -456,26 +456,89 @@ Dans un premier temps, nous associons les coordonnées x et y d'un \textit{MP-ev
 
 %--------------------------------------------------------------------------------
 \subsection{Motivations et contexte}
-\noindent Si le développement de la librairie MP a permi d'apporter du contrôle continu dans une logique basée sur des événements discrets, la démarche inverse permet de retourner cette question et d'explorer les passerelles expressives possibles entre le synchrone et l'asynchrone, entre le continu et le discret. Les premières œuvres utilisant la synthèse granulaire \footnote{On pense à ConcretPH de Iannis Xénakis en 1958, ou Kontakte de Karlheinz Stockhausen en 1960, célèbre pour son passage où la fréquence des grains, d'abord perçue comme une hauteur tonale, décroit jusqu'à être perçue comme un rythme.} sont très nettement marquée par cette recherche de passage entre le continu et le discret.\\
-\indent Ma pratique personnelle m'avait amené à utiliser l'environnement GMU\footnote{Environnement pour la synthèse granulaire dans Max/MSP, développé par Charles Bascou et Laurent Pottier au \gls{GMEM}, cf. \cite{bascou_gmu_2005}} en raison des possibilités qu'il offre pour le déclenchement des grains, réalisé par signal \gls{DSP} et permettant ainsi des fréquences de grains très élevées (potentiellement, jusqu'à la moitié de la fréquence d'échantillonage).
-\indent La question était donc : comment relier ces deux domaines polyphoniques s'appuyant sur des supports hétérogènes ? La possibilité de pouvoir contrôler les grains individuellement dans GMU, bien que très fine, ne permettait pas d'accéder à leur modulation en dehors de l'interface fournie par l'objet Max. Les grains sortent mixés sur deux canaux\footnote{Une version 8-canaux existe aussi, mais destinée plutôt pour l'octophonie de haut-parleurs, plutôt que pour le traitement individuel des grains.} et l'ajout d'un filtre en aval est nécessairement appliqué à l'ensemble des grains.
-\indent Suivant la même logique de modularisation suivie dans le développement de MP, Sagrada propose un ensemble de modules indépendants, opérant chacun sur un grain différent. Le passage de paramètre est réalisé à partir d'une horloge qui envoit des impulsions sur un signal synchrone de Max.
+
+\noindent Si le développement de la librairie MP a permi d'apporter du contrôle continu à l'intérieur d'une logique basée sur des événements discrets, la démarche inverse permet d'explorer, dans l'autre sens, les passerelles expressives possibles entre le synchrone et l'asynchrone, entre le continu et le discret, le lisse et le strié\footnote{Pierre Boulez utilise ces termes pour évoquer la dialectique entre le continu et le discontinu et définir la nature des ``espaces'' (dont le temps, en particulier) en musique dans \cite{boulez_penser_1987}.}. En particulier, la synthèse granulaire est basée sur le découpage du continuum sonore en grains de son et les premières œuvres utilisant ce type de synthèse\footnote{Par exemple, ConcretPH de Iannis Xénakis en 1958, ou Kontakte de Karlheinz Stockhausen en 1960, dont le passage où la fréquence des grains, d'abord perçue comme une hauteur tonale, décroit jusqu'à être perçue comme un rythme est un exemple concret notre propos.} sont très nettement marquée par cette recherche de passage entre le continu et le discret.\\
+\indent Ma pratique personnelle m'avait amené à utiliser l'environnement GMU\footnote{Environnement pour la synthèse granulaire dans Max/MSP, développé par Charles Bascou et Laurent Pottier au \gls{GMEM}, cf. \cite{bascou_gmu_2005}} en raison des possibilités qu'il offre pour le contrôle du déclenchement des grains, réalisé par un signal \gls{DSP}, ce qui permet des fréquences de grains très élevées (potentiellement, jusqu'à la moitié de la fréquence d'échantillonage) tout en conservant une précision temporelle à l'échantillon près.\\
+\indent La question était donc : comment relier ces deux domaines polyphoniques s'appuyant sur des supports hétérogènes ? La possibilité de pouvoir contrôler les grains individuellement dans GMU, bien que très fine, ne permettait pas d'accéder à leur modulation en dehors de l'interface fournie par l'objet Max. Les grains y sortent mixés sur deux canaux\footnote{Une version 8-canaux existe aussi, mais destinée plutôt pour l'octophonie de haut-parleurs, plutôt que pour le traitement individuel des grains.} et l'ajout d'un filtre en aval est nécessairement appliqué à l'ensemble des grains.\\
+\indent Suivant la même logique de modularisation suivie dans le développement de MP, Sagrada propose un ensemble de modules indépendants, traitant les grains de manière indépendante. Le passage de paramètre est réalisé à partir d'une horloge qui envoit des impulsions sur un signal synchrone de Max.
 
 %--------------------------------------------------------------------------------
 \subsection{Implémentation}
+
+\subsubsection{Types de modules}
+\noindent Sagrada est basé sur trois types de modules, dont le fonctionnement est détaillé par la suite :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{une horloge}, gérant le déclenchement des grains;
+	\item \textbf{des modules de traitement}, contrôlés par l'horloge;
+	\item \textbf{des modules de gestion de flux}, permettant de grouper les ticks d'horloges en flux indépendants;
+\end{itemize}
+
+
+\subsubsection{Interconnexion des modules}
+
+\noindent Un patch Sagrada (figure \ref{fig:algorithms:MP-ExamplePatch}) fait intervernir une série de modules reliés par une variable définissant un \textit{contexte}. Ce contexte permet de :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{redéfinir la polyphonie} de l'ensemble des modules, en la déclarant seulement auprès de l'horloge ;
+	\item \textbf{synchroniser} l'ensemble des modules à une horloge commune;
+	\item \textbf{éviter les conflit d'adressage} entre plusieurs contextes Sagrada;
+\end{itemize}
+
+\noindent Les modules de Sagrada sont interconnectés par la spécification du nom de leurs entrées et sorties sous forme d'arguments du module (à l'instanciation), ou de messages Max pour changer cette interconnexion à la volée.
+
+%------------------ Figure : Sagrada-trigger ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}
+	\includegraphics[width=\textwidth]{gfx/04_algorithms/Sagrada-examplePatch.png}
+	\caption[Sagrada : exemple de patch]{Example de patch Sagrada montrant les différents modules, interconnectés par la variables de contexte et d'entrées/sorties}
+	\label{fig:algorithms:MP-ExamplePatch}
+\end{figure}
+%------------------ Figure : Sagrada-trigger ---------------------
+
 \subsubsection{Horloge et assignation de voix}
-Sagrada fonctionne selon le principe que chaque impulsion arrivant sur une entrée audio incrémente un compteur qui définit la voix de polyphonie qui sera activée. Un objet Max dédié, \verb|sagrada.trigger~|, peut ainsi être controlé soit de manière asynchrone (e.g. en transformant un message \gls{MIDI} sous la forme d'une impulsion (delta de Kronecker), soit en envoyant un train d'impulsion synchrone contrôlé en fréquence. Le compteur fonctionne selon l'équation :
-$$ y[n] = (x[n] + y[n - 1]) \mod N $$
 
+\noindent L'horloge de Sagrada est implémentée dans l'abstraction Max \verb|sagrada.trigger~|. Son principe de fonctionnement consiste à envoyer un \textit{tick} de déclenchement de grain à une nouvelle voix de polyphonie à chaque fois qu'elle reçoit une impulsion en entrée. Ces impulsions peuvent donc être déclenchées soit de manière asynchrone (e.g. en transformant un message \gls{MIDI} en une une impulsion grâce à l'objet Max \verb|click~|), soit de manière synchrone (e.g. en utilisant un train d'impulsion controlé en fréquence). L'incrément fonctionne selon l'équation suivante, dans laquelle $x$ représente le signal de délenchement, $y$ la voix de polyphonie cible et $N$ la polyphonie maximale autorisée :
+$$ y[n] = \big(x[n] + y[n - 1]\big) \mod N $$
+\noindent Dans cette version simple, l'assignation des voix se fait donc de manière cyclique, en ``usurpant'' au besoin la voix à un grain encore actif. Un mécanisme de non-usurpation est également proposé sur le mode du \textit{round-robin}\footnote{Le \textit{round-robin} est un algorithme d'ordonnancement consistant à attribuer une opération à un processus faisant partie d'une file d'attente, en choisissant le premier disponible dans l'ordre de la file d'attente.}. Il s'appuie sur l'utilisation d'un tableau, contenant l'incrément nécessaire pour passer de la voix prévue par l'algorithme simple à la prochaine voix disponible. Si la voix prévue est libre, cet incrément est nul; si l'incrément est égal à la valeur de polyphonie, on n'envoit pas le grain.
+$$ z[n] = \Big(y[n] + jump\big[y[n]\big]\Big)\mod N $$
+\noindent L'implémentation de ce mécanisme d'horlge synchrone a été réalisé dans l'environnement \verb|gen~| de Max, afin de pouvoir travailler à l'échantillon (cf. figure \ref{fig:algorithms:MP-TriggerClock}). Le tableau contenant l'information de disponibilité des voix de polyphonie est un module indépendant, pouvant être placé à n'importe quel endroit dans la chaîne de traitement des grains. (cf. objet \verb|sagrada.busy~| sur la figure \ref{fig:algorithms:MP-ExamplePatch}) Par exemple, si un grain subit une opération de filtrage résonnant, sa durée finale sera plus longue que le grain original. On pourra donc, au besoin, contrôler l'état occupé d'une voix par les grains issus de ce filtre résonnant.
 
-
-Notons qu'il est ainsi possible de déclencher plusieurs grain
+%------------------ Figure : Sagrada-trigger ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}
+	\includegraphics[width=\textwidth]{gfx/04_algorithms/Sagrada-TriggerClock.png}
+	\caption[Sagrada : horloge synchrone et assignation]{L'objet sagrada.trigger (à gauche) et l'implémentation des horloges dans \textit{gen}, avec usurpation de voix (en haut à droite), et sans usurpation de voix (en bas à droite).}
+	\label{fig:algorithms:MP-TriggerClock}
+\end{figure}
+%------------------ Figure : Sagrada-trigger ---------------------
 
 \subsubsection{Busy}
-Les synthètiseurs polyphoniques peuvent généralement fonctionner sous deux modes: soit ils permettent qu'une nouvelle voix soit attribuée en volant éventuellement une .
+
+\noindent Les synthétiseurs polyphoniques peuvent généralement fonctionner sous deux modes: soit ils permettent qu'une nouvelle voix soit attribuée en volant éventuellement une .
 L'utilisation d'un fonctionnement par ``buffer'' comme dans le cas de la librairie GMU permet de savoir à l'avance le temps que va durer un grain
 
-%----------------------------------------------------------------------------------------------------------
+
+\subsubsection{Gestion des flux de grains}
+
+\noindent Si l'on considère l'ensemble des grains générés comme un flux, se posent alors deux questions concernant leur gestion :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{la gestion d'un flux dans sa durée} : concètement, si je considère un flux de grain comme un macro-objet temporel ayant un début et une fin, une gestion particulière des coupures de début et de fin est souhaitable pour adapter la nature du son à un niveau micro-temporel à la forme macro-temporelle (par exemple en choisissant un grain particulier pour l'attaque);
+	\item \textbf{la gestion de la multiplicité des flux} : concrètement, et pour faire le lien avec les développements présentés dans MP, si un doigt peut contrôler un flux de grains, un autre doigt doit pouvoir contrôler un autre flux de grains (et ainsi de suite) sans qu'il y ait de confusion dans le contrôle de chacun de ces flux.
+\end{itemize}
+
+\noindent La gestion de flux de grains est prise en charge par l'objet \verb|sagrada.multilayer~| (figure \ref{fig:algorithms:MP-TriggerClock}), qui permet de multiplexer plusieurs horloges en leur attribuant un index. Cet index de flux permet le décompte des grains par flux et en particulier, d'utiliser cet index pour gérer des grains individuels tels que le premier et le dernier grain d'un flux.
+%------------------ Figure : Sagrada-multilayers ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}
+	\includegraphics[width=\textwidth]{gfx/04_algorithms/Sagrada-multilayers.png}
+	\caption[Sagrada : gestion de flux de grains]{Gestion de flux de grains par multiplexage d'horloges.}
+	\label{fig:algorithms:MP-TriggerClock}
+\end{figure}
+%------------------ Figure : Sagrada-multilayers ---------------------
+
+%--------------------------------------------------------------
 \subsection{Performances comparée}
 bufgranul : permet de générer des grains à une fréquence double. Approche modulaire permetttant l'application de n'importe quel effet par grain.
 
@@ -510,5 +573,3 @@ L'acoustique physique présente naturellement des non-linéarité qui contribuen
 Les choses sont plus compliquées pour le son numérique, s'il est possible d'obtenir des systèmes résonant stables (en maintenant les pôles dans le cercle unitaire du le plan complexe), la garantie de stabilité devient très complexe à évaluer dès que l'on introduit de la non-linéarité.
 Malgré de récentes avancées dans ce domaine (cf. travaux de Thomas Hélie sur les systèmes Hamiltoniens à ports)
 
-
-\iquote{Mapping describes the way a control is con- nected to a variable. But as instruments be- come more complex to include large amounts of data, context sensitivity, and music as well as sound-generating capabilities, the concept of mapping becomes more abstract and does not describe the more complex realities of elec- tronic instruments.} Chadabe in \cite{chadabe_limitations_2002}
