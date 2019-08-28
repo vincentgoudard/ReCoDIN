@@ -104,7 +104,7 @@ augmenter la qualité
 
 \cite{momeni_dynamic_2006}, \cite{winkler_making_1995}, 
 
-toolboxes : ESCHER \cite{}Mapping library for Pd (Steiner) \cite{steiner_towards_2006}, MnM (Bevilacqua et al.) \cite{bevilacqua_mnm_2005}, 
+Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mapping library for Pd (Steiner) \cite{steiner_towards_2006}, MnM (Bevilacqua et al.) \cite{bevilacqua_mnm_2005}, Libmapper
 
 %------------------ Figure : représentation du mapping #1 #2 ---------------------
 \begin{figure}[!htbp]
@@ -113,12 +113,13 @@ toolboxes : ESCHER \cite{}Mapping library for Pd (Steiner) \cite{steiner_towards
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/04_algorithms/Wanderley_Schema1.png}
 		\caption[Représentation du mapping \#1]{Mapping d'après Wanderley xx todo date}
+		\label{fig:algorithms:DynamicMappingLayer1}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	  \includegraphics[width=\linewidth]{gfx/04_algorithms/Wanderley_Schema2.png}
 		\caption[Représentation du mapping \#2]{Mapping d'après Wanderley xx todo date}
-		\label{fig:algorithms:DynamicMappningLayer}
+		\label{fig:algorithms:DynamicMappingLayer2}
 	\end{minipage}
 \end{figure}
 %------------------ Figure : représentation du mapping #1 #2 ---------------------
@@ -130,12 +131,13 @@ toolboxes : ESCHER \cite{}Mapping library for Pd (Steiner) \cite{steiner_towards
 	\begin{minipage}[t]{0.48\textwidth}
 	 	\includegraphics[width=\linewidth]{gfx/04_algorithms/Momeni-DynamicMappingLayers.png}
 		\caption[Représentation du mapping \#3]{Mapping d'après Momeni et Henry}
+		\label{fig:algorithms:DynamicMappingLayer3}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	  \includegraphics[width=\linewidth]{gfx/04_algorithms/complexPatch.png}
 		\caption[Représentation du mapping \#4]{Mapping, dans la vraie vie\footnote{Image postée sur le forum Max, en tant qu'offre d'emploi visant à remettre le patch en ordre \url{https://cycling74.com/forums/job-offer-1}}.}
-		\label{fig:algorithms:DynamicMappningLayer}
+		\label{fig:algorithms:DynamicMappingLayer4}
 	\end{minipage}
 \end{figure}
 %------------------ Figure : MP-event et MP-block ---------------------
@@ -143,7 +145,7 @@ toolboxes : ESCHER \cite{}Mapping library for Pd (Steiner) \cite{steiner_towards
 \subsection{Motivations}
 
 \noindent Les \glspl{DMI} nous mettent face à une équation bancale. D'un côté quelques flux de données issus de capteurs rendent péniblement compte de la finesse du geste physique, de l'autre la possibilité (et le désir) de produire une musique plus complexe qu'aucun instrument acoustique ne peut le faire. La réponse à cette équation réside dans la question centrale de ce que l'on nomme habituellement le \gls{mapping}, c'est à dire la relation de correspondance entre valeurs issues de capteurs et paramètres de synthèse. Cependant, et malgré sa popularité\footnote{Entre 2001 et 2015, le terme "mapping" a été employé dans plus de 750 articles de la conférence \gls{NIME} alors que "design d'interaction" (interaction design) n'était employé que dans 160 articles.}, le terme de mapping semble assez peu représenter la complexité de ce qui n'est pas une simple mise en relation et nous préférerions parler d'un design d'interaction, c'est à dire d'une programmation des relations entre gestes et sons faisant intervenir modèles dynamiques, scénarios évolutifs, fragments de partitions et réglages d'un nombre extrêmement élevé de variables.\\
-\indent Les algorithmes de synthèse et de transformation peuvent présenter un nombre de paramètres trop élevés pour qu'il soit possible de les contrôler individuellement. Diverses méthodes de réduction du nombre de paramètre à gérer par le musicien sur son interface de jeu ont été proposées, telles que l'utilisation de paramètres intermédiaires abstraits \cite{wanderley_escher-modeling_1998}, la projection de l'espace des paramètres sur un espace perceptif \cite{wessel_timbre_1979}, ou d'exploration par voisinage \cite{tubb_divergent_2014}, de modèles physiques \cite{todo}, de modèles d'apprentissage \cite{lee_real-time_1991} \cite{fiebrink_real-time_2011}.
+\indent Les algorithmes de synthèse et de transformation peuvent présenter un nombre de paramètres trop élevés pour qu'il soit possible de les contrôler individuellement. Diverses méthodes de réduction du nombre de paramètre à gérer par le musicien sur son interface de jeu ont été proposées, telles que l'utilisation de paramètres intermédiaires abstraits \cite{wanderley_escher-modeling_1998}, la projection de l'espace des paramètres sur un espace perceptif \cite{wessel_timbre_1979}, ou d'exploration par voisinage \cite{tubb_divergent_2014}, de modèles physiques \cite{todo}, de modèles d'apprentissage \cite{lee_real-time_1991, fiebrink_real-time_2011}.
 
 \indent Par ailleurs, la qualité du geste capté ne rend pas forcément compte de la granularité gestuelle qu'on peut observer, par exemple, dans l'interaction fine qui se produit au contact de la surface des matériaux physiques : la souplesse d'un plectre, la rugosité du filetage d'une corde, ou la souplesse du feutre d'un marteau de piano viennent apporter une qualité particulière au son qui ne se résume pas à la vibration d'une corde théorique idéale. Il existe ainsi, dans les instruments acoustiques, divers ``intermédiaires'' entre le geste et le résonateur qui viennent influencer la qualité de leur interaction.\\
 \indent Ces systèmes intermédiaires peuvent parfois être interchangeables (on peut jouer sur une guitare avec les doigts, un plectre, un \textit{bottleneck}, etc.) et contribue à élargir la palette de timbres et de styles de jeu d'un même instrument. En transposant cette idée dans le domaine numérique, on peut envisager les modèles intermédiaires dynamiques comme de tels systèmes interchangeables et visant à modifier la qualité des mouvements captés par une interface sensible.
