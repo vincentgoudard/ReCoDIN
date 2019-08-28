@@ -113,11 +113,11 @@
 					"fontsize" : 12.0,
 					"id" : "obj-25",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 6,
 					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"patching_rect" : [ 151.0, 107.0, 40.0, 22.0 ],
-					"text" : "* 127."
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 151.0, 107.0, 100.0, 22.0 ],
+					"text" : "scale 0. 1 20 127"
 				}
 
 			}
@@ -141,11 +141,11 @@
 					"fontsize" : 12.0,
 					"id" : "obj-14",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 6,
 					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"patching_rect" : [ 50.5, 107.0, 40.0, 22.0 ],
-					"text" : "* 127."
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 50.5, 107.0, 93.0, 22.0 ],
+					"text" : "scale 0. 1 30 80"
 				}
 
 			}

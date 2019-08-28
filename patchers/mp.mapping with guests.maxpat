@@ -561,7 +561,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p map y to pitch"
+					"text" : "p map x to pitch"
 				}
 
 			}
@@ -612,7 +612,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"bubble" : 1,
