@@ -261,7 +261,7 @@ Malheureusement, le public ciblé --~les fabricants et utilisateurs de synthéti
 \end{itemize}
 
 \noindent Le modèle musical sous-jacent envisage ainsi un \textit{MP-event} comme la modulation d'un ensemble de paramètres et prend en compte les phénomènes transitoires qui peuvent apparaître au début et/ou à la fin d'une modulation\footnote{ Un exemple évident est l'attaque d'un son, mais en ce qui concerne un processus non-sonore comme le filtrage de données, cela peut concerner l'initialisation du filtre.}. Ces discontinuités peuvent causer des réponses non-linéaires, trop rapides pour être contrôlées manuellement et parfois mieux traitées séparément.\\
-\indent Dans l'algorithme de traitement, ces états peuvent correspondre à l'initialisation de variables internes, l'activation d'un lissage (\textit{portamento}) entre deux valeurs consécutives, le déclenchement d'un processus transitoire spécifique (e.g. l'attaque d'un son), etc. Tout paramètre peut donc être envoyé à un \textit{MP-block} en spécifiant s'il doit être considéré comme le début, la continuation ou la fin d'une phrase de modulation\footnote{ La confusion entre le \textit{pitch} et l'identifiant de note dans le protocole \gls{MIDI} rend le résultat de la même opération incertain : alors que certains synthétiseurs re-déclencheront la même voix, d'autres alloueront une nouvelle voix et attendront le même nombre de \textit{note-off} qu'il y a eu de \textit{note-on}.} Ce modèle à trois états semble correspondre par ailleurs aux intentions de la \gls{MMA} qui a annoncé un message de \textit{note-update} dans le futur protocole MIDI-HD\footnote{Rapporté par le site web : \url{http://www.synthtopia.com/content/2013/01/20/midi-manufacturers-testing-new-high-definition-midi-protocol/}}.\\
+\indent Dans l'algorithme de traitement, ces états peuvent correspondre à l'initialisation de variables internes, l'activation d'un lissage (\textit{portamento}) entre deux valeurs consécutives, le déclenchement d'un processus transitoire spécifique (e.g. l'attaque d'un son), etc. Tout paramètre peut donc être envoyé à un \textit{MP-block} en spécifiant s'il doit être considéré comme le début, la continuation ou la fin d'une phrase de modulation\footnote{ La confusion entre le \textit{pitch} et l'identifiant de note dans le protocole \gls{MIDI} rend le résultat de la même opération incertain : alors que certains synthétiseurs re-déclencheront la même voix, d'autres alloueront une nouvelle voix et attendront le même nombre de \textit{note-off} qu'il y a eu de \textit{note-on}.} Ce modèle à trois états semble correspondre par ailleurs aux intentions de la \gls{MMA} qui a annoncé un message de \textit{note-update} dans le futur protocole MIDI-HD\footnote{Rapporté par le site web Synthopia: \url{http://www.synthtopia.com/content/2013/01/20/midi-manufacturers-testing-new-high-definition-midi-protocol/}}.\\
 \indent Notons toutefois que dans notre cas, le message d'état peut être rattaché à n'importe quel paramètre, ce qui diffère encore de l'implémentation \gls{MIDI}, notamment en ce qui concerne l'allocation de voix. Alors que le premier message \verb|state 1| reçu pour un ID causera l'allocation d'une voix dans le \textit{MP-block}, le message \verb|state 0| ne libérera pas nécessairement cette voix, cette décision revenant au processus en cours, comme nous le verrons plus loin.
 
 \subsubsection{Guest-list}
@@ -269,11 +269,12 @@ Malheureusement, le public ciblé --~les fabricants et utilisateurs de synthéti
 \noindent La spécification MP ne suit pas d'organisation hiérarchique telle que les canaux \gls{MIDI} ou les familles d'instruments de \gls{ZIPI}. A la place, elle laisse la possibilité à tout \textit{MP-event} de déclarer une liste de \textit{MP-events} ``invités'' (\textit{guestlist}) à la volée. Ces invités pourront avoir accès à la voix allouée au \textit{MP-event} hôte et contrôler ses paramètres. Cette fonctionnalité nous offre une solution flexible pour le groupement d'événements, permettant un nombre arbitraire de niveaux hiérarchiques, sans pour autant être limité par une relation de subsumption.\\
 \indent La \textit{guestlist} peut être utilisée dans le cas de \textit{MP-blocks} génératifs, où l'ID du \textit{MP-event} ``parent'' peut être ajouté à la guestlist des \textit{MP-events} ``enfants''. Ceci permet une modulation cohérente de plusieurs voix associées à des \textit{MP-events} générés par une même source. Des exemples concrets de cette situation sont les pistes \gls{MIDI} ou la hiérarchie orchestre/famille/instrument/note proposée par \gls{ZIPI}. Ils correspondent à un ``\textit{\gls{mapping}} divergent'' dans le schéma proposé par Rovan, Wanderley, Dubnov et al. \cite{rovan_instrumental_1997}.\\
 \indent Un ``\textit{\gls{mapping}} convergent'' est également possible : plusieurs \textit{MP-events} peuvent être déclarés comme invités d'un \textit{MP-event} tiers. Par exemple, un \textit{MP-event} ``enfant'' peut être créé à partir du résultat de l'interaction de plusieurs \textit{MP-events} ``parents'' (cf. exemple section \ref{sec:algorithms:many-guests-to-one}).
+\indent Notons qu'une solution alternative aurait pu consister à transmettre systématiquement la liste de tous les paramètres d'un \textit{MP-event} parent à ses enfants. Dans le cas de chaînes de mapping assez longue, ou de polyphonie élevées, cet héritage systématique s'avérait cependant trop lourd pour être une solution efficace.
 
 
 \subsubsection{Master-ID}
 
-\noindent Le paramètre guests ne nous laisse toutefois pas un accès aisé à l'ensemble des voix de polyphonies d'un MP-block. A cette fin, un identifiant spécifique indexé à 0, permet ce contrôle global. Il revient implicitement à considérer que le \textit{MP-event} \#0 (nommé master-ID) fait systématiquement partie de la guestlist de tout \textit{MP-event}. Dans le cas où les \textit{MP-events}, ses guests et le master-ID tentent de modifier les mêmes paramètres, le \textit{MP-event} hôte conservera la priorité sur les guests et le master-ID\footnote{On retrouve également cette idée, quoique limitée par les contraintes du \gls{MIDI}, dans la notion de \textit{master channel} du protocole \gls{MPE}}.
+\noindent Le paramètre guests ne nous laisse toutefois pas un accès aisé à l'ensemble des voix de polyphonies d'un \textit{MP-block}. A cette fin, un identifiant spécifique indexé 0, permet ce contrôle global. Il revient implicitement à considérer que le \textit{MP-event} \#0 (nommé master-ID) fait systématiquement partie de la guestlist de tout \textit{MP-event}. Dans le cas où les \textit{MP-events}, ses \textit{guests} et le master-ID tentent de modifier les mêmes paramètres, l'ordre de priorité est donné du plus spécifique au plus général, c'est à dire, au \textit{MP-event}, puis aux \textit{guests}, puis au \textit{Master-ID}\footnote{On retrouve également cette idée, quoique limitée par les contraintes du \gls{MIDI}, dans la notion de \textit{master channel} du protocole \gls{MPE}.}.
 
 \subsubsection{Ordonnancement des MP-messages}
 
@@ -287,12 +288,12 @@ Malheureusement, le public ciblé --~les fabricants et utilisateurs de synthéti
 	\item envoi des paramètres de fin de modulation;
 	\item envoi du message state 0.
 \end{enumerate}
-\noindent Cependant, comme la libération d'une voix ne suit pas nécessairement un message state 0 (dans le cas où le processus a sa propre stratégie d'extinction), il est possible d'envoyer différents messages d'état plusieurs fois durant la durée de vie d'une voix, jusqu'à ce que la voix soit effectivement libérée.
+\noindent Cependant, comme la libération d'une voix ne suit pas nécessairement un message \verb|state 0| (dans le cas où le processus a sa propre stratégie d'extinction), il est possible d'envoyer différents messages d'état plusieurs fois durant la durée de vie d'une voix, jusqu'à ce que la voix soit effectivement libérée.
 
 %-----------------------------------------------------------------------------------
 \subsection{MP-blocks}
 
-\noindent Un \textit{MP-block} se compose de deux parties (cf. schéma \ref{fig:algorithms:MP-block-model} et implémentation dans Max figure \ref{fig:algorithms:MP-simpleSynth}) : le routeur et le traitement polyphonique que nous décrivons ici.
+\noindent Un \textit{MP-block} se compose de deux parties (cf. schéma \ref{fig:algorithms:MP-block-model} et implémentation dans Max, figure \ref{fig:algorithms:MP-simpleSynth}) : le routeur et le traitement polyphonique que nous décrivons ici.
 
 %------------------ Figure : MP-block ---------------------
 \begin{figure}[!htbp]
@@ -309,7 +310,7 @@ Malheureusement, le public ciblé --~les fabricants et utilisateurs de synthéti
 \noindent Le routeur accomplit les fonctions suivantes :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item le stockage des paramètres reçu pour un \textit{MP-event};
+	\item le stockage des paramètres reçus pour un \textit{MP-event};
 	\item l'allocation de voix pour un nouvel \textit{MP-event};
 	\item l'envoi des paramètres à cette voix;
 	\item l'envoi éventuel des paramètres des \textit{guests};
@@ -329,26 +330,26 @@ Malheureusement, le public ciblé --~les fabricants et utilisateurs de synthéti
 \noindent L'allocation de voix est réalisée à l'arrivée du premier message \verb|state 1| pour un \textit{MP-event} donné. La libération de la voix intervient quand le processus de traitement indique au routeur qu'il a terminé sa tâche. Trois scénarios sont alors possibles :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item Le processus se termine dès qu'un message state 0 est reçu. Ce sera le cas, par exemple, pour un processus tel qu'une addition ou un filtre médian. Ce scénario est pris en compte de manière automatique en spécifiant un attribut \verb|@automute 1| au routeur;
-	\item Le processus déclenche son extinction à la réception d'un message state 0, typiquement le release d'une enveloppe \gls{ADSR};
+	\item Le processus se termine dès qu'un message \verb|state 0| est reçu. Ce sera le cas, par exemple, pour un processus tel qu'une addition ou un filtre médian. Ce scénario est pris en compte de manière automatique en spécifiant un attribut \verb|@automute 1| au routeur;
+	\item Le processus déclenche son extinction à la réception d'un message \verb|state 0|, typiquement le release d'une enveloppe \gls{ADSR};
 	\item Le processus a sa propre durée et peut avoir terminé sa tâche avant ou après avoir reçu un message state 0. C'est le cas, par exemple, lors de la génération d'un signal audio de durée fixe comme un échantillon de percussion.
 \end{itemize}
 
 \subsubsection{Traitement par voix}
 
-\noindent Le traitement par voix est effectué par un patch chargé dans les multiples voix d'un objet Max poly\textasciitilde{ }. En dehors des fonctions permettant le traitement à proprement parler, un objet nommé \textit{mp-muter} permet de dispatcher les messages envoyés par le routeur en fonction du message d'état et de renvoyer au routeur l'information de fin de tâche que le processus doit fournir dans le cas où il possède une extinction propre (mode \verb|@automute 0|). Ce principe est exposé sur la figure \ref{fig:algorithms:MP-simpleSynth-inside}, dans laquelle l'objet Max \verb|adsr~| vient notifier l'objet \textit{mp.muter} de la fin de l'enveloppe.
+\noindent Le traitement par voix est effectué par un patch chargé dans les multiples voix d'un objet Max \verb|poly~|. En dehors des fonctions permettant le traitement à proprement parler, un objet nommé \verb|mp-muter| permet de ventiler les messages envoyés par le routeur en fonction du message d'état et de renvoyer au routeur l'information de fin de tâche que le processus doit fournir dans le cas où il possède une extinction propre (mode \verb|@automute 0|). Ce principe est exposé sur la figure \ref{fig:algorithms:MP-simpleSynth-inside}, dans laquelle l'objet Max \verb|adsr~| vient notifier la fin de l'enveloppe à l'objet \textit{mp.muter}.
 
 %------------------ Figure : simple synth ---------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
 	\centering
-	\begin{minipage}[t]{0.5035\textwidth}
+	\begin{minipage}[t]{0.510\textwidth}
 		\includegraphics[width=\linewidth]{gfx/04_algorithms/MP-reallySimpleSynth.png}
 		\caption[mp.simpleSynth : encapsulation de la synthèse]{mp.simpleSynth : routeur et encapsulation de la synthèse.}
 		\label{fig:algorithms:MP-simpleSynth}
 	\end{minipage}
-	\hspace{.01\linewidth}
-	\begin{minipage}[t]{0.4635\textwidth}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.450\textwidth}
 	  	\includegraphics[width=\linewidth]{gfx/04_algorithms/MP-reallySimpleSynth-inside.png}
 		\caption[mp.simpleSynth : patcher de synthèse]{mp.simpleSynth : patcher de synthèse. Le route est notifié de la fin d'activité de l'envoi d'un message ``mute'' par l'objet ADSR.}
 		\label{fig:algorithms:MP-simpleSynth-inside}
@@ -360,54 +361,103 @@ Malheureusement, le public ciblé --~les fabricants et utilisateurs de synthéti
 \subsubsection{Paramètres d'un MP-block}
 
 \noindent Les \textit{MP-blocks} répondent à une liste de paramètres contrôlant le processus de traitement par voix. Ces paramètres sont stockés par identifiant dans le routeur jusqu'à ce qu'un message d'état soit reçu. Ce message entrainera l'allocation d'une voix (si disponible et si elle n'est pas déjà active), puis l'envoi de tous les paramètres partageant cet identifiant à cette voix.\\
-\indent Il est possible d'envoyer d'autres paramètres que ceux contrôlant le processus. Dans ce cas il traverseront le \textit{MP-block} inchangés, tout en restant synchrones avec d'éventuels autres paramètres générés par le processus qu'ils traversent. Dans le cas où ce processus génère de nouveaux \textit{MP-events}, ces paramètres peuvent automatiquement être ajoutés à chaque \textit{MP-event} généré, en une sorte d'héritage similaire à celui opéré par la librairie ``o.'' décrit dans \cite{goudard_dynamic_2011} (TODO :renvoyer plutôt à la section qui parle des MID).
-
+\indent Il est possible d'envoyer d'autres paramètres que ceux contrôlant le processus. Dans ce cas il traverseront le \textit{MP-block} inchangés, tout en restant synchrones avec d'éventuels autres paramètres générés par le processus qu'ils traversent. Dans le cas où ce processus génère de nouveaux \textit{MP-events}, ces paramètres peuvent automatiquement être ajoutés à chaque \textit{MP-event} généré, en une sorte d'héritage similaire à celui opéré par la librairie ``o.'' \cite{freed_composability_2011}, mais non-automatique et laissé à l'appréciation du développeur du \textit{MP-block}.
 
 %-----------------------------------------------------------------------------------
 \subsection{Exemples}
 
-\noindent Les exemples proposés dans cette section donnent des cas concrets d'utilisation du système MP. Ils sont implémentés dans le logiciel Max.
+\noindent Les exemples proposés dans cette section présentent des cas concrets d'utilisation du système MP. Ils sont implémentés dans le logiciel Max et inclus dans les examples du package \textit{ModularPolyphony}. Ces exemples s'appuient sur l'utilisation d'une tablette \textit{multitouch}, dont les données reçues dans l'objet \verb|mp.TUIO.input| sous la forme de \textit{MP-events} correspondent au contact de chaque doigt, avec les coordonnées en X et Y de leur position sur la tablette. Le synthétiseur \verb|mp.simpleSynth| est celui présenté sur les figures \ref{fig:algorithms:MP-simpleSynth} et \ref{fig:algorithms:MP-simpleSynth-inside}.
 
-\subsubsection{Mapping encapsulé}
-\noindent Cet exemple (figure TODO ref) montre l'utilisation la plus simple du système MP. À partir de données \gls{TUIO} issues d'une interface \textit{multitouch}, on contrôle les valeurs de vélocité et de cutoff sur l'axe vertical tandis que l'axe horizontal contrôle le pitch.
-Le module mp-embedded-mapping-demoSynth est constitué d'un routeur et d'un objet poly contenant à la fois le mapping et la synthèse. Ici, l'avantage d'utiliser MP est de bénéficier d'un système d'adressage similaire au \gls{MPE} sans être limité par le typage, la précision et l'espace de nommage des données.
+\subsubsection{Mapping simple avec une fonction pure}
 
-\subsubsection{Mapping dé-encapsulé}
+\noindent Cet exemple (figure \ref{fig:algorithms:MP-pure}) montre l'utilisation la plus simple du système MP. On contrôle ici la valeur de vélocité sur l'axe vertical tandis que l'axe horizontal contrôle la hauteur.\\
+\indent Comme l'objet \verb|scale|, qui opère une mise à l'échelle entre les données de position (entre 0 et 1) et les données de hauteur et de vélocité (en valeur \gls{MIDI} 0-127), est une fonction pure\footnote{En informatique, une fonction pure, appelée également algortihme déterministe, est une fonction dont la sortie ne dépend que de la valeur d'entrée.}, il peut être utilisé pour traiter directement l'ensemble des \textit{MP-messages} lui parvenant. Ici, l'avantage d'utiliser MP est de bénéficier d'un système d'adressage similaire au \gls{MPE} sans être limité par le typage, la précision et l'espace de nommage des données.
 
-\noindent Dans cet exemple (figure TODO ref), nous avons sorti tout le mapping en dehors du module de synthèse. Examinons quelques éléments de ce patch :
+%------------------ Figure : simple synth ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.485\textwidth}
+		\includegraphics[width=\linewidth]{gfx/04_algorithms/MP-mappingPure.png}
+		\caption[Exemple de patch MP : fonction pure]{Exemple de patch MP : mapping avec une fonction pure}
+		\label{fig:algorithms:MP-pure}
+	\end{minipage}
+	\hspace{.01\linewidth}
+	\begin{minipage}[t]{0.485\textwidth}
+	  	\includegraphics[width=\linewidth]{gfx/04_algorithms/MP-mappingRecursive.png}
+		\caption[Exemple de patch MP : fonction récursive]{Exemple de patch MP : mapping avec une fonction récursive}
+		\label{fig:algorithms:MP-recursive}
+	\end{minipage}
+\end{figure}
+%------------------ Figure : simple synth ---------------------
+
+\subsubsection{Mapping avec une fonction récursive}
+
+\noindent Cet exemple (figure \ref{fig:algorithms:MP-recursive}) montre le cas d'un mapping avec une fonction récursive. L'objet \verb|slide| de Max opère un filtrage logarithmique définit par l'équation :
+ $$y[n] = y[n-1] + \frac{(x[n]-y[n-1])}{slide}$$ 
+\noindent Dans ce cas là, il n'est plus possible d'utiliser une seule instance de l'objet \verb|slide| pour traiter l'ensemble des \textit{MP-messages}, en raison de la mémoire interne d'un état précédant propre à un \textit{MP-event} particulier. L'objet \verb|mp.slide| permet alors d'instancier plusieurs voix traitant les valeurs individuelles de \textit{pitch} en parallèle.
+
+
+\subsubsection{Création dynamique de MP-events et guests}
+
+\noindent Dans cet exemple (figure \ref{fig:algorithms:MP-mappingDivergent}), nous créons à la volée des \textit{MP-events} ``enfants'' que nous contrôlons en parallèle avec le \textit{MP-event} ``parent''.
+Dans un premier temps, nous associons les coordonnées x et y d'un \textit{MP-event} aux paramètres de hauteur (pitch) et de vélocité, respectivement. Le module \verb|mp.note2chord| génère un accord à partir de la hauteur (ici en ajoutant une quinte à la hauteur d'entrée). Cet accord prend la forme de deux nouveaux \textit{MP-events} enfants qui vont venir activer chacun une voix de polyphonie de notre synthétiseur. Le module \verb|mp.note2chord| ajoute également aux paramètres des \textit{MP-events} enfants, l'ID du \textit{MP-event} parent, en tant qu'invité. Ceci va nous permettre de contrôler le paramètre de vélocité des deux notes simultanément à partir du \textit{MP-event} parent. 
+
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item à gauche, le module \textit{mp.note2chord} génère un ensemble de \textit{MP-events} "enfants". Le premier niveau en génère deux et le deuxième niveau en génère 3. Le résultat final est la génération d'un accord de six notes à partir d'un seul \textit{MP-event};
+	\item à gauche, le module  génère un ensemble de \textit{MP-events} "enfants". Le premier niveau en génère deux et le deuxième niveau en génère 3. Le résultat final est la génération d'un accord de six notes à partir d'un seul \textit{MP-event};
 	\item à droite, le \textit{MP-event} venant de \textit{mp.TUIO.input} est envoyé sur deux chemins où ses valeurs sont mises à l'échelle par le module mp-scale pour définir la fréquence et l'offset d'un LFO respectivement. Le \gls{LFO} contrôlera ensuite la fréquence de coupure d'un filtre passe-bas du module de synthèse;
 	\item nous avons deux occurrences d'un contrôle global avec le Master-ID : une pour le paramètre \textit{depth} du LFO et une pour la transposition du deuxième étage \textit{note2chord};
 	\item en dernier lieu, nous dirigeons les messages résultants de ces deux chemins vers un système de représentation graphique. La position d'objets graphiques est assignée aux valeurs de pitch des \textit{MP-events} générés, tandis que leur couleur est associée au \textit{MP-event} parent. Ceci résulte en une représentation graphique de toutes les hauteurs en tant qu'objets dont la couleur nous dit à quelle source commune (ici le contact d'un doigt sur un écran) ils sont rattachés
 \end{itemize}
 
+%------------------ Figure : simple synth ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.38\textwidth}
+		\includegraphics[width=\linewidth]{gfx/04_algorithms/MP-mappingGuest.png}
+		\caption[Exemple de patch MP : guestlist]{Utilisation de la guestlist pour un mapping divergent}
+		\label{fig:algorithms:MP-mappingDivergent}
+	\end{minipage}
+	\hspace{.01\linewidth}
+	\begin{minipage}[t]{0.58\textwidth}
+	  	\includegraphics[width=\linewidth]{gfx/04_algorithms/MP-mappingConvergent.png}
+		\caption[Exemple de patch MP : guestlist]{Utilisation de la guestlist pour un mapping convergent}
+		\label{fig:algorithms:MP-convergent}
+	\end{minipage}
+\end{figure}
+%------------------ Figure : simple synth ---------------------
+
 
 \subsubsection*{Mapping many[guests]-to-one}
 \label{sec:algorithms:many-guests-to-one}
 
-\noindent Alors que les exemples précédents nous montrent une utilisation de la guestlist comme hiérarchie de subsumption, ce dernier exemple fournit un exemple concret de relation \textit{many-to-one}. Ici, les \textit{MP-events} arrivant d'une \gls{TUI} et représentant la position des doigts (les points) causeront l'apparition d'un arc si la distance entre eux passe sous un certain seuil.\\
-\indent Le \textit{MP-event} « arc » ainsi généré aura les deux \textit{MP-events} « points » dans sa guestlist, de telle sorte que toute modification sur les points affectera le traitement aval du \textit{MP-event} représenté par l'arc.
+\noindent Alors que l'exemple précédent nous montrent une utilisation de la \textit{guestlist} comme hiérarchie de subsumption, ce dernier exemple (cf. figure \ref{fig:algorithms:MP-convergent}) fournit un exemple concret de relation \textit{many-to-one}.\\
+\indent Imaginons que l'on souhaite contrôler avec deux doigts un son dont l'intensité est proportionnelle à l'espacement de nos doigts. Il faut alors que deux \textit{MP-events} indépendants (correspondants à la captation de mes deux doigts) soient combinés pour que leur présence conjointe donne naissance à un nouveau \textit{MP-event} ``enfant''. C'est ce qui est réalisé dans les deux chaînes de traitement centrales sur la figure \ref{fig:algorithms:MP-convergent}, la chaîne la plus à gauche déclarant les ID des \textit{MP-events} parents dans la \textit{guestlist} du MP-event ainsi créé.\\
+\indent Imaginons maintenant que l'on souhaite que la hauteur du son produit change aléatoirement à chaque fois que l'un deux nos doigts franchit une frontière virtuelle sur l'interface, en l'occurence une ligne horizontale de coordonnée $y=0,5$. Cela nécessite que les \textit{MP-events} correspondant à chacun de mes doigts puissent agir sur le son créé par le \textit{MP-event} ``enfant''. C'est l'opération réalisée par la châine de traitement la plus à droite sur la figure \ref{fig:algorithms:MP-convergent}, avec l'objet \verb|mp.past| qui détecte le franchissement de seuil pour chaque événement en parallèle (cette détection n'étant pas une fonction pure).
+
+
+\subsubsection*{Contrôle d'interfaces graphiques}
+\label{sec:algorithms:example-mpTUI}
+\noindent Le système MP est également amplement utilisé dans la librairie MP.TUI, détaillée au chapitre suivant.
+
 
 \subsection{Limitations et optimisations}
 
-\noindent Séparer les différents processus de traitement d'un design d'interaction polyphonique a l'avantage de permettre une meilleure modularité et, par suite, une meilleure stabilité des processus mis en œuvre qui n'auront pas à être modifiés en interne. Le choix a également été fait de ne pas s'appuyer sur une mémoire globale (e.g. pour sauver la guestlist) de sorte que les \textit{MP-blocks} soient réellement indépendants et autonomes et que le design d'interaction général puisse être réparti sur plusieurs applications et/ou machines en réseau.\\
-\indent Cependant, cette modularité a un coût et est probablement moins efficace que d'inclure tous les traitements nécessaires dans les traitements ad-hoc. Certaines optimisations peuvent être réalisées pour des processus ne nécessitant pas de mémoire interne (e.g. une mise à l'échelle statique), pour lesquels il n'est pas nécessaire d'allouer des voix. Cela se fait cependant au prix de certaines fonctionnalités (pas d'utilisation du \textit{master-ID} possible dans ce cas).\\
-\indent De plus, le framework MP a entièrement été réalisé à l'aide d'objets natifs Max et pourrait sûrement être optimisé en le portant sous la forme d'objets compilés.
+\noindent Séparer les différents processus de traitement d'un design d'interaction polyphonique a l'avantage de permettre une meilleure modularité et, par suite, une meilleure stabilité des processus mis en œuvre, qui n'auront pas à être modifiés en interne. Le choix a également été fait de ne pas s'appuyer sur une mémoire globale ou des pointeurs externes aux modules (e.g. pour sauver la guestlist), de sorte que les \textit{MP-blocks} sont réellement indépendants et autonomes et que le design d'interaction général puisse être réparti sur plusieurs applications et/ou machines en réseau.\\
+\indent Cependant, cette modularité a un coût et est moins optimisée, en terme de computer et d'utilisation de la mémoire, qu'un design qui consisterait à d'inclure toutes les fonctions nécessaires dans les traitements \textit{ad-hoc}. Certaines optimisations peuvent être réalisées pour des processus ne nécessitant pas de mémoire interne (e.g. une mise à l'échelle statique), pour lesquels il n'est pas nécessaire d'allouer des voix. Cela se fait cependant au prix de certaines fonctionnalités (pas d'utilisation du \textit{master-ID} possible dans ce cas). Par ailleurs, le framework MP a entièrement été réalisé à l'aide d'objets natifs Max et pourrait sûrement être optimisé en le portant sous la forme d'objets compilés.\\
+\indent Le modèle de messages asynchrones distinguant début et fin d'événement ne résoud pas directement le problème de note ``bloquées''\footnote{Ce problème surgit dans les systèmes MIDI, quand une note-off n'arrive pas.} tel qu'on le connait avec l'utilisation du \gls{MIDI}. Cependant, l'ouverture de l'espace de nommage permet l'implémentation \textit{ad-hoc} d'un système d'acquittement\footnote{tel qu'il existe dans le protocole \gls{TCP}}, ou de \textit{heartbeat}\footnote{Nom donné au signal périodique généré par un programme pour indiquer son fonctionnement normal ou pour sa synchronisation avec d'autres parties d'un système informatique.}. Également un message \textit{flush}\footnote{Equivalent de la fonction ``MIDI-panic'' généralement présente sur les système MIDI et permettant d'éteindre toutes les notes actives (quand elles sont bloquées).} est présent sur chaque module MP afin de gérer au besoin l'urgence lors d'une performance.
 
-\subsection{Conclusions}
-\noindent Le système MP permet la connexion modulaire de processus polyphoniques. Bien qu'il soit encore à un stade précoce, ce système permet d'explorer de nouveaux modèles de lutherie numérique, impliquant notamment des contrôleurs expressifs et des interfaces multi-touch ou composites.
-Ces développements sont également menés pour répondre à d'autres questions telles que la représentation et l'ergonomie des processus polyphoniques que présentés dans la section suivante et les chapitres suivants.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sagrada : extension de MP au DSP}
 \label{sec:algorithms:sagrada}
 
-%----------------------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------
 \subsection{Motivations et contexte}
 Possibilité de délencher des grains à une fréquence égale au sample rate (par rapport à SR/2 dans le cas d'un déclenchement au zéro-crossing tel que pratiqué dans GMU)
-%----------------------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------
 \subsection{Implémentation}
 \subsubsection{Horloge et assignation de voix}
 Sagrada fonctionne selon le principe que chaque impulsion arrivant sur une entrée audio incrémente un compteur qui définit la voix de polyphonie qui sera activée. Un objet Max dédié ``sagrada.trigger\textasciitilde{ }'' peut ainsi être controlé soit de manière asynchrone (e.g. en transformant un message \gls{MIDI} en impulsion (delta de Kronecker), soit en envoyant un train d'impulsion synchrone contrôlé en fréquence.
