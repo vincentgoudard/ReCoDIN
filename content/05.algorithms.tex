@@ -48,9 +48,7 @@ L’atomisation jusqu’au sample, plutôt que séparation entre DSP et messages
 
 \subsection{La notion de mapping}
 
-\noindent Dans le domaine des lutheries numériques, le terme de ``mapping'' est très couramment utilisé pour décrire la relation entre les données issues des capteurs (en particulier de l'interface gestuelle) et les paramètres de la synthèse sonore. 
-Le terme de mapping est issu des mathématiques dans lequel il se traduit en français par le terme ``d'application'', c'est à dire de relation entre deux ensembles pour lequel chaque élément du premier (appelé ensemble de départ) est relié à un unique élément du second. Andy Hunt le définit donc dans \cite{hunt_towards_2000} comme \iquote{la liaison ou la correspondance entre les paramètres de contrôle (dérivés des actions de l'interprète) et les paramètres de synthèse sonore}\footnote{``the liaison or correspondence between control parameters (derived from performer actions) and sound synthesis parameters''}.\\
-\indent Ce terme a glissé dans l'usage du design d'instrument numérique en raison de la relative simplicité des relations dans les premiers développements et est resté en usage alors que les relations de correspondance sont aujourd'hui bien plus complexes, comme le notait déjà Joel Chadabe en 2002, dans \cite{chadabe_limitations_2002}: \iquote{Le mapping décrit la façon dont un contrôle est connecté à une variable. Mais à mesure que les instruments deviennent de plus en plus complexes pour inclure de grandes quantités de données, une sensibilité au contexte, ainsi que des capacités de génération sonore et musicale, le concept de mapping devient plus abstrait et ne décrit pas les réalités plus complexes des instruments électroniques\footnote{Mapping describes the way a control is connected to a variable. But as instruments become more complex to include large amounts of data, context sensitivity, and music as well as sound-generating capabilities, the concept of mapping becomes more abstract and does not describe the more complex realities of electronic instruments.}.}\\
+
 \indent D'après Hunt et Wanderley \cite{hunt_mapping_2002}, deux directions dans le design de mapping :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
@@ -96,10 +94,21 @@ Cette technique notamment utilisée dans \cite{bascou_gmu_2005} permet de décle
 \section{Modèles intermédiaires dynamiques}
 \label{sec:algorithms:MID}
 Articles du la notion de DIM (@SMC), article sur le jeu de pitch (@ICMC)
-     
 
-augmenter la quantité nombre de dimensions (de peu de paramètres à beaucoup de paramètres)
-augmenter la qualité
+
+\subsection{Du mapping aux modèles intermédiaires dynamiques}
+
+\par{\textbf{Origines du terme mapping}} Dans le domaine des lutheries numériques, le terme de ``mapping'' est très couramment utilisé pour décrire la relation entre les données issues des capteurs (en particulier de l'interface gestuelle) et les paramètres de la synthèse sonore. Le terme lui-même est issu des mathématiques dans lequel il se traduit en français par ``application'', c'est à dire une relation entre deux ensembles pour lequel chaque élément du premier (appelé ensemble de départ) est relié à un unique élément du second. Andy Hunt le définit ainsi comme \iquote{la liaison ou la correspondance entre les paramètres de contrôle (dérivés des actions de l'interprète) et les paramètres de synthèse sonore}\footnote{``the liaison or correspondence between control parameters (derived from performer actions) and sound synthesis parameters'' \cite{hunt_towards_2000}}.\\
+\indent Ce terme a glissé dans le vocabulaire de la lutherie numérique en raison de la relative simplicité des relations de correspondance dans les premiers \glspl{DMI} et est resté, alors que ces relations se sont progressivement complexifiéees, comme le notait déjà Joel Chadabe en 2002 : \iquote{Le mapping décrit la façon dont un contrôle est connecté à une variable. Mais à mesure que les instruments deviennent de plus en plus complexes pour inclure de grandes quantités de données, une sensibilité au contexte, ainsi que des capacités de génération sonore et musicale, le concept de mapping devient plus abstrait et ne décrit pas les réalités plus complexes des instruments électroniques}\footnote{Mapping describes the way a control is connected to a variable. But as instruments become more complex to include large amounts of data, context sensitivity, and music as well as sound-generating capabilities, the concept of mapping becomes more abstract and does not describe the more complex realities of electronic instruments. \cite{chadabe_limitations_2002}}.\\
+
+\par{\textbf{De nombreux types de mapping}} Le \textit{mapping} est un domaine en effervescence depuis le début des années 2000 et de nombreuses techniques ont été proposées, passant la proposition de modèles multi-couches (Verfaille 06, Wanderley), de cartographie de paramètres (Wessel, Schwarz, Tubb), sur la continuité énergétique (Cadoz), sur des métaphores d'interaction avec des objets virtuels (Wessel, Wright 2002), de modèles basés sur des paramètres perceptifs (Wyse and Duy), de modèles physiques ou visuels (Momeni), de modèles géométriques (Van Nort 2004), stochastiques (Dabby 1995 PhD), d'apprentissage automatique basé sur la corréaltion entre le geste et l'écoute (Caramiaux), sur la démonstration (Françoise ), (e.g. ``mapping through listening''\cite{caramiaux_mapping_2014}, ``mapping by demonstration'' \cite{francoise_motion-sound_2015}, Fiebrink \cite{fiebrink_real-time_2011})
+
+\par{\textbf{mapping selon la perspective}} Ces différentes approches relèvent (sans que cela soit nécessairement exprimé explicitement par leurs auteurs) de dynamiques différentes concernant l'interaction musicale et ses finalités. Ainsi, plusieurs études ont été publiées, tentant de cerner les contours de la notion de mapping, de les catégoriser et de les comparer qualitativement. Cependant, si certains de ces articles ont tenté de montrer que certains types de mappings fonctionnaient mieux que d'autres, il semble difficile de les évaluer en dehors du cadre spécifique dans lequel ils ont été conçus\footnote{...et nous avons vu dans le chapitre \ref{ch:gesture} la diversité des situations d'interaction musicale, allant de la composition à la performance, en passant par des situations d'écoute, de pédagogie, etc.}, et encore moins dans la perspective d'une ``universalité'' --~qui semblerait aujourd'hui davantage être une ``\textit{multiversalité}''. Leur qualité est en effet extrêmement complexe à évaluer et fait intervenir, au delà du modèle théorique qui les régit, la qualité des capteurs, la fréquence d'échantillonage, le type de synthèse contrôlée en aval, les conditions environementales (qui peuvent altérer la manière dont le geste est capté), les motivations musicales sous-jacentes, et par suite des considérations esthétiques éminemment subjectives\footnote{Par exemple, les assertions prétendant qu'un mapping complexe donnait de meilleurs résultats qu'un mapping simple (\cite{rovan_instrumental_1997, hunt_mapping_2000}) sont facilement invalidables. Sergi Jorda prenait l'exemple du Theremin dans \cite{Jorda-phd} pour mettre en évidence le succès d'un mapping \textit{one-to-one}.}.
+
+\par{\textbf{Mapping hybride}} Nous sommes ainsi aujourd'hui dans une situation où de nombreuses stratégies de mapping sont disponibles, qui loin de s'exclure mutuellement, constituent un répertoire très riche pour composer le design de l'interaction instrumentale. En effet, au delà de l'utilisation de mapping isolés à des fins démonstratives, le design de l'interaction instrumentale est souvent un hybride de différentes stratégies qui se complètent (figure \ref{fig:algorithms:DynamicMappingLayer4}). L'apprentissage automatique va par exemple permettre d'afir sur des paramètres de haut-niveau qui seront modulés par d'autres paramètres ayant un rapport plus direct et réactif aux valeurs issues des capteurs. Par ailleurs, si la plupart des stratégies de mapping présentées dans la littérature cherchent à obtenir une cohérence entre le geste et le son, nous avons vu au chapitre \ref{ch:gesture}, que cette cohérence n'est pas nécessairement une finalité dans la création musicale. La possibilité de mélanger et de ``corrompre'' les mappings présentés dans la littérature fait donc partie intégrante du processus d'élaboration de l'interaction instrumentale.
+
+\indent Ainsi, malgré sa popularité\footnote{Entre 2001 et 2015, le terme "mapping" a été employé dans plus de 750 articles de la conférence \gls{NIME} alors que "design d'interaction" (interaction design) n'était employé que dans 160 articles.}, le terme de mapping semble assez peu représenter la complexité de ce qui n'est pas une simple mise en relation et nous préférerions parler d'un design interactif, c'est à dire d'une programmation interactive des relations entre gestes et sons faisant intervenir modèles dynamiques, scénarios évolutifs, fragments de partitions, etc.\\
+
 
 \cite{momeni_dynamic_2006}, \cite{winkler_making_1995}, 
 
@@ -129,13 +138,13 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 	 	\includegraphics[width=\linewidth]{gfx/04_algorithms/Momeni-DynamicMappingLayers.png}
-		\caption[Représentation du mapping \#3]{Mapping d'après Momeni et Henry}
+		\caption[Représentation du mapping \#3]{Mapping intermédiaire dynamique, d'après Momeni et Henry}
 		\label{fig:algorithms:DynamicMappingLayer3}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
-	  \includegraphics[width=\linewidth]{gfx/04_algorithms/complexPatch.png}
-		\caption[Représentation du mapping \#4]{Mapping, dans la vraie vie\footnote{Image postée sur le forum Max, en tant qu'offre d'emploi visant à remettre le patch en ordre \url{https://cycling74.com/forums/job-offer-1}}.}
+	  \includegraphics[width=\linewidth]{gfx/04_algorithms/mapping-IRL.pdf}
+		\caption[Représentation du mapping \#4]{Mapping, ``dans la vraie vie'' (schéma simplifié)}
 		\label{fig:algorithms:DynamicMappingLayer4}
 	\end{minipage}
 \end{figure}
@@ -152,17 +161,19 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 Les modèles génératifs peuvent amener à une liaison trop incertaine entre le geste et le résultat. Les modèles physiques\footnote{Voir par exemple, dans le cas de la synthèse temps-réel les librairies \gls{STK} développée par le \gls{CCRMA} et PMPD initialement développée par Cyrille Henry.} sont une alternative qui pallie ces deux problèmes en offrant à la fois un modèle intermédiaire entre le geste et le résultat qui réduit le potentiellement grand nombre de paramètres de synthèse à un plus petit nombre de paramètres gestuels.\\
 \indent Un problème des modèles physiques est d'une part leur instabilité dans les régimes non-linéaires et d'autre part, que la cohérence de la relation entre le geste et le son souhaitée par le musicien ne s'appuie pas nécessairement sur les règles de la mécanique newtonienne \footnote{On pourrait dire à certain égards que les instruments de musique cherchent à subvertir les lois de la physique, cf. section \ref{sec:gesture:subversion}}. Par exemple, on peut assigner à un modèle géométrique des mouvements, un tempo, une cinétique qui épousent la géométrie de l'objet sans toutefois qu'il y soit question de masse et que l'objet ait une ``cohérence physique''.
 
-\subsection{Caractéristiques souhaitées}
+\subsection{Caractéristiques souhaitanles}
 
-\noindent Les MIDs sont ainsi définis par les caractéristiques suivantes:
+\noindent Les MIDs sont ainsi caractérisés par la recherche qualités suivantes; la liste n'est pas exhaustive et les modèles peuvent n'en suivrent qu'une partie :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{enrichir le geste en qualité} avec des modulations opérant à des fréquences au-delà de celles mesurées par les capteurs et même au-délà des capacités humaines;
 	\item \textbf{enrichir le geste en quantité} et pouvoir, à partir d'un seul geste d'entrée, contrôler une multitude d'agents;
-	\item une intégration facile dans une architecture logicielle modulaire, qui permette de tester et ajuster ses modèles en direct;
+	\item \textbf{la modularité}, c'est à dire pourvoir les ré-utiliser dans différents contexte et les \textbf{interconnecter} dans une architecture logicielle modulaire, qui permette de tester et ajuster ses modèles en direct;
 	\item la possibilité de piloter simultanément différents moteurs de synthèse et de rendu avec les mêmes algorithmes, afin d'améliorer la cohérence de l'ensemble;
-	\item \textbf{être dynamique}, c'est à dire à la fois être susceptible d'évolution temporelle, mais également, de manière plus radicale, être instancié, supprimé, remplacer par un autre en cours de jeu.
-	\item être bidirectionnel : le modèle intermédiaire doit pouvoir communiquer dans les deux sens avec l'interface, les autres DIM ou le moteur de synthèse (cf. Fig. 1) afin de réguler les interactions (non linéaires) entre les différents étages.
+	\item \textbf{le dynamisme}, c'est à dire à la fois être susceptible d'évolution temporelle, mais également, de manière plus radicale, être instancié, supprimé, remplacer par un autre à la volée
+	\item \textbf{la bidirectionnalité}, le modèle intermédiaire doit pouvoir communiquer dans les deux sens avec l'interface et les autres modèles afin de pouvoir s'ajuster mutuellement;
+	\item \textbf{l'éditabilité}, permet de dériver d'autres modèles ou de les enrichir, à mesure des nouvelles inventions;
+	\item \textbf{l'exportabilité}, permet de ne pas dépendre d'une plateforme logicielle en particulier et d'être traduite dans d'autres langages;
 \end{itemize}
 
 Performing Low-Dimensional to High-Dimensional Mappings
@@ -183,17 +194,33 @@ offre une qualité de pincement particulière et son attaque est différente de 
 peut être convertie en un mouvement polyphonique multidimensionnel. Par exemple, sur un instrument à cordes, les nombreuses notes d'un accord peuvent être jouées d'une seule touche. Ce renforcement du mouvement peut agir sur les dimensions verticales (poly-phoniques), horizontales (polyrythmiques) ou sur les nombreuses dimensions du timbre. On peut par exemple contrôler un "paramètre cible" qu'un ensemble d'éléments atteindrait par une logique de déplacement qui leur est propre.
 \end{itemize}
 
-\subsection{Implémentation}
-Première implémentation en 2009.
-Re-implémentation avec MP.
+\subsection{Exemples}
 
-\subsection{Evaluation}
-Utilisation dans la MM. Utilisation dans FIB\_R pour contrôler image et son.
+\noindent Plusieurs modèles intermédiaires dynamiques ont été développés dans l'équipe \gls{LAM} ces dix dernières années, dans le cadre de plusieurs projets de recherche\footnote{\textit{OrJo} (Orchestre de Joysticks), 2009-2012, projet FEDER, financé par la Région Ile-de-France et \textit{Panam} (Pédagogie Artistique Numérique Accessible et Multimodale ), 2012-2015, projet \gls{ANR}} et donné lieu à des publications (\cite{todo}), dans la continuité des travaux d'Ali Momeni et Cyrille Henry \cite{todo}, sur le contrôle de modèles audio-graphique. En particulier, des recherches ont été menées sur les possibilités d'interconnexion de ces modèles\footnote{Une vidéo réalisée durant le projet OrJo donne un aperçu de la manière dont ils peuvent être interconnectés dans un scénario évolutif : \url{https://vimeo.com/25740547}} (figure \ref{fig:algorithms:MP-MID}).
+
+\indent Ces modèles ont été intégrés dans la LAM-lib, un package pour Max librement téléchargeable\footnote{\url{https://github.com/LAM-IJLRA/lam-lib}}. Ces modèles ont notamment été utilisés dans le cadre d'une pratique d'ensemble avec le logiciel Méta-Mallette\footnote{logiciel développé par l'association Puce Muse (\url{https://pucemuse.com})}.
+
+
+%------------------ Figure : MP-block ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}
+	\includegraphics[width=\textwidth]{gfx/04_algorithms/OrJo_MID_1200x300px.png}
+	\caption[Modèles intermédiaires dynamiques pour la synthèse audio-graphique]{Modèles intermédiaires dynamiques pour la synthèse audio-graphique. De gauche à droite : a) un modèle géométrique basé sur les courbes cycloïdes, b) un modèle pseudo-physique basé sur l'algorithme de Verlet, c) les modèles de Cycloïdes et de Verlet interconnectés, d) un algorithme génératif basé sur le ``jeu de la vie''.}
+	\label{fig:algorithms:MP-MID}
+\end{figure}
+%------------------ Figure : MP-block ---------------------
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{MP : un protocole de connexion modulaire, polyphonique, expressif}
+\section{MP : polyphonie modulaire et expressive}
 \label{sec:algorithms:MP}
+
+%---------------------------------------------------------------------------
+\subsection{Une note sur les polyphonies}
+
+\noindent La polyphonie dans les \gls{DMI} peut être envisagée à plusieurs niveaux: polyphonie de gestes (e.g. plusieurs doigts en contact sur une tablette multitouch), de sons (e.g. plusieurs ``notes'' qui résonnent en même temps) ou de modèles intermédiaires (e.g. plusieurs processus qui tournent en parallèle). Concevoir le design d'un \gls{DMI} poly-poly-polyphonique nécessite par conséquence d'établir les connexions entre ces différentes multiplicités.
+\indent Les notions de mapping \textit{one-to-one}, \textit{many-to-one}, \textit{one-to-many} et \textit{many-to-many}, telles que définie par \cite{todo_Wanderley}, peuvent ainsi s'agencer sur plusieurs niveaux, selon la polyphonie de chaque modèle en jeu, ou être organisées en sous-groupes. Prenons l'exemple de doigts contrôlant chacuns une mutiplicité d'agents autonomes, venant chacun contrôler une polyphonie de notes sur une synthèse \gls{FM}. Un scénario souhaitable (c'est un exemple) est que les agents et les notes contrôlés par un même doigt partagent des caractéristiques communes, ce qui nécessite une traçabilité de la source gestuelle et/ou un moyen de fusionner les informations nécessaires de part et d'autre des différentes sources concourant au résultat sonore final.
+\indent Inversement, nous pouvons consider un mapping \textit{many-to-one} en prenant l'example de plusieurs doigts venant agir sur un même objet virtuel. Dans ce cas, le résultat monophonique produit par l'objet virtuel peut prendre contenir l'information polyphonique des différents doigts qui agissent sur lui. Cette différence d'appréciation peut être comparée à la manière dont sont envisagée les différentes notes d'un clavier. On peut soit considérer les différentes hauteurs produites par les touches commes une multiplicité d'événements indépendants (comme c'est le cas avec le clavier polyphonique d'un piano, sur lequel s'appuie le concept de note \gls{MIDI}), soit envisager la hauteur comme un paramètre monophonique (comme c'est le cas sur le clavier d'une onde Martenot).
 
 %---------------------------------------------------------------------------
 \subsection{Motivations et revue des protocoles existants}
