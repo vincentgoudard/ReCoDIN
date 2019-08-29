@@ -17,12 +17,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Matériaux algorithmiques}
 
-\noindent Dans le cas des \glspl{DMI}, les données sont essentiellement :
+\noindent Dans le cas des \glspl{DMI}, les données sont essentiellement de qutre types:
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item \textbf{des signaux audio}, enregistrés dans des tables d'ondes ou sous forme de flux;
+	\item \textbf{des flux de données}, qu'ils soient audio ou non, captés en temps-réel ou re-lus à partir d'enregistrements;
 	\item \textbf{des algorithmes}, définissant les opérations mathématisques à effectuer pour traiter les données audio
-	\item \textbf{des objets}, définissant les opérateurs, les réglages et xxx todo;
+	\item \textbf{des objets}, définissant des structures de données: réglages et xxx todo;
 	\item \textbf{un graphe}, définissant l'agencement des opérateurs.
 \end{itemize}
 
@@ -81,9 +81,8 @@ synthèse extensive ou intesive.
 
 Sound  \cite{di_scipio_sound_2003}
 
-\noindent On a tendance à séparer \todo{réf?}, dans la description et le design des \glspl{DMI}, une partie \gls{DSP}, traitant un \textit{signal synchrone}, souvent associée voire confondue à la synthèse audio, et une partie \textit{contrôle}, souvent associé à des données de type \textit{messages asyncrones} (e.g. typiquement, des messages \gls{MIDI}) venant contrôler le \gls{DSP}.\\
-\indent Il existe une différence de nature assez profonde entre ces deux types de données, à la fois du côté de leur implémentation technique\footnote{programmation synchrone vs. asynchrone, priorité d'horloge, etc.} mais également dans leur rôle et leur fonction dans l'interaction musicale. 
-Ainsi, le signal se présente souvent comme l'\textit{image d'un signal analogique échantillonné} avec l'idée de continuité qui lui est associée. L'autre un graphe asynchrone, se présentant souvent comme l'image d'un ordre d'éxecution (e.g. note-on). \\
+\noindent On a tendance à séparer\todo{réf?}, dans la description et le design des \glspl{DMI}, une partie \gls{DSP}, traitant un \textit{signal synchrone}, souvent associée voire confondue à la synthèse audio, et une partie \textit{contrôle}, souvent associé à des données de type \textit{messages asyncrones} (e.g. typiquement, des messages \gls{MIDI}) venant contrôler le \gls{DSP}.\\
+\indent Il existe une différence de nature assez profonde entre ces deux types de données, à la fois du côté de leur implémentation technique\footnote{programmation synchrone vs. asynchrone, priorité d'horloge, etc.} mais également dans leur rôle et leur fonction dans l'interaction musicale. Ainsi, le signal se présente souvent comme l'image d'un signal analogique échantillonné, avec l'idée de continuité qui lui est associée. L'autre un graphe asynchrone, se présentant souvent comme l'image d'un ordre d'éxecution (e.g. note-on). \\
 \indent D'un côté on a un signal continu et monophonique (un seul échantillon est traité à la fois), de l'autre un signal sporadique et potentiellement polyphonique (plusieurs messages peuvent être envoyé au même instant logique).\\
 \indent Cependant, du point de vue de leur utilisation, les frontières entre ces deux types de données numériques d'une part, et ces deux natures d'objets conceptuel (le signal continu et l'ordre événementiel) ne se recouvrent pas exactement. \\
 \indent D'une part, il est courant d'utiliser les messages asynchrones de Max pour convoyer des variables continues (telles que les données d'un contrôle MIDI-CC ou d'un capteur envoyé par \gls{OSC}).\\
@@ -94,10 +93,10 @@ Cette technique notamment utilisée dans \cite{bascou_gmu_2005} permet de décle
 \todo{Mettre une explication et une ref vers FTM.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Modèles intermédiaires}
+\section{Modèles intermédiaires dynamiques}
 \label{sec:algorithms:MID}
 Articles du la notion de DIM (@SMC), article sur le jeu de pitch (@ICMC)
-
+     
 
 augmenter la quantité nombre de dimensions (de peu de paramètres à beaucoup de paramètres)
 augmenter la qualité
@@ -142,7 +141,7 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 \end{figure}
 %------------------ Figure : MP-event et MP-block ---------------------
 
-\subsection{Motivations}
+\subsection{Du mapping au modèle intermédiaire}
 
 \noindent Les \glspl{DMI} nous mettent face à une équation bancale. D'un côté quelques flux de données issus de capteurs rendent péniblement compte de la finesse du geste physique, de l'autre la possibilité (et le désir) de produire une musique plus complexe qu'aucun instrument acoustique ne peut le faire. La réponse à cette équation réside dans la question centrale de ce que l'on nomme habituellement le \gls{mapping}, c'est à dire la relation de correspondance entre valeurs issues de capteurs et paramètres de synthèse. Cependant, et malgré sa popularité\footnote{Entre 2001 et 2015, le terme "mapping" a été employé dans plus de 750 articles de la conférence \gls{NIME} alors que "design d'interaction" (interaction design) n'était employé que dans 160 articles.}, le terme de mapping semble assez peu représenter la complexité de ce qui n'est pas une simple mise en relation et nous préférerions parler d'un design d'interaction, c'est à dire d'une programmation des relations entre gestes et sons faisant intervenir modèles dynamiques, scénarios évolutifs, fragments de partitions et réglages d'un nombre extrêmement élevé de variables.\\
 \indent Les algorithmes de synthèse et de transformation peuvent présenter un nombre de paramètres trop élevés pour qu'il soit possible de les contrôler individuellement. Diverses méthodes de réduction du nombre de paramètre à gérer par le musicien sur son interface de jeu ont été proposées, telles que l'utilisation de paramètres intermédiaires abstraits \cite{wanderley_escher-modeling_1998}, la projection de l'espace des paramètres sur un espace perceptif \cite{wessel_timbre_1979}, ou d'exploration par voisinage \cite{tubb_divergent_2014}, de modèles physiques \cite{todo}, de modèles d'apprentissage \cite{lee_real-time_1991, fiebrink_real-time_2011}.
@@ -158,12 +157,21 @@ Les modèles génératifs peuvent amener à une liaison trop incertaine entre le
 \noindent Les MIDs sont ainsi définis par les caractéristiques suivantes:
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item \textbf{enrichir le geste} capté avec des modulations opérant à des fréquences au-delà des fréquences gestuelles humaines (par ex. rebonds rapides);
-	\item \textbf{démultiplier le geste} et pouvoir, à partir d'un seul geste d'entrée, contrôler une multitude d'agents;
+	\item \textbf{enrichir le geste en qualité} avec des modulations opérant à des fréquences au-delà de celles mesurées par les capteurs et même au-délà des capacités humaines;
+	\item \textbf{enrichir le geste en quantité} et pouvoir, à partir d'un seul geste d'entrée, contrôler une multitude d'agents;
 	\item une intégration facile dans une architecture logicielle modulaire, qui permette de tester et ajuster ses modèles en direct;
 	\item la possibilité de piloter simultanément différents moteurs de synthèse et de rendu avec les mêmes algorithmes, afin d'améliorer la cohérence de l'ensemble;
+	\item \textbf{être dynamique}, c'est à dire à la fois être susceptible d'évolution temporelle, mais également, de manière plus radicale, être instancié, supprimé, remplacer par un autre en cours de jeu.
 	\item être bidirectionnel : le modèle intermédiaire doit pouvoir communiquer dans les deux sens avec l'interface, les autres DIM ou le moteur de synthèse (cf. Fig. 1) afin de réguler les interactions (non linéaires) entre les différents étages.
 \end{itemize}
+
+Performing Low-Dimensional to High-Dimensional Mappings
+High-Level Control
+Time-Variable Behavior of Structure
+Visual Mapping Layers
+An Intrinsic Link Between Generated Audio and Video
+
+
 
 Les processus à l'œuvre dans un modèle intermédiaire agissent sur plusieurs aspects de la transduction de mouvement attendue dans un instrument de musique.
 \vspace{-1em}
