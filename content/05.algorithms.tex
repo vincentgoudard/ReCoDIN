@@ -168,20 +168,36 @@ peut être convertie en un mouvement polyphonique multidimensionnel. Par exemple
 
 \subsection{Exemples}
 
-\noindent Plusieurs modèles intermédiaires dynamiques ont été développés dans l'équipe \gls{LAM} ces dix dernières années, dans le cadre de plusieurs projets de recherche\footnote{\textit{OrJo} (Orchestre de Joysticks), 2009-2012, projet FEDER, financé par la Région Ile-de-France et \textit{Panam} (Pédagogie Artistique Numérique Accessible et Multimodale ), 2012-2015, projet \gls{ANR}} et donné lieu à des publications (\cite{goudard_dynamic_2011, goudard_modeintermediaire_2012, goudard_playing_2014}), dans la continuité des travaux d'Ali Momeni et Cyrille Henry \cite{momeni_dynamic_2006}, sur le contrôle de modèles audio-graphique. En particulier, des recherches ont été menées sur les possibilités d'interconnexion de ces modèles\footnote{Une vidéo réalisée durant le projet OrJo donne un aperçu de la manière dont ils peuvent être interconnectés dans un scénario évolutif : \url{https://vimeo.com/25740547}} (figure \ref{fig:algorithms:MP-MID}).\\
-\noindent Également, des développements se sont concentrés par l'étude verticale de la gestion du contrôle de la hauteur monophonique, en partant de sa possible représentation sur une interface bi-dimensionnelle (de type tablette), jusqu'à sa synthèse \cite{goudard_playing_2014}.
 
-\indent Ces différents modèles ont été intégrés dans la LAM-lib, un package pour Max librement téléchargeable\footnote{\url{https://github.com/LAM-IJLRA/lam-lib}}. Ils ont notamment été utilisés dans le cadre d'une pratique d'ensemble avec le logiciel Méta-Mallette\footnote{logiciel développé par l'association Puce Muse (\url{https://pucemuse.com})}, ainsi que dans des créations personnelles comme ``FIB\_R''.
-
-
-%------------------ Figure : MP-block ---------------------
+%------------------ Figure : MID ---------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}
 	\includegraphics[width=\textwidth]{gfx/04_algorithms/OrJo_MID_1200x300px.png}
 	\caption[Modèles intermédiaires dynamiques pour la synthèse audio-graphique]{Modèles intermédiaires dynamiques pour la synthèse audio-graphique. De gauche à droite : a) un modèle géométrique basé sur les courbes cycloïdes, b) un modèle pseudo-physique basé sur l'algorithme de Verlet, c) les modèles de Cycloïdes et de Verlet interconnectés, d) un algorithme génératif basé sur le ``jeu de la vie''.}
 	\label{fig:algorithms:MP-MID}
 \end{figure}
-%------------------ Figure : MP-block ---------------------
+%------------------ Figure : MID ---------------------
+
+%------------------ Figure : représentation du mapping #3 #4 ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+	 	\includegraphics[width=\linewidth]{gfx/04_algorithms/MID-HarmonicHexa-mapping.png}
+		\caption[Clavier isomorphique dans Max]{Mapping de clavier isomorphique dans Max}
+		\label{fig:algorithms:MID-hexakeyboard}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	  \includegraphics[width=\linewidth]{gfx/04_algorithms/MID-dynamic-pitch-correction.pdf}
+		\caption[Correction dynamique de la hauteur]{Correction dynamique de la hauteur par anamorphose de la surface de jeu.}
+		\label{fig:algorithms:MID-dynamic-pitch-correction}
+	\end{minipage}
+\end{figure}
+%------------------ Figure : MP-event et MP-block ---------------------
+
+\noindent Plusieurs modèles intermédiaires dynamiques ont été développés dans l'équipe \gls{LAM} ces dix dernières années, dans le cadre de plusieurs projets de recherche\footnote{\textit{OrJo} (Orchestre de Joysticks), 2009-2012, projet FEDER, financé par la Région Ile-de-France et \textit{Panam} (Pédagogie Artistique Numérique Accessible et Multimodale ), 2012-2015, projet \gls{ANR}} et donné lieu à des publications, dans la continuité des travaux d'Ali Momeni et Cyrille Henry \cite{momeni_dynamic_2006}, sur le contrôle de modèles audio-graphiques. En particulier, des recherches ont été menées sur les possibilités d'interconnexion de ces modèles\footnote{Une vidéo réalisée durant le projet OrJo donne un aperçu de la manière dont ils peuvent être interconnectés dans un scénario évolutif : \url{https://vimeo.com/25740547}} (figure \ref{fig:algorithms:MP-MID} et voir \cite{goudard_dynamic_2011}). D'autres développement se sont focalisés sur des algorithmes génératifs comme l'automate cellulaire du ``jeu de la vie''\footnote{Une vidéo montre son utilisation dans le logiciel Méta-Mallette : \url{https://vimeo.com/158323394}} (voir \cite{goudard_modeintermediaire_2012}). Enfin, des développements se sont concentrés par l'étude verticale de la gestion du contrôle de la hauteur monophonique \cite{goudard_playing_2014}, en s'intéressant à ses possibles représentations sur une interface bi-dimensionnelle (de type tablette)(figure \ref{fig:algorithms:MID-hexakeyboard}) et sur ses altérations (figure \ref{fig:algorithms:MID-dynamic-pitch-correction}).\\
+\indent Ces différents modèles ont été intégrés dans la LAM-lib, un package pour Max librement téléchargeable\footnote{\url{https://github.com/LAM-IJLRA/lam-lib}}. Ils ont notamment été utilisés dans le cadre d'une pratique d'ensemble avec le logiciel Méta-Mallette\footnote{logiciel développé par l'association Puce Muse (\url{https://pucemuse.com})}, ainsi que dans des créations personnelles comme ``FIB\_R''.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
