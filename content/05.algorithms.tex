@@ -17,82 +17,63 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Matériaux numériques}
 
-\noindent D'un point de vue ontologique, on peut considérer que la partie numérique d'un \gls{DMI} est composée de deux grands types de données :
+\subsection{Le son synthétique}
+
+\noindent \iquote{Mais ces instruments numériques que vous fabriquez, ils utilisent des sons enregistrés ou des sons de synthèse ?}
+Cette question fréquemment posée par des interlocuteurs curieux des nouvelles lutheries est révélatrice des catégorisation opérées sur les matériaux et processus à l'œuvre dans les instruments numériques. Elle se traduisent, en terme d'esthétique musicale, par des genres musicaux différents dans les musiques actuelles (``field recording'', ``sampling'', ``folk acoustique'', par opposition à ``techno'', ``glitch'', ``musique électronique'') qui reflètent cette distinction que l'on fait intuitivement entre une image ``analogique'' du monde sonore ou des artefacts ``synthétiques'', quand bien même les deux seraient produites à l'aide d'un ordinateur.\\
+\indent Rappelons donc tout d'abord ce préalable: les sons produits par un ordinateur sont tous des sons de synthèse.\\
+\indent On viendra opposer à ce postulat la nature plus artificielle d'un son purement créé à partir d'une équation mathématique, tel un son de synthèse FM, par rapport à la relecture d'un enregistrement audio réalisé à partir d'une source acoustique. Certes. Pourtant, la relecture de cet enregistrement n'est, du point de vue de son fonctionnement technique, guère différente de la lecture d'une table d'onde dans une synthèse additive. A la différence perceptive du résultat vient donc s'opposer une évidente unité de moyen. De plus, les lutheries numériques, en pratique, reposent moins sur des modèles théoriques purs que sur des formes hybrides. Si on utlilise un enregistrement audio-numérique, cela ne sera généralement pas pour le rejouer tel quel, inchangé, mais pour en jouer, en utilisant le processus de lecture comme un algorithme interactif, avec ses variables paramétriques de vitesse de lecture, de position, de gain, etc.
+
+\subsection{contrôle de la synthèse, synthèse du contrôle}
+
+\noindent En paraphrasant Edgar Varèse qui décrivait la musique comme \textit{l'art des sons organisés}, on pourrait donc dire que le son numérique est l'art des bits organisés. Sans descendre aussi profondément dans le fonctionnement technique de la machine et son alphabet binaire, on peut considérer, d'un point de vue ontologique, que la partie numérique d'un \gls{DMI} est composée de deux grands types de données :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{le code}, ou comme le dirait Bernard Stiegler les ``rétentions tertiaires'', qui prennent la forme d'algorithmes ou de structures de données;
 	\item \textbf{les flux}, provenant des capteurs de l'interface, du réseau, ou du code lui même, dans sa capacité à les auto-générer, et qui se modifient en ``traversant'' le code pour produire \textit{in fine} des signaux audio.
 \end{itemize}
-
 \noindent Dans les environnements de programmation audio, on opère généralement une distinction entre deux types de flux de données : 
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item \textbf{des signaux synchrones}, représentant par exemple des signaux audio, échantillonés à une fréquence précise, et traités généralement par bloc dans un \gls{DSP};
-	\item \textbf{des événements asynchrones}, arrivant de manière sporadique, tels que les messages \gls{MIDI}, \gls{OSC} ou d'autres types de messages propres au programme;
+	\item \textbf{des signaux synchrones}, représentant par exemple des signaux audio, échantillonnés à une fréquence précise, et traités généralement par bloc dans un \gls{DSP};
+	\item \textbf{des événements asynchrones}, arrivant de manière sporadique, tels que les messages \gls{MIDI}, \gls{OSC} ou d'autres types de messages propres au programme et traités dans un graphe de contrôle réactif;
 \end{itemize}
 
-\noindent Si cette distinction reflète une différence ontologique entre le domaine du continu et celui du catégoriel, ces deux types de flux traduisent également deux granularités temporelles différentes et sont généralement associés aux notions d'\textit{audio-rate} et de \textit{control-rate}\footnote{On retrouve évidemment cette distinction dans tous les logiciels basés sur l'utilisation du \gls{MIDI}, mais également dans Max, dans SuperCollider, dans Csound et même dans Chuck qui permet pourtant que le contrôle soit cadencé à une fréquence arbitraire aussi élevée que celle de l'échantillonage audio}.
-Il est intéressant de noter que le contrôle est ainsi implicitement défini comme un signal sporadique et de fréquence moindre que le signal audio-numérique, ce qui en soit pourrait être discuté.\\
-\indent Par ailleurs, la programmation adopte souvent un paradigme de \textit{dataflow} telle que la programmation réactive pour les besoins du temps-réel, tout en s'intégrant dans environnements multi-paradigmes\footnote{Un logiciel tel que Max qui s'articule essentiellement autour d'une programmation visuelle de \textit{dataflow}, intègre également des possibilités de scripting, de programmation synchrone, fonctionnelle ou impérative.}.\\
-\indent Une autre distinction, qui découle en partie des catégories précédante, est celle qui consiste à consider les algorithmes de synthèse audio d'une part, et les relations --~potentiellement algorithmiques~-- entre les ``entrées'' de l'instrument (telles que les données issues d'une interface gestuelle) et la synthèse, généralement nommées ``\textit{mapping}''.\\
+\noindent Si cette distinction reflète une différence ontologique entre le domaine du continu et celui du catégoriel, ces deux types de flux traduisent également deux granularités temporelles différentes et sont généralement associés aux notions d'\textit{audio-rate} et de \textit{control-rate}\footnote{On retrouve cette distinction dans tous les logiciels basés sur l'utilisation du \gls{MIDI}, mais également dans Max, dans SuperCollider, dans Csound et même dans Chuck qui permet pourtant que le contrôle soit cadencé à une fréquence arbitraire aussi élevée que celle de l'échantillonage audio, voire plus élevée.}. Il est intéressant de noter que le contrôle est ainsi implicitement défini comme un signal sporadique et de fréquence moindre que le signal audio-numérique, ce qui relève en soi d'une représentation musicale qui pourrait être discutée.\\
+\indent Ainsi, le signal numérique (synchrone) se présente souvent comme l'image d'un signal (audio) analogique échantillonné, avec l'idée de continuité qui lui est associée, tandis que les messages asynchrones se présentent souvent comme l'image d'un ordre d'éxecution (e.g. une note-on \gls{MIDI}). D'un côté, on a un signal continu et mono-dimensionnel (un seul échantillon est traité à la fois), de l'autre un signal sporadique et potentiellement polyphonique (plusieurs messages peuvent être envoyé au même instant logique, sans qu'ils soient associés à des flux différents).\\
+\indent Cependant, du point de vue de leur usage, les frontières entre ces deux types de données numériques d'une part, et ces deux natures d'objets conceptuels (le signal continu et l'ordre événementiel) d'autre part, ne se recouvrent pas exactement. Il est ainsi courant d'utiliser des messages asynchrones pour convoyer des variables continues (telles que les données d'un contrôle MIDI-CC ou d'un capteur envoyé par \gls{OSC}). À l'inverse, il est également possible d'utiliser un signal synchrone pour déclencher des événements (musicaux) discrets. C'est par exemple le cas lors qu'on envoie une impulsion dans une synthèse de type \gls{KarplusStrong}, ou pour déclencher une enveloppe ou la lecture d'un échantillon\footnote{comme c'est le cas dans le système de synthèse granulaire Sagrada, présenté en section\ref{sec:algorithms:sagrada}}.
+
+\indent Par ailleurs, la programmation des \glspl{DMI} adopte souvent un paradigme de \textit{dataflow}, telle que la programmation ``réactive'', pour répondre aux besoins du temps-réel, tout en s'intégrant dans environnement multi-paradigmes\footnote{Un logiciel tel que Max qui s'articule essentiellement autour d'une programmation visuelle de \textit{dataflow}, intègre également des possibilités de scripting, de programmation synchrone, fonctionnelle ou impérative.}. Une autre distinction qui en découle en partie, est celle qui consiste à séparer les algorithmes de synthèse audio d'une part, et le \textit{mapping}\footnote{c'est à dire les relations --~potentiellement algorithmiques~-- entre les ``entrées'' de l'instrument (telles que les données issues d'une interface gestuelle) et la synthèse. Cf. section \ref{sec:algorithms:mapping-to-MID}} d'autre part en deux objets conceptuels distincts, comme en témoignent les représentations de modèles de mappings proposés sur les figures \ref{fig:algorithms:DynamicMappingLayer1}, \ref{fig:algorithms:DynamicMappingLayer2}, \ref{fig:algorithms:DynamicMappingLayer3}.\\
 \indent Si ces différentes distinctions résultent de contraintes techniques, d'évolutions historiques, de choix conceptuels voire d'intentions musicales, j'ai cependant choisi de regrouper dans ce chapitre des aspects concernant à la fois le mapping et la synthèse. Ce choix est motivé par la porosité évidente qu'il existe entre ces différentes catégories et par des développements qui tentent, en partie, de redéfinir leur articulation.
 
+\subsection{Extra}
+
 L’atomisation jusqu’au sample, plutôt que séparation entre DSP et messages de contrôle
-=> faust, gen\textasciitilde{ } et cie : l’export vers des plateformes multiples.
-
-\subsection{La notion de mapping}
-
+=> faust, gen\textasciitilde{ } et cie : l’export vers des plateformes multiples.\\
 \indent D'après Hunt et Wanderley \cite{hunt_mapping_2002}, deux directions dans le design de mapping :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{generative mechanisms}, such as neural networks to perform mapping;
 	\item \textbf{explicitly defined mapping strategies}.
 \end{itemize}
-
-Exemples de schéma de mapping de Wanderley dans \cite{wanderley_escher-modeling_1998}.
-
-MnM : \cite{bevilacqua_mnm_2005}
-
-``complex mappings are more satisfactory, after a learning phase, than one-to-one mapping'' in \cite{wanderley_mapping_2002}
-
+Exemples de schéma de mapping de Wanderley dans \cite{wanderley_escher-modeling_1998}.\\
+MnM : \cite{bevilacqua_mnm_2005}\\
+``complex mappings are more satisfactory, after a learning phase, than one-to-one mapping'' in \cite{wanderley_mapping_2002}\\
 \extra{\cite{hunt_mapping_2002}: \iquote{(...) we define mapping as the act of taking real-time performance data from an input device and using it to control the parameters of a synthesis engine.}}
+Sound is the interface, \cite{di_scipio_sound_2003}
 
-%-----------------------------------
-\subsection{Sons de synthèses ou échantillons ?}
-
-\noindent La question est souvent posée, concernant la synthèse sonore de \glspl{DMI}, s'ils utilisent des sons de synthèse ou des sons enregistrés, oubliant dans le même temps que les sons enregistrés sont, lorsqu'ils sont rejoués, des sons de synthèse.\\
-\indent Il serait alors tentant de faire une distinction entre des sons synthétisées à partir de purs modèles mathématiques et des sons synthétisés à partir d'échantillons enregistrés dans des tables d'onde. Pourtant, là encore, cette distinction serait vaine
-\indent Cette distinction est plus adéquate lorsqu'on parle de synthèse  d'une analogie avec la différence qu'il existe en image vectorielle, composée de primitives géométrique qui la définisse et une image matricielle, définie directement par la matrice de ses pixels.\\
-synthèse extensive ou intesive.
-
-\todo{reformuler ça}
-
-%---------------------------------------
-\subsection{Synthèse sonore ou contrôle}
-
-Sound  \cite{di_scipio_sound_2003}
-
-\noindent On a tendance à séparer\todo{réf?}, dans la description et le design des \glspl{DMI}, une partie \gls{DSP}, traitant un \textit{signal synchrone}, souvent associée voire confondue à la synthèse audio, et une partie \textit{contrôle}, souvent associé à des données de type \textit{messages asyncrones} (e.g. typiquement, des messages \gls{MIDI}) venant contrôler le \gls{DSP}.\\
-\indent Il existe une différence de nature assez profonde entre ces deux types de données, à la fois du côté de leur implémentation technique\footnote{programmation synchrone vs. asynchrone, priorité d'horloge, etc.} mais également dans leur rôle et leur fonction dans l'interaction musicale. Ainsi, le signal se présente souvent comme l'image d'un signal analogique échantillonné, avec l'idée de continuité qui lui est associée. L'autre un graphe asynchrone, se présentant souvent comme l'image d'un ordre d'éxecution (e.g. note-on). \\
-\indent D'un côté on a un signal continu et monophonique (un seul échantillon est traité à la fois), de l'autre un signal sporadique et potentiellement polyphonique (plusieurs messages peuvent être envoyé au même instant logique).\\
-\indent Cependant, du point de vue de leur utilisation, les frontières entre ces deux types de données numériques d'une part, et ces deux natures d'objets conceptuel (le signal continu et l'ordre événementiel) ne se recouvrent pas exactement. \\
-\indent D'une part, il est courant d'utiliser les messages asynchrones de Max pour convoyer des variables continues (telles que les données d'un contrôle MIDI-CC ou d'un capteur envoyé par \gls{OSC}).\\
-\indent D'autre part, il est également possible d'utiliser un signal synchrone pour déclencher des événements (musicaux) discrets. C'est par exemple le cas lors qu'on envoie une impulsion dans une synthèse de type \gls{KarplusStrong}, ou quand on utilise directement une impulsion audio pour déclencher une enveloppe ou la lecture d'un échantillon.
-Cette technique notamment utilisée dans \cite{bascou_gmu_2005} permet de déclencher des flux de grains à haute fréquence (plus rapidement que le système de message de Max ne le permet), ce qui permet notamment de le passage progressif entre flux rythmique et son continu (ref Stockhausen Kontakte)\\
-\indent L'arrivée du multi-canal dans le logiciel Max a également conforté cette notion d'utilisation de signaux audio comme messages de contrôle.
-
-\todo{Mettre une explication et une ref vers FTM.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Modèles intermédiaires dynamiques}
 \label{sec:algorithms:MID}
 
 \subsection{Du mapping aux modèles intermédiaires dynamiques}
+\label{sec:algorithms:mapping-to-MID}
 
 \par{\textbf{Origines du terme mapping.}} Dans le domaine des lutheries numériques, le terme de ``mapping'' est très couramment utilisé pour décrire la relation entre les données issues des capteurs (en particulier de l'interface gestuelle) et les paramètres de la synthèse sonore. Le terme lui-même est issu des mathématiques dans lequel il se traduit en français par ``application'', c'est à dire une relation entre deux ensembles pour lequel chaque élément du premier (appelé ensemble de départ) est relié à un unique élément du second. Andy Hunt le définit ainsi comme \iquote{la liaison ou la correspondance entre les paramètres de contrôle (dérivés des actions de l'interprète) et les paramètres de synthèse sonore}\footnote{``the liaison or correspondence between control parameters (derived from performer actions) and sound synthesis parameters'' \cite{hunt_towards_2000}}.\\
-\indent Ce terme a glissé dans le vocabulaire de la lutherie numérique en raison de la relative simplicité des relations de correspondance dans les premiers \glspl{DMI} et est resté, alors que ces relations se sont progressivement complexifiéees, comme le notait déjà Joel Chadabe en 2002 : \iquote{Le mapping décrit la façon dont un contrôle est connecté à une variable. Mais à mesure que les instruments deviennent de plus en plus complexes pour inclure de grandes quantités de données, une sensibilité au contexte, ainsi que des capacités de génération sonore et musicale, le concept de mapping devient plus abstrait et ne décrit pas les réalités plus complexes des instruments électroniques}\footnote{Mapping describes the way a control is connected to a variable. But as instruments become more complex to include large amounts of data, context sensitivity, and music as well as sound-generating capabilities, the concept of mapping becomes more abstract and does not describe the more complex realities of electronic instruments. \cite{chadabe_limitations_2002}}.\\
+\indent Ce terme a glissé dans le vocabulaire de la lutherie numérique en raison de la relative simplicité des relations de correspondance dans les premiers \glspl{DMI} et est resté, alors que ces relations se sont progressivement complexifiéees, comme le notait déjà Joel Chadabe en 2002 : \iquote{Le mapping décrit la façon dont un contrôle est connecté à une variable. Mais à mesure que les instruments deviennent de plus en plus complexes pour inclure de grandes quantités de données, une sensibilité au contexte, ainsi que des capacités de génération sonore et musicale, le concept de mapping devient plus abstrait et ne décrit pas les réalités plus complexes des instruments électroniques}\footnote{Mapping describes the way a control is connected to a variable. But as instruments become more complex to include large amounts of data, context sensitivity, and music as well as sound-generating capabilities, the concept of mapping becomes more abstract and does not describe the more complex realities of electronic instruments. \cite{chadabe_limitations_2002}}.
 
-\par{\textbf{De nombreux types de mapping.}} Le \textit{mapping} est un domaine en effervescence depuis le début des années 2000 et de nombreuses techniques ont été proposées, passant la proposition de modèles multi-couches (Verfaille 06, Wanderley), de cartographie de paramètres (Wessel, Schwarz, Tubb), sur la continuité énergétique (Cadoz), sur des métaphores d'interaction avec des objets virtuels (Wessel, Wright 2002), de modèles basés sur des paramètres perceptifs (Wyse and Duy), de modèles physiques ou visuels (Momeni), de modèles géométriques (Van Nort 2004), stochastiques (Dabby 1995 PhD), d'apprentissage automatique basé sur la corréaltion entre le geste et l'écoute (Caramiaux), sur la démonstration (Françoise ), (e.g. ``mapping through listening''\cite{caramiaux_mapping_2014}, ``mapping by demonstration'' \cite{francoise_motion-sound_2015}, Fiebrink \cite{fiebrink_real-time_2011})
+\par{\textbf{Un grand répertoire de mappings.}} Le \textit{mapping} est un domaine en effervescence depuis le début des années 2000 et de nombreuses techniques ont été proposées (figures \ref{fig:algorithms:DynamicMappingLayer1}, \ref{fig:algorithms:DynamicMappingLayer2}, \ref{fig:algorithms:DynamicMappingLayer3}), passant la proposition de modèles multi-couches (Verfaille 06, Wanderley), de cartographie de paramètres (Wessel, Schwarz, Tubb), sur la continuité énergétique (Cadoz), sur des métaphores d'interaction avec des objets virtuels (Wessel, Wright 2002), de modèles basés sur des paramètres perceptifs (Wyse and Duy), de modèles physiques ou visuels (Momeni), de modèles géométriques (Van Nort 2004), stochastiques (Dabby 1995 PhD), d'apprentissage automatique basé sur la corréaltion entre le geste et l'écoute (Caramiaux), sur la démonstration (Françoise ), (e.g. ``mapping through listening''\cite{caramiaux_mapping_2014}, ``mapping by demonstration'' \cite{francoise_motion-sound_2015}, Fiebrink \cite{fiebrink_real-time_2011})
 
 \par{\textbf{Mapping selon la perspective.}} Ces différentes approches relèvent (sans que cela soit nécessairement exprimé explicitement par leurs auteurs) de dynamiques différentes concernant l'interaction musicale et ses finalités. Ainsi, plusieurs études ont été publiées, tentant de cerner les contours de la notion de mapping, de les catégoriser et de les comparer qualitativement. Cependant, si certains de ces articles ont tenté de montrer que certains types de mappings fonctionnaient mieux que d'autres, il semble difficile de les évaluer en dehors du cadre spécifique dans lequel ils ont été conçus\footnote{...et nous avons vu dans le chapitre \ref{ch:gesture} la diversité des situations d'interaction musicale, allant de la composition à la performance, en passant par des situations d'écoute, de pédagogie, etc.}, et encore moins dans la perspective d'une ``universalité'' --~qui semblerait aujourd'hui davantage être une ``\textit{multiversalité}''. Leur qualité est en effet extrêmement complexe à évaluer et fait intervenir, au delà du modèle théorique qui les régit, la qualité des capteurs, la fréquence d'échantillonage, le type de synthèse contrôlée en aval, les conditions environementales (qui peuvent altérer la manière dont le geste est capté), les motivations musicales sous-jacentes, et par suite des considérations esthétiques éminemment subjectives\footnote{Par exemple, les assertions prétendant qu'un mapping complexe donnait de meilleurs résultats qu'un mapping simple (\cite{rovan_instrumental_1997, hunt_mapping_2000}) sont facilement invalidables. Sergi Jorda prenait l'exemple du Theremin dans \cite{Jorda-phd} pour mettre en évidence le succès d'un mapping \textit{one-to-one}.}.
 
@@ -100,9 +81,9 @@ Cette technique notamment utilisée dans \cite{bascou_gmu_2005} permet de décle
 
 \indent Ainsi, malgré sa popularité\footnote{Entre 2001 et 2015, le terme "mapping" a été employé dans plus de 750 articles de la conférence \gls{NIME} alors que "design d'interaction" (interaction design) n'était employé que dans 160 articles.}, le terme de mapping semble assez peu représenter la complexité de ce qui n'est pas une simple mise en relation et nous préférerions parler d'un design interactif, c'est à dire d'une programmation interactive des relations entre gestes et sons faisant intervenir modèles dynamiques, scénarios évolutifs, fragments de partitions, etc.\\
 
+\subsubsection{Extra material}
 
 \cite{momeni_dynamic_2006}, \cite{winkler_making_1995}, 
-
 Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mapping library for Pd (Steiner) \cite{steiner_towards_2006}, MnM (Bevilacqua et al.) \cite{bevilacqua_mnm_2005}, Libmapper
 
 %------------------ Figure : représentation du mapping #1 #2 ---------------------
@@ -111,13 +92,13 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/04_algorithms/Wanderley_Schema1.png}
-		\caption[Représentation du mapping \#1]{Mapping d'après Wanderley xx todo date}
+		\caption[Représentation du mapping \#1]{Mapping entre contrôleur et synthèse d'après \cite{hunt_towards_2000}}
 		\label{fig:algorithms:DynamicMappingLayer1}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	  \includegraphics[width=\linewidth]{gfx/04_algorithms/Wanderley_Schema2.png}
-		\caption[Représentation du mapping \#2]{Mapping d'après Wanderley xx todo date}
+		\caption[Représentation du mapping \#2]{Mapping multi-couches d'après \cite{hunt_mapping_2002}}
 		\label{fig:algorithms:DynamicMappingLayer2}
 	\end{minipage}
 \end{figure}
@@ -129,7 +110,7 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 	 	\includegraphics[width=\linewidth]{gfx/04_algorithms/Momeni-DynamicMappingLayers.png}
-		\caption[Représentation du mapping \#3]{Mapping intermédiaire dynamique, d'après Momeni et Henry}
+		\caption[Représentation du mapping \#3]{Mapping intermédiaire dynamique, d'après \cite{momeni_dynamic_2006}}
 		\label{fig:algorithms:DynamicMappingLayer3}
 	\end{minipage}
 	\hspace{.02\linewidth}
@@ -143,7 +124,7 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 
 \subsection{Du mapping au modèle intermédiaire}
 
-\noindent Les \glspl{DMI} nous mettent face à une équation bancale. D'un côté quelques flux de données issus de capteurs rendent péniblement compte de la finesse du geste physique, de l'autre la possibilité (et le désir) de produire une musique plus complexe qu'aucun instrument acoustique ne peut le faire. La réponse à cette équation réside dans la question centrale de ce que l'on nomme habituellement le \gls{mapping}, c'est à dire la relation de correspondance entre valeurs issues de capteurs et paramètres de synthèse. Cependant, et malgré sa popularité\footnote{Entre 2001 et 2015, le terme "mapping" a été employé dans plus de 750 articles de la conférence \gls{NIME} alors que "design d'interaction" (interaction design) n'était employé que dans 160 articles.}, le terme de mapping semble assez peu représenter la complexité de ce qui n'est pas une simple mise en relation et nous préférerions parler d'un design d'interaction, c'est à dire d'une programmation des relations entre gestes et sons faisant intervenir modèles dynamiques, scénarios évolutifs, fragments de partitions et réglages d'un nombre extrêmement élevé de variables.\\
+\noindent Les \glspl{DMI} nous mettent face à une équation bancale. D'un côté quelques flux de données issus de capteurs rendent péniblement compte de la finesse du geste physique, de l'autre la possibilité (et le désir) de produire une musique plus complexe qu'aucun instrument acoustique ne peut le faire. La réponse à cette équation réside dans la question centrale de ce que l'on nomme habituellement le \gls{mapping}, c'est à dire la relation de correspondance entre valeurs issues de capteurs et paramètres de synthèse. Cependant, malgré sa popularité\footnote{Entre 2001 et 2015, le terme "mapping" a été employé dans plus de 750 articles de la conférence \gls{NIME} alors que "design d'interaction" (interaction design) n'était employé que dans 160 articles.}, le terme de mapping semble assez peu représenter la complexité de ce qui n'est pas une simple mise en relation et nous préférerions parler d'un design d'interaction, c'est à dire d'une programmation des relations entre gestes et sons faisant intervenir modèles dynamiques, scénarios évolutifs, fragments de partitions et réglages d'un nombre extrêmement élevé de variables.\\
 \indent Les algorithmes de synthèse et de transformation peuvent présenter un nombre de paramètres trop élevés pour qu'il soit possible de les contrôler individuellement. Diverses méthodes de réduction du nombre de paramètre à gérer par le musicien sur son interface de jeu ont été proposées, telles que l'utilisation de paramètres intermédiaires abstraits \cite{wanderley_escher-modeling_1998}, la projection de l'espace des paramètres sur un espace perceptif \cite{wessel_timbre_1979}, ou d'exploration par voisinage \cite{tubb_divergent_2014}, de modèles physiques \cite{todo}, de modèles d'apprentissage \cite{lee_real-time_1991, fiebrink_real-time_2011}.
 
 \indent Par ailleurs, la qualité du geste capté ne rend pas forcément compte de la granularité gestuelle qu'on peut observer, par exemple, dans l'interaction fine qui se produit au contact de la surface des matériaux physiques : la souplesse d'un plectre, la rugosité du filetage d'une corde, ou la souplesse du feutre d'un marteau de piano viennent apporter une qualité particulière au son qui ne se résume pas à la vibration d'une corde théorique idéale. Il existe ainsi, dans les instruments acoustiques, divers ``intermédiaires'' entre le geste et le résonateur qui viennent influencer la qualité de leur interaction.\\
