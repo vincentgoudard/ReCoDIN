@@ -6,34 +6,33 @@
 \cleanchapterquote{One general effect of the digital revolution is that avant-garde aesthetic strategies became embedded in the commands and interface metaphors of computer software. In short, the avant-garde became materialized in a computer.}{Lev Manovitch}{The language of the new media}
 
 
-\noindent La citation de Lev Manovitch en exergue de ce chapitre en reflète la question centrale: le code est l'élément définissant le fonctionnement d'un \gls{DMI} et si sa nature virtuelle rend son usage très malléable, la nature des objets virtuels que l'on manipule est en grande partie conditionnée par les représentations que l'on se fait de l'interaction musicale. Cependant, les machines ont aussi leur contraintes et limitations, qui influencent la conception des protocoles et les choix d'implémentation. Après avoir présenté le contexte informatique dans lequel s'inscrivent les développements logiciels d'informatique musicale temps-réel, je détaillerai trois développements en lien avec ces questions : 
+\noindent La citation de Lev Manovitch en exergue de ce chapitre en reflète la question centrale: le code est l'élément définissant le fonctionnement d'un \gls{DMI} et si sa nature virtuelle rend son usage très malléable, la nature des objets virtuels que l'on manipule est en grande partie conditionnée par les représentations que l'on se fait de l'interaction musicale. Cependant, les machines ont aussi leurs contraintes, leurs limitations et leur hérédité, qui influencent la conception des protocoles et les choix d'implémentation. Après avoir présenté le contexte informatique dans lequel s'inscrivent les développements logiciels d'informatique musicale temps-réel, je détaillerai trois développements en lien avec ces questions :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{le concept de ``modèle intermédiaire dynamique''}, qui au dela des questions de mise en relation de variables, propose un modèle abstrait pour l'interaction geste/son;
-	\item \textbf{le protocole MP}, qui propose une solution alternative au \gls{MIDI} pour répondre aux questions d'agencement et de connexions de modules de traitement;
-	\item \textbf{la librairie \textit{sagrada}}, qui propose un système original de synthèse granulaire modulaire dans Max contrôlée de manière synchrone ou asynchrone;
+	\item \textbf{le protocole MP}, qui propose une solution alternative au \gls{MIDI} pour répondre aux questions d'agencement et de connexions de modules de traitement, en prenant en compte l'aspect polyphonique en particulier;
+	\item \textbf{la librairie \textit{Sagrada}}, qui propose un système original de synthèse granulaire modulaire dans Max contrôlée de manière synchrone ou asynchrone;
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Matériaux algorithmiques}
+\section{Matériaux numériques}
 
-\noindent Dans le cas des \glspl{DMI}, les données sont essentiellement de qutre types:
+\noindent D'un point de vue ontologique, on peut considérer que la partie numérique d'un \gls{DMI} est composé de deux grands types de données :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item \textbf{des flux de données}, qu'ils soient audio ou non, captés en temps-réel ou re-lus à partir d'enregistrements;
-	\item \textbf{des algorithmes}, définissant les opérations mathématisques à effectuer pour traiter les données audio
-	\item \textbf{des objets}, définissant des structures de données: réglages et xxx todo;
-	\item \textbf{un graphe}, définissant l'agencement des opérateurs.
+	\item \textbf{le code}, ou comme le dirait Bernard Stiegler les ``rétentions tertiaires'', qui prennent la forme d'algorithmes ou de structures de données;
+	\item \textbf{les flux}, provenant des capteurs de l'interface, du réseau, ou du code lui même, dans sa capacité à les auto-générer, et qui se modifient en ``traversant'' le code pour produire \textit{in fine} des signaux audio.
 \end{itemize}
 
-Dans les environnements de programmation audio, les flux de données sont généralement séparées en deux types majeurs\footnote{C'est notamment le cas dans Max, SuperCollider, Ableton Live, Csound ... qui traitent le signal par blocs plutôt qu'échantillon par échantillon, pour des raisons d'optimisation.} : 
+\noindent Dans les environnements de programmation audio, les flux de données sont généralement séparées en deux types majeurs : 
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{des signaux synchrones}, représentant par exemple des signaux audio, échantillonés à une fréquence précise, et traités généralement par bloc dans un \gls{DSP};
 	\item \textbf{des événements asynchrones}, arrivant de manière sporadique, tels que les messages \gls{MIDI}, \gls{OSC} ou d'autres types de messages propres au programme;
 \end{itemize}
 
-\noindent Ces deux types de flux sont généralement associé aux notions d'\textit{audio-rate} et de \textit{control-rate}, définissant deux granularité indépendantes dans le traitement du signal.
+\noindent Ces deux types de flux sont généralement associé aux notions d'\textit{audio-rate} et de \textit{control-rate}, définissant deux granularité différentes dans le traitement du signal. Par ailleurs, la programmation adopte souvent un paradigme de \textit{dataflow} telle que la programmation réactive pour les besoins du temps-réel, tout en s'intégrant dans environnements multi-paradigmes\footnote{Un logiciel tel que Max qui s'articule essentiellement autour d'une programmation visuelle de \textit{dataflow}, intègre également des possibilités de scripting, de programmation synchrone, fonctionnelle ou impérative.}.
+\indent Une autre distinction, qui découle en partie des catégories précédante, est celle qui consiste à consider les algorithmes de synthèse audio d'une part, et les relations --~potentiellement algorithmiques~-- entre les ``entrées'' de l'instrument (comme les données issues d'une interface gestuelle) et la synthèse, généralement nommée ``\textit{mapping}''.
 
 
 \textbf{keywords} ergodynamisme, résonance, mapping.\\
@@ -144,7 +143,7 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	  \includegraphics[width=\linewidth]{gfx/04_algorithms/mapping-IRL.pdf}
-		\caption[Représentation du mapping \#4]{Mapping, ``dans la vraie vie'' (schéma simplifié)}
+		\caption[Représentation du mapping \#4]{Mapping, ``dans la vraie vie'' (schéma outrageusement simplifié)}
 		\label{fig:algorithms:DynamicMappingLayer4}
 	\end{minipage}
 \end{figure}
@@ -218,9 +217,10 @@ peut être convertie en un mouvement polyphonique multidimensionnel. Par exemple
 %---------------------------------------------------------------------------
 \subsection{Une note sur les polyphonies}
 
-\noindent La polyphonie dans les \gls{DMI} peut être envisagée à plusieurs niveaux: polyphonie de gestes (e.g. plusieurs doigts en contact sur une tablette multitouch), de sons (e.g. plusieurs ``notes'' qui résonnent en même temps) ou de modèles intermédiaires (e.g. plusieurs processus qui tournent en parallèle). Concevoir le design d'un \gls{DMI} poly-poly-polyphonique nécessite par conséquence d'établir les connexions entre ces différentes multiplicités.
-\indent Les notions de mapping \textit{one-to-one}, \textit{many-to-one}, \textit{one-to-many} et \textit{many-to-many}, telles que définie par \cite{todo_Wanderley}, peuvent ainsi s'agencer sur plusieurs niveaux, selon la polyphonie de chaque modèle en jeu, ou être organisées en sous-groupes. Prenons l'exemple de doigts contrôlant chacuns une mutiplicité d'agents autonomes, venant chacun contrôler une polyphonie de notes sur une synthèse \gls{FM}. Un scénario souhaitable (c'est un exemple) est que les agents et les notes contrôlés par un même doigt partagent des caractéristiques communes, ce qui nécessite une traçabilité de la source gestuelle et/ou un moyen de fusionner les informations nécessaires de part et d'autre des différentes sources concourant au résultat sonore final.
-\indent Inversement, nous pouvons consider un mapping \textit{many-to-one} en prenant l'example de plusieurs doigts venant agir sur un même objet virtuel. Dans ce cas, le résultat monophonique produit par l'objet virtuel peut prendre contenir l'information polyphonique des différents doigts qui agissent sur lui. Cette différence d'appréciation peut être comparée à la manière dont sont envisagée les différentes notes d'un clavier. On peut soit considérer les différentes hauteurs produites par les touches commes une multiplicité d'événements indépendants (comme c'est le cas avec le clavier polyphonique d'un piano, sur lequel s'appuie le concept de note \gls{MIDI}), soit envisager la hauteur comme un paramètre monophonique (comme c'est le cas sur le clavier d'une onde Martenot).
+\noindent La polyphonie dans les \glspl{DMI} peut être envisagée à plusieurs niveaux: polyphonie de gestes (e.g. plusieurs doigts en contact sur une tablette multitouch), de sons (e.g. plusieurs ``notes'' qui résonnent en même temps) ou de modèles intermédiaires (e.g. plusieurs processus qui tournent en parallèle). Concevoir le design d'un \gls{DMI} poly-poly-polyphonique nécessite par conséquence d'établir les connexions entre ces différentes multiplicités.\\
+\indent Les notions de mapping \textit{one-to-one}, \textit{many-to-one}, \textit{one-to-many} et \textit{many-to-many}, telles que définie par \cite{todo_Wanderley}, peuvent ainsi s'agencer sur plusieurs niveaux, selon la polyphonie de chaque modèle en jeu, ou être organisées en sous-groupes. Prenons l'exemple de doigts contrôlant chacuns une mutiplicité d'agents autonomes, venant chacun contrôler une polyphonie de notes sur une synthèse \gls{FM}. Un scénario souhaitable (c'est un exemple) est que les agents et les notes contrôlés par un même doigt partagent des caractéristiques communes, ce qui nécessite une traçabilité de la source gestuelle et/ou un moyen de fusionner les informations nécessaires de part et d'autre des différentes sources concourant au résultat sonore final.\\
+\indent Inversement, nous pouvons consider un mapping \textit{many-to-one}, en prenant l'example de plusieurs doigts venant agir sur un même objet virtuel. Dans ce cas, le résultat monophonique produit par l'objet virtuel peut prendre contenir l'information polyphonique des différents doigts qui agissent sur lui. Cette différence d'appréciation peut être comparée à la manière dont sont envisagée les différentes notes d'un clavier. On peut soit considérer les différentes hauteurs produites par les touches comme une multiplicité d'événements indépendants (comme c'est le cas sur le clavier polyphonique d'un piano, sur lequel s'appuie le concept de note \gls{MIDI}), soit envisager la hauteur comme un paramètre monophonique (comme c'est le cas sur le clavier monophonique d'une onde Martenot). \footnote{On notera le cas intéressant du clavier de la vieille à roue, cas hybride d'une duo-phonie, dont les 23 touches (en général) se répartissant sur les deux (voire trois ou quatre) chanterelles.}.\\
+\indent Il est important de préciser ici que ces différentes manières de gérer la polyphonie se traduisent par des modes de jeu différents, qui peuvent modifier l'instrument jusque dans son identité, et ne doivent pas être considérées comme de simples facteurs d'échelles quantitatifs.
 
 %---------------------------------------------------------------------------
 \subsection{Motivations et revue des protocoles existants}
@@ -263,8 +263,7 @@ Les limitations du \gls{MIDI} ont pourtant été identifiées peu de temps aprè
 
 \subsubsection{TUIO: Tangible User Interface I/O}
 
-\noindent Dans cette brève revue, il faut mentionner \gls{TUIO} \cite{kaltenbrunner_tuio:_2005} (fondé sur \gls{OSC}) comme le premier protocole\todo{vérifier à quel point c'est le premier} à introduire un indice incrémentiel pour identifier de manière unique des événements dynamiques et éphémères tels que les touchés de doigt sur une interface utilisateur tangible (\gls{TUI}).\\
-\indent Il se distingue également de la logique des événements \gls{MIDI}, dont l'utilisation de messages distincts pour les note-on et -off peut produire des notes qui restent ``bloquées'' si un message note-off est perdu. Il propose une solution simple et pratique pour résoudre l'incertitude d'arrivée des messages envoyés sur \gls{UDP}, consistant à envoyer systématiquement la liste des événements actifs.
+\noindent Dans cette brève revue, il faut mentionner \gls{TUIO} \cite{kaltenbrunner_tuio:_2005}, basé sur \gls{OSC}), et développé conjointement au projet ReacTable. \gls{TUIO} ne se focalise que sur l'information gestuelle particulière propre aux interfaces multitouch, en transmettant des informations sur le contact des doigts, et d'éventuels objets sur la surface tactile. Il introduit un indice incrémentiel pour identifier de manière unique des événements dynamiques et éphémères tels que les touchés de doigt sur une (\gls{TUI}). Il se distingue également de la logique des événements \gls{MIDI}, dont l'utilisation de messages distincts pour les note-on et -off peut produire des notes qui restent ``bloquées'' si un message note-off est perdu. Il propose une solution simple et pratique pour résoudre l'incertitude d'arrivée des messages envoyés sur \gls{UDP}, consistant à envoyer systématiquement la liste des événements actifs.
 
 \subsubsection{Le signal}
 
