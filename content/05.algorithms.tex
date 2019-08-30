@@ -81,7 +81,7 @@ utilisation de paramètres intermédiaires abstraits \cite{wanderley_escher-mode
 \par{\textbf{Mappings hybrides.}} Nous sommes ainsi aujourd'hui dans une situation où de nombreuses stratégies de mapping sont disponibles, qui loin de s'exclure mutuellement, constituent un répertoire très riche pour composer le design de l'interaction instrumentale. En effet, au delà de l'utilisation de mapping isolés à des fins démonstratives, le design de l'interaction instrumentale est souvent un hybride de différentes stratégies qui se complètent (figure \ref{fig:algorithms:DynamicMappingLayer4}). L'apprentissage automatique va par exemple permettre d'agir sur des paramètres de haut-niveau qui peuvent être modulés par d'autres paramètres ayant un rapport plus direct et réactif aux valeurs issues des capteurs. Par ailleurs, si la plupart des stratégies de mapping présentées dans la littérature cherchent à obtenir une cohérence entre le geste et le son, nous avons vu au chapitre \ref{ch:gesture}, que cette cohérence n'est pas nécessairement une finalité dans la création musicale. La possibilité de mélanger et de ``corrompre'' les mappings présentés dans la littérature fait donc partie intégrante du processus d'élaboration de l'interaction instrumentale.
 
 \indent Ainsi, malgré sa popularité\footnote{Entre 2001 et 2015, le terme "mapping" a été employé dans plus de 750 articles de la conférence \gls{NIME} alors que "design d'interaction" (interaction design) n'était employé que dans 160 articles.}, le terme de mapping semble assez peu représenter la complexité de ce qui n'est pas une simple mise en relation et nous préférerions parler d'un ``design interactif'', c'est à dire d'une programmation interactive des relations entre gestes et sons faisant intervenir modèles physiques, d'apprentissage, de mise à l'échelle, de filtrage, des scénarios évolutifs, fragments de partitions, etc. qui s'agencent dans la pratique selon des scénarios complexes (cf. schéma figure \ref{fig:algorithms:DynamicMappingLayer4} et exemple figure \ref{fig:algorithms:FIBR-patch}).\\
-\noindent Ce sont ces différents traitements, lorsqu'ils se cristallisent en des agencements identifiables, que l'on peut extraire sous forme d'un modèle abstrait ré-utilisable, que l'on nommera ici ``modèle intermédiaire dynamique''.
+\noindent Ce sont ces différents traitements, lorsqu'ils se cristallisent en des agencements identifiables, que l'on peut extraire sous forme d'un modèle abstrait ré-utilisable, que l'on nommera ici ``modèles intermédiaires dynamiques''.
 
 \subsubsection{Extra material}
 
@@ -133,9 +133,50 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 \end{figure}
 %------------------ Figure : MID ---------------------
 
-\subsection{Qualités recherchées dans les modèles intermédiaires dynamiques}
+\subsection{Rôle des modèles intermédiaires}
 
-\noindent Les \glspl{DMI} nous mettent face à une équation bancale. D'un côté quelques flux de données issus de capteurs rendent péniblement compte de la finesse du geste physique, de l'autre la possibilité (et le désir) de produire une musique plus complexe qu'aucun instrument acoustique ne peut le faire. La réponse à cette équation réside dans la question centrale de ce que l'on nomme habituellement le \gls{mapping}, c'est à dire la relation de correspondance entre valeurs issues de capteurs et paramètres de synthèse. Cependant, malgré sa popularité\footnote{Entre 2001 et 2015, le terme "mapping" a été employé dans plus de 750 articles de la conférence \gls{NIME} alors que "design d'interaction" (interaction design) n'était employé que dans 160 articles.}, le terme de mapping semble assez peu représenter la complexité de ce qui n'est pas une simple mise en relation et nous préférerions parler d'un design d'interaction, c'est à dire d'une programmation des relations entre gestes et sons faisant intervenir modèles dynamiques, scénarios évolutifs, fragments de partitions et réglages d'un nombre extrêmement élevé de variables.\\
+De toute évidence, parmi les qualités recherchées lors de l'utilisation de MID, se trouvent en bonne place les qualités que l'on trouve sur les instruments acoustiques, perdue dans leur transposition numérique : finesse et richesse de l'interaction avec des matériau (le frottement, le grincement, le raclement, et tous les phénomènes subtils qui se produisent en fonction de l'état de surface, de leur viscosité et des propriétés mécaniques des matériaux)
+
+\noindent Le rôle des MIDs est de transformer le mouvement de diverses manières. Certains de ces modèles s'inspirent d'équivalents dans le domaine des instruments acoustiques, qui usent eux aussi de systèmes --~plutôt que de modèles~-- intermédiaires (si l'on considère, par exemple, l'archet comme un système intermédiaire entre le geste du violoniste et la corde). D'autres sont plus spécifiques au numérique. La liste suivante présente plusieurs axes selon lesquels ces modèles affectent le mouvement :
+
+draft
+
+du mapping au MID
+
+fonctionnelles :
+
+transformer le mouvement :
+
+- créer la discontinuité (fretting, gamme, seuils de déclenchement)
+
+- créer la continuité (portamento, glissando, enveloppes temporelle, filtrage, lissage, interpolation)
+
+- modifier la qualité (modulation (e.g. vibrato), modèles physiques résonnant, propriétés) réduire la qualité (vocodage)
+
+- modifier la quantité (créer une polyphonie, contrôler une foule d'agents autonomes) (filtrage, garde-fou, quantification, alignement)
+
+- permettre la navigation : cette dimension cartographique est liée à la quantitée très élevée de données présentes et potentiellement convocables sur un ordinateur
+
+- accommpagner le mouvement : suivi de partition, extrapolation du geste (résonandce)
+
+- changer leur temporalité : dilater, compresser, différer
+
+- analyse et reconnaissance <= créer la discontinuité ?
+
+- créer la surprise (modèles aléatoires, génératifs (voronoi), stochastiques (cf. F. Dumeaux radio))
+
+
+affordance :
+
+- disponibilité : pouvoir les convoquer et les délaisser à tout instant (i.e. en cours de geste)
+- interconnectibilité : pouvoir les interconnecter
+- ajustabilité : 
+- éditabilité : pouvoir les éditer et créer des variations
+- réutilisabilité : pouvoir les ré-utiliser dans d'autres contextes
+- abusabilité : ne pas contraindre arbitrairement les plages de valeurs selon des critères de raisonnabilité a priori
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \indent Les algorithmes de synthèse et de transformation peuvent présenter un nombre de paramètres trop élevés pour qu'il soit possible de les contrôler individuellement. Diverses méthodes de réduction du nombre de paramètre à gérer par le musicien sur son interface de jeu ont été proposées, telles que l'utilisation de paramètres intermédiaires abstraits \cite{wanderley_escher-modeling_1998}, la projection de l'espace des paramètres sur un espace perceptif \cite{wessel_timbre_1979}, ou d'exploration par voisinage \cite{tubb_divergent_2014}, de modèles physiques \cite{todo}, de modèles d'apprentissage \cite{lee_real-time_1991, fiebrink_real-time_2011}.
 
 \indent Par ailleurs, la qualité du geste capté ne rend pas forcément compte de la granularité gestuelle qu'on peut observer, par exemple, dans l'interaction fine qui se produit au contact de la surface des matériaux physiques : la souplesse d'un plectre, la rugosité du filetage d'une corde, ou la souplesse du feutre d'un marteau de piano viennent apporter une qualité particulière au son qui ne se résume pas à la vibration d'une corde théorique idéale. Il existe ainsi, dans les instruments acoustiques, divers ``intermédiaires'' entre le geste et le résonateur qui viennent influencer la qualité de leur interaction.\\
@@ -144,7 +185,7 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 Les modèles génératifs peuvent amener à une liaison trop incertaine entre le geste et le résultat. Les modèles physiques\footnote{Voir par exemple, dans le cas de la synthèse temps-réel les librairies \gls{STK} développée par le \gls{CCRMA} et PMPD initialement développée par Cyrille Henry.} sont une alternative qui pallie ces deux problèmes en offrant à la fois un modèle intermédiaire entre le geste et le résultat qui réduit le potentiellement grand nombre de paramètres de synthèse à un plus petit nombre de paramètres gestuels.\\
 \indent Un problème des modèles physiques est d'une part leur instabilité dans les régimes non-linéaires et d'autre part, que la cohérence de la relation entre le geste et le son souhaitée par le musicien ne s'appuie pas nécessairement sur les règles de la mécanique newtonienne \footnote{On pourrait dire à certain égards que les instruments de musique cherchent à subvertir les lois de la physique, cf. section \ref{sec:gesture:subversion}}. Par exemple, on peut assigner à un modèle géométrique des mouvements, un tempo, une cinétique qui épousent la géométrie de l'objet sans toutefois qu'il y soit question de masse et que l'objet ait une ``cohérence physique''.
 
-\subsection{Caractéristiques souhaitables}
+\subsection{Affordance des modèles intermédiaires}
 
 \noindent Les MIDs sont ainsi caractérisés par la recherche qualités suivantes; la liste n'est pas exhaustive et les modèles peuvent n'en suivrent qu'une partie :
 \vspace{-1em}
@@ -524,7 +565,7 @@ Dans un premier temps, nous associons les coordonnées x et y d'un \textit{MP-ev
 
 \subsection{Limitations et optimisations}
 
-\noindent Séparer les différents processus de traitement d'un design d'interaction polyphonique a l'avantage de permettre une meilleure modularité et, par suite, une meilleure stabilité des processus mis en œuvre, qui n'auront pas à être modifiés en interne. Le choix a également été fait de ne pas s'appuyer sur une mémoire globale ou des pointeurs externes aux modules (e.g. pour sauver la guestlist), de sorte que les \textit{MP-blocks} sont réellement indépendants et autonomes et que le design d'interaction général puisse être réparti sur plusieurs applications et/ou machines en réseau.\\
+\noindent Séparer les différents processus de traitement d'un design d'interaction polyphonique a l'avantage de permettre une meilleure modularité et, par suite, une meilleure stabilité des processus mis en œuvre, qui n'auront pas à être modifiés en interne pour être adapté à une autre situation. Le choix a également été fait de ne pas s'appuyer sur une mémoire globale ou des pointeurs externes aux modules (e.g. pour sauver la guestlist), de sorte que les \textit{MP-blocks} sont réellement indépendants et autonomes et que le design d'interaction général puisse être réparti sur plusieurs applications et/ou machines en réseau.\\
 \indent Cependant, cette modularité a un coût et est moins optimisée, en terme de computer et d'utilisation de la mémoire, qu'un design qui consisterait à d'inclure toutes les fonctions nécessaires dans les traitements \textit{ad-hoc}. Certaines optimisations peuvent être réalisées pour des processus ne nécessitant pas de mémoire interne (e.g. une mise à l'échelle statique), pour lesquels il n'est pas nécessaire d'allouer des voix. Cela se fait cependant au prix de certaines fonctionnalités (pas d'utilisation du \textit{master-ID} possible dans ce cas). Par ailleurs, le framework MP a entièrement été réalisé à l'aide d'objets natifs Max et pourrait sûrement être optimisé en le portant sous la forme d'objets compilés.\\
 \indent Le modèle de messages asynchrones distinguant début et fin d'événement ne résoud pas directement le problème de note ``bloquées''\footnote{Ce problème surgit dans les systèmes MIDI, quand une note-off n'arrive pas.} tel qu'on le connait avec l'utilisation du \gls{MIDI}. Cependant, l'ouverture de l'espace de nommage permet l'implémentation \textit{ad-hoc} d'un système d'acquittement\footnote{tel qu'il existe dans le protocole \gls{TCP}}, ou de \textit{heartbeat}\footnote{Nom donné au signal périodique généré par un programme pour indiquer son fonctionnement normal ou pour sa synchronisation avec d'autres parties d'un système informatique.}. Également un message \textit{flush}\footnote{Equivalent de la fonction ``MIDI-panic'' généralement présente sur les système MIDI et permettant d'éteindre toutes les notes actives (quand elles sont bloquées).} est présent sur chaque module MP afin de gérer au besoin l'urgence lors d'une performance.
 
