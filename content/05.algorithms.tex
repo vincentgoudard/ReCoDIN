@@ -135,32 +135,30 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 
 \subsection{Rôle des modèles intermédiaires}
 
-
 \noindent Un ``modèle intermédiaire dynamique'', selon notre définition, est un processus de traitement d'un signal apparenté à du geste et qui produit un signal transformé, apparenté lui aussi à du geste.
 
-\par{\textbf{MID dans les instruments acoustiques}} De toute évidence, parmi les qualités recherchées lors de l'utilisation de MID, se trouvent en bonne place les qualités que l'on trouve sur les instruments acoustiques, perdues dans leur transposition numérique : finesse et richesse de l'interaction avec des matériaux (frottement, grincement, râclement... et tous les phénomènes subtils qui se produisent en fonction de l'état de surface, de la viscosité et des propriétés élastico-mécaniques des matériaux). Certains de ces modèles s'inspirent ainsi d'équivalents dans le domaine des instruments acoustiques, qui usent eux aussi de systèmes --~plutôt que de modèles~-- intermédiaires (si l'on considère, par exemple, l'archet comme un système intermédiaire entre le geste du violoniste et la corde). D'autres sont plus spécifiques au numérique. 
+\indent Parmi les qualités recherchées lors de l'utilisation de MID, se trouvent en bonne place les qualités que l'on trouve sur les instruments acoustiques, perdues dans leur transposition numérique : finesse et richesse de l'interaction avec des matériaux (frottement, grincement, râclement... et tous les phénomènes subtils et non-linéaires qui se produisent en fonction de l'état de surface, de la viscosité et des propriétés élastico-mécaniques des matériaux). Certains de ces modèles s'inspirent ainsi d'équivalents dans le domaine des instruments acoustiques, qui usent eux aussi de systèmes --~plutôt que de modèles~-- intermédiaires (si l'on considère, par exemple, l'archet comme un système intermédiaire entre le geste du violoniste et la corde). D'autres sont plus spécifiques au numérique, tels que les modèles agissant sur l'aspect temporel du geste ou sur sa reconnaissance.
 
 \indent La liste suivante présente plusieurs axes selon lesquels ces modèles affectent le mouvement :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item \textbf{en qualité}, les MIDs peuvent venir enrichir le mouvement, que cela soit de manière statique, en modifiant sa plage de valeur, ou dynamique, en le modulant pour lui ajouter un contenu fréquentiel absent dans le geste capté. Par exemple, un vibrato, un tremolo, une distorsion, etc. 
-
-	Un MID peut également réduire la richesse du mouvement. C'est le cas notamment dans le cas de modèle qui visent à borner son amplitude, ou réduire ses variations. Un exemple en vogue dans les musiques pop est l'\textit{auto-tune} qui vient réduire les variations de hauteur dans la voix naturelle, pour la contraindre sur une hauteur fixe. Dans le cas du geste, un système de quantification à des fins similaires est proposé en exemple (cf. figure \ref{fig:algorithms:MID-dynamic-pitch-correction}).
-
-	\item \textbf{en quantité}, le geste peut également être augmenté quantitativement, en le démultipliant et en créant une polyphonie à partir d'un mouvement unique. C'est le cas, par exemple, des algorithmes de foule (e.g. algorithme de Boids), ou des modèles physiques qui permettent de générer une multitude de mouvements constituant la réponse d'un matériau virtuel sur lequel on exerce une simple force.
+	\item \textbf{en qualité}: les MIDs peuvent venir enrichir le mouvement, que cela soit de manière statique, en modifiant sa plage de valeur, ou dynamique, en le modulant pour lui ajouter un contenu fréquentiel absent dans le geste capté, excédant potentiellement les capacités motrices humaines, par exemple, un vibrato, un tremolo, une distorsion, etc. Le champ des possibilités est très vaste, tant la richesse du signal fourni par les capteurs gestuels sur les \glspl{DMI} est généralement bien en deça de la richesse des interactions se produisant dans les instruments acoustiques.\\
+	\indent Il est ainsi plus rare, quoique possible, qu'un MID \textit{réduise} la richesse du mouvement. C'est le cas notamment dans le cas de modèle qui visent à borner son amplitude, ou réduire ses variations. Un exemple en vogue dans les musiques pop est l'\textit{auto-tune} qui vient réduire les variations de hauteur dans la voix naturelle, pour la contraindre sur une hauteur fixe. Dans le cas du geste, un système de quantification à des fins similaires est proposé en exemple (cf. figure \ref{fig:algorithms:MID-dynamic-pitch-correction}).
+	
+	\item \textbf{en quantité}: le geste peut également être augmenté quantitativement, en le démultipliant et en créant une polyphonie à partir d'un mouvement unique. C'est le cas, par exemple, des algorithmes de foule (e.g. algorithme de Boids), ou des modèles physiques qui permettent de générer une multitude de mouvements constituant la réponse d'un matériau virtuel sur lequel on exerce une simple force.
 
 	Le mouvement peut également être réduit en quantité, notamment par des systèmes de cribles qui ne laissent passer que certaines valeurs
 	
-	\item \textbf{dans sa continuité}, les algorithmes permettant de quantifier le mouvement en sont des examples, mais également les algorithmes d'analyse qui permettent la reconnaissance de formes labellisées. 
+	\item \textbf{dans sa continuité}: les algorithmes permettant de quantifier le mouvement en sont des examples, mais également les algorithmes d'analyse qui permettent la reconnaissance de formes labellisées. 
 	
-	\item \textbf{dans sa temporalité}, les machines permettant l'enregistrement et le temps différé offre de multiples possibilités d'étirer, de contracter, de différer le mouvement.
+	\item \textbf{dans sa temporalité}: les machines permettant l'enregistrement et le temps différé offre de multiples possibilités d'étirer, de contracter, de différer le mouvement, que cela soit sous la forme d'échos, de boucles enregistrées, d'alignement temporel sur une partition (e.g. le système Antescofo) ou sur un motif rythmique (e.g. les ``\textit{grooves}'' dans Ableton Live).
 
-	\item \textbf{dans son contenu} : un geste peut également être le simple déclenchement de processus possédant leurs propres mouvements autonomes, comme cela peut être le cas dans les algorithmes stochastiques ou génératifs (cf. modèle basé sur le ``jeu de la vie'', présenté dans les examples en section \ref{sec:algorithms:MID:examples}). Un autre exemple intéressant est celui du sélecteur de bande radio, qui transforme un simple geste de rotation de potentiomètre en des changements disruptifs de contenus musicaux, tel qu'utilisé par John Cage dans sa pièce ``Imaginary Landscape No. 4'', et qui a été adapté dans un module Eurorack (cf. interview dans l'Annexe \ref{appendix:dumeaux})
+	\item \textbf{dans son contenu}: un geste peut également être le simple déclenchement de processus possédant leurs propres mouvements autonomes, comme cela peut être le cas dans les algorithmes stochastiques ou génératifs (cf. modèle basé sur le ``jeu de la vie'', présenté dans les examples en section \ref{sec:algorithms:MID:examples}). Un autre exemple intéressant est celui du sélecteur de bande radio, qui transforme un simple geste de rotation de potentiomètre en des changements disruptifs de contenus musicaux, tel qu'utilisé par John Cage dans sa pièce ``Imaginary Landscape No. 4'', et qui a été adapté dans un module Eurorack (cf. interview dans l'Annexe \ref{appendix:dumeaux})
 
 \end{itemize}
 
 
-\noindent Indépendemment de leur fonctionnement interne, les MIDs présente également une certaine affordance, qui facilite leur usage au sein d'un agencement instrumental. La liste ci-après résume quelques aspects souhaitables de leur affordance :
+\noindent Indépendemment de leur fonctionnement interne, les MIDs présente également une certaine affordance, qui facilite leur usage au sein d'un agencement instrumental. La liste ci-après résume quelques aspects souhaitables de cette affordance :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{disponibilité} : pouvoir les convoquer et les délaisser à tout instant (i.e. en cours de geste)
@@ -168,51 +166,10 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 	\item \textbf{ajustabilité} : pouvoir ajuster les réglages d'un processus durant le temps de jeu, afin d'expérimenter et d'éprouver son fonctionnement de manière perceptive;
 	\item \textbf{éditabilité} : pouvoir les éditer, les modifier, les déconstruire, le ré-agencer en des variations exportables;
 	\item \textbf{réutilisabilité} : pouvoir créer de multiples instances, dans des agencements différents;
-	\item \textbf{abusabilité} : ne pas contraindre arbitrairement les plages de valeurs selon des critères de raisonnabilité \textit{a priori}, afin de laisser l'espace nécessaire à une expérimentation ``hors-normes''.
+	\item \textbf{bidirectionnalité}, le modèle intermédiaire doit pouvoir communiquer dans les deux sens avec l'interface et les autres modèles afin de pouvoir s'ajuster mutuellement (et en particulier, pouvoir se coupler en assurant une continuité des processus internes);
+	\item \textbf{abusabilité} : ne pas contraindre arbitrairement les plages de valeurs selon des critères de raisonnabilité \textit{a priori}, afin de laisser l'espace nécessaire à une expérimentation ``hors-normes'' et une relation subversive (sur l'idée de ``geste subversif'', voir la section \ref{sec:gesture:subversion}). Par exemple, il sera intéressant de pouvoir utiliser un modèle physique dans un régime incohérent avec la physique réelle.
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\indent Les algorithmes de synthèse et de transformation peuvent présenter un nombre de paramètres trop élevés pour qu'il soit possible de les contrôler individuellement. Diverses méthodes de réduction du nombre de paramètre à gérer par le musicien sur son interface de jeu ont été proposées, telles que l'utilisation de paramètres intermédiaires abstraits \cite{wanderley_escher-modeling_1998}, la projection de l'espace des paramètres sur un espace perceptif \cite{wessel_timbre_1979}, ou d'exploration par voisinage \cite{tubb_divergent_2014}, de modèles physiques \cite{todo}, de modèles d'apprentissage \cite{lee_real-time_1991, fiebrink_real-time_2011}.
-
-\indent Par ailleurs, la qualité du geste capté ne rend pas forcément compte de la granularité gestuelle qu'on peut observer, par exemple, dans l'interaction fine qui se produit au contact de la surface des matériaux physiques : la souplesse d'un plectre, la rugosité du filetage d'une corde, ou la souplesse du feutre d'un marteau de piano viennent apporter une qualité particulière au son qui ne se résume pas à la vibration d'une corde théorique idéale. Il existe ainsi, dans les instruments acoustiques, divers ``intermédiaires'' entre le geste et le résonateur qui viennent influencer la qualité de leur interaction.\\
-\indent Ces systèmes intermédiaires peuvent parfois être interchangeables (on peut jouer sur une guitare avec les doigts, un plectre, un \textit{bottleneck}, etc.) et contribue à élargir la palette de timbres et de styles de jeu d'un même instrument. En transposant cette idée dans le domaine numérique, on peut envisager les modèles intermédiaires dynamiques comme de tels systèmes interchangeables et visant à modifier la qualité des mouvements captés par une interface sensible.
-
-Les modèles génératifs peuvent amener à une liaison trop incertaine entre le geste et le résultat. Les modèles physiques\footnote{Voir par exemple, dans le cas de la synthèse temps-réel les librairies \gls{STK} développée par le \gls{CCRMA} et PMPD initialement développée par Cyrille Henry.} sont une alternative qui pallie ces deux problèmes en offrant à la fois un modèle intermédiaire entre le geste et le résultat qui réduit le potentiellement grand nombre de paramètres de synthèse à un plus petit nombre de paramètres gestuels.\\
-\indent Un problème des modèles physiques est d'une part leur instabilité dans les régimes non-linéaires et d'autre part, que la cohérence de la relation entre le geste et le son souhaitée par le musicien ne s'appuie pas nécessairement sur les règles de la mécanique newtonienne \footnote{On pourrait dire à certain égards que les instruments de musique cherchent à subvertir les lois de la physique, cf. section \ref{sec:gesture:subversion}}. Par exemple, on peut assigner à un modèle géométrique des mouvements, un tempo, une cinétique qui épousent la géométrie de l'objet sans toutefois qu'il y soit question de masse et que l'objet ait une ``cohérence physique''.
-
-\subsection{Affordance des modèles intermédiaires}
-
-\noindent Les MIDs sont ainsi caractérisés par la recherche qualités suivantes; la liste n'est pas exhaustive et les modèles peuvent n'en suivrent qu'une partie :
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item \textbf{enrichir le geste en qualité} avec des modulations opérant à des fréquences au-delà de celles mesurées par les capteurs et même au-délà des capacités humaines;
-	\item \textbf{enrichir le geste en quantité} et pouvoir, à partir d'un seul geste d'entrée, contrôler une multitude d'agents;
-	\item \textbf{la modularité}, c'est à dire pourvoir les ré-utiliser dans différents contexte et les \textbf{interconnecter} dans une architecture logicielle modulaire, qui permette de tester et ajuster ses modèles en direct;
-	\item la possibilité de piloter simultanément différents moteurs de synthèse et de rendu avec les mêmes algorithmes, afin d'améliorer la cohérence de l'ensemble;
-	\item \textbf{le dynamisme}, c'est à dire à la fois être susceptible d'évolution temporelle, mais également, de manière plus radicale, être instancié, supprimé, remplacer par un autre à la volée
-	\item \textbf{la bidirectionnalité}, le modèle intermédiaire doit pouvoir communiquer dans les deux sens avec l'interface et les autres modèles afin de pouvoir s'ajuster mutuellement;
-	\item \textbf{l'éditabilité}, permet de dériver d'autres modèles ou de les enrichir, à mesure des nouvelles inventions;
-	\item \textbf{l'exportabilité}, permet de ne pas dépendre d'une plateforme logicielle en particulier et d'être traduite dans d'autres langages;
-\end{itemize}
-
-Performing Low-Dimensional to High-Dimensional Mappings
-High-Level Control
-Time-Variable Behavior of Structure
-Visual Mapping Layers
-An Intrinsic Link Between Generated Audio and Video
-
-
-
-Les processus à l'œuvre dans un modèle intermédiaire agissent sur plusieurs aspects de la transduction de mouvement attendue dans un instrument de musique.
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item qualité du mouvement: Pour donner un exemple acoustique, un plectrum pour une corde offre une qualité de pincement particulière et son attaque est différente de celle des doigts. De plus, la position des cordes sur le corps de l'instrument permet de transformer le mouvement apparemment linéaire de la main en une variation de ce mouvement particulier, à savoir une succession de pincées dont le rythme est lié à l'espacement des cordes. Les dispositifs d'interaction sont souvent dépourvus de rugosité de surface (par exemple, une tablette à stylo n'a pas la rugosité du crin d'un archet). Un DIM devra intégrer cet "aspect de surface" de l'objet virtuel.
-	\item mouvements non linéaires : La richesse du son est en partie liée à l'ensemble des phénomènes non linéaires en action dans un instrument de musique et contribue à rendre le son riche et subtil. Ces non-linéarités dues en partie aux matériaux des instruments acoustiques (et électroniques) manquent souvent des valeurs numériques standardisées des paramètres des instruments logiciels. Dans le domaine numérique, les non-linéarités se retrouvent en effet souvent dans les bugs et les abus de codecs, toutes sortes de "pépins" qui sont précisément recherchés par une veine de musique électronique portant désormais ce nom, pour produire des sonorités riches et des paysages sonores imprévus. Le DIM devrait donc réintroduire la saturation, les courbes exponentielles, la distorsion et autres gigue dans les fonctions de transfert des instruments numériques. 
-	\item Mouvement augmenté : En agissant sur des modèles complexes, un modèle unidimensionnel
-peut être convertie en un mouvement polyphonique multidimensionnel. Par exemple, sur un instrument à cordes, les nombreuses notes d'un accord peuvent être jouées d'une seule touche. Ce renforcement du mouvement peut agir sur les dimensions verticales (poly-phoniques), horizontales (polyrythmiques) ou sur les nombreuses dimensions du timbre. On peut par exemple contrôler un "paramètre cible" qu'un ensemble d'éléments atteindrait par une logique de déplacement qui leur est propre.
-\end{itemize}
 
 \subsection{Exemples}
 \label{sec:algorithms:MID:examples}
