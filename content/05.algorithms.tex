@@ -594,8 +594,9 @@ $$ z[n] = \Big(y[n] + jump\big[y[n]\big]\Big)\mod N $$
 	\item \textbf{la gestion de la multiplicité des flux} : concrètement, et pour faire le lien avec les développements présentés dans MP, si un doigt peut contrôler un flux de grains, un autre doigt doit pouvoir contrôler un autre flux de grains (et ainsi de suite) sans qu'il y ait de confusion dans le contrôle de chacun de ces flux.
 \end{itemize}
 
-\noindent La gestion de flux de grains est prise en charge par l'objet \verb|sagrada.multilayer~| (figure \ref{fig:algorithms:MP-multilayers}), qui permet de multiplexer plusieurs horloges en leur attribuant un index. Cet index de flux permet le décompte des grains par flux et en particulier, d'utiliser cet index pour gérer des grains individuels tels que le premier et le dernier grain d'un flux. 
-\indent Un mécanisme de feedback interne permet d'éviter le conflit potentiel entre plusieurs \textit{ticks} d'horloge qui seraient déclenchés exactement au même instant (i.e. sur le même échantillon d'un signal). Dans ce cas précis, la priorité est donnée au flux de plus haut niveau\footnote{c'est à dire concrètement à celle gérée dans la voix de polyphonie la plus élevée de l'objet poly\textasciitilde{} gérant les différent flux.} Toutfois, ce cas de figure étant peu probable statistiquement, le multiplexage permet de n'utiliser qu'un seul et unique signal \gls{MSP} pour la gestion de l'ensemble des flux et d'économiser ainsi en ressources \gls{CPU}.
+\noindent La gestion de flux de grains est prise en charge par l'objet \verb|sagrada.multilayer~| (figure \ref{fig:algorithms:MP-multilayers}), qui permet de multiplexer plusieurs horloges en leur attribuant un index. Cet index de flux permet le décompte des grains par flux et en particulier, d'utiliser cet index pour gérer des grains individuels tels que le premier et le dernier grain d'un flux, qui peuvent ainsi être sélectionnés pour l'attaque et extinction du son.\\
+\indent Un mécanisme de feedback interne permet d'éviter le conflit potentiel entre plusieurs \textit{ticks} d'horloge qui seraient déclenchés exactement au même instant (i.e. sur le même échantillon d'un signal). Dans ce cas précis, la priorité est donnée au flux de plus haut niveau\footnote{c'est à dire concrètement à celle gérée dans la voix de polyphonie la plus élevée de l'objet poly\textasciitilde{} gérant les différent flux.} Toutfois, ce cas de figure étant peu probable statistiquement, le multiplexage permet de n'utiliser qu'un seul et unique signal \gls{MSP} pour la gestion de l'ensemble des flux et d'économiser ainsi en ressources \gls{CPU}.\\
+\indent Cette gestion de la polyphonie des flux de grains permet de les contrôler facilement avec des messages MP, comme le montre l'exemple sur la figure \ref{fig:algorithms:MP-and-Sagrada}, qui implémente un contrôle des flux de grains via une tablette \textit{multitouch}. Chaque doigt peut ici déclencher un flux et en contrôler la hauteur des grains ainsi que leur fréquence sur les axes X et Y de la tablette.
 
 %------------------ Figure : Sagrada-multilayers ---------------------
 \begin{figure}[!htbp]
@@ -605,6 +606,17 @@ $$ z[n] = \Big(y[n] + jump\big[y[n]\big]\Big)\mod N $$
 	\label{fig:algorithms:MP-multilayers}
 \end{figure}
 %------------------ Figure : Sagrada-multilayers ---------------------
+
+%------------------ Figure : mp-and-sagrada ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}
+	\includegraphics[width=\textwidth]{gfx/04_algorithms/mp-and-sagrada.png}
+	\caption[Contrôle de flux Sagrada avec MP]{Contrôle de flux Sagrada en multitouch, via MP.}
+	\label{fig:algorithms:MP-and-Sagrada}
+\end{figure}
+%------------------ Figure : mp-and-sagrada ---------------------
+
+
 
 %--------------------------------------------------------------
 \subsection{Performances comparée}
