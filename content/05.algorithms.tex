@@ -68,7 +68,7 @@ Sound is the interface, \cite{di_scipio_sound_2003}
 \label{sec:algorithms:MID}
 
 \subsection{Du mapping aux modèles intermédiaires dynamiques}
-\label{sec:algorithms:mapping-to-MID}
+\label{sec:algorithms:MID:mapping-to-MID}
 
 \par{\textbf{Origines du terme mapping.}} Dans le domaine des lutheries numériques, le terme de ``mapping'' est très couramment utilisé pour décrire la relation entre les données issues des capteurs (en particulier de l'interface gestuelle) et les paramètres de la synthèse sonore. Le terme lui-même est issu des mathématiques dans lequel il se traduit en français par ``application'', c'est à dire une relation entre deux ensembles pour lequel chaque élément du premier (appelé ensemble de départ) est relié à un unique élément du second. Andy Hunt le définit ainsi comme \iquote{la liaison ou la correspondance entre les paramètres de contrôle (dérivés des actions de l'interprète) et les paramètres de synthèse sonore}\footnote{``the liaison or correspondence between control parameters (derived from performer actions) and sound synthesis parameters'' \cite{hunt_towards_2000}}.\\
 \indent Ce terme a glissé dans le vocabulaire de la lutherie numérique en raison de la relative simplicité des relations de correspondance dans les premiers \glspl{DMI} et est resté, alors que ces relations se sont progressivement complexifiéees, comme le notait déjà Joel Chadabe en 2002 : \iquote{Le mapping décrit la façon dont un contrôle est connecté à une variable. Mais à mesure que les instruments deviennent de plus en plus complexes pour inclure de grandes quantités de données, une sensibilité au contexte, ainsi que des capacités de génération sonore et musicale, le concept de mapping devient plus abstrait et ne décrit pas les réalités plus complexes des instruments électroniques}\footnote{Mapping describes the way a control is connected to a variable. But as instruments become more complex to include large amounts of data, context sensitivity, and music as well as sound-generating capabilities, the concept of mapping becomes more abstract and does not describe the more complex realities of electronic instruments. \cite{chadabe_limitations_2002}}.
@@ -135,45 +135,42 @@ Toolboxes : ESCHER (Wanderley et al)\cite{wanderley_escher-modeling_1998}, Mappi
 
 \subsection{Rôle des modèles intermédiaires}
 
-De toute évidence, parmi les qualités recherchées lors de l'utilisation de MID, se trouvent en bonne place les qualités que l'on trouve sur les instruments acoustiques, perdue dans leur transposition numérique : finesse et richesse de l'interaction avec des matériau (le frottement, le grincement, le raclement, et tous les phénomènes subtils qui se produisent en fonction de l'état de surface, de leur viscosité et des propriétés mécaniques des matériaux)
 
-\noindent Le rôle des MIDs est de transformer le mouvement de diverses manières. Certains de ces modèles s'inspirent d'équivalents dans le domaine des instruments acoustiques, qui usent eux aussi de systèmes --~plutôt que de modèles~-- intermédiaires (si l'on considère, par exemple, l'archet comme un système intermédiaire entre le geste du violoniste et la corde). D'autres sont plus spécifiques au numérique. La liste suivante présente plusieurs axes selon lesquels ces modèles affectent le mouvement :
+\noindent Un ``modèle intermédiaire dynamique'', selon notre définition, est un processus de traitement d'un signal apparenté à du geste et qui produit un signal transformé, apparenté lui aussi à du geste.
 
-draft
+\par{\textbf{MID dans les instruments acoustiques}} De toute évidence, parmi les qualités recherchées lors de l'utilisation de MID, se trouvent en bonne place les qualités que l'on trouve sur les instruments acoustiques, perdues dans leur transposition numérique : finesse et richesse de l'interaction avec des matériaux (frottement, grincement, râclement... et tous les phénomènes subtils qui se produisent en fonction de l'état de surface, de la viscosité et des propriétés élastico-mécaniques des matériaux). Certains de ces modèles s'inspirent ainsi d'équivalents dans le domaine des instruments acoustiques, qui usent eux aussi de systèmes --~plutôt que de modèles~-- intermédiaires (si l'on considère, par exemple, l'archet comme un système intermédiaire entre le geste du violoniste et la corde). D'autres sont plus spécifiques au numérique. 
 
-du mapping au MID
+\indent La liste suivante présente plusieurs axes selon lesquels ces modèles affectent le mouvement :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{en qualité}, les MIDs peuvent venir enrichir le mouvement, que cela soit de manière statique, en modifiant sa plage de valeur, ou dynamique, en le modulant pour lui ajouter un contenu fréquentiel absent dans le geste capté. Par exemple, un vibrato, un tremolo, une distorsion, etc. 
 
-fonctionnelles :
+	Un MID peut également réduire la richesse du mouvement. C'est le cas notamment dans le cas de modèle qui visent à borner son amplitude, ou réduire ses variations. Un exemple en vogue dans les musiques pop est l'\textit{auto-tune} qui vient réduire les variations de hauteur dans la voix naturelle, pour la contraindre sur une hauteur fixe. Dans le cas du geste, un système de quantification à des fins similaires est proposé en exemple (cf. figure \ref{fig:algorithms:MID-dynamic-pitch-correction}).
 
-transformer le mouvement :
+	\item \textbf{en quantité}, le geste peut également être augmenté quantitativement, en le démultipliant et en créant une polyphonie à partir d'un mouvement unique. C'est le cas, par exemple, des algorithmes de foule (e.g. algorithme de Boids), ou des modèles physiques qui permettent de générer une multitude de mouvements constituant la réponse d'un matériau virtuel sur lequel on exerce une simple force.
 
-- créer la discontinuité (fretting, gamme, seuils de déclenchement)
+	Le mouvement peut également être réduit en quantité, notamment par des systèmes de cribles qui ne laissent passer que certaines valeurs
+	
+	\item \textbf{dans sa continuité}, les algorithmes permettant de quantifier le mouvement en sont des examples, mais également les algorithmes d'analyse qui permettent la reconnaissance de formes labellisées. 
+	
+	\item \textbf{dans sa temporalité}, les machines permettant l'enregistrement et le temps différé offre de multiples possibilités d'étirer, de contracter, de différer le mouvement.
 
-- créer la continuité (portamento, glissando, enveloppes temporelle, filtrage, lissage, interpolation)
+	\item \textbf{dans son contenu} : un geste peut également être le simple déclenchement de processus possédant leurs propres mouvements autonomes, comme cela peut être le cas dans les algorithmes stochastiques ou génératifs (cf. modèle basé sur le ``jeu de la vie'', présenté dans les examples en section \ref{sec:algorithms:MID:examples}). Un autre exemple intéressant est celui du sélecteur de bande radio, qui transforme un simple geste de rotation de potentiomètre en des changements disruptifs de contenus musicaux, tel qu'utilisé par John Cage dans sa pièce ``Imaginary Landscape No. 4'', et qui a été adapté dans un module Eurorack (cf. interview dans l'Annexe \ref{appendix:dumeaux})
 
-- modifier la qualité (modulation (e.g. vibrato), modèles physiques résonnant, propriétés) réduire la qualité (vocodage)
-
-- modifier la quantité (créer une polyphonie, contrôler une foule d'agents autonomes) (filtrage, garde-fou, quantification, alignement)
-
-- permettre la navigation : cette dimension cartographique est liée à la quantitée très élevée de données présentes et potentiellement convocables sur un ordinateur
-
-- accommpagner le mouvement : suivi de partition, extrapolation du geste (résonandce)
-
-- changer leur temporalité : dilater, compresser, différer
-
-- analyse et reconnaissance <= créer la discontinuité ?
-
-- créer la surprise (modèles aléatoires, génératifs (voronoi), stochastiques (cf. F. Dumeaux radio))
+\end{itemize}
 
 
-affordance :
+\noindent Indépendemment de leur fonctionnement interne, les MIDs présente également une certaine affordance, qui facilite leur usage au sein d'un agencement instrumental. La liste ci-après résume quelques aspects souhaitables de leur affordance :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{disponibilité} : pouvoir les convoquer et les délaisser à tout instant (i.e. en cours de geste)
+	\item \textbf{interconnectibilité} : pouvoir facilement brancher un modèle sur un autre, sans que la nature ou la valeur de leur signaux la restreigne \textit{a priori} cette connection;
+	\item \textbf{ajustabilité} : pouvoir ajuster les réglages d'un processus durant le temps de jeu, afin d'expérimenter et d'éprouver son fonctionnement de manière perceptive;
+	\item \textbf{éditabilité} : pouvoir les éditer, les modifier, les déconstruire, le ré-agencer en des variations exportables;
+	\item \textbf{réutilisabilité} : pouvoir créer de multiples instances, dans des agencements différents;
+	\item \textbf{abusabilité} : ne pas contraindre arbitrairement les plages de valeurs selon des critères de raisonnabilité \textit{a priori}, afin de laisser l'espace nécessaire à une expérimentation ``hors-normes''.
+\end{itemize}
 
-- disponibilité : pouvoir les convoquer et les délaisser à tout instant (i.e. en cours de geste)
-- interconnectibilité : pouvoir les interconnecter
-- ajustabilité : 
-- éditabilité : pouvoir les éditer et créer des variations
-- réutilisabilité : pouvoir les ré-utiliser dans d'autres contextes
-- abusabilité : ne pas contraindre arbitrairement les plages de valeurs selon des critères de raisonnabilité a priori
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -218,7 +215,7 @@ peut être convertie en un mouvement polyphonique multidimensionnel. Par exemple
 \end{itemize}
 
 \subsection{Exemples}
-
+\label{sec:algorithms:MID:examples}
 
 %------------------ Figure : MID ---------------------
 \begin{figure}[!htbp]
