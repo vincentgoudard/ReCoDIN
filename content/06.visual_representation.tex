@@ -143,8 +143,12 @@ Exemple dans FIB\_R : toute la performance visuelle re-projetée sur l'écran co
 
 \subsection{L'écran, cockpit du musicien?}
 
-\noindent En tant qu'outils épistémiques, les \glspl{DMI} mettent en jeu un nombre extrêmement élevés de flux de données et de processus qui interagissent entre eux et avec l'interface. Pouvoir contrôler le bon fonctionnement de ces processus\footnote{car reconnaissons le, le bon fonctionnement d'un programme informatique n'est jamais garanti}, leurs dynamiques, pouvoir sélectionner des réglages dans une banque de données (presets, samples, etc.) font parties des tâches qui peuvent être facilitées par un contrôle visuel. Les écrans permettent l'affichage d'un grand nombre d'éléments dynamiques qui peuvent également être support d'interaction, que cela soit avec le clavier, la souris, une interface de contrôle \gls{MIDI} ou encore l'écran lui-même quand il est tactile.
+\noindent En tant qu'outils épistémiques, les \glspl{DMI} mettent en jeu un nombre extrêmement élevés de flux de données et de processus qui interagissent entre eux et avec l'interface. Pouvoir contrôler le bon fonctionnement de ces processus\footnote{que cela soit lors de l'élaboration d'un instrument, voire durant sa performance, quand la mémoire fait défaut, ou que l'instrument instable est sujet à bug}, leurs dynamiques, leur agencement, pouvoir sélectionner des réglages dans une banque de données (presets, samples, etc.) font parties des tâches qui peuvent être facilitées par un contrôle visuel.\\
+\indent \textbf{Espace inifini.} L'écran donne en effet accès à un espace virtuellement infini, grâce à des systèmes d'onglets, de fenêtres multiples, de menus condensant différentes options, de zoom et déplacement sur des zones d'intérêt. L'exploration y est autant possible ``horizontalement'', c'est à dire dans l'exploration des différents éléments d'un même niveau de complexité, que ``verticalement'', c'est à dire dans la profondeur des différentes couches d'un seul élément.\\
+\indent \textbf{Temporalité de l'interface.} À la différence d'une interface physique, l'information sur écran n'est pas seulement représentée de manière \textit{spatiale} mais également \textit{temporelle}, ce qui offre des possibilités tout à faire adaptées à l'interaction sonore et musicale. Ainsi, l'écran offre une représentation du tempo, des patterns rythmiques ou encore de la progression d'un processus (e.g. l'état d'avancement d'un séquenceur) dans leur évolution dynamique, ce qui peut faciliter leur anticipation. Également, l'image peut faciliter la compréhension de processus musicaux, en particulier le déploiement de grandes formes temporelle, qui nécessite une mémoire auditive faisant parfois défaut. Si le son est évanescent, l'image peut en effet laisser une trace sensible, ``s'écrire'' au fur et à mesure de sa performance\footnote{Un tel procédé à été utilisé lors d'un concert de ONE, durant lequel les formes d'ondes des sons joués par chaque musicien étaient vidéo-projetées et s'aggloméraient telle des stalagmites, rendant visible les intensités de jeu de chacun au cours du concert(L'objet LAM.jit.gl.DSW\textasciitilde{} développé à cette fin est disponible dans la LAM-lib).}.
 
+
+Les écrans permettent l'affichage d'un grand nombre d'éléments dynamiques qui peuvent également être support d'interaction, que cela soit avec le clavier, la souris, une interface de contrôle \gls{MIDI} ou encore l'écran lui-même quand il est tactile.
 
 Un premier intérêt de l'écran comme interface dynamique est la possibilité d'avoir des informations et/ou des éléments de contrôle contextuel
 
@@ -153,14 +157,6 @@ mouse limitations without adding indirections, interfaces should be able to refl
 \cite{jorda_digital_2005}
 
 Interfaces héritées de l'ingénierie sonore avec leur quantité de commandes indépendantes et ordonnées.
-
-Ces éléments virtuels permettent :
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item d'étendre considérablement le champ des opérations possibles, en proposant un espace virtuel beaucoup plus grand, grâce à des systèmes d'onglets, de fenêtres multiples, de menus condensant différentes options;
-	\item d'afficher des éléments dynamiques tels que l'état d'avancement d'un séquenceur;
-	\item d'adapter l'ergonomie de l'interface à un contexte particulier, e.g. en duplicant des éléments de GUI pour permettre un jeu à plusieurs sur une même interface;
-\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -173,10 +169,38 @@ Passage du "savoir le contenu" à "savoir que ce contenu existe" et "savoir le c
 Savoir cartographique.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{représentation de l'objet/processus virtuel : chronolgique}
-La musique recourt parfois à l'utilisation de processus pour le développement musical. 
-\subsubsection{visualisation pour le public}
-cf. De Laubier: Bach déploiement de la forme et cadence rendues visibles.
+\subsection{L'écran comme interface tangible}
+
+\noindent Dans la chronologie rassemblée par Bill Buxton\footnote{Bien qu'il ne se soit pas limité à des applications musicales, les développements de Bill Buxton a été également largement orienté par le contrôle de la synthèse et l'idée de lutherie numérique.} sur l'histoire des interfaces multitouch \cite{buxton_multi-touch_2007}, il est intéressant de noter que les premières interfaces \textit{multitouch} ont été des instruments de musique électroniques, utilisant des capteurs capacitifs en parallèle pour le contrôle polyphonique de la synthèse dans les années 1950. De même, si le premier \textit{écran multitouch} semble avoir été inventé au Bell Labs en 1984, le premier à avoir été commercialisé pour le grand public a été le Lemur développé par Jazz Mutant en 2003, encore pour le contrôle musical.
+
+%------------ Figure : multitouch instruments -----------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/06_visual_representation/Redstair_GEARcompressor.png}
+		\caption[Skeuomorphisme dans les logiciels audio]{Le skeuomorphisme dans les logiciels audio témoigne de l'importance accordée à l'esthétique, au delà des fonctionnalités de l'interface.}
+		\label{fig:visual_representation:skeuomorphisme}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/2018_06_26_PAN_GENERATOR_APPARATUM0396.jpg}
+		\caption[Apparatum, par panGenerator]{Le design minimal et soigné de l'instrument Apparatum. © panGenerator}
+		\label{fig:visual_representation:apparatum}
+	\end{minipage}
+\end{figure}
+%------------ Figure : multitouch instruments -----------
+
+Les interfaces tangibles se sont multipliées dans les appareils grands public au tournant du siècle, notamment sous l'impulsion de projets de recherche tels que ceux du \textit{Tangible Media Group} dirigé par Hiroshi Ishii au Media Lab du \gls{MIT}.
+
+Si un certain nombre de gestes (la notion de geste étant ici souvent réduite au gestes des doigts, voire du pouce, de l'index et du majeur seulement) sont devenus des standards pour l'interaction sur ce genre de surface (tel le \textit{pinch-zoom}, le \textit{swipe}, etc.), la recherche sur les interactions possibles est toujours très active.
+
+Les écrans multitouch offrent de nombreux avantages qui ont déjà été soulignés par Buxton et Sergi Jorda \cite{jorda_digital_2005, buxton_multi-touch_2007}, notamment :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item l'utilisation possible de plusieurs doigts, plusieurs mains, plusieurs personnes en même temps, en comparaison de la souris, qui permet une interaction polyphonique, parallèle plutôt que séquentielle;
+	\item la cohésion entre le contrôle d'un objet et sa représentation et la relation sensuelle d'intimité qui se créé en l'absence de distance entre l'objet virtuel et celui/celle qui le manipule;
+\end{itemize}
 
 \subsubsection{interaction avec la visualisation}
 cf. Goudard: FIB\_R
@@ -206,7 +230,7 @@ Screen scores, patterns de séquenceur, cues de déclenchement, presets
 	\item{\textbf{Max multitouch} par ailleurs, Cycling'74 a considérablement améliorer la mécanique de patching depuis la version 8, et a commencé fin 2018 l'implémentation native du \textit{multitouch} dans l'éditeur de patch\footnote{pour l'instant limitée à un certain nombre d'objet et à la version MS Windows.}}
 \end{itemize}
 
-\noindent \par{\textbf{de la nécessité de réinventer la roue}} A la vue de ces développements, on peut légitimement se demander quel est l'intérêt de développer une librairie graphique pour le \textit{multitouch} dans Max.
+\noindent \textbf{De la nécessité de réinventer la roue.} À la vue de ces développements, on peut légitimement se demander quel est l'intérêt de développer une librairie graphique pour le \textit{multitouch} dans Max.
 La réponse est essentiellement liée à la conviction que les interfaces graphiques, tout comme le domaine du mapping, ne sont pas des simples ustensiles fonctionnels mais un champ ouvert à la créativité pour développer de nouvelles relations.\\
 \indent Si l'on prend l'exemple d'un objet aussi simple et courant qu'un \textit{slider}, on s'aperçoit rapidement que de multiples scénarios d'interactions sont possibles, et que les implémentations de cette interaction dans la plupart des logiciels de bureautique ne sont pas forcément les plus adaptées au contrôle musicale. Ainsi, un musicien pourra apprécier jouer à plusieurs doigts sur une telle interface linéaire pour y contrôler des intervalles mélodiques, usage pour lequel la mémoire de ces intervalles s'avère très ergonomique. Il suffit de tester le fonctionnement des sliders sur les tablettes dans la plupart des applications pour constater que ce genre d'interaction n'y est, sans surprise, pas prévu.
 
