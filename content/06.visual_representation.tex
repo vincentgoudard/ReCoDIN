@@ -70,7 +70,7 @@ voir mp.TUI.key pour les images à inclure
 \subsection{Adaptations au contexte de performance}
 
 \noindent Si l'on considère les instrument de musique comme des ``instruments pour musiquer'' en reprenant la définition de Christopher Small (cf. section \ref{sec:introduction:preamble}), alors les partitions, les salles de concert, le public et plus généralement, le contexte de la performance participent aussi et influencent la conception et la représentatin des instruments. Les partitions orientées (figure \ref{fig:visual_representation:table_music}) sont un exemple d'adaptation de la partition au contexte de la ``musique de table'', permettant dans ce cas aux musiciens de lire la partition lorsqu'ils sont assis autour d'une table. De même, les \glspl{DMI} collectifs (cf. \ref{sec:ephemeral:origins:collectiveDMIs}) peuvent adapter leur représentation au nombre d'interprètes en présentant à chacun d'eux un groupe d'éléments d'interface utilisateur orientés vers eux (figure \ref{fig:visual_representation:multi_orientation}).\\
-\indent D'autres manières d'intégrer le contexte de la performance dans la représentation visuelle de l'instrument est de modéliser son espace acoustique pour venir contrôler la spatialisation du son (cf. figure \ref{fig:visual_representation:spat}) ou --~à l'inverse~-- de projeter sur le lieu une représentation visuelle de la musique\footnote{ou une ``musique visuelle'' comme l'appelle Serge de Laubier} (cf. \ref{fig:visual_representation:pucemuse-monument}).
+\indent Comme examples d'influence du lieu de concert sur le design visuel de l'instrument, on peut notamment évoquer la modéliser de son espace acoustique pour venir contrôler la spatialisation du son (cf. figure \ref{fig:visual_representation:spat}) ou --~à l'inverse~-- la projection sur le lieu d'un \textit{mapping vidéo} en correspondance avec la musique\footnote{ou une ``musique visuelle'' comme l'appelle Serge de Laubier} (cf. \ref{fig:visual_representation:pucemuse-monument}).
 
 %------------ Figure : keyboard et TUI - scale -----------
 \begin{figure}[!htbp]
@@ -112,12 +112,45 @@ voir mp.TUI.key pour les images à inclure
 
 \noindent En fin de compte, le processus de conception des instruments de musique contient une grande part de travail empirique. Le processus d'ajustement des réglages d'un instrument nécessitera souvent une rétroaction directe pour les réglages fins faits à la main, jusqu'à ce qu'il sonne et se prête au jeu.
 
+\subsection{Aspects esthétiques : l'instrument œuvre d'art}
+
+\noindent Le design de l'interface visuelle de l'instrument se résume rarement à ses aspects fonctionnels. Les instruments de musique sont souvent l'œuvre d'un artisanat très pointu, voire des objets d'art. La finesse des détails et le souci de leur aspect esthétique jouent ainsi une part éminente dans le design final. Dans les interfaces visuelles des logiciels audio, on retrouve souvent ce soin esthétique, que cela soit sous forme d'un skeuomorphisme\footnote{le terme de skeuomorphisme est utilisé pour définir un élément de design dont la forme n'est pas directement liée à la fonction, mais qui reproduit de manière ornementale un élément qui était nécessaire dans l'objet d'origine.} (figure \ref{fig:visual_representation:skeuomorphisme}) cherchant à imiter le bois des instruments acoustiques, le métal et l'aspect physique des boutons sur les équipements hardware, ou d'un design plus épuré (figure \ref{fig:visual_representation:apparatum}).
+%------------ Figure : skeuomorphisme et soin du design -----------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/06_visual_representation/Redstair_GEARcompressor.png}
+		\caption[Skeuomorphisme dans les logiciels audio]{Le skeuomorphisme dans les logiciels audio témoigne de l'importance accordée à l'esthétique, au delà des fonctionnalités de l'interface.}
+		\label{fig:visual_representation:skeuomorphisme}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/2018_06_26_PAN_GENERATOR_APPARATUM0396.jpg}
+		\caption[Apparatum, par panGenerator]{Le design minimal et soigné de l'instrument Apparatum. © panGenerator}
+		\label{fig:visual_representation:apparatum}
+	\end{minipage}
+\end{figure}
+%------------ Figure : skeuomorphisme et soin du design -----------
+
+\noindent En tant qu'élément scénographique, la représentation visuelle joue un rôle essentiel dans l'esthétique et la poésie de l'instrument.
+Exemple dans FIB\_R : toute la performance visuelle re-projetée sur l'écran correspond à ce que les instrumentistes ont face à eux sur leur tablette. A la fois espace d'interaction et création visuelle esthétique/poétique.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{le cockpit du musicien?}
+\section{Le visuel comme interface}
 
-Si un DMI présente une une certaine ergonomie physique, avec un agencement stable de certains éléments d'interaction, les écrans permettent l'affichage d'un certain nombre d'éléments dynamiques qui peuvent également être support d'interaction, que cela soit avec le clavier, la souris, une interface de contrôle MIDI ou encore l'écran lui-même quand il est tactile.
+\subsection{L'écran, cockpit du musicien?}
 
+\noindent En tant qu'outils épistémiques, les \glspl{DMI} mettent en jeu un nombre extrêmement élevés de flux de données et de processus qui interagissent entre eux et avec l'interface. Pouvoir contrôler le bon fonctionnement de ces processus\footnote{car reconnaissons le, le bon fonctionnement d'un programme informatique n'est jamais garanti}, leurs dynamiques, pouvoir sélectionner des réglages dans une banque de données (presets, samples, etc.) font parties des tâches qui peuvent être facilitées par un contrôle visuel. Les écrans permettent l'affichage d'un grand nombre d'éléments dynamiques qui peuvent également être support d'interaction, que cela soit avec le clavier, la souris, une interface de contrôle \gls{MIDI} ou encore l'écran lui-même quand il est tactile.
+
+
+Un premier intérêt de l'écran comme interface dynamique est la possibilité d'avoir des informations et/ou des éléments de contrôle contextuel
+
+``For including realtime interactive visualizations and, at the same time, overcoming
+mouse limitations without adding indirections, interfaces should be able to reflect their own states and behaviors. They should integrate, like the abacus, both representation and control.''
+\cite{jorda_digital_2005}
 
 Interfaces héritées de l'ingénierie sonore avec leur quantité de commandes indépendantes et ordonnées.
 
@@ -130,9 +163,8 @@ Ces éléments virtuels permettent :
 \end{itemize}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Guides, carte, fretting}
+\subsection{Guides, carte, fretting : topologie de l'information}
 
 Apprendre indépendamment de la transposition
 \iquote{I love the piano sound but not the difficulty of learning the variations from one key to another.  The LinnStrument with its 4th tuning avoids all of those issues.} Jeff Moen about the linnstrument (\url{http://jeffmoen.com/how_i_got_here.html})
@@ -141,23 +173,17 @@ Passage du "savoir le contenu" à "savoir que ce contenu existe" et "savoir le c
 Savoir cartographique.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{représentation de l'objet/processus virtuel}
+\subsection{représentation de l'objet/processus virtuel : chronolgique}
 La musique recourt parfois à l'utilisation de processus pour le développement musical. 
-\subsection{visualisation pour le public}
+\subsubsection{visualisation pour le public}
 cf. De Laubier: Bach déploiement de la forme et cadence rendues visibles.
 
-\subsection{interaction avec la visualisation}
+\subsubsection{interaction avec la visualisation}
 cf. Goudard: FIB\_R
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{intégration de la partition dans l'interface}
+\subsubsection{intégration de la partition dans l'interface}
 Screen scores, patterns de séquenceur, cues de déclenchement, presets
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{aspects esthétiques / instruments visuels}
-En tant qu'élément scénographique, la représentation visuelle joue un rôle dans l'esthétique et la poésie de l'instrument. Le design de l'interface visuelle de l'instrument ne se résume ainsi pas à un design fonctionnel\\
-
-Exemple dans FIB\_R : toute la performance visuelle re-projetée sur l'écran correspond à ce que les instrumentistes ont face à eux sur leur tablette. A la fois espace d'interaction et création visuelle esthétique/poétique.
 
 
 
@@ -352,3 +378,5 @@ Visual language is one of the oldest forms of knowledge representation and preda
 If you ask the man on the stree "What's a synthesizer?" He will reply "A synthesizer is a keyboard instrument"... If you go in a retail store ad say I want to see some electronic instruments, they'll send you to the keyboard department, because a synthesizer is a keyboard instrument by default. — Don Buchla, synthesizer pioneer (interview)
 \end{quotation}
 \cite{pinch_why_2001}
+
+Roel Vertegaal, Tamas Ungvary et Michael Kieslinger utilisait ainsi le terme de ``\textit{musician's cockpit}'' dans un article de 1996, une métaphore qui laisse imaginer l'instrument comme un véhicule que l'on pilote.
