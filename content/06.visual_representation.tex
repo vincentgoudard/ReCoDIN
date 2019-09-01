@@ -1,6 +1,6 @@
 % !TEX root = ../thesis-example.tex
 %
-\chapter{Représentation visuelle}
+\chapter{Représentations visuelles}
 \label{ch:visual_representation}
 
 \cleanchapterquote{Ces petits morceaux d’espace visuels,\\
@@ -10,26 +10,15 @@ sinon par la main?}{Gilles Deleuze}{\textit{Qu'est ce que l'acte de création?}\
 
 voir mp.TUI.key pour les images à inclure
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{le cockpit du musicien?}
-Si un DMI présente une une certaine ergonomie physique, avec un agencement stable de certains éléments d'interaction, les écrans permettent l'affichage d'un certain nombre d'éléments dynamiques qui peuvent également être support d'interaction, que cela soit avec le clavier, la souris, une interface de contrôle MIDI ou encore l'écran lui-même quand il est tactile.
-
-Ces éléments virtuels permettent :
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item d'étendre considérablement le champ des opérations possibles, en proposant un espace virtuel beaucoup plus grand, grâce à des systèmes d'onglets, de fenêtres multiples, de menus condensant différentes options;
-	\item d'afficher des éléments dynamiques tels que l'état d'avancement d'un séquenceur;
-	\item d'adapter l'ergonomie de l'interface à un contexte particulier, e.g. en duplicant des éléments de GUI pour permettre un jeu à plusieurs sur une même interface;
-\end{itemize}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aspects visuels du design d'instrument}
 
-La conception d'un instrument englobe plusieurs aspects qui affectent son aspect visuel. Je passerai en revue quelques-uns de ces aspects, en prenant des exemples des instruments acoustiques, comme rétrospective sur ce qui nous a conduit aux développements que nous sommes en train de faire avec les \glspl{DMI}.
+\noindent La conception d'un instrument englobe plusieurs aspects qui affectent son allure visuelle. Je passerai ici en revue quelques-uns de ces aspects, en m'appuyant en partie sur des exemples d'instruments acoustiques, pour souligner certaines continuités avec les développements entrepris ici avec les \glspl{DMI}.
 
 \subsection{Adaptation à la production du son}
 
-La conception des instruments se préoccupe de la qualité du son. Bien que cela soit particulièrement évident pour les instruments acoustiques dont la forme a des conséquences directes sur le rendement sonore (comme le montre la figure \ref{fig:visual_representation:fhole}), les formes particulières issues de la lutherie traditionnelle ont également donné naissance à un certain nombre d'éléments iconiques (par exemple, les ouïes du violons) et de facteurs de forme (par exemple, une taille plus grande donne un ton grave) associés à l'idée d'un instrument. De plus, les DMI peuvent intégrer des transducteurs acoustiques, tels que des microphones piézoélectriques ou des haut-parleurs tactiles, qui influencent la conception acoustique de leurs composants matériels.
+\noindent La conception des instruments est notamment orientée par la recherche d'une certaine qualité de son. Bien que cela soit particulièrement évident pour les instruments acoustiques dont les formes ont des conséquences directes sur le rendement sonore (comme le montre la figure \ref{fig:visual_representation:fhole}), les profils particuliers issues de la lutherie traditionnelle ont également donné naissance à un certain nombre d'éléments iconiques (par exemple, les ouïes du violons ou le clavier du piano) et de facteurs de forme (par exemple, une taille plus grande donne un ton grave) associés à l'idée d'un instrument, comme le rappelle Trevor Pinch dans son interview de Robert Moog \cite{pinch_why_2001}: \iquote{Les claviers étaient toujours là, et chaque fois que quelqu'un voulait prendre une photo, pour une raison ou pour une autre, c'est bien si vous jouez du clavier. Les gens comprennent alors tu fais de la musique. (...) Cette pose [prenant la pose, bras gauche tendu tandis que la main droite joue du clavier] associe graphiquement la musique et la technologie.}\footnote{``The keyboards were always there, and whenever someone wanted to take a picture, for some reason or other it looks good if you’re playing a keyboard. People understand that then you’re making music. (...) This pose here [acts out the pose of the left arm extended while the right hand plays a keyboard] graphically ties in the music and the technology.''}.\\
+\indent De plus, les \glspl{DMI} peuvent intégrer des transducteurs acoustiques, tels que des microphones piézoélectriques ou des haut-parleurs tactiles (comme nous l'avons vu à la section \ref{sec:interfaces:part_acoustique}), qui influencent la conception acoustique de leurs composants matériels et donc les facteurs de forme évoqués précédemment.
 
 %------------ Figure : f-hole et boehm -----------
 \begin{figure}[!htbp]
@@ -48,10 +37,13 @@ La conception des instruments se préoccupe de la qualité du son. Bien que cela
 	\end{minipage}
 \end{figure}
 
+
 \subsection{Adaptations ergonomiques}
 
-L'instrument s'adapte également au corps. Un exemple intéressant est l'évolution du traverso vers la flûte de concert occidentale, à l'aide du système Boehm dans les années 1840 (cf. figure \ref{fig:visual_representation:boehm}). Ce système de clavetage découple la topologie gestuelle de la topologie du flux d'air et de la topologie de résonance. En utilisant des manches et des platines, il permettait d'améliorer le son en faisant des trous plus grands et en les plaçant à des endroits adéquats pour la résonance, tandis que les touches pouvaient être placées à des endroits pratiques pour les mains de la flûtiste.
-Le système Boehm peut être qualifié de "modèle intermédiaire" entre le geste et la production sonore, fait d'un système mécanique dans ce cas. La plupart des instruments combinent divers "modèles intermédiaires" pour amplifier, enrichir, déplacer, focaliser, multiplier les gestes des interprètes et générer des mouvements hors du champ des possibilités du corps humain : pédales de grosse caisse, marteaux et amortisseurs pour piano, archets et plectras, etc.
+\todo{éliminer les redites du chapitre algorithms}
+
+\noindent L'instrument s'adapte également au corps. Un exemple intéressant est l'évolution du traverso vers la flûte de concert occidentale, à l'aide du système Boehm dans les années 1840 (cf. figure \ref{fig:visual_representation:boehm}). Ce système de clétage découple la topologie gestuelle de la topologie du flux d'air et de la topologie de résonance. En utilisant des manches et des platines, il permet d'acroître la puissance sonore par l'élargissement des trous et leur déplacement à des endroits adéquats pour la résonance, tandis que les touches peuvent être placées à des endroits adaptés à la position des doigts du flûtiste.\\
+\indent Le système Boehm peut être qualifié de ``modèle intermédiaire'' entre le geste et la production sonore, fait d'un système mécanique dans ce cas. La plupart des instruments combinent divers ``modèles intermédiaires'' pour amplifier, enrichir, déplacer, focaliser, multiplier les gestes des interprètes et générer des mouvements hors du champ des possibilités du corps humain : pédales de grosse caisse, marteaux et amortisseurs pour piano, archets et plectras, etc.
 
 \subsection{Intégration de la théorie musicale}
 
@@ -72,11 +64,13 @@ Le système Boehm peut être qualifié de "modèle intermédiaire" entre le gest
 	\end{minipage}
 \end{figure}
 
-\noindent Les instruments de musique intègrent également des éléments de théorie musicale. Par exemple, la partie supérieure d'un clavier (touches noir et blanc) représente la gamme chromatique, tandis que la partie inférieure (touches blanches seulement) représente la gamme diatonique en do majeur. Le dimensionnement et le positionnement de ces touches est un compromis intéressant entre les contraintes mécaniques du système de marteaux et une représentation uniforme des échelles diatonique et chromatique. De plus, la largeur de l'octave est telle qu'elle tient sous une main tendue, ce qui permet de jouer n'importe quel intervalle à l'intérieur d'une octave avec une seule main, reflétant en quelque sorte l'équivalence des octaves. Les claviers ont fait l'objet de nombreuses expérimentations avec des systèmes de hauteur micro-tonale, des intonations et des mises en page de notes, utilisant des grilles hexagonales ou plusieurs couches de touches (figure \ref{fig:visual_representation:MersenneKeyboard}). En tant que système symbolique, une telle théorie musicale peut être facilement encodée dans les ordinateurs. Les logiciels de production musicale contiennent tellement de fonctions et de règles basées sur la théorie musicale qu'elles s'adaptent difficilement à l'interface. Thor Magnusson parle d'" outils épistémiques " pour décrire le DMI, affirmant qu'il est conçu avec " un tel degré de pertinence symbolique qu'il devient un système de connaissance et de pensée dans ses propres termes " (Magnusson, 2009). En tant que tel, ce "système de connaissances" est un paysage imaginaire à explorer, un territoire sonore pour lequel l'interface et la cartographie de l'instrument peuvent métaphoriquement se présenter comme une carte.
+\noindent Les instruments de musique intègrent également des éléments de théorie musicale. Par exemple, la partie supérieure d'un clavier (touches noires et blanches) représente la gamme chromatique, tandis que la partie inférieure (touches blanches seulement) représente la gamme diatonique de Do majeur. Le dimensionnement et le positionnement de ces touches est un compromis intéressant entre les contraintes mécaniques du système de marteaux et une représentation uniforme des échelles diatonique et chromatique. De plus, la largeur de l'octave est telle qu'elle tient sous une main tendue, ce qui permet de jouer n'importe quel intervalle à l'intérieur d'une octave avec une seule main, réifiant en quelque sorte la notion d'équivalence des octaves. Les claviers ont fait l'objet de nombreux développements expérimentaux avec des dispositions de notes utilisant des grilles hexagonales ou plusieurs couches de touches (figure \ref{fig:visual_representation:MersenneKeyboard}).\\
+\indent En tant que système symbolique, la théorie musicale peut être facilement encodée dans les ordinateurs. Les logiciels de production musicale contiennent tellement de fonctions et de règles basées sur la théorie musicale qu'il en est difficile de toutes les représenter sur l'interface. Thor Magnusson parle ainsi ``d'outils épistémiques'' pour décrire les \glspl{DMI}, affirmant qu'il sont conçus avec ``un tel degré de pertinence symbolique qu'ils deviennent un système de connaissance et de pensée dans leurs propres termes'' \cite{todo Magnusson, 2009}. Pour le \textit{musicien numérique}, ce ``système de connaissances'' est un paysage imaginaire à explorer, un territoire sonore pour lequel l'interface de l'instrument peut métaphoriquement prendre le rôle d'une carte géographique, ou d'un cockpit de pilote \cite{vertegaal_towards_1996}.
 
 \subsection{Adaptations au contexte de performance}
 
-\noindent Si l'on élargit un peu la notion d'instrument de musique pour les considérer simplement comme des outils pour faire de la musique, alors les partitions, les salles de concert, le public et plus généralement, le contexte de la performance participent aussi et influencent la conception des instruments. Les partitions orientées (figure \ref{fig:visual_representation:table_music}) sont un exemple d'adaptation de la partition au contexte de la "musique de table", permettant dans ce cas aux musiciens de lire la partition lorsqu'ils sont assis autour d'une table. De même, les DMI sur écran peuvent adapter leur disposition au nombre d'interprètes en présentant à chacun d'eux un groupe d'éléments d'interface utilisateur orientés vers eux (figure \ref{fig:visual_representation:multi_orientation}).
+\noindent Si l'on considère les instrument de musique comme des ``instruments pour musiquer'' en reprenant la définition de Christopher Small (cf. section \ref{sec:introduction:preamble}), alors les partitions, les salles de concert, le public et plus généralement, le contexte de la performance participent aussi et influencent la conception et la représentatin des instruments. Les partitions orientées (figure \ref{fig:visual_representation:table_music}) sont un exemple d'adaptation de la partition au contexte de la ``musique de table'', permettant dans ce cas aux musiciens de lire la partition lorsqu'ils sont assis autour d'une table. De même, les \glspl{DMI} collectifs (cf. \ref{sec:ephemeral:origins:collectiveDMIs}) peuvent adapter leur représentation au nombre d'interprètes en présentant à chacun d'eux un groupe d'éléments d'interface utilisateur orientés vers eux (figure \ref{fig:visual_representation:multi_orientation}).\\
+\indent D'autres manières d'intégrer le contexte de la performance dans la représentation visuelle de l'instrument est de modéliser son espace acoustique pour venir contrôler la spatialisation du son (cf. figure \ref{fig:visual_representation:spat}) ou --~à l'inverse~-- de projeter sur le lieu une représentation visuelle de la musique\footnote{ou une ``musique visuelle'' comme l'appelle Serge de Laubier} (cf. \ref{fig:visual_representation:pucemuse-monument}).
 
 %------------ Figure : keyboard et TUI - scale -----------
 \begin{figure}[!htbp]
@@ -90,10 +84,29 @@ Le système Boehm peut être qualifié de "modèle intermédiaire" entre le gest
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/mpTUI_multi-orientation.png}
-		\caption[Instrument simple adapté pour 6 joueurs]{Instrument simple adaptée pour 6 joueurs située autour d'une interface commune.}
+		\caption[Instrument simple adapté pour 6 joueurs]{Instrument simple adaptée pour 6 joueurs située autour d'une interface de jeu commune.}
 		\label{fig:visual_representation:multi_orientation}
 	\end{minipage}
 \end{figure}
+%------------ Figure : keyboard et TUI - scale -----------
+
+%------------ Figure : spat et PM -----------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/06_visual_representation/IRCAM-spat.jpg}
+		\caption[IRCAM Spat Revolution]{L'interface du logiciel ``Spat Revolution'' de l'IRCAM modélise l'espace de projection acoustique du lieu de concert.}
+		\label{fig:visual_representation:spat}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/PuceMuse-Facade.jpg}
+		\caption[Projection monumentale, Puce Muse]{Projections monumentales de ``musique visuelle'', controlée de manière synchrone à la ``musique sonore''. Photographie © Puce Muse.}
+		\label{fig:visual_representation:pucemuse-monument}
+	\end{minipage}
+\end{figure}
+%------------ Figure : spat et PM -----------
 
 \subsection{Adaptations à l'expérimentation}
 
@@ -102,9 +115,21 @@ Le système Boehm peut être qualifié de "modèle intermédiaire" entre le gest
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{le cockpit du musicien?}
-\label{sec:visual_representation:sec1}
-\cite{vertegaal_towards_1996}
+
+Si un DMI présente une une certaine ergonomie physique, avec un agencement stable de certains éléments d'interaction, les écrans permettent l'affichage d'un certain nombre d'éléments dynamiques qui peuvent également être support d'interaction, que cela soit avec le clavier, la souris, une interface de contrôle MIDI ou encore l'écran lui-même quand il est tactile.
+
+
 Interfaces héritées de l'ingénierie sonore avec leur quantité de commandes indépendantes et ordonnées.
+
+Ces éléments virtuels permettent :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item d'étendre considérablement le champ des opérations possibles, en proposant un espace virtuel beaucoup plus grand, grâce à des systèmes d'onglets, de fenêtres multiples, de menus condensant différentes options;
+	\item d'afficher des éléments dynamiques tels que l'état d'avancement d'un séquenceur;
+	\item d'adapter l'ergonomie de l'interface à un contexte particulier, e.g. en duplicant des éléments de GUI pour permettre un jeu à plusieurs sur une même interface;
+\end{itemize}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Guides, carte, fretting}
