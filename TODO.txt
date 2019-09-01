@@ -11,3 +11,4 @@ TODO final :
 - Vérifier les majuscules de titre
 - Guillemets
 - espace entre les tirets
+- vérifier que les articles publiés sont bien tous cités
