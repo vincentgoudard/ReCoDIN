@@ -27,7 +27,7 @@ Ces éléments virtuels permettent :
 
 La conception d'un instrument englobe plusieurs aspects qui affectent son aspect visuel. Je passerai en revue quelques-uns de ces aspects, en prenant des exemples des instruments acoustiques, comme rétrospective sur ce qui nous a conduit aux développements que nous sommes en train de faire avec les \glspl{DMI}.
 
-\subsection{liés à la production du son}
+\subsection{Adaptation à la production du son}
 
 La conception des instruments se préoccupe de la qualité du son. Bien que cela soit particulièrement évident pour les instruments acoustiques dont la forme a des conséquences directes sur le rendement sonore (comme le montre la figure \ref{fig:visual_representation:fhole}), les formes particulières issues de la lutherie traditionnelle ont également donné naissance à un certain nombre d'éléments iconiques (par exemple, les ouïes du violons) et de facteurs de forme (par exemple, une taille plus grande donne un ton grave) associés à l'idée d'un instrument. De plus, les DMI peuvent intégrer des transducteurs acoustiques, tels que des microphones piézoélectriques ou des haut-parleurs tactiles, qui influencent la conception acoustique de leurs composants matériels.
 
@@ -72,10 +72,11 @@ Le système Boehm peut être qualifié de "modèle intermédiaire" entre le gest
 	\end{minipage}
 \end{figure}
 
-Les instruments de musique intègrent également des éléments de théorie musicale. Par exemple, la partie supérieure d'un clavier (touches noir et blanc) représente la gamme chromatique, tandis que la partie inférieure (touches blanches seulement) représente la gamme diatonique en do majeur. Le dimensionnement et le positionnement de ces touches est un compromis intéressant entre les contraintes mécaniques du système de marteaux et une représentation uniforme des échelles diatonique et chromatique. De plus, la largeur de l'octave est telle qu'elle tient sous une main tendue, ce qui permet de jouer n'importe quel intervalle à l'intérieur d'une octave avec une seule main, reflétant en quelque sorte l'équivalence des octaves. Les claviers ont fait l'objet de nombreuses expérimentations avec des systèmes de hauteur micro-tonale, des intonations et des mises en page de notes, utilisant des grilles hexagonales ou plusieurs couches de touches (figure \ref{fig:visual_representation:MersenneKeyboard}). En tant que système symbolique, une telle théorie musicale peut être facilement encodée dans les ordinateurs. Les logiciels de production musicale contiennent tellement de fonctions et de règles basées sur la théorie musicale qu'elles s'adaptent difficilement à l'interface. Thor Magnusson parle d'" outils épistémiques " pour décrire le DMI, affirmant qu'il est conçu avec " un tel degré de pertinence symbolique qu'il devient un système de connaissance et de pensée dans ses propres termes " (Magnusson, 2009). En tant que tel, ce "système de connaissances" est un paysage imaginaire à explorer, un territoire sonore pour lequel l'interface et la cartographie de l'instrument peuvent métaphoriquement se présenter comme une carte.
+\noindent Les instruments de musique intègrent également des éléments de théorie musicale. Par exemple, la partie supérieure d'un clavier (touches noir et blanc) représente la gamme chromatique, tandis que la partie inférieure (touches blanches seulement) représente la gamme diatonique en do majeur. Le dimensionnement et le positionnement de ces touches est un compromis intéressant entre les contraintes mécaniques du système de marteaux et une représentation uniforme des échelles diatonique et chromatique. De plus, la largeur de l'octave est telle qu'elle tient sous une main tendue, ce qui permet de jouer n'importe quel intervalle à l'intérieur d'une octave avec une seule main, reflétant en quelque sorte l'équivalence des octaves. Les claviers ont fait l'objet de nombreuses expérimentations avec des systèmes de hauteur micro-tonale, des intonations et des mises en page de notes, utilisant des grilles hexagonales ou plusieurs couches de touches (figure \ref{fig:visual_representation:MersenneKeyboard}). En tant que système symbolique, une telle théorie musicale peut être facilement encodée dans les ordinateurs. Les logiciels de production musicale contiennent tellement de fonctions et de règles basées sur la théorie musicale qu'elles s'adaptent difficilement à l'interface. Thor Magnusson parle d'" outils épistémiques " pour décrire le DMI, affirmant qu'il est conçu avec " un tel degré de pertinence symbolique qu'il devient un système de connaissance et de pensée dans ses propres termes " (Magnusson, 2009). En tant que tel, ce "système de connaissances" est un paysage imaginaire à explorer, un territoire sonore pour lequel l'interface et la cartographie de l'instrument peuvent métaphoriquement se présenter comme une carte.
 
 \subsection{Adaptations au contexte de performance}
-Si l'on élargit un peu la notion d'instrument de musique pour les considérer simplement comme des outils pour faire de la musique, alors les partitions, les salles de concert, le public et plus généralement, le contexte de la performance participent aussi et influencent la conception des instruments. Les partitions orientées (figure \ref{fig:visual_representation:table_music}) sont un exemple d'adaptation de la partition au contexte de la "musique de table", permettant dans ce cas aux musiciens de lire la partition lorsqu'ils sont assis autour d'une table. De même, les DMI sur écran peuvent adapter leur disposition au nombre d'interprètes en présentant à chacun d'eux un groupe d'éléments d'interface utilisateur orientés vers eux (figure \ref{fig:visual_representation:multi_orientation}).
+
+\noindent Si l'on élargit un peu la notion d'instrument de musique pour les considérer simplement comme des outils pour faire de la musique, alors les partitions, les salles de concert, le public et plus généralement, le contexte de la performance participent aussi et influencent la conception des instruments. Les partitions orientées (figure \ref{fig:visual_representation:table_music}) sont un exemple d'adaptation de la partition au contexte de la "musique de table", permettant dans ce cas aux musiciens de lire la partition lorsqu'ils sont assis autour d'une table. De même, les DMI sur écran peuvent adapter leur disposition au nombre d'interprètes en présentant à chacun d'eux un groupe d'éléments d'interface utilisateur orientés vers eux (figure \ref{fig:visual_representation:multi_orientation}).
 
 %------------ Figure : keyboard et TUI - scale -----------
 \begin{figure}[!htbp]
@@ -83,19 +84,20 @@ Si l'on élargit un peu la notion d'instrument de musique pour les considérer s
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/06_visual_representation/Dowland-firstBookOfSonges.png}
-		\caption{Twenty-seven-steps keyboard invented by Mersenne (1636)}
+		\caption[Partition ``de table'' à plusieurs voix]{Partition ``de table'' à plusieurs voix (John Dowland - First Booke of Songes or Ayres. Édition Peter Short, London, 1597)}
 		\label{fig:visual_representation:table_music}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/mpTUI_multi-orientation.png}
-		\caption{Instrument simple adaptée pour 6 joueurs située autour d'une interface commune.}
+		\caption[Instrument simple adapté pour 6 joueurs]{Instrument simple adaptée pour 6 joueurs située autour d'une interface commune.}
 		\label{fig:visual_representation:multi_orientation}
 	\end{minipage}
 \end{figure}
 
 \subsection{Adaptations à l'expérimentation}
-En fin de compte, le processus de conception des instruments de musique contient une grande part de travail empirique. Le processus d'ajustement des réglages d'un instrument nécessitera souvent une rétroaction directe pour les réglages fins faits à la main, jusqu'à ce qu'il sonne et se prête au jeu.
+
+\noindent En fin de compte, le processus de conception des instruments de musique contient une grande part de travail empirique. Le processus d'ajustement des réglages d'un instrument nécessitera souvent une rétroaction directe pour les réglages fins faits à la main, jusqu'à ce qu'il sonne et se prête au jeu.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -139,15 +141,36 @@ Exemple dans FIB\_R : toute la performance visuelle re-projetée sur l'écran co
 
 \subsection{Motivations}
 
+\noindent Il n'existait pas de système ouvert permettant l'interaction polyphonique avec des éléments de GUI intégré à un environnement audio. Parmi les réalisations, on peut noter le développement de :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item{\textbf{le Lemur}} : une interface \textit{multitouch} personnalisable développé par la société JazzMutant entre 2005 et 2011, d'abord sur une interface hardware dédiée avant d'être distribuée sous la forme d'un logiciel pour tablettes et smartphones\footnote{distribuée par la société Liine \url{https://liine.net/en/products/lemur/}}. Cette interface était pionnière à la fois à une époque om le \textit{multitouch} grand public était naissant, et par la possibilité de personnaliser l'interface à l'aide d'un éditeur tournant sur un ordinateur standard. La personnalisation était cependant limitée au fait de choisir parmi un ensemble de composant alignables sur une grille;
+
+	\item{\textbf{la librairie MMF}} : ``Max Multitouch Framework''\footnote{Vidéo présentant MMF: \url{https://www.youtube.com/watch?v=EEkj85GU_is}} développé par Mathieu Chamagne dans le cadre du projet \gls{ANR} Virage (2008-2010), qui permettait de contrôler certains éléments de GUI de Max.
+
+	\item{\textbf{TouchOSC}} : proposé en 2008\footnote{\url{https://hexler.net/products/touchosc}}, touchOSC est basé sur les principes du Lemur mais développé comme une application pour tablette et smartPhones, permettant de renvoyer des données \gls{MIDI} ou \gls{OSC}.
+
+	\item{\textbf{Mira}} : En 2013, Sam Tarakajian développe Mira\footnote{dont la vidéo de présentaion est intéressante à plus d'un titre \url{https://vimeo.com/63846055}}, qui sera distribué ensuite par Cycling'74, la société développant Max. Mira simplifie grandement la connection entre un iPad et un patch Max dans la mesure où les éléments \gls{GUI} d'un patch Max sont directement transposés sur l'interface \textit{multitouch}, sans qu'il y ait besoin de recréer des connections manuellement entre deux interfaces différentes, comme cela pouvait être le cas sur Lemur ou TouchOSC.
+
+	\item{\textbf{Max multitouch} par ailleurs, Cycling'74 a considérablement améliorer la mécanique de patching depuis la version 8, et a commencé fin 2018 l'implémentation native du \textit{multitouch} dans l'éditeur de patch\footnote{pour l'instant limitée à un certain nombre d'objet et à la version MS Windows.}}
+\end{itemize}
+
+\noindent \par{\textbf{de la nécessité de réinventer la roue}} A la vue de ces développements, on peut légitimement se demander quel est l'intérêt de développer une librairie graphique pour le \textit{multitouch} dans Max.
+La réponse est essentiellement liée à la conviction que les interfaces graphiques, tout comme le domaine du mapping, ne sont pas des simples ustensiles fonctionnels mais un champ ouvert à la créativité pour développer de nouvelles relations.\\
+\indent Si l'on prend l'exemple d'un objet aussi simple et courant qu'un \textit{slider}, on s'aperçoit rapidement que de multiples scénarios d'interactions sont possibles, et que les implémentations de cette interaction dans la plupart des logiciels de bureautique ne sont pas forcément les plus adaptées au contrôle musicale. Ainsi, un musicien pourra apprécier jouer à plusieurs doigts sur une telle interface linéaire pour y contrôler des intervalles mélodiques, usage pour lequel la mémoire de ces intervalles s'avère très ergonomique. Il suffit de tester le fonctionnement des sliders sur les tablettes dans la plupart des applications pour constater que ce genre d'interaction n'y est, sans surprise, pas prévu.
+
+Ainsi, la prise en charge native du \textit{multitouch} dans l'interface de Max ne saurait être satisfaisante en terme créatif si elle ne laissait pas les relations entre les objets graphiques et le geste ouvertes à la reprogrammation. 
+
+
 ré-inventer la route (ou le slider) : les interactions prévues dans les éléments de GUI de la bureautique ne sont pas conçues pour l'interaction musicale. Adaptation ad-hoc du comportement de GUI. Exemple d'un slider avec mémoire du dernier doigt. 
 
 \todo{inclure les figures de la présentation mp.TUI.key}
 
-\subsection{Utilisation de MP pour le contrôle multitouch de GUI}
+\subsection{Utilisation de MP pour le contrôle \textit{multitouch} de GUI}
 
-La bibliothèque mp.TUI\footnote{Sources disponible sur \url{https://github.com/LAM-IJLRA/ModularPolyphony-TUI/}.} est construite sur le protocole MP (cf. \ref{sec:algorithms:MP}). Elle fournit un cadre basé sur les logiques de patch de Max pour créer de nouveaux composants d'interface utilisateur multitouch dans un contexte OpenGL et surmonter certaines limitations de l'interface graphique native de l'environnement de patching de Max. Par exemple, les interfaces graphiques sont généralement orientées sur une disposition horizontale/verticale avec une orientation de lecture du haut vers le bas alors qu'on peut souhaiter avoir plusieurs orientations, comme dans la situation présentée sur la figure \ref{fig:visual_representation:multi_orientation}. La superposition de divers composants peut nécessiter des couleurs et des transparents personnalisés, et l'on peut souhaiter inclure des interfaces visuelles plus complexes que les curseurs et les boutons, par exemple des particules, des vidéos, des modèles 3d, des shaders (cf. figure \ref{fig:visual_representation:phonetogramme}), etc.
+\noindent La bibliothèque mp.TUI\footnote{Sources disponible sur \url{https://github.com/LAM-IJLRA/ModularPolyphony-TUI/}.} est construite sur le protocole MP (cf. \ref{sec:algorithms:MP}). Elle fournit un cadre basé sur les logiques de patch de Max pour créer de nouveaux composants d'interface utilisateur \textit{multitouch} dans un contexte OpenGL et surmonter certaines limitations de l'interface graphique native de l'environnement de patching de Max. Par exemple, les interfaces graphiques sont généralement orientées sur une disposition horizontale/verticale avec une orientation de lecture du haut vers le bas alors qu'on peut souhaiter avoir plusieurs orientations, comme dans la situation présentée sur la figure \ref{fig:visual_representation:multi_orientation}. La superposition de divers composants peut nécessiter des couleurs et des transparents personnalisés, et l'on peut souhaiter inclure des interfaces visuelles plus complexes que les curseurs et les boutons, par exemple des particules, des vidéos, des modèles 3d, des shaders (cf. figure \ref{fig:visual_representation:phonetogramme}), etc.
 
-Les composants de la bibliothèque sont d'un ensemble d'abstractions de trois types :
+\noindent Les composants de la bibliothèque sont d'un ensemble d'abstractions de trois types :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{des composants système}, qui implémentent les fonctions essentielles pour envelopper les graphiques dans un élément cliquable. Cela inclut le "mp.TUI.hub" qui récupère les données de l'interaction de la souris sur la fenêtre OpenGL ainsi que les messages TUIO reçus par UDP et les envoie aux composants graphiques sélectionnés.;
@@ -157,7 +180,7 @@ Les composants de la bibliothèque sont d'un ensemble d'abstractions de trois ty
 
 \subsection{Les composants de la librairie mp.TUI}
 
-Les composants utilisent des transformations géométriques hiérarchiques\footnote{à l'aide de l'objet jit.anim.node de Max}, qui permet d'obtenir des coordonnées relatives au monde ou à l'objet indépendamment de la position, de l'échelle et de l'orientation du composant de l'interface utilisateur. Cela permet également de créer des groupes de composants, comme on le ferait dans n'importe quel logiciel de CAO. Suivant la nature empirique de la lutherie numérique revendiquée ci-dessus, un "mode édition" est également disponible pour manipuler rapidement à la main la position, l'échelle et l'orientation des composants de l'interface utilisateur (figure \ref{fig:visual_representation:groups_patch} et \ref{fig:visual_representation:groups}).
+\noindent Les composants utilisent des transformations géométriques hiérarchiques\footnote{à l'aide de l'objet jit.anim.node de Max}, qui permet d'obtenir des coordonnées relatives au monde ou à l'objet indépendamment de la position, de l'échelle et de l'orientation du composant de l'interface utilisateur. Cela permet également de créer des groupes de composants, comme on le ferait dans n'importe quel logiciel de CAO. Suivant la nature empirique de la lutherie numérique revendiquée ci-dessus, un "mode édition" est également disponible pour manipuler rapidement à la main la position, l'échelle et l'orientation des composants de l'interface utilisateur (figure \ref{fig:visual_representation:groups_patch} et \ref{fig:visual_representation:groups}).
 
 %-------------------------- Figure : phonetogramme ----------------------------------
 \begin{figure}[!htbp]
@@ -166,7 +189,7 @@ Les composants utilisent des transformations géométriques hiérarchiques\footn
 	\label{fig:visual_representation:phonetogramme}
 \end{figure}
 
-La possibilité de concevoir des objets audiovisuels en Max en étroite relation avec la programmation de l'interaction entre le geste, l'audio et le visuel permet de les intégrer dans des scénarios dynamiques personnalisés : histoires narratives pour des ateliers éducatifs avec des enfants, scénarios réactifs, visualisations personnalisées pour les malvoyants, expositions muséographiques avec chartes graphiques spécifiques, adaptation réactive aux formats d'écran, graphismes expérimentaux pour l'esthétique des performances artistiques live, etc.
+\noindent La possibilité de concevoir des objets audiovisuels en Max en étroite relation avec la programmation de l'interaction entre le geste, l'audio et le visuel permet de les intégrer dans des scénarios dynamiques personnalisés : histoires narratives pour des ateliers éducatifs avec des enfants, scénarios réactifs, visualisations personnalisées pour les malvoyants, expositions muséographiques avec chartes graphiques spécifiques, adaptation réactive aux formats d'écran, graphismes expérimentaux pour l'esthétique des performances artistiques live, etc.
 
 
 %------------------ Figure : mp.TUI : simple slider ---------------------
@@ -213,7 +236,13 @@ La possibilité de concevoir des objets audiovisuels en Max en étroite relation
 % 	\end{minipage}
 % \end{figure}
 
-%-------------------------- Figure : groups ----------------------------------
+
+\subsection{Groupement d'objets graphique}
+
+\noindent L'objet mp.TUI.groups permet de rattacher différents éléments de GUI à un groupe, comme on le fait dans la plupart des logiciels d'édition vectorielle, afin de gérer leur position, échelle et orientation de manière globale. Cela permet de définir un ensemble de composant dans des coordonnées relative, puis de venir ajuster l'emplacement d'un seul et unique bloc. Il est possible de procéder à l'ajustement de ces coordonnées par de valeurs envoyées explicitement, ou bien par une manipulation directe du groupe, selon le même mode opératoire que pour les objets usuels.\\
+\indent Un exemple est présenté sur la figure \ref{fig:visual_representation:groups_patch} et son rendu graphique figure \ref{fig:visual_representation:groups}, associant des curseurs et un texte affichant leurs coordonnées dans une zone précise définie par le canvas.
+
+%-------------------------- Figure : groups ----------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
 	\centering
@@ -229,6 +258,40 @@ La possibilité de concevoir des objets audiovisuels en Max en étroite relation
 		\label{fig:visual_representation:groups}
 	\end{minipage}
 \end{figure}
+%-------------------------- Figure : groups ----------------------
+
+\subsection{GUI composites}
+
+\noindent Il peut s'avérer nécessaire de coordonner plusieurs éléments d'interaction graphique dans un seul et même ensemble, afin qu'un élément puisse réagir à une interaction sur un autre élément. L'objet mp.TUI.canvas est destiné à cette fin. C'est un objet graphique vide, qui définit simplement une zone ajustable en position, échelle et orientation. Comme tous les autres objets de la librairie mp.TUI, il emet en sortie les \textit{MP-events} qui lui arrivent, ce qui permet de les renvoyer sur les entrées MP d'autres composants, même si ceux-ci ne sont pas directement touchés par les curseurs de position.\\
+\indent Un exemple simple de \gls{GUI} composite est présenté sur la figure \ref{fig:visual_representation:canvas}, associant des curseurs et un texte affichant leurs coordonnées dans une zone précise définie par le canvas.
+
+
+%------------------ Figure : canvas ---------------------
+\begin{figure}[!htbp]
+	\includegraphics[width=\textwidth]{gfx/06_visual_representation/mpTUI_canvas.pdf}
+	\caption[Exemple de GUI composite avec mp.TUI.canvas]{Exemple de GUI composite avec mp.TUI.canvas: les curseurs ne sont pris en compte que dans la zone définie par le canvas. Patch Max en haut, rendu en bas}
+	\label{fig:visual_representation:canvas}
+\end{figure}
+%------------------ Figure : canvas ---------------------
+
+%------------------ Figure : canvas ---------------------
+% \begin{figure}[!htbp]
+% 	\captionsetup{format=plain}%
+% 	\centering
+% 	\begin{minipage}[t]{0.38\textwidth}
+% 		\includegraphics[width=\linewidth]{gfx/06_visual_representation/mpTUI_composition-canvas.png}
+% 		\caption[Exemple de GUI composite avec mp.TUI.canvas]{Exemple de GUI composite avec mp.TUI.canvas}
+% 		\label{fig:visual_representation:canvas-patch}
+% 	\end{minipage}
+% 	\hspace{.01\linewidth}
+% 	\begin{minipage}[t]{0.58\textwidth}
+% 	  	\includegraphics[width=\linewidth]{gfx/06_visual_representation/mpTUI_canvas_window.png}
+% 		\caption[Exemple de GUI composite : rendu graphique]{Exemple de GUI composite : rendu graphique}
+% 		\label{fig:visual_representation:canvas-window}
+% 	\end{minipage}
+% \end{figure}
+%------------------ Figure : canvas ---------------------
+
 
 \subsection{Instanciations dynamiques}
 
@@ -238,7 +301,8 @@ Considération pour la gestion de la destruction de ces instances.
 
 
 \subsection{Performances}
-La bibliothèque mp.TUI est entièrement développée avec des objets natifs de la distribution Max. Cette approche, bien que plus coûteuse en charge \gls{CPU} que des objets compilés, a l'avantage de permettre à tout utilisateur de Max de modifier facilement les composants et de les adapter à ses besoins. De plus, les composants mp.TUI s'appuient essentiellement sur OpenGL, de sorte que la majeure partie de la charge de calcul est laissée au \gls{GPU}. L'interaction tangible avec les objets de la \gls{GUI} se fait à l'aide du moteur Bullet-Physics\footnote{\url{http://bulletphysics.org/}} intégré dans Max. Bien que cela puisse être plus coûteux pour certaines formes simples, cela nous permet de concevoir des composants \gls{GUI} de n'importe quelle forme et orientation, comme des \textit{sliders} courbes ou des formes creuses, et de les animer potentiellement, comme dans l'exemple des "balles rebondissantes" où plusieurs curseurs 2D peuvent être déplacés et lancés dans une zone délimitées.
+
+\noindent La bibliothèque mp.TUI est entièrement développée avec des objets natifs de la distribution Max. Cette approche, bien que plus coûteuse en charge \gls{CPU} que des objets compilés, a l'avantage de permettre à tout utilisateur de Max de modifier facilement les composants et de les adapter à ses besoins. De plus, les composants mp.TUI s'appuient essentiellement sur OpenGL, de sorte que la majeure partie de la charge de calcul est laissée au \gls{GPU}. L'interaction tangible avec les objets de la \gls{GUI} se fait à l'aide du moteur Bullet-Physics\footnote{\url{http://bulletphysics.org/}} intégré dans Max. Bien que cela puisse être plus coûteux pour certaines formes simples, cela nous permet de concevoir des composants \gls{GUI} de n'importe quelle forme et orientation, comme des \textit{sliders} courbes ou des formes creuses, et de les animer potentiellement, comme dans l'exemple des "balles rebondissantes" où plusieurs curseurs 2D peuvent être déplacés et lancés dans une zone délimitées.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{miscellanées (temporaire à supprimer)}
