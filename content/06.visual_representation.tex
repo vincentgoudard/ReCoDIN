@@ -179,14 +179,14 @@ todo : bof sur Buxton, pas exact
 	\captionsetup{format=plain}%
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
-		\includegraphics[width=\linewidth]{gfx/06_visual_representation/Buchla.jpg}
-		\caption[Buchla ]{Le skeuomorphisme dans les logiciels audio témoigne de l'importance accordée à l'esthétique, au delà des fonctionnalités de l'interface.}
-		\label{fig:visual_representation:skeuomorphisme}
+		\includegraphics[width=\linewidth]{gfx/06_visual_representation/Buchla_music_easel.jpg}
+		\caption[Buchla ]{Le clavier multitouch du synthétiseur Buchla music easel.}
+		\label{fig:visual_representation:buchla}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/Lemur.jpg}
-		\caption[Lemur]{Le Lemur de Jazz Mutant.}
+		\caption[Lemur]{Le Lemur de Jazz Mutant et son écran multitouch.}
 		\label{fig:visual_representation:lemur}
 	\end{minipage}
 \end{figure}
@@ -196,7 +196,7 @@ Les interfaces tangibles se sont multipliées dans les appareils grands public a
 
 Si un certain nombre de gestes (la notion de geste étant ici souvent réduite au gestes des doigts, voire du pouce, de l'index et du majeur seulement) sont devenus des standards pour l'interaction sur ce genre de surface (tel le \textit{pinch-zoom}, le \textit{swipe}, etc.), la recherche sur les interactions possibles est toujours très active.
 
-Les écrans multitouch offrent de nombreux avantages qui ont déjà été soulignés par Buxton et Sergi Jorda \cite{jorda_digital_2005, buxton_multi-touch_2007}, notamment :
+Les écrans multitouch offrent de nombreux avantages qui ont déjà été soulignés par Bill Buxton \cite{buxton_multi-touch_2007} et Sergi Jorda \cite{jorda_digital_2005}, notamment :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item l'utilisation possible de plusieurs doigts, plusieurs mains, plusieurs personnes en même temps, en comparaison de la souris, qui permet une interaction polyphonique, parallèle plutôt que séquentielle;
@@ -217,30 +217,24 @@ Screen scores, patterns de séquenceur, cues de déclenchement, presets
 
 \subsection{Motivations}
 
-\noindent Il n'existait pas de système ouvert permettant l'interaction polyphonique avec des éléments de GUI intégré à un environnement audio. Parmi les réalisations, on peut noter le développement de :
+\noindent Il n'existait pas de système ouvert permettant l'interaction polyphonique avec des éléments de \gls{GUI} intégré à un environnement audio. Parmi les réalisations, on peut noter le développement de :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item{\textbf{le Lemur}} : une interface \textit{multitouch} personnalisable développé par la société JazzMutant entre 2005 et 2011, d'abord sur une interface hardware dédiée avant d'être distribuée sous la forme d'un logiciel pour tablettes et smartphones\footnote{distribuée par la société Liine \url{https://liine.net/en/products/lemur/}}. Cette interface était pionnière à la fois à une époque om le \textit{multitouch} grand public était naissant, et par la possibilité de personnaliser l'interface à l'aide d'un éditeur tournant sur un ordinateur standard. La personnalisation était cependant limitée au fait de choisir parmi un ensemble de composant alignables sur une grille;
+	\item{\textbf{le Lemur}} : une interface \textit{multitouch} personnalisable développé par la société JazzMutant entre 2005 et 2011, d'abord sur une interface hardware dédiée avant d'être portée sous la forme d'une application pour pour tablettes et smartphones\footnote{distribuée par la société Liine \url{https://liine.net/en/products/lemur/}}. Cette interface était pionnière à la fois à une époque om le \textit{multitouch} grand public était naissant, et par la possibilité de personnaliser l'interface à l'aide d'un éditeur tournant sur un ordinateur standard. La personnalisation était cependant limitée au fait de choisir les composants graphiques parmi un ensemble de composants alignables sur une grille;
 
-	\item{\textbf{la librairie MMF}} : ``Max Multitouch Framework''\footnote{Vidéo présentant MMF: \url{https://www.youtube.com/watch?v=EEkj85GU_is}} développé par Mathieu Chamagne dans le cadre du projet \gls{ANR} Virage (2008-2010), qui permettait de contrôler certains éléments de GUI de Max.
+	\item{\textbf{la librairie MMF}} : ``Max Multitouch Framework''\footnote{Vidéo présentant MMF: \url{https://www.youtube.com/watch?v=EEkj85GU_is}} développé par Mathieu Chamagne dans le cadre du projet \gls{ANR} Virage (2008-2010), qui permettait de contrôler certains éléments de \gls{GUI} de Max. La contrainte principale réside dans le fait que le contrôle des éléments de \gls{GUI} de Max est assez gourmand en \gls{CPU} et rend difficile l'usage de plusieurs doigts.
 
-	\item{\textbf{TouchOSC}} : proposé en 2008\footnote{\url{https://hexler.net/products/touchosc}}, touchOSC est basé sur les principes du Lemur mais développé comme une application pour tablette et smartPhones, permettant de renvoyer des données \gls{MIDI} ou \gls{OSC}.
+	\item{\textbf{TouchOSC}} : développé en 2008, touchOSC\footnote{\url{https://hexler.net/products/touchosc}} est basé sur les principes du Lemur mais développé comme une application pour tablette et smartPhones, permettant de renvoyer des données \gls{MIDI} ou \gls{OSC}.
 
-	\item{\textbf{Mira}} : En 2013, Sam Tarakajian développe Mira\footnote{dont la vidéo de présentaion est intéressante à plus d'un titre \url{https://vimeo.com/63846055}}, qui sera distribué ensuite par Cycling'74, la société développant Max. Mira simplifie grandement la connection entre un iPad et un patch Max dans la mesure où les éléments \gls{GUI} d'un patch Max sont directement transposés sur l'interface \textit{multitouch}, sans qu'il y ait besoin de recréer des connections manuellement entre deux interfaces différentes, comme cela pouvait être le cas sur Lemur ou TouchOSC.
+	\item{\textbf{Mira}} : En 2013, Sam Tarakajian présente Mira\footnote{dont la vidéo de présentaion est intéressante à plus d'un titre \url{https://vimeo.com/63846055}}, qui sera distribué ensuite par Cycling'74\footnote{\url{https://cycling74.com/products/mira}}, la société développant Max. Mira simplifie grandement la connection entre un iPad et un patch Max dans la mesure où les éléments de \gls{GUI} d'un patch Max sont directement transposés sur l'interface \textit{multitouch}, sans qu'il y ait besoin de recréer des connections manuellement entre deux interfaces différentes, comme cela pouvait être le cas avec le Lemur ou TouchOSC.
 
 	\item{\textbf{Max multitouch} par ailleurs, Cycling'74 a considérablement améliorer la mécanique de patching depuis la version 8, et a commencé fin 2018 l'implémentation native du \textit{multitouch} dans l'éditeur de patch\footnote{pour l'instant limitée à un certain nombre d'objet et à la version MS Windows.}}
 \end{itemize}
 
-\noindent \textbf{De la nécessité de réinventer la roue.} À la vue de ces développements, on peut légitimement se demander quel est l'intérêt de développer une librairie graphique pour le \textit{multitouch} dans Max.
-La réponse est essentiellement liée à la conviction que les interfaces graphiques, tout comme le domaine du mapping, ne sont pas des simples ustensiles fonctionnels mais un champ ouvert à la créativité pour développer de nouvelles relations.\\
-\indent Si l'on prend l'exemple d'un objet aussi simple et courant qu'un \textit{slider}, on s'aperçoit rapidement que de multiples scénarios d'interactions sont possibles, et que les implémentations de cette interaction dans la plupart des logiciels de bureautique ne sont pas forcément les plus adaptées au contrôle musicale. Ainsi, un musicien pourra apprécier jouer à plusieurs doigts sur une telle interface linéaire pour y contrôler des intervalles mélodiques, usage pour lequel la mémoire de ces intervalles s'avère très ergonomique. Il suffit de tester le fonctionnement des sliders sur les tablettes dans la plupart des applications pour constater que ce genre d'interaction n'y est, sans surprise, pas prévu.
+\noindent \textbf{De la nécessité de réinventer la roue.} À la vue de ces développements, on peut légitimement se demander quel est l'intérêt de développer une librairie graphique pour le \textit{multitouch} dans Max. La réponse est essentiellement liée à la conviction que les interfaces graphiques, tout comme le domaine du mapping, ne consiste pas en un simple agencement de composants standards mais un champ ouvert à la créativité pour développer de nouvelles relations. \\
+\indent Si l'on prend l'exemple d'un objet aussi basique et courant qu'un \textit{slider}, on s'aperçoit rapidement que de multiples scénarios d'interactions sont possibles, et que les implémentations de cette interaction dans la plupart des logiciels de bureautique ne sont pas nécessairement les plus adaptées au contrôle musical. Ainsi, un musicien utilisera une telle interface linéaire avec \underline{tous ses doigts}, par exemple pour jouer des intervalles mélodiques, usage pour lequel la mémoire des intervalles s'avère très ergonomique. Il suffit de tester le fonctionnement des sliders sur les tablettes dans la plupart des applications pour constater que ce genre d'interaction n'y est, sans surprise, pas prévu. De même, la plupart des logiciels contraignent l'orientation des composants graphiques selon les axes verticaux et orthogonaux (et c'est pour l'instant de toutes les librairies sus-mentionnées), en se basant sur l'usage habituel de l'écran comme une feuille de papier vertical qui se lit de haut en bas et de gauche à droite\footnote{On peut noter le choix original d'un design basé sur le cercle dans la ReacTable, inspiré de celui de l'AudioPad développé en 2002 au \gls{MIT}, pour faciliter un usage collectif}.
 
-Ainsi, la prise en charge native du \textit{multitouch} dans l'interface de Max ne saurait être satisfaisante en terme créatif si elle ne laissait pas les relations entre les objets graphiques et le geste ouvertes à la reprogrammation. 
-
-
-ré-inventer la route (ou le slider) : les interactions prévues dans les éléments de GUI de la bureautique ne sont pas conçues pour l'interaction musicale. Adaptation ad-hoc du comportement de GUI. Exemple d'un slider avec mémoire du dernier doigt. 
-
-\todo{inclure les figures de la présentation mp.TUI.key}
+Ainsi, la prise en charge native du \textit{multitouch} dans l'interface de Max ne saurait être satisfaisante en terme créatif si elle ne laisse pas les relations entre les objets graphiques et le geste ouvertes à la reprogrammation. 
 
 \subsection{Utilisation de MP pour le contrôle \textit{multitouch} de GUI}
 
@@ -371,14 +365,35 @@ ré-inventer la route (ou le slider) : les interactions prévues dans les élém
 
 \subsection{Instanciations dynamiques}
 
-Utilisation de la librairie MP pour créer dynamiquement des instances éphémères de composant UI.
-Exemple avec mp.TUI.canvas ou l'on vient ``piocher'' un slider créé via un objet mp.TUID.slider.
-Considération pour la gestion de la destruction de ces instances.
+\noindent La gestion de processus musicaux en parallèle créés à la volée nécessite l'instanciation dynamique d'objets, matérialisant de manière tangible ces processus afin de pouvoir les contrôler durant leur existance et les supprimer lorsqu'on le souhaite.
+\indent Il est parfois possible de poser des objets physiques sur la surface multitouch pour créer et maintenir en vie de tels processus, sans avoir à maintenir le contact des doigts\footnote{c'est le cas par exemple sur la ReacTable qui utilise des objets cylindriques pour instancier des modules} (cf. fig \ref{fig:visual_representation:objectOnTable}), mais cette solution n'est pas toujours possible\footnote{Les surfaces multitouch basés sur une techologie capacitive ne sont pas sensible à tout type d'objet physique, contrairement par exemple, au écran basés sur une technologie infra-rouge.} ni souhaitable (pour des raisons d'encombrement de l'espace de la tablette par exemple).
+\indent La objets graphiques de la librairie mp.TUI peuvernt facilement être créés à la volée pour répondre à ce besoin, en les insérant dans des objets MP tel que présenté dans le chapitre précédant. Ceci permet de concevoir relativement simplement un scénario d'interaction graphique tel que la possibilité de définir des zones ``réservoir d'objets'' où il est possible de venir piocher des éléments créés dynamiquement, et représentant des processus complexes incluant leur propre mode de destruction (exemple figure \ref{fig:visual_representation:dynamicInstanciation}).
 
+%-------------------------- Figure : groups ----------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/dummy.pdf}
+		\caption{Patch Max présentant des objets groupés}
+		\label{fig:visual_representation:objectOnTable}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/dummy.pdf}
+		\caption{Groupement d'objets et édition ``à la main''}
+		\label{fig:visual_representation:dynamicInstanciation}
+	\end{minipage}
+\end{figure}
+%-------------------------- Figure : groups ----------------------
 
 \subsection{Performances}
 
 \noindent La bibliothèque mp.TUI est entièrement développée avec des objets natifs de la distribution Max. Cette approche, bien que plus coûteuse en charge \gls{CPU} que des objets compilés, a l'avantage de permettre à tout utilisateur de Max de modifier facilement les composants et de les adapter à ses besoins. De plus, les composants mp.TUI s'appuient essentiellement sur OpenGL, de sorte que la majeure partie de la charge de calcul est laissée au \gls{GPU}. L'interaction tangible avec les objets de la \gls{GUI} se fait à l'aide du moteur Bullet-Physics\footnote{\url{http://bulletphysics.org/}} intégré dans Max. Bien que cela puisse être plus coûteux pour certaines formes simples, cela nous permet de concevoir des composants \gls{GUI} de n'importe quelle forme et orientation, comme des \textit{sliders} courbes ou des formes creuses, et de les animer potentiellement, comme dans l'exemple des "balles rebondissantes" où plusieurs curseurs 2D peuvent être déplacés et lancés dans une zone délimitées.
+
+\subsection{Travaux futurs}
+
+\noindent La librairie mp.TUI permet d'introduire la notion de programmation gestuelle de type multitouch dans l'environnement Max, en bénéficiant des passerelles dont celle-ci peut bénéficier avec les possibilités audio, graphiques et de mapping disponibles dans Max. De nombreuses stratégies de contrôle basées sur ce paradigme restent à implémenter, explorer et inventer, notamment sur la gestion d'événements conjoints définissant des primitives gestuelles, tel que présenté dans \cite{oney_implementing_2019}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{miscellanées (temporaire à supprimer)}
