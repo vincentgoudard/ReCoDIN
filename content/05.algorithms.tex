@@ -463,9 +463,10 @@ Les limitations du \gls{MIDI} ont pourtant été identifiées peu de temps aprè
 \end{figure}
 %------------------ Figure : simple synth ---------------------
 
-\subsubsection{Mapping avec une fonction récursive}
+\subsubsection{Mapping avec une fonction impure}
 
-\noindent Cet exemple (figure \ref{fig:algorithms:MP-recursive}) montre le cas d'un mapping avec une fonction récursive. L'objet \verb|slide| de Max opère un filtrage logarithmique définit par l'équation :
+\noindent Une fonction sera impure dans le cas où son fonctionnement interne implique la mémorisation de valeurs. Ce cas de figure se produit avec les fonctions récursives, mais également avec les fonctions non-récursives, quand leurs différents opérandes arrivent de manière non-synchrone.\\
+\indent Cet exemple (figure \ref{fig:algorithms:MP-recursive}) montre le cas d'un mapping avec une fonction récursive. L'objet \verb|slide| de Max opère un filtrage logarithmique définit par l'équation :
  $$y[n] = y[n-1] + \frac{(x[n]-y[n-1])}{slide}$$ 
 \noindent Dans ce cas là, il n'est plus possible d'utiliser une seule instance de l'objet \verb|slide| pour traiter l'ensemble des \textit{MP-messages}, en raison de la mémoire interne d'un état précédant propre à un \textit{MP-event} particulier. L'objet \verb|mp.slide| permet alors d'instancier plusieurs voix traitant les valeurs individuelles de \textit{pitch} en parallèle.
 
