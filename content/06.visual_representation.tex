@@ -114,7 +114,8 @@ voir mp.TUI.key pour les images à inclure
 
 \subsection{Aspects esthétiques : l'instrument œuvre d'art}
 
-\noindent Le design de l'interface visuelle de l'instrument se résume rarement à ses aspects fonctionnels. Les instruments de musique sont souvent l'œuvre d'un artisanat très pointu, voire des objets d'art. La finesse des détails et le souci de leur aspect esthétique jouent ainsi une part éminente dans le design final. Dans les interfaces visuelles des logiciels audio, on retrouve souvent ce soin esthétique, que cela soit sous forme d'un skeuomorphisme\footnote{le terme de skeuomorphisme est utilisé pour définir un élément de design dont la forme n'est pas directement liée à la fonction, mais qui reproduit de manière ornementale un élément qui était nécessaire dans l'objet d'origine.} (figure \ref{fig:visual_representation:skeuomorphisme}) cherchant à imiter le bois des instruments acoustiques, le métal et l'aspect physique des boutons sur les équipements hardware, ou d'un design plus épuré (figure \ref{fig:visual_representation:apparatum}).
+\noindent Le design de l'interface visuelle de l'instrument se résume rarement à ses aspects fonctionnels. Les instruments de musique sont souvent l'œuvre d'un artisanat très pointu, voire des objets d'art. La finesse des détails et le souci de leur aspect esthétique jouent ainsi une part éminente dans le design final. Dans les interfaces visuelles des logiciels audio, on retrouve souvent ce soin esthétique, que cela soit sous forme d'un skeuomorphisme\footnote{le terme de skeuomorphisme est utilisé pour définir un élément de design dont la forme n'est pas directement liée à la fonction, mais qui reproduit de manière ornementale un élément qui était nécessaire dans l'objet d'origine.} (figure \ref{fig:visual_representation:skeuomorphisme}) cherchant à imiter le bois des instruments acoustiques, le métal et l'aspect physique des boutons sur les équipements hardware, ou d'un design plus épuré\footnote{sur les connexions entre le design d'interfaces et les arts graphiques, voir également les étonnants résultats obtenus en appliquant des modèles AI pour créer une interface à partir d'images photographiques dans \cite{troyer_mondrian_2019} (figure \ref{fig:visual_representation:apparatum}).}.
+
 %------------ Figure : skeuomorphisme et soin du design -----------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
@@ -143,24 +144,22 @@ Exemple dans FIB\_R : toute la performance visuelle re-projetée sur l'écran co
 
 \subsection{L'écran, cockpit du musicien?}
 
-\noindent En tant qu'outils épistémiques, les \glspl{DMI} mettent en jeu un nombre extrêmement élevés de flux de données et de processus qui interagissent entre eux et avec l'interface. Pouvoir contrôler le bon fonctionnement de ces processus\footnote{que cela soit lors de l'élaboration d'un instrument, voire durant sa performance, quand la mémoire fait défaut, ou que l'instrument instable est sujet à bug}, leurs dynamiques, leur agencement, pouvoir sélectionner des réglages dans une banque de données (presets, samples, etc.) font parties des tâches qui peuvent être facilitées par un contrôle visuel.\\
-\indent \textbf{Espace inifini.} L'écran donne en effet accès à un espace virtuellement infini, grâce à des systèmes d'onglets, de fenêtres multiples, de menus condensant différentes options, de zoom et déplacement sur des zones d'intérêt. L'exploration y est autant possible ``horizontalement'', c'est à dire dans l'exploration des différents éléments d'un même niveau de complexité, que ``verticalement'', c'est à dire dans la profondeur des différentes couches d'un seul élément.\\
-\indent \textbf{Temporalité de l'interface.} À la différence d'une interface physique, l'information sur écran n'est pas seulement représentée de manière \textit{spatiale} mais également \textit{temporelle}, ce qui offre des possibilités tout à faire adaptées à l'interaction sonore et musicale. Ainsi, l'écran offre une représentation du tempo, des patterns rythmiques ou encore de la progression d'un processus (e.g. l'état d'avancement d'un séquenceur) dans leur évolution dynamique, ce qui peut faciliter leur anticipation. Également, l'image peut faciliter la compréhension de processus musicaux, en particulier le déploiement de grandes formes temporelle, qui nécessite une mémoire auditive faisant parfois défaut. Si le son est évanescent, l'image peut en effet laisser une trace sensible, ``s'écrire'' au fur et à mesure de sa performance\footnote{Un tel procédé à été utilisé lors d'un concert de ONE, durant lequel les formes d'ondes des sons joués par chaque musicien étaient vidéo-projetées et s'aggloméraient telle des stalagmites, rendant visible les intensités de jeu de chacun au cours du concert(L'objet LAM.jit.gl.DSW\textasciitilde{} développé à cette fin est disponible dans la LAM-lib).}.
+\noindent En tant qu'outils épistémiques, les \glspl{DMI} mettent en jeu un nombre extrêmement élevés de flux de données et de processus qui interagissent entre eux et avec l'interface. La représentation visuelle peut faciliter le \textit{monitoring} du bon fonctionnement de ces processus\footnote{que cela soit lors de l'élaboration d'un instrument, voire durant sa performance, quand la mémoire fait défaut, ou que l'instrument instable est sujet à bug}, de leurs dynamiques, et la sélection de réglages dans des banques de données (presets, samples, etc.).\\
+\indent \textbf{Espace infini.} L'écran donne en effet accès à un espace virtuellement infini, grâce à des systèmes d'onglets, de fenêtres multiples, de menus condensant différentes options, de zoom et déplacement sur des zones d'intérêt. L'exploration y est autant possible ``horizontalement'', c'est à dire dans l'exploration des différents éléments d'un même niveau de complexité, que ``verticalement'', c'est à dire dans la profondeur des différentes couches d'un seul élément.\\
+\indent \textbf{Temporalité de l'interface.} À la différence d'une interface physique, l'information sur écran n'est pas seulement représentée de manière \textit{spatiale} mais également \textit{temporelle}, ce qui offre des possibilités tout à faire adaptées à l'interaction sonore et musicale. Ainsi, l'écran peut assurer une représentation du tempo, des patterns rythmiques ou encore de la progression d'un processus (e.g. l'état d'avancement d'un séquenceur) dans leur évolution dynamique, ce qui facilite leur anticipation. Également, l'image peut faciliter la compréhension de processus musicaux sur le long terme, en particulier le déploiement de grandes formes temporelle, qui nécessite une mémoire auditive faisant parfois défaut. Si le son est évanescent, l'image peut en effet laisser une trace sensible, ``s'écrire'' au fur et à mesure de sa performance\footnote{Un tel procédé à été utilisé lors d'un concert de ONE, durant lequel les formes d'ondes des sons joués par chaque musicien étaient vidéo-projetées et s'aggloméraient telle des stalagmites, rendant visible les intensités de jeu de chacun au cours du concert(L'objet LAM.jit.gl.DSW\textasciitilde{} développé à cette fin est disponible dans la LAM-lib).}.\\
+\indent Une autre conséquence du dynamisme de l'interface graphique est la possibilité d'afficher des informations de manière contextuelle, sur le plan spatial (e.g. en affichant des informations uniquement quand on interagit avec une certaine zone de l'interface) comme sur le plan temporel (e.g. en affichant des informations en fonction d'événements en cours).
 
+\indent Cette idée de l'interface du \gls{DMI} comme un cockpit pour le musicien \cite{vertegaal_towards_1996}, hérite en grande partie du fait que les premiers \gls{DMI} se sont construites autour d'outils techniques tels que les premiers ordinateurs et le matériel d'ingénieur du son, qui s'apparentaient effectivement bien souvent à un cockpit d'avion.\\
+\indent Pourtant, si l'image d'un cockpit évoque des gestes de réglage et d'ajustement lents, sur un grand nombre de paramètres mesurés sur des échelles absolues (que cela soit sur un avion ou une table de mixage), la notion d'instrument et de jeu musical appelle de son côté des gestes expressifs, vifs, et souvent sur des échelles relatives\footnote{...comme en témoigne l'importance de notions telles que les intervalles, et les nuances telles que crescendo/decrescendo, piano/forte, ralentendo/accelerando, etc. qui servent dans l'écriture musicale. Cf. également les propos de Serge de Laubier à ce sujet dans l'annexe \ref{appendix:delaubier}
+}.
 
-Les écrans permettent l'affichage d'un grand nombre d'éléments dynamiques qui peuvent également être support d'interaction, que cela soit avec le clavier, la souris, une interface de contrôle \gls{MIDI} ou encore l'écran lui-même quand il est tactile.
-
-Un premier intérêt de l'écran comme interface dynamique est la possibilité d'avoir des informations et/ou des éléments de contrôle contextuel
-
-``For including realtime interactive visualizations and, at the same time, overcoming
+\indent Les écrans permettent ainsi l'affichage d'un grand nombre d'éléments dynamiques qui peuvent également être support d'interaction, que cela soit avec le clavier, la souris, une interface de contrôle, ou encore l'écran lui-même quand il est tactile. La cohésion entre la représentation et le contrôle permise par cette dernière option facilite l'intuitivité de l'interface en abolissant la distance entre ces deux aspects de l'interaction. Cette idée est notamment un des axes de développements dans le domaine des \gls{IHM}, consistant en l'intégration du numérique dans les objets du monde physique, telle que présenté notamment dans l'article ``Tangible Bits'' d'Ishii et Ullmer \cite{ishii_tangible_1997} et reprise par Sergi Jordà dans les 25 principes qu'il adopte pour le développement de la ReacTable\footnote{``For including realtime interactive visualizations and, at the same time, overcoming
 mouse limitations without adding indirections, interfaces should be able to reflect their own states and behaviors. They should integrate, like the abacus, both representation and control.''
-\cite{jorda_digital_2005}
-
-Interfaces héritées de l'ingénierie sonore avec leur quantité de commandes indépendantes et ordonnées.
+} \cite{jorda_digital_2005}.\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Guides, carte, fretting : topologie de l'information}
+\subsection{Guides, carte, fretting : topologie de l'information topographie/toposthésie}
 
 Apprendre indépendamment de la transposition
 \iquote{I love the piano sound but not the difficulty of learning the variations from one key to another.  The LinnStrument with its 4th tuning avoids all of those issues.} Jeff Moen about the linnstrument (\url{http://jeffmoen.com/how_i_got_here.html})
@@ -215,6 +214,8 @@ Screen scores, patterns de séquenceur, cues de déclenchement, presets
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{La librairie mp.TUI pour Max}
 
+\noindent La bibliothèque mp.TUI\footnote{Sources disponible sur \url{https://github.com/LAM-IJLRA/ModularPolyphony-TUI/}.} pour Max propose des composants graphiques permettant le contrôle et la représentation d'une interaction polyphonique et modulaire. Elle offre également (et surtout) un environnement ouvert pour la programmation de nouveaux objets graphiques et de nouvelles interactions en mettant à disposition des briques de base prenant en charge les fonctions élémentaires usuelles. Cette section présente une brève revue des outils existants et des motivations avant de détailler le fonctionnement de la librairie.
+
 \subsection{Motivations}
 
 \noindent Il n'existait pas de système ouvert permettant l'interaction polyphonique avec des éléments de \gls{GUI} intégré à un environnement audio. Parmi les réalisations, on peut noter le développement de :
@@ -238,13 +239,13 @@ Ainsi, la prise en charge native du \textit{multitouch} dans l'interface de Max 
 
 \subsection{Utilisation de MP pour le contrôle \textit{multitouch} de GUI}
 
-\noindent La bibliothèque mp.TUI\footnote{Sources disponible sur \url{https://github.com/LAM-IJLRA/ModularPolyphony-TUI/}.} est construite sur le protocole MP (cf. \ref{sec:algorithms:MP}). Elle fournit un cadre basé sur les logiques de patch de Max pour créer de nouveaux composants d'interface utilisateur \textit{multitouch} dans un contexte OpenGL et surmonter certaines limitations de l'interface graphique native de l'environnement de patching de Max. Par exemple, les interfaces graphiques sont généralement orientées sur une disposition horizontale/verticale avec une orientation de lecture du haut vers le bas alors qu'on peut souhaiter avoir plusieurs orientations, comme dans la situation présentée sur la figure \ref{fig:visual_representation:multi_orientation}. La superposition de divers composants peut nécessiter des couleurs et des transparents personnalisés, et l'on peut souhaiter inclure des interfaces visuelles plus complexes que les curseurs et les boutons, par exemple des particules, des vidéos, des modèles 3d, des shaders (cf. figure \ref{fig:visual_representation:phonetogramme}), etc.
+\noindent Comme son nom l'indique, la librairie mp.TUI est construite sur le protocole MP (cf. \ref{sec:algorithms:MP}). Elle fournit un cadre, basé sur les logiques de patching de Max, pour créer de nouveaux composants \gls{GUI} \textit{multitouch} dans un contexte graphique OpenGL et surmonter certaines limitations de l'interface graphique native de l'environnement de patching de Max. Par exemple, les interfaces graphiques sont généralement orientées sur une disposition horizontale/verticale avec une orientation de lecture du haut vers le bas alors qu'on peut souhaiter avoir plusieurs orientations, comme dans la situation présentée sur la figure \ref{fig:visual_representation:multi_orientation}. La superposition de divers composants peut nécessiter des couleurs et des transparents personnalisés, et l'on peut souhaiter inclure des interfaces visuelles plus complexes que les curseurs et les boutons, par exemple des particules, des vidéos, des modèles 3d, des shaders (cf. figure \ref{fig:visual_representation:phonetogramme}), etc.
 
 \noindent Les composants de la bibliothèque sont d'un ensemble d'abstractions de trois types :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item \textbf{des composants système}, qui implémentent les fonctions essentielles pour envelopper les graphiques dans un élément cliquable. Cela inclut le "mp.TUI.hub" qui récupère les données de l'interaction de la souris sur la fenêtre OpenGL ainsi que les messages TUIO reçus par UDP et les envoie aux composants graphiques sélectionnés.;
-	\item \textbf{des éléments de GUI}, qui sont des instances prêtes à l'emploi de widgets courants ou moins courants tels que curseurs, claviers, graphes, etc.;
+	\item \textbf{des composants système}, qui implémentent les fonctions de base permettant la communication entre les objets de la \gls{GUI}. En particulier, l'objet \verb|mp.TUI.hub| récupère les données de la souris ainsi que les messages \gls{TUIO} reçus par \gls{UDP} et les envoie aux composants graphiques sélectionnés;
+	\item \textbf{des éléments de GUI}, qui sont des instances prêtes à l'emploi de composants courants ou moins courants tels que curseurs, claviers, graphes, etc.;
 	\item \textbf{des outils}, un ensemble d'abstractions qui permettent de créer facilement de nouveaux composants en proposant des fonctions utiles pour la conception d'interaction (transformation de la visualisation, gestion de la polyphonie sur un élément, interaction tels que pinch-zoom, calcul de dérivées, etc.).
 \end{itemize}
 
@@ -375,13 +376,13 @@ Ainsi, la prise en charge native du \textit{multitouch} dans l'interface de Max 
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/dummy.pdf}
-		\caption{Patch Max présentant des objets groupés}
+		\caption{TODO : Maintien d'un contrôle par un objet physique}
 		\label{fig:visual_representation:objectOnTable}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	    \includegraphics[width=\linewidth]{gfx/dummy.pdf}
-		\caption{Groupement d'objets et édition ``à la main''}
+		\caption{TODO : Maintien d'un contrôle par un objet virtuel, supprimable par un double clic}
 		\label{fig:visual_representation:dynamicInstanciation}
 	\end{minipage}
 \end{figure}
@@ -389,10 +390,11 @@ Ainsi, la prise en charge native du \textit{multitouch} dans l'interface de Max 
 
 \subsection{Performances}
 
-\noindent La bibliothèque mp.TUI est entièrement développée avec des objets natifs de la distribution Max. Cette approche, bien que plus coûteuse en charge \gls{CPU} que des objets compilés, a l'avantage de permettre à tout utilisateur de Max de modifier facilement les composants et de les adapter à ses besoins. De plus, les composants mp.TUI s'appuient essentiellement sur OpenGL, de sorte que la majeure partie de la charge de calcul est laissée au \gls{GPU}. L'interaction tangible avec les objets de la \gls{GUI} se fait à l'aide du moteur Bullet-Physics\footnote{\url{http://bulletphysics.org/}} intégré dans Max. Bien que cela puisse être plus coûteux pour certaines formes simples, cela nous permet de concevoir des composants \gls{GUI} de n'importe quelle forme et orientation, comme des \textit{sliders} courbes ou des formes creuses, et de les animer potentiellement, comme dans l'exemple des "balles rebondissantes" où plusieurs curseurs 2D peuvent être déplacés et lancés dans une zone délimitées.
+\noindent La bibliothèque mp.TUI est entièrement développée avec des objets natifs de la distribution Max. Cette approche, bien que plus coûteuse en charge \gls{CPU} que des objets compilés, a l'avantage de permettre à tout utilisateur de Max de modifier facilement les composants et de les adapter à ses besoins. De plus, les composants mp.TUI s'appuient essentiellement sur OpenGL, de sorte que la majeure partie de la charge de calcul est laissée au \gls{GPU}, ce qui en fait une solution plus réactive que la solution envisagée dans la libririe MMF. L'interaction tangible avec les objets de la \gls{GUI} se fait à l'aide du moteur Bullet-Physics\footnote{\url{http://bulletphysics.org/}} intégré dans Max. Bien que cela puisse être plus coûteux pour certaines formes simples, cela nous permet de concevoir des composants \gls{GUI} de n'importe quelle forme et orientation, comme des \textit{sliders} courbes ou des formes creuses, et de les animer potentiellement, comme dans l'exemple des "balles rebondissantes" où plusieurs curseurs 2D peuvent être déplacés et lancés dans une zone délimitées.
 
 \subsection{Travaux futurs}
 
+\noindent Des optimisations sont très probablement possibles pour améliorer les performances de mp.TUI, notamment au niveau du calcul de l'intersection entre position des pointeurs et objets graphiques, en traitant les cas simples séparément plutôt que dans le modèle générique du moteur \textit{Bullet-Physics}.
 \noindent La librairie mp.TUI permet d'introduire la notion de programmation gestuelle de type multitouch dans l'environnement Max, en bénéficiant des passerelles dont celle-ci peut bénéficier avec les possibilités audio, graphiques et de mapping disponibles dans Max. De nombreuses stratégies de contrôle basées sur ce paradigme restent à implémenter, explorer et inventer, notamment sur la gestion d'événements conjoints définissant des primitives gestuelles, tel que présenté dans \cite{oney_implementing_2019}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
