@@ -15,3 +15,5 @@ TODO final :
 
 
 The clicks & cuts or glitch movement could be a clear example of this tendency. Experimental and radical less than half a decade ago (Cascone 2000; Young 2002), glitches, clicks, and ‘microscopic sounds’ have turned in their majority into a kind of abstract but not disturbing muzak. Card adverts, MTV inserts and music videos are now decorated with glitchy filigree; the once stutter of malfunction, has quickly become part of an established and tame musical language (Vanhanen 2003).
+
+query/replace les "siècle" par la macro
