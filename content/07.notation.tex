@@ -19,34 +19,46 @@
 
 \subsection{Du geste vers le son et vice versa}
 
-Une partition est généralement pensée comme un document servant aux musiciens à interpréter une œuvre musicale
-Description du geste\\
-description du son\\
-prescription du geste\\
-prescription du son
+\noindent La partition est généralement conçue comme un document servant aux musiciens pour l'interprétation d'une œuvre musicale. Dans les partitions classiques de la notation musicale occidentale, la partition procède essentiellement de manière \textit{descriptive} en indiquant ce à quoi doit ressembler le résultat musical, par exemple la hauteur et la durée des notes. Mais progressivement, les partitions ont également utilisé des annotations \textit{prescriptive} décrivant non plus le résultat sonore mais les actions à produire\footnote{L'exemple le plus manifeste de partition prescriptive étant probablement la pièce ``Imaginary landscape No 4'' de John Cage, où l'utilisation de radio rend impossible la description du résultat musical \textit{a priori}, tandis que les gestes de changement de gain et de fréquence sont précisément notés. Pour une étude plus approndie, voire notamment \cite{kojs_notating_2011}}., à l'aide d'indications telles que ``\textit{con legno}'', ``\textit{sul ponticello}'' ou des symboles et explications ad-hoc (cf. figure todo).
 
-Dans les partitions classiques de la notation musicale occidentale, la partition peut être \textit{descriptive}, par exemple en donnant la hauteur et la durée de notes, ou \textit{prescriptive} en indiquant par exemple quel geste 
+\indent Dans le cas de l'utilisation de \glspl{DMI} ayant la capacité à produire des sons sans qu'il y ait nécessairement ``geste d'excitation'' (selon la terminologie de Cadoz) préalable, la partition peut servir à noter des \textit{gestes accompagnateurs} 
 
-Dans le cas de l'utilisation de \gls{DMI} ayant la capacité à produire des sons sans qu'il y ait nécessairement ``geste d'excitation'' (selon la terminologie de Cadoz) préalable, la partition peut servir à noter des \textit{gestes accompagnateurs} 
-
-Dans la performance audio visuelle FIB\_R, le cheminement vers la partition a été d'abord de construite un instrument, puis de jouer de cet instrument jusqu'à arriver à des formes intéressantes. Mais à un certain moment, ce que l'on imagina ne correspondait plus à quelque chose de jouable directement, car la précision rythmique désirée dépassait ce qu'il était possible d'obtenir avec les interfaces et l'algorithme de jeu actuel.
+Dans la performance audio visuelle FIB\_R, le cheminement vers la partition a été d'abord de construire un instrument, puis de jouer de cet instrument jusqu'à arriver à des formes intéressantes. Mais à un certain moment, ce que l'on imagina ne correspondait plus à quelque chose de jouable directement, car la précision rythmique désirée dépassait ce qu'il était possible d'obtenir avec les interfaces et l'algorithme de jeu actuel. La séquence musicale étant très rythmique, nous avons adopté une notation s'apparentant à celle de la percussion, dans laquelle chaque note désigne un type de geste particulier.
 Par ailleurs, penser le geste indépendemment de sa capacité à être capté par la machine laissait la possibilité d'utiliser des gestes plus libres et plus en phase, musicalement, avec ce que nous souhaitions.\\
 Il y a donc eu un renversement entre des gestes qui servaient au début à produire des sons, pour arriver à une composition écrite et séquencée, dont nous jouons les gestes en playback sur les sons.
 La machine laisse la possibilité de créer des mouvements enregistrés dont la précision et la vitesse dépasse celle possible par un être humain. Musicalement, il est intéressant de se tenir à la limite de ces possibilités du corps, car cela créé une tension par (empathie?) ou (paréidolie?) due au fait que chacun puisse se projeter dans ces mouvements.
 
 
 %-------------------------- Figure : FIB_R Lui+Elle ----------------------------------
-\begin{figure}[!htbp]
-	\includegraphics[width=\textwidth]{gfx/notation/FIBR-Chat2-Elle.pdf}
-	\caption{Partition gestuelle pour la partie II de FIB\_R, Elle}
-	\label{fig:notation:FIBR-chat2-Elle}
-\end{figure}
+% \begin{figure}[!htbp]
+% 	\includegraphics[width=\textwidth]{gfx/notation/FIBR-Chat2-Elle.pdf}
+% 	\caption{Partition gestuelle pour la partie II de FIB\_R, Elle}
+% 	\label{fig:notation:FIBR-chat2-Elle}
+% \end{figure}
 
+% \begin{figure}[!htbp]
+% 	\includegraphics[width=\textwidth]{gfx/notation/FIBR-Chat2-Lui.pdf}
+% 	\caption{Partition gestuelle pour la partie II de FIB\_R, Lui}
+% 	\label{fig:notation:FIBR-chat2-Lui}
+% \end{figure}
+
+%------------ Figure : filigramophone et xypre HP -----------
 \begin{figure}[!htbp]
-	\includegraphics[width=\textwidth]{gfx/notation/FIBR-Chat2-Lui.pdf}
-	\caption{Partition gestuelle pour la partie II de FIB\_R, Lui}
-	\label{fig:notation:FIBR-chat2-Lui}
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/notation/FIBR-Chat2-Elle.pdf}
+		\caption{Partition gestuelle pour la partie II de FIB\_R, Lui}
+		\label{fig:notation:FIBR-chat2-Elle}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/notation/FIBR-Chat2-Lui.pdf}
+		\caption{Partition gestuelle pour la partie II de FIB\_R, Lui}
+		\label{fig:notation:FIBR-chat2-Lui}
+	\end{minipage}
 \end{figure}
+%------------ Figure : filigramophone et xypre HP -----------
 
 
 %--------------------------------------------------------------------
@@ -73,21 +85,13 @@ Cette opposition apparente entre une œuvre totalement figée et une œuvre tota
 \noindent Une partition peut contenir à la fois une description/prescription linéaire qui décrit le déroulement de la partie de manière exhaustive, mais les œuvres ``ouvertes''\footnote{Pour une présentation plus générale du concept d'œuvre ouverte, voir \cite{eco_oeuvre_2015}}, qui fournissent aux musiciens des ``règles du jeu'' plutôt que le résultat du jeu de ces règles, présentent ainsi des processus génératifs dont les résultats varient à chaque performance. Jean-Louis Giavitto, dans \cite{giavitto_du_2014}, nomme ces deux types de partitions ``intensionelles'' et ``extensionnelles'' en référence à la formulation d'ensembles en mathématique, soit extensivement i.e. en en donnant la liste, soit intensivement i.e. en les caractérisant par une propriété. 
 
 %----------------------------------------------------------------------------------------------------------
-\subsection{Screen scores}
+\subsection{Partitions sur écran}
 
-\noindent La disponibilité croissante des appareils numériques a conduit au développement d'un certain nombre d'applications destinées à la création de partitions à l'écran. Comme le note Lindsay Vickery dans \cite{vickery_limitations_2014} :
-
-\begin{quotation}
-Ces développements suggèrent une tendance, en particulier chez les jeunes compositeurs dont la pratique s'est développée exclusivement sur ordinateur, de passer logiquement à l'étape de présenter des matériaux notationnels à l'écran.
-\end{quotation}
-
-Cat Hope résume les principales caractéristiques offertes par ce nouveau média dans les termes suivants \cite{hope_screen_2011}: \textit{les capacités de défilement, de permutation, de transformation, de génération et de mise en réseau du support numérique}.\\
+\noindent La disponibilité croissante des appareils numériques a conduit au développement d'un certain nombre d'applications destinées à la création de partitions à l'écran. Comme le note Lindsay Vickery dans \cite{vickery_limitations_2014} : \iquote{Ces développements suggèrent une tendance, en particulier chez les jeunes compositeurs dont la pratique s'est développée exclusivement sur ordinateur, de passer logiquement à l'étape de présenter des matériaux notationnels à l'écran.}\\
+\indent Cat Hope résume les principales caractéristiques offertes par ce nouveau média dans les termes suivants \cite{hope_screen_2011}: \textit{les capacités de défilement, de permutation, de transformation, de génération et de mise en réseau du support numérique}.\\
 \indent L'utilisation de l'infographie pour la représentation musicale semble être un médium de choix pour enrichir les possibilités d'écriture de partitions graphiques. En particulier, la fluidité d'adaptation du support virtuel permet d'envisager de multiples "vues" d'une même partition selon les contextes auxquels elle est destinée. Ainsi, la composition, la performance ou l'analyse d'une œuvre musicale ne nécessitent pas nécessairement les mêmes représentations. En termes d'interprétation musicale, on peut ajouter une distinction entre l'interprétation d'une partition par un humain et une machine, ces deux types d'"interprètes" ayant des capacités relativement différentes.\\
-\indent De la même manière que les technologies numériques ont atomisé l'instrument de musique en découplant ses différentes composantes (contrôleur gestuel, cartographie, synthèse, etc. devenant modulaire), elles ont également atomisé la partition en ses différentes fonctions, de support pour la composition, la performance ou l'analyse. Il est alors nécessaire de préciser quel cas d'utilisation est en jeu et Cat Hope définit à cet effet le terme ``partition sur écran'' (\textit{screen-score}) \cite{hope_screen_2011} comme le medium présenté aux musiciens pour une performance:
-
-\iquote{Les screen-scores sont des compositions musicales écrites, conçues pour être interprétées ; elles ne doivent pas être confondues avec des représentations visuelles de la musique ou l'interprétation musicale des arts visuels.}
-
-\indent Le concept de ``partition sur écran'' a été étudié en profondeur par plusieurs auteurs, compositeurs et musicologues (voir Winkler \cite{winkler_real-time_2004}, Clay \cite{adams_inventing_2008} ou Lee \cite{lee_real-time_2012}), qui ont discuté des avantages et des inconvénients de l'utilisation des technologies numériques pour la représentation musicale, tant dans ses aspects techniques que dans ses conséquences musicologiques. Lindsay Vickery propose une revue très détaillée dans \cite{vickery_limitations_2014}, des latences critiques permettant à un instrumentiste de lire en temps réel le matériel musical affiché et donne des conseils sur ce à quoi le compositeur doit faire attention lorsqu'il compose avec ce support.\\
+\indent De la même manière que les technologies numériques ont atomisé l'instrument de musique en découplant ses différentes composantes (contrôleur gestuel, cartographie, synthèse, etc. devenant modulaire), elles ont également atomisé la partition en ses différentes fonctions, de support pour la composition, la performance ou l'analyse. Il est alors nécessaire de préciser quel cas d'utilisation est en jeu et Cat Hope définit à cet effet le terme ``partition sur écran'' (\textit{screen-score}) \cite{hope_screen_2011} comme le medium présenté aux musiciens pour une performance: \iquote{Les partitions sur écran sont des compositions musicales écrites, conçues pour être interprétées ; elles ne doivent pas être confondues avec des représentations visuelles de la musique ou l'interprétation musicale des arts visuels.}\\
+\indent Le concept de ``partition sur écran'' a été étudié par plusieurs chercheurs, compositeurs et musicologues (voir Winkler \cite{winkler_real-time_2004}, Clay \cite{adams_inventing_2008} ou Lee \cite{lee_real-time_2012}), qui ont discuté des avantages et des inconvénients de l'utilisation des technologies numériques pour la représentation musicale, tant dans ses aspects techniques que dans ses conséquences musicologiques. Lindsay Vickery propose par exemple une revue très détaillée dans \cite{vickery_limitations_2014}, des latences critiques permettant à un instrumentiste de lire en temps réel le matériel musical affiché et donne des conseils sur ce à quoi le compositeur doit faire attention lorsqu'il compose avec ce support.\\
 \indent Ces études offrent des descriptions pertinentes et précieuses pour le compositeur qui souhaite utiliser des partition sur écran. Cependant, il semble qu'elles puissent être complétées par une approche de la partition différente de celles envisagées dans la plupart de la littérature sur le sujet, où le point de vue est souvent celui du compositeur. La conception d'un système de partition à écran est donc polarisée par l'importance centrale de la partition, elle-même considérée comme une condition préalable à l'exécution musicale, situation qui reflète également une forte tradition de la musique classique occidentale \footnote{Une exception notable est la contribution de Georg Hajdu \cite{hajdu_disposable_2016} qui propose le concept de "musique jetable" pour qualifier les formes musicales \iquote{qui reposent dans une moindre mesure sur des partitions entièrement notées, telles que la "comprovisation" ou la performance sur laptop}\footnote{\iquote{that rely on a lesser degree on fully notated scores, such as "comprovisation” or laptop performance}}. Cependant, même lorsqu'elle est "\textit{jetable}", la partition occupe ici encore une position préalable à la performance et sur laquelle l'attention reste focalisée, à la différance de l'approche proposée avec ``John''.}.\\
 \indent Dans le cas des performances de ONE (Figure \ref{fig:notation:one-fullband}), qui sont basées sur une pratique d'improvisation libre sans composition préalable, la focale est déplacée du côté de l'instrumentiste. L'élément central n'est pas la partition mais l'écoute et la compréhension du son et des autres musiciens. La partition (s'il est encore possible de l'appeler ainsi) émerge souvent après les séances d'improvisation et sa présence ne doit pas se faire au détriment de l'attention mutuelle. Dans cette perspective, il est possible d'envisager que le musicien adapte lui-même la représentation musicale à ses propres besoins, en fonction des parties qu'il doit jouer, de ses préférences personnelles, des différents mouvements de la partition, etc.\\
 \indent Dans le cas particulier où les instruments sont numériques et programmables, l'utilisation d'un système de partition en réseau offre également la possibilité de déléguer certains paramètres de l'instrument à un contrôle externe pris en charge par la partition. Dans une situation d'improvisation, la négociation entre ce contrôle automatisé et le choix du musicien implique une médiation dont je parlerai dans la section \ref{sec:notation:score_for_humans_and_machines}.

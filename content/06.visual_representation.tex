@@ -13,11 +13,13 @@ voir mp.TUI.key pour les images à inclure
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aspects visuels du design d'instrument}
 
-\noindent La conception d'un instrument englobe plusieurs aspects qui affectent son allure visuelle. Je passerai ici en revue quelques-uns de ces aspects, en m'appuyant en partie sur des exemples d'instruments acoustiques, pour souligner certaines continuités avec les développements entrepris ici avec les \glspl{DMI}.
+\noindent La conception d'un instrument englobe plusieurs aspects qui affectent son allure visuelle. Je passerai ici en revue quelques-uns de ces aspects, en m'appuyant notamment sur des exemples d'instruments acoustiques, pour souligner certaines continuités avec les développements entrepris ici dans le domaine numérique.
 
 \subsection{Adaptation à la production du son}
 
-\noindent La conception des instruments est notamment orientée par la recherche d'une certaine qualité de son. Bien que cela soit particulièrement évident pour les instruments acoustiques dont les formes ont des conséquences directes sur le rendement sonore (comme le montre la figure \ref{fig:visual_representation:fhole}), les profils particuliers issues de la lutherie traditionnelle ont également donné naissance à un certain nombre d'éléments iconiques (par exemple, les ouïes du violons ou le clavier du piano) et de facteurs de forme (par exemple, une taille plus grande donne un ton grave) associés à l'idée d'un instrument, comme le rappelle Trevor Pinch dans son interview de Robert Moog \cite{pinch_why_2001}: \iquote{Les claviers étaient toujours là, et chaque fois que quelqu'un voulait prendre une photo, pour une raison ou pour une autre, c'est bien si vous jouez du clavier. Les gens comprennent alors tu fais de la musique. (...) Cette pose [prenant la pose, bras gauche tendu tandis que la main droite joue du clavier] associe graphiquement la musique et la technologie.}\footnote{``The keyboards were always there, and whenever someone wanted to take a picture, for some reason or other it looks good if you’re playing a keyboard. People understand that then you’re making music. (...) This pose here [acts out the pose of the left arm extended while the right hand plays a keyboard] graphically ties in the music and the technology.''}.\\
+\todo{éliminer les redites du chapitre hardware}
+
+\noindent L'apparence des instruments est en partie définie par la recherche d'une certaine qualité de son. Bien que cela soit particulièrement évident pour les instruments acoustiques dont les formes ont des conséquences directes sur le rendement sonore (cf. exemple figure \ref{fig:visual_representation:fhole}), les profils particuliers issues de la lutherie traditionnelle ont également donné naissance à un certain nombre d'éléments iconiques (par exemple, les ouïes du violons ou les touches noires et blanches du piano) et de facteurs de forme (par exemple, une taille plus grande produit un son plus grave) associés à l'idée d'un instrument, comme le rappelle Trevor Pinch dans son interview de Robert Moog \cite{pinch_why_2001}: \iquote{Les claviers étaient toujours là, et chaque fois que quelqu'un voulait prendre une photo, pour une raison ou pour une autre, c'était mieux si tu jouais du clavier. Les gens comprennent alors tu fais de la musique. (...) Cette pose [prenant la pose, bras gauche tendu tandis que la main droite joue du clavier] associe graphiquement la musique et la technologie.}\footnote{``The keyboards were always there, and whenever someone wanted to take a picture, for some reason or other it looks good if you’re playing a keyboard. People understand that then you’re making music. (...) This pose here [acts out the pose of the left arm extended while the right hand plays a keyboard] graphically ties in the music and the technology.''}.\\
 \indent De plus, les \glspl{DMI} peuvent intégrer des transducteurs acoustiques, tels que des microphones piézoélectriques ou des haut-parleurs tactiles (comme nous l'avons vu à la section \ref{sec:interfaces:part_acoustique}), qui influencent la conception acoustique de leurs composants matériels et donc les facteurs de forme évoqués précédemment.
 
 %------------ Figure : f-hole et boehm -----------
@@ -26,7 +28,7 @@ voir mp.TUI.key pour les images à inclure
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/06_visual_representation/f-hole.png}
-		\caption{évolution de la forme des ouïes du violon d'après \cite{nia_evolution_2015}}
+		\caption{Évolution de la forme des ouïes du violon et influence sur la projection acoustique, d'après \cite{nia_evolution_2015}}
 		\label{fig:visual_representation:fhole}
 	\end{minipage}
 	\hspace{.02\linewidth}
@@ -43,9 +45,9 @@ voir mp.TUI.key pour les images à inclure
 \todo{éliminer les redites du chapitre algorithms}
 
 \noindent L'instrument s'adapte également au corps. Un exemple intéressant est l'évolution du traverso vers la flûte de concert occidentale, à l'aide du système Boehm dans les années 1840 (cf. figure \ref{fig:visual_representation:boehm}). Ce système de clétage découple la topologie gestuelle de la topologie du flux d'air et de la topologie de résonance. En utilisant des manches et des platines, il permet d'acroître la puissance sonore par l'élargissement des trous et leur déplacement à des endroits adéquats pour la résonance, tandis que les touches peuvent être placées à des endroits adaptés à la position des doigts du flûtiste.\\
-\indent Le système Boehm peut être qualifié de ``modèle intermédiaire'' entre le geste et la production sonore, fait d'un système mécanique dans ce cas. La plupart des instruments combinent divers ``modèles intermédiaires'' pour amplifier, enrichir, déplacer, focaliser, multiplier les gestes des interprètes et générer des mouvements hors du champ des possibilités du corps humain : pédales de grosse caisse, marteaux et amortisseurs pour piano, archets et plectras, etc.
+\indent Le système Boehm peut être qualifié de ``modèle intermédiaire'' entre le geste et la production sonore, fait d'un système mécanique dans ce cas. La plupart des instruments combinent divers ``modèles intermédiaires'' pour amplifier, enrichir, déplacer, focaliser, multiplier les gestes des interprètes et générer des mouvements hors du champ des possibilités du corps humain : pédales de grosse caisse, marteaux et amortisseurs pour piano, archets et plectres, etc.
 
-\subsection{Intégration de la théorie musicale}
+\subsection{Représentations liées à la théorie musicale}
 
 %------------ Figure : keyboard et TUI - scale -----------
 \begin{figure}[!htbp]
@@ -53,24 +55,24 @@ voir mp.TUI.key pour les images à inclure
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/06_visual_representation/Mersenne_clavier.png}
-		\caption{Twenty-seven-steps keyboard invented by Mersenne (1636)}
+		\caption[Clavier à 27 touches de Mersenne]{Le ``clavier parfait de vingt-sept marches sur l'Octave' de Mersenne (1636)}
 		\label{fig:visual_representation:MersenneKeyboard}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/mpTUI_pitchgrid_72dpi.png}
-		\caption{Une grille de hauteur avec une représentation micro-tonale réalisée avec mp.TUI. La luminosité des lignes verticales varie en fonction de la quantité de quantification.}
+		\caption[Grille de hauteur micro-tonale dans mp.TUI]{Une grille de hauteur avec une représentation micro-tonale réalisée avec mp.TUI. La luminosité des lignes verticales varie en fonction de la quantité de quantification.}
 		\label{fig:visual_representation:pitch_grid}
 	\end{minipage}
 \end{figure}
 
-\noindent Les instruments de musique intègrent également des éléments de théorie musicale. Par exemple, la partie supérieure d'un clavier (touches noires et blanches) représente la gamme chromatique, tandis que la partie inférieure (touches blanches seulement) représente la gamme diatonique de Do majeur. Le dimensionnement et le positionnement de ces touches est un compromis intéressant entre les contraintes mécaniques du système de marteaux et une représentation uniforme des échelles diatonique et chromatique. De plus, la largeur de l'octave est telle qu'elle tient sous une main tendue, ce qui permet de jouer n'importe quel intervalle à l'intérieur d'une octave avec une seule main, réifiant en quelque sorte la notion d'équivalence des octaves. Les claviers ont fait l'objet de nombreux développements expérimentaux avec des dispositions de notes utilisant des grilles hexagonales ou plusieurs couches de touches (figure \ref{fig:visual_representation:MersenneKeyboard}).\\
-\indent En tant que système symbolique, la théorie musicale peut être facilement encodée dans les ordinateurs. Les logiciels de production musicale contiennent tellement de fonctions et de règles basées sur la théorie musicale qu'il en est difficile de toutes les représenter sur l'interface. Thor Magnusson parle ainsi ``d'outils épistémiques'' pour décrire les \glspl{DMI}, affirmant qu'il sont conçus avec ``un tel degré de pertinence symbolique qu'ils deviennent un système de connaissance et de pensée dans leurs propres termes'' \cite{todo Magnusson, 2009}. Pour le \textit{musicien numérique}, ce ``système de connaissances'' est un paysage imaginaire à explorer, un territoire sonore pour lequel l'interface de l'instrument peut métaphoriquement prendre le rôle d'une carte géographique, ou d'un cockpit de pilote \cite{vertegaal_towards_1996}.
+\noindent Les instruments de musique intègrent également des éléments de théorie musicale. Par exemple, la partie supérieure d'un clavier (touches noires et blanches) représente la gamme chromatique, tandis que la partie inférieure (touches blanches seulement) représente la gamme diatonique de Do majeur. Le dimensionnement et le positionnement de ces touches est un compromis intéressant entre les contraintes mécaniques du système de marteaux et une représentation uniforme des échelles diatonique et chromatique. De plus, la largeur de l'octave est telle qu'elle tient sous une main tendue et vient réifier dans l'instrument la notion d'équivalence des octaves, en permettant de jouer n'importe quel intervalle à l'intérieur d'une octave avec une seule main. Les claviers ont par ailleurs fait l'objet de nombreux développements expérimentaux\footnote{Voir notamment \cite{haury_petite_1999} pour un historique du clavier.} avec des dispositions de notes utilisant des grilles hexagonales ou plusieurs couches de touches (figure \ref{fig:visual_representation:MersenneKeyboard}) pour permettre le jeu dans des systèmes d'intervalles micro-tonaux.\\
+\indent En tant que système symbolique, la théorie musicale peut être facilement encodée dans les ordinateurs. Les logiciels de production musicale contiennent tellement de fonctions et de règles basées sur la théorie musicale qu'il serait difficile de toutes les représenter sur l'interface. Thor Magnusson parle ainsi ``d'outils épistémiques'' pour décrire les \glspl{DMI}, affirmant qu'il sont conçus avec ``un tel degré de pertinence symbolique qu'ils deviennent un système de connaissance et de pensée dans leurs propres termes'' \cite{magnusson_epistemic_2009}. Pour le \textit{musicien numérique}, ce ``système de connaissances'' est un paysage imaginaire à explorer, un territoire sonore pour lequel l'interface de l'instrument peut métaphoriquement prendre le rôle d'une carte géographique, ou d'un cockpit de pilote \cite{vertegaal_towards_1996}.
 
-\subsection{Adaptations au contexte de performance}
+\subsection{Représentations liées au contexte de performance}
 
-\noindent Si l'on considère les instrument de musique comme des ``instruments pour musiquer'' en reprenant la définition de Christopher Small (cf. section \ref{sec:introduction:preamble}), alors les partitions, les salles de concert, le public et plus généralement, le contexte de la performance participent aussi et influencent la conception et la représentatin des instruments. Les partitions orientées (figure \ref{fig:visual_representation:table_music}) sont un exemple d'adaptation de la partition au contexte de la ``musique de table'', permettant dans ce cas aux musiciens de lire la partition lorsqu'ils sont assis autour d'une table. De même, les \glspl{DMI} collectifs (cf. \ref{sec:ephemeral:origins:collectiveDMIs}) peuvent adapter leur représentation au nombre d'interprètes en présentant à chacun d'eux un groupe d'éléments d'interface utilisateur orientés vers eux (figure \ref{fig:visual_representation:multi_orientation}).\\
-\indent Comme examples d'influence du lieu de concert sur le design visuel de l'instrument, on peut notamment évoquer la modéliser de son espace acoustique pour venir contrôler la spatialisation du son (cf. figure \ref{fig:visual_representation:spat}) ou --~à l'inverse~-- la projection sur le lieu d'un \textit{mapping vidéo} en correspondance avec la musique\footnote{ou une ``musique visuelle'' comme l'appelle Serge de Laubier} (cf. \ref{fig:visual_representation:pucemuse-monument}).
+\noindent Si l'on considère les instrument de musique comme des ``instruments pour musiquer'' en reprenant la définition de Christopher Small (cf. section \ref{sec:introduction:preamble}), alors les partitions, les salles de concert, le public et plus généralement, le contexte de la performance influencent aussi la conception et la représentation des instruments. Les partitions orientées (figure \ref{fig:visual_representation:table_music}) sont un exemple d'adaptation de la partition au contexte de la ``musique de table'', permettant dans ce cas aux musiciens de lire une même partition lorsqu'ils sont assis autour d'une table. De même, les \glspl{DMI} collectifs (cf. \ref{sec:ephemeral:origins:collectiveDMIs}) peuvent adapter leur représentation au nombre d'interprètes en présentant à chacun d'eux un groupe d'éléments d'interface utilisateur orientés vers eux (figure \ref{fig:visual_representation:multi_orientation}).\\
+\indent Comme exemples de l'influence du lieu de concert sur le design visuel de l'instrument, on peut notamment évoquer les modélisations de l'espace acoustique du lieu pour venir contrôler la spatialisation du son (cf. figure \ref{fig:visual_representation:spat}) ou --~à l'inverse~-- la projection sur le lieu d'un \textit{mapping vidéo} en correspondance avec la musique\footnote{ou une ``musique visuelle'' comme l'appelle Serge de Laubier} (cf. \ref{fig:visual_representation:pucemuse-monument}).
 
 %------------ Figure : keyboard et TUI - scale -----------
 \begin{figure}[!htbp]
@@ -108,9 +110,9 @@ voir mp.TUI.key pour les images à inclure
 \end{figure}
 %------------ Figure : spat et PM -----------
 
-\subsection{Adaptations à l'expérimentation}
+\subsection{Représentations liées à l'expérimentation}
 
-\noindent En fin de compte, le processus de conception des instruments de musique contient une grande part de travail empirique. Le processus d'ajustement des réglages d'un instrument nécessitera souvent une rétroaction directe pour les réglages fins faits à la main, jusqu'à ce qu'il sonne et se prête au jeu.
+\noindent Le processus de conception des instruments de musique contient une grande part de travail empirique. L'ajustement des paramètres d'un instrument nécessitera souvent une rétroaction sonore et visuelle directe pour affiner les réglages à la main, jusqu'à ce que l'instrument sonne et se prête au jeu. Ainsi, l'interface des \gls{DMI} est souvent fournie en valeurs numériques qui permettent d'essayer de comprendre ce qui se passe dans l'instrument et d'écouter la corrélation entre valeurs de paramètres et résultat sonore. C'est notamment pour cette raison que la ``programmation visuelle'' est un paradigme courant dans les environnements de lutherie numérique, tels que Max, PureData, Reaktor, 
 
 \subsection{Aspects esthétiques : l'instrument œuvre d'art}
 
@@ -140,7 +142,7 @@ Exemple dans FIB\_R : toute la performance visuelle re-projetée sur l'écran co
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Le visuel comme interface}
+\section{L'écran comme interface de jeu}
 
 \subsection{L'écran, cockpit du musicien?}
 
