@@ -23,14 +23,14 @@ which might otherwise never come to life.}
 	\captionsetup{format=plain}%
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
-		\includegraphics[width=\linewidth]{gfx/filigramophone/filigramophone_overview.jpg }
-		\caption{Filigramophone, vue d'ensemble du dispositf : filigramophone, ordinateur avec Max, carte son, Akai MPD24, Haut-Parleur}
+		\includegraphics[width=\linewidth]{gfx/dummy.pdf }
+		\caption[Filigramophone: vue d'ensemble]{TODO : Filigramophone, vue d'ensemble du dispositf : filigramophone, ordinateur avec Max, carte son, Akai MPD24, Haut-Parleur}
 		\label{fig:interface:filigramophone_unplugged}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	    \includegraphics[width=\linewidth]{gfx/05_interfaces/Xypre_Overview_144dpi.jpg}
-		\caption{Xypre, vue d'ensemble: xypre, ordinateur avec Max, carte son, Haut-Parleur}
+		\caption[Xypre: vue d'ensemble]{Xypre, vue d'ensemble: xypre, ordinateur avec Max, carte son, Haut-Parleur}
 		\label{fig:interface:xypre_unplugged}
 	\end{minipage}
 \end{figure}
@@ -49,8 +49,8 @@ which might otherwise never come to life.}
 \section{Composer, interpréter, improviser en live}
 
 \noindent Les \glspl{DMI} intègrent généralement des matériaux pré-composés, que le musicien peut déclencher et qui pourront tourner de manière autonome (paysages sonores, processus génératifs, drônes, etc.) et une part créée plus directement, qu'elle soit synthèse ou transformation de matériaux.\\
-\indent Les différents accès de l'interface de jeu doivent ainsi permettrent d'articuler au mieux ces deux pôles et permettre la gestion du temps à différentes échelles. En particulier, les interfaces \textit{multitouch}, si elles permettent de gérer aisément de multiples processus lents (qu'on pourra visualiser et ajuster à l'écran), ne permettent guère une réactivité ``percussive'', telle que le permet un pad \gls{MIDI} ou mieux encore, le microphone.\\
-\indent La granularité du contrôle joue également un rôle important dans cette perspective. Entre une note \gls{MIDI} qui ne déclenche qu'un événement ponctuel, un contrôleur continu qui envoie des données chaque fois qu'il est modifié et un capteur échantilloné qui envoie des informations en continu, les possibilités de contrôle seront différentes en terme de réactivité et de finesse de modulation. Il faut donc prévoir les capteurs adéquats pour les processus que l'on souhaite contrôler en aval. Comme le faisait remarquer Max Mathews, cité par Joel Chadabe dans \cite{chadabe_electric_1996}:
+\indent Les différents accès de l'interface de jeu doivent ainsi permettrent d'articuler au mieux ces deux pôles et permettre la gestion du temps à différentes échelles. En particulier, les écrans \textit{multitouch}, s'ils permettent de gérer aisément de multiples processus lents (qu'on pourra visualiser et ajuster à l'écran), ne permettent guère une réactivité ``percussive'', telle que le permet un pad \gls{MIDI} ou un capteur échantillonné à fréquence élevée\footnote{Les interfaces multitouch actuelles ne délivre}.\\
+\indent La granularité du contrôle joue également un rôle important dans cette perspective. Entre une note \gls{MIDI} qui ne déclenche qu'un événement ponctuel, un contrôleur continu qui envoie des données chaque fois qu'il est modifié et un capteur échantillonné qui envoie des informations en continu, les possibilités de contrôle seront différentes en terme de réactivité et de finesse de modulation. Il faut donc prévoir les capteurs adéquats pour les processus que l'on souhaite contrôler en aval. Comme le faisait remarquer Max Mathews, cité par Joel Chadabe dans \cite{chadabe_electric_1996}:
 \iquote{Il faut penser aux systèmes dans leur globalité pour obtenir une quelque chose d'utilisable musicalement - on ne peut pas vraiment développer un capteur sans le mettre en perspective des programmes avec lesquels on va l'utiliser. \footnote{``One has to think of overall systems to get a musically useful thing — you can't really develop a sensor without relating it to the programs that you're going to use it with.'', p. 230}}\\
 \indent Ceci n'est pas sans poser problème dans la perspective de modularité d'un \gls{DMI} que l'on aimerait pouvoir faire évoluer et adapter à différents contextes. Un compromis consiste à disposer d'une palette de capteurs différents et de les agencer selon une ergonomie adaptée aux gestes qu'ils invitent, et d'adapter le logiciel, plus souple, à cette configuration.
 
@@ -383,12 +383,23 @@ Besoin d'un driver payant pour récupérer le TUIO.
 Perte de la pression comme paramètre expressif :\\
 intégration de capteur de pression (FSR) et de distance (IR)\\
 Utilisation d'un Bela pour une latence très faible du son et un instrument autonome (needs raspberry for the display)\\
-Possible extension par l'ordinateur.
+Possible extension par l'ordinateur.\\
+Making of de la fabrication : \url{https://vimeo.com/358401223}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Conclusion}
 \label{sec:interfaces:conclusion}
+
+Les DMIs ne sont pas purement virtuels: poids, encombrement, affordance, part acoustique, sensibilité, temps de montage.
+
+Objets auxquels on s'attache (plus que le virtuel), cf. Dumeaux, Dallio
+
+Compromis entre modularité et intégration ergonomique.
+
+Possibiltés offerte par le DIY avec les nouvelles cartes barebone (Ino, raspi, bela, etc.)
+
 
 
 \section*{extra material}
