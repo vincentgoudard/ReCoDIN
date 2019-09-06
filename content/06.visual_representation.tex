@@ -248,8 +248,7 @@ Ainsi, la prise en charge native du \textit{multitouch} dans l'interface de Max 
 
 \subsection{Utilisation de MP pour le contrôle \textit{multitouch} de GUI}
 
-\noindent Comme son nom l'indique, la librairie mp.TUI est construite sur le protocole MP (cf. section \ref{sec:algorithms:MP}). Elle fournit un cadre, basé sur les logiques de patching de Max, pour créer de nouveaux composants \gls{GUI} \textit{multitouch} dans un contexte graphique OpenGL et surmonter certaines limitations de l'interface graphique native de l'environnement de patching de Max. Par exemple, les interfaces graphiques sont généralement orientées sur une disposition horizontale/verticale avec une orientation de lecture du haut vers le bas alors qu'on peut souhaiter avoir plusieurs orientations, comme dans la situation présentée sur la figure \ref{fig:visual_representation:multi_orientation}. La superposition de divers composants peut nécessiter des couleurs et des transparents personnalisés, et l'on peut souhaiter inclure des interfaces visuelles plus complexes que les curseurs et les boutons, par exemple des particules, des vidéos, des modèles 3d, des shaders (cf. figure \ref{fig:visual_representation:phonetogramme}), etc.
-
+\noindent Comme son nom l'indique, la librairie mp.TUI est construite sur le protocole MP (cf. section \ref{sec:algorithms:MP}). Elle fournit un cadre, basé sur les logiques de patching de Max, pour créer de nouveaux composants \gls{GUI} \textit{multitouch} dans un contexte graphique OpenGL et surmonter certaines limitations de l'interface graphique native de l'environnement de patching de Max. Par exemple, les interfaces graphiques sont généralement orientées sur une disposition horizontale/verticale avec une orientation de lecture du haut vers le bas alors qu'on peut souhaiter avoir plusieurs orientations, comme dans la situation présentée sur la figure \ref{fig:visual_representation:multi_orientation}. La superposition de divers composants peut nécessiter des couleurs et des transparents personnalisés, et l'on peut souhaiter inclure des interfaces visuelles plus complexes que les curseurs et les boutons, par exemple des particules, des vidéos, des modèles 3d, des shaders (cf. figure \ref{fig:visual_representation:phonetogramme}), etc.\\
 \noindent Les composants de la bibliothèque sont d'un ensemble d'abstractions de trois types :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
@@ -262,10 +261,11 @@ Ainsi, la prise en charge native du \textit{multitouch} dans l'interface de Max 
 
 \noindent Les composants utilisent des transformations géométriques hiérarchiques\footnote{à l'aide de l'objet jit.anim.node de Max}, qui permet d'obtenir des coordonnées relatives au monde ou à l'objet indépendamment de la position, de l'échelle et de l'orientation du composant de l'interface utilisateur. Cela permet également de créer des groupes de composants, comme on le ferait dans n'importe quel logiciel de CAO. Suivant la nature empirique de la lutherie numérique revendiquée ci-dessus, un "mode édition" est également disponible pour manipuler rapidement à la main la position, l'échelle et l'orientation des composants de l'interface utilisateur (figure \ref{fig:visual_representation:groups_patch} et \ref{fig:visual_representation:groups}).
 
-%-------------------------- Figure : phonetogramme ----------------------------------
+%-------------------------- Figure : phonétogramme ----------------------------------
 \begin{figure}[!htbp]
+	\captionsetup{format=plain}%
 	\includegraphics[width=\textwidth]{gfx/06_visual_representation/Phonetogramme.png}
-	\caption{``Le phonetogramme'', une application muséographique conçue pour la Cité des Sciences, dont la GUI est réalisée avec la librairie mp.TUI.}
+	\caption[``Le phonétogramme'', une application réalisée à l'aide de la librairie mp.TUI]{``Le phonétogramme'', une application muséographique conçue pour la Cité des Sciences, dont la GUI est réalisée avec la librairie mp.TUI.}
 	\label{fig:visual_representation:phonetogramme}
 \end{figure}
 
@@ -347,7 +347,8 @@ Ainsi, la prise en charge native du \textit{multitouch} dans l'interface de Max 
 
 
 %------------------ Figure : canvas ---------------------
-\begin{figure}[!htbp]
+\begin{figure}[!htbp
+	\captionsetup{format=plain}%
 	\includegraphics[width=\textwidth]{gfx/06_visual_representation/mpTUI_canvas.pdf}
 	\caption[Exemple de GUI composite avec mp.TUI.canvas]{Exemple de GUI composite avec mp.TUI.canvas: les curseurs ne sont pris en compte que dans la zone définie par le canvas. Patch Max en haut, rendu en bas}
 	\label{fig:visual_representation:canvas}
