@@ -116,7 +116,7 @@ voir mp.TUI.key pour les images à inclure
 
 \subsection{Aspects esthétiques : l'instrument œuvre d'art}
 
-\noindent Le design de l'interface visuelle de l'instrument se résume rarement à ses aspects fonctionnels. Les instruments de musique sont souvent l'œuvre d'un artisanat très pointu, voire des objets d'art. La finesse des détails et le souci de leur aspect esthétique jouent ainsi une part éminente dans le design final. Dans les interfaces visuelles des logiciels audio, on retrouve souvent ce soin esthétique, que cela soit sous forme d'un skeuomorphisme\footnote{le terme de skeuomorphisme est utilisé pour définir un élément de design dont la forme n'est pas directement liée à la fonction, mais qui reproduit de manière ornementale un élément qui était nécessaire dans l'objet d'origine.} (figure \ref{fig:visual_representation:skeuomorphisme}) cherchant à imiter le bois des instruments acoustiques, le métal et l'aspect physique des boutons sur les équipements hardware, ou d'un design plus épuré\footnote{sur les connexions entre le design d'interfaces et les arts graphiques, voir également les étonnants résultats obtenus en appliquant des modèles AI pour créer une interface à partir d'images photographiques dans \cite{troyer_mondrian_2019} (figure \ref{fig:visual_representation:apparatum}).}.
+\noindent Le design de l'interface visuelle de l'instrument se résume rarement à ses aspects fonctionnels. Les instruments de musique sont souvent l'œuvre d'un artisanat très pointu, voire des objets d'art. La finesse des détails et le souci de leur aspect esthétique jouent ainsi une part éminente dans le design final. Dans les interfaces visuelles des logiciels audio, on retrouve souvent ce soin esthétique, que cela soit sous forme d'un skeuomorphisme\footnote{le terme de skeuomorphisme est utilisé pour définir un élément de design dont la forme n'est pas directement liée à la fonction, mais qui reproduit de manière ornementale un élément qui était nécessaire dans l'objet d'origine.} (figure \ref{fig:visual_representation:skeuomorphisme}) cherchant à imiter le bois des instruments acoustiques, le métal et l'aspect physique des boutons sur les équipements hardware, ou d'un design plus épuré\footnote{sur les connexions entre le design d'interfaces et les arts graphiques, voir également les étonnants résultats obtenus en appliquant des modèles AI pour créer une interface à partir d'images photographiques dans \cite{troyer_mondrian_2019}.}  (figure \ref{fig:visual_representation:apparatum}).
 
 %------------ Figure : skeuomorphisme et soin du design -----------
 \begin{figure}[!htbp]
@@ -124,7 +124,7 @@ voir mp.TUI.key pour les images à inclure
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/06_visual_representation/Redstair_GEARcompressor.png}
-		\caption[Skeuomorphisme dans les logiciels audio]{Le skeuomorphisme dans les logiciels audio témoigne de l'importance accordée à l'esthétique, au-delà des fonctionnalités de l'interface.}
+		\caption[Skeuomorphisme dans les logiciels audio]{Le skeuomorphisme dans les logiciels audio témoigne de l'importance accordée à l'esthétique, au-delà des fonctionnalités de l'interface. Photographie Klaus Göttling.}
 		\label{fig:visual_representation:skeuomorphisme}
 	\end{minipage}
 	\hspace{.02\linewidth}
@@ -147,8 +147,8 @@ Exemple dans FIB\_R : toute la performance visuelle re-projetée sur l'écran co
 \subsection{L'écran, cockpit du musicien?}
 
 \noindent En tant qu'\textit{outils épistémiques}, les \glspl{DMI} mettent en jeu un nombre extrêmement élevés de flux de données et de processus qui interagissent entre eux et avec l'interface. La représentation visuelle peut faciliter le \textit{monitoring} du bon fonctionnement de ces processus\footnote{que cela soit lors de l'élaboration d'un instrument, voire durant sa performance, quand la mémoire fait défaut, ou que l'instrument instable est sujet à bug}, de leurs dynamiques, et la sélection de réglages dans des banques de données (presets, samples, etc.).\\
-\indent \textbf{Espace infini.} L'écran donne en effet accès à un espace virtuellement infini, grâce à des systèmes d'onglets, de fenêtres multiples, de menus condensant différentes options, de zoom et déplacement sur des zones d'intérêt. L'exploration y est autant possible ``horizontalement'', c'est-à-dire parmis les différents éléments d'un même niveau de complexité, que ``verticalement'', c'est-à-dire dans la profondeur des différentes couches d'un même élément.\\
-\indent \textbf{Temporalité de l'interface.} À la différence d'une interface physique, l'information sur écran n'est pas seulement représentée de manière \textit{spatiale} mais également \textit{temporelle}, ce qui offre des possibilités tout à faire adaptées pour la représentation des phénomènes sonores et des processus musicaux. Ainsi, l'écran peut assurer une représentation du tempo, des patterns rythmiques ou encore de la progression d'un processus (e.g. l'état d'avancement d'un séquenceur) dans leur évolution dynamique, ce qui facilite leur anticipation (cf. exemple de type ``time timer'' sur la figure \ref{fig:visual_representation:dialButton})\\
+\noindent \textbf{Espace infini.} L'écran donne en effet accès à un espace virtuellement infini, grâce à des systèmes d'onglets, de fenêtres multiples, de menus condensant différentes options, de zoom et déplacement sur des zones d'intérêt. L'exploration y est autant possible ``horizontalement'', c'est-à-dire parmis les différents éléments d'un même niveau de complexité, que ``verticalement'', c'est-à-dire dans la profondeur des différentes couches d'un même élément.\\
+\noindent \textbf{Temporalité de l'interface.} À la différence d'une interface physique, l'information sur écran n'est pas seulement représentée de manière \textit{spatiale} mais également \textit{temporelle}, ce qui offre des possibilités tout à faire adaptées pour la représentation des phénomènes sonores et des processus musicaux. Ainsi, l'écran peut assurer une représentation du tempo, des patterns rythmiques ou encore de la progression d'un processus (e.g. l'état d'avancement d'un séquenceur) dans leur évolution dynamique, ce qui facilite leur anticipation (cf. exemple de type ``time timer'' sur la figure \ref{fig:visual_representation:dialButton})\\
 %------------ Figure : skeuomorphisme et soin du design -----------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
@@ -180,11 +180,60 @@ mouse limitations without adding indirections, interfaces should be able to refl
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Guides, carte, fretting : topologie de l'information topographie/toposthésie}
 
+\noindent Le positionnement des différents capteurs de l'interface d'un \gls{DMI} définit une topologie de l'interaction qui peut être soulignée par des repères visuels (cf. figure \ref{fig:visual_representation:visual-markers}). On peut ainsi distinguer trois cas de figure, concernant le positionnement de ces repères visuels :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{statique} : les repères sont fixes et l'algorithme sous-jacent pourra être ``ré-accordé'' dans les limites imposées par cette configuration (e.g. il est possible de changer la tension des cordes d'une guitare, sans que la position des frettes soient invalidée);
+	\item \textbf{amovible} : les repères peuvent être changés ``physiquement'', soit que leurs positions soient réglables (e.g. comme c'est le cas pour les frettes du sitar), soit qu'ils soient interchangeables (e.g. les différentes revêtements de l'interface \textit{Joué} ou du \textit{Sensel Morph}, ou le calque glissable dans une tablette graphique);
+	\item \textbf{dynamique} : cette solution est rendue possible sur les écrans tactiles, mais n'offre pour l'instant pas les qualités haptiques de repères en relief permises par les repères statiques ou amovibles\footnote{Un certain nombre de prototypes d'écrans à formes dynamiques ont été développés cette dernière décennie (voir \cite{follmer_inform_2013, siu_shapeshift_2018}), mais restent encore très rustiques et ne semblent pas encore prêts pour une diffusion commerciale};
+\end{itemize}
+
+
+\subsubsection{Nouvelles formes et nouvelles fonctions}
+
+\noindent De nombreuses règles ont été formulées dans le domaine du design, de l'architecture, des \gls{IHM}, et de la visualisation de données, telles que le célèbre adagage ``la forme suit la fonction'', pris comme paradigme dans le design et l'architecture moderne, autant que dans le design des interface graphiques. Ces règles de design prônent généralement le minimalisme, la lisibilité et l'efficacité du design: dans le domaine de la visualisation de données, l'ouvrage d'Edward W. Tufte ``The visual display of quantitative information'' \cite{tufte_visual_2001}, une des principales références, rappelle ces ``Principes de l'Excellence Graphique'' :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item l'excellence graphique est une présentation bien conçue de données intéressantes — une affaire de \textit{substance}, de \textit{statistiques} et de \textit{design};
+	\item l'excellence graphique consiste en la communication claire, précise et efficace d'idées complexes;
+	\item l'excellence graphique est ce qui donne le plus grand nombre d'idées dans le temps le plus court, avec le moins d'encre possible et dans le plus petit espace;
+	\item l'excellence graphique est presque toujours multivariée;
+	\item elle requiert de dire la vérité sur les données.
+\end{itemize}
+
+\noindent Bien que toutes ces règles puissent être utiles pour le design de la partie graphique d'un \gls{DMI}, il faut cependant garder en tête que les instruments de musique ne sont pas des interfaces dont la raison d'être est définie par leur fonctionnalité (on n'achète pas un instrument pour se rendre la vie plus facile), et que les notions d'\textit{efficacité}, de \textit{lisibilité} et de \textit{vérité} y sont particulièrement sujettes à caution.
+
+
 Apprendre indépendamment de la transposition
 \iquote{I love the piano sound but not the difficulty of learning the variations from one key to another.  The LinnStrument with its 4th tuning avoids all of those issues.} Jeff Moen about the linnstrument (\url{http://jeffmoen.com/how_i_got_here.html})
 
 Passage du "savoir le contenu" à "savoir que ce contenu existe" et "savoir le chercher".
 Savoir cartographique.
+
+%------------------- Visual markers -----------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\makebox[\linewidth][c]{%
+		\begin{subfigure}[b]{.34\textwidth}
+			\centering
+			\includegraphics[width=.95\textwidth]{gfx/06_visual_representation/guitar-frette.jpg}
+			\caption{\textbf{statiques}, sur un manche \\de guitare}
+		\end{subfigure}%
+		\begin{subfigure}[b]{.34\textwidth}
+			\centering
+			\includegraphics[width=.95\textwidth]{gfx/06_visual_representation/filigramophone-visualMarkers.jpg}
+			\caption{\textbf{amovibles}, sur une tablette \\graphique}
+		\end{subfigure}%
+		\begin{subfigure}[b]{.34\textwidth}
+			\centering
+			\includegraphics[width=.95\textwidth]{gfx/06_visual_representation/mpTUI-visualMarkers.png}
+			\caption{\textbf{dynamiques}, sur un écran \\multitouch}
+		\end{subfigure}%
+	}
+	\caption{Repères visuels sur différentes interfaces instrumentales.}
+	\label{fig:visual_representation:visual-markers}
+\end{figure}
+%------------------- Visual markers -----------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{L'écran comme interface tangible}
@@ -224,21 +273,16 @@ Les écrans multitouch offrent de nombreux avantages qui ont déjà été soulig
 \subsubsection{interaction avec la visualisation}
 cf. Goudard: FIB\_R
 
-% \begin{wrapfigure}{R}{0.5\textwidth}
-% 	\begin{center}
-% 		\includegraphics[width=0.4\textwidth]{gfx/06_visual_representation/Xypre-Live.jpg}
-% 	\end{center}
-% 	\caption[Xypre, modèle intermédiaire manipulé sur écran]{Gladys Brégeon jouant sur le Xypre, avec un modèle intermédiaire manipulé directement sur écran, durant la performance FIB\_R.}
-% 	\label{fig:visual_representation:lemur}
-% \end{wrapfigure}
-
 \begin{wrapfigure}{R}{0.5\textwidth}
-	\captionsetup{format =plain}%
-  \begin{center}
-    \includegraphics[width=0.48\textwidth]{gfx/03_gesture/Fels-transparency.pdf}
-  \end{center}
-  \caption{test de warp avec un caption assez long pour voir ce qu'il se passe au retour de ligne}
+	\captionsetup{format=plain}%
+	\centering 
+	\includegraphics[width=0.48\textwidth]{gfx/06_visual_representation/Xypre-Live.jpg}
+	\caption[Xypre, modèle intermédiaire manipulé sur écran]{Modèle intermédiaire manipulé directement sur écran, durant la performance FIB\_R.}
+	\label{fig:visual_representation:xypre-live}
 \end{wrapfigure}
+\par
+test
+\par
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
