@@ -16,7 +16,7 @@ often give birth to subconscious ideas \\
 which might otherwise never come to life.}
 {Igor Stravinsky}{1936}
 
-\noindent Dans ce chapitre sont présentées un certain nombre de considérations sur la partie matérielle des \glspl{DMI}. Parallèlement seront présentées deux interfaces que j'ai développées pour ma pratique musicale : le Filigramophone (figure \ref{fig:interface:filigramophone_unplugged}) et le Xypre (figure \ref{fig:interface:xypre_unplugged}). Ces deux interfaces sont en quelque sorte des variations sur un même archétype d'instrument ``tablette'', né de l'utilisation initiale d'une tablette graphique. Leur design reflète les différentes contraintes rencontrées lors du passage d'une technologie à une autre et comment une même idée générale est adaptée en fonction du medium sous-jacent.
+\noindent Dans ce chapitre sont présentées un certain nombre de considérations sur la partie matérielle des \glspl{DMI}. Parallèlement seront présentées deux interfaces que j'ai développées pour ma pratique musicale : le Filigramophone (figure \ref{fig:interface:filigramophone_unplugged}) et le Xypre (figure \ref{fig:interface:xypre_unplugged}). Ces deux interfaces sont en quelque sorte des variations sur un même archétype d'instrument ``tablette'', né de l'utilisation initiale d'une tablette graphique Wacom. Leur design reflète les différentes contraintes rencontrées lors du passage d'une technologie à une autre et comment une même idée générale est adaptée en fonction du medium sous-jacent.
 
 %------------ Figure : filigramophone et xypre -----------
 \begin{figure}[!htbp]
@@ -39,16 +39,16 @@ which might otherwise never come to life.}
 %--------------------------------------------------------------
 \section{Interface gestuelle ou interface sensible?}
 
-\noindent Il est souvent question ``d'interface gestuelle'' lorsqu'on pense aux \glspl{IHM} utilisées pour l'interaction musicale. Comme nous l'avons vu au chapitre précédant, le geste occupe une part importante de l'interaction musicale mais les interfaces de jeu ne se restreignent pas nécessairement à la captation du geste : elle peuvent être sensible à la température, la lumière\footnote{Voir par exemple les œuvres \textit{Light Thing} de Leaf Cutter John (\url{https://youtu.be/2jIlLHfSEfs}), ou encore \textit{Light Music} de Thierry de Mey}, à la couleur,la géolocalisation\footnote{Voir en particulier les travaux d'Atau Tanaka, ou les instruments de Yann Seznec \url{https://www.impracticaldevices.com}} et réagir de manière générale à différentes conditions environnementales.\\
+\noindent Il est souvent question ``d'interface gestuelle'' lorsqu'on pense aux \glspl{IHM} utilisées pour l'interaction musicale. Comme nous l'avons vu au chapitre précédant, le geste y occupe une part importante mais les interfaces de jeu ne se limitent pas nécessairement à la captation du geste : elle peuvent être sensibles à la température, la lumière\footnote{Voir par exemple les œuvres \textit{Light Thing} de Leaf Cutter John (\url{https://youtu.be/2jIlLHfSEfs}), ou encore \textit{Light Music} de Thierry de Mey}, la couleur, la géolocalisation\footnote{Voir en particulier les travaux d'Atau Tanaka, ou les instruments de Yann Seznec \url{https://www.impracticaldevices.com}} et réagir de manière générale à différentes conditions environnementales.\\
 \indent Par ailleurs, le geste possède un certain nombre de qualités qui ne sont pas forcément captées par l'interface, alors qu'elle sont effectivement vues et ressenties par le musicien et par le public, et contribuent ainsi à la performance, comme nous l'avons présenté au chapitre précédent.\\
 \indent Enfin, le ``geste'' qui vient contrôler les processus sonores dans les \glspl{DMI} peut être de nature virtuelle, prendre la forme de motifs pré-enregistrés qui peuvent être issus de toute sorte de source de données interprétées en tant que flux temporels, tels que peut-être le cas dans la sonification de données ou l'utilisation de modèles intermédiaires. Cet aspect là sera décrit plus en détail dans le chapitre \ref{ch:algorithms}.\\
-\indent Il semblerait ainsi préférable de parler d'\textit{interface sensible}, plutôt que d'\textit{interface gestuelle} pour décrire les dispositifs d'interaction numériques pour la musique, leur caractéristique commune étant l'usage de capteurs (\textit{sensors}).
+\indent Pour toutes ces raisons, il semblerait ainsi préférable de parler d'\textit{interface sensible}, plutôt que d'\textit{interface gestuelle} pour décrire les dispositifs d'interaction numériques pour la musique, leur caractéristique commune étant l'usage de capteurs (\textit{sensors}).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Composer, interpréter, improviser en live}
 
-\noindent Les \glspl{DMI} intègrent généralement des matériaux pré-composés, que le musicien peut déclencher et qui pourront tourner de manière autonome (paysages sonores, processus génératifs, drônes, etc.) et une part créée plus directement, qu'elle soit synthèse ou transformation de matériaux.\\
+\noindent Les \glspl{DMI} intègrent souvent des matériaux sonores pré-composés, que le musicien peut déclencher et qui pourront tourner de manière autonome (paysages sonores, processus génératifs, drônes, etc.) et une part créée plus directement, qu'elle soit synthèse ou transformation de matériaux.\\
 \indent Les différents accès de l'interface de jeu doivent ainsi permettrent d'articuler au mieux ces deux pôles et permettre la gestion du temps à différentes échelles. En particulier, les écrans \textit{multitouch}, s'ils permettent de gérer aisément de multiples processus lents (qu'on pourra visualiser et ajuster à l'écran), ne permettent guère une réactivité ``percussive'', telle que le permet un pad \gls{MIDI} ou un capteur échantillonné à fréquence élevée.\\
 \indent La granularité du contrôle joue également un rôle important dans cette perspective. Entre une note \gls{MIDI} qui ne déclenche qu'un événement ponctuel, un contrôleur continu qui envoie des données chaque fois qu'il est modifié et un capteur échantillonné qui envoie des informations en continu, les possibilités de contrôle seront différentes en terme de réactivité et de finesse de modulation. Il faut donc prévoir les capteurs adéquats pour les processus que l'on souhaite contrôler en aval. Comme le faisait remarquer Max Mathews, cité par Joel Chadabe dans \cite{chadabe_electric_1996}:
 \iquote{Il faut penser aux systèmes dans leur globalité pour obtenir une quelque chose d'utilisable musicalement - on ne peut pas vraiment développer un capteur sans le mettre en perspective des programmes avec lesquels on va l'utiliser. \footnote{``One has to think of overall systems to get a musically useful thing — you can't really develop a sensor without relating it to the programs that you're going to use it with.'', p. 230}}\\
@@ -64,7 +64,7 @@ which might otherwise never come to life.}
 
 \subsection{captation : microphones et transducteurs piezo}
 
-\noindent La possibilité de pouvoir introduire du son acoustique dans un système électroacoustique est une pratique très courante chez les musiciens électroacoustiques, et permet des séquences de jeu en prise directe avec des objets concrets dont on pourra transformer le son. En particulier, l'usage de microphones, notamment de transducteur piezo dites ``microphone de contact'', vient redonner une composante acoustique au corps même de l'agencement instrumental. L'intérêt principal réside dans la richesse du signal capté, comme le note Miller Puckette dans \cite{puckette_infuriating_2011}: \iquote{(...) il y a peu chance que le frottement de balais sur un pad de batterie produise quoi que ce soit d'intéressant, alors que faire la même chose sur un instrument qui fonctionne directement avec le signal audio du microphone de contact (comme nous le faisons ici) offre la possibilité de créer une large gamme de sons musicaux utiles\footnote{``(...) sliding a brush over a drum trigger isn’t likely to produce  anything  useful,  whereas  doing  the  same  thingon an instrument that operates directly on the audio signal from the contact microphone (as we do here) has the possibility to create a wide range of useful musical sounds.''}.} L'usage d'algorithmes d'analyse en temps-réel permet, au-delà d'effets déjà existants dans le domaine électroacoustique, d'utiliser les caractéristiques du son comme paramètre de contrôle. Une telle approche a été utilisé notamment dans \cite{schwarz_rich_2014} et l'interface Mogees\footnote{\url{https://www.mogees.co.uk}, voir également l'Annexe \ref{appendix:zamborlin}} est principalement basée sur ce principe. 
+\noindent La possibilité de pouvoir introduire du son acoustique dans un système électroacoustique est une pratique très courante chez les musiciens électroacoustiques, et permet des séquences de jeu en prise directe avec des objets concrets dont on pourra transformer le son. En particulier, l'usage de microphones, notamment de transducteur piezo dites ``microphone de contact'', vient redonner une composante acoustique au corps même de l'agencement instrumental. L'intérêt principal réside dans la richesse du signal capté, comme le note Miller Puckette : \iquote{(...) il y a peu chance que le frottement de balais sur un pad de batterie produise quoi que ce soit d'intéressant, alors que faire la même chose sur un instrument qui fonctionne directement avec le signal audio du microphone de contact (comme nous le faisons ici) offre la possibilité de créer une large gamme de sons musicaux utiles\footnote{``(...) sliding a brush over a drum trigger isn’t likely to produce  anything  useful,  whereas  doing  the  same  thingon an instrument that operates directly on the audio signal from the contact microphone (as we do here) has the possibility to create a wide range of useful musical sounds.'' \cite{puckette_infuriating_2011}.}.} L'usage d'algorithmes d'analyse en temps-réel permet, au-delà d'effets déjà existants dans le domaine électroacoustique, d'utiliser les caractéristiques du son comme paramètre de contrôle. Une telle approche a été utilisé notamment dans \cite{schwarz_rich_2014} et l'interface Mogees\footnote{\url{https://www.mogees.co.uk}, voir également l'Annexe \ref{appendix:zamborlin}} est principalement basée sur ce principe. 
 
 
 
@@ -136,11 +136,27 @@ which might otherwise never come to life.}
 
 %-------------------------- Figure : xypre HP et piezo ----------------------------------
 \begin{figure}[!htbp]
+	\captionsetup{format=plain}%
 	\includegraphics[width=\textwidth]{gfx/05_interfaces/Xypre_FrontPanel_144dpi.jpg}
 	\caption{Liaison acoustique entre piezo et haut-parleur tactile sur le Xypre}
 	\label{fig:interface:xypre_v2-hppiezo}
 \end{figure}
 %-------------------------- Figure : xypre HP et piezo ----------------------------------
+
+\section{Tecnhologies de capteurs}
+Capteurs ``bruts'' et capteur ``intelligents''
+Pads MIDI => peuvent être implémentés via interrupteurs, piezzo, FSR...
+Multitouch = différentes technologies de détections (capcitives, infra-rouge, etc.) pour renvoyer la position des doigts.
+
+%-------------------------- Figure : PQlabs overlay ----------------------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\includegraphics[width=\textwidth]{gfx/05_interfaces/PQlabs-G4overlay.jpg}
+	\caption[Cadre multitouch à technologie infra-rouge]{Cadre multitouch à technologie infra-rouge (PQ-Labs). La surface de contact en verre est détachable et la captation d'objets quelconques est possible.}
+	\label{fig:interface:PQlabs-G4overlay}
+\end{figure}
+%-------------------------- Figure : PQlabs overlay ----------------------------------
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
