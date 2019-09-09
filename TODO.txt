@@ -31,3 +31,5 @@ La musique et le geste
 
 
 Partie 5.3 / Le signal : ajouter un mot pour décrire ce qu'est le signal
+
+Mettre des labels dans les annexes et renvoyer plutôt que citer le texte dans le doc original.
