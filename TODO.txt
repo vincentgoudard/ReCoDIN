@@ -28,3 +28,6 @@ La musique et le geste
 	Geste et analyse musicale
  		Nécessité et diffi cultés d’une notation du geste
  		Pour une analyse musicale vraiment générale
+
+
+Partie 5.3 / Le signal : ajouter un mot pour décrire ce qu'est le signal
