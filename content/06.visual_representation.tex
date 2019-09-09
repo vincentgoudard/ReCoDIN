@@ -169,71 +169,13 @@ Exemple dans FIB\_R : toute la performance visuelle re-projetée sur l'écran co
 
 \indent Également, l'image peut faciliter la compréhension de processus musicaux sur le long terme, en particulier le déploiement de grandes formes temporelle, qui nécessite une mémoire auditive faisant parfois défaut. Si le son est évanescent, l'image peut en effet laisser une trace sensible, ``s'écrire'' au fur et à mesure de sa performance\footnote{Un tel procédé à été utilisé lors d'un concert de ONE, durant lequel les formes d'ondes des sons joués par chaque musicien étaient vidéo-projetées et s'aggloméraient telle des stalagmites, rendant visible les intensités de jeu de chacun au cours du concert(L'objet LAM.jit.gl.DSW\textasciitilde{} développé à cette fin est disponible dans la LAM-lib).} (cf. figure \ref{fig:visual_representation:DSW}).\\
 \indent Une autre conséquence du dynamisme de l'interface graphique est la possibilité d'afficher des informations de manière contextuelle, sur le plan spatial (e.g. en affichant des informations uniquement quand on interagit avec une certaine zone de l'interface) comme sur le plan temporel (e.g. en affichant des informations en fonction d'événements en cours).\\
-\indent Cette idée de l'interface comme ``cockpit du musicien'' \cite{vertegaal_towards_1996} hérite du contexte technico-cientifique dans lequel les \glspl{DMI} ont vu le jour: les interfaces des premiers ordinateurs ainsi que le matériel de l'ingénierie du son ressemblant bien souvent à celles des cockpits d'avion. Pourtant, si l'image d'un cockpit évoque des gestes de réglage et d'ajustement lents, sur un grand nombre de paramètres mesurés sur des échelles absolues (que cela soit sur un avion ou une table de mixage), la notion d'instrument et de jeu musical appelle de son côté des gestes expressifs, vifs, et souvent sur des échelles relatives\footnote{...comme en témoigne l'importance de notions telles que les intervalles, et les nuances telles que crescendo/decrescendo, piano/forte, ralentendo/accelerando, etc. qui servent dans l'écriture musicale. Cf. également les propos de Serge de Laubier à ce sujet dans l'annexe \ref{appendix:delaubier}
+\indent Cette idée de l'interface comme ``cockpit du musicien'' \cite{vertegaal_towards_1996} hérite du contexte technico-scientifique dans lequel les \glspl{DMI} ont vu le jour: les interfaces des premiers ordinateurs ainsi que le matériel de l'ingénierie du son ressemblant bien souvent à celles des cockpits d'avion. Pourtant, si l'image d'un cockpit évoque des gestes de réglage et d'ajustement lents, sur un grand nombre de paramètres mesurés sur des échelles absolues (que cela soit sur un avion ou une table de mixage), la notion d'instrument et de jeu musical appelle de son côté des gestes expressifs, vifs, et souvent sur des échelles relatives\footnote{...comme en témoigne l'importance de notions telles que les intervalles, et les nuances telles que crescendo/decrescendo, piano/forte, ralentendo/accelerando, etc. qui servent dans l'écriture musicale. Cf. également les propos de Serge de Laubier à ce sujet dans l'annexe \ref{appendix:delaubier}
 }.
 
 \indent Les écrans permettent ainsi l'affichage d'un grand nombre d'éléments dynamiques qui peuvent également être support d'interaction, que cela soit avec le clavier, la souris, une interface de contrôle, ou encore l'écran lui-même quand il est tactile. La cohésion entre la représentation et le contrôle permise par cette dernière option facilite l'intuitivité de l'interface en abolissant la distance entre ces deux aspects de l'interaction. Cette idée est notamment l'un des axes de développement dans le domaine des \gls{IHM}, consistant en l'intégration du numérique dans les objets du monde physique, telle que présenté notamment dans l'article ``Tangible Bits'' d'Ishii et Ullmer \cite{ishii_tangible_1997} et reprise par Sergi Jordà dans les 25 principes qu'il adopte pour le développement de la ReacTable\footnote{``For including realtime interactive visualizations and, at the same time, overcoming
 mouse limitations without adding indirections, interfaces should be able to reflect their own states and behaviors. They should integrate, like the abacus, both representation and control.'' \cite{jorda_digital_2005}}.\\
 
 \indent Ce faisant, la cohésion entre le geste et la représentation ``acquise'' dans les écrans tactile laisse la place à des scénarios d'interaction subersifs (sur le geste subversif, cf. section \ref{sec:gesture:subversion}) qui se jouent de cet artefact\footnote{voir par exemple la série de performances ``Screen to screen'' de l'artiste Vincent Brocquaire, basées sur cette duplicité de l'écran/interface. \url{http://www.vincentbroquaire.com/screen-to-screen.html}}. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Guides, carte, fretting : topologie de l'information topographie/toposthésie}
-
-\noindent Le positionnement des différents capteurs de l'interface d'un \gls{DMI} définit une topologie de l'interaction qui peut être soulignée par des repères visuels (cf. figure \ref{fig:visual_representation:visual-markers}). On peut ainsi distinguer trois cas de figure, concernant le positionnement de ces repères visuels :
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item \textbf{statique} : les repères sont fixes et l'algorithme sous-jacent pourra être ``ré-accordé'' dans les limites imposées par cette configuration (e.g. il est possible de changer la tension des cordes d'une guitare, sans que la position des frettes soient invalidée);
-	\item \textbf{amovible} : les repères peuvent être changés ``physiquement'', soit que leurs positions soient réglables (e.g. comme c'est le cas pour les frettes du sitar), soit qu'ils soient interchangeables (e.g. les différentes revêtements de l'interface \textit{Joué} ou du \textit{Sensel Morph}, ou le calque glissable dans une tablette graphique);
-	\item \textbf{dynamique} : cette solution est rendue possible sur les écrans tactiles, mais n'offre pour l'instant pas les qualités haptiques de repères en relief permises par les repères statiques ou amovibles\footnote{Un certain nombre de prototypes d'écrans à formes dynamiques ont été développés cette dernière décennie (voir \cite{follmer_inform_2013, siu_shapeshift_2018}), mais restent encore très rustiques et ne semblent pas encore prêts pour une diffusion commerciale};
-\end{itemize}
-
-
-\subsubsection{Nouvelles formes et nouvelles fonctions}
-
-\noindent De nombreuses règles ont été formulées dans le domaine du design, de l'architecture, des \gls{IHM}, et de la visualisation de données, telles que le célèbre adagage ``la forme suit la fonction'', pris comme paradigme dans le design et l'architecture moderne, autant que dans le design des interface graphiques. Ces règles de design prônent généralement le minimalisme, la lisibilité et l'efficacité du design: dans le domaine de la visualisation de données, l'ouvrage d'Edward W. Tufte ``The visual display of quantitative information'' \cite{tufte_visual_2001}, une des principales références, rappelle ces ``Principes de l'Excellence Graphique'' :
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item l'excellence graphique est une présentation bien conçue de données intéressantes — une affaire de \textit{substance}, de \textit{statistiques} et de \textit{design};
-	\item l'excellence graphique consiste en la communication claire, précise et efficace d'idées complexes;
-	\item l'excellence graphique est ce qui donne le plus grand nombre d'idées dans le temps le plus court, avec le moins d'encre possible et dans le plus petit espace;
-	\item l'excellence graphique est presque toujours multivariée;
-	\item elle requiert de dire la vérité sur les données.
-\end{itemize}
-
-\noindent Bien que toutes ces règles puissent être utiles pour le design de la partie graphique d'un \gls{DMI}, il faut cependant garder en tête que les instruments de musique ne sont pas des interfaces dont la raison d'être est définie par leur fonctionnalité (on n'achète pas un instrument pour se rendre la vie plus facile), et que les notions d'\textit{efficacité}, de \textit{lisibilité} et de \textit{vérité} y sont particulièrement sujettes à caution.
-
-
-Apprendre indépendamment de la transposition
-\iquote{I love the piano sound but not the difficulty of learning the variations from one key to another.  The LinnStrument with its 4th tuning avoids all of those issues.} Jeff Moen about the linnstrument (\url{http://jeffmoen.com/how_i_got_here.html})
-
-Passage du "savoir le contenu" à "savoir que ce contenu existe" et "savoir le chercher".
-Savoir cartographique.
-
-%------------------- Visual markers -----------------------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}%
-	\makebox[\linewidth][c]{%
-		\begin{subfigure}[b]{.34\textwidth}
-			\centering
-			\includegraphics[width=.95\textwidth]{gfx/06_visual_representation/guitar-frette.jpg}
-			\caption{\textbf{statiques}, sur un manche \\de guitare}
-		\end{subfigure}%
-		\begin{subfigure}[b]{.34\textwidth}
-			\centering
-			\includegraphics[width=.95\textwidth]{gfx/06_visual_representation/filigramophone-visualMarkers.jpg}
-			\caption{\textbf{amovibles}, sur une tablette \\graphique}
-		\end{subfigure}%
-		\begin{subfigure}[b]{.34\textwidth}
-			\centering
-			\includegraphics[width=.95\textwidth]{gfx/06_visual_representation/mpTUI-visualMarkers.png}
-			\caption{\textbf{dynamiques}, sur un écran \\multitouch}
-		\end{subfigure}%
-	}
-	\caption{Repères visuels sur différentes interfaces instrumentales.}
-	\label{fig:visual_representation:visual-markers}
-\end{figure}
-%------------------- Visual markers -----------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{L'écran comme interface tangible}
@@ -270,10 +212,64 @@ Les écrans multitouch offrent de nombreux avantages qui ont déjà été soulig
 	\item la cohésion entre le contrôle d'un objet et sa représentation et la relation sensuelle d'intimité qui se créé en l'absence de distance entre l'objet virtuel et celui/celle qui le manipule;
 \end{itemize}
 
-\subsubsection{interaction avec la visualisation}
-cf. Goudard: FIB\_R
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Topologie dynamique}
+
+\subsubsection{Repères statiques, amovibles, dynamiques}
+
+%------------------- Visual markers -----------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\makebox[\linewidth][c]{%
+		\begin{subfigure}[b]{.34\textwidth}
+			\centering
+			\includegraphics[width=.95\textwidth]{gfx/06_visual_representation/guitar-frette.jpg}
+			\caption{\textbf{statiques}, sur un manche \\de guitare}
+		\end{subfigure}%
+		\begin{subfigure}[b]{.34\textwidth}
+			\centering
+			\includegraphics[width=.95\textwidth]{gfx/06_visual_representation/filigramophone-visualMarkers.jpg}
+			\caption{\textbf{amovibles}, sur une tablette \\graphique}
+		\end{subfigure}%
+		\begin{subfigure}[b]{.34\textwidth}
+			\centering
+			\includegraphics[width=.95\textwidth]{gfx/06_visual_representation/mpTUI-visualMarkers.png}
+			\caption{\textbf{dynamiques}, sur un écran \\multitouch}
+		\end{subfigure}%
+	}
+	\caption{Repères visuels sur différentes interfaces instrumentales.}
+	\label{fig:visual_representation:visual-markers}
+\end{figure}
+%------------------- Visual markers -----------------------
+
+\noindent Le positionnement des différents capteurs de l'interface d'un \gls{DMI} définit une topologie de l'interaction qui peut être soulignée par des repères visuels (cf. figure \ref{fig:visual_representation:visual-markers}). On peut ainsi distinguer trois cas de figure, concernant le positionnement de ces repères visuels :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{statique} : les repères sont fixes et l'algorithme sous-jacent pourra être ``ré-accordé'' dans les limites imposées par cette configuration (e.g. il est possible de changer la tension des cordes d'une guitare, sans que la position des frettes soient invalidée);
+	\item \textbf{amovible} : les repères peuvent être changés ``physiquement'', soit que leurs positions soient réglables (e.g. comme c'est le cas pour les frettes du sitar), soit qu'ils soient interchangeables (e.g. les différentes revêtements de l'interface \textit{Joué} ou du \textit{Sensel Morph}, ou le calque glissable dans une tablette graphique);
+	\item \textbf{dynamique} : cette solution est rendue possible sur les écrans tactiles, mais n'offre pour l'instant pas les qualités haptiques de repères en relief permises par les repères statiques ou amovibles\footnote{Un certain nombre de prototypes d'écrans à formes dynamiques ont été développés cette dernière décennie (voir \cite{follmer_inform_2013, siu_shapeshift_2018}), mais restent encore très rustiques et ne semblent pas encore prêts pour une diffusion commerciale};
+\end{itemize}
+
+
+\subsubsection{Nouvelles formes et nouvelles fonctions}
+
+\noindent De nombreuses règles ont été formulées dans le domaine du design, de l'architecture, des \gls{IHM}, et de la visualisation de données, telles que le célèbre adagage ``la forme suit la fonction'', pris comme paradigme dans le design et l'architecture moderne, autant que dans le design des interface graphiques. Ces règles de design prônent généralement le minimalisme, la lisibilité et l'efficacité du design. L'ouvrage d'Edward W. Tufte ``The visual display of quantitative information'' \cite{tufte_visual_2001}, une des principales références dans le design visuel, rappelle ainsi ces ``Principes de l'Excellence Graphique'' :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item l'excellence graphique est une présentation bien conçue de données intéressantes — une affaire de \textit{substance}, de \textit{statistiques} et de \textit{design};
+	\item l'excellence graphique consiste en la communication claire, précise et efficace d'idées complexes;
+	\item l'excellence graphique est ce qui donne le plus grand nombre d'idées dans le temps le plus court, avec le moins d'encre possible et dans le plus petit espace;
+	\item l'excellence graphique est presque toujours multivariée;
+	\item elle requiert de dire la vérité sur les données.
+\end{itemize}
+
+\noindent Bien que toutes ces règles puissent être utiles pour le design de la partie graphique d'un \gls{DMI}, il faut cependant garder en tête que les instruments de musique ne sont pas des interfaces dont la raison d'être est définie par leur fonctionnalité (on n'achète pas un instrument pour se rendre la vie plus facile), et que les notions d'\textit{efficacité}, de \textit{lisibilité} et de \textit{vérité} y sont particulièrement sujettes à caution.
+
+
+\subsubsection{Mettre les doigts dans la prise}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
 	\captionsetup{format=plain}%
 	\centering 
 	\includegraphics[width=0.48\textwidth]{gfx/06_visual_representation/Xypre-Live.jpg}
@@ -281,8 +277,16 @@ cf. Goudard: FIB\_R
 	\label{fig:visual_representation:xypre-live}
 \end{wrapfigure}
 \par
-test
-\par
+
+\noindent L'interaction avec un \gls{DMI} amène à interagir avec des processus en mouvement permanent en les touchant du doigt par l'intermédiaire de capteurs. Ainsi, si le mapping est généralement défini comme une chaîne d'interaction partant des capteurs vers les processus sonores, il
+
+Si dans un instrument acoustique, l'énergie se transmet des gestes du musicien à l'instrument qui produit le son, cette chaîne d'interaction peut se retrouver perceptivement renversée dans les \glspl{DMI}. Le processus, ou ``modèle intermédiaire'' (cf. \ref{sec:algorithms:MID}) qui \textit{tourne} sur la machine possède son propre mouvement autonome, que les doigts viennent perturber, infléchir, canaliser, étouffer, aiguiser, filtrer... La représentation visuelle de modèles intermédiaires dynamiques vient rendre manifeste ces \textit{forces invisibles}\footnote{\iquote{En art, et en peinture comme en musique, il ne s’agit pas de reproduire ou d’inventer des formes, mais de capter des forces. (...) La tâche de la peinture est définie comme la tentative de rendre visibles des forces qui ne le sont pas. De même la musique s’efforce de rendre sonores des forces qui ne le sont pas.} Gilles Deleuze \cite{deleuze_francis_1981}} et appelle ainsi des gestes \textit{en réponse} aux mouvements internes du modèle, qui redéfinit en permanence l'espace de son interaction, dont la topologie n'est pas donnée d'avance et qu'il faut apprivoiser (cf. figure \ref{fig:visual_representation:xypre-live}).
+
+Apprendre indépendamment de la transposition
+\iquote{I love the piano sound but not the difficulty of learning the variations from one key to another.  The LinnStrument with its 4th tuning avoids all of those issues.} Jeff Moen about the linnstrument (\url{http://jeffmoen.com/how_i_got_here.html})
+
+Passage du "savoir le contenu" à "savoir que ce contenu existe" et "savoir le chercher".
+Savoir cartographique.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
