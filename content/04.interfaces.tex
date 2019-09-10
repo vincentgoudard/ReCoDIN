@@ -73,7 +73,7 @@ Usinage
 \begin{itemize}[noitemsep]
 	\item \textbf{bois}: le bois est historiquement le matériau phare de la lutherie, en raison de ses propriétés acoustiques et de son travail relativement facile. Il est par conséquent présent dans les instruments augmentés basés sur des instruments réalisés en bois. Le bois est également utilisé pour la fabrication de nouveaux instruments, mais souvent davantage pour sa fonction usinable que ses propriétés acoustiques. En particulier, de nombreux projets utilise du contreplaqué, disponible en plaques de différentes épaisseurs, et usinable par machine \gls{CNC} ce qui permet le prototypage rapide (todo : exemple photo?).
 	\item \textbf{métal}: le métal est couramment utilisé pour les chassis et les coques de revêtement des machines électriques et électronique. En dehors de ses propriétés de résistance mécanique, sa conductivité permet d'isoler les composants de faux contacts et de perturbations électromagnétiques et notamment d'éviter le ``bruit de masse'' qui peut survenir quand un équippement électrique tel qu'un \gls{DMI} n'est pas relié à la masse. Le métal possède également des propriétés de résonance acoustique intéressantes
-	\item \textbf{plastique} le plastique est très ductile et offre de grande facilités de thermoformage, moulage, collage, perçage, gravage, qui permettent d'obtenir toute sorte de forme et notamment de s'adapter à l'ergonomie du corps (e.g. la main du MI). Les propriétés de transparence du \gls{PMMA}\footnote{aussi connue sous le nom commercial Plexiglas} permettent de l'utiliser au dessus d'un écran. L'essor des imprimantes 3D depuis le début du \siecle{21}~siècle a également contribué à son utilisation pour le prototypage rapide dans un contexte autre qu'industriel, et de pratiques \gls{DIY} dans les \glspl{makerspace}.
+	\item \textbf{plastique} le plastique est très ductile et offre de grande facilités de thermoformage, moulage, collage, perçage, gravage, qui permettent d'obtenir toute sorte de forme et notamment de s'adapter à l'ergonomie du corps (e.g. la main du MI). Les propriétés de transparence du \gls{PMMA}\footnote{aussi connue sous le nom commercial Plexiglass} permettent de l'utiliser au dessus d'un écran. L'essor des imprimantes 3D depuis le début du \siecle{21}~siècle a également contribué à son utilisation pour le prototypage rapide dans un contexte autre qu'industriel, et de pratiques \gls{DIY} dans les \glspl{makerspace}.
 	\item \textbf{verre}, le verre a été utilisé dans la lutherie, en particulier pour le caractère cristallin de sa résonnance acoustique (e.g. Cristal Baschet, glass-harmonica) transparence, résonance (cf. projet résonance auto NIME 2019)
 	\item \textbf{mousse}, isolant phonique et vibratoire, utilisé comme tampon des capteurs de pression
 	\item \textbf{textile}, notamment tissé électrique, cf. Morin Doneaux
@@ -230,7 +230,7 @@ todo : parler des partitions tangibles d'Enrique Tomas
 
 \noindent L'ajout de repères statiques ad-hoc et interchageables aide le toucher à sentir une position de repère sur l'écran tacile, ou encore les contours d'une zone d'interaction. Les interfaces ``Joué''\footnote{\url{https://www.play-joue.com}} ou ``Sensel Morph''\footnote{\url{https://sensel.com}} commercialisent différents revêtements (\textit{overlays}) pour leur surface \textit{multitouch}. Ces surfaces ne sont toutefois pas pourvue d'un écran graphique, ce qui évacue le problème de la transparence de ces repères.\\
 Une solution bon marché consiste à utiliser de la bande adhésive (cf. figure \ref{fig:interface:filigramophone-adhesif}
-). Un intermédiaire plus fin entre l'éphémère bande adhésive et une solution fixe consiste à utiliser une plaque de plexiglass (cf. figure \ref{fig:interface:filigramophone-plexigravure}) intermédiaire entre le doigt et la surface tactile, qui permet de graver des motifs potentiellement plus complexes. Cette dernière option n'est toutefois pas toujours réalisable sur les écrans à technologie capacitive, qui nécessite parfois que le doigt soit directement en contact avec l'écran.\\
+). Un intermédiaire plus fin entre l'éphémère bande adhésive et une solution fixe consiste à utiliser une plaque de \gls{PMMA} (cf. figure \ref{fig:interface:filigramophone-plexigravure}) intermédiaire entre le doigt et la surface tactile, qui permet de graver des motifs potentiellement plus complexes. Cette dernière option n'est toutefois pas toujours réalisable sur les écrans à technologie capacitive, qui nécessite parfois que le doigt soit directement en contact avec l'écran.\\
 
 %------------ Figure : repères statique -----------
 \begin{figure}[!htbp]
@@ -244,7 +244,7 @@ Une solution bon marché consiste à utiliser de la bande adhésive (cf. figure 
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	    \includegraphics[width=\linewidth]{gfx/05_interfaces/Filigramophone_gravure_72dpi.jpg}
-		\caption{Gravure d'une ligne médiane sur la plaque de plexiglass}
+		\caption{Gravure d'une ligne médiane sur la plaque de \gls{PMMA}}
 		\label{fig:interface:filigramophone-plexigravure}
 	\end{minipage}
 \end{figure}
@@ -327,7 +327,7 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 
 \noindent La tablette graphique (précisément un modèle Sapphire de Wacom) a été l’interface originelle qui a servi de base au filigramophone. J’ai commencé à l’utiliser dans le cadre du développement de la Méta-Mallette\footnote{Logiciel pour la pratique collective de musique par ordinateur développé par l’association Puce Muse, au développement duquel j'ai activement participé entre 2005 et 2008.}. Le choix de cette interface était motivé par la diversité de gestes expressifs possibles sur une tablette graphique, ainsi que par son coût relativement abordable\footnote{un peu moins de 100€ à l'époque} comparativement à la plupart des interfaces \gls{MIDI}, permettant de la déployer en nombre, dans le cadre d'activités pédagogiques pratiquées en groupe, dans des écoles et autres collectivités.
 \indent En dehors de son usage pour la compositio, un certain nombre de musiciens, compositeurs et concepteurs de \gls{NIME} l’ont par ailleurs adoptée pour la performance\footnote{Notamment au \gls{CNMAT} (voir \cite{zbyszynski_ten_2007}), mais on peut également citer Pierre Jodlowski (voir \url{https://youtu.be/pLARXmGwIO4}) ou Jesper Nordin (voir \url{https://gestrument.com/})}, et Nicolas d’Alessandro a consacré une partie de son travail de thèse \cite{dalessandro_realtime_2009} à ce sujet, en proposant une étude détaillée des différentes échelles de mouvements dans le geste du dessin et de l'écriture, liées à l'articulation entre doigts, poignet et épaule.
-\indent Un des inconvenient de la tablette Wacom est que la surface utile, plus petite que la surface de la tablette (ce qui permet de ne pas ``tomber'' hors de la tablette), est à peine imperceptible, tant visuellement qu'au niveau tactile. Une première adaptation de la tablette a donc consisté à rajouter des bandes adhésives permettant de matérialiser cette frontière, visuellement et tactilement (cf. figure \ref{fig:interface:wacom}).
+\indent Un des inconvenient de la tablette Wacom est que la surface utile, plus petite que la surface de la tablette (ce qui permet de ne pas ``tomber'' hors de la tablette), est à peine imperceptible, tant visuellement qu'au niveau tactile. Une première adaptation de la tablette a donc consisté à rajouter des bandes adhésives permettant de matérialiser cette frontière, visuellement et tactilement (cf. figure \ref{fig:interface:wacom}).\\
 %-------------------------- Figure : wacom ---------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
@@ -338,21 +338,8 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 %-------------------------- Figure : wacom ---------
 \indent En 2007, dans l'équipe \gls{LAM}, Hugues Genevois avait acquis de nouveaux transducteurs tactiles large bande\footnote{Cette nouvelle génération offrait une bande passante de l'ordre du Hz jusqu'à plusieurs kHz, bien supérieure aux actuateurs linéaires, ainsi qu'une dynamique supérieure à celle des transducteurs piezo. Cette technologie a depuis équipé de nombreux cinéma pour transmettre une sensation plus tactile}. Nous avons fait l'expérience d'en placer un sous une tablette graphique, sur laquelle nous controlions la lecture d'un échantillon en se servant du stylet comme d'une tête de lecture virtuelle. La sensation haptique résultant était tout à fait saisissante et donnait l'impression que la surface de la tablette avait un relief similaire aux reliefs entendu dans le son : littéralement, l'impression de ``toucher le son''. Ce ``relief'' est bien entendu éphémère car ces transducteurs ne transmettent pas le continu et leur course est faible\footnote{ce qui les différencie nettement des systèmes de retours haptiques tels que développés, en particulier, à l'\gls{ACROE}}, mais la sensation est tout à fait confondante. J'ai donc utilisé ce système directement sur la tablette graphique, qui était une sorte de prototype du Filigramophone présenté ci-après.
 
-
+%----------------------------------------------------
 \subsection{Le Filigramophone: une tablette augmentée}
-
-\noindent L'expérience décrite précedemment a sucité le développement d'une interface plus intégrée, augmentant la tablette graphique d'une dimension acoustique. En effet, si la tablette graphique est une interface relativement expressive, par la possibilité qu'elle offre de contrôler trois, voire cinq variables continues en même temps\footnote{La position horizontale et verticale, la pression, et sur certains modèle, l'inclinaison du stylet (\textit{tilt}) selon les deux axes.}, sa fréquence d'échantillonage reste relativement faible\footnote{Généralement de 100Hz, d'après Wacom, mais l'objet wacom recevant les données de manière asynchrone dans Max ne permet pas la pleine exploitation de cette fréquence.} et la latence importante\footnote{La latence entre le mouvement du stylet et l'arrivée des données est de l'ordre de 50ms, alors qu'elle est généralement inférieure à 10ms pour le \gls{MIDI}.}. L'envie de l'augmenter de microphone est largement liée à cette sensation de distance qui existe dans l'utilisation d'interfaces de contrôle numérique (bien que moindre dans le MIDI, cette distance est également sensible).
-
-ajout de piezo et HP tactile pour une réponse immédiate
-ajout de MPD pour le changement de comportement
-ajout de carte/frettage de la tablette (aux crayon et feutres)
-
-Problème de devoir tout démonter l'instrument pour changer la feuille de frettage. => solution graphique ?
-
-Utilisation du haut-parleur tactile pour un frêttage virtuel de la table (envoi d'une impulsion au passage d'un repère)
-
-
-freetingSignal = sig(P)*cycle(130)*
 
 %-------------------------- Figure : filigramophone ----------------------------------
 \begin{figure}[!htbp]
@@ -360,12 +347,18 @@ freetingSignal = sig(P)*cycle(130)*
 	\caption{filigramophone - vue d'ensemble, débranchée}
 	\label{fig:interface:filigramophone}
 \end{figure}
-
 %----------------------------------------------------------------------------------------------------------
+\noindent L'expérience décrite précedemment a sucité le développement d'une interface plus intégrée, augmentant la tablette graphique d'une dimension acoustique bi-directionnelle, en captant d'une part le son de la tablette à l'aide de microphones piezo et en diffusant du son dans la tablette à l'aide de transducteurs tactiles.
 
-\subsubsection{Utilisation des piezo dans les différents DMIs réalisés}
-\todo{déplacer cette section dans 4.5?}
-\indent \textbf{Sur le Filigramophone}, des cellules piezo sont placées entre une vitre en plexiglass et le chassis contenant la tablette graphique (cf. figure \ref{fig:interface:filigramophone-piezo}). Cela permet des gestes percussifs, de frottements ou l'utilisation d'objet mis en mouvement (toupies, dés, diques, etc.) directement sur la surface, tout en conservant --~à travers le plexiglass~-- l'usage de la tablette qui renvoit les coordonnées horizontale et verticale ainsi que la pression du stylet. Ces transducteurs piezo permettent de capter les différents timbres de la surface plexi, qui présente une certaine élasticité (par rapport à la surface rigide de la tablette) en étant fixée uniquement sur ses bords, et dont la hauteur spectrale est plus grave au centre et plus aigüe sur les bords. Il est également possible de frapper sur le chassis, ce qui permet d'obtenir encore d'autres nuances de timbre.\\
+\indent En effet, si la tablette graphique est une interface relativement expressive, par la possibilité qu'elle offre de contrôler trois, voire cinq variables continues en même temps\footnote{La position horizontale et verticale, la pression, et sur certains modèle, l'inclinaison du stylet selon les deux axes.}, sa fréquence d'échantillonage reste relativement faible\footnote{Généralement de 100Hz, d'après Wacom, mais l'objet wacom recevant les données de manière asynchrone dans Max ne permet pas la pleine exploitation de cette fréquence.} et la latence importante\footnote{La latence entre le mouvement du stylet et l'arrivée des données est de l'ordre de 50ms, alors qu'elle est de l'ordre de 5ms pour le \gls{MIDI}.}. L'envie de l'augmenter de microphones est largement liée à cette sensation de distance qui existe dans l'utilisation d'interfaces de contrôle numérique (bien que moindre dans le MIDI, cette distance est également sensible).\\
+\indent Ali Momeni avait réalisé ce type d'augmentation acoustique, en plaçant un microphone piezo directement sur la tablette \footnote{Voir \cite{momeni_composing_2005}}. Cette technique lui permet de \iquote{Taper, gratter, frapper avec un anneau métallique ou frotter la tablette} pour obtenir une variété de signaux audio captés par le microphone piezo.\\
+\indent Plus récemment, Romain Michon a étudié différentes possibilités d'effectuer des gestes percussifs et de pression sur une tablette \textit{multitouch} \footnote{Voir \cite{michon_nuance_2016}}, et proposé une solution hybride par l'ajout de capteurs \gls{FSR} placés sous un iPad, modulés en amplitude et récupéré via l'entrée audio d'un iPad. L'intérêt de cette solution est de permettre le calcul de la vélocité des gestes percussifs, en plus de l'aftertouch, mais la combinaison des informations de pression et de coordonnées X/Y, bien que judicieusement contournée par une triangulation des différents \gls{FSR}, reste problématique. Par ailleurs, cette solution utilisant des capteurs de pression, sous la surface rigide de l'iPad ne permet pas d'exploiter la variation de hauteur spectrale en fonction du lieu de frappe, la surface de l'iPad étant trop rigide et les \gls{FSR} inadaptés à cette gamme de fréquences.\\
+\indent J'ai pour ma part choisi d'insérer les microphones piezo entre une vitre en \gls{PMMA} et le chassis contenant la tablette graphique (cf. figure \ref{fig:interface:filigramophone-piezo}). Cela permet des gestes percussifs, de frottements ou l'utilisation d'objet mis en mouvement (toupies, dés, diques, etc.) directement sur la surface, tout en conservant --~à travers le \gls{PMMA}~-- l'usage de la tablette qui renvoit les coordonnées horizontale et verticale ainsi que la pression et l'inclinaison du stylet. Ces transducteurs piezo permettent de capter les différents timbres de la surface \gls{PMMA}, qui présente une certaine élasticité (par rapport à la surface rigide de la tablette) en étant fixée uniquement sur ses bords, et dont la hauteur spectrale est plus grave au centre et plus aigüe sur les bords, à la manière d'une peau de tambour. Il est également possible de frapper sur le chassis, ce qui permet d'obtenir encore d'autres nuances de timbre. Cette solution évite par ailleurs les bruits ``parasites'' de la structure de la tablette graphique quand on frappe directement dessus. Enfin, l'ajout de la plaque de \gls{PMMA} laisse la possibilité de dessiner, ajouter de l'adhésif, ou graver directement directement sur le \gls{PMMA} (tel que présenté dans la section \ref{todo}), sans déteriorer la tablette. Eventuellement, disposer de différentes plaques de \gls{PMMA} permettrait d'adapter l'interface à différentes configurations, à la manière des ce que permettent les \textit{overlays} sur les interfaces commerciales \textit{Joué} et \textit{SenselMorph}, ou à des compositions différentes, telles que les ``\textit{tangible scores}'' d'Enrique Tomás \cite{tomas_tangible_2014}.
+
+\indent Parallèlement, un transducteur a été fixé sur la vitre de \gls{PMMA} (cf. figure \ref{fig:interface:filigramophone-hp}), utilisé à la fois pour le retour vibratoire et la communication d'information, en particulier par frettage virtuel de la surface (cf. section TODO:ref). Le retour vibratoire de l'instrument se distingue toutefois de l'envoi pur et simple du signal audio, la perception tactile ne lui étant pas directement liée. Au lieu de cela, un signal sinusoidal à 70Hz, correspondant à une fréquence de résonnance de la vitre de \gls{PMMA}, modulé par l'enveloppe du son final, ainsi que par sa dérivée spectrale, afin de mieux sentir dans les doigts les transitions et les ruptures du son (cf. figure TODO : schéma de principe du patch / développement dans une autre partie ?).\\
+
+Utilisation du haut-parleur tactile pour un frêttage virtuel de la table (envoi d'une impulsion au passage d'un repère)\\
+freetingSignal = sig(P)*cycle(130)*
 %------------ Figure : filigramophone et xypre piezo -----------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
@@ -383,8 +376,45 @@ freetingSignal = sig(P)*cycle(130)*
 	\end{minipage}
 \end{figure}
 %------------ Figure : filigramophone et xypre piezo -----------
-\indent \textbf{Sur le Xypre v1}, la technologie infra-rouge du cadre de détection du \textit{multitouch} permet d'insérer une vitre plexiglass pour un fonctionnement similaire à celui développé sur le Filigramophone. L'inconvienient qui en résulte est la transmission des vibrations au cadre de détection \textit{multitouch} et les bruits de plastique qui en résultent.\\
-\indent \textbf{Sur le Xypre v2}, l'écran \textit{multitouch} capacitif ne permettant pas l'ajout d'un plexiglass, les cellules piezo ont été placées sur le côté du chassis, pré-contraints entre le chassis et une plaque de bois plus fine servant de surface de percussion, permettant là-encore de récupérer différentes nuances de hauteur spectrale, utilisée pour la synthèse en aval (cf. figure \ref{fig:interface:xypre_v2-piezo1}). La pré-contrainte du piezo est en partie dûe à l'orientation verticale du piezo (qui chuterait, autrement) mais permet également d'utiliser une technique de pseudo-symétrisation du signal du piezo (cf. schéma fonctionnel figure \ref{fig:interface:balancedPiezo} et aperçu figure \ref{fig:interface:xypre_v2-piezo1}), qui s'avère très utile quand les transducteurs piezo sont utilisés à proximité d'un écran, source de perturbations électromagnétiques. Romain Michon a étudié différentes possibilités d'effectuer des gestes percussifs et de pression sur une tablette \textit{multitouch} dans \cite{michon_nuance_2016}, ainsi que proposé une solution hybride par l'ajout de capteurs \gls{FSR} placés sous un iPad, modulés en amplitude et récupéré via l'entrée audio d'un iPad. L'intérêt de cette solution est de permettre le calcul de la vélocité des gestes percussifs, en plus de l'aftertouch, mais la combinaison des informations de pression et de coordonnées X/Y, bien que judicieusement contournée par une triangulation des différents \gls{FSR}, reste problématique. Par ailleurs, cette solution utilisant des capteurs de pression, sous la surface rigide de l'iPad ne permet pas d'exploiter la variation de hauteur spectrale en fonction du lieu de frappe, la surface de l'iPad étant trop rigide et les \gls{FSR} inadaptés à cette gamme de fréquences. C'est cette dernière raison qui a motivé la conception du Xypre v2 avec une séparation entre la surface percussive des piezo et la surface de contrôle sur l'écran \textit{multitouch}.
+
+\indent Le Filigramophone a été joué plusieurs fois en concert, à la fois dans l'ensemble ONE, ainsi que dans la première version de la performance audio-visuelle ``FIB\_R'' avec la plasticienne Gladys Brégeon. Le dispositif complet était composé du Filigramophone, d'un ordinateur faisant tourner un patch Max pour la synthèse, d'une carte son et haut-parleurs, ainsi que d'une interface \gls{MIDI} Akai MPD24, donnant un accès direct à davantage de paramètres tels que le volume général, le mixage entre différentes synthèses, le rappel de configurations, la sélection d'échelles musicales pour l'accordage, ainsi que divers autres paramètres spécifiques aux algorithmes de synthèse.
+
+%---------------------------------------------------------------
+\subsection{Xypre : de la tablette graphique à l'écran multitouch}
+%------------ Figure : xypre - plan et vue d'ensemble -----------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.3\textwidth}
+		\includegraphics[width=\linewidth]{gfx/05_interfaces/Xypre_plan01_72dpi.jpg}
+		\caption{Xypre v2 - plans de conception}
+		\label{fig:interface:xypre_plans}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.66\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/05_interfaces/Xypre_HP_144dpi.jpg}
+		\caption{Xypre - vue d'ensemble, débranchée}
+		\label{fig:interface:xypre}
+	\end{minipage}
+\end{figure}
+%------------ Figure : xypre - plan et vue d'ensemble -----------
+
+\noindent L'utilisation du Filigramophone lors de performances musicales a permi de constater plusieurs points d'améliorations possibles:
+\begin{itemize}
+	\item La taille de l'interface le rendait intransportable en tant que bagage cabine en avion, et plus couramment, peu pratique dans le métro parisien;
+	\item Son poids rendait également son transport pénible, malgé une pochette à dessin adaptée\footnote{Un avantage d'un tel format ``tablette'' est qu'il est relativement facile de trouver des sacs d'artiste, habituellement destinés au transport de dessins, dans un grand nombre de formats.}. Notamment le chassis, trop massif, pouvait être allégé;
+	\item La nécessité d'une interface complémentaire (le MPD24) augmentait d'autant le temps de montage et démontage;
+	\item La relative fixité des repères visuels sur papier, qui exigeaient un démontage fastidieux pour être changées, et qui du coup, ne l'étaient pas;
+	\item Le jeu polyphonique y était limité, tant par l'unicité du stylet que par l'absence de retour visuel permettant de gérer différentes couches de manière indépendante avec un seul stylet.
+\end{itemize}
+
+\noindent La solution adoptée a été de remplacer la tablette graphique par un écran \textit{multitouch}, toujours augmenté de piezo et transducteurs tactiles. Deux versions du Xypre ont été développées sur ce même principe, mais utilisant deux technologies différentes en ce qui concerne la captation \textit{multitouch} : l'une basée sur la détection par infra-rouge et l'autre sur une détection capacitive.
+\indent Les problèmes de poids et de taille ont été réglés en utilisant des matériaux plus fins pour le chassis et en adoptant un format de valise cabine, offrant une surface équivalente à la surface utile de la tablette dans le filigramophone et reste suffisamment large, quoique juste assez, pour permettre des gestes amples impliquant tout le bras.
+
+\indent \textbf{Sur le Xypre v1}, la technologie infra-rouge du cadre de détection du \textit{multitouch} permet d'insérer une vitre \gls{PMMA} pour un fonctionnement similaire à celui développé sur le Filigramophone. L'inconvienient qui en résulte est la transmission des vibrations au cadre de détection \textit{multitouch} et les bruits de plastique qui en résultent.\\
+\indent \textbf{Sur le Xypre v2}, l'écran \textit{multitouch} capacitif ne permettant pas l'ajout d'un \gls{PMMA}, les cellules piezo ont été placées sur le côté du chassis, pré-contraints entre le chassis et une plaque de bois plus fine servant de surface de percussion, permettant là-encore de récupérer différentes nuances de hauteur spectrale, utilisée pour la synthèse en aval (cf. figure \ref{fig:interface:xypre_v2-piezo1}). La pré-contrainte du piezo est en partie dûe à l'orientation verticale du piezo (qui chuterait, autrement) mais permet également d'utiliser une technique de pseudo-symétrisation du signal du piezo (cf. schéma fonctionnel figure \ref{fig:interface:balancedPiezo} et aperçu figure \ref{fig:interface:xypre_v2-piezo1}), qui s'avère très utile quand les transducteurs piezo sont utilisés à proximité d'un écran, source de perturbations électromagnétiques. 
+
+ C'est cette dernière raison qui a motivé la conception du Xypre v2 avec une séparation entre la surface percussive des piezo et la surface de contrôle sur l'écran \textit{multitouch}.
 
 %-------------------------- Figure : balanced piezo ----------------------------------
 \begin{figure}[!htbp]
@@ -394,9 +424,8 @@ freetingSignal = sig(P)*cycle(130)*
 \end{figure}
 %-------------------------- Figure : balanced piezo ----------------------------------
 
-
-\noindent Sur le Filigramophone, un haut-parleur tactile a été fixé sur la vitre de plexiglass (cf. figure \ref{fig:interface:filigramophone-hp}) et utilisé à la fois pour le retour vibratoire et la communication d'information, en particulier par frettage virtuel de la surface (cf. section TODO:ref). Le retour vibratoire de l'instrument se distingue toutefois de l'envoi pur et simple du signal audio, la perception tactile ne lui étant pas directement liée. Au lieu de cela, un signal sinusoidal à 70Hz, correspondant à une fréquence de résonnance de la vitre de plexiglass, modulé par l'enveloppe du son final, ainsi que par sa dérivée spectrale, afin de mieux sentir dans les doigts les transitions et les ruptures du son (cf. figure TODO : schéma de principe du patch / développement dans une autre partie ?).\\
 \indent Sur le Xypre, la séparation entre la surface percussive et l'interface \textit{multitouch} de l'écran a conduit à placer le haut-parleur tactile sur une plaque de bois (contreplaqué) à l'avant du chassis (cf. figure \ref{fig:interface:xypre_v2-hp}). Il se trouve ainsi relié acoustiquement au transducteur piezo \#2 (cf. figure \ref{fig:interface:xypre_v2-hppiezo}), tandis que l'autre transducteur (figure \ref{fig:interface:xypre_v2-piezo1}) est (relativement) isolé acoustiquement en étant positionné orthogonalement.
+
 
 %------------ Figure : filigramophone et xypre HP -----------
 \begin{figure}[!htbp]
@@ -425,7 +454,6 @@ freetingSignal = sig(P)*cycle(130)*
 \end{figure}
 %-------------------------- Figure : xypre HP et piezo ----------------------------------
 
-\subsection{de la tablette à l'écran graphique multitouch}
 
 Format valise-cabine
 
@@ -444,19 +472,37 @@ TOTO: insérer photo de la 1ère version (version concert)
 
 \subsubsection{deuxième version}
 
-%-------------------------- Figure : xypre ----------------------------------
+%------------ Figure : xypre - plan et vue d'ensemble -----------
 \begin{figure}[!htbp]
-	\includegraphics[width=\textwidth]{gfx/05_interfaces/Xypre_plan01_72dpi.jpg}
-	\caption{Xypre v2 - plans de conception}
-	\label{fig:interface:xypre_plans}
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.3\textwidth}
+		\includegraphics[width=\linewidth]{gfx/05_interfaces/Xypre_plan01_72dpi.jpg}
+		\caption{Xypre v2 - plans de conception}
+		\label{fig:interface:xypre_plans}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.66\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/05_interfaces/Xypre_HP_144dpi.jpg}
+		\caption{Xypre - vue d'ensemble, débranchée}
+		\label{fig:interface:xypre}
+	\end{minipage}
 \end{figure}
+%------------ Figure : xypre - plan et vue d'ensemble -----------
 
-%-------------------------- Figure : xypre ----------------------------------
-\begin{figure}[!htbp]
-	\includegraphics[width=\textwidth]{gfx/05_interfaces/xypre_overview_unplugged.jpg}
-	\caption{xypre - vue d'ensemble, débranchée}
-	\label{fig:interface:xypre}
-\end{figure}
+% %-------------------------- Figure : xypre ----------------------------------
+% \begin{figure}[!htbp]
+% 	\includegraphics[width=\textwidth]{gfx/05_interfaces/Xypre_plan01_72dpi.jpg}
+% 	\caption{Xypre v2 - plans de conception}
+% 	\label{fig:interface:xypre_plans}
+% \end{figure}
+
+% %-------------------------- Figure : xypre ----------------------------------
+% \begin{figure}[!htbp]
+% 	\includegraphics[width=\textwidth]{gfx/05_interfaces/xypre_overview_unplugged.jpg}
+% 	\caption{xypre - vue d'ensemble, débranchée}
+% 	\label{fig:interface:xypre}
+% \end{figure}
 
 Ecran \textit{multitouch} capacitif : détecte les doigts uniquement, pas les objets => motivation pour développer des objets positionnables de manière statique dans mp.TUI
 
