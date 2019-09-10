@@ -39,7 +39,9 @@ Il faut ici rappeler que les \glspl{DMI}, s'ils se caractérisent par l'usage de
 %------------ Figure : filigramophone et xypre piezo -----------
 
 %--------------------------------------------------------------
-\section{Interface gestuelle ou interface sensible?}
+\section{Différentes faces de l'interface}
+
+\subsection{Interface gestuelle ou interface sensible?}
 
 \noindent Il est souvent question ``d'interface gestuelle'' lorsqu'on pense aux \glspl{IHM} utilisées pour l'interaction musicale. Comme nous l'avons vu au chapitre précédant, le geste y occupe une part importante mais les interfaces de jeu ne se limitent pas nécessairement à la captation du geste : elle peuvent être sensibles à la température, la lumière\footnote{Voir par exemple les œuvres \textit{Light Thing} de Leaf Cutter John (\url{https://youtu.be/2jIlLHfSEfs}), ou encore \textit{Light Music} de Thierry de Mey}, la couleur, la géolocalisation\footnote{Voir en particulier les travaux d'Atau Tanaka, ou les instruments de Yann Seznec \url{https://www.impracticaldevices.com}} et réagir de manière générale à différentes conditions environnementales.\\
 \indent Par ailleurs, le geste possède un certain nombre de qualités qui ne sont pas forcément captées par l'interface, alors qu'elle sont effectivement vues et ressenties par le musicien et par le public, et contribuent ainsi à la performance, comme nous l'avons présenté au chapitre précédent.\\
@@ -48,7 +50,7 @@ Il faut ici rappeler que les \glspl{DMI}, s'ils se caractérisent par l'usage de
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Composer, interpréter, improviser en live}
+\subsection{Un support pour \textit{musiquer}}
 
 \noindent Les \glspl{DMI} intègrent souvent des matériaux sonores pré-composés, que le musicien peut déclencher et qui pourront tourner de manière autonome (paysages sonores, processus génératifs, drônes, etc.) et une part créée plus directement, qu'elle soit synthèse ou transformation de matériaux.\\
 \indent Les différents accès de l'interface de jeu doivent ainsi permettrent d'articuler au mieux ces deux pôles, en permettant la gestion du temps à différentes échelles. En particulier, les écrans \textit{multitouch}, s'ils permettent de gérer aisément de multiples processus lents (qu'on pourra visualiser et ajuster à l'écran), ne permettent guère une réactivité ``percussive'', telle que le permet un pad \gls{MIDI} ou un capteur échantillonné à fréquence élevée.\\
@@ -224,6 +226,8 @@ Les deux premières étapes sont absentes dans le cas du live-coding.
 \indent Un grand défaut des interfaces graphiques ``tactiles'' est que leur surface est généralement dépourvue de repère tactile: aucune aspérité ne vient guider la main pour qu'elle trouve ses repères et son chemin sans l'aide de la vue. Différentes stratégies peuvent venir partiellement compenser cette lacune. Leur application dépend à la fois de la technologie de captation du \textit{multitouch}, ainsi que du type de repère, statique ou dynamique, que l'on souhaite.
 
 \subsubsection{Repères statiques}
+todo : parler des partitions tangibles d'Enrique Tomas
+
 \noindent L'ajout de repères statiques ad-hoc et interchageables aide le toucher à sentir une position de repère sur l'écran tacile, ou encore les contours d'une zone d'interaction. Les interfaces ``Joué''\footnote{\url{https://www.play-joue.com}} ou ``Sensel Morph''\footnote{\url{https://sensel.com}} commercialisent différents revêtements (\textit{overlays}) pour leur surface \textit{multitouch}. Ces surfaces ne sont toutefois pas pourvue d'un écran graphique, ce qui évacue le problème de la transparence de ces repères.\\
 Une solution bon marché consiste à utiliser de la bande adhésive (cf. figure \ref{fig:interface:filigramophone-adhesif}
 ). Un intermédiaire plus fin entre l'éphémère bande adhésive et une solution fixe consiste à utiliser une plaque de plexiglass (cf. figure \ref{fig:interface:filigramophone-plexigravure}) intermédiaire entre le doigt et la surface tactile, qui permet de graver des motifs potentiellement plus complexes. Cette dernière option n'est toutefois pas toujours réalisable sur les écrans à technologie capacitive, qui nécessite parfois que le doigt soit directement en contact avec l'écran.\\
@@ -307,7 +311,9 @@ Travail avec Pascale Criton à la maison des aveugles
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Généalogie d’une interface de DMI}
-\label{sec:interfaces:sec1}
+\label{sec:interfaces:genealogie}
+
+\noindent Cette partie retrace l'évolution sur une dizaine d'années de l'évolution d'une interface personnelle de jeu, basée sur un archétype d'instrument de type ``tablette''. On peut voir dans la tablette graphique des liens évidents avec les gestes du dessin et de l'écriture (todo: ref N d'Alessandro), tandis que l'écran multitouch possède certains liens avec les interactions nouvelles qui ont émergé avec les smartphones et autre tablette de type iPad.
 
 Filigramophone : évolution depuis la tablette graphique simple, tablette augmentée, écran \textit{multitouch} augmenté, intégration de Bela…
 
@@ -315,14 +321,13 @@ De la simple tablette graphique à l’écran \textit{multitouch} augmenté de c
 La conception d’une nouvelle interface pour la performance musicale est une tâche complexe, nécessitant de nombreux aller-retours entre conception, fabrication et pratique musicale. Le filigramophone est une interface qui a connu plusieurs versions, suffisamment différentes pour avoir envie de leur donner un nouveau nom à chaque fois et suffisamment similaire pour y voir la continuité d’un seul et même instrument.
 
 %----------------------------------------------------------------------------------------------------------
-\subsection{origine : la tablette graphique}
-La tablette graphique (nommément un modèle Sapphire de Wacom) a été l’interface originelle qui a servi de base au filigramophone. J’ai commencé à l’utiliser suite à son utilisation dans le cadre de la Méta-Mallette\footnote{Logiciel pour la pratique collective de musique par ordinateur développé par l’association Puce Muse.}. La raison de ce choix est que la tablette graphique offre une interface relativement bon marché (donc déployable en nombre) qui permet un contrôle assez fin de la synthèse sonore.
-Un certain nombre de musiciens, compositeurs et concepteurs de NIME l’ont adopté pour leurs projets \cite{zbyszynski_ten_2007}, et Nicolas d’Alessandro a consacré une partie de son travail de thèse \cite{dalessandro_realtime_2009} à ce sujet, en proposant une étude détaillée des différentes échelles de mouvements dans le geste du dessin et de l'écriture (articulation doigt-poignet-épaule).
+\subsection{Origine : la tablette graphique}
 
-La tablette graphique permet de bénéficier de l’expertise du geste d’écriture et de dessin.
+TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis, ou Fairlight CMI)
 
-Ali Momeni, Jesper Nordin, gestrument (\url{https://gestrument.com/}), Pierre Jodlowski
-
+\noindent La tablette graphique (précisément un modèle Sapphire de Wacom) a été l’interface originelle qui a servi de base au filigramophone. J’ai commencé à l’utiliser dans le cadre du développement de la Méta-Mallette\footnote{Logiciel pour la pratique collective de musique par ordinateur développé par l’association Puce Muse, au développement duquel j'ai activement participé entre 2005 et 2008.}. Le choix de cette interface était motivé par la diversité de gestes expressifs possibles sur une tablette graphique, ainsi que par son coût relativement abordable\footnote{un peu moins de 100€ à l'époque} comparativement à la plupart des interfaces \gls{MIDI}, permettant de la déployer en nombre, dans le cadre d'activités pédagogiques pratiquées en groupe, dans des écoles et autres collectivités.
+\indent En dehors de son usage pour la compositio, un certain nombre de musiciens, compositeurs et concepteurs de \gls{NIME} l’ont par ailleurs adoptée pour la performance\footnote{Notamment au \gls{CNMAT} (voir \cite{zbyszynski_ten_2007}), mais on peut également citer Pierre Jodlowski (voir \url{https://youtu.be/pLARXmGwIO4}) ou Jesper Nordin (voir \url{https://gestrument.com/})}, et Nicolas d’Alessandro a consacré une partie de son travail de thèse \cite{dalessandro_realtime_2009} à ce sujet, en proposant une étude détaillée des différentes échelles de mouvements dans le geste du dessin et de l'écriture, liées à l'articulation entre doigts, poignet et épaule.
+\indent Un des inconvenient de la tablette Wacom est que la surface utile, plus petite que la surface de la tablette (ce qui permet de ne pas ``tomber'' hors de la tablette), est à peine imperceptible, tant visuellement qu'au niveau tactile. Une première adaptation de la tablette a donc consisté à rajouter des bandes adhésives permettant de matérialiser cette frontière, visuellement et tactilement (cf. figure \ref{fig:interface:wacom}).
 %-------------------------- Figure : wacom ---------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
@@ -331,8 +336,13 @@ Ali Momeni, Jesper Nordin, gestrument (\url{https://gestrument.com/}), Pierre Jo
 	\label{fig:interface:wacom}
 \end{figure}
 %-------------------------- Figure : wacom ---------
+\indent En 2007, dans l'équipe \gls{LAM}, Hugues Genevois avait acquis de nouveaux transducteurs tactiles large bande\footnote{Cette nouvelle génération offrait une bande passante de l'ordre du Hz jusqu'à plusieurs kHz, bien supérieure aux actuateurs linéaires, ainsi qu'une dynamique supérieure à celle des transducteurs piezo. Cette technologie a depuis équipé de nombreux cinéma pour transmettre une sensation plus tactile}. Nous avons fait l'expérience d'en placer un sous une tablette graphique, sur laquelle nous controlions la lecture d'un échantillon en se servant du stylet comme d'une tête de lecture virtuelle. La sensation haptique résultant était tout à fait saisissante et donnait l'impression que la surface de la tablette avait un relief similaire aux reliefs entendu dans le son : littéralement, l'impression de ``toucher le son''. Ce ``relief'' est bien entendu éphémère car ces transducteurs ne transmettent pas le continu et leur course est faible\footnote{ce qui les différencie nettement des systèmes de retours haptiques tels que développés, en particulier, à l'\gls{ACROE}}, mais la sensation est tout à fait confondante. J'ai donc utilisé ce système directement sur la tablette graphique, qui était une sorte de prototype du Filigramophone présenté ci-après.
 
-\subsection{augmentation de la tablette graphique}
+
+\subsection{Le Filigramophone: une tablette augmentée}
+
+\noindent L'expérience décrite précedemment a sucité le développement d'une interface plus intégrée, augmentant la tablette graphique d'une dimension acoustique. En effet, si la tablette graphique est une interface relativement expressive, par la possibilité qu'elle offre de contrôler trois, voire cinq variables continues en même temps\footnote{La position horizontale et verticale, la pression, et sur certains modèle, l'inclinaison du stylet (\textit{tilt}) selon les deux axes.}, sa fréquence d'échantillonage reste relativement faible\footnote{Généralement de 100Hz, d'après Wacom, mais l'objet wacom recevant les données de manière asynchrone dans Max ne permet pas la pleine exploitation de cette fréquence.} et la latence importante\footnote{La latence entre le mouvement du stylet et l'arrivée des données est de l'ordre de 50ms, alors qu'elle est généralement inférieure à 10ms pour le \gls{MIDI}.}. L'envie de l'augmenter de microphone est largement liée à cette sensation de distance qui existe dans l'utilisation d'interfaces de contrôle numérique (bien que moindre dans le MIDI, cette distance est également sensible).
+
 ajout de piezo et HP tactile pour une réponse immédiate
 ajout de MPD pour le changement de comportement
 ajout de carte/frettage de la tablette (aux crayon et feutres)
