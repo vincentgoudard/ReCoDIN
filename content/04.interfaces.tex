@@ -16,7 +16,9 @@ often give birth to subconscious ideas \\
 which might otherwise never come to life.}
 {Igor Stravinsky}{1936}
 
-\noindent Dans ce chapitre sont étudiés un certain nombre de d'aspects de la partie matérielle des \glspl{DMI}. Parallèlement seront présentées deux interfaces que j'ai développées pour ma pratique musicale : le Filigramophone (figure \ref{fig:interface:filigramophone_unplugged}) et le Xypre (figure \ref{fig:interface:xypre_unplugged}). Ces deux interfaces sont en quelque sorte des variations sur un même archétype d'instrument ``tablette'', né de l'utilisation initiale d'une tablette graphique Wacom. Leur design reflète les différentes contraintes rencontrées lors du passage d'une technologie à une autre et comment un même modèle général d'interaction est adapté en fonction du medium et des technologies qui l'implémente et l'incarne.
+\noindent Dans ce chapitre sont étudiés un certain nombre de d'aspects de la part matérielle des \glspl{DMI}. Parallèlement seront présentées deux interfaces que j'ai développées pour ma pratique musicale : le Filigramophone (figure \ref{fig:interface:filigramophone_unplugged}) et le Xypre (figure \ref{fig:interface:xypre_unplugged}). Ces deux interfaces sont en quelque sorte des variations sur un même archétype d'instrument ``tablette'', né de l'utilisation initiale d'une tablette graphique Wacom. Leur design reflète les différentes contraintes rencontrées lors du passage d'une technologie à une autre et comment un même modèle général d'interaction est adapté en fonction du medium et des technologies qui l'implémente et l'incarne.
+
+Il faut ici rappeler que les \glspl{DMI}, s'ils se caractérisent par l'usage de la computation numérique, sont aussi nécessairement des instruments électroniques, électriques et acoustiques. Il portent l'héritage et les contraintes propres à ces différents médias.
 
 %------------ Figure : filigramophone et xypre -----------
 \begin{figure}[!htbp]
@@ -53,6 +55,57 @@ which might otherwise never come to life.}
 \indent La granularité du contrôle joue également un rôle important dans cette perspective. Entre une note \gls{MIDI} qui ne déclenche qu'un événement ponctuel, un contrôleur continu qui envoie des données chaque fois qu'il est modifié et un capteur échantillonné qui envoie des informations en continu, les possibilités de contrôle seront différentes en terme de réactivité et de finesse de modulation. Il faut donc prévoir les capteurs adéquats pour les processus que l'on souhaite contrôler en aval. Comme le faisait remarquer Max Mathews: \iquote{Il faut penser aux systèmes dans leur globalité pour obtenir une quelque chose d'utilisable musicalement - on ne peut pas vraiment développer un capteur sans le mettre en perspective des programmes avec lesquels on va l'utiliser}\footnote{``One has to think of overall systems to get a musically useful thing — you can't really develop a sensor without relating it to the programs that you're going to use it with.'', Max Mathews, cité par Joel Chadabe dans \cite{chadabe_electric_1996}, p. 230}.\\
 \indent Ceci n'est pas sans poser problème dans la perspective de modularité d'un \gls{DMI} que l'on aimerait pouvoir faire évoluer et adapter à différents contextes. Un compromis consiste à disposer d'une palette de capteurs différents afin de les agencer selon une ergonomie adaptée aux gestes qu'ils invitent, et d'adapter le logiciel, plus souple, à cette configuration.
 
+
+
+\section{Matériaux structurels}
+\label{sec:interfaces:materials}
+
+\subsection{Matériaux bruts}
+
+Les matériaux sont rarement bruts
+Usinage
+=> propriétés acoustiques, mécanique (résistance, élasticité), électriques, électromagnétiques, transparence de	ces matériaux, état de surface (poreux, lisse), matériaux ``travaillables'' (e.g. collable,perçable, vissable)
+=> disponibilité et forme sous laquelle ils sont vendus (e.g. plaques de bois, textile au mètre, etc.)
+
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{bois}: le bois est historiquement le matériau phare de la lutherie, en raison de ses propriétés acoustiques et de son travail relativement facile. Il est par conséquent présent dans les instruments augmentés basés sur des instruments réalisés en bois. Le bois est également utilisé pour la fabrication de nouveaux instruments, mais souvent davantage pour sa fonction usinable que ses propriétés acoustiques. En particulier, de nombreux projets utilise du contreplaqué, disponible en plaques de différentes épaisseurs, et usinable par machine \gls{CNC} ce qui permet le prototypage rapide (todo : exemple photo?).
+	\item \textbf{métal}: le métal est couramment utilisé pour les chassis et les coques de revêtement des machines électriques et électronique. En dehors de ses propriétés de résistance mécanique, sa conductivité permet d'isoler les composants de faux contacts et de perturbations électromagnétiques et notamment d'éviter le ``bruit de masse'' qui peut survenir quand un équippement électrique tel qu'un \gls{DMI} n'est pas relié à la masse. Le métal possède également des propriétés de résonance acoustique intéressantes
+	\item \textbf{plastique} le plastique est très ductile et offre de grande facilités de thermoformage, moulage, collage, perçage, gravage, qui permettent d'obtenir toute sorte de forme et notamment de s'adapter à l'ergonomie du corps (e.g. la main du MI). Les propriétés de transparence du \gls{PMMA}\footnote{aussi connue sous le nom commercial Plexiglas} permettent de l'utiliser au dessus d'un écran. L'essor des imprimantes 3D depuis le début du \siecle{21}~siècle a également contribué à son utilisation pour le prototypage rapide dans un contexte autre qu'industriel, et de pratiques \gls{DIY} dans les \glspl{makerspace}.
+	\item \textbf{verre}, le verre a été utilisé dans la lutherie, en particulier pour le caractère cristallin de sa résonnance acoustique (e.g. Cristal Baschet, glass-harmonica) transparence, résonance (cf. projet résonance auto NIME 2019)
+	\item \textbf{mousse}, isolant phonique et vibratoire, utilisé comme tampon des capteurs de pression
+	\item \textbf{textile}, notamment tissé électrique, cf. Morin Doneaux
+\end{itemize}
+
+\subsection{Objets détournés}
+cf. DIY DMI. Hacking, circuit bending
+tambourins, instruments augmentés, les cordes
+la récup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{L'électronique}
+\label{sec:interfaces:materials}
+%--------------------------------------------------------
+\subsection{La captation}
+\subsubsection{Capteurs}
+
+\subsubsection{Interface d'aquisition}
+	- ouverts et programmables
+		- arduino, bela, teensy, etc.
+\subsubsection{Capteurs intelligents}
+	Capteurs intelligents (IHM)
+	cf \ref{appendix:delaubier}
+	e.g. leap motion, multitouch overlays
+	
+%--------------------------------------------------------
+\subsection{La production}
+\subsubsection{Haut-parleurs et transducteurs tactiles}
+\subsubsection{Actionneurs}
+retour d'effort, moteurs de jeu acoustique (e.g. F. Collautti, robot musiciens), 
+\subsection{La video}
+projection, interface écran, cf. ch rep-viz
+
+
+
 \section{La part acoustique de l'interface des DMIs}
 \label{sec:interfaces:part_acoustique}
 
@@ -63,40 +116,8 @@ which might otherwise never come to life.}
 
 \subsection{Captation : microphones et transducteurs piezo}
 
-\noindent La captation en direct de son acoustique dans un instrument électronique est une pratique très courante chez les musiciens électroacoustiques, qui permet des séquences de jeu en prise directe avec des sons concrets, amplifiés, enregistrés, transformés par l'instrument (ou non). En particulier, l'usage de microphones, notamment de transducteurs piezo, dits ``microphone de contact'', vient redonner une composante acoustique au corps physique de l'agencement instrumental (et du musicien s'il utilise directement sa voix et son corps), cette composante acoustique ``naturelle'' étant sinon généralement couverte par la puissance du son amplifié. L'intérêt principal réside dans la richesse du signal capté, comme le note Miller Puckette\footnote{``(...) sliding a brush over a drum trigger isn’t likely to produce  anything  useful,  whereas  doing  the  same  thingon an instrument that operates directly on the audio signal from the contact microphone (as we do here) has the possibility to create a wide range of useful musical sounds.'' \cite{puckette_infuriating_2011}.} : \iquote{(...) il y a peu chance que le frottement de balais sur un pad de batterie produise quoi que ce soit d'intéressant, alors que faire la même chose sur un instrument qui fonctionne directement avec le signal audio du microphone de contact (comme nous le faisons ici) offre la possibilité de créer une large gamme de sons musicaux utiles.} L'usage d'algorithmes d'analyse en temps-réel permet, au-delà d'effets déjà existants dans le domaine électroacoustique, d'utiliser les caractéristiques du son comme paramètre de contrôle. Une telle approche a été utilisé notamment dans \cite{schwarz_rich_2014} et l'interface Mogees\footnote{\url{https://www.mogees.co.uk}, voir également l'Annexe \ref{appendix:zamborlin}} est principalement basée sur ce principe. 
+\noindent La captation en direct de son acoustique dans un instrument électronique est une pratique très courante chez les musiciens électroacoustiques, qui permet des séquences de jeu en prise directe avec des sons concrets, amplifiés, enregistrés, transformés par l'instrument (ou non). En particulier, l'usage de microphones, notamment de transducteurs piezo dits ``microphone de contact'', vient redonner une composante acoustique au corps physique de l'agencement instrumental (et du musicien s'il utilise directement sa voix et son corps), cette composante acoustique ``naturelle'' étant sinon généralement couverte par la puissance du son amplifié. L'intérêt principal réside dans la richesse du signal capté, comme le note Miller Puckette\footnote{``(...) sliding a brush over a drum trigger isn’t likely to produce  anything  useful,  whereas  doing  the  same  thingon an instrument that operates directly on the audio signal from the contact microphone (as we do here) has the possibility to create a wide range of useful musical sounds.'' \cite{puckette_infuriating_2011}.} : \iquote{(...) il y a peu chance que le frottement de balais sur un pad de batterie produise quoi que ce soit d'intéressant, alors que faire la même chose sur un instrument qui fonctionne directement avec le signal audio du microphone de contact (comme nous le faisons ici) offre la possibilité de créer une large gamme de sons musicaux utiles.} L'usage d'algorithmes d'analyse en temps-réel permet, au-delà d'effets déjà existants dans le domaine électroacoustique, d'utiliser les caractéristiques du son comme paramètre de contrôle. Une telle approche a été utilisé notamment dans \cite{schwarz_rich_2014} et l'interface Mogees\footnote{\url{https://www.mogees.co.uk}, voir également l'Annexe \ref{appendix:zamborlin}} est principalement basée sur ce principe. 
 
-
-
-\subsubsection{Utilisation des piezo dans les différents DMIs réalisés}
-\todo{déplacer cette section dans 4.5?}
-\indent \textbf{Sur le Filigramophone}, des cellules piezo sont placées entre une vitre en plexiglass et le chassis contenant la tablette graphique (cf. figure \ref{fig:interface:filigramophone-piezo}). Cela permet des gestes percussifs, de frottements ou l'utilisation d'objet mis en mouvement (toupies, dés, diques, etc.) directement sur la surface, tout en conservant --~à travers le plexiglass~-- l'usage de la tablette qui renvoit les coordonnées horizontale et verticale ainsi que la pression du stylet. Ces transducteurs piezo permettent de capter les différents timbres de la surface plexi, qui présente une certaine élasticité (par rapport à la surface rigide de la tablette) en étant fixée uniquement sur ses bords, et dont la hauteur spectrale est plus grave au centre et plus aigüe sur les bords. Il est également possible de frapper sur le chassis, ce qui permet d'obtenir encore d'autres nuances de timbre.\\
-%------------ Figure : filigramophone et xypre piezo -----------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}%
-	\centering
-	\begin{minipage}[t]{0.48\textwidth}
-		\includegraphics[width=\linewidth]{gfx/05_interfaces/filigramophone-piezo_72dpi.jpg}
-		\caption{Transducteur piezo entre la vitre et le chassis sur le Filigramophone}
-		\label{fig:interface:filigramophone-piezo}
-	\end{minipage}
-	\hspace{.02\linewidth}
-	\begin{minipage}[t]{0.48\textwidth}
-	    \includegraphics[width=\linewidth]{gfx/05_interfaces/xypre-piezo_72dpi.jpg}
-		\caption{Transducteur piezo pseudo-symétrique dans le côté du chassis sur le Xypre v2 (plaque extérieur démontée)}
-		\label{fig:interface:xypre_v2-piezo1}
-	\end{minipage}
-\end{figure}
-%------------ Figure : filigramophone et xypre piezo -----------
-\indent \textbf{Sur le Xypre v1}, la technologie infra-rouge du cadre de détection du \textit{multitouch} permet d'insérer une vitre plexiglass pour un fonctionnement similaire à celui développé sur le Filigramophone. L'inconvienient qui en résulte est la transmission des vibrations au cadre de détection \textit{multitouch} et les bruits de plastique qui en résultent.\\
-\indent \textbf{Sur le Xypre v2}, l'écran \textit{multitouch} capacitif ne permettant pas l'ajout d'un plexiglass, les cellules piezo ont été placées sur le côté du chassis, pré-contraints entre le chassis et une plaque de bois plus fine servant de surface de percussion, permettant là-encore de récupérer différentes nuances de hauteur spectrale, utilisée pour la synthèse en aval (cf. figure \ref{fig:interface:xypre_v2-piezo1}). La pré-contrainte du piezo est en partie dûe à l'orientation verticale du piezo (qui chuterait, autrement) mais permet également d'utiliser une technique de pseudo-symétrisation du signal du piezo (cf. schéma fonctionnel figure \ref{fig:interface:balancedPiezo} et aperçu figure \ref{fig:interface:xypre_v2-piezo1}), qui s'avère très utile quand les transducteurs piezo sont utilisés à proximité d'un écran, source de perturbations électromagnétiques. Romain Michon a étudié différentes possibilités d'effectuer des gestes percussifs et de pression sur une tablette \textit{multitouch} dans \cite{michon_nuance_2016}, ainsi que proposé une solution hybride par l'ajout de capteurs \gls{FSR} placés sous un iPad, modulés en amplitude et récupéré via l'entrée audio d'un iPad. L'intérêt de cette solution est de permettre le calcul de la vélocité des gestes percussifs, en plus de l'aftertouch, mais la combinaison des informations de pression et de coordonnées X/Y, bien que judicieusement contournée par une triangulation des différents \gls{FSR}, reste problématique. Par ailleurs, cette solution utilisant des capteurs de pression, sous la surface rigide de l'iPad ne permet pas d'exploiter la variation de hauteur spectrale en fonction du lieu de frappe, la surface de l'iPad étant trop rigide et les \gls{FSR} inadaptés à cette gamme de fréquences. C'est cette dernière raison qui a motivé la conception du Xypre v2 avec une séparation entre la surface percussive des piezo et la surface de contrôle sur l'écran \textit{multitouch}.
-
-%-------------------------- Figure : balanced piezo ----------------------------------
-\begin{figure}[!htbp]
-	\includegraphics[width=\textwidth]{gfx/05_interfaces/balancedPiezo.pdf}
-	\caption{Montage pseudo-symétrique de transducteurs piezo-électriques}
-	\label{fig:interface:balancedPiezo}
-\end{figure}
-%-------------------------- Figure : balanced piezo ----------------------------------
 
 \subsection{Diffusion : haut-parleurs et transducteurs tactiles}
 
@@ -111,35 +132,7 @@ which might otherwise never come to life.}
 	\item \textbf{communiquer des informations} à l'instrumentiste via un retour vibratoire, tel que le frettage virtuel (cf. section TODO), ou des informations sémiotiques de plus haut-niveau\footnote{Voir en particulier le travail de Gabriela Patiño-Lakatos et al. \cite{patino-lakatos_paradigmes_2019} sur la communication intersubjective d'information par voie vibrotactile.}.
 \end{itemize}
 
-\noindent Sur le Filigramophone, un haut-parleur tactile a été fixé sur la vitre de plexiglass (cf. figure \ref{fig:interface:filigramophone-hp}) et utilisé à la fois pour le retour vibratoire et la communication d'information, en particulier par frettage virtuel de la surface (cf. section TODO:ref). Le retour vibratoire de l'instrument se distingue toutefois de l'envoi pur et simple du signal audio, la perception tactile ne lui étant pas directement liée. Au lieu de cela, un signal sinusoidal à 70Hz, correspondant à une fréquence de résonnance de la vitre de plexiglass, modulé par l'enveloppe du son final, ainsi que par sa dérivée spectrale, afin de mieux sentir dans les doigts les transitions et les ruptures du son (cf. figure TODO : schéma de principe du patch / développement dans une autre partie ?).\\
-\indent Sur le Xypre, la séparation entre la surface percussive et l'interface \textit{multitouch} de l'écran a conduit à placer le haut-parleur tactile sur une plaque de bois (contreplaqué) à l'avant du chassis (cf. figure \ref{fig:interface:xypre_v2-hp}). Il se trouve ainsi relié acoustiquement au transducteur piezo \#2 (cf. figure \ref{fig:interface:xypre_v2-hppiezo}), tandis que l'autre transducteur (figure \ref{fig:interface:xypre_v2-piezo1}) est (relativement) isolé acoustiquement en étant positionné orthogonalement.
 
-%------------ Figure : filigramophone et xypre HP -----------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}%
-	\centering
-	\begin{minipage}[t]{0.48\textwidth}
-		\includegraphics[width=\linewidth]{gfx/05_interfaces/filigramophone_hp_72dpi.jpg}
-		\caption{HP tactile sur le Filigramophone}
-		\label{fig:interface:filigramophone-hp}
-	\end{minipage}
-	\hspace{.02\linewidth}
-	\begin{minipage}[t]{0.48\textwidth}
-	    \includegraphics[width=\linewidth]{gfx/05_interfaces/Xypre_HP_144dpi.jpg}
-		\caption{HP tactile sur le Xypre}
-		\label{fig:interface:xypre_v2-hp}
-	\end{minipage}
-\end{figure}
-%------------ Figure : filigramophone et xypre HP -----------
-
-%-------------------------- Figure : xypre HP et piezo ----------------------------------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}%
-	\includegraphics[width=\textwidth]{gfx/05_interfaces/Xypre_FrontPanel_144dpi.jpg}
-	\caption{Liaison acoustique entre piezo et haut-parleur tactile sur le Xypre}
-	\label{fig:interface:xypre_v2-hppiezo}
-\end{figure}
-%-------------------------- Figure : xypre HP et piezo ----------------------------------
 
 \section{Technologies de capteurs}
 
@@ -359,6 +352,69 @@ freetingSignal = sig(P)*cycle(130)*
 \end{figure}
 
 %----------------------------------------------------------------------------------------------------------
+
+\subsubsection{Utilisation des piezo dans les différents DMIs réalisés}
+\todo{déplacer cette section dans 4.5?}
+\indent \textbf{Sur le Filigramophone}, des cellules piezo sont placées entre une vitre en plexiglass et le chassis contenant la tablette graphique (cf. figure \ref{fig:interface:filigramophone-piezo}). Cela permet des gestes percussifs, de frottements ou l'utilisation d'objet mis en mouvement (toupies, dés, diques, etc.) directement sur la surface, tout en conservant --~à travers le plexiglass~-- l'usage de la tablette qui renvoit les coordonnées horizontale et verticale ainsi que la pression du stylet. Ces transducteurs piezo permettent de capter les différents timbres de la surface plexi, qui présente une certaine élasticité (par rapport à la surface rigide de la tablette) en étant fixée uniquement sur ses bords, et dont la hauteur spectrale est plus grave au centre et plus aigüe sur les bords. Il est également possible de frapper sur le chassis, ce qui permet d'obtenir encore d'autres nuances de timbre.\\
+%------------ Figure : filigramophone et xypre piezo -----------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/05_interfaces/filigramophone-piezo_72dpi.jpg}
+		\caption{Transducteur piezo entre la vitre et le chassis sur le Filigramophone}
+		\label{fig:interface:filigramophone-piezo}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/05_interfaces/xypre-piezo_72dpi.jpg}
+		\caption{Transducteur piezo pseudo-symétrique dans le côté du chassis sur le Xypre v2 (plaque extérieur démontée)}
+		\label{fig:interface:xypre_v2-piezo1}
+	\end{minipage}
+\end{figure}
+%------------ Figure : filigramophone et xypre piezo -----------
+\indent \textbf{Sur le Xypre v1}, la technologie infra-rouge du cadre de détection du \textit{multitouch} permet d'insérer une vitre plexiglass pour un fonctionnement similaire à celui développé sur le Filigramophone. L'inconvienient qui en résulte est la transmission des vibrations au cadre de détection \textit{multitouch} et les bruits de plastique qui en résultent.\\
+\indent \textbf{Sur le Xypre v2}, l'écran \textit{multitouch} capacitif ne permettant pas l'ajout d'un plexiglass, les cellules piezo ont été placées sur le côté du chassis, pré-contraints entre le chassis et une plaque de bois plus fine servant de surface de percussion, permettant là-encore de récupérer différentes nuances de hauteur spectrale, utilisée pour la synthèse en aval (cf. figure \ref{fig:interface:xypre_v2-piezo1}). La pré-contrainte du piezo est en partie dûe à l'orientation verticale du piezo (qui chuterait, autrement) mais permet également d'utiliser une technique de pseudo-symétrisation du signal du piezo (cf. schéma fonctionnel figure \ref{fig:interface:balancedPiezo} et aperçu figure \ref{fig:interface:xypre_v2-piezo1}), qui s'avère très utile quand les transducteurs piezo sont utilisés à proximité d'un écran, source de perturbations électromagnétiques. Romain Michon a étudié différentes possibilités d'effectuer des gestes percussifs et de pression sur une tablette \textit{multitouch} dans \cite{michon_nuance_2016}, ainsi que proposé une solution hybride par l'ajout de capteurs \gls{FSR} placés sous un iPad, modulés en amplitude et récupéré via l'entrée audio d'un iPad. L'intérêt de cette solution est de permettre le calcul de la vélocité des gestes percussifs, en plus de l'aftertouch, mais la combinaison des informations de pression et de coordonnées X/Y, bien que judicieusement contournée par une triangulation des différents \gls{FSR}, reste problématique. Par ailleurs, cette solution utilisant des capteurs de pression, sous la surface rigide de l'iPad ne permet pas d'exploiter la variation de hauteur spectrale en fonction du lieu de frappe, la surface de l'iPad étant trop rigide et les \gls{FSR} inadaptés à cette gamme de fréquences. C'est cette dernière raison qui a motivé la conception du Xypre v2 avec une séparation entre la surface percussive des piezo et la surface de contrôle sur l'écran \textit{multitouch}.
+
+%-------------------------- Figure : balanced piezo ----------------------------------
+\begin{figure}[!htbp]
+	\includegraphics[width=\textwidth]{gfx/05_interfaces/balancedPiezo.pdf}
+	\caption{Montage pseudo-symétrique de transducteurs piezo-électriques}
+	\label{fig:interface:balancedPiezo}
+\end{figure}
+%-------------------------- Figure : balanced piezo ----------------------------------
+
+
+\noindent Sur le Filigramophone, un haut-parleur tactile a été fixé sur la vitre de plexiglass (cf. figure \ref{fig:interface:filigramophone-hp}) et utilisé à la fois pour le retour vibratoire et la communication d'information, en particulier par frettage virtuel de la surface (cf. section TODO:ref). Le retour vibratoire de l'instrument se distingue toutefois de l'envoi pur et simple du signal audio, la perception tactile ne lui étant pas directement liée. Au lieu de cela, un signal sinusoidal à 70Hz, correspondant à une fréquence de résonnance de la vitre de plexiglass, modulé par l'enveloppe du son final, ainsi que par sa dérivée spectrale, afin de mieux sentir dans les doigts les transitions et les ruptures du son (cf. figure TODO : schéma de principe du patch / développement dans une autre partie ?).\\
+\indent Sur le Xypre, la séparation entre la surface percussive et l'interface \textit{multitouch} de l'écran a conduit à placer le haut-parleur tactile sur une plaque de bois (contreplaqué) à l'avant du chassis (cf. figure \ref{fig:interface:xypre_v2-hp}). Il se trouve ainsi relié acoustiquement au transducteur piezo \#2 (cf. figure \ref{fig:interface:xypre_v2-hppiezo}), tandis que l'autre transducteur (figure \ref{fig:interface:xypre_v2-piezo1}) est (relativement) isolé acoustiquement en étant positionné orthogonalement.
+
+%------------ Figure : filigramophone et xypre HP -----------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/05_interfaces/filigramophone_hp_72dpi.jpg}
+		\caption{HP tactile sur le Filigramophone}
+		\label{fig:interface:filigramophone-hp}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/05_interfaces/Xypre_HP_144dpi.jpg}
+		\caption{HP tactile sur le Xypre}
+		\label{fig:interface:xypre_v2-hp}
+	\end{minipage}
+\end{figure}
+%------------ Figure : filigramophone et xypre HP -----------
+
+%-------------------------- Figure : xypre HP et piezo ----------------------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\includegraphics[width=\textwidth]{gfx/05_interfaces/Xypre_FrontPanel_144dpi.jpg}
+	\caption{Liaison acoustique entre piezo et haut-parleur tactile sur le Xypre}
+	\label{fig:interface:xypre_v2-hppiezo}
+\end{figure}
+%-------------------------- Figure : xypre HP et piezo ----------------------------------
+
 \subsection{de la tablette à l'écran graphique multitouch}
 
 Format valise-cabine
