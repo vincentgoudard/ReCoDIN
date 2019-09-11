@@ -67,11 +67,60 @@ Il faut ici rappeler que les \glspl{DMI}, s'ils se caractérisent par l'usage de
 \noindent Si on les considère sur le plan matériel, il faut encore noter que les \glspl{DMI}, s'ils se caractérisent par l'usage de la computation numérique, sont aussi nécessairement des instruments électroniques, électriques et acoustiques. Il portent par conséquent l'héritage et les contraintes propres à ces différentes dimensions.\\
 \indent Dans le domaine virtuel du code informatique, ces dimensions sont (trop\footnote{Cf. commentaires en section \ref{ch:algorithms:digital-material}}) bien séparées : la mécanique et l'électricité y sont absentes, et les signaux acoustiques et de contrôle bien rangés dans des variables indépendantes qui n'interagissent que si on le leur demande explicitement. Dans le monde réel, au contraire, l'interférence est la règle --~pour le meilleur et pour le pire~-- et il devient nécessaire d'isoler les différents signaux si l'on ne veut pas avoir à gérer la complexité de leur interaction : mettre les haut-parleurs loin des microphones, isoler les câbles électriques pour ne pas capter la radio, rajouter des mousses pour ne pas entendre les bruits mécaniques d'une frappe sur un capteur, etc. L'interface de jeu est cette partie d'un \gls{DMI} qui doit communiquer avec le virtuel mais surtout composer avec le réel.
 
+%-------------------------------------------------------------
 
-\section{Matériaux structurels}
+\section{Facteurs de formes: héritages et transpositions}
+
+\subsection{Héritage instrumental}
+
+\noindent Les \glspl{DMI}, en partie libérés\footnote{cf. § \ref{sec:interfaces:part_acoustique}} des contraintes de facteur de forme liées à l'acoustique, présentent un agencement et une topologie liés à des questions d'ergonomie d'une part mais aussi d'héritages, instrumentaux ou non. L'héritage le plus évident est celui des techniques de jeu et du répertoire, qui prend une importance considérable dans le design des \glspl{DMI} inspirés d'instruments pré-existants, en particulier les instruments dits augmentés (cf. Annexes \ref{appendix:turchet} et \ref{appendix:mamou-mani}). Cet héritage est le plus manifeste dans les instruments destinés au commerce, en permettant un effet dilligence\footnote{notion définie par le médiologue Jacques Perriault, décrivant les protocoles mis en place pour l'adaptation d'une innovation en vue de son acceptation sociale (``Les premiers wagons avaient la forme des diligences.'')} entre instruments classiques et instruments nouveaux.\\
+
+TODO : inclure une image de la HyVibe et/ou de l'hyper mandoline de Turchet.\\
+Héritage des techniques de jeu et du répertoire : cf. interview Adrien MM et Lucas Turchet) 
+
+
+\subsection{Héritage du corps}
+\noindent L'ergonomie, pensée en dehors de l'organologie classique, nous amène à considérer directement le corps, et plus particulièrement les mains. Comme l'explique Serge de Laubier (cf. Annexe \ref{appendix:delaubier}) :\\
+\iquote{(...) quand on fabrique un instrument il y a une contrainte, c'est le corps et donc forcément, il faut que les instruments, en tout cas ceux qui fonctionnent bien, soient quand même relativement bien adaptés au corps... relativement parce que, même les instruments acoustiques, les instrumentistes se détruisent pas mal mais quand même, malgré tout, il arrivent à les pratiquer pendant des années, plusieurs heures par jour, et en général ils tiennent... donc la contrainte du corps est importante et la première contrainte c'est celle des mains, avant la contrainte du corps... parce que c'est le plus agile je pense, le plus agile, rapide, réactif}\\
+
+Un certain nombre d'instruments comme ``The Hands'' de Michel Waisvisz ou le Méta-Instrument de Serge De Laubier sont ainsi directement conçus à partir de l'ergonomie de la main, de la mécanique du corps.
+
+\subsection{Héritage de l'objet}
+
+\noindent L'instrument est également un objet de scénographie et c'est parfois sa fonction scénographique qui initie et oriente le développement de l'instrument. C'est par exemple le cas dans l'usage d'objets détournés, tels que ``The Sponge'' de Martin Marier \cite{marier_sponge_2010}, ou dans les installations de Patrick Saint-Denis qui \iquote{part de l'objet} et \iquote{poursuit l'idée des objets animés par le son} (cf. Annexe \ref{appendix:saint-denis}).\\
+
+TODO : mettre une image de The Sponge et des accordéons de Patrick Saint Denis
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Héritage poétique}
+
+\noindent Une autre forme d'héritage est celui de l'imaginaire, de la force d'évocation poétique des objets, qui dépasse le strict cadre fonctionnel de la relation instrumentale. Cet imaginaire polarise le jeu du musicien et l'écoute du public, \iquote{comme s'il y avait un arrière plan imaginaire de tout ce que ça draine d'histoire, de projections} (cf. Annexe \ref{appendix:dumeaux}). On retrouve la même fonction de détournement d'objets et d'association imaginaire dans ``l'Olitherpe'', instrument joué par Patricia Dallio, qui se présente comme un agencement de capteurs intégrés dans des objets de récupération. 
+
+\begin{quotation}
+	J'ai l'habitude de récupérer des objets qui me parlent. Je ne sais pas pourquoi il me parlent, mais ils me parlent. J'ai pu associer des mouvements aux formes des objets. (...) Le mouvement m'inspirait l'objet, ou l'objet était en corrélation avec le mouvement. C'est aussi une de mes habitudes de récupérer et de savoir ce que j'ai dans mes affaires et de pouvoir l'intégrer à quelque chose d'utile et de pratique qui n'est pas forcément son but d'origine.
+\end{quotation}
+
+\noindent Dans un documentaire\footnote{Documentaire ``L'Olitherpe et la teneur de l'air'' : \url{https://vimeo.com/224494409}}, Olivier Charlet qui s'occupe de la construction du dispositif (intégration des capteurs dans un habillage et une structure) évoque plusieurs pistes qui orientent l'intégration des capteurs : 
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+\item \textbf{l'usage qu'en fait la musicienne} dans son jeu, dont on peut imaginer qu'il conditionne l'endroit du dispositif où le nouveau capteur sera intégré; 
+\item le \textbf{fonctionnement propre des capteurs} : par exemple un capteur de distance qui envoie un signal infra-rouge et reçoit sa réflection nécessitera un espace libre dans son champ de captation;
+\item une \textbf{association morphologique} entre le mouvement de l'instrumentiste et la forme de l'objet;
+\item des \textbf{associations imaginaires et poétiques} : le capteur infra-rouge évoque des yeux et c'est dans un vieux phare de vélo récupéré qu'il sera intégré, choisi pour ses qualités évocatoires (``J'ai l'habitude de récupérer des objets qui me parlent.'').
+\end{itemize}
+
+\noindent On peut voir dans la démarche artisanale et \gls{DIY} des lutheries numériques l`importance accordée à la charge affective des objets; les contrôleurs numériques (tels que les contrôleurs \gls{MIDI}) vendus dans le commerce sont en effet souvent issus d'une production industrielle et faits de matériaux plastiques qui à l'inverse du bois d'un violon, ne porte pas la trace organique des fibres du bois ou celle du geste artisanal imprimé par le luthier et se retrouve, d'une certaine manière, dépourvu d'histoire.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Matériaux}
 \label{sec:interfaces:materials}
 
-\subsection{Matériaux bruts}
+Cette section regroupe un ``fatras'' d'éléments matériels qui peuvent se retrouver sur la table de travail d'un luthier numérique. Il aurait été tentant de les séparer en une catégorie ``matériaux bruts'' d'une part et ``électronique'' d'autre part, mais ç'aurait été masquer l'interpénétration croissante de ces deux champs. D'une part, les matériaux ``bruts'' sont en fait rarement bruts au point d'être ``naturels'' (e.g. une plaque de contreplaqué ne pousse pas dans la nature), et d'autre part, l'intégration de l'électronique confère souvent un rôle à des matériaux qui ne le sont a priori pas électriques\footnote{Considérons par exemple le cas d'un chassis métallique, dont la fonction est avant tout structurelle, et qui est relié à la masse.}.
+
+la miniaturisation de l'électronique 
+
+\subsection{Matériaux structurels}
 
 Les matériaux sont rarement bruts
 Usinage
@@ -81,40 +130,52 @@ Usinage
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{bois}: le bois est historiquement le matériau phare de la lutherie, en raison de ses propriétés acoustiques et de son travail relativement facile. Il est par conséquent présent dans les instruments augmentés basés sur des instruments réalisés en bois. Le bois est également utilisé pour la fabrication de nouveaux instruments, mais souvent davantage pour sa fonction usinable que ses propriétés acoustiques. En particulier, de nombreux projets utilise du contreplaqué, disponible en plaques de différentes épaisseurs, et usinable par machine \gls{CNC} ce qui permet le prototypage rapide (todo : exemple photo?). Aspect noble du bois=>présence sur des instruments high-tech (Linnstrument, soundplane, mettre des photos)
-	\item \textbf{métal}: le métal est couramment utilisé pour les chassis et les coques de revêtement des machines électriques et électronique. En dehors de ses propriétés de résistance mécanique, sa conductivité permet d'isoler les composants de faux contacts et de perturbations électromagnétiques et notamment d'éviter le ``bruit de masse'' qui peut survenir quand un équippement électrique tel qu'un \gls{DMI} n'est pas relié à la masse. Le métal possède également des propriétés de résonance acoustique intéressantes
+	\item \textbf{métal}: le métal est couramment utilisé pour les chassis et les coques de revêtement des machines électriques et électronique. En dehors de ses propriétés de résistance mécanique, sa conductivité permet d'isoler les composants de faux contacts et de perturbations électromagnétiques et notamment d'éviter le ``bruit de masse'' qui peut survenir quand un équippement électrique tel qu'un \gls{DMI} n'est pas relié à la masse. Le métal possède également des propriétés de résonance acoustique qui en font un matériau intéressant pour la diffusion, utilisé notamment dans le diffuseur ``Gong'' de l'onde Martenot.
 	\item \textbf{plastique} le plastique est très ductile et offre de grande facilités de thermoformage, moulage, collage, perçage, gravage, qui permettent d'obtenir toute sorte de forme et notamment de s'adapter à l'ergonomie du corps (e.g. la main du MI). Les propriétés de transparence du \gls{PMMA}\footnote{aussi connue sous le nom commercial Plexiglass} permettent de l'utiliser au dessus d'un écran. L'essor des imprimantes 3D depuis le début du \siecle{21}~siècle a également contribué à son utilisation pour le prototypage rapide dans un contexte autre qu'industriel, et de pratiques \gls{DIY} dans les \glspl{makerspace}.
 	\item \textbf{verre}, le verre a été utilisé dans la lutherie, en particulier pour le caractère cristallin de sa résonnance acoustique (e.g. Cristal Baschet, glass-harmonica) transparence, résonance (cf. projet résonance auto NIME 2019)
 	\item \textbf{mousse}, isolant phonique et vibratoire, utilisé comme tampon des capteurs de pression
-	\item \textbf{textile}, notamment tissé électrique, cf. Morin Doneaux
+	\item \textbf{textile}, notamment tissé électrique (e-textile), wearable gloves, cf. Morin Doneaux
 \end{itemize}
 
+%-------------------------------------------------------------
 \subsection{Objets détournés}
+
 cf. DIY DMI. Hacking, circuit bending
 tambourins, instruments augmentés, les cordes
 la récup
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{L'électronique}
-\label{sec:interfaces:materials}
-%--------------------------------------------------------
-\subsection{La captation}
-\subsubsection{Capteurs}
 
-\subsubsection{Interface d'aquisition}
-	- ouverts et programmables
-		- arduino, bela, teensy, etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Capteurs}
+
+Une grande diversité de capteurs est disponible sur le marché, mesurant différentes grandeurs physiques\footnote{position, distance, pression, orientation, flux d'air, lumière, humidité, température, champ magnétique, présence, contact, etc.} exploitables dans l'interaction avec un \gls{DMI}. On peut regrouper les capteurs dans deux grandes familles
+Capteurs ``bruts'' et capteur ``intelligents''
+Pads MIDI => peuvent être implémentés via interrupteurs, piezzo, FSR...
+Multitouch = différentes technologies de détections (capacitives, infra-rouge, etc.) pour renvoyer la position des doigts.
+
+https://sensorwiki.org
+
+Question de latence : ``action-sound latency'' de A. McPherson
 \subsubsection{Capteurs intelligents}
 	Capteurs intelligents (IHM)
 	cf \ref{appendix:delaubier}
 	e.g. leap motion, multitouch overlays
-	
-%--------------------------------------------------------
-\subsection{La production}
+
+\subsection{Interface d'aquisition}
+	- ouverts et programmables
+		- arduino, bela, teensy, etc.
+
+\subsection{Ordinateurs et DSP}
+- raspberry pi, laptops, samplers and synths, smartphones
+
+
 \subsubsection{Haut-parleurs et transducteurs tactiles}
+
 \subsubsection{Actionneurs}
 retour d'effort, moteurs de jeu acoustique (e.g. F. Collautti, robot musiciens), 
+
 \subsection{La video}
 projection, interface écran, cf. ch rep-viz
-
 
 
 \section{La part acoustique de l'interface des DMIs}
@@ -122,7 +183,7 @@ projection, interface écran, cf. ch rep-viz
 
 \noindent Il faut ici rappeler que les \glspl{DMI}, s'ils se caractérisent par l'usage de la computation numérique, sont aussi nécessairement des instruments électroniques, électriques et acoustiques. Il portent l'héritage et les contraintes propres à ces différents médias. Mais le phénomène acoustique, omnidirectionnel et tri-dimensionnel dans le monde physique, est réduit dans l'électronique numérique à un signal mono-dimensionnel\footnote{Nicolas Collins, dressant une liste de traits distinctifs entre hardware et software dans \cite{collins_semiconducting_2013} notait: ``Traditional acoustic instruments are three-dimensional objects, radiating sound in every direction, filling the volume of architectural space like syrup spreading over a waffle. Electronic circuits are much flatter, essentially two-dimensional. Software is inherently linear, every program is a one-dimensional string of code.''} et mono-directionnel\footnote{Au niveau logiciel, des blocs bi-directionnels de plus haut niveau peuvent cependant être crées, comme par exemple dans la librairie de modèles physiques pour \gls{FAUST}, cf. \cite{berdahl_introduction_2012} et \cite{michon_faust_2018}.}, introduisant une distinction entre les ``entrées'' d'une part et les ``sorties'' d'autre part. La dimension acoustique des \glspl{DMI} s'intègre donc dans un circuit ouvert ou fermé avec le système de computation via des transducteurs acoustiques --~microphones en entrée, ou haut-parleurs en sortie.\\
 % \indent Par ailleurs, la vibration acoustique peut-être ressentie de manière auditive, quand sa transmission est aérienne, ou tactile lorsqu'elle est solidienne. Ces deux types de vibrations correspondent généralement à deux technologies de transducteurs différentes.
-\indent Paradoxalement, si le résultat acoustique d'un instrument est \textit{in fine} ce qui nous intéresse le plus, la part acoustique de l'instrument numérique est aussi sa part maudite. Les phénomènes de résonnance et de rétro-action qui se produisent dans l'instrument acoustique et qui sont également exploités dans les instruments électriques analogiques (e.g. le feedback entre une guitare électrique et un amplificateur), posent un certain nombre de problèmes lorsqu'on introduit un élément de computation numérique dans un tel système\footnote{Une des raisons à ce problème est l'instabilité consubstantielle aux systèmes bouclés discrets et non-linéaires, mais également, de manière plus générale, la transition entre le domaine continu de l'acoustique et le domaine symbolique de l'informatique implique une analyse du son qui nécessite une modélisation des phénomènes perceptifs, tels que la hauteur, le rythme, etc. utilisés pour le contrôle}.\\
+\indent Paradoxalement, si le résultat acoustique d'un instrument est \textit{in fine} ce qui nous intéresse le plus, la part acoustique de l'instrument numérique est aussi sa part maudite. Maudite au sens que lui donne George Bataille\footnote{La part maudite est la part d'énergie excédantaire, dissipée et gaspillée dans un luxe inutile.} d'une part dépensée et perdue dans la réduction par le microphone de la richesse du phénomène acoustique à un simple signal mono-dimensionnel autant que par le filtrage par les matériaux diffuseurs du signal audio qu'on leur envoit. Maudite également en raison du couplage épineux entre acoustique physique et audio numérique. Les phénomènes de résonnance et de rétro-action qui se produisent dans l'instrument acoustique et qui sont également exploités dans les instruments électriques analogiques (e.g. le feedback entre une guitare électrique et un amplificateur), posent un certain nombre de problèmes lorsqu'on introduit un élément de computation numérique dans un tel système\footnote{Une des raisons à ce problème est l'instabilité consubstantielle aux systèmes bouclés discrets et non-linéaires, mais également, de manière plus générale, la transition entre le domaine continu de l'acoustique et le domaine symbolique de l'informatique implique une analyse du son qui nécessite une modélisation des phénomènes perceptifs, tels que la hauteur, le rythme, etc. utilisés pour le contrôle}.\\
 \extra{nombreux synthétiseurs analogiques ont été mis sur le marché, qui articulent cette part d'électronique analogique (pour les filtres et la synthèse) et numérique (pour le  contrôle), afin de pouvoir bénéficier des avantages des deux domaines.}
 
 \subsection{Captation : microphones et transducteurs piezo}
@@ -145,17 +206,6 @@ projection, interface écran, cf. ch rep-viz
 
 
 
-\section{Technologies de capteurs}
-
-Une grande diversité de capteurs est disponible sur le marché, mesurant différentes grandeurs physiques\footnote{position, distance, pression, orientation, flux d'air, lumière, humidité, température, champ magnétique, présence, contact, etc.} exploitables dans l'interaction avec un \gls{DMI}. On peut regrouper les capteurs dans deux grandes familles
-Capteurs ``bruts'' et capteur ``intelligents''
-Pads MIDI => peuvent être implémentés via interrupteurs, piezzo, FSR...
-Multitouch = différentes technologies de détections (capacitives, infra-rouge, etc.) pour renvoyer la position des doigts.
-
-https://sensorwiki.org
-
-Question de latence : ``action-sound latency'' de A. McPherson
-
 %-------------------------- Figure : PQlabs overlay ----------------------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
@@ -168,10 +218,18 @@ Question de latence : ``action-sound latency'' de A. McPherson
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Qualité ergodynamiques}
+\section{Ergonomie, ergodynamisme}
+
+%------------------------------------------------------------
+\subsection{Ergodynamisme}
+
+cf. définition de Thor Magnusson
+agencement de l’interface, représentation visuelle, repères tactile, frettage
 
 
+%------------------------------------------------------------
 \subsection{Proprioception}
+
 \noindent La proprioception désigne la perception de la position des différentes parties du corps dans l'espace, recouvrant le sens du mouvement (\textit{kinesthésie}) et le sens de la posture (\textit{statesthésie}). Dans le cas des \glspl{DMI}, cette proprioception est double : il s'agit à la fois d'intégrer la topologie réelle de l'instrument (disposition des capteurs, espace du mouvement autour de ceux-ci, course sensible et courbes de réponse...) mais également la topologie virtuelle des algorithmes manipulés. En ce qui concerne la topologie réelle de l'instrument, un aller-retour s'opère entre des gestes impliqués par le positionnement des capteurs et des gestes trouvés durant le jeu avec l'instrument.\\
 \indent Ainsi, le positionnement des capteurs dans Xypre v2 a été revu en fonction de gestes qui venaient naturellement lors du jeu avec le filigramophone. Par exemple, le geste de percussion sur le côté du chassis venait naturellement dans la course du bras pivotant autour de l'articulation de l'épaule, alors qu'aucun capteur n'avait été positionné là. C'est par ailleurs un geste de percussion qu'on retrouve dans des instruments de percussion comme le Mridang indien, et que l'auteur ayant pratiqué le tabla trouvait relativement aisé.
 
@@ -179,12 +237,7 @@ Question de latence : ``action-sound latency'' de A. McPherson
 
 Affordance
 
-%------------------------------------------------------------
-\subsection{Ergodynamisme}
-cf. définition de Thor Magnusson
-agencement de l’interface, représentation visuelle, repères tactile, frettage
-
-\subsubsection{Le poids du hardware}
+\subsection{Le poids du hardware}
 
 \noindent Le hardware, comme son nom l'indique, est solide, matériel, ``dur''. Sa matérialité, son poids affecte sa transportabilité et constitue un facteur contraignant pour le musicien. Sa dématérialisation dans des alternative logicielles —\textit{soft}, plus douces et légères— permet ou non d'intégrer dans les limites acceptables pour leur transport des fonctionnalités offertes par les équipements \textit{hard}.
 En particulier, la virtualisation des outils traditionnellement utilisés par les ingénieurs du son (table de mixage, équaliseurs, compresseurs et autres effets) permet leur intégration dans l'instrument lui-même.
@@ -193,12 +246,7 @@ En particulier, la virtualisation des outils traditionnellement utilisés par le
 Ainsi, Serge de Laubier qui utilisait une table de mixage Yamaha O2R (31kg) motorisée et contrôlée directement depuis son Méta-Instrument, ainsi qu'un échantilloneur EMU (4,5kg) a progressivement conçu des émulation logicielles de ces équipements pour alléger le transport. Par ailleurs, les émulations logicielles permettent de réaliser d'autres fonctions qui n'étaient pas présentes dans les modèles originaux.
 
 
-\subsubsection{Choix des capteurs et latence}
-
-
-
-
-\subsubsection{Portabilité et manipulation de l'interface}
+\subsection{Portabilité et manipulation de l'interface}
 
 Les instruments peuvent prendre différentes formes, plus ou moins grandes, qui définissent à la fois leur portabilité ainsi que la posture du musicien envers son instrument.
 \vspace{-1em}
@@ -211,7 +259,7 @@ Les instruments peuvent prendre différentes formes, plus ou moins grandes, qui 
 
 A noter que ces catégories ne sont pas étanches; par exemple, une guitare peut être portée, à l'aide d'une sangle, ou posée sur le genou et jouée à plat. 
 
-\subsubsection{Intégration de l'instrument}
+\subsection{Intégration et temps de montage}
 
 Est-ce que l'instrument est plug'n'play ou va-t-il va falloir connecter ses différents éléments ? Connections : 
 \vspace{-1em}
@@ -224,12 +272,13 @@ Est-ce que l'instrument est plug'n'play ou va-t-il va falloir connecter ses diff
 
 Les deux premières étapes sont absentes dans le cas du live-coding.
 
-
-\subsubsection{Temps de montage}
-
 \noindent L'agencement des différents modules qui composent un \gls{DMI} entraine une facilité variable de transportabilité et un temps de démontage/remontage de l'instrument avant qu'il soit possible d'en jouer. Par ailleurs, les instruments électrifiés nécessitent généralement d'être branchés (sauf s'ils fonctionnent entièrement sur batterie). Ces branchement prennent du temps et nécessitent d'avoir des alimentations en courant à proximité. Pour les outils numériques se rajoute à cela le ``temps de lancement'', c'est-à-dire généralement le temps de démarrer l'ordinateur, de lancer le(s) logiciel(s) nécessaire(s), d'ouvrir le patch ou le script adéquat, et éventuellement de l'initialiser avec la bonne configuration.\\
 \indent L'idéal d'un instrument numérique est souvent qualifié de ``\textit{plug'n play}'', mais rares sont les cas d'instruments qui s'affranchissent du ``\textit{plug}'' qui peut s'avérer long. Il est important de prendre en compte cette durée dans le design d'un \gls{DMI}, car tout le temps passé sur la partie de montage technique est pris au détriment du temps de jeu\footnote{...comme le font remarquer Nicolas Bernier (annexe \ref{appendix:bernier}), François Dumeaux (annexe \ref{appendix:dumeaux}) et Bruno Zamborlin (annexe \ref{appendix:zamborlin}) dans les entretiens)}. Notons toutefois que les \glspl{DMI} ne nécessitent généralement pas de temps d'accordage, et ne sont pas généralement pas sujets aux conditions de température et d'hygrométrie qui nécessite le ré-accordage des instruments acoustique et le temps de chauffe, particulièrement important pour les cuivres.
 
+\subsection{Se repérer dans l'interface}
+
+\subsubsection{Repères visuels}
+Cf. section représentation visuelle
 
 \subsection{Se repérer au toucher}
 \indent Un grand défaut des interfaces graphiques ``tactiles'' est que leur surface est généralement dépourvue de repère tactile: aucune aspérité ne vient guider la main pour qu'elle trouve ses repères et son chemin sans l'aide de la vue. Différentes stratégies peuvent venir partiellement compenser cette lacune. Leur application dépend à la fois de la technologie de captation du \textit{multitouch}, ainsi que du type de repère, statique ou dynamique, que l'on souhaite.
@@ -263,59 +312,13 @@ Une solution bon marché consiste à utiliser de la bande adhésive (cf. figure 
 \label{sec:audio-fretting}
 \noindent Le déclenchement d'impulsion dans un haut-parleur tactile peut aider à sentir les paliers dans la progression d'un geste continu (e.g. les différentes ``notes'' d'une échelle de hauteur). Ce type de retour tactile fonctionne uniquement en réponse à un mouvement, le repère n'est pas sensible de manière statique. Son avantage par rapport à un repère physique (e.g. adhésif) .\\
 
+Spatialisation ou diffusion ad-hoc
+Travail avec Pascale Criton à la maison des aveugles
+
 \subsubsection{Vérouillage des composants GUI}
 \noindent Une solution logicielle partielle à ce problème et largement utilisée dans les systèmes de \gls{GUI} consiste à vérouiller l'interaction avec le composant GUI tant que le doigt est en contact avec la surface tactile, ce qui permet d'utiliser l'intégralité de l'écran tactile pour l'interaction et d'avoir des gestes plus amples. Ce solution nécessite toutefois que le composant ait bien été ciblé au moment du contact initial.
 
 
-%-------------------------------------------------------------
-
-\subsection{Facteurs de formes: héritages et transpositions}
-
-\subsubsection{Héritage instrumental}
-
-\noindent Les \glspl{DMI}, en partie libérés\footnote{cf. § \ref{sec:interfaces:part_acoustique}} des contraintes de facteur de forme liées à l'acoustique, présentent un agencement et une topologie liés à des questions d'ergonomie d'une part mais aussi d'héritages, instrumentaux ou non. L'héritage le plus évident est celui des techniques de jeu et du répertoire, qui prend une importance considérable dans le design des \glspl{DMI} inspirés d'instruments pré-existants, en particulier les instruments dits augmentés (cf. Annexes \ref{appendix:turchet} et \ref{appendix:mamou-mani}). Cet héritage est le plus manifeste dans les instruments destinés au commerce, en permettant un effet dilligence\footnote{notion définie par le médiologue Jacques Perriault, décrivant les protocoles mis en place pour l'adaptation d'une innovation en vue de son acceptation sociale (``Les premiers wagons avaient la forme des diligences.'')} entre instruments classiques et instruments nouveaux.\\
-
-TODO : inclure une image de la HyVibe et/ou de l'hyper mandoline de Turchet.\\
-Héritage des techniques de jeu et du répertoire : cf. interview Adrien MM et Lucas Turchet) 
-
-
-\subsubsection{héritage du corps}
-\noindent L'ergonomie, pensée en dehors de l'organologie classique, nous amène à considérer directement le corps, et plus particulièrement les mains. Comme l'explique Serge de Laubier (cf. Annexe \ref{appendix:delaubier}) :\\
-\iquote{(...) quand on fabrique un instrument il y a une contrainte, c'est le corps et donc forcément, il faut que les instruments, en tout cas ceux qui fonctionnent bien, soient quand même relativement bien adaptés au corps... relativement parce que, même les instruments acoustiques, les instrumentistes se détruisent pas mal mais quand même, malgré tout, il arrivent à les pratiquer pendant des années, plusieurs heures par jour, et en général ils tiennent... donc la contrainte du corps est importante et la première contrainte c'est celle des mains, avant la contrainte du corps... parce que c'est le plus agile je pense, le plus agile, rapide, réactif}\\
-
-Un certain nombre d'instruments comme ``The Hands'' de Michel Waisvisz ou le Méta-Instrument de Serge De Laubier sont ainsi directement conçus à partir de l'ergonomie de la main, de la mécanique du corps.
-
-\subsubsection{héritage de l'objet}
-
-\noindent L'instrument est également un objet de scénographie et c'est parfois sa fonction scénographique qui initie et oriente le développement de l'instrument. C'est par exemple le cas dans l'usage d'objets détournés, tels que ``The Sponge'' de Martin Marier \cite{marier_sponge_2010}, ou dans les installations de Patrick Saint-Denis qui \iquote{part de l'objet} et \iquote{poursuit l'idée des objets animés par le son} (cf. Annexe \ref{appendix:saint-denis}).\\
-
-TODO : mettre une image de The Sponge et des accordéons de Patrick Saint Denis
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{héritage poétique}
-
-\noindent Une autre forme d'héritage est celui de l'imaginaire, de la force d'évocation poétique des objets, qui dépasse le strict cadre fonctionnel de la relation instrumentale. Cet imaginaire polarise le jeu du musicien et l'écoute du public, \iquote{comme s'il y avait un arrière plan imaginaire de tout ce que ça draine d'histoire, de projections} (cf. Annexe \ref{appendix:dumeaux}). On retrouve la même fonction de détournement d'objets et d'association imaginaire dans ``l'Olitherpe'', instrument joué par Patricia Dallio, qui se présente comme un agencement de capteurs intégrés dans des objets de récupération. 
-
-\begin{quotation}
-	J'ai l'habitude de récupérer des objets qui me parlent. Je ne sais pas pourquoi il me parlent, mais ils me parlent. J'ai pu associer des mouvements aux formes des objets. (...) Le mouvement m'inspirait l'objet, ou l'objet était en corrélation avec le mouvement. C'est aussi une de mes habitudes de récupérer et de savoir ce que j'ai dans mes affaires et de pouvoir l'intégrer à quelque chose d'utile et de pratique qui n'est pas forcément son but d'origine.
-\end{quotation}
-
-\noindent Dans un documentaire\footnote{Documentaire ``L'Olitherpe et la teneur de l'air'' : \url{https://vimeo.com/224494409}}, Olivier Charlet qui s'occupe de la construction du dispositif (intégration des capteurs dans un habillage et une structure) évoque plusieurs pistes qui orientent l'intégration des capteurs : 
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-\item \textbf{l'usage qu'en fait la musicienne} dans son jeu, dont on peut imaginer qu'il conditionne l'endroit du dispositif où le nouveau capteur sera intégré; 
-\item le \textbf{fonctionnement propre des capteurs} : par exemple un capteur de distance qui envoie un signal infra-rouge et reçoit sa réflection nécessitera un espace libre dans son champ de captation;
-\item une \textbf{association morphologique} entre le mouvement de l'instrumentiste et la forme de l'objet;
-\item des \textbf{associations imaginaires et poétiques} : le capteur infra-rouge évoque des yeux et c'est dans un vieux phare de vélo récupéré qu'il sera intégré, choisi pour ses qualités évocatoires (``J'ai l'habitude de récupérer des objets qui me parlent.'').
-\end{itemize}
-
-\noindent On peut voir dans la démarche artisanale et \gls{DIY} des lutheries numériques l`importance accordée à la charge affective des objets; les contrôleurs numériques (tels que les contrôleurs \gls{MIDI}) vendus dans le commerce sont en effet souvent issus d'une production industrielle et faits de matériaux plastiques qui à l'inverse du bois d'un violon, ne porte pas la trace organique des fibres du bois ou celle du geste artisanal imprimé par le luthier et se retrouve, d'une certaine manière, dépourvu d'histoire.
-
-%-------------------------------------------------------------
-\subsection{retour audio-tactile}
-Intégration de HP tactile
-Spatialisation ou diffusion ad-hoc
-Travail avec Pascale Criton à la maison des aveugles
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
