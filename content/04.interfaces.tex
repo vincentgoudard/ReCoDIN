@@ -373,7 +373,18 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 	\end{minipage}
 \end{figure}
 %------------ Figure : filigramophone et xypre piezo -----------
-\indent J'ai pour ma part choisi d'insérer les microphones piezo entre une vitre en \gls{PMMA} et le chassis contenant la tablette graphique (cf. figure \ref{fig:interface:filigramophone-piezo}). Cela permet des gestes percussifs, de frottements ou l'utilisation d'objet mis en mouvement (toupies, dés, diques, etc.) directement sur la surface, tout en conservant --~à travers le \gls{PMMA}~-- l'usage de la tablette qui renvoit les coordonnées horizontale et verticale ainsi que la pression et l'inclinaison du stylet. Ces transducteurs piezo permettent de capter les différents timbres de la surface \gls{PMMA}, qui présente une certaine élasticité (par rapport à la surface rigide de la tablette) en étant fixée uniquement sur ses bords, et dont la hauteur spectrale est plus grave au centre et plus aigüe sur les bords, à la manière d'une peau de tambour. Il est également possible de frapper sur le chassis, ce qui permet d'obtenir encore d'autres nuances de timbre. Cette solution évite par ailleurs les bruits ``parasites'' de la structure de la tablette graphique quand on frappe directement dessus. Enfin, l'ajout de la plaque de \gls{PMMA} laisse la possibilité de dessiner, ajouter de l'adhésif, ou graver directement directement sur le \gls{PMMA} (tel que présenté dans la section \ref{todo}), sans déteriorer la tablette. Eventuellement, disposer de différentes plaques de \gls{PMMA} permettrait d'adapter l'interface à différentes configurations, à la manière des ce que permettent les \textit{overlays} sur les interfaces commerciales \textit{Joué} et \textit{SenselMorph}\footnote{\url{https://www.play-joue.com}, \url{https://sensel.com}}, ou à des compositions différentes, telles que les ``\textit{tangible scores}'' d'Enrique Tomás \cite{tomas_tangible_2014}.
+\indent J'ai pour ma part choisi d'insérer les microphones piezo entre une vitre en \gls{PMMA} et le chassis contenant la tablette graphique (cf. figure \ref{fig:interface:filigramophone-piezo}). Cela permet des gestes percussifs, de frottements ou l'utilisation d'objet mis en mouvement (toupies, dés, diques, etc.) directement sur la surface, tout en conservant --~à travers le \gls{PMMA}~-- l'usage de la tablette qui renvoit les coordonnées horizontale et verticale ainsi que la pression et l'inclinaison du stylet. Ces transducteurs piezo permettent de capter les différents timbres de la surface \gls{PMMA}, qui présente une certaine élasticité (par rapport à la surface rigide de la tablette) en étant fixée uniquement sur ses bords, et dont la hauteur spectrale est plus grave au centre et plus aigüe sur les bords, à la manière d'une peau de tambour. Il est également possible de frapper sur le chassis, ce qui permet d'obtenir encore d'autres nuances de timbre (figure \ref{fig:interface:filigramophone-toupie}). Cette solution évite par ailleurs les bruits ``parasites'' de la structure de la tablette graphique quand on frappe directement dessus. Enfin, l'ajout de la plaque de \gls{PMMA} laisse la possibilité de dessiner, ajouter de l'adhésif, ou graver directement directement sur le \gls{PMMA} (tel que présenté dans la section \ref{todo}), sans déteriorer la tablette. Eventuellement, disposer de différentes plaques de \gls{PMMA} permettrait d'adapter l'interface à différentes configurations, à la manière des ce que permettent les \textit{overlays} sur les interfaces commerciales \textit{Joué} et \textit{SenselMorph}\footnote{\url{https://www.play-joue.com}, \url{https://sensel.com}}, ou à des compositions différentes, telles que les ``\textit{tangible scores}'' d'Enrique Tomás \cite{tomas_tangible_2014}.
+
+%-------------------------- Figure : filigramophone-toupie ----------------------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\includegraphics[width=\textwidth]{gfx/05_interfaces/filigramophone-toupie.jpg}
+	\caption[Captation du son des mains ou d'objets sur la surface du Filigramophone]{Le microphone piezo laisse la possibilité de capter le son des mains ou d'objets sur la surface du Filigramophone}
+	\label{fig:interface:filigramophone-toupie}
+\end{figure}
+%-------------------------- Figure : filigramophone-toupie ----------------------------------
+
+
 
 \subsubsection{Intégration du transducteur tactile}
 
@@ -411,7 +422,7 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 \end{figure}
 %------------ Figure : xypre - plan et vue d'ensemble -----------
 
-\noindent L'utilisation du Filigramophone lors de performances musicales a permi de constater plusieurs points d'améliorations possibles:
+\noindent L'utilisation du Filigramophone lors de performances musicales a permi de constater plusieurs points d'améliorations possibles, qui ont donné lieu au développement d'une nouvelle interface, nommée Xypre\footnote{Une vidéo montre en accéléré le processus de fabrication de la version 2 du Xypre : \url{https://vimeo.com/358401223}}:
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item La taille de l'interface le rendait intransportable en avion en tant que bagage cabine, et de manière plus courante, peu pratique dans le métro parisien;
@@ -421,23 +432,18 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 	\item Le jeu polyphonique y était limité, tant par l'unicité du stylet que par l'absence de retour visuel permettant de gérer différentes couches de manière indépendante avec un seul stylet.
 \end{itemize}
 
-\noindent La solution adoptée a été de remplacer la tablette graphique par un écran \textit{multitouch}, toujours augmenté de piezo et transducteurs tactiles. Deux versions du Xypre ont été développées sur ce même principe, mais utilisant deux technologies différentes en ce qui concerne la captation \textit{multitouch} : l'une basée sur la détection par infra-rouge\footnote{Le modèle G4S-overlay de la marque PQ-Labs \url{https://www.pqlabs.com} permettant théoriquement jusqu'à 32 points de contact simultanément} et l'autre sur une détection capacitive\footnote{Un écran tactile Iiyama ProLiteT2252MSC intégrant une technologie ``capacitive projetée'' permettant la détection de dix points de contact simultanément.}.\\
-\indent Les problèmes de poids et de taille ont été réglés en utilisant des matériaux plus fins pour le chassis et en adoptant un format de valise cabine, offrant une surface équivalente à la surface utile de la tablette dans le filigramophone et reste suffisamment large, quoique juste assez, pour permettre des gestes amples impliquant tout le bras.\\
+\noindent Le poids et la taille ont été diminués en utilisant du contreplaqué plus fins pour le chassis et en adoptant un format de valise cabine, offrant une surface équivalente à la surface utile de la tablette graphique utilisée dans le filigramophone, suffisamment large --~quoique juste assez~-- pour permettre des gestes amples impliquant tout le bras.\\
+\indent La solution adoptée pour les autres problèmes évoqués a consisté à remplacer la tablette graphique par un écran \textit{multitouch}, toujours augmenté de piezo et transducteurs tactiles, le retour visuel offert par les écrans permettant de virtualiser les contrôleurs physiques utilisés sur l'interface \gls{MIDI} MPD24\footnote{Voir la librairie graphique ``mp.TUI'' développée à cette fin et présentée au chapitre \ref{ch:visual_representation}}.\\
+\indent Deux versions du Xypre ont été développées sur ce même principe, mais utilisant deux technologies différentes en ce qui concerne la captation \textit{multitouch} : l'une basée sur la détection par infra-rouge\footnote{Le modèle \textit{G4S-overlay} de la marque PQ-Labs (\url{https://www.pqlabs.com}) permettant théoriquement jusqu'à 32 points de contact simultanément} et l'autre sur une détection capacitive\footnote{Un écran tactile \textit{Iiyama ProLite T2252MSC}, intégrant une technologie ``capacitive projetée'' permettant la détection de dix points de contact simultanément.}. Les deux interfaces communiquant avec Max via le protocole \gls{TUIO}\footnote{A la différence, toutefois, que le G4S envoit directement des données \gls{TUIO} exploitables dans Max, alors que l'écran capactitif davantage destiné à un usage grand public ne les renvoit pas. Un driver payant, développé par la société \textit{Touch-Base Ltd.} est nécessaire pour convertir les données au format \gls{TUIO}.}, peu d'adaptations ont été nécessaires sur le patch Max gérant l'interaction et la synthèse audio. Toutefois, cette différence de technologie a des conséquences sur l'assemblage et sur les modes de jeu possibles. 
 
-\indent \textbf{Sur le Xypre v1}, la technologie infra-rouge du cadre de détection du \textit{multitouch} permet d'insérer une vitre \gls{PMMA} (cf. figure \ref{fig:interface:PQlabs-G4overlay}), pour un fonctionnement similaire à celui développé sur le Filigramophone. L'inconvénient qui en résulte est la transmission des vibrations au cadre de détection \textit{multitouch} et les bruits de plastique parasites qu'elles provoquent. C'est cette dernière raison qui a motivé la conception du Xypre v2 avec une séparation entre la surface percussive des piezo et la surface de contrôle sur l'écran \textit{multitouch}.\\
-\indent \textbf{Sur le Xypre v2}, l'écran \textit{multitouch} capacitif ne permettant pas l'ajout d'un \gls{PMMA}, les cellules piezo ont été placées sur le côté du chassis, pré-contraints entre le chassis et une plaque de bois plus fine servant de surface de percussion. Cette plaque fixée sur deux côtés au chassis permet là-encore de récupérer différentes nuances de hauteur spectrale, utilisée pour la synthèse en aval (cf. figure \ref{fig:interface:xypre_v2-piezo1}). La pré-contrainte du piezo est en partie dûe à l'orientation verticale du piezo (qui chuterait, autrement) mais permet également d'utiliser une technique de pseudo-symétrisation du signal du piezo (cf. schéma fonctionnel figure \ref{fig:interface:balancedPiezo} et aperçu figure \ref{fig:interface:xypre_v2-piezo1}), qui s'avère très utile quand les transducteurs piezo sont utilisés à proximité d'un écran, source de perturbations électromagnétiques.\\
-%-------------------------- Figure : balanced piezo ----------------------------------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}%
-	\includegraphics[width=\textwidth]{gfx/05_interfaces/balancedPiezo.pdf}
-	\caption{Montage pseudo-symétrique de transducteurs piezo-électriques}
-	\label{fig:interface:balancedPiezo}
-\end{figure}
-%-------------------------- Figure : balanced piezo ----------------------------------
-\indent Sur le Xypre, la séparation entre la surface percussive et l'interface \textit{multitouch} de l'écran a conduit à placer le haut-parleur tactile sur une plaque de bois (contreplaqué) à l'avant du chassis (cf. figure \ref{fig:interface:xypre_v2-hp}). Il se trouve ainsi relié acoustiquement au transducteur piezo \#2 (cf. figure \ref{fig:interface:xypre_v2-hppiezo}), tandis que l'autre transducteur (figure \ref{fig:interface:xypre_v2-piezo1}) est (relativement) isolé acoustiquement en étant positionné orthogonalement.
+\subsubsection{Technologie multitouch et incidence sur le jeu}
 
+\indent La technologie infra-rouge de l'\textit{overlay G4S} laisse la possibilité de poser des objets sur la surface, qui soient détectés par les capteurs infra-rouge. Cela permet notamment de pouvoir maintenir des processus actifs, par la présence physique d'objets (comme on maintiendrait une note enfoncée sur un orgue à l'aide d'un poids). Un inconvénient de cette technologie est la détection possible des doigts (ou d'objets) entrant dans le plan de détection, situé légèrement au-dessus de la surface de la vitre. Cela requiert par exemple de lever les doigts qui ne jouent pas relativement haut afin qu'il ne soit pas détectés par erreur, et provoque une tension musculaire pénible de la main.Egalement, cette technologie est plus sensible à la poussière qui peut provoquer de fausses détections.
 
-%------------ Figure : filigramophone et xypre HP -----------
+\indent A l'inverse de la technologie infra-rouge, le capacitif ne détecte que la présence des doigts et pas celle d'objet quelconques. Il est possible de détecter la présence d'objets dédiés, intégrant un système électrique actif ou passif, stimulant le champ électrostatique de l'écran, ainsi que de reconnaître ces objets à l'aide d'identifiant spatiaux et/ou temporels\footnote{voir notamment \cite{rekimoto_datatiles_2001, yu_tuic_2011}}. Ce type de solution a notamment été utilisé dans l'application \textit{Rotor} de \textit{ReacTable}. Cette solution présente néanmoins l'inconvénient de nécessiter un circuit électronique dédié d'une part, et d'autre part la reconnaissance de l'objet consomme rapidement le nombre de point de contact détectable par l'interface\footnote{Par exemple, la détection de la position et de l'orientation nécessite généralement trois points de contact, ce qui signifie qu'un écran multitouch permettant dix points de contact ne pourra pas détecter plus de trois objets (et un doigt).}, en même temps qu'elle rajoute une latence due à l'analyse du motif déterminé par les points.
+
+\subsubsection{Implantation des microphones piezo et transducteur tactile}
+%------------ Figure : xypre piezo et HP -----------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
 	\centering
@@ -453,7 +459,20 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 		\label{fig:interface:xypre_v2-hp}
 	\end{minipage}
 \end{figure}
-%------------ Figure : filigramophone et xypre HP -----------
+%------------ Figure : xypre piezo et HP -----------
+
+\indent \textbf{Sur le Xypre v1}, la technologie infra-rouge du cadre de détection du \textit{multitouch} permet d'insérer une vitre en \gls{PMMA} (cf. figure \ref{fig:interface:PQlabs-G4overlay}), pour un fonctionnement similaire à celui développé sur le Filigramophone. L'inconvénient qui résulte des gestes de percussion sur cette vitre est la transmission des vibrations au cadre de détection \textit{multitouch} et les bruits de plastique parasites qu'elles provoquent. Il serait envisageable de supprimer ces bruits en serrant le cadre multitouch entre des mousses, mais cet assemblage plus complexe n'a pas encore été testé.\\
+
+\indent \textbf{Sur le Xypre v2}, l'écran \textit{multitouch} capacitif ne permettant pas l'ajout d'une vitre \gls{PMMA}, les microphones piezo ont été placées sur le côté du chassis, pré-contraints entre le chassis et une plaque de bois plus fine servant de surface de percussion. Cette plaque fixée sur deux côtés au chassis permet là-encore de récupérer différentes nuances de hauteur spectrale, utilisée pour la synthèse en aval (cf. figure \ref{fig:interface:xypre_v2-piezo1}). La pré-contrainte du piezo est en partie dûe à l'orientation verticale du piezo (qui chuterait, autrement) mais permet également d'utiliser une technique de pseudo-symétrisation du signal du piezo (cf. schéma fonctionnel figure \ref{fig:interface:balancedPiezo} et aperçu figure \ref{fig:interface:xypre_v2-piezo1}), qui s'avère très utile quand les transducteurs piezo sont utilisés à proximité d'un écran, source de perturbations électromagnétiques.\\
+%-------------------------- Figure : balanced piezo ----------------------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\includegraphics[width=\textwidth]{gfx/05_interfaces/balancedPiezo.pdf}
+	\caption{Montage pseudo-symétrique de transducteurs piezo-électriques}
+	\label{fig:interface:balancedPiezo}
+\end{figure}
+%-------------------------- Figure : balanced piezo ----------------------------------
+\indent La séparation entre la surface percussive et l'interface \textit{multitouch} de l'écran a conduit à placer le haut-parleur tactile sur une plaque de contreplaqué à l'avant du chassis (cf. figure \ref{fig:interface:xypre_v2-hp}). Il se trouve ainsi relié acoustiquement au transducteur piezo \#2 (cf. figure \ref{fig:interface:xypre_v2-hppiezo}), tandis que l'autre transducteur (figure \ref{fig:interface:xypre_v2-piezo1}) est (relativement) isolé acoustiquement en étant positionné orthogonalement.
 
 %-------------------------- Figure : xypre HP et piezo ----------------------------------
 \begin{figure}[!htbp]
@@ -465,17 +484,6 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 %-------------------------- Figure : xypre HP et piezo ----------------------------------
 
 
-\subsubsection{première version}
-\textit{multitouch} overlay de PQlabs, technologie IR, renvoie directement les coordonnées en TUIO. Sensible à la poussière,
-
-
-Detecte tout ce qui est en contact (pas seulement les doigts mais aussi les objets) => permet de positionner des éléments de manière stable.
-
-TOTO: insérer photo de la 1ère version (version concert)
-
-\subsubsection{deuxième version}
-
-
 %-------------------------- Figure : xypre ----------------------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
@@ -484,30 +492,12 @@ TOTO: insérer photo de la 1ère version (version concert)
 	\label{fig:interface:xyprev1_jeu}
 \end{figure}
 
-% %-------------------------- Figure : xypre ----------------------------------
-% \begin{figure}[!htbp]
-% 	\includegraphics[width=\textwidth]{gfx/05_interfaces/Xypre_plan01_72dpi.jpg}
-% 	\caption{Xypre v2 - plans de conception}
-% 	\label{fig:interface:xypre_plans}
-% \end{figure}
 
-% %-------------------------- Figure : xypre ----------------------------------
-% \begin{figure}[!htbp]
-% 	\includegraphics[width=\textwidth]{gfx/05_interfaces/xypre_overview_unplugged.jpg}
-% 	\caption{xypre - vue d'ensemble, débranchée}
-% 	\label{fig:interface:xypre}
-% \end{figure}
+\subsection{Bilan et persepectives}
 
-Ecran \textit{multitouch} capacitif : détecte les doigts uniquement, pas les objets => motivation pour développer des objets positionnables de manière statique dans mp.TUI
-
-Besoin d'un driver payant pour récupérer le TUIO.
-
-Perte de la pression comme paramètre expressif :\\
-intégration de capteur de pression (FSR) et de distance (IR)\\
-Utilisation d'un Bela pour une latence très faible du son et un instrument autonome (needs raspberry for the display)\\
-Possible extension par l'ordinateur.\\
-Making of de la fabrication : \url{https://vimeo.com/358401223}
-
+\noindent Si les interfaces multitouch conservent une parenté avec les tablettes graphiques, elles offre de nouvelles possibilités en même temps qu'elle impose d'autres contraintes. En particulier, la perte de la pression du stylet comme paramètre expressif est difficile à compenser et à distribuer dans d'autres gestes sans revoir considérablement le design d'interaction en aval. Il est tout de même prévu de rajouter des capteurs de type \gls{FSR} et capteurs de distance, d'une granularité temporelle et d'une expressivité intermédiaire entre celle permise par les microphones et celle permise par l'écran tactile.\\
+\indent Une autre direction de développement (en cours), est l'autonomisation progressive de l'interface, en transférant le calcul de la synthèse audio et graphique depuis l'ordinateur sur lequel il tourne maintenant, vers des nano-ordinateurs tels que Raspberry Pi et Bela\footnote{\url{https://raspberrypi.org}, \url{https://bela.io}.}, tout en conservant une extension possible par l'ordinateur.\\
+\indent Enfin, au niveau acoustique, l'usage de plaque de bois massive et/ou de métal est envisagé afin d'améliorer la liaison acoustique entre le microphone piezo et le transducteur tactile en façade. Si les premiers tests révelent des interactions intéressantes sur le contrôle du feedback (qu'on espère améliorer en utilisant une carte Bela à très faible latence), le contreplaqué semble un matériau trop épais et absorbant pour que des pressions directe sur la plaque interagissent efficacement avec la boucle de \textit{feedback}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
