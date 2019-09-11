@@ -43,19 +43,32 @@ Il faut ici rappeler que les \glspl{DMI}, s'ils se caractérisent par l'usage de
 
 \subsection{Interface gestuelle ou interface sensible?}
 
-\noindent Il est souvent question ``d'interface gestuelle'' lorsqu'on pense aux \glspl{IHM} utilisées pour l'interaction musicale. Comme nous l'avons vu au chapitre précédant, le geste y occupe une part importante mais les interfaces de jeu ne se limitent pas nécessairement à la captation du geste : elle peuvent être sensibles à la température, la lumière\footnote{Voir par exemple les œuvres \textit{Light Thing} de Leaf Cutter John (\url{https://youtu.be/2jIlLHfSEfs}), ou encore \textit{Light Music} de Thierry de Mey}, la couleur, la géolocalisation\footnote{Voir en particulier les travaux d'Atau Tanaka, ou les instruments de Yann Seznec \url{https://www.impracticaldevices.com}} et réagir de manière générale à différentes conditions environnementales.\\
+
+\noindent Il est souvent question ``d'interface gestuelle'' lorsqu'on pense aux \glspl{IHM} utilisées pour l'interaction musicale. Comme nous l'avons vu au chapitre précédant, le geste y occupe une part importante, mais les interfaces de jeu ne se limitent pas nécessairement à la captation du geste : elle peuvent être sensibles à la température, la lumière\footnote{Voir par exemple les œuvres \textit{Light Thing} de Leaf Cutter John (\url{https://youtu.be/2jIlLHfSEfs}), ou encore \textit{Light Music} de Thierry de Mey}, la couleur, la géolocalisation\footnote{Voir en particulier les travaux d'Atau Tanaka \cite{tanaka_mobile_2004}, ou les instruments de Yann Seznec \url{https://www.impracticaldevices.com}}, aux signaux biologiques internes du corps\footnote{Voir notamment les travaux de Marco Donnarumma \cite{donnarumma_biophysical_2017}} et réagir de manière générale à différentes conditions environnementales.\\
 \indent Par ailleurs, le geste possède un certain nombre de qualités qui ne sont pas forcément captées par l'interface, alors qu'elle sont effectivement vues et ressenties par le musicien et par le public, et contribuent ainsi à la performance, comme nous l'avons présenté au chapitre précédent.\\
-\indent Enfin, le ``geste'' qui vient contrôler les processus sonores dans les \glspl{DMI} peut être de nature virtuelle, prendre la forme de motifs pré-enregistrés qui peuvent être issus de toute sorte de source de données interprétées en tant que flux temporels, tels que peut-être le cas dans la sonification de données ou l'utilisation de modèles intermédiaires. Cet aspect là sera décrit plus en détail dans le chapitre \ref{ch:algorithms}.\\
+\indent Enfin, le ``geste'' qui vient contrôler les processus sonores dans les \glspl{DMI} peut être de nature virtuelle, prendre la forme de motifs pré-enregistrés qui peuvent être issus de toute sorte de source de données interprétées en tant que flux temporels, tels que peut-être le cas dans la sonification de données ou l'utilisation de ``modèles intermédiaires''\footnote{La notion de ``modèle intermédiaire'' sera décrit plus en détail dans le chapitre \ref{ch:algorithms}}.\\
 \indent Pour toutes ces raisons, il semblerait ainsi préférable de parler d'\textit{interface sensible}, plutôt que d'\textit{interface gestuelle} pour décrire les dispositifs d'interaction numériques pour la musique, leur caractéristique commune étant l'usage de capteurs (\textit{sensors}).
+\indent Inversement, les haut-parleurs, les projections graphiques, les moteurs et actionneurs contrôlés algorithmiquement sont également \textit{à l'interface}, en ``sortie'' cette fois, entre le virtuel et le réel. Si de même, on considère plus souvent la partie ``captation'' que la partie ``diffusion'' lorsqu'on évoque les interfaces de jeu des \glspl{DMI}, il faut garder en vue que ces deux aspects s'entremêlent, non seulement dans la boucle de rétro-action qui se créé entre le musicien et l'instrument, mais également dans l'agencement concret des éléments matériels qui constituent le dispositif instrumental dans son ensemble, comme nous le verront dans ce chapitre.\\
+\indent L'interface de jeu, en étant sensible à son environnement tout en rendant perceptible les artefacts générés par les algorithmes, vient incarner la potentialité virtuelle d'un \gls{DMI}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Un support pour \textit{musiquer}}
 
+\noindent Les \glspl{DMI} sont des objets techniques dont l'interface est le support de diverses activités musicales, allant de la composition à la performance, en passant par la pédagogie. En tant qu'agencements éphémères en perpétuelle évolution\footnote{Cf. chapitre \ref{ch:ephemeral}}, leur interface est parfois le support de l'activité même de lutherie qui sert à les concevoir\footnote{L'exemple le plus manifeste de cette amalgame entre les fonctions d'instrument de performance, de composition et de lutherie est sans doute le \textit{live-coding}, dans lequel le clavier alphanumérique (ainsi que l'écran et les haut-parleurs) joue le rôle d'interface de jeu polyvalente}.
+
 \noindent Les \glspl{DMI} intègrent souvent des matériaux sonores pré-composés, que le musicien peut déclencher et qui pourront tourner de manière autonome (paysages sonores, processus génératifs, drônes, etc.) et une part créée plus directement, qu'elle soit synthèse ou transformation de matériaux.\\
-\indent Les différents accès de l'interface de jeu doivent ainsi permettrent d'articuler au mieux ces deux pôles, en permettant la gestion du temps à différentes échelles. En particulier, les écrans \textit{multitouch}, s'ils permettent de gérer aisément de multiples processus lents (qu'on pourra visualiser et ajuster à l'écran), ne permettent guère une réactivité ``percussive'', telle que le permet un pad \gls{MIDI} ou un capteur échantillonné à fréquence élevée.\\
-\indent La granularité du contrôle joue également un rôle important dans cette perspective. Entre une note \gls{MIDI} qui ne déclenche qu'un événement ponctuel, un contrôleur continu qui envoie des données chaque fois qu'il est modifié et un capteur échantillonné qui envoie des informations en continu, les possibilités de contrôle seront différentes en terme de réactivité et de finesse de modulation. Il faut donc prévoir les capteurs adéquats pour les processus que l'on souhaite contrôler en aval. Comme le faisait remarquer Max Mathews: \iquote{Il faut penser aux systèmes dans leur globalité pour obtenir une quelque chose d'utilisable musicalement - on ne peut pas vraiment développer un capteur sans le mettre en perspective des programmes avec lesquels on va l'utiliser}\footnote{``One has to think of overall systems to get a musically useful thing — you can't really develop a sensor without relating it to the programs that you're going to use it with.'', Max Mathews, cité par Joel Chadabe dans \cite{chadabe_electric_1996}, p. 230}.\\
+\indent Les différents accès de l'interface de jeu doivent ainsi permettrent d'articuler ces deux pôles, en permettant la gestion du temps à différentes échelles. En particulier, les écrans \textit{multitouch}, s'ils permettent de gérer aisément de multiples processus lents (qu'on pourra visualiser et ajuster à l'écran), ne permettent guère une réactivité ``percussive'', telle que le permet un pad \gls{MIDI} ou un capteur échantillonné à fréquence audio.\\
+\indent La granularité du contrôle joue également un rôle important dans cette perspective. Entre une note \gls{MIDI} qui ne déclenche qu'un événement ponctuel, un contrôleur continu qui envoie des données chaque fois qu'il est modifié et un capteur échantillonné à fréquence audio qui envoit ses valeurs 44100 fois par seconde, les possibilités de contrôle seront différentes en terme de réactivité et de finesse de modulation. Il faut donc prévoir les capteurs adéquats pour les processus que l'on souhaite contrôler en aval. Comme le faisait remarquer Max Mathews: \iquote{Il faut penser aux systèmes dans leur globalité pour obtenir une quelque chose d'utilisable musicalement - on ne peut pas vraiment développer un capteur sans le mettre en perspective des programmes avec lesquels on va l'utiliser}\footnote{``One has to think of overall systems to get a musically useful thing — you can't really develop a sensor without relating it to the programs that you're going to use it with.'', Max Mathews, cité par Joel Chadabe dans \cite{chadabe_electric_1996}, p. 230}.\\
 \indent Ceci n'est pas sans poser problème dans la perspective de modularité d'un \gls{DMI} que l'on aimerait pouvoir faire évoluer et adapter à différents contextes. Un compromis consiste à disposer d'une palette de capteurs différents afin de les agencer selon une ergonomie adaptée aux gestes qu'ils invitent, et d'adapter le logiciel, plus souple, à cette configuration.
+
+\subsection{Instruments acoustico-électrico-électronico-numériques}
+
+\noindent Si on les considère sur le plan matériel, il faut encore noter que les \glspl{DMI}, s'ils se caractérisent par l'usage de la computation numérique, sont aussi nécessairement des instruments électroniques, électriques et acoustiques. Il portent par conséquent l'héritage et les contraintes propres à ces différentes dimensions. 
+
+\indent Dans le domaine virtuel du code informatique, ces différentes dimensions sont bien séparées : la mécanique et l'électricité y sont absentes, et les signaux acoustiques et de contrôle bien rangés dans des variables indépendantes qui n'interagissent que si on leur demande explicitement. Dans le monde réel, au contraire, l'interférence est la règle --~pour le meilleur comme pour le pire~-- et il devient nécessaire d'isoler les différents signaux si l'on ne veut pas avoir à gérer la complexité de leur interaction : mettre les haut-parleurs loin des microphones, isoler les câbles électriques pour ne pas capter la radio, rajouter des mousses pour ne pas entendre les bruits mécaniques d'une frappe sur un capteur, etc. L'interface de jeu est cette partie d'un \gls{DMI} qui doit composer avec le réel.
+
+ c'est tout le contraire qui se produit et les interférences entre la mécanique, l'acoustique, signaux électriques analogiques et numériques sont d'autant plus grande qu'on rapproche physiquement les composants matériels
 
 
 
@@ -384,11 +397,9 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 \end{figure}
 %-------------------------- Figure : filigramophone-toupie ----------------------------------
 
-
-
 \subsubsection{Intégration du transducteur tactile}
 
-\indent Parallèlement, un transducteur a été fixé sur la vitre de \gls{PMMA} (cf. figure \ref{fig:interface:filigramophone-hp}), et positionné empiriquement pour favoriser l'excitation des premiers modes de résonance de la plaque de \gls{PMMA} sans être toutefois dans la zone d'interaction de la tablette graphique. Les premiers modes de résonance correspondent en effets aux fréquences les plus basses, et le but était ici d'avoir une vibration aussi forte que possible dans un domaine vibrotactile qui n'empiète pas trop sur le domaine audible.\\
+\noindent Parallèlement, un transducteur a été fixé sur la vitre de \gls{PMMA} (cf. figure \ref{fig:interface:filigramophone-hp}), et positionné empiriquement\footnote{C'est à dire, par un balayage des fréquences, envoyé sur le transducteur, en écoutant et en touchant la surface pour y trouver les zones de résonance.} pour favoriser l'excitation des premiers modes de résonance de la plaque de \gls{PMMA} sans être toutefois dans la zone d'interaction de la tablette graphique. Les premiers modes de résonance correspondent en effets aux fréquences les plus basses, et le but était ici d'avoir une vibration aussi forte que possible dans un domaine vibrotactile qui n'empiète pas trop sur le domaine audible.\\
 \indent Le transducteur tactile est utilisé à la fois pour le retour vibratoire et la communication d'information, en particulier par frettage virtuel de la surface (cf. section \ref{todo}). Le retour vibratoire de l'instrument se distingue toutefois de l'envoi pur et simple du signal audio, la perception tactile ne lui étant pas directement liée. Au lieu de cela, un signal sinusoidal à 70Hz, correspondant à une fréquence de résonnance de la vitre de \gls{PMMA}, modulé par l'enveloppe du son final, ainsi que par sa dérivée spectrale, afin de mieux sentir dans les doigts les transitions et les ruptures du son (cf. figure TODO : schéma de principe du patch / développement dans une autre partie ?).\\
 \indent Le Filigramophone a été joué plusieurs fois en concert, à la fois dans l'ensemble ONE, ainsi que dans la première version de la performance audio-visuelle ``FIB\_R'' avec la plasticienne Gladys Brégeon (cf. figure \ref{fig:interface:filigramophone-Xypre-Triton}). Le dispositif complet était composé du Filigramophone, d'un ordinateur faisant tourner un patch Max pour la synthèse, d'une carte son et haut-parleurs, ainsi que d'une interface \gls{MIDI} Akai MPD24, donnant un accès direct à davantage de paramètres tels que le volume général, le mixage entre différentes synthèses, le rappel de configurations, la sélection d'échelles musicales pour l'accordage, ainsi que divers autres paramètres spécifiques aux algorithmes de synthèse.
 
@@ -461,7 +472,7 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 \end{figure}
 %------------ Figure : xypre piezo et HP -----------
 
-\indent \textbf{Sur le Xypre v1}, la technologie infra-rouge du cadre de détection du \textit{multitouch} permet d'insérer une vitre en \gls{PMMA} (cf. figure \ref{fig:interface:PQlabs-G4overlay}), pour un fonctionnement similaire à celui développé sur le Filigramophone. L'inconvénient qui résulte des gestes de percussion sur cette vitre est la transmission des vibrations au cadre de détection \textit{multitouch} et les bruits de plastique parasites qu'elles provoquent. Il serait envisageable de supprimer ces bruits en serrant le cadre multitouch entre des mousses, mais cet assemblage plus complexe n'a pas encore été testé.\\
+\indent \textbf{Sur le Xypre v1}, la technologie infra-rouge du cadre de détection du \textit{multitouch} permet d'insérer une vitre en \gls{PMMA} (cf. figure \ref{fig:interface:PQlabs-G4overlay}), pour un fonctionnement similaire à celui développé sur le Filigramophone. L'inconvénient qui résulte des gestes de percussion sur cette vitre est la transmission des vibrations au cadre de détection \textit{multitouch} et les bruits de plastique parasites qu'elles provoquent. Il serait envisageable de supprimer ces bruits en serrant le cadre multitouch entre des mousses, mais cet assemblage plus complexe n'a pas encore été testé.
 
 \indent \textbf{Sur le Xypre v2}, l'écran \textit{multitouch} capacitif ne permettant pas l'ajout d'une vitre \gls{PMMA}, les microphones piezo ont été placées sur le côté du chassis, pré-contraints entre le chassis et une plaque de bois plus fine servant de surface de percussion. Cette plaque fixée sur deux côtés au chassis permet là-encore de récupérer différentes nuances de hauteur spectrale, utilisée pour la synthèse en aval (cf. figure \ref{fig:interface:xypre_v2-piezo1}). La pré-contrainte du piezo est en partie dûe à l'orientation verticale du piezo (qui chuterait, autrement) mais permet également d'utiliser une technique de pseudo-symétrisation du signal du piezo (cf. schéma fonctionnel figure \ref{fig:interface:balancedPiezo} et aperçu figure \ref{fig:interface:xypre_v2-piezo1}), qui s'avère très utile quand les transducteurs piezo sont utilisés à proximité d'un écran, source de perturbations électromagnétiques.\\
 %-------------------------- Figure : balanced piezo ----------------------------------
@@ -493,7 +504,7 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 \end{figure}
 
 
-\subsection{Bilan et persepectives}
+\subsection{Bilan et perspectives}
 
 \noindent Si les interfaces multitouch conservent une parenté avec les tablettes graphiques, elles offre de nouvelles possibilités en même temps qu'elle impose d'autres contraintes. En particulier, la perte de la pression du stylet comme paramètre expressif est difficile à compenser et à distribuer dans d'autres gestes sans revoir considérablement le design d'interaction en aval. Il est tout de même prévu de rajouter des capteurs de type \gls{FSR} et capteurs de distance, d'une granularité temporelle et d'une expressivité intermédiaire entre celle permise par les microphones et celle permise par l'écran tactile.\\
 \indent Une autre direction de développement (en cours), est l'autonomisation progressive de l'interface, en transférant le calcul de la synthèse audio et graphique depuis l'ordinateur sur lequel il tourne maintenant, vers des nano-ordinateurs tels que Raspberry Pi et Bela\footnote{\url{https://raspberrypi.org}, \url{https://bela.io}.}, tout en conservant une extension possible par l'ordinateur.\\
@@ -506,19 +517,21 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 
 Les DMIs ne sont pas purement virtuels: poids, encombrement, affordance, part acoustique, sensibilité, temps de montage.
 
-Objets auxquels on s'attache (plus que le virtuel), cf. Dumeaux, Dallio
+Les interfaces hardware sont des objets auxquels on s'attache, plus que le virtuel (cf. Dumeaux, Dallio). Rapport sensuel.
 
 Compromis entre modularité et intégration ergonomique.
 
 Possibiltés offerte par le DIY avec les nouvelles cartes barebone (Ino, raspi, bela, etc.)
 
+La question de l'acoustique, de l'haptique, de l'électronique et du numérique sont interdépendantes.
+
+
+
+
+
 
 
 \section*{extra material}
-
-
-
-%%%%%%%%%%%%%%
 
 \iquote{Though there is a huge range of performer decision, history, and knowledge that will determine their exact method of playing (as established by Jorda [12]), the physical design of the DMI impacts this gesture repertoire by presenting certain affordances.} \cite{bin_hands_2017}
 
