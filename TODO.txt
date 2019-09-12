@@ -33,3 +33,20 @@ La musique et le geste
 Partie 5.3 / Le signal : ajouter un mot pour décrire ce qu'est le signal
 
 Mettre des labels dans les annexes et renvoyer plutôt que citer le texte dans le doc original.
+
+
+
+Il faut arrêter de considérer les DMI comme des instruments qui nous permettent d'imiter les instruments acoustiques, voire, de les améliorer. C'est tout le contraire qui se produit : l'imitation d'instruments acoustiques est toujours sera infailliblement en deça.
+
+Fausses idées :
+
+Les DMI nous permettent d'imiter les instruments acoustiques, et de faire mieux.
+Un dispositif instrumental ne sera pas utilisé s'il est trop compliqué.
+Une mapping simple (one to one) entre un capteur et un paramètre audio ne donnera pas un instrument intéressant.
+Un capteur donné sera plus adapté à une modulation donnée si leur relation est en correspondance directe.
+On peut évaluer la qualité d'un nouvel instrument en donnant un exemple cible à réaliser à des musiciens experts.
+Un instrument ne sert pas à accomplir une "tâche".
+Par conséquence, on la notion d'efficacité, qu'elle soit considérée comme le ratio entre l'effectivité de l'accomplissement d'une tâche par rapport à l'effort demandé (Jorda) ou bien comm le ratio entre la complexité du résultat musical par rapport à la complexité en entrée du contrôleur (\cite{jorda_digital_2004}) n'est pas valable.
+
+
+Les notions de plaisir (à jouer, à écouter, à voir), de challenge (à conçevoir, à jouer, à comprendre), de fragilité (l'instrument ne tient à presque rien), de spectacularité (l'instrument déploit de vaste monde imaginaires), de convivialité (l'instrument permet de partager une émotion musicale), d'évocation (l'instrument créé des ponts avec d'autres arts, d'autres époques, etc)
