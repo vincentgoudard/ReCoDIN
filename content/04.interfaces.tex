@@ -65,7 +65,7 @@ Il faut ici rappeler que les \glspl{DMI}, s'ils se caractérisent par l'usage de
 \subsection{Instruments acoustico-électronico-numériques}
 
 \noindent Si on les considère sur le plan matériel, il faut encore noter que les \glspl{DMI}, s'ils se caractérisent par l'usage de la computation numérique, sont aussi nécessairement des instruments électroniques, électriques et acoustiques. Il portent par conséquent l'héritage et les contraintes propres à ces différentes dimensions.\\
-\indent Dans le domaine virtuel du code informatique, ces dimensions sont (trop\footnote{Cf. commentaires en section \ref{ch:algorithms:digital-material}}) bien séparées : la mécanique et l'électricité y sont absentes, et les signaux acoustiques et de contrôle bien rangés dans des variables indépendantes qui n'interagissent que si on le leur demande explicitement. Dans le monde réel, au contraire, l'interférence est la règle --~pour le meilleur et pour le pire~-- et il devient nécessaire d'isoler les différents signaux si l'on ne veut pas avoir à gérer la complexité de leur interaction : mettre les haut-parleurs loin des microphones, isoler les câbles électriques pour ne pas capter la radio, rajouter des mousses pour ne pas entendre les bruits mécaniques d'une frappe sur un capteur, etc. L'interface de jeu est cette partie d'un \gls{DMI} qui doit communiquer avec le virtuel mais surtout composer avec le réel.
+\indent Dans le domaine virtuel du code informatique, ces dimensions sont (trop\footnote{Cf. commentaires en section \ref{ch:algorithms:digital-material}}) bien séparées : la mécanique et l'électricité y sont absentes, et les signaux acoustiques et de contrôle bien rangés dans des variables indépendantes qui n'interagissent que si on le leur demande explicitement. Dans le monde réel, au contraire, l'interférence est la règle --~pour le meilleur et pour le pire~-- et il devient nécessaire d'isoler les différents signaux si l'on ne veut pas avoir à gérer la complexité de leur interaction : mettre les haut-parleurs loin des microphones, isoler les câbles électriques pour ne pas capter la radio, rajouter des mousses pour ne pas entendre les bruits mécaniques d'une frappe sur un capteur, etc. L'interface de jeu est cette partie d'un \gls{DMI} qui doit communiquer avec le virtuel mais aussi composer avec le réel.
 
 %-------------------------------------------------------------
 
@@ -144,7 +144,7 @@ Usinage
 	\item \textbf{le métal} est couramment utilisé pour les chassis et les coques de revêtement des machines électriques et électronique. En dehors de ses propriétés de résistance mécanique, sa conductivité permet d'isoler les composants de faux contacts et de perturbations électromagnétiques et notamment d'éviter le ``bruit de masse'' qui peut survenir quand un équippement électrique tel qu'un \gls{DMI} n'est pas relié à la masse. Le métal possède également des propriétés de résonance acoustique qui en font un matériau intéressant pour la captation et la diffusion électro-acoustique, et utilisé par exemple dans le diffuseur ``Gong'' de l'onde Martenot.
 	\item \textbf{le plastique} offre de grande facilités de thermoformage, moulage, collage, perçage, gravage, qui permettent d'obtenir toute sorte de forme et notamment de s'adapter à l'ergonomie du corps (e.g. la main du MI). Les propriétés de transparence du \gls{PMMA}\footnote{aussi connue sous le nom commercial Plexiglass} permettent de l'utiliser au dessus d'un écran. L'essor des imprimantes 3D depuis le début du \siecle{21}~siècle a également contribué à son utilisation pour le prototypage rapide dans un contexte autre qu'industriel, et de pratiques \gls{DIY} dans les \glspl{makerspace}. (todo : photo main MI4?)
 	\item \textbf{le verre} a été utilisé en particulier pour le caractère cristallin de sa résonnance acoustique (e.g. Cristal Baschet, glass-harmonica). Plus difficile à travailler, ses proprétés de transparence, et de résonance (cf. projet résonance auto NIME 2019)
-	\item \textbf{la mousses} est généralement utilisée pour ses propriété d'isolation phonique et vibratoire, mais également comme matériau tampon, pour améliorer la course des capteurs de pression (\gls{FSR}). Il existe de nombreuses sortes de mousses, offrant des nuances différentes d'enfoncement, de résiliance et affectant considérablement la sensation tactile sur ce type de capteurs.
+	\item \textbf{la mousse} est généralement utilisée pour ses propriété d'isolation phonique et vibratoire, mais également comme matériau tampon, pour augmenter la course des capteurs de pression (\gls{FSR}). Il existe de nombreuses sortes de mousses, offrant des nuances différentes d'enfoncement, de résiliance et affectant considérablement la sensation tactile sur ce type de capteurs.
 	\item \textbf{le textile} a enfin été utilisé dans un certain nombre de \glspl{DMI} et de manière plus générale dans tout le champ d'interaction entre le domaine de la confection textile et de l'électronique, généralement désignée sous le terme de ``\textit{wearable electronics}''\footnote{Cf. la revue proposée dans \cite{stoppa_wearable_2014}}. La possibilité d'intégrer des fibres conductrices entrelacées dans le textile (``\textit{e-textile}'') a ainsi donné lieu à plusieurs développements de surfaces multitouch \cite{freed_application_2008, donneaud_designing_2017, wicaksono_fabrickeyboard:_2017} ou de vêtements munis de capteurs \cite{hayafuchi_musicglove_2008, serafin_controlling_2014, myllykoski_prototyping_2015}.
 \end{itemize}
 
@@ -154,7 +154,7 @@ Usinage
 
 \subsection{Capteurs}
 
-\noindent Une grande diversité de capteurs est disponible sur le marché, mesurant différentes grandeurs physiques : position, distance, pression, orientation, flux d'air, lumière, humidité, température, champ magnétique, présence, contact, etc. Leur utilisation spécifique dans le domaine des lutheries numériques a été l'objet de nombreuses études qualitatives et quantitatives, menées en particulier depuis ces deux dernière décennies par l'équipe de Marcello Wanderley à l'\gls{IDMIL}\footnote{Voir notamment : \cite{wanderley_choice_2000, hollinger_evaluation_2006, marshall_sensor_2009, vigliensoni_quantitative_2012, medeiros_comprehensive_2014} ainsi que le site \url{https://sensorwiki.org} qui rassemble des informations utiles sur un grand nombre de capteurs et d'interfaces}.
+\noindent Une grande diversité de capteurs est disponible sur le marché, mesurant différentes grandeurs physiques : position, distance, pression, orientation, flux d'air, lumière, humidité, température, champ magnétique, présence, contact, etc. Leur utilisation spécifique dans le domaine des lutheries numériques a été l'objet de nombreuses études qualitatives et quantitatives, menées en particulier depuis ces deux dernière décennies par l'équipe de Marcello Wanderley à l'\gls{IDMIL}\footnote{Voir notamment : \cite{wanderley_choice_2000, hollinger_evaluation_2006, marshall_sensor_2009, vigliensoni_quantitative_2012, medeiros_comprehensive_2014} ainsi que le site \url{https://sensorwiki.org} qui rassemble un grand nombre d'informations techniques utiles sur les capteurs et les interfaces}.
 
 Les capteurs ne sont que des ``portes d'entrées'' de la partie algorithmique d'un \gls{DMI}. 
 
@@ -167,22 +167,28 @@ Capteurs ``bruts'' et capteur ``intelligents''
 Pads MIDI => peuvent être implémentés via interrupteurs, piezzo, FSR...
 Multitouch = différentes technologies de détections (capacitives, infra-rouge, etc.) pour renvoyer la position des doigts.
 
-\indent Un certain nombre d'études ont par ailleurs tenté de proposer une analyse des correspondance entre capteurs et fonctions musicale (e.g. \cite{vertegaal_towards_1996, goudeseune_interpolated_2002}), en mettant les aspects statique, dynamique, absolue ou relatif des valeurs transmises par les capteurs en regard de ces mêmes aspects appliqués à des grandeurs liées à la musique (en particulier le pitch), dans l'optique d'évaluer qualitativement l'adéquation entre le choix des capteurs et le type de contrôle musical\footnote{Cette perspective reflète de manière plus générale une tendance de l'époque à vouloir répliquer le modèle instrumental classique ou la relation entre le geste et le résultat sonore est très directe. La remarque en fin d'article \iquote{(...) a good causal mapping can ensure that tension is properly translated to the audible result.} en est révélatrice. Voir également la position de Claude Cadoz en ce sens au chapitre \ref{ch:gesture}}. Bien qu'instructives et utiles dans la perspective d'une relation de mimétisme univoque entre le mouvement gestuel et le mouvement d'un paramètre sonore, ces études mettent cependant de côté un aspect important des \glspl{DMI}, à savoir la possibilité sans pareil des ordinateurs à traiter le signal et transformer le continu en discret, l'absolu en relatif, le statique en dynamique, et inversement, et plus encore, si l'on sort de ce cadre relationnel univoque entre un capteur et un paramètre.\\
+\indent Un certain nombre d'études ont par ailleurs proposé une analyse de l'adéquation entre capteurs et fonctions musicale (e.g. \cite{vertegaal_towards_1996, goudeseune_interpolated_2002}), en mettant les aspects statique, dynamique, absolue ou relatif des valeurs transmises par les capteurs en regard de ces mêmes aspects appliqués à des grandeurs liées à la musique (en particulier le pitch), dans l'optique d'évaluer qualitativement l'adéquation entre le choix des capteurs et le type de contrôle musical\footnote{Cette perspective reflète de manière plus générale une tendance de l'époque à vouloir répliquer le modèle instrumental classique ou la relation entre le geste et le résultat sonore est très directe. La remarque en fin d'article \iquote{(...) a good causal mapping can ensure that tension is properly translated to the audible result.} en est révélatrice. Voir également la position de Claude Cadoz en ce sens au chapitre \ref{ch:gesture}}. Bien qu'instructives et utiles dans la perspective d'une relation de mimétisme univoque entre le mouvement gestuel et le mouvement d'un paramètre sonore, ces études mettent cependant de côté un aspect important des \glspl{DMI}, à savoir la possibilité sans pareil des ordinateurs à traiter le signal et transformer le continu en discret, l'absolu en relatif, le statique en dynamique, et inversement, et plus encore, si l'on sort de ce cadre relationnel univoque entre un capteur et un paramètre.\\
 %-------------------------- Figure : Vertegaal-transducer-function ----------------------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
 	\includegraphics[width=\textwidth]{gfx/05_interfaces/vertegaal-musical-function.png}
-	\caption[Adéquation entre fonction musicale, transducteur et retour primaire]{Adéquation entre fonction musicale, transducteur et retour primaire, d'après \cite{vertegaal_towards_1996}}
+	\caption[Adéquation entre fonction musicale, transducteur et retour primaire]{Adéquation entre fonction musicale, transducteur et retour primaire, selon \cite{vertegaal_towards_1996}.}
 	\label{fig:interface:vertegaal-transducer-function}
 \end{figure}
 %-------------------------- Figure : Vertegaal-transducer-function ----------------------------------
-\indent Ainsi d'après l'étude de Vertegaal (cf. figure \ref{fig:interface:vertegaal-transducer-function}), un potentiomètre rotatif serait très adapté à la sélection d'une valeur absolue de hauteur, tandis qu'un capteur de pression isotonique tel qu'un \gls{FSR} serait plus adapté à sa modulation\footnote{Ce modèle ``subjectif'' (selon les termes des auteurs) de Vertegaal et Ungvary a été confirmé par une étude récente \cite{malloch_design_2019}, mais dans un contexte de laboratoire, ce qui pose le problème décrit ci-après.}. Il est ici amusant de remarquer qu'un clavier de synthétiseur implémente quasiment l'exact opposé, en permettant de sélectionner les hauteurs absolues par un ensemble de capteurs de pression et de vélocité sous les touches tandis qu'un potentiomètre rotatif, le ``\textit{pitch-bend wheel}'' permet leur modulation relative.\\
-\indent On voit donc que l'usage, l'agencement et le traitement des données des capteurs contribuent pour autant, sinon davantage, à définir les relations entre capteurs et paramètres musicaux, que la nature de la variation du capteur lui-même. 
+\indent Ainsi d'après l'étude de Vertegaal (cf. figure \ref{fig:interface:vertegaal-transducer-function}), un potentiomètre linéaire serait très adapté à la sélection d'une valeur absolue de hauteur, tandis qu'un capteur de pression isotonique tel qu'un \gls{FSR} serait plus adapté à sa modulation. Ce modèle ``subjectif'' (selon les termes des auteurs\footnote{Cf. \cite{ungvary_cognition_1999}}) de Vertegaal et Ungvary a été ``confirmé'' expérimentalement par une étude récente \footnote{Cf. \cite{malloch_design_2019}}, mais dans un contexte de laboratoire. Il est ici intéressant de remarquer qu'un clavier de synthétiseur implémente quasiment l'exact opposé, en permettant de sélectionner des hauteurs absolues par un ensemble de capteurs de pression et de vélocité sous les touches tandis qu'un potentiomètre rotatif --~mais présenté latéralement, ce qui rend sa course longitudinale plutôt que radiale~--, le ``\textit{pitch-bend wheel}'' permet leur modulation relative. La différence par rapport au modèle thérorique d'Ungvary et Vertegaal tient au fait que le mapping n'y est pas \textit{one-to-one} en ce qui concerne la hauteur, que le potentiomètre du \textit{pitch-bend-wheel} est muni d'un ressort de rappel, et que ces deux capteurs contrôlent la hauteur de manière conjointe.\\
+%-------------------------- Figure : table du luthier numérique ----------------------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\includegraphics[width=\textwidth]{gfx/05_interfaces/clavier-Martenot-MIDI.png}
+	\caption[Agencement des capteurs et fonction musicale]{Un exemple de l'influence de l'agencement des capteurs sur leur usage musicale: à gauche l'Onde Martenet: slider linéaire pour le contrôle de hauteur (avec la bague) et capteur de pression pour la modulation (d'intensité). A droite, un clavier MIDI : multiples capteurs de pression pour la sélection de la hauteur absolue et potentiomètre pseudo-linéaire pour la modulation (pitch-bend).}
+	\label{fig:interface:martenot-clavier}
+\end{figure}
+%-------------------------- Figure : table du luthier numérique ----------------------------------
+\indent On voit donc que l'usage, la taille, l'agencement des capteurs et le traitement de ses données contribuent pour autant, sinon davantage, à définir les relations entre capteurs et paramètres musicaux, que la nature de la variation du capteur lui-même. Le fait qu'un paramètre musical ne soit pas ``facilement'' modulable avec un certain type de capteur ne présage donc pas de l'inadéquation de ce capteur pour le contrôle du paramètre en question. Tout au contraire, cela peut faire partie de la \textit{raison d'être} de l'instrument, dont la pratique peut s'apparenter davantage à celle du domptage d'un animal sauvage que celle de l'utilisation d'une machine docile\footnote{On pense par exemple au Theremin, sur lequel le contrôle de la hauteur par la distance de la main à l'antenne est très instable et difficile, et dont la maitrise est probablement un des intérêt de sa pratique. Quant au violon, il n'aurait tout simplement jamais vu le jour.}
 
 Ce décalage entre l'évalutation des capteurs et leur usage réel provient \\
 
-
-vertegaal-musical-function.png
 
 Question de latence : ``action-sound latency'' de A. McPherson
 
@@ -195,6 +201,10 @@ De même, les points de contact renvoyés par un écran multitouch sont issus d'
 
 \indent L'intelligence embarquée dans les capteurs est amenée à se développer, à mesure que progresse le traitement d'image et en particulier les algorithmes d'apprentissage par \gls{IA}, qui permettent d'extraire des contenus sémantiques, tels que la reconnaissance de motifs (objets, visages, mélodie, etc.).
 
+\indent Cette évolution pose deux questions : 
+
+L'extraction de données de plus haut niveau pose un problème général du modèle qu'on impose sur les données brutes (le dessein).
+
 
 	Capteurs intelligents (IHM)
 	cf \ref{appendix:delaubier}
@@ -205,6 +215,9 @@ De même, les points de contact renvoyés par un écran multitouch sont issus d'
 		- arduino, bela, teensy, etc.
 
 \subsection{Ordinateurs et DSP}
+\noindent L'arrivée concomittente de l'ordinateur personnel (PC), de la synthèse audio temps-réel et du protocole \gls{MIDI} dans les années 1980 a donné lieu à des dispositifs instrumentaux généralement constitués d'une interface de jeu d'une part et d'un \gls{DSP}, souvent un ordinateur, pour la synthèse d'autre part.
+
+Depuis le début du \siecle{21}~siècle, de nombreux micro-controleurs, nano-ordinateurs ont vu le jour, permettant une ré-intégration de l'électronique numérique dans le corps de l'interface de jeu.
 - raspberry pi, laptops, samplers and synths, smartphones
 
 
@@ -215,6 +228,8 @@ retour d'effort, moteurs de jeu acoustique (e.g. F. Collautti, robot musiciens),
 
 \subsection{La video}
 projection, interface écran, cf. ch rep-viz
+
+\noident Enfin, la description des dispositifs instrumentaux numériques ne serait pas complète sans mentionner les écran, les projecteurs, les actionneurs, les servo-moteurs, les lumières et tous les autres composants électiques contrôlés numériquement par le \gls{DMI}.
 
 
 \section{La part acoustique de l'interface des DMIs}
