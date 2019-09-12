@@ -70,6 +70,7 @@ Il faut ici rappeler que les \glspl{DMI}, s'ils se caractérisent par l'usage de
 %-------------------------------------------------------------
 
 \section{Facteurs de formes: héritages et transpositions}
+\label{sec:interfaces:heritages}
 
 \subsection{Héritage instrumental}
 
@@ -119,8 +120,8 @@ TODO : mettre une image de The Sponge et des accordéons de Patrick Saint Denis
 %-------------------------- Figure : table du luthier numérique ----------------------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
-	\includegraphics[width=\textwidth]{gfx/dummy.pdf}
-	\caption[Aperçu de la table d'un luthier numérique]{Aperçu de la table d'un luthier numérique.}
+	\includegraphics[width=\textwidth]{gfx/05_interfaces/lutherie-worktable.jpg}
+	\caption[Matériaux sur la table d'un luthier numérique]{Matériaux sur la table d'un luthier numérique.}
 	\label{fig:interface:table-luthier}
 \end{figure}
 %-------------------------- Figure : table du luthier numérique ----------------------------------
@@ -130,8 +131,7 @@ TODO : mettre une image de The Sponge et des accordéons de Patrick Saint Denis
 
 \subsection{Matériaux structurels}
 
-Les matériaux structurels définissent l'agencement physique du \gls{DMI}, non seulement la distribution spatiale de son affordance mais également la cohésion et les liaisons mécaniques entre les différents capteurs.
-En effet, on touche rarement les capteurs de manière directe : ils sont recouverts, enveloppés, intégrés dans un objet matériel plus ou moins complexe, possédant son propre état de surface, son propre jeu mécanique, en liaison avec le reste du dispositif.
+Les matériaux structurels définissent l'agencement physique du \gls{DMI}, non seulement la distribution spatiale de son affordance mais également la cohésion et les liaisons mécaniques entre les différents capteurs. En effet, on touche rarement les capteurs de manière directe : ils sont recouverts, enveloppés, intégrés dans un objet matériel plus ou moins complexe, possédant son propre état de surface, son propre jeu mécanique, en liaison avec le reste du dispositif.
 Ils assurent la jonction autant que l'isolement des différent capteurs.
 
 Usinage
@@ -140,34 +140,62 @@ Usinage
 
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item \textbf{bois}: Les contreplaqué est très souvent utilisé pour le prototypage rapide des \glspl{DMI}. Disponible en plaques de différentes épaisseurs, facilement découpable, perçable, collable et usinable par machine \gls{CNC}, il est un matériau très répandu dans la fabrication \gls{DIY} et les \glspl{makerspace}. Mais par ailleurs, le bois est historiquement le matériau phare de la lutherie acoustique. Il est par conséquent présent dans les instruments augmentés issus de lutheries acoustiques. Son importance historique l'ancre dans l'imaginaire collectif de l'instrument de musique. L'image d'Epinal de l'atelier du facteur d'instrument est remplie de copeaux et de ciseaux à bois et, de même que le public reconnait un dispositif électronique comme instrument de musique à partir du moment où l'on branche un clavier dessus\footnote{Cf. l'analyse de Trevor Pinch dans \cite{pinch_why_2001}}, le bois contribue à donner un sentiment d'instrumentalité à un dispositif numérique. Ainsi, bien que n'ayant aucun rôle fonctionnel, le bois massif est utilisé pour son caractère noble sur certains instruments numériques high-tech, tels que le Linnstrument, le SoundPlane (todo : photos).
-	\item \textbf{métal}: le métal est couramment utilisé pour les chassis et les coques de revêtement des machines électriques et électronique. En dehors de ses propriétés de résistance mécanique, sa conductivité permet d'isoler les composants de faux contacts et de perturbations électromagnétiques et notamment d'éviter le ``bruit de masse'' qui peut survenir quand un équippement électrique tel qu'un \gls{DMI} n'est pas relié à la masse. Le métal possède également des propriétés de résonance acoustique qui en font un matériau intéressant pour la captation et la diffusion électro-acoustique, et utilisé par exemple dans le diffuseur ``Gong'' de l'onde Martenot.
-	\item \textbf{plastique} le plastique offre de grande facilités de thermoformage, moulage, collage, perçage, gravage, qui permettent d'obtenir toute sorte de forme et notamment de s'adapter à l'ergonomie du corps (e.g. la main du MI). Les propriétés de transparence du \gls{PMMA}\footnote{aussi connue sous le nom commercial Plexiglass} permettent de l'utiliser au dessus d'un écran. L'essor des imprimantes 3D depuis le début du \siecle{21}~siècle a également contribué à son utilisation pour le prototypage rapide dans un contexte autre qu'industriel, et de pratiques \gls{DIY} dans les \glspl{makerspace}. (todo : photo main MI4?)
-	\item \textbf{verre}, le verre a été utilisé en particulier pour le caractère cristallin de sa résonnance acoustique (e.g. Cristal Baschet, glass-harmonica). Plus difficile à travailler, ses proprétés de transparence, et de résonance (cf. projet résonance auto NIME 2019)
-	\item \textbf{mousses}, la mousse est généralement utilisée pour ses propriété d'isolation phonique et vibratoire, mais également comme matériau tampon, pour améliorer la course des capteurs de pression (\gls{FSR}). Il existe de nombreuses sortes de mousses, offrant des nuances différentes d'enfoncement, de résiliance et affectant considérablement la sensation tactile sur ce type de capteurs.
-	\item \textbf{textile}, le textile a enfin été utilisé dans un certain nombre de \glspl{DMI} et de manière plus générale dans tout le champ d'interaction entre le domaine de la confection textile et de l'électronique, généralement désignée sous le terme de ``\textit{wearable electronics}''\footnote{Cf. la revue proposée dans \cite{stoppa_wearable_2014}}. La possibilité d'intégrer des fibres conductrices entrelacées dans le textile (``\textit{e-textile}'') a ainsi donné lieu à plusieurs développements de surfaces multitouch \cite{freed_application_2008, donneaud_designing_2017, wicaksono_fabrickeyboard:_2017} ou de vêtements munis de capteurs \cite{hayafuchi_musicglove_2008, serafin_controlling_2014, myllykoski_prototyping_2015}.
+	\item \textbf{le bois}: Le contreplaqué est très souvent utilisé pour le prototypage rapide des \glspl{DMI}. Disponible en plaques de différentes épaisseurs, facilement découpable, perçable, collable et usinable par machine \gls{CNC}, il est un matériau très répandu dans la fabrication \gls{DIY} et les \glspl{makerspace}. Mais par ailleurs, le bois est historiquement le matériau phare de la lutherie acoustique. Il est par conséquent présent dans les instruments augmentés issus de lutheries acoustiques. Son importance historique l'ancre dans l'imaginaire collectif de l'instrument de musique. L'image d'Epinal de l'atelier du facteur d'instrument est remplie de copeaux et de ciseaux à bois et, de même que le public reconnait un dispositif électronique comme instrument de musique à partir du moment où l'on branche un clavier dessus\footnote{Cf. l'analyse de Trevor Pinch dans \cite{pinch_why_2001}}, le bois contribue à donner un sentiment d'instrumentalité à un dispositif numérique. Ainsi, bien que n'ayant aucun rôle fonctionnel, le bois massif est utilisé pour son caractère noble et évocateur sur certains instruments numériques high-tech, tels que le Linnstrument, le SoundPlane (todo : photos).
+	\item \textbf{le métal} est couramment utilisé pour les chassis et les coques de revêtement des machines électriques et électronique. En dehors de ses propriétés de résistance mécanique, sa conductivité permet d'isoler les composants de faux contacts et de perturbations électromagnétiques et notamment d'éviter le ``bruit de masse'' qui peut survenir quand un équippement électrique tel qu'un \gls{DMI} n'est pas relié à la masse. Le métal possède également des propriétés de résonance acoustique qui en font un matériau intéressant pour la captation et la diffusion électro-acoustique, et utilisé par exemple dans le diffuseur ``Gong'' de l'onde Martenot.
+	\item \textbf{le plastique} offre de grande facilités de thermoformage, moulage, collage, perçage, gravage, qui permettent d'obtenir toute sorte de forme et notamment de s'adapter à l'ergonomie du corps (e.g. la main du MI). Les propriétés de transparence du \gls{PMMA}\footnote{aussi connue sous le nom commercial Plexiglass} permettent de l'utiliser au dessus d'un écran. L'essor des imprimantes 3D depuis le début du \siecle{21}~siècle a également contribué à son utilisation pour le prototypage rapide dans un contexte autre qu'industriel, et de pratiques \gls{DIY} dans les \glspl{makerspace}. (todo : photo main MI4?)
+	\item \textbf{le verre} a été utilisé en particulier pour le caractère cristallin de sa résonnance acoustique (e.g. Cristal Baschet, glass-harmonica). Plus difficile à travailler, ses proprétés de transparence, et de résonance (cf. projet résonance auto NIME 2019)
+	\item \textbf{la mousses} est généralement utilisée pour ses propriété d'isolation phonique et vibratoire, mais également comme matériau tampon, pour améliorer la course des capteurs de pression (\gls{FSR}). Il existe de nombreuses sortes de mousses, offrant des nuances différentes d'enfoncement, de résiliance et affectant considérablement la sensation tactile sur ce type de capteurs.
+	\item \textbf{le textile} a enfin été utilisé dans un certain nombre de \glspl{DMI} et de manière plus générale dans tout le champ d'interaction entre le domaine de la confection textile et de l'électronique, généralement désignée sous le terme de ``\textit{wearable electronics}''\footnote{Cf. la revue proposée dans \cite{stoppa_wearable_2014}}. La possibilité d'intégrer des fibres conductrices entrelacées dans le textile (``\textit{e-textile}'') a ainsi donné lieu à plusieurs développements de surfaces multitouch \cite{freed_application_2008, donneaud_designing_2017, wicaksono_fabrickeyboard:_2017} ou de vêtements munis de capteurs \cite{hayafuchi_musicglove_2008, serafin_controlling_2014, myllykoski_prototyping_2015}.
 \end{itemize}
 
-%-------------------------------------------------------------
-\subsection{Objets détournés}
-
-cf. DIY DMI. Hacking, circuit bending
-tambourins, instruments augmentés, les cordes
-la récup
+\noindent En dehors de ce matériaux relativement bruts qu'il s'agit d'assembler, les lutheries numériques opèrent aussi de manière ``sauvage'' en s'appropriant des objets déjà complexes et en les détournant à de fins musicales nouvelles, comme il a été présenté dans la section \ref{sec:interfaces:heritages}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Capteurs}
 
-Une grande diversité de capteurs est disponible sur le marché, mesurant différentes grandeurs physiques\footnote{position, distance, pression, orientation, flux d'air, lumière, humidité, température, champ magnétique, présence, contact, etc.} exploitables dans l'interaction avec un \gls{DMI}. On peut regrouper les capteurs dans deux grandes familles
+\noindent Une grande diversité de capteurs est disponible sur le marché, mesurant différentes grandeurs physiques : position, distance, pression, orientation, flux d'air, lumière, humidité, température, champ magnétique, présence, contact, etc. Leur utilisation spécifique dans le domaine des lutheries numériques a été l'objet de nombreuses études qualitatives et quantitatives, menées en particulier depuis ces deux dernière décennies par l'équipe de Marcello Wanderley à l'\gls{IDMIL}\footnote{Voir notamment : \cite{wanderley_choice_2000, hollinger_evaluation_2006, marshall_sensor_2009, vigliensoni_quantitative_2012, medeiros_comprehensive_2014} ainsi que le site \url{https://sensorwiki.org} qui rassemble des informations utiles sur un grand nombre de capteurs et d'interfaces}.
+
+Les capteurs ne sont que des ``portes d'entrées'' de la partie algorithmique d'un \gls{DMI}. 
+
+Outre le type de grandeur mesurée, les capteurs se distinguent entre ceux qui permettent une mesure stable (e.g. position d'un potentiomètre), ou dynamique, c'est à dire qui revient à une valeur de repos quand on le relâche (capteur de distance, de pression)
+
+Comme dit précédemment, les capteurs sont généralement intégrés dans un enrobage matériel, voire un système mécanique complexe, qui peut pour un même capteur donner lieu à des interactions tout à fait différentes. 
+
+On peut regrouper les capteurs dans deux grandes familles
 Capteurs ``bruts'' et capteur ``intelligents''
 Pads MIDI => peuvent être implémentés via interrupteurs, piezzo, FSR...
 Multitouch = différentes technologies de détections (capacitives, infra-rouge, etc.) pour renvoyer la position des doigts.
 
-https://sensorwiki.org
+\indent Un certain nombre d'études ont par ailleurs tenté de proposer une analyse des correspondance entre capteurs et fonctions musicale (e.g. \cite{vertegaal_towards_1996, goudeseune_interpolated_2002}), en mettant les aspects statique, dynamique, absolue ou relatif des valeurs transmises par les capteurs en regard de ces mêmes aspects appliqués à des grandeurs liées à la musique (en particulier le pitch), dans l'optique d'évaluer qualitativement l'adéquation entre le choix des capteurs et le type de contrôle musical\footnote{Cette perspective reflète de manière plus générale une tendance de l'époque à vouloir répliquer le modèle instrumental classique ou la relation entre le geste et le résultat sonore est très directe. La remarque en fin d'article \iquote{(...) a good causal mapping can ensure that tension is properly translated to the audible result.} en est révélatrice. Voir également la position de Claude Cadoz en ce sens au chapitre \ref{ch:gesture}}. Bien qu'instructives et utiles dans la perspective d'une relation de mimétisme univoque entre le mouvement gestuel et le mouvement d'un paramètre sonore, ces études mettent cependant de côté un aspect important des \glspl{DMI}, à savoir la possibilité sans pareil des ordinateurs à traiter le signal et transformer le continu en discret, l'absolu en relatif, le statique en dynamique, et inversement, et plus encore, si l'on sort de ce cadre relationnel univoque entre un capteur et un paramètre.\\
+%-------------------------- Figure : Vertegaal-transducer-function ----------------------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\includegraphics[width=\textwidth]{gfx/05_interfaces/vertegaal-musical-function.png}
+	\caption[Adéquation entre fonction musicale, transducteur et retour primaire]{Adéquation entre fonction musicale, transducteur et retour primaire, d'après \cite{vertegaal_towards_1996}}
+	\label{fig:interface:vertegaal-transducer-function}
+\end{figure}
+%-------------------------- Figure : Vertegaal-transducer-function ----------------------------------
+\indent Ainsi d'après l'étude de Vertegaal (cf. figure \ref{fig:interface:vertegaal-transducer-function}), un potentiomètre rotatif serait très adapté à la sélection d'une valeur absolue de hauteur, tandis qu'un capteur de pression isotonique tel qu'un \gls{FSR} serait plus adapté à sa modulation\footnote{Ce modèle ``subjectif'' (selon les termes des auteurs) de Vertegaal et Ungvary a été confirmé par une étude récente \cite{malloch_design_2019}, mais dans un contexte de laboratoire, ce qui pose le problème décrit ci-après.}. Il est ici amusant de remarquer qu'un clavier de synthétiseur implémente quasiment l'exact opposé, en permettant de sélectionner les hauteurs absolues par un ensemble de capteurs de pression et de vélocité sous les touches tandis qu'un potentiomètre rotatif, le ``\textit{pitch-bend wheel}'' permet leur modulation relative.\\
+\indent On voit donc que l'usage, l'agencement et le traitement des données des capteurs contribuent pour autant, sinon davantage, à définir les relations entre capteurs et paramètres musicaux, que la nature de la variation du capteur lui-même. 
+
+Ce décalage entre l'évalutation des capteurs et leur usage réel provient \\
+
+
+vertegaal-musical-function.png
 
 Question de latence : ``action-sound latency'' de A. McPherson
+
 \subsubsection{Capteurs intelligents}
+
+Fusion de capteurs, prétraitement
+
+\noindent Cetains capteurs renvoient des données de plus haut niveau que la donnée brute, en la traitant au préalable localement au niveau du capteur lui-même. Par exemple, l'image renvoyée par une caméra est un signal multiplexé contenant les données de plusieurs millions d'éléments photosensibles intégrés dans un composant miniature. 
+De même, les points de contact renvoyés par un écran multitouch sont issus d'un pré-traitement de la matrice de capteurs capacitifs ou photo-sensibles répartis sur une surface sensible.
+
+\indent L'intelligence embarquée dans les capteurs est amenée à se développer, à mesure que progresse le traitement d'image et en particulier les algorithmes d'apprentissage par \gls{IA}, qui permettent d'extraire des contenus sémantiques, tels que la reconnaissance de motifs (objets, visages, mélodie, etc.).
+
+
 	Capteurs intelligents (IHM)
 	cf \ref{appendix:delaubier}
 	e.g. leap motion, multitouch overlays
@@ -349,7 +377,7 @@ La conception d’une nouvelle interface pour la performance musicale est une t�
 TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis, ou Fairlight CMI)
 
 \noindent La tablette graphique (précisément un modèle Sapphire de Wacom) a été l’interface originelle qui a servi de base au filigramophone. J’ai commencé à l’utiliser dans le cadre du développement de la Méta-Mallette\footnote{Logiciel pour la pratique collective de musique par ordinateur développé par l’association Puce Muse, au développement duquel j'ai activement participé entre 2005 et 2008.}. Le choix de cette interface était motivé par la diversité de gestes expressifs possibles sur une tablette graphique, ainsi que par son coût relativement abordable\footnote{un peu moins de 100€ en 2005, autour de 50€ pour un modèle équivalent en 2019.} comparativement à la plupart des interfaces \gls{MIDI}, permettant de la déployer en nombre, dans le cadre d'activités pédagogiques pratiquées en groupe, dans des écoles et autres collectivités.\\
-\indent En dehors de son usage pour la composition, un certain nombre de musiciens, compositeurs et concepteurs de \gls{NIME} l’ont par ailleurs adoptée pour la performance\footnote{Notamment au \gls{CNMAT} (voir \cite{zbyszynski_ten_2007}, au \gls{LMA} \cite{couturier_utilisation_2004}, au \gls{LIMSI} \cite{feugere_chorus_2011} puis dans l'équipe \gls{LAM} \cite{xiao_t-voks_2019}, mais on peut également citer Pierre Jodlowski (voir \url{https://youtu.be/pLARXmGwIO4}) ou Jesper Nordin (voir \url{https://gestrument.com/})}. Nicolas d’Alessandro a consacré une partie de son travail de thèse \cite{dalessandro_realtime_2009} à ce sujet, en proposant une étude détaillée des différentes échelles de mouvements dans le geste du dessin et de l'écriture, liées à l'articulation entre doigts, poignet et épaule.\\
+\indent En dehors de son usage pour la composition, un certain nombre de musiciens, compositeurs et concepteurs de \gls{NIME} l’ont par ailleurs adoptée pour la performance\footnote{Notamment à l'\gls{IRCAM} (voir \cite{wanderley_choice_2000}), au \gls{CNMAT} (voir \cite{zbyszynski_ten_2007}, au \gls{LMA} \cite{couturier_utilisation_2004}, au \gls{LIMSI} \cite{feugere_chorus_2011} puis dans l'équipe \gls{LAM} \cite{xiao_t-voks_2019}, mais on peut également citer Pierre Jodlowski (voir \url{https://youtu.be/pLARXmGwIO4}) ou Jesper Nordin (voir \url{https://gestrument.com/})}. Nicolas d’Alessandro a consacré une partie de son travail de thèse \cite{dalessandro_realtime_2009} à ce sujet, en proposant une étude détaillée des différentes échelles de mouvements dans le geste du dessin et de l'écriture, liées à l'articulation entre doigts, poignet et épaule.\\
 \indent J'avais utilisé la tablette graphique pour différents projets\footnote{filigram, Media Music rooM, cf. \url{http://vincentgoudard.com}}, mais comme un composant parmi d'autres interfaces \gls{MIDI} ou de type joystick.
 \indent Un des inconvénient de la tablette Wacom est que les contours de la surface utile, plus petite que la surface de la tablette\footnote{Cela permet de ne pas ``tomber'' hors de la tablette}, sont à peine perceptibles, tant visuellement qu'au niveau tactile. Cela s'avère problématique quand on manipule un processus sonore et non un pinceau dans PhotoShop, tel que l'usage de la tablette le prévoit. Une première adaptation a donc consisté à rajouter des bandes adhésives permettant de matérialiser cette frontière, visuellement et tactilement (cf. figure \ref{fig:interface:wacom}).\\
 %-------------------------- Figure : wacom ---------
