@@ -310,15 +310,6 @@ A noter que ces catégories ne sont pas étanches; par exemple, une guitare peut
 \noindent L'agencement modulaire des \glspl{DMI} entraine par ailleurs temps de démontage/remontage de l'instrument avant qu'il soit possible d'en jouer. De plus, les instruments électrifiés nécessitent généralement d'être branchés (sauf s'ils fonctionnent entièrement sur batterie). Ces branchements prennent du temps et nécessitent d'avoir des alimentations en courant à proximité. Pour les \glspl{DMI} se rajoute à cela le ``temps de lancement'', c'est-à-dire généralement le temps de démarrer l'ordinateur, de lancer le(s) logiciel(s) nécessaire(s), d'ouvrir le patch ou le script adéquat, et éventuellement de l'initialiser avec la bonne configuration.\\
 \indent On utilise souvent le terme ``plug'n play'' pour décrire une disponibilité immédiate de l'instrument, mais sur de tels dispositifs, la temps de branchement peut dans les fait s'avérer assez long. Il est important de prendre en compte cette durée dans le design d'un \gls{DMI}, car tout le temps passé sur la partie de montage technique est pris au détriment du temps de jeu\footnote{Cf. les propos de Nicolas Bernier (annexe \ref{appendix:bernier}), François Dumeaux (annexe \ref{appendix:dumeaux}) et Bruno Zamborlin (annexe \ref{appendix:zamborlin}) dans les entretiens)}. Notons toutefois que les \glspl{DMI} ne nécessitent généralement pas de temps d'accordage, et ne sont pas généralement pas sujets aux conditions de température et d'hygrométrie qui nécessite le ré-accordage des instruments acoustique et le temps de chauffe, particulièrement important pour les cuivres.
 
-%------------------------------------------------------------
-\subsection{Ergodynamie}
-
- \iquote{le mot \textit{ergodynamie} est proposé comme un terme qui s'approche d'une certaine manière de l'usage du mot `gameplay' dans le domaine des jeux vidéo, mais qui traduit également une conscience et une expérience de l'instrument dans des pratiques incarnées, historiques et esthétiques. L'ergodynamie concerne l'objet étudié, mais elle se rapporte aussi bien au contexte culturel qu'à des expériences personnelles subjectives de cet objet.}
-
-\footnote{\iquote{(...) the word \textit{ergodynamics} is proposed as a term that somewhat relates to the use of ‘gameplay’ in computer games, but further signifies an awareness and experience of the instrument in embodied, historical, and aesthetic practices. Ergodynamics are of the object studied, but it relates equally to cultural context and subjective personal experiences of it.} \cite{magnusson_ergodynamics_2019}}
-
-agencement de l’interface, représentation visuelle, repères tactile, frettage
-
 
 %------------------------------------------------------------
 \subsection{Proprioception}
@@ -333,11 +324,20 @@ Affordance
 
 \subsection{Se repérer dans l'interface}
 
+\noindent L'apprentissage et la maitrise d'un instrument passe par une exploration multimodale qui implique l'ensemble de la perception. Les \gls{DMI} présentent cette particularité par rapport aux instruments acoustiques que la relation de causalité entre action sur l'interface et la réation de l'instrument n'est pas \textit{a priori} basée sur un rapport causal obéissant aux lois de la physique, mais sur la base d'un design arbitraire, qui constitue comme le dit Thor Magnusson ``une thérie de la musique'' en soi \cite{magnusson_sonic_2019}, avec ses règles propres et d'éventuels scénarios évolutifs.
+
 \subsubsection{Repères visuels}
-Cf. section représentation visuelle
+
+\noindent Le premièr rapport avec l'instrument est visuel: avant même de sonner, l'instrument présente une structure spatiale, d'éventuels éléments reconnaissables, marqueurs, touches, poignées, symboles, etc. Ces aspects visuels sont présentés plus en détail dans le chapitre \ref{ch:visual_representation}.
+
+\subsubsection{Repères sonores}
+
+\noindent Les termes de l'exploration sonore ont déjà été en partie présentés dans la section \ref{sec:ephemeral:playing-a-DMI}. La pratique de l'écoute et de la mémorisation des correspondances entre actions sur l'interface et résultat sonore contribue à enrichir son ``solfège de l'audible'' \cite{savouret_introduction_2010} et découvrir comment ces différents points de résonance (ou \textit{sweet spots}) s'articulent topologiquement, voire chronologiquement, sur l'interface de jeu.
 
 \subsection{Se repérer au toucher}
-\indent Un grand défaut des interfaces graphiques ``tactiles'' est que leur surface est généralement dépourvue de repère tactile: aucune aspérité ne vient guider la main pour qu'elle trouve ses repères et son chemin sans l'aide de la vue. Différentes stratégies peuvent venir partiellement compenser cette lacune. Leur application dépend à la fois de la technologie de captation du \textit{multitouch}, ainsi que du type de repère, statique ou dynamique, que l'on souhaite.
+
+\noindent L'agencement structurel de l'interface, l'état de surface de ses matériaux, l'affordance de ses capteurs, la présence de jeux mécaniques, et la correpondance entre l'anatomie corporelle et celle de l'interface, contribuent au repérage tactile et proprioceptif sur l'interface de jeu.\\
+\indent Un grand défaut des interfaces graphiques dites ``tactiles'' est, ironiquement, que leur surface est généralement dépourvue de repère tactile: aucune aspérité ne vient guider la main pour qu'elle trouve son chemin sans l'aide de la vue. Différentes stratégies peuvent venir partiellement compenser cette lacune. Leur application dépend à la fois de la technologie de captation du \textit{multitouch}, ainsi que du type de repère, statique ou dynamique, que l'on souhaite.
 
 \subsubsection{Repères statiques}
 todo : parler des partitions tangibles d'Enrique Tomas
@@ -365,6 +365,7 @@ Une solution bon marché consiste à utiliser de la bande adhésive (cf. figure 
 %------------ Figure : filigramophone et xypre piezo -----------
 
 \subsubsection{Repères dynamiques : fretting audiotactile}
+
 \label{sec:audio-fretting}
 \noindent Le déclenchement d'impulsion dans un haut-parleur tactile peut aider à sentir les paliers dans la progression d'un geste continu (e.g. les différentes ``notes'' d'une échelle de hauteur). Ce type de retour tactile fonctionne uniquement en réponse à un mouvement, le repère n'est pas sensible de manière statique. Son avantage par rapport à un repère physique (e.g. adhésif) .\\
 
@@ -374,7 +375,11 @@ Travail avec Pascale Criton à la maison des aveugles
 \subsubsection{Vérouillage des composants GUI}
 \noindent Une solution logicielle partielle à ce problème et largement utilisée dans les systèmes de \gls{GUI} consiste à vérouiller l'interaction avec le composant GUI tant que le doigt est en contact avec la surface tactile, ce qui permet d'utiliser l'intégralité de l'écran tactile pour l'interaction et d'avoir des gestes plus amples. Ce solution nécessite toutefois que le composant ait bien été ciblé au moment du contact initial.
 
+%------------------------------------------------------------
+\subsection{Ergodynamie}
 
+\noident Les différents aspects qui contribuent à l'ergonomie de l'interface de jeu d'un \gls{DMI} sont ainsi à la fois ancrés dans le corps matériel de l'instrumennt, mais également dans les artéfacts sonores, visuels ou vibratoires produits par l'ordinateur. A ces aspects purement cognitifs s'ajoute l'expérience personnelle et la reconnaissance de tous les éléments appartenant au répertoire culturel dans lequel un nouveau \gls{DMI}, encore inconnu, s'inscrit.\\
+\indent Thor Magnusson propose ainsi la notion d'``ergodynamie'' \iquote{comme un terme qui s'approche d'une certaine manière de l'usage du mot `gameplay' dans le domaine des jeux vidéo, mais qui traduit également une conscience et une expérience de l'instrument dans des pratiques incarnées, historiques et esthétiques. L'ergodynamie concerne l'objet étudié, mais elle se rapporte aussi bien au contexte culturel qu'à des expériences personnelles subjectives de cet objet.\footnote{\iquote{(...) the word \textit{ergodynamics} is proposed as a term that somewhat relates to the use of ‘gameplay’ in computer games, but further signifies an awareness and experience of the instrument in embodied, historical, and aesthetic practices. Ergodynamics are of the object studied, but it relates equally to cultural context and subjective personal experiences of it.} \cite{magnusson_ergodynamics_2019}}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
