@@ -126,6 +126,21 @@ TODO : mettre une image de The Sponge et des accordéons de Patrick Saint Denis
 \end{figure}
 %-------------------------- Figure : table du luthier numérique ----------------------------------
 
+Thor Magnusson : \iquote{L'instrument électronique ou numérique \textit{a} une interface, tandis que l'instrument acoustique \textit{est} l'interface.}\footnote{``We can state that the electronic or digital instrument \textit{has} an interface, whereas the acouystic instrument \textit{is} the inetrface.''\cite{magnusson_sonic_2019}}
+
+
+Par ailleurs, la notion de transparence, voire de disparition de l'interface\footnote{\iquote{What is needed is a transparent mediation technology that relates musical involvement directly to sound energy. Transparent technology should thereby give a feeling of non-mediation, a feeling that the mediation technology ``disappears'' when it is used. Such a technology would then act as a natural mediator for search-and-retrieval purposes as well as for interactive music-making.} \cite{leman_embodied_2008} ou encore \iquote{The more transparent the mapping is, the more expressive the device canbe. Thedegreeofmappingtransparencyfortheplayerandaudienceformorthogonal axes of a graph into which devices can be placed. Full transparency for the player means that the device's output exactly matches the player's expectation and control.} \cite{fels_mapping_2002}}.
+
+Cf. propos de Joel Ryan sur la notion d'effort dans l'instrument dans \cite{ryan_remarks_1991}
+
+\noindent Une tendance du développement en \gls{IHM}, associée à ce que l'on nomme de manière plus générale ``réalité virtuelle'' et renforcée par les progrès récents de l'\gls{IA}, est la disparition de l'interface, au profit d'une informatique ``ubiquitaire'' et d'une manipulation 
+
+Si une tendance de la recherche sur les \gls{IHM} a entrainé la ``disparition de l'interface'' (\ref{weiser_computer_1991, dey_distributed_2001, hui_towards_2017}), au profit d'une \textit{informatique ubiquitaire} permettant une interaction directe avec les contenus plutôt qu'à travers une interface
+
+de ces dernières années a annoncé la ``disparition de l'interface'', au profit d'une manipulation des données par nos simples mouvement dans l'air\footnote{En particulier, la scène du film \textit{Minority Report} dans laquelle Tom Cruise manipule des données sur un écran par le simple mouvement de ses doigts a stimulé l'imaginaire de cette tendance. cf. \url{https://youtu.be/PJqbivkm0Ms}} ou plus encore, par la lecture directe de nos pensée. Cette direction a donné naissance a un certain nombre d'\gls{IHM} telles que la Kinect de Microsoft, le leapmotion, les Google glass, l'Oculus Rift, etc. qui immergent (plus ou moins complètement) leurs utilisateurs dans une réalité virtuelle ou ``augmentée'', en interpétant directement les mouvements et/ou le contexte
+
+\indent Cependant, et paraphrasant la citation de Stravinsky en exergue de ce chapitre, les matériaux ne doivent pas être méprisés. Ils offrent de nombreuses possibilités, en terme de sensation, d'appui et de repos, et si l'on peut s'en saisir, on peut également les délaisser. S'il est relativement facile de ne toucher à rien, il s'avère plus compliqué de ne penser à rien.
+
 \noindent Cette section regroupe un ``fatras'' d'éléments matériels qui peuvent se retrouver sur la table de travail d'un luthier numérique. Il aurait été tentant de les séparer en une catégorie ``matériaux bruts'' d'une part et ``électronique'' d'autre part, mais ç'aurait été masquer l'interpénétration croissante de ces deux champs. D'une part, les matériaux ``bruts'' sont en fait rarement bruts au point d'être ``naturels'' (e.g. une plaque de contreplaqué ne pousse pas dans la nature), et d'autre part, l'intégration de l'électronique confère souvent un rôle à des matériaux qui ne le sont a priori pas électriques\footnote{Considérons par exemple le cas d'un chassis métallique, dont la fonction est avant tout structurelle, et qui est relié à la masse.}.\\
 \indent Je présente ici une liste non-exhaustive de matériaux pouvant se retrouver sur la table de travail d'un luthier numérique, ainsi que le rôle qu'ils jouent dans la fabrication d'une interface de \gls{DMI}. Bien que ces catégories s'interpénètrent, ils sont envisagés selon trois perspectives : matériaux structurels, captation et computation, objets détournés.
 
@@ -148,6 +163,9 @@ Usinage
 	\item \textbf{le textile} a enfin été utilisé dans un certain nombre de \glspl{DMI} et de manière plus générale dans tout le champ d'interaction entre le domaine de la confection textile et de l'électronique, généralement désignée sous le terme de ``\textit{wearable electronics}''\footnote{Cf. la revue proposée dans \cite{stoppa_wearable_2014}}. La possibilité d'intégrer des fibres conductrices entrelacées dans le textile (``\textit{e-textile}'') a ainsi donné lieu à plusieurs développements de surfaces multitouch \cite{freed_application_2008, donneaud_designing_2017, wicaksono_fabrickeyboard:_2017} ou de vêtements munis de capteurs \cite{hayafuchi_musicglove_2008, serafin_controlling_2014, myllykoski_prototyping_2015}.
 \end{itemize}
 
+\subsubsection{Les systèmes ``intermédiaires'' mécaniques}
+\noindent Outre l'aspect structurel ``statique'', de nombreaux systèmes mécaniques sont utilisés dans les \glspl{DMI}, venant modifier l'agencement spatial de l'instrument, ou transformer la relation avec le capteurs. (e.g pantographe de Momeni, Joysticks géants de PM, Plume de Hugues)
+
 \noindent En dehors de ce matériaux relativement bruts qu'il s'agit d'assembler, les lutheries numériques opèrent aussi de manière ``sauvage'' en s'appropriant des objets déjà complexes et en les détournant à de fins musicales nouvelles, comme il a été présenté dans la section \ref{sec:interfaces:heritages}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -167,7 +185,7 @@ Capteurs ``bruts'' et capteur ``intelligents''
 Pads MIDI => peuvent être implémentés via interrupteurs, piezzo, FSR...
 Multitouch = différentes technologies de détections (capacitives, infra-rouge, etc.) pour renvoyer la position des doigts.
 
-\indent Un certain nombre d'études ont par ailleurs proposé une analyse de l'adéquation entre capteurs et fonctions musicale (e.g. \cite{vertegaal_towards_1996, goudeseune_interpolated_2002}), en mettant les aspects statique, dynamique, absolue ou relatif des valeurs transmises par les capteurs en regard de ces mêmes aspects appliqués à des grandeurs liées à la musique (en particulier le pitch), dans l'optique d'évaluer qualitativement l'adéquation entre le choix des capteurs et le type de contrôle musical\footnote{Cette perspective reflète de manière plus générale une tendance de l'époque à vouloir répliquer le modèle instrumental classique ou la relation entre le geste et le résultat sonore est très directe. La remarque en fin d'article \iquote{(...) a good causal mapping can ensure that tension is properly translated to the audible result.} en est révélatrice. Voir également la position de Claude Cadoz en ce sens au chapitre \ref{ch:gesture}}. Bien qu'instructives et utiles dans la perspective d'une relation de mimétisme univoque entre le mouvement gestuel et le mouvement d'un paramètre sonore, ces études mettent cependant de côté un aspect important des \glspl{DMI}, à savoir la possibilité sans pareil des ordinateurs à traiter le signal et transformer le continu en discret, l'absolu en relatif, le statique en dynamique, et inversement, et plus encore, si l'on sort de ce cadre relationnel univoque entre un capteur et un paramètre.\\
+\indent Un certain nombre d'études ont par ailleurs proposé une analyse de l'adéquation entre capteurs et fonctions musicale (e.g. \cite{vertegaal_towards_1996, goudeseune_interpolated_2002}), en mettant les aspects statique, dynamique, absolue ou relatif des valeurs transmises par les capteurs en regard de ces mêmes aspects appliqués à des grandeurs liées à la musique (en particulier le pitch), dans l'optique d'évaluer qualitativement l'adéquation entre le choix des capteurs et le type de contrôle musical\footnote{Cette perspective reflète de manière plus générale une tendance de l'époque à vouloir répliquer le modèle instrumental classique ou la relation entre le geste et le résultat sonore est très directe. La remarque en fin d'article \iquote{(...) a good causal mapping can ensure that tension is properly translated to the audible result.} en est révélatrice. Voir également la position de Claude Cadoz en ce sens au chapitre \ref{ch:gesture}}. Bien qu'instructives et utiles dans la perspective d'une relation de mimétisme univoque entre le mouvement gestuel et le mouvement d'un paramètre sonore, ces études mettent cependant de côté un aspect important des \glspl{DMI}, à savoir la possibilité sans pareil des ordinateurs à traiter le signal et changer son échelle, transformer le continu en discret, l'absolu en relatif, l'instantané en différé, le statique en dynamique, et inversement, et plus encore, si l'on sort de ce cadre relationnel univoque entre un capteur et un paramètre.\\
 %-------------------------- Figure : Vertegaal-transducer-function ----------------------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
@@ -181,7 +199,7 @@ Multitouch = différentes technologies de détections (capacitives, infra-rouge,
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
 	\includegraphics[width=\textwidth]{gfx/05_interfaces/clavier-Martenot-MIDI.png}
-	\caption[Agencement des capteurs et fonction musicale]{Un exemple de l'influence de l'agencement des capteurs sur leur usage musicale: à gauche l'Onde Martenet: slider linéaire pour le contrôle de hauteur (avec la bague) et capteur de pression pour la modulation (d'intensité). A droite, un clavier MIDI : multiples capteurs de pression pour la sélection de la hauteur absolue et potentiomètre pseudo-linéaire pour la modulation (pitch-bend).}
+	\caption[Agencement des capteurs et fonction musicale]{Un exemple de l'influence de l'agencement des capteurs sur leur usage musical: à gauche l'Onde Martenet: slider linéaire pour le contrôle de hauteur (avec la bague) et capteur de pression pour la modulation (d'intensité). A droite, un clavier MIDI : multiples capteurs de pression pour la sélection de la hauteur absolue et potentiomètre pseudo-linéaire pour la modulation (pitch-bend).}
 	\label{fig:interface:martenot-clavier}
 \end{figure}
 %-------------------------- Figure : table du luthier numérique ----------------------------------
@@ -215,10 +233,15 @@ L'extraction de données de plus haut niveau pose un problème général du mod�
 		- arduino, bela, teensy, etc.
 
 \subsection{Ordinateurs et DSP}
+
+\noindent La principale remarque que l'on puisse faire sur les ordinateurs, concernant leur aspect matériel, est la prodigieuse chute de leur coût et de leur dimensions, depuis leur invention. La conséquence principale de la chute de leur coût est le transfert depuis l'industrie et les laboratoires vers la société civile, et la conséquence de leur miniaturisation est leur intégration dans des objets mobiles\footnote{Le smartphone en est un exemple significatif, mais on pense aussi, dans le domaine qui nous concerne, à la possibilité d'avoir, par exemple, l'équivalent d'une table de mixage 128 pistes et des racks d'effets sur un simple ordinateur portable équipée d'une (bonne) carte son.}.
+
 \noindent L'arrivée concomittente de l'ordinateur personnel (PC), de la synthèse audio temps-réel et du protocole \gls{MIDI} dans les années 1980 a donné lieu à des dispositifs instrumentaux généralement constitués d'une interface de jeu d'une part et d'un \gls{DSP}, souvent un ordinateur, pour la synthèse d'autre part.
 
-Depuis le début du \siecle{21}~siècle, de nombreux micro-controleurs, nano-ordinateurs ont vu le jour, permettant une ré-intégration de l'électronique numérique dans le corps de l'interface de jeu.
+\indent Depuis le début du \siecle{21}~siècle, de nombreux micro-contrôleurs, nano-ordinateurs ont vu le jour, permettant une ré-intégration de l'électronique numérique dans le corps de l'interface de jeu.
 - raspberry pi, laptops, samplers and synths, smartphones
+
+Elément central d'un \gls{DMI} la partie computationnelle est souvent distribuée sur plusieurs éléments dédiés : carte son, interface d'acquisition, ordinateur, \gls{DSP}.
 
 
 \subsubsection{Haut-parleurs et transducteurs tactiles}
@@ -226,10 +249,10 @@ Depuis le début du \siecle{21}~siècle, de nombreux micro-controleurs, nano-ord
 \subsubsection{Actionneurs}
 retour d'effort, moteurs de jeu acoustique (e.g. F. Collautti, robot musiciens), 
 
-\subsection{La video}
+\subsection{Les retours}
 projection, interface écran, cf. ch rep-viz
 
-\noident Enfin, la description des dispositifs instrumentaux numériques ne serait pas complète sans mentionner les écran, les projecteurs, les actionneurs, les servo-moteurs, les lumières et tous les autres composants électiques contrôlés numériquement par le \gls{DMI}.
+\noindent Enfin, la description des dispositifs instrumentaux numériques ne serait pas complète sans mentionner les écran, les projecteurs, les actionneurs, les servo-moteurs, les lumières et tous les autres composants électiques contrôlés numériquement par le \gls{DMI}.
 
 
 \section{La part acoustique de l'interface des DMIs}
@@ -237,7 +260,7 @@ projection, interface écran, cf. ch rep-viz
 
 \noindent Il faut ici rappeler que les \glspl{DMI}, s'ils se caractérisent par l'usage de la computation numérique, sont aussi nécessairement des instruments électroniques, électriques et acoustiques. Il portent l'héritage et les contraintes propres à ces différents médias. Mais le phénomène acoustique, omnidirectionnel et tri-dimensionnel dans le monde physique, est réduit dans l'électronique numérique à un signal mono-dimensionnel\footnote{Nicolas Collins, dressant une liste de traits distinctifs entre hardware et software dans \cite{collins_semiconducting_2013} notait: ``Traditional acoustic instruments are three-dimensional objects, radiating sound in every direction, filling the volume of architectural space like syrup spreading over a waffle. Electronic circuits are much flatter, essentially two-dimensional. Software is inherently linear, every program is a one-dimensional string of code.''} et mono-directionnel\footnote{Au niveau logiciel, des blocs bi-directionnels de plus haut niveau peuvent cependant être crées, comme par exemple dans la librairie de modèles physiques pour \gls{FAUST}, cf. \cite{berdahl_introduction_2012} et \cite{michon_faust_2018}.}, introduisant une distinction entre les ``entrées'' d'une part et les ``sorties'' d'autre part. La dimension acoustique des \glspl{DMI} s'intègre donc dans un circuit ouvert ou fermé avec le système de computation via des transducteurs acoustiques --~microphones en entrée, ou haut-parleurs en sortie.\\
 % \indent Par ailleurs, la vibration acoustique peut-être ressentie de manière auditive, quand sa transmission est aérienne, ou tactile lorsqu'elle est solidienne. Ces deux types de vibrations correspondent généralement à deux technologies de transducteurs différentes.
-\indent Paradoxalement, si le résultat acoustique d'un instrument est \textit{in fine} ce qui nous intéresse le plus, la part acoustique de l'instrument numérique est aussi sa part maudite. Maudite au sens que lui donne George Bataille\footnote{La part maudite est la part d'énergie excédantaire, dissipée et gaspillée dans un luxe inutile.} d'une part dépensée et perdue dans la réduction par le microphone de la richesse du phénomène acoustique à un simple signal mono-dimensionnel autant que par le filtrage par les matériaux diffuseurs du signal audio qu'on leur envoit. Maudite également en raison du couplage épineux entre acoustique physique et audio numérique. Les phénomènes de résonnance et de rétro-action qui se produisent dans l'instrument acoustique et qui sont également exploités dans les instruments électriques analogiques (e.g. le feedback entre une guitare électrique et un amplificateur), posent un certain nombre de problèmes lorsqu'on introduit un élément de computation numérique dans un tel système\footnote{Une des raisons à ce problème est l'instabilité consubstantielle aux systèmes bouclés discrets et non-linéaires, mais également, de manière plus générale, la transition entre le domaine continu de l'acoustique et le domaine symbolique de l'informatique implique une analyse du son qui nécessite une modélisation des phénomènes perceptifs, tels que la hauteur, le rythme, etc. utilisés pour le contrôle}.\\
+\indent Paradoxalement, si le résultat acoustique d'un instrument est \textit{in fine} ce qui nous intéresse le plus, la part acoustique de l'instrument numérique est aussi sa part maudite. Maudite au sens que lui donne George Bataille\footnote{La part maudite est la part d'énergie excédantaire, dissipée et gaspillée dans un luxe inutile.} d'une part dépensée et perdue dans la réduction par le microphone de la richesse du phénomène acoustique à un simple signal mono-dimensionnel autant que par le filtrage par les matériaux diffuseurs du signal audio qu'on leur envoit. Maudite également en raison du couplage épineux entre acoustique physique et audio numérique. Les phénomènes de résonnance et de rétro-action qui se produisent dans l'instrument acoustique et qui sont également exploités dans les instruments électriques analogiques (e.g. le feedback entre une guitare électrique et un amplificateur), posent un certain nombre de problèmes lorsqu'on introduit un élément de computation numérique dans un tel système\footnote{Une des raisons à ce problème est l'instabilité consubstantielle aux systèmes bouclés discrets et non-linéaires, mais également, de manière plus générale, la transition entre le domaine continu de l'acoustique et le domaine symbolique de l'informatique implique une analyse du son qui nécessite une modélisation des phénomènes perceptifs, tels que la hauteur, le rythme, etc. utilisés pour le contrôle}.\\ \todo{revoir cette partie}
 \extra{nombreux synthétiseurs analogiques ont été mis sur le marché, qui articulent cette part d'électronique analogique (pour les filtres et la synthèse) et numérique (pour le  contrôle), afin de pouvoir bénéficier des avantages des deux domaines.}
 
 \subsection{Captation : microphones et transducteurs piezo}
@@ -260,24 +283,40 @@ projection, interface écran, cf. ch rep-viz
 
 
 
-%-------------------------- Figure : PQlabs overlay ----------------------------------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}%
-	\includegraphics[width=\textwidth]{gfx/05_interfaces/PQlabs-G4overlay.jpg}
-	\caption[Cadre multitouch à technologie infra-rouge]{Cadre multitouch à technologie infra-rouge (PQ-Labs). La surface de contact en verre est détachable et la captation d'objets quelconques est possible.}
-	\label{fig:interface:PQlabs-G4overlay}
-\end{figure}
-%-------------------------- Figure : PQlabs overlay ----------------------------------
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ergonomie, ergodynamisme}
 
-%------------------------------------------------------------
-\subsection{Ergodynamisme}
+\subsection{Ergonomie}
 
-cf. définition de Thor Magnusson
+\subsubsection{Mensurations}
+
+\noindent Avant d'évoquer l'ergonomie de l'instrument en situation de jeu, notons ici que l'instrument (et l'instrumentiste) a une vie en dehors de son usage musical sur scène. Le musicien est amené à [faire] transporter son instrument, à pied, en métro, en voiture, en camion, en avion... Le hardware, comme son nom l'indique, est ``dur'', concret, matériel. Son poids et ses dimensions affectent sa transportabilité et constituent un facteur contraignant pour le musicien. Sa dématérialisation dans des alternative logicielles —\textit{soft}, plus douces et légères— permet d'intégrer dans les limites acceptables pour leur transport, certaines fonctionnalités offertes par les équipements \textit{hard}. En particulier, la virtualisation des outils d'ingénierie du son (table de mixage, équaliseurs, compresseurs et autres effets) permet leur intégration dans l'instrument lui-même\footnote{Ainsi, Serge de Laubier qui utilisait une table de mixage Yamaha O2R (31kg) motorisée et contrôlée directement depuis son Méta-Instrument, ainsi qu'un échantilloneur EMU (4,5kg) a progressivement conçu des émulation logicielles tournant sur un MacBookPro (1.8kg) de ces équipements pour alléger le transport. Par ailleurs, les émulations logicielles permettent de réaliser d'autres fonctions qui n'étaient pas présentes dans les modèles originaux.}.\\
+\indent Mais les dimensions d'un instrument peuvent également être impratiques à dessein\footnote{Le but d'un instrument n'est pas de nous simplifier la vie, alors que l'absence d'effort constitue \iquote{une vertu cardinale dans la mythologie de l'ordinateur} comme le notait Joel Ryan dans \cite{ryan_remarks_1991}.} pour confronter le musicien et le public à un objet hors-norme\footnote{Cf. par exemple le projet ``Machine \_ Variation'' de Nicolas Bernier et Martin Messier, et les observations en annexe \ref{appendix:bernier}}. (Todo : Cf. aussi interview Mamou-Mani.)
+
+\noindent Les instruments peuvent prendre différentes formes, plus ou moins grandes, qui définissent à la fois leur portabilité ainsi que la posture du musicien envers son instrument. On peut distinguer quatre types d'interfaces de jeu qui définissent un rapport d'intimité différent avec l'instrument (todo : ces catégories sont bof):
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textit{interfaces portables}, centrée sur le corps (e.g. exosquelette du Méta-Instrument 3, The Hands, Myo d'Atau Tanaka). L'instrument est \textit{porté} (comme un habit) et les mouvements du corps sont directement, et en permanence captés par l'instrument.
+	\item \textit{interfaces objets}, topologie objet, qu'on peut prendre, secouer, etc. (e.g. ``The Sponge'' de Martin Marier) L'instrument est \textit{tenu} ou \textit{posé} (comme un ustensile) avec les mains et manipulé ainsi.
+	\item \textit{interfaces sur table}: objet qu'on ne peut pas déplacer mais autour duquel on peut tourner (e.g. claviers, pad, machine intona rumori de Bernier/Messier ...). L'instrument est \textit{touché} (comme un clavier).
+	\item \textit{interfaces immersives} : captant une variation particulière dans l'intégralité de l'environnement. L'instrument est \textit{enveloppant} (comme un lieu), et joué en étant \textit{parcouru}.
+\end{itemize}
+
+A noter que ces catégories ne sont pas étanches; par exemple, une guitare peut être portée, à l'aide d'une sangle, ou posée sur le genou et jouée à plat. 
+
+\subsubsection{Intégration et temps de montage}
+
+\noindent L'agencement modulaire des \glspl{DMI} entraine par ailleurs temps de démontage/remontage de l'instrument avant qu'il soit possible d'en jouer. De plus, les instruments électrifiés nécessitent généralement d'être branchés (sauf s'ils fonctionnent entièrement sur batterie). Ces branchements prennent du temps et nécessitent d'avoir des alimentations en courant à proximité. Pour les \glspl{DMI} se rajoute à cela le ``temps de lancement'', c'est-à-dire généralement le temps de démarrer l'ordinateur, de lancer le(s) logiciel(s) nécessaire(s), d'ouvrir le patch ou le script adéquat, et éventuellement de l'initialiser avec la bonne configuration.\\
+\indent On utilise souvent le terme ``plug'n play'' pour décrire une disponibilité immédiate de l'instrument, mais sur de tels dispositifs, la temps de branchement peut dans les fait s'avérer assez long. Il est important de prendre en compte cette durée dans le design d'un \gls{DMI}, car tout le temps passé sur la partie de montage technique est pris au détriment du temps de jeu\footnote{Cf. les propos de Nicolas Bernier (annexe \ref{appendix:bernier}), François Dumeaux (annexe \ref{appendix:dumeaux}) et Bruno Zamborlin (annexe \ref{appendix:zamborlin}) dans les entretiens)}. Notons toutefois que les \glspl{DMI} ne nécessitent généralement pas de temps d'accordage, et ne sont pas généralement pas sujets aux conditions de température et d'hygrométrie qui nécessite le ré-accordage des instruments acoustique et le temps de chauffe, particulièrement important pour les cuivres.
+
+%------------------------------------------------------------
+\subsection{Ergodynamie}
+
+ \iquote{le mot \textit{ergodynamie} est proposé comme un terme qui s'approche d'une certaine manière de l'usage du mot `gameplay' dans le domaine des jeux vidéo, mais qui traduit également une conscience et une expérience de l'instrument dans des pratiques incarnées, historiques et esthétiques. L'ergodynamie concerne l'objet étudié, mais elle se rapporte aussi bien au contexte culturel qu'à des expériences personnelles subjectives de cet objet.}
+
+\footnote{\iquote{(...) the word \textit{ergodynamics} is proposed as a term that somewhat relates to the use of ‘gameplay’ in computer games, but further signifies an awareness and experience of the instrument in embodied, historical, and aesthetic practices. Ergodynamics are of the object studied, but it relates equally to cultural context and subjective personal experiences of it.} \cite{magnusson_ergodynamics_2019}}
+
 agencement de l’interface, représentation visuelle, repères tactile, frettage
 
 
@@ -291,43 +330,6 @@ agencement de l’interface, représentation visuelle, repères tactile, frettag
 
 Affordance
 
-\subsection{Le poids du hardware}
-
-\noindent Le hardware, comme son nom l'indique, est solide, matériel, ``dur''. Sa matérialité, son poids affecte sa transportabilité et constitue un facteur contraignant pour le musicien. Sa dématérialisation dans des alternative logicielles —\textit{soft}, plus douces et légères— permet ou non d'intégrer dans les limites acceptables pour leur transport des fonctionnalités offertes par les équipements \textit{hard}.
-En particulier, la virtualisation des outils traditionnellement utilisés par les ingénieurs du son (table de mixage, équaliseurs, compresseurs et autres effets) permet leur intégration dans l'instrument lui-même.
-
-(Cf. interview Mamou-Mani.)
-Ainsi, Serge de Laubier qui utilisait une table de mixage Yamaha O2R (31kg) motorisée et contrôlée directement depuis son Méta-Instrument, ainsi qu'un échantilloneur EMU (4,5kg) a progressivement conçu des émulation logicielles de ces équipements pour alléger le transport. Par ailleurs, les émulations logicielles permettent de réaliser d'autres fonctions qui n'étaient pas présentes dans les modèles originaux.
-
-
-\subsection{Portabilité et manipulation de l'interface}
-
-Les instruments peuvent prendre différentes formes, plus ou moins grandes, qui définissent à la fois leur portabilité ainsi que la posture du musicien envers son instrument.
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item interfaces portables, centrée sur le corps (e.g. exosquelette du MI3, Myo Atau Tanaka). L'instrument est \textit{porté} (un peu comme un habit) et les mouvements du corps sont directement, et en permanence captés par l'instrument.
-	\item interfaces objets, topologie objet, qu'on peut prendre, secouer, etc. (e.g. ``The Sponge'' de Martin Marier) L'instrument est \textit{tenu} ou \textit{posé} (un peu comme un ustensile) avec les mains et manipulé ainsi.
-	\item interfaces ``sur table'' objet qu'on ne peut pas déplacer mais autour duquel on peut tourner (e.g. claviers, pad, machine intona rumori de Bernier/Messier ...)
-	\item interfaces immersives : installation, vidéo, danse (e.g.) (e.g. ``Machine variation'' de Bernier/Messier)
-\end{itemize}
-
-A noter que ces catégories ne sont pas étanches; par exemple, une guitare peut être portée, à l'aide d'une sangle, ou posée sur le genou et jouée à plat. 
-
-\subsection{Intégration et temps de montage}
-
-Est-ce que l'instrument est plug'n'play ou va-t-il va falloir connecter ses différents éléments ? Connections : 
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item entre les capteurs et l'interface de digitalisation (arduino, carte son, etc.)
-	\item entre le convertisseur analogique/numérique et l'ordinateur
-	\item entre l'ordinateur et la carte son
-	\item entre la carte son et les haut-parleurs
-\end{itemize}
-
-Les deux premières étapes sont absentes dans le cas du live-coding.
-
-\noindent L'agencement des différents modules qui composent un \gls{DMI} entraine une facilité variable de transportabilité et un temps de démontage/remontage de l'instrument avant qu'il soit possible d'en jouer. Par ailleurs, les instruments électrifiés nécessitent généralement d'être branchés (sauf s'ils fonctionnent entièrement sur batterie). Ces branchement prennent du temps et nécessitent d'avoir des alimentations en courant à proximité. Pour les outils numériques se rajoute à cela le ``temps de lancement'', c'est-à-dire généralement le temps de démarrer l'ordinateur, de lancer le(s) logiciel(s) nécessaire(s), d'ouvrir le patch ou le script adéquat, et éventuellement de l'initialiser avec la bonne configuration.\\
-\indent L'idéal d'un instrument numérique est souvent qualifié de ``\textit{plug'n play}'', mais rares sont les cas d'instruments qui s'affranchissent du ``\textit{plug}'' qui peut s'avérer long. Il est important de prendre en compte cette durée dans le design d'un \gls{DMI}, car tout le temps passé sur la partie de montage technique est pris au détriment du temps de jeu\footnote{...comme le font remarquer Nicolas Bernier (annexe \ref{appendix:bernier}), François Dumeaux (annexe \ref{appendix:dumeaux}) et Bruno Zamborlin (annexe \ref{appendix:zamborlin}) dans les entretiens)}. Notons toutefois que les \glspl{DMI} ne nécessitent généralement pas de temps d'accordage, et ne sont pas généralement pas sujets aux conditions de température et d'hygrométrie qui nécessite le ré-accordage des instruments acoustique et le temps de chauffe, particulièrement important pour les cuivres.
 
 \subsection{Se repérer dans l'interface}
 
@@ -524,6 +526,14 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 	\end{minipage}
 \end{figure}
 %------------ Figure : xypre piezo et HP -----------
+%-------------------------- Figure : PQlabs overlay ----------------------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\includegraphics[width=\textwidth]{gfx/05_interfaces/PQlabs-G4overlay.jpg}
+	\caption[Cadre multitouch à technologie infra-rouge]{Cadre multitouch à technologie infra-rouge (PQ-Labs). La surface de contact en verre est détachable et la captation d'objets quelconques est possible.}
+	\label{fig:interface:PQlabs-G4overlay}
+\end{figure}
+%-------------------------- Figure : PQlabs overlay ----------------------------------
 
 \indent \textbf{Sur le Xypre v1}, la technologie infra-rouge du cadre de détection du \textit{multitouch} permet d'insérer une vitre en \gls{PMMA} (cf. figure \ref{fig:interface:PQlabs-G4overlay}), pour un fonctionnement similaire à celui développé sur le Filigramophone. L'inconvénient qui résulte des gestes de percussion sur cette vitre est la transmission des vibrations au cadre de détection \textit{multitouch} et les bruits de plastique parasites qu'elles provoquent. Il serait envisageable de supprimer ces bruits en serrant le cadre multitouch entre des mousses, mais cet assemblage plus complexe n'a pas encore été testé.
 
