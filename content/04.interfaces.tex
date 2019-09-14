@@ -109,13 +109,13 @@ which might otherwise never come to life.}
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/05_interfaces/IBM_System_360_Panel.jpg}
-		\caption[L'interface du système 360 d'IBM]{Interface du Système 360 d'IBM (détail), un ordinateur utilisé dans le domaine scientifique et l'ingénierie, commercialisé en 1965.}
+		\caption[L'interface du système 360 d'IBM]{Interface du\textit{ Système 360} d'IBM (détail), un ordinateur utilisé dans le domaine scientifique et l'ingénierie, commercialisé en 1965.}
 		\label{fig:interface:ibm360}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	    \includegraphics[width=\linewidth]{gfx/05_interfaces/NovationLaunchControlXL.jpg}
-		\caption[L'interface MIDI Novation Launch-Control-XL]{Le Launch-Control-XL Novation, une interface \gls{MIDI} dédiée à l'expression musicale, commercialisée en 2014.}
+		\caption[L'interface MIDI Novation Launch-Control-XL]{Le \textit{Launch-Control XL} de Novation, une interface \gls{MIDI} dédiée à l'expression musicale, commercialisée en 2014.}
 		\label{fig:interface:launchpad-controlXL}
 	\end{minipage}
 \end{figure}
@@ -213,16 +213,11 @@ which might otherwise never come to life.}
 
 \subsection{Capteurs}
 
-\noindent Une grande diversité de capteurs est disponible sur le marché, mesurant différentes grandeurs physiques : position, distance, pression, orientation, flux d'air, lumière, humidité, température, champ magnétique, présence, contact, etc. Leur utilisation spécifique dans le domaine des lutheries numériques a été l'objet de nombreuses études qualitatives et quantitatives, menées en particulier depuis ces deux dernières décennies par l'équipe de Marcello Wanderley à l'\gls{IDMIL}\footnote{Voir notamment : \cite{wanderley_choice_2000, hollinger_evaluation_2006, marshall_sensor_2009, vigliensoni_quantitative_2012, medeiros_comprehensive_2014} ainsi que le site \url{https://sensorwiki.org} qui rassemble un grand nombre d'informations techniques utiles sur les capteurs et les interfaces.}. En fournissant une analyse détaillée de leurs caractéristiques et en les intégrant dans des réalisations instrumentales fonctionnelles et jouées, ces études fournissent une base de données inestimable pour le champ de la lutherie numérique.
-
-Outre le type de grandeur mesurée, les capteurs se distinguent entre ceux qui permettent une mesure stable (e.g. position d'un potentiomètre), ou dynamique, c'est-à-dire qui revient à une valeur de repos quand on le relâche (capteur de distance, de pression)
+\noindent Une grande diversité de capteurs est disponible sur le marché, mesurant différentes grandeurs physiques : position, distance, pression, orientation, flux d'air, lumière, humidité, température, champ magnétique, présence, contact, etc. Pour chaque grandeur mesure, la donnée sera encore variable selon les caractéristiques du capteur : sensibilité, résolution, précision, linéarité, bande passante, temps de réponse, etc. À cette diversité s'ajoute encore le fait que les capteurs intègrent de plus en plus souvent des algorithmes de traitement de signal, parfois programmables. Ces capteurs dits ``intelligents'' peuvent notamment réaliser des opérations de filtrage, mais également de la fusion de données permettant de renvoyer des informations de plus haut niveau\footnote{C'est le cas par exemple sur les capteurs d'orientation dits \gls{MARG}, ou sur les interfaces multitouch qui analyse une matrice de capteurs pour en extraire la position des points de contact}. Enfin, comme nous l'avons dit précédemment, les capteurs sont rarement utilisés de manière brute mais s'intègrent dans un agencement à la fois matériel, mécanique, électronique et algorithmique qui affecte leur réponse du tout au tout.\\
+\indent L'utilisation spécifique de cette diversité de capteurs dans le domaine des lutheries numériques a été l'objet de nombreuses études qualitatives et quantitatives, menées en particulier depuis ces deux dernières décennies par l'équipe de Marcello Wanderley à l'\gls{IDMIL}\footnote{Voir notamment : \cite{wanderley_choice_2000, hollinger_evaluation_2006, marshall_sensor_2009, vigliensoni_quantitative_2012, medeiros_comprehensive_2014} ainsi que le site \url{https://sensorwiki.org} qui rassemble un grand nombre d'informations techniques utiles sur les capteurs et les interfaces.}. En fournissant une analyse détaillée de leurs caractéristiques et en les intégrant dans des réalisations instrumentales fonctionnelles et jouées, ces études fournissent une base de données documentaire inestimable pour aider les luthiers numériques à ne pas se perdre dans cette multitude d'options possibles.
+\indent Cependant, la généralisation de leur évaluation à des fins musicales reste délicate, en raison du fait que les instruments de musique constituent, comme nous l'avons déjà décrit dans les chapitres précédants, des \glspl{IHM} d'un genre particulier.
 
 Comme dit précédemment, les capteurs sont généralement intégrés dans un enrobage matériel, voire un système mécanique complexe, qui peut pour un même capteur donner lieu à des interactions tout à fait différentes. 
-
-On peut regrouper les capteurs dans deux grandes familles
-Capteurs ``bruts'' et capteur ``intelligents''
-Pads MIDI => peuvent être implémentés via interrupteurs, piezzo, FSR...
-Multitouch = différentes technologies de détections (capacitives, infra-rouge, etc.) pour renvoyer la position des doigts.
 
 \subsubsection{Une analyse critique de la relation entre capteur et fonction musicale}
 
