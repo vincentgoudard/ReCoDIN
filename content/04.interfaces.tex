@@ -126,7 +126,7 @@ which might otherwise never come to life.}
 
 \noindent L'ergonomie, pensée en dehors de l'organologie classique, nous amène à considérer directement le corps, et plus particulièrement les mains. Comme l'explique Serge de Laubier (cf. Annexe \ref{appendix:delaubier}) :\\
 \iquote{(...) quand on fabrique un instrument il y a une contrainte, c'est le corps et donc forcément, il faut que les instruments, en tout cas ceux qui fonctionnent bien, soient quand même relativement bien adaptés au corps (...) et la première contrainte c'est celle des mains (...) parce que c'est [le membre] le plus agile, je pense, le plus agile, rapide, réactif.} Un certain nombre d'instruments comme ``The Hands'' de Michel Waisvisz --~dont le nom parle de lui-même~-- ou le Méta-Instrument de Serge De Laubier sont ainsi directement conçus à partir de l'ergonomie de la main.\\
-\indent Le corps entier peut être utilisé de manière instrumentale, en particulier dans la domaine chorégraphique. Si les interactions entre la danse et les systèmes électroniques interactifs ont plus de 50 ans\footnote{En 1965, Merce Cunningham, John Cage et David Tudor utilisaient déjà des capteurs photo-électriques pour contrôler les processus musicaux dans la performance \textit{Variation V}.}, les interfaces de \textit{motion capture}, devenues plus accessibles depuis le début du \siecle{21}~siècle\footnote{On pense ici aux webcams et aux nouveaux usages permis par les progrès de l'analyse d'image et d'apprentissage, à la Kinect de Microsoft, au Leap-motion, aux capteurs de type \gls{MARG}, etc.} ont multiplié le nombre de performances chorégraphiques dans lesquelles l'expertise du mouvement corporel est directement utilisée pour le contrôle de processus musicaux\footnote{Voir notamment les créations de Myriam Gourfink et Kasper Toeplitz, et les travaux de Frédéric Bevilacqua, e.g. \cite{bevilacqua_gesture_2011}}.\\
+\indent Le corps entier peut être utilisé de manière instrumentale, en particulier dans la domaine chorégraphique. Si les interactions entre la danse et les systèmes électroniques interactifs ont plus de 50 ans\footnote{En 1965, Merce Cunningham, John Cage et David Tudor utilisaient déjà des capteurs photo-électriques pour contrôler les processus musicaux dans la performance \textit{Variation V}.}, les interfaces de \textit{motion capture}, devenues plus accessibles depuis le début du \siecle{21}~siècle\footnote{On pense ici aux webcams et aux nouveaux usages permis par les progrès de l'analyse d'image et d'apprentissage, à la Kinect de Microsoft, au Leap-motion, aux capteurs de type \gls{AHRS}, etc.} ont multiplié le nombre de performances chorégraphiques dans lesquelles l'expertise du mouvement corporel est directement utilisée pour le contrôle de processus musicaux\footnote{Voir notamment les créations de Myriam Gourfink et Kasper Toeplitz, et les travaux de Frédéric Bevilacqua, e.g. \cite{bevilacqua_gesture_2011}}.\\
 \indent Enfin, les mouvements internes du corps tels que la tension musculaire, les battements du cœur, ou l'activité cérébrale sont envisageables pour l'interaction instrumentale en utilisant des capteurs de signaux bio-physiques (ECG, EEG, EMG, etc.). Une analyse détaillée de cette perspective est proposée par Atau Tanaka et Marco Donnarumma dans \cite{tanaka_body_2019}, qui sont eux-mêmes les auteurs de plusieurs projets et performances musicales dans cette veine.
 
 \subsubsection{Héritage poétique de l'objet}
@@ -213,11 +213,9 @@ which might otherwise never come to life.}
 
 \subsection{Capteurs}
 
-\noindent Une grande diversité de capteurs est disponible sur le marché, mesurant différentes grandeurs physiques : position, distance, pression, orientation, flux d'air, lumière, humidité, température, champ magnétique, présence, contact, etc. Pour chaque grandeur mesure, la donnée sera encore variable selon les caractéristiques du capteur : sensibilité, résolution, précision, linéarité, bande passante, temps de réponse, etc. À cette diversité s'ajoute encore le fait que les capteurs intègrent de plus en plus souvent des algorithmes de traitement de signal, parfois programmables. Ces capteurs dits ``intelligents'' peuvent notamment réaliser des opérations de filtrage, mais également de la fusion de données permettant de renvoyer des informations de plus haut niveau\footnote{C'est le cas par exemple sur les capteurs d'orientation dits \gls{MARG}, ou sur les interfaces multitouch qui analyse une matrice de capteurs pour en extraire la position des points de contact}. Enfin, comme nous l'avons dit précédemment, les capteurs sont rarement utilisés de manière brute mais s'intègrent dans un agencement à la fois matériel, mécanique, électronique et algorithmique qui affecte leur réponse du tout au tout.\\
-\indent L'utilisation spécifique de cette diversité de capteurs dans le domaine des lutheries numériques a été l'objet de nombreuses études qualitatives et quantitatives, menées en particulier depuis ces deux dernières décennies par l'équipe de Marcello Wanderley à l'\gls{IDMIL}\footnote{Voir notamment : \cite{wanderley_choice_2000, hollinger_evaluation_2006, marshall_sensor_2009, vigliensoni_quantitative_2012, medeiros_comprehensive_2014} ainsi que le site \url{https://sensorwiki.org} qui rassemble un grand nombre d'informations techniques utiles sur les capteurs et les interfaces.}. En fournissant une analyse détaillée de leurs caractéristiques et en les intégrant dans des réalisations instrumentales fonctionnelles et jouées, ces études fournissent une base de données documentaire inestimable pour aider les luthiers numériques à ne pas se perdre dans cette multitude d'options possibles.
+\noindent Une grande diversité de capteurs est disponible sur le marché, mesurant différentes grandeurs physiques : position, distance, pression, orientation, flux d'air, lumière, humidité, température, champ magnétique, présence, contact, etc. Pour chaque grandeur mesure, la donnée sera encore variable selon les caractéristiques du capteur : sensibilité, résolution, précision, linéarité, bande passante, temps de réponse, etc. À cette diversité s'ajoute encore le fait que les capteurs intègrent de plus en plus souvent des algorithmes de traitement de signal, parfois programmables. Ces capteurs dits ``intelligents'' peuvent notamment réaliser des opérations de filtrage, mais également de la fusion de données permettant de renvoyer des informations de plus haut niveau\footnote{C'est le cas par exemple sur les capteurs dits \gls{AHRS}, sur les interfaces multitouch qui analysent une matrice de capteurs pour en extraire la position des points de contact}. Enfin, comme nous l'avons dit précédemment, les capteurs sont rarement utilisés de manière brute mais s'intègrent dans un agencement à la fois matériel, mécanique, électronique et algorithmique qui affecte leur réponse du tout au tout.\\
+\indent L'utilisation spécifique de cette diversité de capteurs dans le domaine des lutheries numériques a été l'objet de nombreuses études qualitatives et quantitatives, menées en particulier depuis ces deux dernières décennies par l'équipe de Marcello Wanderley à l'\gls{IDMIL}\footnote{Voir notamment : \cite{wanderley_choice_2000, hollinger_evaluation_2006, marshall_sensor_2009, vigliensoni_quantitative_2012, medeiros_comprehensive_2014} ainsi que le site \url{https://sensorwiki.org} qui rassemble un grand nombre d'informations techniques utiles sur les capteurs et les interfaces.}. En fournissant une analyse détaillée de leurs caractéristiques et en les intégrant dans des réalisations instrumentales fonctionnelles et jouées, ces études fournissent une base de données documentaire inestimable pour aider les luthiers numériques à ne pas se perdre dans cette multitude d'options possibles.\\
 \indent Cependant, la généralisation de leur évaluation à des fins musicales reste délicate, en raison du fait que les instruments de musique constituent, comme nous l'avons déjà décrit dans les chapitres précédants, des \glspl{IHM} d'un genre particulier.
-
-Comme dit précédemment, les capteurs sont généralement intégrés dans un enrobage matériel, voire un système mécanique complexe, qui peut pour un même capteur donner lieu à des interactions tout à fait différentes. 
 
 \subsubsection{Une analyse critique de la relation entre capteur et fonction musicale}
 
@@ -241,44 +239,36 @@ Comme dit précédemment, les capteurs sont généralement intégrés dans un en
 %-------------------------- Figure : table du luthier numérique ----------------------------------
 \indent On voit donc que l'usage, la taille, l'agencement des capteurs et le traitement de ses données contribuent pour autant, sinon davantage, à définir les relations entre capteurs et paramètres musicaux, que la nature de la variation du capteur lui-même. Le fait qu'un paramètre musical ne soit pas ``facilement'' modulable avec un certain type de capteur ne présage donc pas de l'inadéquation de ce capteur pour le contrôle du paramètre en question. Tout au contraire, cela peut faire partie de la \textit{raison d'être} de l'instrument, dont la pratique s'apparente parfois davantage à celle du domptage d'un animal sauvage que celle de l'utilisation d'une machine docile\footnote{On pense par exemple au Theremin, sur lequel le contrôle de la hauteur par la distance de la main à l'antenne est très instable et difficile, et dont la maitrise est probablement un des intérêt de sa pratique.}
 
-Ce décalage entre l'évalutation des capteurs et leur usage réel provient \\
-
-
-Question de latence : ``action-sound latency'' de A. McPherson
-
-\subsubsection{Capteurs intelligents}
-
-Fusion de capteurs, prétraitement
-
-\noindent Cetains capteurs renvoient des données de plus haut niveau que la donnée brute, en la traitant au préalable localement au niveau du capteur lui-même. Par exemple, l'image renvoyée par une caméra est un signal multiplexé contenant les données de plusieurs millions d'éléments photosensibles intégrés dans un composant miniature. 
-De même, les points de contact renvoyés par un écran multitouch sont issus d'un pré-traitement de la matrice de capteurs capacitifs ou photo-sensibles répartis sur une surface sensible.
-
-\indent L'intelligence embarquée dans les capteurs est amenée à se développer, à mesure que progresse le traitement d'image et en particulier les algorithmes d'apprentissage par \gls{IA}, qui permettent d'extraire des contenus sémantiques, tels que la reconnaissance de motifs (objets, visages, mélodie, etc.).
-
-\indent Cette évolution pose deux questions : 
-
-L'extraction de données de plus haut niveau pose un problème général du modèle qu'on impose sur les données brutes (le dessein).
-
-
-	Capteurs intelligents (IHM)
-	cf \ref{appendix:delaubier}
-	e.g. leap motion, multitouch overlays
-
-\subsection{Interface d'aquisition}
-	- ouverts et programmables
-		- arduino, bela, teensy, etc.
-
 \subsection{Ordinateurs et DSP}
 
-\noindent La principale remarque que l'on puisse faire sur les ordinateurs, concernant leur aspect matériel, est la prodigieuse chute de leur coût et de leur dimensions, depuis leur invention. La conséquence principale de la chute de leur coût est le transfert depuis l'industrie et les laboratoires vers la société civile, et la conséquence de leur miniaturisation est leur intégration dans des objets mobiles\footnote{Le smartphone en est un exemple significatif, mais on pense aussi, dans le domaine qui nous concerne, à la possibilité d'avoir, par exemple, l'équivalent d'une table de mixage 128 pistes et des racks d'effets sur un simple ordinateur portable équipée d'une (bonne) carte son.}.
+\noindent Si les algorithmes d'un \gls{DMI} sont virtuels, les ordinateurs qui les font tourner sont bien réels et physiques. La principale remarque que l'on puisse faire à leur sujet, concernant leur aspect matériel, est la prodigieuse chute de leur coût et de leur dimensions, depuis leur invention. Une conséquence directe de leur prix abordable a été leur démocratisation, et la conséquence de leur miniaturisation, leur intégration progressive dans des objets mobiles\footnote{Le smartphone en est un exemple significatif, qui a notamment permis le développement d'instruments autonomes tournant sur smartphone; voir par exemple le projet SmartFaust et la pièce pour smartphones de Vincent Carinola: \url{https://youtu.be/cGZB44KI9Y0}}. On peut distinguer dans cette évolution, cinq périodes d'une quinzaine d'années chacunes, résumées dans le tableau \ref{table:computer-size}, la dernière en date étant couramment désignée comme celle de ``l'Internet des Objets'' (IoT, \textit{Internet of Things}).\\
+\indent Si l'audionumérique temps-réel a depuis son origine été incarné par des dispositifs dans lesquel l'ordinateur, trop volumineux et lourd, était séparé de l'interface, cette dernière évolution est tout particulièrement intéressante en ce qui concerne les \glspl{DMI}. Elle augure la possibilité pour un public élargi de créer ses propres \glspl{DMI} intégrant interface de jeu et partie computationnelle dans un seul et même objet portable et (re)programmable. Des cartes électroniques comme \textit{Bela} ou \textit{The Owl}\footnote{Bela: \url{https://bela.io}; The Owl: \url{https://www.rebeltech.org}} et des langages comme \gls{FAUST} développé par le \gls{GRAME} \cite{orlarey_faust_2008} ou SOUL annoncé par Roli\footnote{Announced at the Audio Developer Conference 2018. \url{https://youtu.be/-GhleKNaPdk}} reflètent cette tendance.
 
-\noindent L'arrivée concomittente de l'ordinateur personnel (PC), de la synthèse audio temps-réel et du protocole \gls{MIDI} dans les années 1980 a donné lieu à des dispositifs instrumentaux généralement constitués d'une interface de jeu d'une part et d'un \gls{DSP}, souvent un ordinateur, pour la synthèse d'autre part.
-
-\indent Depuis le début du \siecle{21}~siècle, de nombreux micro-contrôleurs, nano-ordinateurs ont vu le jour, permettant une ré-intégration de l'électronique numérique dans le corps de l'interface de jeu.
-- raspberry pi, laptops, samplers and synths, smartphones
-
-Elément central d'un \gls{DMI} la partie computationnelle est souvent distribuée sur plusieurs éléments dédiés : carte son, interface d'acquisition, ordinateur, \gls{DSP}.
-
+\begin{table}[!htbp]
+	\renewcommand{\arraystretch}{1.1}
+	\captionsetup{format=plain}%
+	\centering
+ 	\begin{tabularx}{\linewidth}{
+ 	>{\hsize=.9\hsize}X% 10% of 4\hsize 
+ 	>{\hsize=.6\hsize}X% 30% of 4\hsize
+ 	>{\hsize=.6\hsize}X% 30% of 4\hsize 
+ 	>{\hsize=1.4\hsize}X% 30% of 4\hsize
+ 	>{\hsize=1.5\hsize}X% 30% of 4\hsize
+       % sum=4.0\hsize for 4 columns
+       }
+    \hkrule{1.2pt}
+	\textbf{Période} &  \textbf{Nom} & \textbf{Taille} 	&  \textbf{Public} 	& \textbf{Audio}	\\
+	\hline
+	1950~--~1965 	& macro-	& salle		& laboratoires 		& non temps-réel 			\\
+	1965~--~1980	& mini-  	& meuble 	& entreprises  		& contrôle temps-réel 		\\
+	1980~--~1995	& micro- 	& caisse 	& foyers 			& temps-réel sur \gls{DSP} 	\\
+	1995~--~2010 	& laptop 	& livre 	& individus			& temps-réel sur PC 		\\
+	2010~--			& nano- 	& < main 	& plusieurs/individu	& temps-réel sur mobile 	\\
+    \hkrule{1.2pt}\\[-10pt]
+  \end{tabularx}
+	\caption[Évolution de l'ordinateur : taille, accessibilité et capacités audio]{Évolution de l'ordinateur  : taille, accessibilité et capacités de calcul audio.}
+	\label{table:computer-size}
+\end{table}
 
 \subsubsection{Haut-parleurs et transducteurs tactiles}
 
