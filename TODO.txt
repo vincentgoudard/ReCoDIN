@@ -33,8 +33,7 @@ La musique et le geste
 Partie 5.3 / Le signal : ajouter un mot pour décrire ce qu'est le signal
 
 Mettre des labels dans les annexes et renvoyer plutôt que citer le texte dans le doc original.
-
-
+mette "communication personnelle" et un renvoi vers l'annexe pour les phrases issues des annexes
 
 Il faut arrêter de considérer les DMI comme des instruments qui nous permettent d'imiter les instruments acoustiques, voire, de les améliorer. C'est tout le contraire qui se produit : l'imitation d'instruments acoustiques est toujours sera infailliblement en deça.
 
