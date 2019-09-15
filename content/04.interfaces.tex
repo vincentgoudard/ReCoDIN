@@ -274,13 +274,29 @@ which might otherwise never come to life.}
 
 \subsection{Feed-back: actionneurs et transducteurs}
 
-\noindent En ``sortie'' de la machine, à l'autre extremité de la boucle instrumentale --~si l'on peut dire~--, se trouvent les systèmes qui font le travail inverse des capteurs en venant \textit{agir} sur l'espace sensible.
+\noindent En ``sortie'' de la machine, à l'autre extremité de la boucle instrumentale --~si l'on peut dire~-- se trouvent les systèmes qui font le travail inverse des capteurs en venant \textit{agir} sur l'espace sensible.
 
-Là encore, de nombreux systèmes existent pour agir sur diverses dimensions, de manière quasi-symétrique, d'un point de vue technique, aux possibilités offertes par les capteurs. \todo{Cette symétrie doit être relativisée...}
+Là encore, de nombreux types d'actionneurs existent pour agir sur diverses dimensions, mais si certains procèdent de manière quasi-symétrique à leur analogue capteurs (e.g. le haut-parleur est microphone qui fonctionnent en sens inverse), la contre-partie n'est pas toujours possible (e.g. un capteur de distance à infra-rouge ne recréé pas son propre reflet si on le branche à l'envers).
 
 Cependant, l'image du réel que capte la machine n'en contient pas tout la .
 
 Cependant, si les capteurs --~tout comme nos sens~-- reçoivent une image globale de leur environnement
+
+Les capteurs mesurent une grandeur physique, tandis que les actionneurs recréént un phénomène physique.
+
+
+Les capteurs sont sensibles à l'environnement actuel, et les actionneurs actualisent le monde sensible.
+Les capteurs enregistrent une image du mnode réel et les actionneurs ont a charge de (re)créer une réalité artificielle à partir de l'image en agissant comme des gestes d'excitation sur l'environnement.
+
+A l'inverse des capteurs qui enregistre une image de la réalité, les actionneurs recréé une réalité à partir d'une image.
+La différence entre ces deux transduction tient au fait que l'image est toujours lacunaire, en déficit d'information par rapport à la complexité du monde réel. La synthèse d'une réalité artificielle est ainsi fonction des facteurs suivants :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{les caractéristiques techniques de l'actionneur} type d'actionneur, puissance, bande passante, etc.)
+	\item \textbf{la répartition des actionneurs dans l'espace} (e.g la spatialisation de haut-parleurs dans l'espace de concert, différenciant par exemple, son de façade et son de retour du musicien, un haut-parleur et un casque audio de bande passante similaire ne produiront pas la même image sonore, ou encore l'image recomposéee par plusieurs projection vidéo)
+	\item \textbf{la réponse (résonance) du complexe matériel} auquel ils sont couplés. En cela, on peut considérer les actionneurs comme des \textit{gestes d'excitation}, pour reprendre la terminologie de Cadoz, qui jouent  (e.g. un servo moteur actionnant un vérin produira un résultat sensiblement différent s'il tape sur du bois ou sur une une plaque de métal, un haut-parleur sonnera différemment selon la réverbération du lieu, une image projeté sur un écran blanc ne sera pas la même que celle projetée sur une foule ou un bâtiment)
+	\item \textbf{la nature des signaux} envoyés aux actionneurs, qui use de la subversion de notre perception (e.g. continuité de mouvement visuel à partir de 25 images/seconde, bande passante de l'audible limitée en 20Hz et 20kHz, leur coordination temporelle permet de reconstituer un image globale à partir d'éléments disjoints (synchrèse), l'utilisation d'effet psycho-acoustiques permet de simuler des espaces, réverb, compression side-chain, glissement de hauteur dans le signal simulant l'effet doppler d'une source en mouvement, etc. )
+\end{itemize}
 
 Les phénomènes physiques qui se propagent, tels que la lumière et le son
 Le capteur capte localement ce qui lui arrive, mais les phénomènes sonores et lumineux, qui se propagent à grande vitesse ne sont pas locaux.
