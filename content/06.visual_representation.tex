@@ -422,15 +422,15 @@ Ainsi, la prise en charge native du \textit{multitouch} dans l'interface de Max 
 
 \subsection{GUI composites}
 
-\noindent Il peut s'avérer nécessaire de coordonner plusieurs éléments d'interaction graphique dans un seul et même ensemble, afin qu'un élément puisse réagir à une interaction sur un autre élément. L'objet mp.TUI.canvas est destiné à cette fin. C'est un objet graphique vide, qui définit simplement une zone ajustable en position, échelle et orientation. Comme tous les autres objets de la librairie mp.TUI, il emet en sortie les \textit{MP-events} qui lui arrivent, ce qui permet de les renvoyer sur les entrées MP d'autres composants, même si ceux-ci ne sont pas directement touchés par les curseurs de position.\\
-\indent Un exemple simple de \gls{GUI} composite est présenté sur la figure \ref{fig:visual_representation:canvas}, associant des curseurs et un texte affichant leurs coordonnées dans une zone précise définie par le canvas.
+\noindent Il peut s'avérer nécessaire de coordonner plusieurs éléments d'interaction graphique dans un seul et même ensemble, afin qu'un élément puisse réagir à une interaction sur un autre élément. L'objet mp.TUI.canvas est destiné à cette fin. C'est un objet graphique vide, qui définit simplement une zone ajustable en position, échelle et orientation. Comme tous les autres objets de la librairie mp.TUI, il émet en sortie les \textit{MP-events} qui lui arrivent, ce qui permet de les renvoyer sur les entrées d'autres composants, même si ceux-ci ne sont pas directement touchés par les curseurs de position.\\
+\indent Un exemple simple de \gls{GUI} composite est présenté sur la figure \ref{fig:visual_representation:canvas}, associant des curseurs et un texte affichant leurs coordonnées dans une zone précise définie par le \textit{canvas}.
 
 
 %------------------ Figure : canvas ---------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
 	\includegraphics[width=\textwidth]{gfx/06_visual_representation/mpTUI_canvas.pdf}
-	\caption[Exemple de GUI composite avec mp.TUI.canvas]{Exemple de GUI composite avec mp.TUI.canvas: les curseurs ne sont pris en compte que dans la zone définie par le canvas. Patch Max en haut, rendu en bas}
+	\caption[Exemple de GUI composite avec mp.TUI.canvas]{Exemple de GUI composite avec mp.TUI.canvas: les curseurs ne sont pris en compte que dans la zone définie par le \textit{canvas}. Patch Max en haut, rendu en bas.}
 	\label{fig:visual_representation:canvas}
 \end{figure}
 %------------------ Figure : canvas ---------------------
@@ -456,27 +456,25 @@ Ainsi, la prise en charge native du \textit{multitouch} dans l'interface de Max 
 
 \subsection{Instanciations dynamiques}
 
-\noindent La gestion de processus musicaux en parallèle créés à la volée nécessite l'instanciation dynamique d'objets, matérialisant de manière tangible ces processus afin de pouvoir les contrôler durant leur existance et les supprimer lorsqu'on le souhaite.
-\indent Il est parfois possible de poser des objets physiques sur la surface multitouch pour créer et maintenir en vie de tels processus, sans avoir à maintenir le contact des doigts\footnote{c'est le cas par exemple sur la ReacTable qui utilise des objets cylindriques pour instancier des modules} (cf. fig \ref{fig:visual_representation:objectOnTable}), mais cette solution n'est pas toujours réalisable\footnote{Les surfaces multitouch basés sur une techologie capacitive ne sont pas sensible à tout type d'objet physique, contrairement par exemple, au écran basés sur une technologie infra-rouge.} ni souhaitable (pour des raisons d'encombrement de l'espace de la tablette par exemple).\\
+\noindent La gestion de processus musicaux en parallèle créés à la volée nécessite l'instanciation dynamique d'objets, matérialisant de manière tangible ces processus afin de pouvoir les contrôler durant leur existance et les supprimer lorsqu'on le souhaite. Il est parfois possible de poser des objets physiques sur la surface multitouch pour créer et maintenir en vie de tels processus, sans avoir à maintenir le contact des doigts\footnote{C'est le cas par exemple sur la ReacTable qui utilise des objets cylindriques pour instancier des modules.} (cf. fig \ref{fig:visual_representation:objectOnTable}), mais cette solution n'est pas toujours réalisable\footnote{Les surfaces multitouch basés sur une techologie capacitive ne sont pas sensible à tout type d'objet physique, contrairement par exemple, au écran basés sur une technologie infra-rouge.} ni souhaitable (pour des raisons d'encombrement de l'espace de la tablette par exemple).\\
 \indent Les objets graphiques de la librairie mp.TUI peuvent facilement être créés à la volée pour répondre à ce besoin, en les insérant dans des objets MP, tel que présenté dans le chapitre précédant. Ceci permet de concevoir relativement simplement un scénario d'interaction graphique tel que la possibilité de définir des zones ``réservoir d'objets'' où il est possible de venir piocher des éléments créés dynamiquement, et représentant des processus complexes incluant leur propre mode de destruction (exemple figure \ref{fig:visual_representation:dynamicInstanciation}).
-
-%-------------------------- Figure : groups ----------------------
+%-------------------------- Figure : maintien curseurs ----------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
-		\includegraphics[width=\linewidth]{gfx/dummy.pdf}
-		\caption{TODO : Maintien d'un contrôle par un objet physique}
+		\includegraphics[width=\linewidth]{gfx/06_visual_representation/mpTUI-stableObject.jpg}
+		\caption[Maintien d'un contrôle par un objet physique]{Maintien d'un contrôle par un objet physique. Tout type d'objet sont possible sur une surfac emultitouch par IR; les surfaces capacitives nécessitent des objets conducteurs, voire un circuit électronique dédié et un traitement logiciel \textit{ad-hoc}.}
 		\label{fig:visual_representation:objectOnTable}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
-	    \includegraphics[width=\linewidth]{gfx/dummy.pdf}
-		\caption{TODO : Maintien d'un contrôle par un objet virtuel, supprimable par un double clic}
+	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/mpTUI-stableObject-dynamic.jpg}
+		\caption[Maintien d'un contrôle par un objet virtuel]{Création dynamique de curseurs permettant le maintien d'un contrôle par un objet virtuel. Les curseurs virtuels sont disponibles dans une zone réservoir (drag'n drop), et supprimable par un double clic.}
 		\label{fig:visual_representation:dynamicInstanciation}
 	\end{minipage}
 \end{figure}
-%-------------------------- Figure : groups ----------------------
+%-------------------------- Figure : maintien curseurs ----------------------
 
 \subsection{Performances}
 
