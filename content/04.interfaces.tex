@@ -79,7 +79,7 @@ which might otherwise never come to life.}
 
 \subsubsection{Héritage instrumental}
 \label{sec:interfaces:heritages:instrument}
-%------------ Figure : Sponge et Lungta -----------
+%------------ Figure : Hyvibe et SmartMandolin -----------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
 	\centering
@@ -95,7 +95,7 @@ which might otherwise never come to life.}
 		\label{fig:interface:smart-mandolin}
 	\end{minipage}
 \end{figure}
-%------------ Figure : Sponge et Lungta -----------
+%------------ Figure : Hyvibe et SmartMandolin -----------
  \noindent L'héritage le plus évident est celui des techniques de jeu et du répertoire, qui prend une importance considérable dans le design des \glspl{DMI} inspirés d'instruments pré-existants, en particulier les instruments dits augmentés (cf. figure \ref{fig:interface:hyvibe} et \ref{fig:interface:smart-mandolin} et annexes \ref{appendix:turchet} et \ref{appendix:mamou-mani}). Cet héritage est le plus manifeste dans les instruments qui se destinent à une diffusion commerciale, en permettant un effet dilligence\footnote{notion définie par le médiologue Jacques Perriault, décrivant les protocoles mis en place pour l'adaptation d'une innovation en vue de son acceptation sociale (``Les premiers wagons avaient la forme des diligences.'')} entre instruments classiques et instruments nouveaux\footnote{\label{fn-Pinch}Cf. sur ce sujet l'analyse de Trevor Pinch dans \cite{pinch_why_2001} sur la présence de clavier sur les premiers synthétiseurs}.\\
  \indent Outre l'héritage gestuel liés aux modes de jeu sur les instruments acoustiques, les théories de la musique s'inscrivent de manière plus générale dans l'interface de jeu, en imprimant sur elles une topologie polarisée par les valeurs auxquelle elle recourt\footnote{Cf. section \ref{ch:visual_representation:music-theory}} (rythmes, intensités, hauteurs, timbre, etc.).
 
@@ -135,7 +135,7 @@ which might otherwise never come to life.}
 	\captionsetup{format=plain}%
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
-		\includegraphics[width=\linewidth]{gfx/05_interfaces/Marier-Sponge.jpg}
+		\includegraphics[width=\linewidth]{gfx/05_interfaces/epongeCloseUp_prestonBeebe.jpg}
 		\caption[``The Sponge'' de Martin Messier]{``The Sponge'', une interface instrumentale de Martin Messier. Photographie © Martin Messier.}
 		\label{fig:interface:TheSponge}
 	\end{minipage}
@@ -502,7 +502,7 @@ Trois dimensions nous intéressent plus particulièrement : acoustique, tactile 
 
 \noindent\textbf{Anamorphose dynamique}\\
 \noindent Enfin, il est possible de procéder algorithmiquement à des anamorphoses de l'espace de jeu. Cette solution ne permet pas de ``créer'' des repères tactiles à proprement parler, mais d'adapter dynamiquement l'espace de l'interaction pour que le geste puisse s'affranchir en partie du besoin de ces repères.
-\indent Un exemple classique est le vérouillage des composants de la \gls{GUI} : si l'on clique sur un bouton ou un \textit{slider}, l'interaction est maintenue avec le composant tant que le doigt est en contact avec la surface tactile, ce qui permet des gestes plus amples utilisant l'intégralité de la surface de l'écran tactile, plutôt que de les restreindre à une petit zone\footnote{Cette solution a notamment été implémentée dans la librairie mp.TUI présentée au chapitre \ref{ch:visual_representation}}. Ce type d'interaction s'appuie sur la loi de Fitts, caractérisant \textit{l'indice de difficulté} d'une tâche de selection par pointage, couramment exprimée en terme de temps mis à réussir ce pointage, par la relation (formulation de MacKenzie): 
+\indent Un exemple classique est le vérouillage des composants de la \gls{GUI} : si l'on clique sur un bouton ou un \textit{slider}, l'interaction est maintenue avec le composant tant que le doigt est en contact avec la surface tactile, ce qui permet des gestes plus amples utilisant l'intégralité de la surface de l'écran tactile, plutôt que de les restreindre à une petit zone\footnote{Cette solution a notamment été implémentée dans la librairie mp.TUI présentée au chapitre \ref{ch:visual_representation}}. Ce type d'interaction s'appuie sur la loi de Fitts \cite{fitts_information_1954}, caractérisant \textit{l'indice de difficulté} d'une tâche de selection par pointage, couramment exprimée en terme de temps mis à réussir ce pointage, par la relation (formulation de MacKenzie): 
 $$ T = a + b \log_2 (1 + \frac{D}{L})$$
 \vspace{-1em}
 \begin{conditions}
