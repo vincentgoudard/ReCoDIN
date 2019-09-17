@@ -91,6 +91,15 @@
 \usepackage{tabularx}
 \usepackage{diagbox} 
 
+\newlength{\conditionwd}
+\newenvironment{conditions}[1][où:]
+  {%
+   #1\tabularx{\textwidth-\widthof{#1}}[t]{
+     >{$}l<{$} @{${}={}$} X@{}
+   }%
+  }
+  {\endtabularx\\[\belowdisplayskip]}
+
 % **************************************************
 % tcolorbox to make nice framed texts
 % **************************************************
