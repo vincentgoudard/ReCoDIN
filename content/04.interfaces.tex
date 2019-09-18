@@ -26,14 +26,14 @@ which might otherwise never come to life.}
 	\captionsetup{format=plain}%
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
-		\includegraphics[width=\linewidth]{gfx/dummy.pdf}
-		\caption[Filigramophone: vue d'ensemble]{TODO : Filigramophone, vue d'ensemble du dispositf : filigramophone, ordinateur avec Max, carte son, Akai MPD24, haut-parleurs}
+		\includegraphics[width=\linewidth]{gfx/05_interfaces/Filigramophone_Overview.jpg}
+		\caption[Filigramophone: vue d'ensemble]{Filigramophone, vue d'ensemble du dispositf : Filigramophone, ordinateur avec Max, carte son [sous le] Akai MPD24, haut-parleurs, accessoires de jeu.}
 		\label{fig:interface:filigramophone_unplugged}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	    \includegraphics[width=\linewidth]{gfx/05_interfaces/Xypre_Overview_144dpi.jpg}
-		\caption[Xypre: vue d'ensemble]{Xypre, vue d'ensemble: xypre, ordinateur avec Max, carte son, haut-parleurs}
+		\caption[Xypre: vue d'ensemble]{Xypre, vue d'ensemble du dispositif: Xypre, ordinateur avec Max, carte son, haut-parleurs}
 		\label{fig:interface:xypre_unplugged}
 	\end{minipage}
 \end{figure}
@@ -277,96 +277,14 @@ which might otherwise never come to life.}
 
 \noindent En ``sortie'' de la machine, à l'autre extremité de la boucle instrumentale --~si l'on peut dire~-- se trouvent les systèmes qui font le travail inverse des capteurs en venant \textit{agir} sur l'espace sensible. Là encore, de nombreux types d'actionneurs existent pour agir sur diverses dimensions, quoique celles qui nous intéressent plus directement dans le contexte musical soient celles du son, du mouvement et de la lumière (dans la mesure où l'expérience musicale est aussi une expérience visuelle du mouvement).\\
 \indent D'un point de vue matériel, l'actionneur se présente comme un composant électronique connectable à l'ordinateur, généralement au moyen d'un \gls{CAN} et d'un amplificateur (parfois intégrés), qui adaptent le signal numérique au courant et voltage adaptés au transducteur. Le transducteur convertit ce signal électrique en oscillations acoustiques, en mouvements mécaniques, en intensités lumineuses, en champs électro-magnétique, etc.\\
-\indent L'actionneur est toutefois rarement utilisé ``nu'' et souvent couplé à un support matériel qui filtre, amplifie, oriente la diffusion des mouvements de l'actionneur pour les rendre perceptibles. Par exemple, un haut-parleur est inséré dans une enceinte qui oriente la diffusion du son vers l'avant de l'enceinte; ou encore, un écran de vidéoprojection reçoit la trace lumineuse émise par un vidéoprojecteur.\\
-\indent Les caractéristiques du matériau auquel l'actionneur est couplé peuvent ainsi considérablement influer sur le résultat sensible de l'action du capteur. Ainsi, un casque audio traduit le signal numérique en une vibration acoustique de manière relativement ``plate''\footnote{C'est à dire sans distordre le signal, ni en fréquence, ni en amplitude, ni dans le temps.} et directe à l'oreille, alors que ce même signal audio-numérique envoyé dans la corde d'une guitare via un transducteur tactile laissera entendre la résonance de la corde, de la caisse de guitare et du lieu (si par exemple on se trouve dans une salle de concert, plutôt que dans une chambre anéchoïque). De même, les rayons lumineux émis par un vidéoprojecteur pourront être envoyés sur des objets complexes (e.g. un bâtiment, ou de la fumée) qui transformeront la qualité du signal émis. Outre les caractéristiques techniques de l'actionneur (puissance, bande passante, course, etc.), il faut donc ainsi prendre en compte les propriétés des matériaux auquel le capteur est couplé.
+\indent L'actionneur n'est toutefois jamais utilisé ``nu'' (sinon dans un modèle théorique erroné) mais toujours couplé à un support matériel qui filtre, amplifie, oriente la diffusion des mouvements de l'actionneur pour les rendre perceptibles. Par exemple, un haut-parleur est inséré dans une enceinte qui oriente la diffusion du son vers l'avant de l'enceinte; ou encore, un écran de vidéoprojection reçoit la trace lumineuse émise par un vidéoprojecteur.\\
+\indent Les caractéristiques du matériau auquel l'actionneur est couplé peuvent ainsi considérablement influer sur le résultat sensible de l'action du capteur. Ainsi, un casque audio traduit le signal numérique en une vibration acoustique de manière relativement ``plate''\footnote{C'est à dire sans distordre le signal, ni en fréquence, ni en amplitude, ni dans le temps.} et directe à l'oreille, alors que ce même signal audio-numérique envoyé dans la corde d'une guitare via un transducteur tactile laissera entendre la résonance de la corde, de la caisse de guitare et du lieu (si par exemple on se trouve dans une salle de concert, plutôt que dans une chambre anéchoïque). De même, les rayons lumineux émis par un vidéoprojecteur pourront être envoyés sur des objets complexes (e.g. un bâtiment, ou de la fumée) qui transformeront la qualité du signal émis.\\
+\indent La disposition spatiale des actionneurs joue également un rôle qu'il faut prendre en compte, car leurs actions peuvent selon les cas se complémenter (e.g. une image vidéo composée de plusieurs écrans juxtaposés, un front d'onde recréé par de multiples haut-parleurs dans la \gls{WFS}, etc.), interférer (e.g. l'opposition de phase qui créé des ``trous'' dans le spectre sonore quand des signaux harmoniques en phase synchrones sont envoyés sur plusieurs haut-parleurs) ou entrer en résonance (e.g. l'effet larsen résultant d'une boucle capteurs entre actionneurs se contrôlant et s'influençant mutuellement). La possibilité de pouvoir facilement assigner, sur ordinateur, des relations de correspondances entre n'importe quel type de capteur et n'importe quel type d'actionneur entraîne la possibilité de larsens multi-modaux : par exemple un système dans lequel le son est capté par un microphone, utilisé pour générer une image, l'image utilisée pour générer du son, capté par le microphone.)\\
+\indent En dernier lieu, si l'on peut envisager une action directe des actionneurs sur notre perception, sans médiation intermédiaire \footnote{Ce qui est le cas dans des dispositifs tels que la projection rétienienne, les implants cochléaires ou neuronaux}, il faut encore considérer les effets de notre perception, qui filtre, amplifie, focalise, elle aussi les signaux que nous recevons, et s'ajoute à la médiation complexe qui opère entre la représentation numérique du signal sur l'ordinateur et la perception du phénomène sensible provoqué par les actionneurs.\\
+\indent En dernier lieu, si l'on peut envisager une action directe des actionneurs sur notre perception, sans médiation intermédiaire \footnote{Ce qui est le cas dans des dispositifs tels que la projection rétienienne, les implants cochléaires ou neuronaux}, il faut encore considérer les effets de notre perception, qui en plus de filtrer, d'amplifier, de focaliser elle aussi (comme un matériau) discrimine, ordonne, interpète, construit, aime ou rejette les signaux que nous recevons, en s'ajoutant à la médiation complexe qui opère entre la représentation numérique du signal sur l'ordinateur et la perception du phénomène sensible provoqué par les actionneurs.\\
+\indent Outre les caractéristiques techniques de l'actionneur (puissance, bande passante, course, etc.), il faut donc ainsi prendre en compte les propriétés des matériaux auquel les actionneurs sont couplés, en y incluant les processus cognitifs à l'œuvre dans la perception de leur action sur le sensible\footnote{L'étude des propriétés acoustiques des matériaux ainsi que des mécanismes de la psychologie cognitive mène par ailleurs à l'élaboration de modèles utilisables dans les lutheries numériques. Cf. section \ref{ch:algorithms:digital-material:models}}. À défaut, s'intéresser à ces caractéristiques prises isolément risque de conduire à oublier leur articulation dans l'instrument lui-même, comme le note François Dumeaux : \iquote{Quand tu composes par exemple une pièce, combien de fois je me suis retrouvé à aligner des belles courbes ... c'était pas avec les oreilles que je faisais ma courbe de volume, c'était avec mes yeux. Voilà, (...) tu te retrouves à faire des trucs absurdes, à être tatillon... [à dire, en parlant des valeurs MIDI de la courbe] ``ah non c'était à 127!'',  alors qu'en fait on n'entend pas la différence...} (entretiens personnel, cf. Annexe \ref{appendix:dumeaux}).
 
-\indent La disposition spatiale des actionneurs joue également un rôle qu'il faut prendre en compte, car leurs actions peuvent selon les cas se complémenter (e.g. une image vidéo composée de plusieurs écrans juxtaposés, un front d'onde recréé par de multiples haut-parleurs dans la \gls{WFS}), interférer (e.g. l'opposition de phase qui créé des ``trous'' dans le spectre sonore quand des signaux synchrones sont envoyés sur plusieurs haut-parleurs) ou entrer en résonance (e.g. l'effet larsen résultant d'une boucle capteurs entre actionneurs se contrôlant et s'influençant mutuellement). La possibilité de pouvoir facilement assigner, sur ordinateur, des relations de correspondances entre n'importe quel type de capteur et n'importe quel type d'actionneur entraîne la possibilité de larsen multi-modaux : par exemple un système dans lequel le son est capté par un microphone, utilisé pour générer une image, l'image utilisée pour générer du son, capté par le microphone.)
-
-analogiqu qui traduit le signal numérique en signal analogique (\gls{CAN})
-
-
-On peut envisager l'action des actionneurs (et en amont, la nature du signal qui leur est envoyé) sous trois aspects différents:
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item \textbf{leurs mouvements propres}: par exemple, un signal envoyé dans un casque audio traduit relativement directement les oscillations du signal à l'oreille. Dans le domaine visuel, l'envoi d'un signal vidéo sur un vidéoprojetcteur créé un faisceau lumineux aux intensité et couleurs variables.
-	\item \textbf{leurs mouvements induits} : par exemple, si l'on envoie maintenant le signal audio non plus dans un casque audio mais sur un transducteur qui excite une corde de guitare, on
-	\item \textbf{leurs contenu sémiotique}
-\end{itemize}
-
-- leur mouvements propres
-- les mouvements induits 
-- leur contenu sémiotique
-
-
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item \textbf{les mouvements propres}
-	\item \textbf{les mouvements induits}
-	\item \textbf{les mouvements induits}
-\end{itemize}
-
-
-On peut envisager les signaux émis aux actionneurs sous trois aspects différents :
-
-- La perception du signal lui même (comme signal d'excitation).
-- La perception du matériau dans lequel ce signal est envoyé (comme résonateur)
-- La perception organisée du signal, ce qu'Albert Bergman, dans le domaine du sonore, a nommé ``Analyse de la scène auditive'' (\textit{Auditory Scene Analysis} - ASA) dans \cite{bregman_auditory_1994}
-
-- pour le mouvement qui leur est propre. Par exemple, dans le cas d'un signal audio envoyé sur la membrane d'un casque audio (dont la réponse est relativement plate), ce mouvement représente l'image d'un son acoustique qui est retransmis relativement directement à la perception auditive. On pourrait parler d'une écoute concrète du son. Pour le cas d'un signal envoyé sur un vidéoprojecteur, ce signal génère des rayons lumineux qui partent dans l'espace.
-
-- pour leur rôle d'excitateur d'un matériaux résonant
-Si on prend par exemple un signal audio, envoyé cette fois non plus dans un casque audio, mais sur un transducteur tactile couplé à une corde de guitare, ce signal est envisagé comme l'excitation d'un matériaux résonant qui filtre. On ne va plus entendre ``seulement'' le signal audio, mais aussi --~et peut-être davantage~-- la réponse du matériau à cette excitation.
-
-
-- pour le contenu sémiotique qu'il contiennent
-Enfin, l'écoute d'un son n'est pas seulement ``réduite'' mais comprend une part d'analyse sémiotique, de projection de sens sur ce qui est perçu. Ainsi, le signal audio peut jouer avec cette perception et utiliser les mécanismes psycho-acoustique de notre réception pour simuler des mouvements qui n'existent pas. Par exemple, un son dont l'amplitude est en forme de cloche et la hauteur descend simule l'effet Doppler d'un objet en mouvement (alors que ce mouvement n'existe pas).
-De même, l'image vidéo
-
-Je prendrai un exemple sonore et visuel pour souligner ces trois aspects :
-
-si j'envoie un signal audio dans un casque audio, j'entends directement le signal (en considérant que la réponse du casque audio est relativement plate). Si j'envoie ce même signal dans un transducteur agissant sur une corde de guitare, j'entends la réponse du matériau, dans ce cas la résonance de la corde et de la caisse de la guitare (et généralement, de l'acoustique du lieu). 
-
-mais si certains procèdent de manière quasi-symétrique à leur analogue capteurs (e.g. le haut-parleur est microphone qui fonctionnent en sens inverse), la contre-partie n'est pas toujours possible (e.g. un capteur de distance à infra-rouge ne recréé pas son propre reflet si on le branche à l'envers).
-
-À la différence de leur utilisation dans les machines-outils ou les automates industriels où les actionneurs sont chargé d'accomplir une tâche, les actionneurs d'un \gls{DMI} s'adressent à notre perception.
-
-Cependant, l'image du réel enregistrée par le capteur ne contient pas tout la complexité du réel.
-
-les capteurs --~tout comme nos sens~-- reçoivent une image globale de leur environnement
-
-Les capteurs mesurent une grandeur physique, tandis que les actionneurs recréént un phénomène physique.
-
-
-Les capteurs sont sensibles à l'environnement actuel, et les actionneurs actualisent le monde sensible.
-Les capteurs enregistrent une image du mnode réel et les actionneurs ont a charge de (re)créer une réalité artificielle à partir de l'image en agissant comme des gestes d'excitation sur l'environnement.
-
-A l'inverse des capteurs qui enregistre une image de la réalité, les actionneurs recréé une réalité à partir d'une image.
-La différence entre ces deux types de transduction tient au fait que l'image est toujours lacunaire, en déficit d'information par rapport à la complexité du monde réel. La synthèse d'une réalité artificielle est ainsi fonction des facteurs suivants :
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item \textbf{les caractéristiques techniques de l'actionneur} type d'actionneur, puissance, bande passante, etc.)
-	\item \textbf{la répartition des actionneurs dans l'espace} (e.g la spatialisation de haut-parleurs dans l'espace de concert, différenciant par exemple, son de façade et son de retour du musicien, un haut-parleur et un casque audio de bande passante similaire ne produiront pas la même image sonore, ou encore l'image recomposéee par plusieurs projection vidéo)
-	\item \textbf{la réponse (résonance) du complexe matériel} auquel ils sont couplés. En cela, on peut considérer les actionneurs comme des \textit{gestes d'excitation}, pour reprendre la terminologie de Cadoz, qui jouent (e.g. un servo moteur actionnant un vérin produira un résultat sensiblement différent s'il tape sur du bois ou sur une une plaque de métal, un haut-parleur sonnera différemment selon la réverbération du lieu, une image projeté sur un écran blanc ne sera pas la même que celle projetée sur une foule ou un bâtiment)
-	\item \textbf{la nature des signaux} envoyés aux actionneurs, qui use de la subversion de notre perception (e.g. continuité de mouvement visuel à partir de 25 images/seconde, bande passante de l'audible limitée en 20Hz et 20kHz, leur coordination temporelle permet de reconstituer un image globale à partir d'éléments disjoints (synchrèse), l'utilisation d'effet psycho-acoustiques permet de simuler des espaces, réverb, compression side-chain, glissement de hauteur dans le signal simulant l'effet doppler d'une source en mouvement, etc. )
-\end{itemize}
-
-Les phénomènes physiques qui se propagent, tels que la lumière et le son
-Le capteur capte localement ce qui lui arrive, mais les phénomènes sonores et lumineux, qui se propagent à grande vitesse ne sont pas locaux.
-
-Il est relativement aisé d'enregistrer une image du réel, mais il est plus difficile de reconstruire le réel à partir d'une image, qui en est une réduction, pleine de trous. La situation est la même pour les humains qui ne perçoivent le réel qu'à travers l'image que leur en fournit leur perception. Par chance, le système cognitif humain est tout entier orienté par le besoin vital de combler ces trous.
-
-
-Si l'on peut capter dans un signal monodimensionnel une image d'un environnement réel complexe, il n'est pas aussi évident de recréer une réalité complexe à partir du même signal mono-dimensionnel délivré par l'ordinateur.
-
-Les techniques d'écriture du sonore ont ainsi développé tout un ensemble de techniques, basé sur notre propension à construire des percepts sur la base des stimuli qui excitent nos sens, à projeter des causes, des espaces, des mouvements sur la base de notre expérience des corrélations qui existent habituellement, ``naturellement'' pourrait-on dire, entre différentes fluctuations du sensible.
-
-La distribution spatiale des énergie captée a été réduite à un signal mono-dimensionnel
-
-La production de signaux traduits dans l'audible, le visible ou le tactile recourt à tout un ensemble de techniques d'illusion, mis en évidence par les études psycho-cognitives. (E.g. on simule une localisation spatiale par une image stéréo, de délais entre signaux perçu par les deux oreilles, on simule les effets de masquage psycho-acoustique de niveau sonore élevés d'une salle de clubbing par une compression en side-chain, le déplacement d'une source par la modification de hauteur de l'effet Doppler, etc)
-
-Trois dimensions nous intéressent plus particulièrement : acoustique, tactile et visuelle, que j'aborderai dans les sections suivantes pour les deux premières et dans le chapitre \ref{ch:visual_representation}, en ce qui concerne la dimension graphique.
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{La part acoustique de l'interface des DMIs}
 \label{sec:interfaces:part_acoustique}
 
