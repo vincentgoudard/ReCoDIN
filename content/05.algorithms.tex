@@ -46,6 +46,13 @@
 \indent Par ailleurs, la programmation des \glspl{DMI} adopte souvent un paradigme de \textit{dataflow}, telle que la programmation ``réactive'', pour répondre aux besoins du temps-réel, tout en s'intégrant dans un environnement multi-paradigmes\footnote{Un logiciel tel que Max qui s'articule essentiellement autour d'une programmation visuelle de \textit{dataflow}, intègre également des possibilités de scripting, de programmation synchrone, fonctionnelle ou impérative.}. Une autre distinction qui en découle en partie, est celle qui consiste à séparer les algorithmes de synthèse audio d'une part, et le \textit{mapping}\footnote{c'est-à-dire les relations --~potentiellement algorithmiques~-- entre les ``entrées'' de l'instrument (telles que les données issues d'une interface sensible\footnote{Sur la notion d'interface sensible, cf. \ref{ch:interfaces}}) et la synthèse. Cf. section \ref{sec:algorithms:MID:mapping-to-MID} d'autre part en deux objets conceptuels distincts, comme en témoignent les représentations de modèles de mappings proposés sur les figures \ref{fig:algorithms:DynamicMappingLayer1}, \ref{fig:algorithms:DynamicMappingLayer2}, \ref{fig:algorithms:DynamicMappingLayer3}}.\\
 \indent Si ces différentes distinctions résultent de contraintes techniques, d'évolutions historiques, de choix conceptuels voire d'intentions musicales, j'ai cependant choisi de regrouper dans ce chapitre des aspects concernant à la fois le mapping et la synthèse. Ce choix est motivé par la porosité évidente qu'il existe entre ces différentes catégories et par des développements qui tentent, en partie, de redéfinir leur articulation.
 
+
+\subsection{Modèles [psycho]acoustiques}
+Intégration dans les algorithmes de modèles décrivant la réalité qui nous entoure, pour simuler le réel par des stimulus trompant notre perception. (cf. gestes subversifs)
+Eg. modélisation de la résonance des matériaux, des lieux (eg. logiciels de spat)
+modélisation de la perception du son (eg. effet doppler, compression pumping)
+modèle musicaux (gammes et accords, arpeggiateur)
+
 \subsection*{[Extra material]}
 
 Jorda : \iquote{The most direct kind of mapping, which associates each single sound control parameter (e.g., pitch, amplitude, etc.) with an independent control dimension, has proved to be musically unsatisfying, exhibiting a toy-like characteris- tic that does not allow for the development of virtuosity. More complex mappings, which, depending on the type of relation between inputs and synthesis parameters are usually classified as one-to-many, many-to-one or many-to-many, have proven to be more musically useful and interesting (Hunt, 1999; Hunt, Wanderley, Kirk, 2000).}
