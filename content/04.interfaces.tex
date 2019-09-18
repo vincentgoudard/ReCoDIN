@@ -275,17 +275,64 @@ which might otherwise never come to life.}
 \subsection{Feed-back: actionneurs}
 
 
-\noindent En ``sortie'' de la machine, à l'autre extremité de la boucle instrumentale --~si l'on peut dire~-- se trouvent les systèmes qui font le travail inverse des capteurs en venant \textit{agir} sur l'espace sensible.
+\noindent En ``sortie'' de la machine, à l'autre extremité de la boucle instrumentale --~si l'on peut dire~-- se trouvent les systèmes qui font le travail inverse des capteurs en venant \textit{agir} sur l'espace sensible. Là encore, de nombreux types d'actionneurs existent pour agir sur diverses dimensions, quoique celles qui nous intéressent plus directement dans le contexte musical soient celles du son, du mouvement et de la lumière (dans la mesure où l'expérience musicale est aussi une expérience visuelle du mouvement).\\
+\indent D'un point de vue matériel, l'actionneur se présente comme un composant électronique connectable à l'ordinateur, généralement au moyen d'un \gls{CAN} et d'un amplificateur (parfois intégrés), qui adaptent le signal numérique au courant et voltage adaptés au transducteur. Le transducteur convertit ce signal électrique en oscillations acoustiques, en mouvements mécaniques, en intensités lumineuses, en champs électro-magnétique, etc.\\
+\indent L'actionneur est toutefois rarement utilisé ``nu'' et souvent couplé à un support matériel qui filtre, amplifie, oriente la diffusion des mouvements de l'actionneur pour les rendre perceptibles. Par exemple, un haut-parleur est inséré dans une enceinte qui oriente la diffusion du son vers l'avant de l'enceinte; ou encore, un écran de vidéoprojection reçoit la trace lumineuse émise par un vidéoprojecteur.\\
+\indent Les caractéristiques du matériau auquel l'actionneur est couplé peuvent ainsi considérablement influer sur le résultat sensible de l'action du capteur. Ainsi, un casque audio traduit le signal numérique en une vibration acoustique de manière relativement ``plate''\footnote{C'est à dire sans distordre le signal, ni en fréquence, ni en amplitude, ni dans le temps.} et directe à l'oreille, alors que ce même signal audio-numérique envoyé dans la corde d'une guitare via un transducteur tactile laissera entendre la résonance de la corde, de la caisse de guitare et du lieu (si par exemple on se trouve dans une salle de concert, plutôt que dans une chambre anéchoïque). De même, les rayons lumineux émis par un vidéoprojecteur pourront être envoyés sur des objets complexes (e.g. un bâtiment, ou de la fumée) qui transformeront la qualité du signal émis. Outre les caractéristiques techniques de l'actionneur (puissance, bande passante, course, etc.), il faut donc ainsi prendre en compte les propriétés des matériaux auquel le capteur est couplé.
 
-Là encore, de nombreux types d'actionneurs existent pour agir sur diverses dimensions, quoique ceux qui nous intéressent plus directement dans le contexte musical sont ceux qui permettent de générer des sons, du mouvement et de la lumière (dans la mesure où l'expérience musicale est aussi une expérience visuelle).
+\indent La disposition spatiale des actionneurs joue également un rôle qu'il faut prendre en compte, car leurs actions peuvent selon les cas se complémenter (e.g. une image vidéo composée de plusieurs écrans juxtaposés, un front d'onde recréé par de multiples haut-parleurs dans la \gls{WFS}), interférer (e.g. l'opposition de phase qui créé des ``trous'' dans le spectre sonore quand des signaux synchrones sont envoyés sur plusieurs haut-parleurs) ou entrer en résonance (e.g. l'effet larsen résultant d'une boucle capteurs entre actionneurs se contrôlant et s'influençant mutuellement). La possibilité de pouvoir facilement assigner, sur ordinateur, des relations de correspondances entre n'importe quel type de capteur et n'importe quel type d'actionneur entraîne la possibilité de larsen multi-modaux : par exemple un système dans lequel le son est capté par un microphone, utilisé pour générer une image, l'image utilisée pour générer du son, capté par le microphone.)
+
+analogiqu qui traduit le signal numérique en signal analogique (\gls{CAN})
+
+
+On peut envisager l'action des actionneurs (et en amont, la nature du signal qui leur est envoyé) sous trois aspects différents:
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{leurs mouvements propres}: par exemple, un signal envoyé dans un casque audio traduit relativement directement les oscillations du signal à l'oreille. Dans le domaine visuel, l'envoi d'un signal vidéo sur un vidéoprojetcteur créé un faisceau lumineux aux intensité et couleurs variables.
+	\item \textbf{leurs mouvements induits} : par exemple, si l'on envoie maintenant le signal audio non plus dans un casque audio mais sur un transducteur qui excite une corde de guitare, on
+	\item \textbf{leurs contenu sémiotique}
+\end{itemize}
+
+- leur mouvements propres
+- les mouvements induits 
+- leur contenu sémiotique
+
+
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{les mouvements propres}
+	\item \textbf{les mouvements induits}
+	\item \textbf{les mouvements induits}
+\end{itemize}
+
+
+On peut envisager les signaux émis aux actionneurs sous trois aspects différents :
+
+- La perception du signal lui même (comme signal d'excitation).
+- La perception du matériau dans lequel ce signal est envoyé (comme résonateur)
+- La perception organisée du signal, ce qu'Albert Bergman, dans le domaine du sonore, a nommé ``Analyse de la scène auditive'' (\textit{Auditory Scene Analysis} - ASA) dans \cite{bregman_auditory_1994}
+
+- pour le mouvement qui leur est propre. Par exemple, dans le cas d'un signal audio envoyé sur la membrane d'un casque audio (dont la réponse est relativement plate), ce mouvement représente l'image d'un son acoustique qui est retransmis relativement directement à la perception auditive. On pourrait parler d'une écoute concrète du son. Pour le cas d'un signal envoyé sur un vidéoprojecteur, ce signal génère des rayons lumineux qui partent dans l'espace.
+
+- pour leur rôle d'excitateur d'un matériaux résonant
+Si on prend par exemple un signal audio, envoyé cette fois non plus dans un casque audio, mais sur un transducteur tactile couplé à une corde de guitare, ce signal est envisagé comme l'excitation d'un matériaux résonant qui filtre. On ne va plus entendre ``seulement'' le signal audio, mais aussi --~et peut-être davantage~-- la réponse du matériau à cette excitation.
+
+
+- pour le contenu sémiotique qu'il contiennent
+Enfin, l'écoute d'un son n'est pas seulement ``réduite'' mais comprend une part d'analyse sémiotique, de projection de sens sur ce qui est perçu. Ainsi, le signal audio peut jouer avec cette perception et utiliser les mécanismes psycho-acoustique de notre réception pour simuler des mouvements qui n'existent pas. Par exemple, un son dont l'amplitude est en forme de cloche et la hauteur descend simule l'effet Doppler d'un objet en mouvement (alors que ce mouvement n'existe pas).
+De même, l'image vidéo
+
+Je prendrai un exemple sonore et visuel pour souligner ces trois aspects :
+
+si j'envoie un signal audio dans un casque audio, j'entends directement le signal (en considérant que la réponse du casque audio est relativement plate). Si j'envoie ce même signal dans un transducteur agissant sur une corde de guitare, j'entends la réponse du matériau, dans ce cas la résonance de la corde et de la caisse de la guitare (et généralement, de l'acoustique du lieu). 
 
 mais si certains procèdent de manière quasi-symétrique à leur analogue capteurs (e.g. le haut-parleur est microphone qui fonctionnent en sens inverse), la contre-partie n'est pas toujours possible (e.g. un capteur de distance à infra-rouge ne recréé pas son propre reflet si on le branche à l'envers).
 
 À la différence de leur utilisation dans les machines-outils ou les automates industriels où les actionneurs sont chargé d'accomplir une tâche, les actionneurs d'un \gls{DMI} s'adressent à notre perception.
 
-Cependant, l'image du réel que capte la machine n'en contient pas tout la .
+Cependant, l'image du réel enregistrée par le capteur ne contient pas tout la complexité du réel.
 
-Cependant, si les capteurs --~tout comme nos sens~-- reçoivent une image globale de leur environnement
+les capteurs --~tout comme nos sens~-- reçoivent une image globale de leur environnement
 
 Les capteurs mesurent une grandeur physique, tandis que les actionneurs recréént un phénomène physique.
 
@@ -299,7 +346,7 @@ La différence entre ces deux types de transduction tient au fait que l'image es
 \begin{itemize}[noitemsep]
 	\item \textbf{les caractéristiques techniques de l'actionneur} type d'actionneur, puissance, bande passante, etc.)
 	\item \textbf{la répartition des actionneurs dans l'espace} (e.g la spatialisation de haut-parleurs dans l'espace de concert, différenciant par exemple, son de façade et son de retour du musicien, un haut-parleur et un casque audio de bande passante similaire ne produiront pas la même image sonore, ou encore l'image recomposéee par plusieurs projection vidéo)
-	\item \textbf{la réponse (résonance) du complexe matériel} auquel ils sont couplés. En cela, on peut considérer les actionneurs comme des \textit{gestes d'excitation}, pour reprendre la terminologie de Cadoz, qui jouent  (e.g. un servo moteur actionnant un vérin produira un résultat sensiblement différent s'il tape sur du bois ou sur une une plaque de métal, un haut-parleur sonnera différemment selon la réverbération du lieu, une image projeté sur un écran blanc ne sera pas la même que celle projetée sur une foule ou un bâtiment)
+	\item \textbf{la réponse (résonance) du complexe matériel} auquel ils sont couplés. En cela, on peut considérer les actionneurs comme des \textit{gestes d'excitation}, pour reprendre la terminologie de Cadoz, qui jouent (e.g. un servo moteur actionnant un vérin produira un résultat sensiblement différent s'il tape sur du bois ou sur une une plaque de métal, un haut-parleur sonnera différemment selon la réverbération du lieu, une image projeté sur un écran blanc ne sera pas la même que celle projetée sur une foule ou un bâtiment)
 	\item \textbf{la nature des signaux} envoyés aux actionneurs, qui use de la subversion de notre perception (e.g. continuité de mouvement visuel à partir de 25 images/seconde, bande passante de l'audible limitée en 20Hz et 20kHz, leur coordination temporelle permet de reconstituer un image globale à partir d'éléments disjoints (synchrèse), l'utilisation d'effet psycho-acoustiques permet de simuler des espaces, réverb, compression side-chain, glissement de hauteur dans le signal simulant l'effet doppler d'une source en mouvement, etc. )
 \end{itemize}
 
@@ -494,14 +541,14 @@ Trois dimensions nous intéressent plus particulièrement : acoustique, tactile 
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
 	\includegraphics[width=\textwidth]{gfx/05_interfaces/virtual-fretting.jpg}
-	\caption[Frettage virtuel par retour vibro-tactile]{Frettage virtuel par retour vibro-tactile: le transducteur tacile (en haut à droite) émet une impulsion à chaque fois que le stylet franchit une frontière virtuelle (matérialisée par les lignes noires sur le calque).}
+	\caption[Frettage virtuel par retour vibro-tactile]{Frettage virtuel par retour vibro-tactile: le transducteur tacile (en bas à gauche) émet une impulsion à chaque fois que le stylet franchit une frontière virtuelle (matérialisées par les lignes noires sur le calque).}
 	\label{fig:interface:virtual-fretting}
 \end{figure}
 %-------------------------- Figure : wacom ---------
 
 
 \noindent\textbf{Anamorphose dynamique}\\
-\noindent Enfin, il est possible de procéder algorithmiquement à des anamorphoses de l'espace de jeu. Cette solution ne permet pas de ``créer'' des repères tactiles à proprement parler, mais d'adapter dynamiquement l'espace de l'interaction pour que le geste puisse s'affranchir en partie du besoin de ces repères.
+\noindent Enfin, il est possible de procéder algorithmiquement à des anamorphoses de l'espace de jeu. Cette solution ne permet pas de ``créer'' des repères tactiles à proprement parler, mais d'adapter dynamiquement l'espace de l'interaction pour que le geste puisse s'affranchir en partie du besoin de ces repères.\\
 \indent Un exemple classique est le vérouillage des composants de la \gls{GUI} : si l'on clique sur un bouton ou un \textit{slider}, l'interaction est maintenue avec le composant tant que le doigt est en contact avec la surface tactile, ce qui permet des gestes plus amples utilisant l'intégralité de la surface de l'écran tactile, plutôt que de les restreindre à une petit zone\footnote{Cette solution a notamment été implémentée dans la librairie mp.TUI présentée au chapitre \ref{ch:visual_representation}}. Ce type d'interaction s'appuie sur la loi de Fitts \cite{fitts_information_1954}, caractérisant \textit{l'indice de difficulté} d'une tâche de selection par pointage, couramment exprimée en terme de temps mis à réussir ce pointage, par la relation (formulation de MacKenzie): 
 $$ T = a + b \log_2 (1 + \frac{D}{L})$$
 \vspace{-1em}
@@ -511,7 +558,8 @@ $D$			& distance séparant le point de départ du centre de la cible;\\
 $L$			& largeur de la cible mesurée selon l'axe de mouvement;\\
 $a, b$  	& variables pouvant être déterminés empiriquement.
 \end{conditions}
-\indent Un autre exemple d'anamorphose, plus directement lié au domaine musical, est l'algorithme de correction dynamique de la hauteur de hauteur\footnote{L'algorithme s'applique à la hauteur, comme à n'importe quel autre paramètre qu'il pourrait être intéressant de contrôler à la fois de manière continue et discrètre} à l'attaque, présenté dans \cite{goudard_playing_2014} et sur la figure \ref{fig:algorithms:MID-dynamic-pitch-correction}.
+
+\noindent Un autre exemple d'anamorphose, plus directement lié au domaine musical, est l'algorithme de correction dynamique de la hauteur de hauteur\footnote{L'algorithme s'applique à la hauteur, comme à n'importe quel autre paramètre qu'il pourrait être intéressant de contrôler à la fois de manière continue et discrètre} à l'attaque, présenté dans \cite{goudard_playing_2014} et sur la figure \ref{fig:algorithms:MID-dynamic-pitch-correction}.
 
 \subsubsection{Repères somasthésiques}
 
@@ -527,7 +575,7 @@ correpondance entre l'anatomie corporelle et celle de l'interface\\
 %------------------------------------------------------------
 \subsection{Ergodynamie}
 
-\noindent Les différents aspects qui contribuent à l'ergonomie de l'interface de jeu d'un \gls{DMI} sont ainsi à la fois ancrés dans le corps matériel de l'instrumennt, mais également dans les artéfacts sonores, visuels ou vibratoires produits par l'ordinateur. à ces aspects purement cognitifs s'ajoute l'expérience personnelle et la reconnaissance de tous les éléments appartenant au répertoire culturel dans lequel un nouveau \gls{DMI}, encore inconnu, s'inscrit.\\
+\noindent Les différents aspects qui contribuent à l'ergonomie de l'interface de jeu d'un \gls{DMI} sont ainsi à la fois ancrés dans le corps matériel de l'instrument, mais également dans les artéfacts sonores, visuels ou vibratoires produits par l'ordinateur. À ces aspects cognitifs s'ajoute l'expérience personnelle et la reconnaissance de tous les éléments appartenant au répertoire culturel dans lequel un nouveau \gls{DMI}, encore inconnu, s'inscrit.\\
 \indent Thor Magnusson propose la notion d'\textit{ergodynamie} \iquote{comme un terme qui s'approche d'une certaine manière de l'usage du mot `gameplay' dans le domaine des jeux vidéo, mais qui traduit également une conscience et une expérience de l'instrument dans des pratiques incarnées, historiques et esthétiques. L'ergodynamie concerne l'objet étudié, mais elle se rapporte aussi bien au contexte culturel qu'à des expériences personnelles subjectives de cet objet.\footnote{\iquote{(...) the word \textit{ergodynamics} is proposed as a term that somewhat relates to the use of ‘gameplay’ in computer games, but further signifies an awareness and experience of the instrument in embodied, historical, and aesthetic practices. Ergodynamics are of the object studied, but it relates equally to cultural context and subjective personal experiences of it.} \cite{magnusson_ergodynamics_2019}}}
 
 
@@ -535,21 +583,32 @@ correpondance entre l'anatomie corporelle et celle de l'interface\\
 \section{Un exemple pratique : phylogenèse d'interfaces de type tablette}
 \label{sec:interfaces:phylogenese}
 
-\noindent Cette partie retrace le développement d'une série d'interfaces de \glspl{DMI}, basée sur un archétype d'instrument de type ``tablette''. On peut voir dans la tablette graphique des liens évidents avec les gestes du dessin et de l'écriture (todo: ref N d'Alessandro), tandis que l'écran multitouch possède certains liens avec les interactions nouvelles qui ont émergé avec les smartphones et autre tablette de type iPad.
-
-Filigramophone : évolution depuis la tablette graphique simple, tablette augmentée, écran \textit{multitouch} augmenté, intégration de Bela…
-
-De la simple tablette graphique à l’écran \textit{multitouch} augmenté de capteurs, histoire de l’évolution d’une interface pour la performance électroacoustique.
-La conception d’une nouvelle interface pour la performance musicale est une tâche complexe, nécessitant de nombreux aller-retours entre conception, fabrication et pratique musicale. Le filigramophone est une interface qui a connu plusieurs versions, suffisamment différentes pour avoir envie de leur donner un nouveau nom à chaque fois et suffisamment similaire pour y voir la continuité d’un seul et même instrument.
+\noindent Cette partie retrace le développement d'une série d'interfaces de \glspl{DMI}, basée sur un archétype d'instrument de type ``tablette''. On peut voir dans la tablette graphique des liens évidents avec les gestes du dessin et de l'écriture, tandis que l'usage généralisé des écrans \textit{multitouch} sur les smartphones a fait émergé un grand nombre d'habitudes d'interaction (ainsi que les attentes que ces habitudes génèrent) telles que les mouvements de balyage, de \textit{pinch-to-zoom}, de défilement à deux doigts, etc.\\
+\indent La conception d’une nouvelle interface pour la performance musicale est une tâche complexe, nécessitant de nombreux aller-retours entre conception, fabrication et pratique musicale. Le filigramophone est une interface qui a connu plusieurs versions, suffisamment différentes pour avoir envie de leur donner un nouveau nom à chaque fois et suffisamment similaire pour y voir la continuité d’un seul et même \gls{DMI}.
 
 %----------------------------------------------------------------------------------------------------------
 \subsection{Origine : la tablette graphique (2005)}
 \label{sec:interfaces:phylogenese:wacom}
 
-TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis, ou Fairlight CMI)
-
 \noindent La tablette graphique (précisément un modèle Sapphire de Wacom) a été l’interface originelle qui a servi de base au filigramophone. J’ai commencé à l’utiliser dans le cadre du développement de la Méta-Mallette\footnote{Logiciel pour la pratique collective de musique par ordinateur développé par l’association Puce Muse, au développement duquel j'ai activement participé entre 2005 et 2008.}. Le choix de cette interface était motivé par la diversité de gestes expressifs possibles sur une tablette graphique, ainsi que par son coût relativement abordable\footnote{un peu moins de 100€ en 2005, autour de 50€ pour un modèle équivalent en 2019.} comparativement à la plupart des interfaces \gls{MIDI}, permettant de la déployer en nombre, dans le cadre d'activités pédagogiques pratiquées en groupe, dans des écoles et autres collectivités.\\
-\indent En dehors de son usage pour la composition, un certain nombre de musiciens, compositeurs et concepteurs de \gls{NIME} l’ont par ailleurs adoptée pour la performance\footnote{Notamment à l'\gls{IRCAM} (voir \cite{wanderley_choice_2000}), au \gls{CNMAT} (voir \cite{zbyszynski_ten_2007}, au \gls{LMA} \cite{couturier_utilisation_2004}, au \gls{LIMSI} \cite{feugere_chorus_2011} puis dans l'équipe \gls{LAM} \cite{xiao_t-voks_2019}, mais on peut également citer Pierre Jodlowski (voir \url{https://youtu.be/pLARXmGwIO4}) ou Jesper Nordin (voir \url{https://gestrument.com/})}. Nicolas d’Alessandro a consacré une partie de son travail de thèse \cite{dalessandro_realtime_2009} à ce sujet, en proposant une étude détaillée des différentes échelles de mouvements dans le geste du dessin et de l'écriture, liées à l'articulation entre doigts, poignet et épaule.\\
+%------------ Figure : fairlight CMI et UPIC -----------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/05_interfaces/fairlight-CMI.jpg}
+		\caption[Le Fairlight CMI]{Le \textit{Fairlight CMI} créé en 1976, un synthétiseur et séquenceur utilisant un écran à stylet. Photographie : Peter Wielk.}
+		\label{fig:interface:fairlightCMI}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+	    \includegraphics[width=\linewidth]{gfx/05_interfaces/UPIC-Xenakis.png}
+		\caption[L'UPIC de Iannis Xenakis]{La station UPIC inventée par Xénakis permet de dessiner des formes graphiques libres, pouvant être lues de différentes manières pour être traduites en son. (Image extraite du documentaire ``Avenir UPIC Xenakis'', centre Xénakis)}
+		\label{fig:interface:UPIC}
+	\end{minipage}
+\end{figure}
+%------------ Figure : fairlight CMI et UPIC -----------
+\indent À l'origine destinée aux graphistes, les tablettes à stylet ont également été utilisées pour la composition. Le système \textit{UPIC} inventé par Iannis Xénakis (figure \ref{fig:interface:UPIC}) ou le \textit{Fairlight CMI}  (figure \ref{fig:interface:fairlightCMI}) utilisaient tous les deux, dans des directions relativement différentes, une interface basée sur la tablette et le stylet. En dehors de son usage pour la composition, un certain nombre de musiciens, compositeurs et concepteurs de \gls{NIME} l’ont par ailleurs adoptée pour la performance\footnote{Notamment à l'\gls{IRCAM} (voir \cite{wanderley_choice_2000}), au \gls{CNMAT} (voir \cite{zbyszynski_ten_2007}, au \gls{LMA} \cite{couturier_utilisation_2004}, au \gls{LIMSI} \cite{feugere_chorus_2011} puis dans l'équipe \gls{LAM} \cite{xiao_t-voks_2019}, mais on peut également citer Pierre Jodlowski (voir \url{https://youtu.be/pLARXmGwIO4}) ou Jesper Nordin (voir \url{https://gestrument.com/})}. Nicolas d’Alessandro a consacré une partie de son travail de thèse \cite{dalessandro_realtime_2009} à ce sujet, en proposant une étude détaillée des différentes échelles de mouvements dans le geste du dessin et de l'écriture, liées à l'articulation entre doigts, poignet et épaule.\\
 \indent J'avais utilisé la tablette graphique pour différents projets\footnote{filigram, Media Music rooM, cf. \url{http://vincentgoudard.com}}, mais comme un composant parmi d'autres interfaces \gls{MIDI} ou de type joystick.
 \indent Un des inconvénient de la tablette Wacom est que les contours de la surface utile, plus petite que la surface de la tablette\footnote{Cela permet de ne pas ``tomber'' hors de la tablette}, sont à peine perceptibles, tant visuellement qu'au niveau tactile. Cela s'avère problématique quand on manipule un processus sonore et non un pinceau dans PhotoShop, tel que l'usage de la tablette le prévoit. Une première adaptation a donc consisté à rajouter des bandes adhésives permettant de matérialiser cette frontière, visuellement et tactilement (cf. figure \ref{fig:interface:wacom}).\\
 %-------------------------- Figure : wacom ---------
@@ -618,7 +677,7 @@ TODO : rajouter un mot sur historique tablette (système UPIC de Iannis Xénakis
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
 	\includegraphics[width=\textwidth]{gfx/05_interfaces/fibroscopie-Triton.jpg}
-	\caption{Filigramophone (à droite) et une version protoypique du Xypre v1 (à gauche) sur scène, durant la répétition de la première de FIB\_R en juin 2015, Le Triton, Les Lilas (93)}
+	\caption{Filigramophone (à droite) et une version protoypique du Xypre v1 (à gauche) sur scène, durant la répétition de FIB\_R en juin 2015, Le Triton, Les Lilas (93).}
 	\label{fig:interface:filigramophone-Xypre-Triton}
 \end{figure}
 %-------------------------- Figure : fibroscopie Triton ----------------------------------
