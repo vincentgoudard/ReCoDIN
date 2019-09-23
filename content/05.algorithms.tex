@@ -278,6 +278,10 @@ Les limitations du \gls{MIDI} ont pourtant été identifiées peu de temps aprè
 
 \noindent Dans cette brève revue, il faut mentionner \gls{TUIO} \cite{kaltenbrunner_tuio:_2005}, basé sur \gls{OSC}), et développé conjointement au projet ReacTable. \gls{TUIO} ne se focalise que sur l'information gestuelle particulière propre aux interfaces multitouch, en transmettant des informations sur le contact des doigts, et d'éventuels objets sur la surface tactile. Il introduit un indice incrémentiel pour identifier de manière unique des événements dynamiques et éphémères tels que les touchés de doigt sur une (\gls{TUI}). Il se distingue également de la logique des événements \gls{MIDI}, dont l'utilisation de messages distincts pour les note-on et -off peut produire des notes qui restent ``bloquées'' si un message note-off est perdu. Il propose une solution simple et pratique pour résoudre l'incertitude d'arrivée des messages envoyés sur \gls{UDP}, consistant à envoyer systématiquement la liste des événements actifs.
 
+\subsubsection{Minuit/Jamoma}
+
+TODO : \cite{de_la_hogue_jamoma_2011}
+
 \subsubsection{Le signal}
 
 \noindent S'il n'est généralement pas envisagé tant comme un signal de contrôle que comme un support pour l'audio numérique\footnote{David Zicarelli parle encore d'\textit{audio channels} dans une conférence présentant la nouvelle version de Max sensée changer la manière de les considérer : \url{https://www.youtube.com/watch?v=Y4YLy7kqcr8}}, le signal peut être utilisé à cette fin et même permettre la transmission d'événements asynchrones. Le développement de la librairie ``Sagrada'', présentée dans la section \ref{sec:algorithms:sagrada}, en donne un example.\\
