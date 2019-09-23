@@ -1,0 +1,80 @@
+On peut envisager l'action des actionneurs (et en amont, la nature du signal qui leur est envoyé) sous trois aspects différents:
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{leurs mouvements propres}: par exemple, un signal envoyé dans un casque audio traduit relativement directement les oscillations du signal à l'oreille. Dans le domaine visuel, l'envoi d'un signal vidéo sur un vidéoprojetcteur créé un faisceau lumineux aux intensité et couleurs variables.
+	\item \textbf{leurs mouvements induits} : par exemple, si l'on envoie maintenant le signal audio non plus dans un casque audio mais sur un transducteur qui excite une corde de guitare, on
+	\item \textbf{leurs contenu sémiotique}
+\end{itemize}
+
+- leur mouvements propres
+- les mouvements induits 
+- leur contenu sémiotique
+
+
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{les mouvements propres}
+	\item \textbf{les mouvements induits}
+	\item \textbf{les mouvements induits}
+\end{itemize}
+
+
+On peut envisager les signaux émis aux actionneurs sous trois aspects différents :
+
+- La perception du signal lui même (comme signal d'excitation).
+- La perception du matériau dans lequel ce signal est envoyé (comme résonateur)
+- La perception organisée du signal, ce qu'Albert Bergman, dans le domaine du sonore, a nommé ``Analyse de la scène auditive'' (\textit{Auditory Scene Analysis} - ASA) dans \cite{bregman_auditory_1994}
+
+- pour le mouvement qui leur est propre. Par exemple, dans le cas d'un signal audio envoyé sur la membrane d'un casque audio (dont la réponse est relativement plate), ce mouvement représente l'image d'un son acoustique qui est retransmis relativement directement à la perception auditive. On pourrait parler d'une écoute concrète du son. Pour le cas d'un signal envoyé sur un vidéoprojecteur, ce signal génère des rayons lumineux qui partent dans l'espace.
+
+- pour leur rôle d'excitateur d'un matériaux résonant
+Si on prend par exemple un signal audio, envoyé cette fois non plus dans un casque audio, mais sur un transducteur tactile couplé à une corde de guitare, ce signal est envisagé comme l'excitation d'un matériaux résonant qui filtre. On ne va plus entendre ``seulement'' le signal audio, mais aussi --~et peut-être davantage~-- la réponse du matériau à cette excitation.
+
+
+- pour le contenu sémiotique qu'il contiennent
+Enfin, l'écoute d'un son n'est pas seulement ``réduite'' mais comprend une part d'analyse sémiotique, de projection de sens sur ce qui est perçu. Ainsi, le signal audio peut jouer avec cette perception et utiliser les mécanismes psycho-acoustique de notre réception pour simuler des mouvements qui n'existent pas. Par exemple, un son dont l'amplitude est en forme de cloche et la hauteur descend simule l'effet Doppler d'un objet en mouvement (alors que ce mouvement n'existe pas).
+De même, l'image vidéo
+
+Je prendrai un exemple sonore et visuel pour souligner ces trois aspects :
+
+si j'envoie un signal audio dans un casque audio, j'entends directement le signal (en considérant que la réponse du casque audio est relativement plate). Si j'envoie ce même signal dans un transducteur agissant sur une corde de guitare, j'entends la réponse du matériau, dans ce cas la résonance de la corde et de la caisse de la guitare (et généralement, de l'acoustique du lieu). 
+
+mais si certains procèdent de manière quasi-symétrique à leur analogue capteurs (e.g. le haut-parleur est microphone qui fonctionnent en sens inverse), la contre-partie n'est pas toujours possible (e.g. un capteur de distance à infra-rouge ne recréé pas son propre reflet si on le branche à l'envers).
+
+À la différence de leur utilisation dans les machines-outils ou les automates industriels où les actionneurs sont chargé d'accomplir une tâche, les actionneurs d'un \gls{DMI} s'adressent à notre perception.
+
+Cependant, l'image du réel enregistrée par le capteur ne contient pas tout la complexité du réel.
+
+les capteurs --~tout comme nos sens~-- reçoivent une image globale de leur environnement
+
+Les capteurs mesurent une grandeur physique, tandis que les actionneurs recréént un phénomène physique.
+
+
+Les capteurs sont sensibles à l'environnement actuel, et les actionneurs actualisent le monde sensible.
+Les capteurs enregistrent une image du mnode réel et les actionneurs ont a charge de (re)créer une réalité artificielle à partir de l'image en agissant comme des gestes d'excitation sur l'environnement.
+
+A l'inverse des capteurs qui enregistre une image de la réalité, les actionneurs recréé une réalité à partir d'une image.
+La différence entre ces deux types de transduction tient au fait que l'image est toujours lacunaire, en déficit d'information par rapport à la complexité du monde réel. La synthèse d'une réalité artificielle est ainsi fonction des facteurs suivants :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{les caractéristiques techniques de l'actionneur} type d'actionneur, puissance, bande passante, etc.)
+	\item \textbf{la répartition des actionneurs dans l'espace} (e.g la spatialisation de haut-parleurs dans l'espace de concert, différenciant par exemple, son de façade et son de retour du musicien, un haut-parleur et un casque audio de bande passante similaire ne produiront pas la même image sonore, ou encore l'image recomposéee par plusieurs projection vidéo)
+	\item \textbf{la réponse (résonance) du complexe matériel} auquel ils sont couplés. En cela, on peut considérer les actionneurs comme des \textit{gestes d'excitation}, pour reprendre la terminologie de Cadoz, qui jouent (e.g. un servo moteur actionnant un vérin produira un résultat sensiblement différent s'il tape sur du bois ou sur une une plaque de métal, un haut-parleur sonnera différemment selon la réverbération du lieu, une image projeté sur un écran blanc ne sera pas la même que celle projetée sur une foule ou un bâtiment)
+	\item \textbf{la nature des signaux} envoyés aux actionneurs, qui use de la subversion de notre perception (e.g. continuité de mouvement visuel à partir de 25 images/seconde, bande passante de l'audible limitée en 20Hz et 20kHz, leur coordination temporelle permet de reconstituer un image globale à partir d'éléments disjoints (synchrèse), l'utilisation d'effet psycho-acoustiques permet de simuler des espaces, réverb, compression side-chain, glissement de hauteur dans le signal simulant l'effet doppler d'une source en mouvement, etc. )
+\end{itemize}
+
+Les phénomènes physiques qui se propagent, tels que la lumière et le son
+Le capteur capte localement ce qui lui arrive, mais les phénomènes sonores et lumineux, qui se propagent à grande vitesse ne sont pas locaux.
+
+Il est relativement aisé d'enregistrer une image du réel, mais il est plus difficile de reconstruire le réel à partir d'une image, qui en est une réduction, pleine de trous. La situation est la même pour les humains qui ne perçoivent le réel qu'à travers l'image que leur en fournit leur perception. Par chance, le système cognitif humain est tout entier orienté par le besoin vital de combler ces trous.
+
+
+Si l'on peut capter dans un signal monodimensionnel une image d'un environnement réel complexe, il n'est pas aussi évident de recréer une réalité complexe à partir du même signal mono-dimensionnel délivré par l'ordinateur.
+
+Les techniques d'écriture du sonore ont ainsi développé tout un ensemble de techniques, basé sur notre propension à construire des percepts sur la base des stimuli qui excitent nos sens, à projeter des causes, des espaces, des mouvements sur la base de notre expérience des corrélations qui existent habituellement, ``naturellement'' pourrait-on dire, entre différentes fluctuations du sensible.
+
+La distribution spatiale des énergie captée a été réduite à un signal mono-dimensionnel
+
+La production de signaux traduits dans l'audible, le visible ou le tactile recourt à tout un ensemble de techniques d'illusion, mis en évidence par les études psycho-cognitives. (E.g. on simule une localisation spatiale par une image stéréo, de délais entre signaux perçu par les deux oreilles, on simule les effets de masquage psycho-acoustique de niveau sonore élevés d'une salle de clubbing par une compression en side-chain, le déplacement d'une source par la modification de hauteur de l'effet Doppler, etc)
+
+Trois dimensions nous intéressent plus particulièrement : acoustique, tactile et visuelle, que j'aborderai dans les sections suivantes pour les deux premières et dans le chapitre \ref{ch:visual_representation}, en ce qui concerne la dimension graphique.
