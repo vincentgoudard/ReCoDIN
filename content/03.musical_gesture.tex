@@ -442,7 +442,7 @@ L'apparence de causalité est fonction de
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/03_gesture/ManipulationVsEffect2.pdf}
-		\caption{Visibilité de la manipulation et de l'effects (``Strategies for designing spectator interfaces.'') dans \cite{reeves_designing_2005, benford_performing_2010}}
+		\caption[Stratégies de design d'interfaces pour le spectateur]{Stratégies de design d'interfaces pour le spectateur, d'après \cite{reeves_designing_2005, benford_performing_2010}}
 		\label{fig:gesture:Benford}
 	\end{minipage}
 	\hspace{.02\linewidth}
@@ -453,18 +453,38 @@ L'apparence de causalité est fonction de
 	\end{minipage}
 \end{figure}
 
-Comme nous l'avons dit précédemment, la relation de causalité entre le geste et le son dans les \glspl{DMI} n'est pas une donnée intrinsèque 
+\noindent Nous avons vu dans les sections précédentes différents aspects concernant la fonctionnalité du geste, considérée du point de vue de l'instrumentiste. Ce point de vue privilégie généralement la recherche d'une relation lisible et cohérente entre le geste et le son, se situant à l'intersection où les actions réalisés par l'instrumentiste, les actions effectivement captés par l'interface et le résultat désiré de ces actions se correspondent(cf. figure \ref{fig:benford_expected-sensed-desired}).
 
-\noindent Nous avons vu dans les sections précédentes différents aspects concernant la fonctionnalité du geste, considérée du point de vue de l'instrumentiste. Ce point de vue a tendance à privilégier la recherche d'une relation lisible et cohérente entre le geste et le son, se situant à l'intersection où il y a correspondance entre les actions réalisés par l'instrumentiste, les actions effectivement captés par l'interface et le résultat désiré de ces actions (cf. figure \ref{fig:benford_expected-sensed-desirered}).
+\indent La poursuite d'une telle transparence pour l'instrumentiste (cf. \cite{fels_mapping_2002}), comme condition nécessaire à l'expressivité d'un instrument, pourrait masquer le fait que la relation entre le musicien et son public n'est pas exclusivement motivé par la recherche de cette transparence. La musique est un art du mirage, de l'illusion --~comme le rappelle Risset dans la citation en exergue de ce chapitre~--, dans lequel la subversion joue un rôle essentiel et se substitue à la transparence pour dessiner de nouvelles relations du sensible. Ainsi le musicien créé des continuités là où il y a discontinuité (e.g. le \textit{legato} sur des notes de piano, la modulation tonale pour passer d'un mode à un autre, la fusion des timbres dans le travail d'orchestre),  et inversement introduit des ruptures pour déjouer les attentes du public (e.g. les jeu de contre-temps rythmiques, les \textit{subito-pianos}).
 
-\indent La recherche d'une interaction transparente (cf. \cite{Fels}) pour l'instrumentiste, comme condition nécessaire à l'expressivité d'un instrument, a eu tendance a masquer le fait que la relation entre le musicien et son public n'est pas uniquement basée par la recherche de cette transparence. La musique est un art du mirage, de l'illusion (comme le rappelle Risset dans la citation en exergue de ce chapitre) dans lequel la subversion se substitue à la transparence pour dessiner de nouvelles relations du sensible. Ainsi le musicien créé des continuités là où il y a discontinuité (e.g. le \textit{legato} sur des notes de piano, la modulation tonale pour passer d'un mode à un autre, la fusion des timbres dans le travail d'orchestre, etc.),  et inversement introduit des ruptures pour déjouer les attentes du public (e.g. les jeu de contre-temps rythmiques, les \textit{subito-pianos}, etc.).
+Dans une analyse des stratégies de design d'interface en fonction de leur effet sur le spectateur \cite{reeves_designing_2005}, Reeves et al. distinguent quatre orientations possibles en fonction du degré de visibilité des gestes effecteurs de l'instrumentiste par rapport au degré de visibilité de l'effet produit par l'instrument (cf. figure \label{fig:gesture:Benford}):
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+ 	\item \textbf{expressive} correspond à une situtation de cohérence et de lisibilité entre le jeu de l'instrumentiste et l'effet; 
+ 	\item \textbf{occulte}: à l'opposé, une interface sur laquelle les gestes effecteurs sont invisbles ainsi que le résultat est jugée ``occulte'' (``secretive'') — ce pourrait être le cas par exemple lors de gestes discrets visant à rappeler des réglages sur l'instrument et dont l'effet n'est pas directement perceptible; 
+ 	\item \textbf{à suspens}: si les gestes effecteurs sont manifestement destinés à produire un effet mais qu'aucun effet n'est perçu, cela pourrait être perçu comme un dysfonctionnement, mais également (et c'est l'orientation proposée ici) comme un moment de \textit{suspens} si le public a conscience que l'action de ces gestes lui seront perceptibles plus tard;
+ 	\item \textbf{magique}: enfin, et c'est la direction qui m'intéresse plus particulièrement ici, les gestes effecteurs peuvent être cachés tandis qu'un effet est produit par l'instrument, configuration que les auteurs appellent ``magique''.
+\end{itemize}
+%-----------------
+\noindent Analysons ici les différents cas de figures amenant à la perception d'une relation ``magique'' pour le spectateur. 
 
+\subsubsection{Capteurs dissimulés}
 
-\indent Cependant, le jeu de l'instrumentiste est polarisé par le fait qu'il joue (généralement) pour un public. La réception de la performance par le spectacteur/auditeur engage une projection active de sa part pour reconstruire du sens : déterminer la cause des sons, anticiper les trajectoires, ...  Cette projection se construit sur la base de l'expérience du spectateur et constitue l'objet central de la recherche en psychologie de la percpetion.
+\noindent Les auteurs mentionnent deux exemples utilisant des contrôleurs invisibles pour le public (des pédales de type \textit{foot-switch} supposées peu visibles d'une part, et l'utilisation de capteurs dissimulés dans le corps d'un instrument traditionnel, dont l'action est masquée par les gestes habituels du musicien.)
 
+\subsubsection{Mapping non-conventionnel}
 
+\noindent Dans ce cas de figure, les gestes ne sont pas cachés à proprement parler, mais le résultat de leur action défie des règles inscrite dans l'inconscient du spectateur, par exemple si l'on fait correspondre un son très doux à un geste violent et inversement.
 
+\iquote{Dans le domaine du geste, les outils technologiques peuvent bien sûr jouer un rôle complice, démultipliant les perspectives, inversant les conséquences attendues, décelant l'infime ou captant par méthode statistique tel ou tel paramètre du jeu musical.} 
+\iquote{(...) s’approprier à la manière d’un mime les gestualités sonores qui, malgré les indications de la partition, ne peuvent être réellement considérées et donc interprétées que via le prisme de l’écoute.}
+P. Jodlowsky \cite{jodlowski_geste_2006}
 
+\subsubsection{Métamorphisme du mapping}
+
+Il n'est pas nécessaire de ses baser sur des lois ancrées dans l'expérience collective, mais également possible de déjouer des règles qui ont été établies en cours de jeu, en modifiant le fonctionnement de l'instrument directement pendant le jeu. Il devient nécessaire dans ce cas de faire en sorte que la ``couture'' entre les différents réglages qui se succèdent soit invisible, soit en procédant par un changement continu (e.g. interpolation vers de nouveaux réglages), soit en transposant dans le nouvel espace de jeu un certain nombre de paramètre de l'ancien espace de jeu afin qu'ils correspondent\footnote{Un exemple concret est donné dans la vidéo présentant les Modèles Intermédiaires Dynamiques : la transition entre les différents modèles présentés se fait en conservant une cohérence visuelle de la représentation (e.g. la position, l'orientation des formes) --~ alors que tout le comportement à changé.)}.
+
+\indent Cependant, le jeu de l'instrumentiste est polarisé par le fait qu'il joue (généralement) pour un public. La réception de la performance par le spectacteur/auditeur engage une projection active de sa part pour reconstruire du sens : déterminer la cause des sons, anticiper les trajectoires, ...  Cette projection se construit sur la base de l'expérience du spectateur et constitue l'objet central de la recherche en psychologie de la perception.
 
 
 Celle-ci est prise dans une perception globale impliquant le geste du musicien, la réaction de l'instrument ainsi que les projection active de causalité de la part du spectateur sur la scène à laquelle il assiste.
@@ -474,10 +494,25 @@ L'étude de la perception des \glspl{DMI} est arrivée plus tardivement que l'é
 (Auslander, Croft, Bin, Fyans, Benford)
 
 
+Au delà du timbre et des modes de jeu que le luthier ``programme'' dans l'élaboration d'un instrument acoustique, les \glspl{DMI} permettent d'élaborer une programmation qui à la particularité de pouvoir se déployer dans le temps avec une certaine autonomie, d'y dessiner un trajet\footnote{On peut mettre en regard la notion de trajet, qui suit un chemin, avec celle de plan   \iquote{la notion de référence s'est développée avec la masse grandissante des faits enregistrés, mais les écrits sont chacun une suite compacte, rythmée par des sigles et des notes marginales, dans laquelle le lecteur s'oriente à la manière du chasseur primitif, le long d'un trajet plutôt que sur un plan.} dans \cite{leroi-gourhan_geste_1964}, p 69}, voire d'y construire une narration. 
+
+\iquote{Les propos des instruments qui nous entourent ne sont pas obligatoirement les nôtres. Ils appartiennent à ceux qui ont fait produire les instruments. Les détourner, c’est se libérer. Les instruments récents sont fascinants parce que, plus que tout autre, ils abritent des virtualités ignorées et parce qu’ils permettent des actions libératrices.} Villem Flusser, in ``les gestes''
+
+
+
+
+
+Exemples de gestes subversifs :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item Geste forte, joué piano  : l'oreille se prépare à entendre un son fort et s'en protège par un réflexe stapédien\footnote{Le réflexe stapédien est la contraction involontaire des deux muscles de l'oreille moyenne, le muscle stapédien et le muscle du marteau. En rendant plus rigide la chaîne des osselets, il atténue le niveau des sons transmis à l'oreille interne.}, le son joué piano est du coup perçu encore plus piano.
+	\item playback : le son est joué (semi-) automatiquement et le geste l'accompagne, donnant l'impression de le jouer vraiment
+\end{itemize}
+
 
 Les métaphores définissant les relations gestuelles-sonores peuvent être guidées par la recherche d'une certaine lisibilité, comme il a été le cas dans la plupart des travaux pré-cités, qu'elle soit de nature énergétique, spectromorphologique, ou imitative d'instruments existants. Ces relations peuvent toutefois être envisagées dans leur aspect subversif, en profitant de la perception différenciée de l'instrumentiste et de l'auditeur/spectateur.
 
-Un exemple significatif est l'interprétation de ``Hangsimogato N°2'' de György Kurtág Jr\footnote{Vidéo disponible sur \url{https://www.youtube.com/watch?v=MJ8Z5skovLw}}. Dans cette pièce, le développement musical se fait par avancement sur une partition pré-programmé par l'intermédiaire d'un capteur Infra-Rouge (D-Beam). Le capteur lui-même n'est pas sensible à l'orientation de la main ou à quelle main (gauche ou droite) vient couper le rayon, mais György Kurtág Jr développe tout un vocabulaire gestuel qui établit des relations de correspondance avec le son. Ces relations de correspondance peut s'appuyer sur une similarité de morphologie énergétique, mais dans certains cas (e.g. geste de présentation des mains ouvertes vers le ciel, replis des bras en croix) elle sont purement métaphoriques et poétiques.
+Un exemple significatif est l'interprétation de ``Hangsimogato N°2'' de György Kurtág Jr\footnote{Vidéo disponible sur \url{https://www.youtube.com/watch?v=MJ8Z5skovLw}}. Dans cette pièce, le développement musical se fait par avancement sur une partition pré-programmé par l'intermédiaire d'un capteur Infra-Rouge (D-Beam). Le capteur lui-même n'est pas sensible à l'orientation de la main ou à quelle main (gauche ou droite) vient couper le rayon, mais György Kurtág Jr développe un vocabulaire gestuel qui établit des relations de correspondance avec les différents son de la pièce. Ces relations de correspondance peuvent s'appuyer sur une similarité de morphologie énergétique, mais dans certains cas (e.g. geste de présentation des mains ouvertes vers le ciel, replis des bras en croix) elle sont purement métaphoriques et poétiques.
 \todo{rajouter un screenshot de la vidéo de Gyorgy}
 
 
@@ -692,11 +727,11 @@ P. Jodlowsky \cite{jodlowski_geste_2006}
 
 
 
-\noindent Jakboson (1960) :
+\noindent Jakobson (1960) :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 \item \textbf{expressive function}
-\item \textbf{representational functionparce que les attributs qu'on lui confère dépendent en partie de cette qualité sémiotique, qui reste soumise à une interprétation subjective et contextuelle dans un système de valeurs.}
+\item \textbf{representational function}
 \item \textbf{conative function}
 \item \textbf{phatic function}
 \item \textbf{metalingual function}
@@ -718,14 +753,6 @@ La mémoire et les gestes:
 Leroi Gourhan
 
 \iquote{Quant à l’action relayée (force motrice et transmission), elle domestique pour les utiliser des éléments qui étendent et complètent les effets techniques. Dans ce stade évolué, on n’est plus dans le faire mais dans le faire faire, engagé dans la voie techno-scientifique qui ne garde du geste humain initial que ses épures et en analyse indéfiniment les schèmes.} Michel Guérin, \cite{guerin_philosophie_2018}
-
-
-\iquote{Les propos des instruments qui nous entourent ne sont pas obligatoirement les nôtres. Ils appartiennent à ceux qui ont fait produire les instruments. Les détourner, c’est se libérer. Les instruments récents sont fascinants parce que, plus que tout autre, ils abritent des virtualités ignorées et parce qu’ils permettent des actions libératrices.} Michel Guérin, \cite{guerin_philosophie_2018}
-
-
-
-
-
 
 
 
