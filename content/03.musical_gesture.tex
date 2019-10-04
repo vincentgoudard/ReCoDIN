@@ -141,38 +141,6 @@ Catégories gestuelles établies via une analyse ``de laboratoire'', qui visent 
 Un certain nombre de critères ont ainsi été proposés pour améliorer le design des DMIs, souvent en prenant comme modèle l'instrument acoustique classique, tant en terme d'affordance de l'objet, qu'en terme de relation socio-culturelle (todo:trouver plus précis que socio-culturel) pour le cadre qu'il offre à l'instrumentiste et au public (notamment, l'instrument est sur scène, entre les mains de l'instrumentiste, la relation geste-son est lisibile, sa palette sonore est connue d'avance par le public, etc.).
 Au delà d'un effet diligence\footnote{todo expliquer}, le désir de retrouver les qualités d'affordance des instruments classiques s'explique par la riche histoire instrumentale dont on souhaite tirer profit pour le design de nouveaux instruments. La tâche s'avère cependant complexe et difficile et parallèlement, les lutheries numériques se sont développées de manière empirique, ``sauvage''\footnote{cf. Max Vandervorst, John Bowers, etc.} en s'adaptant au medium tel qu'il se présente, et en inventant de nouveaux gestes et sans forcément s'inscrire dans un contexte de performance similaire à celui des instruments classiques (instrument hors scène, ou invisible, relation gestuelle et timbre mé-connus, etc.)
 
-%-------------------------------------------
-\subsection{Nouvelles IHM, nouveaux gestes}
-
-Notons que dans leur classification, Cadoz et Wanderley \cite{todo} définissent le geste instrumental comme un geste \iquote{appliqué à un objet matériel et en interaction physique avec lui}, ajoutant que \iquote{les gestes nus (empty-handed gestures) ne sont pas des gestes instrumentaux pour la raison qu'il ne possède qu'une fonction sémiotique}.
-
-Depuis, le nombre de capteurs permettant une interaction sans contact physique n'a cessé d'augmenter et de se démocratiser : caméras vidéos, caméras 3D (e.g. kinect, leap motion), capteurs de distance à infra-rouge ou ultra-sons, capteurs photosensibles, gyroscopes et accéléromètres... entrainant une croissance proportionnelle du nombre de DMIs recourant à des gestes sans contact physique.
-
-On perçoit évidemment les limites de cette notion de contact physique, quand il s'agit d'instruments comme le theremin, ou quand des capteurs sans contacts tels que les capteurs de distance par ultra-son ou infra-rouge, les caméras vidéo, les kinect\footnote{interface conçue par Microsoft, qui s'apparente à une caméra fournissant, en plus d'une image vidéo classique, une carte de profondeur de l'image captée.}, leap-motion\footnote{interface conçue par Microsoft, qui s'apparente à une caméra fournissant, en plus d'une image vidéo classique, une carte de profondeur de l'image captée.} et autres radars... Le \textit{geste nu} s'apparente dans ce cas à un geste ergotique (si toutefois cette notion de geste ergotique conserve un sens dans les DMI).
-
-Dans le cas des \glspl{DMI}, la relation entre le geste et le son se pose d'une manière précisément opposée : la relation entre le ``geste de production du son'' et le son n'y est pas causale a priori.
-
-%-------------------------------------------
-\subsection{Geste produit, capté, perçu}
-
-cf Benford \cite{benford_performing_2010}
-
-Dans le domaine des IHM, peu d'importance est accordée au geste en dehors de son interaction directe avec l'ordinateur, comme le rapporte Jensenius (Musical Gesture):
-\iquote{A gesture is a motion of the body that contains information. Waving goodbye is a gesture. Pressing a key on a keyboard is not a gesture because the motion of a finger on its way to hitting a key is neither observed nor significant. All that matters is which key was pressed}(p. 310)\cite{kurtenbach_art_1990}
-
-Pourtant comme le rappelle Richard Leppert dans \cite{leppert_sight_1993} (cité par \cite{iazzetta_meaning_2000}) souligne à quel point la nature intangible du son et de la musique est polarisée par l'expérience visuelle :
-\begin{quotation}
-Precisely because musical sound is abstract, intangible, and ethereal [...] the visual experience of its production is crucial to both musicians and audience alike for locating and communicating the place of music and musical sound within society and culture. [...] Music, despite its phenomenological sonoric ethereality, is an embodied practice, like dance and theater." 
-\end{quotation}
-
-Il faut également noter que si la réalisation d'un geste technique sur une interface est orientée vers l'efficacité pour la réalisation d'une tâche, \cite{ryan_remarks_1991}
-
-Un geste musical ne consistera donc pas prioritairement à chercher une efficacité pour accomplir une tâche mais 
-
-
-
-\textbf{Différence entre geste effectué et geste capté} : un son électroacoustique, par exemple une figure de ``delta'', pourra ainsi avec un même geste de balaiement de la main, et une même interface de captation (e.g. un simple slider), être déclenchée via un seuillage de l'entrée qui déclenche un sample, être produit de manière continue, via un scrub du sample, pourra avoir son intensité sonore fonction de la vitesse du geste ou pas, etc. On voit que pour un même geste, un même son (échantillonné), et un même capteur, les possibilités de relations entre le geste et le son sont multiples. Le pré-geste hors contact avec l'instrument pourra être capté ou non selon le capteur. (e.g. leap motion)
-
 
 
 %-------------------------------------------
@@ -187,6 +155,12 @@ Un autre biais de l'approche fonctionnelle des \gls{IHM} est lié au fait que l'
 	\label{fig:gesture:abusers}
 \end{figure}
 %---- Figure : Einarsson sculpture ---------
+
+Il faut également noter que si la réalisation d'un geste technique sur une interface est orientée vers l'efficacité pour la réalisation d'une tâche, \cite{ryan_remarks_1991}
+
+Un geste musical ne consistera donc pas prioritairement à chercher une efficacité pour accomplir une tâche mais 
+
+
 \noindent Or dans une performance musicale vivante, cette situation n'existe pas. Le musicien ne saurait être défini comme ``l'utilisateur de son instrument''(figure \ref{fig:gesture:abusers}), pas plus que son instrument comme une ``interface utilisateur''. Les musiciens cherchent bien souvent à produire quelque chose à la limite des possiblités de leur instrument\footnote{cf. interview de Nicolas Bernier désignant ``l'infini des possibles'' comme principale motivation l'ayant amené à utiliser les instruments électro-acoustiques.}. Que cela soit le contre fa de la Reine de la Nuit, les partitions impossibles de Brian Ferneyhough, les pianos préparé de John Cage, le scratch sur les platines vinyle ou les mises en larsen de table de mixage de la scène Onkyokei, les exemples abondent dans l'histoire de la musique qui font preuve d'une démarche allant dans l'outrepassement des possibilités instrumentales lors du jeu musical. Dans une conversation durant la dernière conférence NIME, Paul Stapleton utilisait ironiquement le terme \textit{interface abusers} pour souligner l'erreur du terme \textit{interface users}. \footnote{Un exemple significatif de cette différence entre usage et abus de l'instrument est la réduction de la hauteur dans le format MIDI à un paramètres entier borné entre 0 et 127 pour contrôler la hauteur—ce qui excède déjà la tessiture du piano à 88 touches. Les fréquences audibles excèdent largement cette tessiture, et certains genres de musiques électroniques, comme l'\gls{IDM} ou le \gls{glitch}, ont précisément fait de l'utilisation de fréquences suraigues ou infra-basses une de leurs composantes esthétiques.}
 
 
@@ -297,7 +271,7 @@ Pourtant, bien souvent, des performances musicales tout à fait obscures et inco
 \end{itemize}
 \noindent Or, ces trois aspects sont précisément mis en défaut dans le cas des \glspl{DMI}: le continuum energétique est \textit{a priori} rompu, les instruments sont sujets à des possibles reconfigurations dynamiques\footnote{qu'elles soient souhaitées ou dûes au contexte d'obsolescence (cf. \ref{sec:ephemeral:ephemerality_in_musical_context})}, et le geste est bien souvent capté en dehors de tout contact physique\footnote{Par des capteurs de distance, accéléromètres, caméras, etc. Voir le chapitre \ref{ch:interfaces}.}\\
 \indent Cette relation pluri-millénaire étant cassée, l'ambition de l'\gls{ACROE} a été de tenter de la recréer artificiellement par des systèmes de capteurs, d'actioneurs et des stratégies de mapping servant la définition de cette relation. Ces recherches ont notamment abouti au système \gls{CORDIS-ANIMA}, dispositif pionnier en matière de retour d'effort et de synthèse par modèle physique, qui n'a malheureusement pas connu une grande utilisation hors du laboratoire. On se garderait donc bien de dire que l'inaptitude de cette catégorisation à décrire le geste instrumental dans le cas des \glspl{DMI} ait été un obstacle à l'avancement des travaux de l'\gls{ACROE}. Elle a au contraire été une direction idéologique\footnote{Et d'une certaine manière, on peut aussi y voir un choix esthétique, Cadoz étant aussi compositeur.} motrice pour le développement de modèles physiques et de systèmes à retour d'effort avancés.\\
-\indent Pour autant, après bientôt quarante ans de pratiques musicales numériques, nous pouvons observer facilement que cette direction n'était pas la seule possible et que de nombreuses stratégies de jeu se sont développées, sans être freinées par l'absence de continuum énergétique, ni l'instabilité de l'instrument, ni l'absence de contact --~au contraire, les artistes ont embracés ces artéfacts à bras le corps. L'idée du continuum énegétique est donc insuffisante pour comprendre les termes du geste instrumental numérique et ses traductions en terme de lutherie\footnote{Il ne faudrait cependant pas déduire de cette critique que Cadoz n'est pas conscient des limites de ce modèle; même s'il leur refuse généralement le statut de ``geste instrumental'' au sens qu'il a donné à ce terme, il a contribué dans de nombreux articles à analyser de manière nuancée d'autres aspects du geste présentés ci-après.}.
+\indent Pour autant, après bientôt quarante ans de pratiques musicales numériques, nous pouvons observer facilement que cette direction n'était pas la seule possible et de nombreuses stratégies de jeu se sont développées, de manière ``sauvage''\footnote{Le terme de ``lutherie sauvage'' est couramment employé pour désigner des lutheries expérimentales pratiquées hors des méthodes industrielles, académiques ou traditionnelles, notamment avec des objets de récupération et du détournement de dispositifs électroniques.} en mode \gls{DIY}, sans être freinées par l'absence de continuum énergétique, ni l'instabilité de l'instrument, ni l'absence de contact --~au contraire, les artistes ont embracés ces artéfacts à bras le corps. L'idée du continuum énegétique est donc insuffisante pour comprendre les termes du geste instrumental numérique et ses traductions en terme de lutherie\footnote{Il ne faudrait cependant pas déduire de cette critique que Cadoz n'est pas conscient des limites de ce modèle; même s'il leur refuse généralement le statut de ``geste instrumental'' au sens qu'il a donné à ce terme, il a contribué dans de nombreux articles à analyser de manière nuancée d'autres aspects du geste présentés ci-après.}.
 
 
 \section{Expressivité et sémiologie du geste nu}
@@ -441,19 +415,27 @@ L'apparence de causalité est fonction de
 	\captionsetup{format=plain}%
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
+	  \includegraphics[width=\linewidth]{gfx/03_gesture/Benford_expected-sensed-desired.png}
+		\caption{Lisibilité et subversivité de la relation geste/effet}
+		\label{fig:gesture:lisibility_subversion}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/03_gesture/ManipulationVsEffect2.pdf}
 		\caption[Stratégies de design d'interfaces pour le spectateur]{Stratégies de design d'interfaces pour le spectateur, d'après \cite{reeves_designing_2005, benford_performing_2010}}
 		\label{fig:gesture:Benford}
 	\end{minipage}
-	\hspace{.02\linewidth}
-	\begin{minipage}[t]{0.48\textwidth}
-	  \includegraphics[width=\linewidth]{gfx/03_gesture/CoherenceVsCausalite2.pdf}
-		\caption{Lisibilité et subversivité de la relation geste/effet}
-		\label{fig:gesture:lisibility_subversion}
-	\end{minipage}
 \end{figure}
+%------------------ Figure : geste lisible ou subversif ---------------------
+\subsection{Geste produit, capté, perçu}
 
-\noindent Nous avons vu dans les sections précédentes différents aspects concernant la fonctionnalité du geste, considérée du point de vue de l'instrumentiste. Ce point de vue privilégie généralement la recherche d'une relation lisible et cohérente entre le geste et le son, se situant à cette intersection où les actions réalisés par l'instrumentiste, les actions effectivement captées par l'interface et le résultat désiré de ces actions se correspondent(cf. figure \ref{fig:benford_expected-sensed-desired}).
+\noindent Pendant longtemps dans le domaine des \gls{IHM}, peu d'importance était accordée au geste en dehors de son interaction directe avec la machine, comme le rapporte Kurtenbach en 1990 : \iquote{A gesture is a motion of the body that contains information. Waving goodbye is a gesture. Pressing a key on a keyboard is not a gesture because the motion of a finger on its way to hitting a key is neither observed nor significant. All that matters is which key was pressed}\cite{kurtenbach_art_1990}
+\indent Pourtant comme le rappelle Richard Leppert dans \cite{leppert_sight_1993} (cité par \cite{iazzetta_meaning_2000}) souligne à quel point la nature intangible du son et de la musique est polarisée par l'expérience visuelle: \iquote{Precisely because musical sound is abstract, intangible, and ethereal [...] the visual experience of its production is crucial to both musicians and audience alike for locating and communicating the place of music and musical sound within society and culture. [...] Music, despite its phenomenological sonoric ethereality, is an embodied practice, like dance and theater.}
+
+\textbf{Différence entre geste effectué et geste capté} : un son électroacoustique, par exemple une figure de ``delta'', pourra ainsi avec un même geste de balaiement de la main, et une même interface de captation (e.g. un simple slider), être déclenchée via un seuillage de l'entrée qui déclenche un sample, être produit de manière continue, via un scrub du sample, pourra avoir son intensité sonore fonction de la vitesse du geste ou pas, etc. On voit que pour un même geste, un même son (échantillonné), et un même capteur, les possibilités de relations entre le geste et le son sont multiples. Le pré-geste hors contact avec l'instrument pourra être capté ou non selon le capteur. (e.g. leap motion)
+
+
+\noindent Nous avons vu dans les sections précédentes différents aspects concernant la fonctionnalité du geste, considérée du point de vue de l'instrumentiste. Ce point de vue privilégie généralement la recherche d'une relation lisible et cohérente entre le geste et le son, se situant à cette intersection où les actions réalisés par l'instrumentiste, les actions effectivement captées par l'interface et le résultat désiré de ces actions se correspondent(cf. figure \ref{fig:Benford_expected-sensed-desired}).
 
 \indent La poursuite d'une telle transparence pour l'instrumentiste (cf. \cite{fels_mapping_2002}), comme condition nécessaire à l'expressivité d'un instrument, pourrait masquer le fait que la relation entre le musicien et son public n'est pas exclusivement motivé par la recherche de cette transparence. 
 On pourra même arguer du contraire : le design d'un instrument acoustique est largement motivé par l'obtention d'une homogénéité de son timbre qui est tout à fait artificielle, autant que la discrétisation du \textit{continuum} des hauteur en notes. La musique est un art du mirage, de l'illusion --~comme le rappelle Risset dans la citation en exergue de ce chapitre~--, dans lequel la subversion joue un rôle essentiel et se substitue à la transparence pour dessiner de nouvelles relations du sensible. De même, les gestes du musicien et du compositeur crééent des continuités là où il y a discontinuité (e.g. le \textit{legato} sur des notes de piano, la modulation tonale pour passer d'un mode à un autre, la fusion des timbres dans le travail d'orchestre),  et inversement introduit des ruptures pour déjouer les attentes du public (e.g. les jeu de contre-temps rythmiques, les \textit{subito-pianos}).
@@ -473,7 +455,8 @@ Les \textit{DMI} offrent de nouvelles possibilités de subversion de la percepti
 
 \subsubsection{Gestes feints}
 
-\noindent Tout d'abord, se présente le cas où les gestes ne sont pas cachés, mais où subsiste un décalage entre les gestes perçus par le public et les gestes effectivement captés par l'instrument. Ce cas de figure peut se présenter sur des instruments acoustiques (et \textit{a fortiori} sur des \glspl{DMI} expressifs). Par exemple, dans certaines pièces pour piano de György Kurtág, le pianiste doit effectuer un geste d'approche énergique vers le piano, laissant supposer qu'il va jouer \textit{forte}, mais le retenir au dernier moment pour jouer \textit{pianissimo}\footnote{Ce mode de jeu a été observé en concert dans une interprétation des \textit{Játékok} de Kurtág. Après vérification, l'indication n'est pas explicite dans la partition, mais fait partie des instructions données par György Kurtág en vue de l'interprétation de certaines parties, d'après György Kurtág Jr. On y trouve par contre l'indication inverse, consistant à jouer \textit{fortissimo} \iquote{en touchant les touches sans faire de son}}. L'oreille se prépare à entendre un son intense et s'en protège par un réflexe stapédien\footnote{Le réflexe stapédien est la contraction involontaire des deux muscles de l'oreille moyenne, le muscle stapédien et le muscle du marteau. En rendant plus rigide la chaîne des osselets, il atténue le niveau des sons transmis à l'oreille interne.}, renforçant ainsi l'intensité du \textit{pianissimo}.\\
+\noindent Tout d'abord, se présente le cas où les gestes ne sont pas cachés, mais où subsiste un décalage entre les gestes perçus par le public et les gestes effectivement captés par l'instrument. Ce cas de figure peut se présenter sur des instruments acoustiques (et \textit{a fortiori} sur des \glspl{DMI} expressifs). Par exemple, dans certaines pièces pour piano de György Kurtág, le pianiste doit effectuer un geste d'approche énergique vers le piano, laissant supposer qu'il va jouer \textit{forte}, mais le retenir au dernier moment pour jouer \textit{pianissimo}\footnote{Ce mode de jeu a été observé en concert dans une interprétation des \textit{Játékok} de Kurtág. Après vérification, l'indication n'est pas explicite dans la partition, mais fait partie des instructions données par György Kurtág en vue de l'interprétation de certaines parties, d'après son fils György Kurtág Jr. On y trouve par contre l'indication inverse, consistant à jouer \textit{fortissimo} \iquote{en touchant les touches sans faire de son}}. L'oreille se prépare à entendre un son intense et s'en protège par un réflexe stapédien\footnote{Le réflexe stapédien est la contraction involontaire des deux muscles de l'oreille moyenne, le muscle stapédien et le muscle du marteau. En rendant plus rigide la chaîne des osselets, il atténue le niveau des sons transmis à l'oreille interne.}, renforçant ainsi l'intensité du \textit{pianissimo}.\\
+\indent Au delà de cet exemple particulier, il existe de nombreux moyens pour l'instrumentiste de ``tromper'' l'auditeur/spectateur pour lui faire entendre ce qu'on veut lui faire entendre, plutôt que ce qui est vraiment présent en terme acoustique. Des doigtés alternatifs sur les vents sacrifiant la justesse pour obtenir la fluidité d'enchainement, au gestes accompagnateurs qui en étendent la perception dans l'imaginaire \footnote{Nattiez, Music and discourse p44 : certain pianistes ont l'impression de donner de la ``profondeur'' à un accord en permettant aux doigts de glisser vers l'intérieur du piano après avoir enfoncé les touches. (...) inversement, Braendel : le son de notes soutenues sur le piano peut être modifié... à l'aide de certains mouvements qui rendent la \textit{conception du cantabile} du pianiste visible pour le public. (Delalande, ``vers une psycho-musicologie'' in L'enfant du sonore au musical):166, (Brendel, A. 1976. Musical Thoughts and Afterthoughts. Princeton: Princeton University Press. p.31)}, 
 
 \subsubsection{Gestes du playback}
 
@@ -508,17 +491,6 @@ L'étude de la perception des \glspl{DMI} est arrivée plus tardivement que l'é
 Au delà du timbre et des modes de jeu que le luthier ``programme'' dans l'élaboration d'un instrument acoustique, les \glspl{DMI} permettent d'élaborer une programmation qui à la particularité de pouvoir se déployer dans le temps avec une certaine autonomie, d'y dessiner un trajet\footnote{On peut mettre en regard la notion de trajet, qui suit un chemin, avec celle de plan   \iquote{la notion de référence s'est développée avec la masse grandissante des faits enregistrés, mais les écrits sont chacun une suite compacte, rythmée par des sigles et des notes marginales, dans laquelle le lecteur s'oriente à la manière du chasseur primitif, le long d'un trajet plutôt que sur un plan.} dans \cite{leroi-gourhan_geste_1964}, p 69}, voire d'y construire une narration. 
 
 \iquote{Les propos des instruments qui nous entourent ne sont pas obligatoirement les nôtres. Ils appartiennent à ceux qui ont fait produire les instruments. Les détourner, c’est se libérer. Les instruments récents sont fascinants parce que, plus que tout autre, ils abritent des virtualités ignorées et parce qu’ils permettent des actions libératrices.} Villem Flusser, in ``les gestes''
-
-
-
-
-
-Exemples de gestes subversifs :
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item Geste forte, joué piano  : l'oreille se prépare à entendre un son fort et s'en protège par un réflexe stapédien\footnote{Le réflexe stapédien est la contraction involontaire des deux muscles de l'oreille moyenne, le muscle stapédien et le muscle du marteau. En rendant plus rigide la chaîne des osselets, il atténue le niveau des sons transmis à l'oreille interne.}, le son joué piano est du coup perçu encore plus piano.
-	\item playback : le son est joué (semi-) automatiquement et le geste l'accompagne, donnant l'impression de le jouer vraiment
-\end{itemize}
 
 
 Les métaphores définissant les relations gestuelles-sonores peuvent être guidées par la recherche d'une certaine lisibilité, comme il a été le cas dans la plupart des travaux pré-cités, qu'elle soit de nature énergétique, spectromorphologique, ou imitative d'instruments existants. Ces relations peuvent toutefois être envisagées dans leur aspect subversif, en profitant de la perception différenciée de l'instrumentiste et de l'auditeur/spectateur.
@@ -575,7 +547,7 @@ Synchrèse de Michel Chion.
 
 Parler du playback, du air-guitar, de la synchrèse.
 
-Nattiez, Music and discourse p44 : certain pianistes ont l'impression de donner de la ``profondeur'' à un accord en permettant aux doigts de glisser vers l'intérieur du piano après avoir enfoncé les touches. (...) inversement, Braendel : le son de notes soutenues sur le piano peut être modifié... à l'aide de certains mouvements qui rendent la \textit{conception du cantabile} du pianiste visible pour le public. (Delalande, ``vers une psycho-musicologie'' in L'enfant du sonore au musical):166, (Brendel, A. 1976. Musical Thoughts and Afterthoughts. Princeton: Princeton University Press. p.31)
+
 
 Bien que ces catégorisations du gestes décrivent adéquatement différents aspects du geste instrumental sur des instruments acoustiques, il semble que le geste musical intègre une aspect subversif souvent négligé.
 
@@ -584,17 +556,8 @@ En particulier, dans le cas des \glspl{DMI}, la relation entre le geste et le so
 
 Il semble dès lors que l'on peut envisager d'autres types de relation entre le geste et le son, afin de tenter de décrire les différents rapports qu'ils entretiennent selon les situations.
 
-Risset fait remarquer l'importance de l'histoire du son d'origine mécanique dans la perception des sons \cite{risset_son_1992}: 
-
-\begin{quotation}
-II semble à première vue que l'acoustique numérique puisse s'affranchir de la mécanique. Cependant notre ouïe a évolué dans un environnements d'objets vibrants: aussi la prise en considération des contraintes et des particularités des vibrations mécaniques est-elle importante pour comprendre les idiosyncrasies de la perception auditive et pour en tirer parti.
-
-Les limites de l'acoustique numérique dépendent des capacités différentielles de perception davantage que des contraintes mécaniques. Pourtant, notre perception auditive est orientée par un monde de sons produits mécaniquement, et la mécanique ne doit pas être écartée de façon cavalière, comme l'ont suggéré les travaux de Gibson et Cadoz : les spécificités des vibrations mécaniques mettent en lumière l'organisation perceptuelle dans le processus auditif
-
-
-\footnote{The limitations of digital acoustics depend upon the differential capacities of perception rather than upon the constraints of mechanics. Yet our auditory perception is geared to a world of mechanically-produced sounds, and mechanics should not be given a cavalier dismissal, as the work of Gibson and Cadoz has suggested : the specifics of mechanical vibrations shed light on the the perceptual organization in the hearing process.} TODO : traduire l'anglais, plus riche.
-\end{quotation}
-
+Risset fait remarquer l'importance de l'histoire du son d'origine mécanique dans la perception des sons \cite{risset_son_1992}: \iquote{II semble à première vue que l'acoustique numérique puisse s'affranchir de la mécanique. Cependant notre ouïe a évolué dans un environnements d'objets vibrants: aussi la prise en considération des contraintes et des particularités des vibrations mécaniques est-elle importante pour comprendre les idiosyncrasies de la perception auditive et pour en tirer parti.
+Les limites de l'acoustique numérique dépendent des capacités différentielles de perception davantage que des contraintes mécaniques. Pourtant, notre perception auditive est orientée par un monde de sons produits mécaniquement, et la mécanique ne doit pas être écartée de façon cavalière, comme l'ont suggéré les travaux de Gibson et Cadoz : les spécificités des vibrations mécaniques mettent en lumière l'organisation perceptuelle dans le processus auditif. \footnote{The limitations of digital acoustics depend upon the differential capacities of perception rather than upon the constraints of mechanics. Yet our auditory perception is geared to a world of mechanically-produced sounds, and mechanics should not be given a cavalier dismissal, as the work of Gibson and Cadoz has suggested : the specifics of mechanical vibrations shed light on the the perceptual organization in the hearing process.} TODO : traduire l'anglais, plus riche.}
 
 \textbf{Proposition}
 \vspace{-1em}
