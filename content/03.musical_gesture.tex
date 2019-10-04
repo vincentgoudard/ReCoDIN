@@ -118,17 +118,31 @@ Le geste + intention ? => le geste ne passe pas nécessairement pas un dessein c
 %-------------------------------------------
 \subsection{Spécificités des DMIs}
 
-\noindent Dans le contexte particulier des lutheries numériques, un certain nombre de problèmes se posent par rapport au geste instrumental sur les instruments acoustiques, liés à des spécificités du numérique que nous avons déjà en partie évoqué dans le chapitre précédent\footnote{De manière plus globale et sociologique, les révolutions technologiques électroniques ont également modifiés les modes de production et de réception de la musique à l'échelle industrielle, entrainant d'autre conséquences que celles listées ci-après, mais qui dépasse le sujet que nous traitons ici. Je renvoie pour ces questions là au travail de TODO : Bacot, Collins, Auslander, Rebecca Bennett, etc.}.
+\subsubsection{Les DMIs ne sont pas (que) des instruments acoustiques}
 
+\noindent Dans le contexte particulier des lutheries numériques, un certain nombre de problèmes se posent par rapport au geste instrumental sur les instruments acoustiques, liés à des spécificités du numérique que nous avons déjà en partie évoqué dans le chapitre précédent\footnote{De manière plus globale et sociologique, les révolutions technologiques électroniques ont également modifiés les modes de production et de réception de la musique à l'échelle industrielle, entrainant d'autres conséquences que celles listées ci-après, mais qui dépassent le sujet que nous traitons ici. Je renvoie pour ces questions là au travail de TODO : Bacot, Collins, Auslander, Rebecca Bennett, etc.}.
+%-----------
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 \item \textbf{le découplage énergétique} : ce découplage est la différence la plus saillante par rapport aux lutheries acoustiques. Certains de ses aspects sont déjà présents dans les instruments électriques et électroniques, mais l'informatique numérique ajoute un découplage de plus: les signaux (gestuels, sonores) n'y existent plus sous forme analogique et se présentent sous la forme de représentations numériques du signal, c'est-à-dire encodés dans un alphabet.
 \item \textbf{la mémoire et le temps différé}: si le terme de ``temps réel'' est abondemment utilisé quand on parle des \glspl{DMI}, il ne faut pas oublier que l'informatique introduit avant tout le temps la possiblité du temps différé, de l'enregistrement exploitable dans le futur.
 \item \textbf{la computation} : le traitement algorithmique permet --~ou impose~-- une reconfiguration permanente des modèles et des représentations, qui entraine une instabilité, un métamorphisme des relations entre les données.
 \end{itemize}
+%-----------
+\noindent Par ailleurs, les \glspl{DMI} ne sont encore souvent pas considérés par les institutions musicales au même titre que les instruments acoustiques: leur pratique n'est pas enseignée en tant que telle dans les conservatoires\footnote{La pratique musicale des \gls{DMI} est généralement reléguée à une pratique optionnelle dans les classes de composition électroacoustique ou \gls{MAO}}, et la partie électronique dans les concerts institutionnels est souvent absente de la scène\footnote{C'est particulièrement le cas pour les concerts de musique mixte dans la tradition de l'\gls{IRCAM}, beaucoup moins pour les concerts organisés par le \gls{GRM} dont l'histoire n'a pas cet ancrage dans la musique classique acoustique.} et confiée à un \gls{RIM} (et non à un ``musicien'') au statut ambigu\footnote{Voir notamment l'analyse de Laura Zattra sur l'origine du statut de \gls{RIM} à l'\gls{IRCAM}: \cite{zattra_les_2013}} et qui opère généralement dans l'ombre. Cette situation n'a guère favorisé la considération des interfaces électroniques et des nouveaux gestes qui leur étaient propres en tant qu'instruments de performance musicale à part entière.
 
-TODO : intégrer ici le fait que les DMIs ne sont pas des IHMs ?
-
+%-------------------------------------------
+\subsubsection{Les DMIs ne sont pas des ``interfaces utilisateur''}
+%---- Figure : Einarsson sculpture ---------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\includegraphics[width=\textwidth]{gfx/03_gesture/instrumentabusers.png}
+	\caption[Les instrument ne sont pas des interfaces utilisateur]{Les instrument ne sont pas des interfaces utilisateur. De gauche à droite : Thomas Bonvallet, John Cage, Jimi Hendrix, Paul Simonon, Charlotte Moorman, Sarah Kenchington}
+	\label{fig:gesture:abusers}
+\end{figure}
+%---- Figure : Einarsson sculpture ---------
+\noindent Un biais de l'approche fonctionnelle des \gls{IHM} est lié au fait que l'interaction a longtemps été définie (et l'est parfois encore) par la perspective d'une tâche que l'utilisateur doit accomplir. Ce contexte écologique a contribué au développement de tout un champ d'étude dans le domaine des \gls{IHM}: les \textit{user studies}, transposé dans le domaine de l'ingénierie industrielle sous le nom d'``Experience Utilisateur''\footnote{En abrégé : UX pour User eXperience; le métier de ``UX designer'' étant désormais très répandu dans le domaine du développement logiciel mais également appliqué à d'autres domaines tels que la grande consommation.}. L'efficacité dans l'accomplissement d'une tâche et l'absence d'effort qui constitue \iquote{une vertu cardinale dans la mythologie de l'ordinateur}\footnote{\iquote{Most computer instruments in use are those provided by the commercial music industry. Their inadequacy has been obvious from the start; emphasizing rather than narrowing the separation of the musician from the sound. Too often controllers are selected to minimize the physical, selected because they are effortless. Effortlessness in fact is one of the cardinal virtues in the mythology of the computer.}dans \cite{ryan_remarks_1991}} comme le notait Joel Ryan, ont longtemps été les principales motivation ayant guidé l'interaction dans les \gls{IHM}. La notion d'expérience utilisateur est venue étendre leur analyse éco-systémique en intégrant des aspects ésthétiques ou émotionnels dans leur design, mais qui privilégie généralement la recherche d'une utilisation facile et confortable pour l'utilisateur.\\
+\indent Or dans une performance musicale vivante, cette situation n'existe pas. Le musicien ne saurait être défini comme ``l'utilisateur de son instrument''(figure \ref{fig:gesture:abusers}), pas plus que son instrument comme une ``interface utilisateur'', et comme le note Ryan, il serait tout aussi intéressant de rendre son contrôle aussi difficile que possible\footnote{\iquote{In designing a new instrument it might be just as interesting to make control as difficult as possible.} \cite{ryan_remarks_1991}}.Les musiciens cherchent bien souvent à produire quelque chose à la limite des possiblités de leur instrument\footnote{cf. interview de Nicolas Bernier désignant ``l'infini des possibles'' comme principale motivation l'ayant amené à utiliser les instruments électro-acoustiques.}. Que cela soit le contre-fa de la Reine de la Nuit, les partitions impossibles de Brian Ferneyhough\footnote{On notera au passage, en poursuivant la critique de l'analogie entre instrument et \gls{IHM}, que la partition \textit{n'est pas} un mode d'emploi.}, les pianos préparé de John Cage, le scratch sur les platines vinyle ou les mises en larsen de table de mixage ``\textit{no-input}'' de la scène Onkyokei, les exemples abondent dans l'histoire de la musique qui font preuve d'une démarche allant dans l'outrepassement des possibilités instrumentales lors du jeu musical. Dans une conversation durant la dernière conférence NIME, Paul Stapleton utilisait ironiquement le terme \textit{interface abusers} pour souligner l'erreur du terme \textit{interface users}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -140,28 +154,6 @@ Catégories gestuelles établies via une analyse ``de laboratoire'', qui visent 
 
 Un certain nombre de critères ont ainsi été proposés pour améliorer le design des DMIs, souvent en prenant comme modèle l'instrument acoustique classique, tant en terme d'affordance de l'objet, qu'en terme de relation socio-culturelle (todo:trouver plus précis que socio-culturel) pour le cadre qu'il offre à l'instrumentiste et au public (notamment, l'instrument est sur scène, entre les mains de l'instrumentiste, la relation geste-son est lisibile, sa palette sonore est connue d'avance par le public, etc.).
 Au delà d'un effet diligence\footnote{todo expliquer}, le désir de retrouver les qualités d'affordance des instruments classiques s'explique par la riche histoire instrumentale dont on souhaite tirer profit pour le design de nouveaux instruments. La tâche s'avère cependant complexe et difficile et parallèlement, les lutheries numériques se sont développées de manière empirique, ``sauvage''\footnote{cf. Max Vandervorst, John Bowers, etc.} en s'adaptant au medium tel qu'il se présente, et en inventant de nouveaux gestes et sans forcément s'inscrire dans un contexte de performance similaire à celui des instruments classiques (instrument hors scène, ou invisible, relation gestuelle et timbre mé-connus, etc.)
-
-
-
-%-------------------------------------------
-\subsection{Les musiciens \emph{ne sont pas} des utilisateurs d'instruments}
-
-Un autre biais de l'approche fonctionnelle des \gls{IHM} est lié au fait que l'interaction est souvent définie par la perspective d'une tâche que l'utilisateur doit accomplir. Ce contexte écologique a contribué au développement de tout un champ d'étude dans le domaine des IHM: les \textit{user studies}, transposé dans le domaine de l'ingénierie industrielle sous le nom d'``Experience Utilisateur''\footnote{En abrégé : UX pour User eXperience; le métier de ``UX designer'' étant désormais très répandu dans le domaine du développement logiciel mais également appliqué à d'autres domaines tels que la grande consommation.}.
-%---- Figure : Einarsson sculpture ---------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}%
-	\includegraphics[width=\textwidth]{gfx/03_gesture/instrumentabusers.png}
-	\caption[Les instrument ne sont pas des interfaces utilisateur]{Les instrument ne sont pas des interfaces utilisateur. De gauche à droite : Thomas Bonvallet, John Cage, Jimi Hendrix, Paul Simonon, Charlotte Moorman, Sarah Kenchington}
-	\label{fig:gesture:abusers}
-\end{figure}
-%---- Figure : Einarsson sculpture ---------
-
-Il faut également noter que si la réalisation d'un geste technique sur une interface est orientée vers l'efficacité pour la réalisation d'une tâche, \cite{ryan_remarks_1991}
-
-Un geste musical ne consistera donc pas prioritairement à chercher une efficacité pour accomplir une tâche mais 
-
-
-\noindent Or dans une performance musicale vivante, cette situation n'existe pas. Le musicien ne saurait être défini comme ``l'utilisateur de son instrument''(figure \ref{fig:gesture:abusers}), pas plus que son instrument comme une ``interface utilisateur''. Les musiciens cherchent bien souvent à produire quelque chose à la limite des possiblités de leur instrument\footnote{cf. interview de Nicolas Bernier désignant ``l'infini des possibles'' comme principale motivation l'ayant amené à utiliser les instruments électro-acoustiques.}. Que cela soit le contre fa de la Reine de la Nuit, les partitions impossibles de Brian Ferneyhough, les pianos préparé de John Cage, le scratch sur les platines vinyle ou les mises en larsen de table de mixage de la scène Onkyokei, les exemples abondent dans l'histoire de la musique qui font preuve d'une démarche allant dans l'outrepassement des possibilités instrumentales lors du jeu musical. Dans une conversation durant la dernière conférence NIME, Paul Stapleton utilisait ironiquement le terme \textit{interface abusers} pour souligner l'erreur du terme \textit{interface users}. \footnote{Un exemple significatif de cette différence entre usage et abus de l'instrument est la réduction de la hauteur dans le format MIDI à un paramètres entier borné entre 0 et 127 pour contrôler la hauteur—ce qui excède déjà la tessiture du piano à 88 touches. Les fréquences audibles excèdent largement cette tessiture, et certains genres de musiques électroniques, comme l'\gls{IDM} ou le \gls{glitch}, ont précisément fait de l'utilisation de fréquences suraigues ou infra-basses une de leurs composantes esthétiques.}
 
 
 nément admis comme des qualités requises pour l'interaction instrumentale.
@@ -177,7 +169,7 @@ Il a été souvent déclaré comme critère de design des DMIs qu'ils se devaien
 \subsection{Se départir du modèle acoustique}
 
 Les études du geste musical qui ont amenée à la classification ci-dessus ont essentiellement été menée sur des instruments acoustiques, pour lesquels la relation entre le geste et le son est généralement causale, immédiate, et caractérisée, dans la plupart des cas, par un transfert énergétique proportionnel.
-Par ailleurs et jusqu'à récemment, la tradition musicale de l'IRCAM de composition pour instruments acoustiques classiques et la relégation quasi-systématique de la partie électronique des compositions\footnote{synchronisée—et non jouée, par des \gls{RIM} et non des musiciens} dans l'ombre de l'arrière-scène n'a guère favorisé la considération des interfaces électroniques et des nouveaux gestes qui leur étaient propres en tant qu'instrument de performance musicale à part entière.
+Par ailleurs et jusqu'à récemment, la tradition musicale de l'\gls{IRCAM} de composition pour instruments acoustiques classiques et la relégation quasi-systématique de la partie électronique des compositions\footnote{synchronisée et non ``jouée'', par des \gls{RIM} et non des ``musiciens''} dans l'ombre de l'arrière-scène n'a guère favorisé la considération des interfaces électroniques et des nouveaux gestes qui leur étaient propres en tant qu'instruments de performance musicale à part entière.
 
 %-------------------------------------------
 \subsubsection{continuum énergétique}
@@ -416,8 +408,8 @@ L'apparence de causalité est fonction de
 	\centering
 	\begin{minipage}[t]{0.48\textwidth}
 	  \includegraphics[width=\linewidth]{gfx/03_gesture/Benford_expected-sensed-desired.png}
-		\caption{Lisibilité et subversivité de la relation geste/effet}
-		\label{fig:gesture:lisibility_subversion}
+		\caption[Gestes attendus, captés et désirés]{Gestes attendus, captés et désirés d'après \cite{benford_performing_2010}}
+		\label{fig:Benford_expected-sensed-desired}
 	\end{minipage}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
@@ -434,24 +426,41 @@ L'apparence de causalité est fonction de
 
 \textbf{Différence entre geste effectué et geste capté} : un son électroacoustique, par exemple une figure de ``delta'', pourra ainsi avec un même geste de balaiement de la main, et une même interface de captation (e.g. un simple slider), être déclenchée via un seuillage de l'entrée qui déclenche un sample, être produit de manière continue, via un scrub du sample, pourra avoir son intensité sonore fonction de la vitesse du geste ou pas, etc. On voit que pour un même geste, un même son (échantillonné), et un même capteur, les possibilités de relations entre le geste et le son sont multiples. Le pré-geste hors contact avec l'instrument pourra être capté ou non selon le capteur. (e.g. leap motion)
 
-
 \noindent Nous avons vu dans les sections précédentes différents aspects concernant la fonctionnalité du geste, considérée du point de vue de l'instrumentiste. Ce point de vue privilégie généralement la recherche d'une relation lisible et cohérente entre le geste et le son, se situant à cette intersection où les actions réalisés par l'instrumentiste, les actions effectivement captées par l'interface et le résultat désiré de ces actions se correspondent(cf. figure \ref{fig:Benford_expected-sensed-desired}).
+
+
+Ce diagramme se place entièrement dans une perspective côté instrumentiste, et ne met pas en évidence la relation entre les gestes de l'instrumentiste et la perception du résultat côté spectateur-auditeur. Or, la compréhension du mapping entre geste capté et production de l'instrument, joue un rôle essentiel dans l'attribution de l'agentivité, comme l'ont présenté Florent Berthaut et al. (\cite{berthaut_liveness_2015}). En particulier, la représentation visuelle du fonctionnement de l'instrument peut aider à cette compréhension. (cf. \cite{berthaut_rouages:_2013})
 
 \indent La poursuite d'une telle transparence pour l'instrumentiste (cf. \cite{fels_mapping_2002}), comme condition nécessaire à l'expressivité d'un instrument, pourrait masquer le fait que la relation entre le musicien et son public n'est pas exclusivement motivé par la recherche de cette transparence. 
 On pourra même arguer du contraire : le design d'un instrument acoustique est largement motivé par l'obtention d'une homogénéité de son timbre qui est tout à fait artificielle, autant que la discrétisation du \textit{continuum} des hauteur en notes. La musique est un art du mirage, de l'illusion --~comme le rappelle Risset dans la citation en exergue de ce chapitre~--, dans lequel la subversion joue un rôle essentiel et se substitue à la transparence pour dessiner de nouvelles relations du sensible. De même, les gestes du musicien et du compositeur crééent des continuités là où il y a discontinuité (e.g. le \textit{legato} sur des notes de piano, la modulation tonale pour passer d'un mode à un autre, la fusion des timbres dans le travail d'orchestre),  et inversement introduit des ruptures pour déjouer les attentes du public (e.g. les jeu de contre-temps rythmiques, les \textit{subito-pianos}).
 
 Les \textit{DMI} offrent de nouvelles possibilités de subversion de la perception, qui s'appuient sur les caractéristiques propres aux \gls{DMI} que nous avons déjà évoquées. Le découplage énergétique permet des correspondance inattendues entre force du geste et intensité du son, les capacités d'enregistrement permettent de faire surgir des matériaux de toute nature sonore, l'absence potentielle de contact avec l'instrument et sa reconfiguration dynamique permet d'envisager une métamorphose continue des relations de jeu.
 
-\noindent Dans une analyse des stratégies de design d'interface en fonction de leur effet sur le spectateur \cite{reeves_designing_2005}, Reeves et al. distinguent quatre orientations possibles en fonction du degré de visibilité des gestes effecteurs de l'instrumentiste par rapport au degré de visibilité de l'effet produit par l'instrument (cf. figure \label{fig:gesture:Benford}):
+
+\subsection{Interfaces expressives, occultes, à suspens, subversives}
+%------------------ Figure : geste lisible ou subversif ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/03_gesture/ManipulationVsEffect2.pdf}
+		\caption[Stratégies de design d'interfaces pour le spectateur]{Stratégies de design d'interfaces pour le spectateur, d'après \cite{reeves_designing_2005, benford_performing_2010}}
+		\label{fig:gesture:Benford}
+	\end{minipage}
+	\hspace{.02\linewidth}
+
+\end{figure}
+%------------------ Figure : geste lisible ou subversif ---------------------
+\noindent Dans une analyse des stratégies de design d'interface en fonction de leur effet sur le spectateur \cite{reeves_designing_2005}, Reeves et al. distinguent quatre orientations possibles en fonction du degré de visibilité des gestes effecteurs de l'instrumentiste par rapport au degré de visibilité de l'effet produit par l'instrument (cf. figure \ref{fig:gesture:Benford}):
 \vspace{-1em}
 \begin{itemize}[noitemsep]
  	\item \textbf{expressive} une interface expressive propose une relation cohérente et lisible entre le jeu de l'instrumentiste et l'effet; 
- 	\item \textbf{occulte}: à l'opposé, une interface sur laquelle les gestes effecteurs sont invisbles ainsi que le résultat est jugée ``occulte'' (``secretive'') — ce pourrait être le cas par exemple lors de gestes discrets visant à rappeler des réglages sur l'instrument et dont l'effet n'est pas directement perceptible; 
+ 	\item \textbf{occulte}: à l'opposé, une interface sur laquelle les gestes effecteurs sont invisbles ainsi que le résultat est jugée ``occulte'' (\textit{secretive}) — ce pourrait être le cas par exemple lors de gestes discrets visant à rappeler des réglages sur l'instrument et dont l'effet n'est pas directement perceptible; 
  	\item \textbf{à suspens}: si des gestes effecteurs sont visibles manifestement destinés à produire un effet mais qu'aucun effet n'est perçu, cela pourrait être perçu comme un dysfonctionnement, mais également (et c'est l'orientation proposée ici) comme un moment de \textit{suspens}, si le public a conscience que l'action de ces gestes lui seront perceptibles plus tard;
- 	\item \textbf{magique}: enfin, et c'est la direction qui m'intéresse plus particulièrement ici, les gestes effecteurs peuvent être cachés tandis qu'un effet est produit par l'instrument, configuration que les auteurs appellent ``magique''.
+ 	\item \textbf{magique}: enfin, et c'est la direction qui m'intéresse plus particulièrement ici, les gestes effecteurs peuvent être cachés tandis qu'un effet est produit par l'instrument, configuration que les auteurs appellent ``magique'', et que je préfère appeler subversive\footnote{Le terme ``subversion'' (du latin \textit{subvertere} : renverser, bouleverser) désigne \iquote{l'action visant à saper les valeurs et les institutions établies} (dictionnaire Larousse). Les moyens employés par la subversion consiste à diffuser un message contraire à un l'ordre établi, dans le but d'affaiblir celui-ci. Dans le cas de la musique, si la notion de subversion peut prendre une dimension culturelle ou politique dans certains courants musicaux, c'est ici au sens cognitif de la subversion de la perception que j'emploie ce terme. Par exemple, on pourra dire qu'un groupe de musique pop interprétant un tube en playback sur un plateau de télévision use d'un principe subvertif, en laissant croire que ce que l'on écoute est le résultat de leur interprétation en direct (valeur établie), alors qu'il s'agit d'un enregistrement. Qualifier cette même prestation de magique aurait un autre sens.}.
 \end{itemize}
 %-----------------
-\noindent Analysons ici les différents cas de figures amenant à la perception d'une relation ``magique'' pour le spectateur. 
+\noindent Analysons ici les différents cas de figures amenant à la perception d'une relation subversive pour le spectateur. 
 
 \subsubsection{Gestes feints}
 
@@ -532,9 +541,6 @@ La cohérence\footnote{J'appelle ici ``cohérence'' la causalité \textbf{appare
 
 \subsection{Définition} 
 
-Le terme ``subversion'' (du latin \textit{subvertere} : renverser, bouleverser) désigne ``l'action visant à saper les valeurs et les institutions établies'' (dictionnaire Larousse). Les moyens employés par la subversion consiste à diffuser un message contraire à un l'ordre établi, dans le but d'affaiblir celui-ci.
-
-Dans le cas de la musique, si la notion de subversion peut prendre une dimension culturelle ou politique dans certains courants musicaux, c'est ici dans le cadre de la perception que j'emploie ce terme.
 
 La subversion peut intervenir à différents niveaux. Au niveau de la composition, l'écriture musicale permet des modulations qui déjouent les attentes de l'auditeur. (e.g. Pink Floyd, breathe transition). Elle peut également se situer au niveau du jeu, en usant de procédés comme des gestes qui contredisent ce qu'on entend et vont l'amplifier. Gyorgy Kurtag Jr. geste violent pour jouer une nuance pianissimo.
 
@@ -642,17 +648,14 @@ La recherche d'une lisibilité de la relation geste/son peut s'appuyer sur des m
 Ces gestes peuvent également s'appuyer sur une connaissance du déroulement interne d'un matériaux enregistré, auquel cas une relation de re-sonnance / résonance vient définir une modalité de relation instrumentale ou les mouvements gestuels ne sont pas nécessairement dans une relation mimétique, mais viennent s'articuler sur différents plans de jeu mêlant écoute, extrapolation imaginaire, [ré]agencements à la volée et anticipatifs, gestes muets dont l'action n'est perçue que de manière différée, etc.
 
 
-
 De même que l'on peut travailler une partition et devenir expert dans son interprétation, on peut travailler un instrument pour en devenir expert et travailler les différentes compositions pour cet instrument. On peut aujourd'hui travailler le geste (et l'écoute!) et en devenir expert pour jouer les différents instruments qui s'offrent à ces gestes.
 
 
-Tout relation semble possible, si tant est qu'il
+La possibilité de modéliser dans les \glspl{DMI} non seulement la traduction du geste en son (mapping), mais également la représentation de son influence (visualisation du mapping), ou encore les aspects métaphoriques auquel on l'associe (prodiction de son et d'image musicales) nécessite de prendre en compte la totalité de ses aspects phénoménologiques, sémiotiques, poétiques pour le design des \glspl{DMI}. 
+\indent La synthèse des différentes approches ayant contribué jusque la à cette compréhension, ainsi que les propositions de nouvelles catégories et de nuances par rapport à ces modèles contribue, je l'espère, à l'avancement de sa compréhension dans cette perspective.
 
 
-La relation se définit de manière contextuelle. 
-
-Il est important de comprendre qu'il n'y a plus de relation fixe entre le geste
-
+Il est important de comprendre qu'il n'y a plus de relation fixe entre le geste. La relation se définit de manière contextuelle et fait partie d'un lutherie généralisée qui englobe à la fois des aspects compositionnels et des aspects de lutherie plus traditionnelle.
 
 
 => Comment ces aspects influencent le design de l’instrument ?
