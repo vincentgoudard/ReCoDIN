@@ -34,6 +34,11 @@
 % for text warping around figures
 \usepackage{wrapfig}
 
+% for placing figure "exactly here"
+\usepackage{float}
+
+\usepackage{breakurl}
+
 % **************************************************
 % Debug LaTeX Information
 % **************************************************
@@ -74,7 +79,7 @@
 	bookmarksnumbered=true,		%
 	bookmarksopen=true			%
 }
-\def\UrlBreaks{\do\/\do-}
+%\def\UrlBreaks{\do\/\do-}
 
 % for multiple figures
 \usepackage{subcaption}
@@ -229,8 +234,7 @@
 % **************************************************
 % Information and Commands for Reuse
 % **************************************************
-\newcommand{\thesisTitle}{Représentation et contrôle dans le design \\
-						interactif des instruments de musique numériques}
+\newcommand{\thesisTitle}{Représentation et contrôle\\dans le design interactif des\\instruments de musique numériques}
 \newcommand{\thesisName}{Vincent Goudard}
 \newcommand{\thesisSubject}{Ecole doctorale SMAER}
 \newcommand{\thesisDate}{2019}
@@ -266,6 +270,7 @@
 %\titlespacing*{\subsection}{0em}{.75em}{.2em}[0pt]
 %\titlespacing*{\subsubsection}{-1.5em}{0em}{-1.5em}[0pt]
 
+\usepackage[tight]{shorttoc}
 
 % **************************************************
 % Document CONTENT
@@ -301,6 +306,9 @@
 
 \cleardoublepage
 \selectlanguage{french}
+
+%\shorttoc{Sommaire}{1}
+
 \setcounter{tocdepth}{2}		% define depth of toc
 \tableofcontents				% display table of contents
 
@@ -327,6 +335,22 @@
 \input{content/07.notation} % INCLUDE: notation
 \input{content/conclusion} % INCLUDE: conclusion
 
+%\input{content/latexsandbox}
+
+\begin{appendices}
+	%\input{content/appendix.interviews.tex}
+	\input{content/appendix.delaubier} %ok 17/07/2017
+	\input{content/appendix.dumeaux} % ok 30/07/2017
+	\input{content/appendix.turchet} % ok 23/08/2017
+	\input{content/appendix.zamborlin} % en cours 23/08/2017
+	\input{content/appendix.collins} % ok 10/11/2017
+	\input{content/appendix.mamoumani} % ok 20/12/2017
+	\input{content/appendix.saintdenis} % ok 27/05/2018
+	\input{content/appendix.bernier} % ok 28/05/2018
+	\input{content/appendix.fernandez} % ok 13/06/2018
+	
+%	\input{content/appendix.algorithms} % 
+\end{appendices}
 
 %\setlength{\parskip}{0mm} % moins d'espace entre les items (mais affect la suite ?)
 \printnoidxglossaries
@@ -372,24 +396,5 @@
 % End of Document CONTENT
 % **************************************************
 
-% TODO : le mettre dans l'ordre chronologique
-
-\begin{appendices}
-\input{content/appendix.interviews.tex}
-\input{content/appendix.delaubier} %ok 17/07/2017
-\input{content/appendix.dumeaux} % ok 30/07/2017
-\input{content/appendix.turchet} % ok 23/08/2017
-\input{content/appendix.zamborlin} % en cours 23/08/2017
-\input{content/appendix.collins} % ok 10/11/2017
-\input{content/appendix.mamoumani} % ok 20/12/2017
-\input{content/appendix.saintdenis} % ok 27/05/2018
-\input{content/appendix.bernier} % ok 28/05/2018
-\input{content/appendix.fernandez} % ok 13/06/2018
-
-
-\input{content/appendix.algorithms} % 
-\end{appendices}
-
-\input{content/latexsandbox}
 
 \end{document}
