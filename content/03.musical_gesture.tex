@@ -120,7 +120,7 @@ du mirage, de l’illusion.}{Jean-Claude Risset}{Discours invité aux JIM 2010 \
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Le modèle ergotique et l'héritage acoustique}
-
+\label{sec:gesture:ergotic}
 
 \subsection{Continuum énergétique : typologie de Cadoz}
 
@@ -274,35 +274,24 @@ du mirage, de l’illusion.}{Jean-Claude Risset}{Discours invité aux JIM 2010 \
 %------------------ Figure : geste lisible ou subversif ---------------------
 \subsection{Geste produit, capté, perçu}
 
-\noindent Pendant longtemps dans le domaine des \gls{IHM}, peu d'importance était accordée au geste en dehors de son interaction directe avec la machine, comme le rapporte Kurtenbach en 1990 : \iquote{A gesture is a motion of the body that contains information. Waving goodbye is a gesture. Pressing a key on a keyboard is not a gesture because the motion of a finger on its way to hitting a key is neither observed nor significant. All that matters is which key was pressed} \cite{kurtenbach_art_1990}.\\
-\indent Pourtant comme le rappelle Richard Leppert dans \cite{leppert_sight_1993} (cité par \cite{iazzetta_meaning_2000} TODO:remove it) souligne à quel point la nature intangible du son et de la musique est polarisée par l'expérience visuelle: \iquote{Precisely because musical sound is abstract, intangible, and ethereal [...] the visual experience of its production is crucial to both musicians and audience alike for locating and communicating the place of music and musical sound within society and culture. [...] Music, despite its phenomenological sonoric ethereality, is an embodied practice, like dance and theater.}
+\noindent Dans le domaine des \gls{IHM}, peu d'importance était accordée au geste en dehors de son interaction directe avec la machine jusqu'à la fin des années 1990, comme le dénote l'analyse de Gordon Kurtenbach : \iquote{Un geste est un mouvement du corps qui contient de l'information. Faire un signe d'au-revoir est un geste. Appuyer sur la touche d'un clavier n'est pas un geste car le mouvement d'un doigt dans sa course pour frapper une touche n'est ni observé ni signifiant. Tout ce qui importe est quelle touche est enfoncée.}\footnote{\iquote{A gesture is a motion of the body that contains information. Waving goodbye is a gesture. Pressing a key on a keyboard is not a gesture because the motion of a finger on its way to hitting a key is neither observed nor significant. All that matters is which key was pressed.} \cite{kurtenbach_gestures_1990}}.\\
+\indent Pourtant, comme le rappellait alors Richard Leppert, la nature intangible du son et de la musique est polarisée par l'expérience visuelle: \iquote{Précisément parce que le son musical est abstrait, intangible et immatériel (...) que l'expérience visuelle de sa production est cruciale, tant pour les musiciens que pour le public, pour situer et communiquer la place de la musique et du son musical dans la société et la culture. (...) La musique, malgré son immatérialité sonore phénoménologique, est une pratique incarnée, comme la danse et le théâtre.}\footnote{\iquote{Precisely because musical sound is abstract, intangible, and ethereal [...] the visual experience of its production is crucial to both musicians and audience alike for locating and communicating the place of music and musical sound within society and culture. [...] Music, despite its phenomenological sonoric ethereality, is an embodied practice, like dance and theater.} \cite{leppert_sight_1993}}
 
-\textbf{Différence entre geste effectué et geste capté} : un son électroacoustique, par exemple une figure de ``delta'', pourra ainsi avec un même geste de balaiement de la main, et une même interface de captation (e.g. un simple slider), être déclenchée via un seuillage de l'entrée qui déclenche un sample, être produit de manière continue, via un scrub du sample, pourra avoir son intensité sonore fonction de la vitesse du geste ou pas, etc. On voit que pour un même geste, un même son (échantillonné), et un même capteur, les possibilités de relations entre le geste et le son sont multiples. Le pré-geste hors contact avec l'instrument pourra être capté ou non selon le capteur. (e.g. leap motion)
+BOF : \textbf{Différence entre geste effectué et geste capté} : un son électroacoustique, par exemple une figure de ``delta'', pourra ainsi, avec un même geste de balaiement de la main, et une même interface de captation (e.g. un simple \textit{slider}), être engendré via un seuillage sur la valeur du \textit{slider} qui déclenche un échantillon, être produit de manière continue, en lisant l'échantillon comme si l'on déplaçait une tête de lecture, pourra avoir son intensité sonore fonction de la vitesse du geste ou pas, etc. On voit que pour un même geste, un même son, et un même capteur, les possibilités de relations entre le geste et le son sont multiples.
 
-\noindent Nous avons vu dans les sections précédentes différents aspects concernant la fonctionnalité du geste, considérée du point de vue de l'instrumentiste. Ce point de vue privilégie généralement la recherche d'une relation lisible et cohérente entre le geste et le son, se situant à cette intersection où les actions réalisés par l'instrumentiste, les actions effectivement captées par l'interface et le résultat désiré de ces actions se correspondent (cf. figure \ref{fig:Benford_expected-sensed-desired}).
+\noindent Nous avons vu dans les sections précédentes différents aspects concernant la fonctionnalité du geste, considérée du point de vue de l'instrumentiste. Ce point de vue privilégie généralement la recherche d'une relation lisible et cohérente entre le geste et le son, se situant à cette intersection où les actions permises par la configuration physique de l'agencement instrumental, celles effectivement captées par l'interface et celles désirées par l'instrumentiste se correspondent, ce que Steve Benford réprésente par le diagramme de Venn de la figure \ref{fig:Benford_expected-sensed-desired}). Benford remarque que si les zones où ces cercles ne se recoupent que partiellement peuvent apparaitre comme problématiques (interface pas assez sensible, gestes captés mais non-désirés), elles sont aussi des espaces permettant d'inventer de nouvelles relations (en particulier quand des gestes désirés qui peuvent être captés ne sont pas des gestes \textit{a priori} attendus).
 
-\indent Ce diagramme se place entièrement dans une perspective côté instrumentiste, et ne met pas en évidence la relation entre les gestes de l'instrumentiste et la perception du résultat côté spectateur-auditeur. Or, la compréhension du mapping entre geste capté et production de l'instrument, joue un rôle essentiel dans l'attribution de l'agentivité, comme l'ont présenté Florent Berthaut et al. (\cite{berthaut_liveness_2015}). En particulier, la représentation visuelle du fonctionnement de l'instrument peut aider à cette compréhension. (cf. \cite{berthaut_rouages:_2013})
+\indent Ce diagramme se place dans une perspective côté instrumentiste, et ne met pas en évidence la relation entre les gestes de l'instrumentiste et la traduction sonore de ces gestes par l'instrument, ni la perception de ce résultat par le spectateur-auditeur. Or, la compréhension du mapping entre gestes captés et production de l'instrument joue un rôle essentiel dans l'attribution de l'agentivité, comme l'ont présenté Florent Berthaut et al. (\cite{berthaut_liveness_2015}). En particulier, la représentation visuelle du fonctionnement de l'instrument peut aider à cette compréhension. (cf. \cite{berthaut_rouages:_2013})
 
-\indent La poursuite d'une telle transparence pour l'instrumentiste, comme condition nécessaire à l'expressivité d'un instrument\footnote{Voir par exemple les remarques de Sydney Fels \cite{fels_mapping_2002} \iquote{We consider transparency as a predictor for expressivity. (...) We identify transparency as a quality of a mapping.} ou de Christopher Dobrian \cite{dobrian_e_2006} \iquote{Another basic need is that the software provide correspondences between input data and output sound that are sufficiently intuitive for both performer and audience.}}, pourrait masquer le fait que la relation entre le musicien et son public n'est pas exclusivement motivé par la recherche de cette transparence.\\
-\indent On pourra même arguer du contraire : le design d'un instrument acoustique est largement motivé par l'obtention d'une homogénéité de son timbre qui est tout à fait artificielle, autant que la discrétisation du \textit{continuum} des hauteur en notes. La musique est un art du mirage, de l'illusion --~comme le rappelle Risset dans la citation en exergue de ce chapitre~--, dans lequel la subversion joue un rôle essentiel et se substitue à la transparence pour dessiner de nouvelles relations du sensible. De même, les gestes du musicien et du compositeur crééent des continuités là où il y a discontinuité (e.g. le \textit{legato} sur des notes de piano, la modulation tonale pour passer d'un mode à un autre, la fusion des timbres dans le travail d'orchestre),  et inversement introduit des ruptures pour déjouer les attentes du public (e.g. les jeu de contre-temps rythmiques, les \textit{subito-pianos}).\\
-\indent Les \textit{DMI} offrent de nouvelles possibilités de subversion de la perception, qui s'appuient sur les caractéristiques propres aux \gls{DMI} que nous avons déjà évoquées. Le découplage énergétique permet des correspondance inattendues entre force du geste et intensité du son, les capacités d'enregistrement permettent de faire surgir des matériaux de toute nature sonore, l'absence potentielle de contact avec l'instrument et sa reconfiguration dynamique permet d'envisager une métamorphose continue des relations de jeu.
+\subsection{Une critique de la transparence}
 
+\indent La poursuite exclusive d'une telle ``transparence instrumentale'', comme condition nécessaire à l'expressivité d'un instrument\footnote{Voir par exemple les remarques de Sydney Fels \cite{fels_mapping_2002} \iquote{We consider transparency as a predictor for expressivity. (...) We identify transparency as a quality of a mapping.}, Christopher Dobrian \cite{dobrian_e_2006} \iquote{Another basic need is that the software provide correspondences between input data and output sound that are sufficiently intuitive for both performer and audience.}, ou John Croft \cite{croft_theses_2007}}, pourrait masquer le fait que la relation entre le musicien et son public n'est pas exclusivement, sinon principalement, motivée par la recherche de cette transparence, comme l'ont notamment montré Michael Gurevitch et Canvan Fyans\footnote{Cf. \textit{Digital Musical Interactions: Performer–system relationships and their perception by spectators} \cite{gurevich_digital_2011}}.\\
+\indent On pourra même arguer du contraire, jusque dans le cas des instruments acoustiques dont le design est largement orienté par l'obtention d'une homogénéité de timbre tout à fait artificielle, autant que la discrétisation du \textit{continuum} des hauteur en notes. La musique est un art du mirage, de l'illusion --~comme le rappelle Risset dans la citation en exergue de ce chapitre~--, dans lequel la subversion joue un rôle essentiel et se substitue à la transparence pour dessiner de nouvelles relations du sensible. De même, les gestes du musicien et du compositeur crééent des continuités là où il y a discontinuité (e.g. le \textit{legato} sur des notes de piano, la modulation tonale pour passer d'un mode à un autre, la fusion des timbres dans le travail d'orchestre),  et inversement introduit des ruptures pour déjouer les attentes du public (e.g. les jeu de contre-temps rythmiques, le \textit{subito-piano}).\\
+\indent L'attribution d'expressivité aux \glspl{DMI} sur la base de la perception explicite de la causalité entre ce que fait le musicien et le son produit, traduit encore une référence implicite à un modèle instrumental acoustique qui n'est donc qu'à moitié justifiée. Sans prétendre que ce modèle soit obsolète, il est nécessaire de s'en détacher si l'on veut saisir l'étendue réelle des possibilités créatives offertes par les \glspl{DMI}. Ainsi, je prétend ici que l'expressivité est une notion bien plus complexe que la simple traduction sonore immédiate des gesticulations d'un musicien; en somme qu'il faut se garder de confondre \textit{expressivité} et \textit{expressionisme}.\\
+\indent Les films de la nouvelle vague, en particulier le cinéma de Jean-Luc Godard ou Wim Wenders, ont suffisamment prouvé que la collision de plans sonores et visuels n'entretenant \textit{a priori} aucun rapport de causalité ou de synchronicité, sont capable de susciter une émotion intense et de saisir, tout comme le fait le poème qui s'affranchit de la grammaire habituelle pour inventer la sienne propre, un fragment d'inouï ayant pu se glisser dans la fêlure des normes\footnote{Et que rappelle ce refrain de Leonard Cohen dans \textit{Anthem}: \iquote{Ring the bells that still can ring / Forget your perfect offering / There is a crack, a crack in everything / That's how the light gets in}.}.\\
+\indent Les \glspl{DMI} offrent de nouvelles possibilités de subversion de la perception --~comme autant de fêlures du modèle acoustique~-- qui peuvent s'appuyer sur les caractéristiques qui leur sont propres. Ainsi, le découplage énergétique permet des correspondance inattendues entre force du geste et intensité du son, les capacités d'enregistrement permettent de faire surgir des matériaux de toute nature sonore, l'absence potentielle de contact avec l'instrument permet d'associer plus librement gestes effecteurs et gestes d'accompagnement, et la reconfiguration dynamique des algorithmes permet d'envisager une métamorphose continue des relations de jeu.\\
 
-\subsubsection{Expressivité}
-L'attribution d'expressivité aux \glspl{DMI} sur la base de la perception explicite de la causalité entre ce que fait le musicien et le son produit, traduit encore une référence implicite à un modèle instrumental acoustique. Sans prétendre que ce modèle soit obsolète, il est nécessaire de s'en détacher si l'on veut saisir l'étendue réelle des possibilités créatives offertes par les \glspl{DMI}. Ainsi, je prétend ici que l'expressivité est une notion bien plus complexe que la simple traduction sonore immédiate des gesticulations d'un musicien; en somme qu'il faut se garder de confondre \textit{expressivité} et \textit{expressionisme}.
-Les films de la nouvelle vague, en particulier le cinéma de Jean-Luc Godard ou Wim Wenders, ont suffisamment prouvé que la collision de plans sonores et visuels n'entretenant \textit{a priori} aucun rapport de causalité ou de synchronicité, sont capable de susciter une émotion intense et de saisir, tout comme le fait le poème qui s'affranchit de la grammaire habituelle pour inventer la sienne, un fragment d'inouï.
-
-Le spectateur peut apprécier :
-- la matière sonore en elle-même
-- les références auxquelles le contenu sonore renvoie (matériaux physiques, sources, citations)
-- le fait de comprendre ce que le musicien fait
-- le fait de ne pas comprendre ce que le musicien fait
-- la virtuosité du musicien et l'absence d'erreur d'interprétation
-- la difficulté du musicien à domestiquer son instrument et la présence d'erreurs
-- les relations qu'il imagine entre ce qu'il voit, ce qu'il entend et sa propre expérience
-
-
-\subsection{Interfaces expressives, occultes, à suspens, subversives}
+\subsection{Stratégies expressives d'interaction gestuelle}
 %------------------ Figure : geste lisible ou subversif ---------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
@@ -316,11 +305,23 @@ Le spectateur peut apprécier :
 	\begin{minipage}[t]{0.48\textwidth}
 		\includegraphics[width=\linewidth]{gfx/03_gesture/SubversiveCube.pdf}
 		\caption[Stratégies de design d'interfaces pour le spectateur (schéma proposé)]{Stratégies de design d'interfaces pour le spectateur}
-		\label{fig:gesture:expressive-space}
+		\label{fig:gesture:expressive-spaceold}
 	\end{minipage}
 \end{figure}
 %------------------ Figure : geste lisible ou subversif ---------------------
-\noindent Dans une analyse des stratégies de design d'interface en fonction de leur effet sur le spectateur \cite{reeves_designing_2005}, Reeves et al. distinguent quatre orientations possibles en fonction du degré de visibilité des gestes effecteurs de l'instrumentiste par rapport au degré de visibilité de l'effet produit par l'instrument (cf. figure \ref{fig:gesture:Benford}):
+
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.8\textwidth}
+		\includegraphics[width=\linewidth]{gfx/03_gesture/SubversiveCube.pdf}
+		\caption[Stratégies de design d'interaction instrumentale pour le spectateur]{Stratégies de design d'interaction instrumentale pour le spectateur}
+		\label{fig:gesture:expressive-space}
+	\end{minipage}
+\end{figure}
+%---------------
+
+\noindent Dans une analyse des stratégies de design d'interface en fonction de leur effet sur le spectateur \cite{reeves_designing_2005}, Stuart Reeves et al. distinguent quatre orientations possibles en fonction du degré de visibilité des gestes effecteurs de l'instrumentiste par rapport au degré de perceptibilité (visible, audible) de l'effet produit par l'instrument (cf. figure \ref{fig:gesture:Benford}):
 \vspace{-1em}
 \begin{itemize}[noitemsep]
  	\item \textbf{expressive} une interface expressive propose une relation cohérente et lisible entre le jeu de l'instrumentiste et l'effet; 
@@ -329,8 +330,33 @@ Le spectateur peut apprécier :
  	\item \textbf{magique}: enfin, et c'est la direction qui m'intéresse plus particulièrement ici, les gestes effecteurs peuvent être cachés tandis qu'un effet est produit par l'instrument, configuration que les auteurs appellent ``magique'', et que je préfère appeler subversive\footnote{Le terme ``subversion'' (du latin \textit{subvertere} : renverser, bouleverser) désigne \iquote{l'action visant à saper les valeurs et les institutions établies} (dictionnaire Larousse). Les moyens employés par la subversion consiste à diffuser un message contraire à un l'ordre établi, dans le but d'affaiblir celui-ci. Dans le cas de la musique, si la notion de subversion peut prendre une dimension culturelle ou politique dans certains courants musicaux, c'est ici au sens cognitif de la subversion de la perception que j'emploie ce terme. Par exemple, on pourra dire qu'un groupe de musique pop interprétant un tube en playback sur un plateau de télévision use d'un principe subvertif, en laissant croire que ce que l'on écoute est le résultat de leur interprétation en direct (valeur établie), alors qu'il s'agit d'un enregistrement. Qualifier cette même prestation de magique aurait un autre sens.}.
 \end{itemize}
 %-----------------
-\noindent Ce schéma présente l'intérêt de dépasser une vision undimensionnelle (quand elle n'est pas bipolaire) de l'expressivité instrumentale, envisagée comme le seul résultat du degré d'agentivité de l'instrumentiste perceptible par l'auditeur/spectateur, en proposant une caractérisation de la relation geste/son prenant en compte l'absence potentielle (et potentiellement souhaitée) de congruence entre les gestes effecteurs de l'instrumentiste et leur traduction sonore perçue par le public.\\
-\indent On pourrait cependant ajouter une dimension à ce schéma en y insérant le paramètre de cohérence de la relation entre les gestes effecteurs et l'effet produit\footnote{Le schéma de Benford semble se placer dans le cas particulier où cette relation \textit{est} cohérente.}. Cette cohérence peut être définie comme la congruence énergetico/spatio/temporelle du geste et du son\footnote{Telle que préconisée par Cadoz (cf. sections précédente), ou John Croft dans \cite{croft_theses_2007}}, mais de manière plus générale, elle se caractérise par la capacité des spectateurs-auditeurs à comprendre cette relation, qu'elle soit congruente ou non\footnote{Ce qui semble être démontré par l'étude de Berthaut et al. dans \cite{berthaut_rouages:_2013}}. Pour conserver les mêmes unités d'axe, je propose d'assimiler ce paramètre de \textit{cohérence} au degré de ``visibilité des gestes programmés'', qu'il faut ici entendre comme une compréhension de la mécanique interne de l'instrument, de son mapping. On obtient ainsi un espace tri-dimensionnel dans lequel d'autres axes d'interprétation de la relation expressive se dessinent (cf. figure \ref{fig:gesture:expressive-space}).
+\noindent Ce schéma présente l'intérêt de dépasser une vision uni-dimensionnelle de l'expressivité instrumentale, envisagée comme le seul résultat du degré d'agentivité de l'instrumentiste perceptible par l'auditeur/spectateur, en proposant une caractérisation de la relation geste/son prenant en compte l'absence potentielle (et potentiellement souhaitée) de congruence entre les gestes effecteurs de l'instrumentiste et leur traduction sonore perçue par le public.\\
+\indent On pourrait cependant ajouter une dimension à ce schéma en y insérant le paramètre de cohérence de la relation entre les gestes effecteurs et l'effet produit\footnote{Le schéma de Benford semble se placer dans le cas particulier où cette relation \textit{est} cohérente.}. Cette cohérence peut être définie comme la congruence énergetico/spatio/temporelle du geste et du son\footnote{Telle que préconisée par Cadoz\footnote{Cf. supra p. \pageref{sec:gesture:ergotic}.}, ou John Croft dans \cite{croft_theses_2007}}, mais de manière plus générale, elle se caractérise par la capacité des spectateurs-auditeurs à comprendre cette relation, qu'elle soit congruente ou non\footnote{Ce qui semble être démontré par l'étude de Berthaut et al. dans \cite{berthaut_rouages:_2013}}. Pour conserver les mêmes unités d'axe, je propose d'assimiler ce paramètre de \textit{cohérence} au degré de ``visibilité des gestes programmés'', qu'il faut ici entendre comme une compréhension de la mécanique interne de l'instrument, de son mapping. On obtient ainsi un espace tri-dimensionnel dans lequel d'autres axes d'interprétation de la relation expressive se dessinent (cf. figure \ref{fig:gesture:expressive-space}).\\
+\noindent Ainsi, le schéma que je propose ici se fonde sur celui de Benford, en reformulant certains de ses axes et en l'étendant selon l'axe de la visibilité du \textit{geste programmé} :
+\vspace{-1em}
+\begin{itemize}[noitemsep]
+	\item \textbf{transparente} : il me semble ici préférable de renommer la zone désignée comme \iquote{expressive} dans le schéma de Benford par le terme \iquote{transparent}, afin de s'affranchir de cet abus de language qui empêche de considérer d'autres formes d'expressivité que celle passant par la transparence de la relation instrumentale.:
+	\item \textbf{autonome} : de même, la zone désignée comme \iquote{magique} me semble davantage correspondre à une situation d'\iquote{autonomie} de l'instrument. En particulier, la notion de geste magique\footnote{Le geste magique a notamment été analysée par Marcel Mauss dans \cite{mauss_esquisse_1902}, et plus spécifiquement dans le cadre des \gls{IHM} dans \cite{lokuge_dynamic_1995, marshall_deception_2010}} implique d'autres variables que celles de l'occultation et de la révélation, en particulier l'inscription dans une temporalité permettant de créer un contexte favorable à la subversion (par la narration, le détourement d'attention, etc.). La notion d'autonomie se traduit par exemple dans le rôle pris par une platine vinyle jouant un enregistrement en l'absence de geste venant perturber sa lecture;
+	\item \textbf{cryptique} : une relation sera vue comme cryptique si les gestes re-sonnants et le résultat sonore ne présente aucune relation apparente;
+	\item \textbf{externe} : dans le cas où un effet sonore est perceptible mais qu'aucune action ne semble les produire, ni celles de l'instrumentiste, ni celles provoquées de manière autonome par l'instrument, le son sera perçu comme externe à l'instrument. Cette situation est typiquement renforcée dans le cas des instruments électroniques par la distance fréquente entre l'instrument et les haut-parleurs qui supprime cette congruence de localisation entre l'instrument et le son, naturelle dans les instruments acoustiques. La présence fréquente d'un espace scénique mis en lumière focalise bien évidemment l'attention sur l'instrument[iste], mais ce point de fuite de l'attention peut être précisément être déplacé par ces même procédés (e.g. être situé hors de la scène);
+	\item \textbf{déconnectée} : un musicien procédant à des mouvements sur un instrument dont le public ne peut pas voir le fonctionner (ou le supposer) renvoie l'impression d'un instrument déconnecté et mutique. Cette sitation se rencontre par exemple lorsqu'un musicien numérique procède à réglages en amont de sa performance ou entre deux morceaux musicaux ou lorsque, effectivement, l'instrument ne répond pas;
+	\item \textbf{potentielle} : enfin la seule présence de l'instrument, sans qu'aucun geste ne lui soit adressé, sans qu'elle ne produise aucun son, ni que son fonctionnement ne soit compréhensible pourrait s'apparenter à une situation absurde. Elle semble pourtant décrire ce qui se passe lorsque nous faisons la \textit{rencontre} d'un instrument inconnu, ou d'un objet dont nous envisageons l'instrumentalité. Que nous portions intentionnellement notre attention sur cet objet, où que notre attention soit guidée sur elle (e.g. par sa mise en lumière dans un espace dédié tel qu'une scène ou une gallerie d'art), il subsiste le mouvement de notre imagination qui projette les affordances, le jeu, les sonorités potentielles. La pièce \textit{4'33"} de John Cage ou encore l'installation ``Handphone table'' de Laurie Anderson (cf. figure \ref{fig:gesture:HandphoneTable}) se tient à la limite de ce cas de figure.
+\end{itemize}
+
+%------------------ Figure : geste lisible ou subversif ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}%
+	\centering
+	\begin{minipage}[t]{0.8\textwidth}
+		\includegraphics[width=\linewidth]{gfx/03_gesture/LaurieAnderson-HandphoneTable-PhotoLuisaRibas.jpg}
+		\caption[``Handphone table'' de Laurie Anderson]{``Handphone table'' de Laurie Anderson}
+		\label{fig:gesture:HandphoneTable}
+	\end{minipage}
+\end{figure}
+%---------------
+
+\indent Notons qu'il faudrait rajouter à ce schéma une variable permettant de définir si le comportement de l'instrument est désiré ou subi, en particulier lorsque la relation n'a pas cette ``transparence'' généralement considérée comme celle attendue de la part d'un instrument. En présentant ces différents rôles comme des stratégies plutôt que seulement des problèmes, nous prenons ici le parti de les considérer comme des fonctionnement souhaités par le musicien. Dans la mesure où ils seraient subis, on pourra les assimiler à la notion de fausse note, dont le musicien peut tout à fait s'accomoder en les réutilisant dans la dynamique du jeu, selon le désormais célèbre adage répété par de nombreux jazzmen dont Miles Davis qu'il n'y a pas de ``fausses notes'' en tant que telles, que ce sont les notes jouées ensuite qui les rendent justes ou fausses\footnote{Herbie Hancock en rend compte dans une interview, en notant le caractère ``magique'' de la résolution trouvée par Miles Davis : \iquote{I played this chord that was so wrong. I thought I had destroyed everything(...) Miles took a breath and he played some notes, and he made my chord right. I could not figure out how he did that, that sounded like magic.} cf. \url{https://youtu.be/C-GrRIgdmW8}}.\\
+\indent L'assertion de Mile Davis (et d'autres) sur le caractère de ``justesse'' d'une note\footnote{Le terme de justesse est ici utilisé au sens de sa pertinence, son intérêt, et non pas de la précision de hauteur par rapport à un système tonal.} dépendant de ce qui est joué à sa suite fait apparaître une autre lacune de ce schéma : sa dimension temporelle.
 
 \noindent Analysons ici les différents cas de figures amenant à la perception d'une relation subversive pour le spectateur. 
 
@@ -481,33 +507,7 @@ aspect scénographique de la performance musicale.
 	\label{fig:gesture:triggering_modes}
 \end{figure}
 
-
-%-------------------------------------------
-\subsection{Continuités artificielles}
-
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-\item Contrepoint : relier la mélodie à l'harmonie 
-\item Bach et le tempérament = relier les différents modes, via la modulation.
-\item les doigtés alternatifs, sur le plan gestuel, permettent de sacrifier la justesse de la note, pour établir une continuité gestuelle fluide
-\item La musique sérielle : relier la gamme tempérée au spectre en ordonnant 
-\item Stravinsky, Russolo : relier l’harmonie et le bruit 
-\item jouer un pattern connu ("qu'on a dans les doigts") tout en substituant les notes permet de jouer de manière fluide une mélodie inhabituelle. => numérique
-\item Cage, Murray Schaeffer : relier le déterminisme et le hasard, la musique et l’environnement 
-\end{itemize}
-
-(morpho-dynamisme)
-Mettre capture d'image du MID qui passe d'une structure rotative à un Verlet.
-
-Comment la continuité s'établit ?
-
-=> voir Théories de la composition musicale au \siecle{20}~siècle
-Conjointement à ces explorations compositionnelles se sont développées des techniques et des technologies permettant d’appréhender ces nouveaux espaces. Que cela soit des procédés d’écriture ou des instruments reflétant ces méthodes et modèles.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
- 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Conclusion}
 \label{sec:gesture:conclusion}
 
