@@ -191,16 +191,16 @@
 
 %% modsuper glossary display style (pour ne pas avoir de marge à gauche)
 %% cf. : https://tex.stackexchange.com/questions/415275/flush-glossaries-super-style-to-left
-\newglossarystyle{modsuper}{%
-	\glossarystyle{super}%
-	\renewenvironment{theglossary}%
-		{\tablehead{}\tabletail{}%
-    	 \begin{supertabular}{@{}lp{\glsdescwidth}}}%<----no margin
-    	{\end{supertabular}}%
-		\renewcommand{\glsgroupskip}{}%
-		\renewcommand*{\glossaryentryfield}[5]{%
-			\glsentryitem{##1}\glstarget{##1}{##2} & ##3\glspostdescription\space ##5\\[2pt]}%nogroupskip
-}
+%\newglossarystyle{modsuper}{%
+%	\glossarystyle{super}%
+%	\renewenvironment{theglossary}%
+%		{\tablehead{}\tabletail{}%
+%    	 \begin{supertabular}{@{}lp{\glsdescwidth}}}%<----no margin
+%    	{\end{supertabular}}%
+%		\renewcommand{\glsgroupskip}{}%
+%		\renewcommand*{\glossaryentryfield}[5]{%
+%			\glsentryitem{##1}\glstarget{##1}{##2} & ##3\glspostdescription\space ##5\\[2pt]}%nogroupskip
+%}
 
 % **************************************************
 % Annexes
@@ -298,7 +298,7 @@
 %\cleardoublepage
 
 \pagestyle{plain}				% display just page numbers
-\input{content/abstract}		% INCLUDE: the abstracts (english and german)
+\input{content/abstract}		% INCLUDE: the abstracts (english and french)
 
 %\clearpage %
 
@@ -310,6 +310,7 @@
 %\shorttoc{Sommaire}{1}
 
 \setcounter{tocdepth}{2}		% define depth of toc
+\pdfbookmark{Table des matières}{contents} % put toc in pdf bookmarks (but not in TOC)
 \tableofcontents				% display table of contents
 
 %\cleardoublepage%
@@ -336,7 +337,7 @@
 \input{content/conclusion} % INCLUDE: conclusion
 
 %\input{content/latexsandbox}
-
+\bookmarksetupnext{level=part}
 \begin{appendices}
 	%\input{content/appendix.interviews.tex}
 	\input{content/appendix.delaubier} %ok 17/07/2017
@@ -351,8 +352,10 @@
 	
 %	\input{content/appendix.algorithms} % 
 \end{appendices}
+\bookmarksetup{startatroot}
 
 %\setlength{\parskip}{0mm} % moins d'espace entre les items (mais affect la suite ?)
+%\singlespacing
 \printnoidxglossaries
 %\printglossaries
 % \cleardoublepage
@@ -373,13 +376,17 @@
 
 \clearpage
 
-\listoffigures
+\phantomsection
 \addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\noindent Les illustrations dont l'auteur.e n'est pas précisé ont été réalisées par l'auteur de la thèse et sont sous licence Creative Commons CC BY-NC-SA.
 
 \clearpage
 
-\listoftables
+\phantomsection
 \addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
 
 \clearpage
 
