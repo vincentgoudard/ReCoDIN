@@ -280,7 +280,6 @@ du mirage, de l’illusion.}{Jean-Claude Risset}{Discours invité aux JIM 2010 \
 BOF : \textbf{Différence entre geste effectué et geste capté} : un son électroacoustique, par exemple une figure de ``delta'', pourra ainsi, avec un même geste de balaiement de la main, et une même interface de captation (e.g. un simple \textit{slider}), être engendré via un seuillage sur la valeur du \textit{slider} qui déclenche un échantillon, être produit de manière continue, en lisant l'échantillon comme si l'on déplaçait une tête de lecture, pourra avoir son intensité sonore fonction de la vitesse du geste ou pas, etc. On voit que pour un même geste, un même son, et un même capteur, les possibilités de relations entre le geste et le son sont multiples.
 
 \noindent Nous avons vu dans les sections précédentes différents aspects concernant la fonctionnalité du geste, considérée du point de vue de l'instrumentiste. Ce point de vue privilégie généralement la recherche d'une relation lisible et cohérente entre le geste et le son, se situant à cette intersection où les actions permises par la configuration physique de l'agencement instrumental, celles effectivement captées par l'interface et celles désirées par l'instrumentiste se correspondent, ce que Steve Benford représente par le diagramme de Venn de la figure \ref{fig:Benford_expected-sensed-desired}. Ce diagramme fournit une représentation intéressante des compromis qui se présentent au luthier numérique pour la définition des gestes d'un \gls{DMI}. Benford remarque que si les zones où ces cercles ne se recoupent que partiellement peuvent apparaitre comme problématiques (interface pas assez sensible, gestes captés mais non-désirés), elles sont aussi des espaces permettant d'inventer de nouvelles relations (en particulier quand des gestes désirés qui peuvent être captés ne sont pas des gestes \textit{a priori} attendus).
-
 \indent En se plaçant dans la perspective de l'instrumentiste, le diagramme précédent ne met pas en évidence la relation entre les gestes de l'instrumentiste et la traduction sonore de ces gestes par l'instrument, ni la perception de ce résultat par le spectateur-auditeur. Or, la compréhension du mapping entre gestes captés et production de l'instrument joue un rôle essentiel dans l'attribution de l'agentivité. En particulier, la représentation visuelle du fonctionnement de l'instrument peut aider à cette compréhension comme l'ont montré Florent Berthaut et al.\footnote{Cf. \cite{berthaut_rouages:_2013, berthaut_liveness_2015}.}. Benford propose un autre diagramme pour prendre en compte ces aspects que nous verront plus après, mais il nous faut d'abord éclaircir un point sujet à différentes orientations et partis-pris. 
 
 \subsection{Une critique de la transparence}
@@ -341,37 +340,44 @@ BOF : \textbf{Différence entre geste effectué et geste capté} : un son élect
 	\item \textbf{déconnectée} : un musicien procédant à des mouvements sur un instrument dont le public ne peut pas voir le fonctionner (ou le supposer) renvoie l'impression d'un instrument déconnecté et mutique. Cette sitation se rencontre par exemple lorsqu'un musicien numérique procède à réglages en amont de sa performance ou entre deux morceaux musicaux ou lorsque, effectivement, l'instrument ne répond pas;
 	\item \textbf{potentielle} : enfin la seule présence de l'instrument, sans qu'aucun geste ne lui soit adressé, sans qu'elle ne produise aucun son, ni que son fonctionnement ne soit compréhensible pourrait s'apparenter à ce qui se passe lorsque nous faisons la \textit{rencontre} d'un instrument inconnu, ou d'un objet dont nous envisageons l'instrumentalité. Que nous portions intentionnellement notre attention sur cet objet, où que notre attention soit guidée sur elle (e.g. par sa mise en lumière dans un espace dédié tel qu'une scène ou une gallerie d'art), il subsiste le mouvement de notre imagination qui projette les affordances, le jeu, les sonorités potentielles. La pièce \textit{4'33"} de John Cage ou encore l'installation ``Handphone table'' de Laurie Anderson (cf. figure \ref{fig:gesture:HandphoneTable}) se situent à la limite de ce cas de figure.
 \end{itemize}
-
 %------------------ Figure : geste lisible ou subversif ---------------------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
-	\centering
-	\begin{minipage}[t]{0.8\textwidth}
-		\includegraphics[width=\linewidth]{gfx/03_gesture/LaurieAnderson-HandphoneTable-PhotoLuisaRibas.jpg}
-		\caption[\textit{Handphone table} de Laurie Anderson]{\textit{Handphone table} de Laurie Anderson. Photographie:Luisa Ribas}
-		\label{fig:gesture:HandphoneTable}
-	\end{minipage}
+	\includegraphics[width=\linewidth]{gfx/03_gesture/LaurieAnderson-HandphoneTable-PhotoLuisaRibas.jpg}
+	\caption[\textit{Handphone table} de Laurie Anderson]{\textit{Handphone table} de Laurie Anderson. Photographie:Luisa Ribas}
+	\label{fig:gesture:HandphoneTable}
 \end{figure}
 %---------------
-
 \indent Il faudrait rajouter à ce schéma une variable permettant de définir si le comportement de l'instrument est désiré ou subi, en particulier lorsque la relation n'a pas cette ``transparence'' généralement considérée comme celle attendue de la part d'un instrument. En présentant ces différents rôles comme des stratégies plutôt que seulement des problèmes, nous prenons ici le parti de les considérer comme des fonctionnement souhaités par le musicien. Dans la mesure où ils seraient subis, on pourra les assimiler à la notion de fausse note, dont le musicien peut tout à fait s'accomoder en les réutilisant dans la dynamique du jeu, selon le désormais célèbre adage répété par de nombreux jazzmen dont Miles Davis qu'il n'y a pas de ``fausses notes'' en tant que telles, que ce sont les notes jouées ensuite qui les rendent justes ou fausses\footnote{Herbie Hancock en rend compte dans une interview, en notant le caractère ``magique'' de la résolution trouvée par Miles Davis : \iquote{I played this chord that was so wrong. I thought I had destroyed everything(...) Miles took a breath and he played some notes, and he made my chord right. I could not figure out how he did that, that sounded like magic.} cf. \url{https://youtu.be/C-GrRIgdmW8}}.\\
 \indent L'assertion de Mile Davis (et d'autres) sur le caractère de ``justesse'' d'une note\footnote{Le terme de justesse est ici utilisé au sens de sa pertinence, son intérêt, et non pas de la précision de hauteur par rapport à un système tonal.} dépendant de ce qui est joué à sa suite fait apparaître deux autres lacunes importantes de ce schéma : sa dimension temporelle d'une part et la connaissance préalable des idiomes musicaux et instrumentaux sur lesquels se construit à la fois la performance et la construction de sens de la part du spectateur. Ainsi, on ne peut subvertir la perception de l'auditeur qu'à la condition qu'il y ait un système de valeur à déconstruire. Ce système peut exister préalablement à la performance (e.g. ``un piano produit un son de piano''), mais aussi se construire durant le temps même de la performance, en installant une relation qui semble cohérente et stable, au point de sembler établie.\\
+\indent Précisons ici que l'intérêt de subvertir le système des valeurs sur lesquelles la musique s'appuie ne se limite pas à une duperie du spectateur-auditeur qui se trouverait victime d'une farce, mais de permettre l'extrapolation du réel dans un espace imaginaire, en y ouvrant une brèche qui permet en retour de le rendre tangible.
 \noindent Analysons ici les différents cas de figures amenant à la perception d'une relation subversive pour le spectateur. 
  
 %-------------------------------------------
 \subsection{Sons paradoxaux, gestes paradoxaux}
 
-De la même manière que l'écriture musicale sur papier a permis de développer des processus de compositions difficilement pensables sans ce support visuel \footnote{tels que la rétrogradation ou la fugue}, les ordinateurs ont permi de créer des formes sonores qu'il aurait été impossible de concevoir sans cet outil computationnel, tels que les sons paradoxaux de Risset et Shepard \footnote{Ce qui ne signifie pas que les sons paradoxaux soient impossible à produire sans recourir à l'ordinateur; cf. leur interprétation vocale par Victoria Hart \url{https://vimeo.com/147403169}}.
+\noindent De la même manière que l'écriture musicale a permis l'émergence de processus compositionnels difficilement concevables sans ce support visuel \footnote{tels que la rétrogradation ou la fugue}, les ordinateurs ont permi de créer des formes sonores qu'il aurait été difficile de concevoir sans cet outil computationnel, tels que les sons paradoxaux de Risset et Shepard \footnote{Ce qui ne signifie pas que les sons paradoxaux soient impossible à produire sans recourir à l'ordinateur; cf. leur interprétation vocale par Victoria Hart \url{https://vimeo.com/147403169}}. Les nouvelles possibilités d'écriture du geste permettent également d'imaginer des gestes \textit{paradoxaux}, notamment par la redéfinition dynamique de leur traduction sonore. L'absence de relation fixe et prévisible dans l'interaction gestuelle avec les \glspl{DMI} entraînent la projection d'un fonctionnement supposé de l'instrument et par suite de gestes supposés (cf. figure \ref{fig:gesture:InferenceOnInstrument} et \ref{fig:gesture:InferenceOnGestures})
 
 %---- Figure : gesteReelGesteSuppose ---------
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}%
-	\includegraphics[width=\textwidth]{gfx/03_gesture/gesteReelGesteSuppose.jpg}
-	\caption{Geste produit, geste perçu, fonctionnement réel et supposé de l'instrument}
-	\label{fig:gesture:RealVsSupposed}
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/dummy.pdf}
+		\caption[Inférence du fonctionnement de l'instrument]{Inférence du fonctionnement de l'instrument}
+		\label{fig:gesture:InferenceOnInstrument}
+	\end{minipage}
+	\hspace{.02\linewidth}
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\linewidth]{gfx/dummy.pdf}
+		\caption[Inférence des gestes réalisés]{Inférence des gestes réalisés}
+		\label{fig:gesture:InferenceOnGestures}
+	\end{minipage}
 \end{figure}
-%---- Figure : gesteReelGesteSuppose ---------
+%---- Figure : gesteReelGesteSuppose --------
 
+
+\noindent Une première manière de subvertir la relation instrumentale consiste à laisser croire au public qu'il comprend la relation instrumentale (qui se situerai donc dans le plan du fond de la figure \ref{fig:gesture:expressive-space}), alors qu'elle diffère en réalité de la perception qu'il en a (et se situe dans le plan avant de la figure \ref{fig:gesture:expressive-space}).
 
 \subsubsection{Gestes feints}
 
@@ -450,29 +456,6 @@ La cohérence\footnote{J'appelle ici ``cohérence'' la causalité \textbf{appare
 	\item \textbf{subversive} : c'est le cas du playback
 \end{itemize}
 
-\subsection{Définition} 
-
-
-La subversion peut intervenir à différents niveaux. Au niveau de la composition, l'écriture musicale permet des modulations qui déjouent les attentes de l'auditeur. (e.g. Pink Floyd, breathe transition). Elle peut également se situer au niveau du jeu, en usant de procédés comme des gestes qui contredisent ce qu'on entend et vont l'amplifier. Gyorgy Kurtag Jr. geste violent pour jouer une nuance pianissimo.
-
-Exemples comparés de Applebaum Aphasia et Vincent Carinola/Jean Geoffroy "Virtual Rhizome".
-BBC Classic Album: "Pink Floyd - The Dark Side of the Moon"
-
-Dissonance cognitive.
-
-Synchrèse de Michel Chion.
-
-Parler du playback, du air-guitar, de la synchrèse.
-
-
-
-Bien que ces catégorisations du gestes décrivent adéquatement différents aspects du geste instrumental sur des instruments acoustiques, il semble que le geste musical intègre une aspect subversif souvent négligé.
-
-En particulier, dans le cas des \glspl{DMI}, la relation entre le geste et le son est totalement sujette au design de ce que l'on nomme communément le \gls{mapping} et la part de subversion devient partie intégrante du design de ce mapping. 
-
-
-Il semble dès lors que l'on peut envisager d'autres types de relation entre le geste et le son, afin de tenter de décrire les différents rapports qu'ils entretiennent selon les situations.
-
 Risset fait remarquer l'importance de l'histoire du son d'origine mécanique dans la perception des sons \cite{risset_son_1992}: \iquote{II semble à première vue que l'acoustique numérique puisse s'affranchir de la mécanique. Cependant notre ouïe a évolué dans un environnements d'objets vibrants: aussi la prise en considération des contraintes et des particularités des vibrations mécaniques est-elle importante pour comprendre les idiosyncrasies de la perception auditive et pour en tirer parti.
 Les limites de l'acoustique numérique dépendent des capacités différentielles de perception davantage que des contraintes mécaniques. Pourtant, notre perception auditive est orientée par un monde de sons produits mécaniquement, et la mécanique ne doit pas être écartée de façon cavalière, comme l'ont suggéré les travaux de Gibson et Cadoz : les spécificités des vibrations mécaniques mettent en lumière l'organisation perceptuelle dans le processus auditif. \footnote{The limitations of digital acoustics depend upon the differential capacities of perception rather than upon the constraints of mechanics. Yet our auditory perception is geared to a world of mechanically-produced sounds, and mechanics should not be given a cavalier dismissal, as the work of Gibson and Cadoz has suggested : the specifics of mechanical vibrations shed light on the the perceptual organization in the hearing process.} TODO : traduire l'anglais, plus riche.}
 
@@ -483,26 +466,6 @@ Les limites de l'acoustique numérique dépendent des capacités différentielle
 \item Geste unrelated
 \end{itemize}
 
-
-
-
-Risset, Kurtag Jr., Kurtag Père
-
-
-aspect scénographique de la performance musicale.
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-\item \textbf{gestes de feintes} : (rupture) déception de l'attente, mais visible après coup. E.g. dans le football, faire semblant d'aller à droite et envoyer le ballon à gauche, en musique: ommettre le temps fort d'un rythme bien établi, etc. La mécanique du geste est entièrement visible mais a été confuse par un changement innatendu.
-\item \textbf{geste magique} : La mécanique du geste reste invisible et la logique causale entre le geste et son résultat reste inexplicable, et sujette à spéculation imaginaires.
-\end{itemize}
-
-
-%---- Figure : Triggering modes ---------
-\begin{figure}[!htbp]
-	\includegraphics[width=\textwidth]{gfx/03_gesture/key_modes.pdf}
-	\caption{Différents modes de déclenchement: (a) enfoncement de la touche ``n''; (b) comportement habituel d'un clavier (e.g. dans un traitement de texte) (c) suppression de la répétition (d) utilisation d'un réservoir (e) phrases séquencées rythmiquement}
-	\label{fig:gesture:triggering_modes}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \section{Conclusion}
