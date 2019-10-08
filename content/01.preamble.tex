@@ -95,7 +95,7 @@ Ce précepte qui prend la forme d'une injonction laisse imaginer la scène du p�
 \end{itemize}
 
 \noindent J'utiliserai parfois le terme de ``musicien numérique'' au sens où le définit Andrew Hugill comme \iquote{quelqu'un qui a saisi les possibilités ouvertes par les nouvelles technologies, en particulier le potentiel de l'ordinateur pour explorer, stocker, manipuler et traiter le son, ainsi que le développement de nombreux autres outils et dispositifs numériques qui permettent l'invention et la découverte musicale}\footnote{Dans son ouvrage \textit{The Digital Musician} \cite{hugill_digital_2019}}.\\
-\indent Dans ce contexte, on pourrait être amené à envisager les \glspl{DMI} comme des \glspl{IHM}, tel que cela a pu être le cas au moment de leur apparition. Cependant, la performance musicale a cela de particulier qu'elle ne possède pas de cahier des charges préalables (la partition ne saurait être considérée comme telle!) et que loin de se plier à la nécessité d'exécuter une tâche précise, comme il pourrait être le cas dans le design d'autres \glspl{IHM}, les instruments sont des objets techniques dont les musiciens abusent (plus qu'ils en usent), dont les artefacts peuvent être appréciables et souhaitables, dont la compréhension n'est pas un préalable requis pour leur utilisation, pas davantage que leur fiabilité n'est garante d'une performance musicale intéressante. Le design des \glspl{DMI}, ainsi que le design des outils-mêmes du luthier numérique, doivent être informés de ces particularités propres à la création artistique si l'on souhaite qu'ils se prêtent à une interprétation \textit{vivante} du répertoire, à la création de musiques nouvelles et à l'exploration de territoires sonores inexplorés.
+\indent Dans ce contexte, on pourrait être amené à envisager les \glspl{DMI} comme des \glspl{IHM}, tel que cela a pu être le cas au moment de leur apparition. Cependant, la performance musicale a cela de particulier qu'elle ne possède pas de cahier des charges préalables (la partition ne saurait être considérée comme telle!) et que loin de se plier à la nécessité d'exécuter une tâche précise, comme il pourrait être le cas dans le design d'autres \glspl{IHM}, les instruments sont des objets techniques dont les musiciens \textit{abusent} (plus qu'ils en usent), dont les artefacts peuvent être appréciables et souhaitables, dont la compréhension n'est pas un préalable requis pour leur utilisation, pas davantage que leur fiabilité n'est garante d'une performance musicale intéressante. Le design des \glspl{DMI}, ainsi que le design des outils-mêmes du luthier numérique, doivent être informés de ces particularités propres à la création artistique si l'on souhaite qu'ils se prêtent à une interprétation \textit{vivante} du répertoire, à la création de musiques nouvelles et à l'exploration de territoires sonores inexplorés.
 
 
 \section{Problématique}
@@ -121,35 +121,27 @@ Comment s'articulent les différentes phases de conception, de composition, de r
 \section{Enjeux et hypothèses}
 
 \noindent L'enjeu de ce travail de recherche est de répondre à cette problématique en vue de discerner des caractéristiques transversales dans les lutheries numériques en l'absence de tradition, de répertoire, de notation et de méthode d'apprentissage clairement établis.\\
-\indent Il s'appuie pour cela sur une étude globale du ``cycle de vie'' d'un \gls{DMI}, s'étendant de sa conception à sa pratique en concert, en passant par sa réalisation matérielle, sa programmation algorithmique, le design de son interface, la composition et l'interprétation avec cet instrument.\\
-\indent Cette thèse se présente donc comme une vue ``en coupe'' d'un travail de lutherie numérique, dans ce qu'il comporte de réflexions, de choix de matériaux physiques et numériques, d'assemblages, de notations, de pratiques, et comment ces différents aspects interfèrent dans le cas particulier des instruments intégrant le numérique dans le design de leur interaction.\\
-\indent La perspective globale que propose ce cyle complet est cependant polarisée par la singularité de choix personnels (il ne s'agit pas ici de concevoir un instrument universel). Cette singularité est précisément envisagée comme caractéristique des nouvelles lutheries, dont j'analyserai les raisons.\\
+\indent Il s'appuie pour cela sur une étude globale du ``cycle de vie'' d'un \gls{DMI}, s'étendant de sa conception à sa pratique en concert, en passant par sa réalisation matérielle, sa programmation algorithmique, le design de son interface, la composition et l'interprétation avec cet instrument, avec l'enjeu de confronter au ``réel'' de la performance les concepts théoriques et leur implémentation.\\
+\indent Cette thèse se présente donc comme une vue ``en coupe'' d'un travail de lutherie numérique, dans ce qu'il comporte de réflexions, de choix de matériaux physiques et numériques, d'assemblages, de notations, de pratiques, et comment ces différents aspects interfèrent dans le cas particulier des instruments intégrant le numérique dans le design de leur interaction. La perspective globale que propose ce cyle complet est cependant polarisée par la singularité de choix personnels (il ne s'agit pas ici de concevoir un instrument universel). Cette singularité est précisément envisagée comme caractéristique des nouvelles lutheries, dont j'analyserai les raisons.\\
 \indent Afin de croiser la singularité de l'approche présentée ici avec celles d'autres musiciens numériques, ce travail complètera cette approche par une réflexion plus générale, nourrie des échanges réalisés lors d'interviews, durant lesquelles ressortent la diversité des motivations, ainsi que certaines similarités de pratiques.
-
-Enjeu de confronter au réel des réalisations instrumentales et logicielles à travers une pratique musicale.
-
-
 
 \subsubsection*{Hypothèse 1 : l'instrument atomisé, recomposé}
 
-L'instrument est atomisé et se retrouve configuré comme un agencement modulaire évolutif qui se cristallise ponctuellement dans des instances contextuelles. \\
-Pas d'instrument standard qui sorte du lot, si ce n'est pour imiter l'existant (le clavier, la guitare, etc.), mais des protocoles et modules qui deviennent standards et interconnectables.
+\noindent L'instrument est atomisé et se retrouve configuré comme un agencement modulaire évolutif qui se cristallise ponctuellement dans des instances contextuelles. Une mise en parallèle est faite entre l'apparition de l'écriture musicale, il y a un millénaire, et l'émergence contemporaine d'une \textit{écriture de l'instrument}, qui développe à sa manière un \textit{répertoire} de formes, d'associations gestuelle-sonore, de processus dynamiques et de structures de représentation.
 
 \subsubsection*{Hypothèse 2 : l'instrument est subversif}
 
-\Pierre{ le subversif est une très bonne idée mais c'est un terme tellement chargé de sens que tu dois en dire un peu plus et notamment dans quel sens tu le prends.}
-
-La relation instrumentale n'est pas de même nature que la relation des HCI.
-Les instrumentistes ne sont pas des \textit{interface users} mais plutôt des \textit{interface abusers}.
-La relation entre le geste et le son n'est pas nécessairement faite pour être lisible et comprise du public, le musicien est un magicien.
-L'œil augmente l'écoute (et la subvertit).
+\noindent Si le design des \glspl{IHM} est largement motivé par la recherche de transparence de l'interaction et la poursuite d'une élimination de l'effort et du risque, la création musicale et les instruments qui la soutiennent se fondent sur une subversion des sens afin de redéfinir des continuités (e.g. le \textit{legato}) entre des espaces \textit{a priori} disjoints et d'introduire des ruptures (e.g. rythmiques) dans ce que nous percevons habituellement comme un \textit{continuum}. À l'opposé du dessein poursuivi par les \gls{IHM} conventionnelles, cet acte créatif passe par un effort (physique, attentionnel, mental) soutenu et une prise de risque qui ne cherche pas à exclure la possibilité de l'accident, parfois recherché en tant que source fertile d'idées musicales nouvelles.
 
 
 \subsubsection*{Hypothèse 3 : Le continu et le discret}
 
-Si la continuité de la vibration physique semble être une donnée consitutive des instruments acoustique, qui recrééent artificiellement des espaces discrets (tels que les échelles harmoniques et rythmiques), le domaine du numérique part d'une certaine manière dans la direction opposée. Les instruments numériques sont caractérisé par la nature discrète (et même binaire) de l'encodage symbolique sous-jacent aux données traitées. Il s'agit donc davantage de pouvoir retrouver une continuité dans ce monde discret.\\
+Si la continuité de la vibration physique semble être une donnée constitutive des instruments acoustiques, qui recrééent artificiellement des espaces discrets (tels que les échelles harmoniques et rythmiques), le domaine du numérique part d'une certaine manière dans la direction opposée. Les instruments numériques sont caractérisé par la nature discrète (et même binaire) de l'encodage symbolique sous-jacent aux données traitées. Il s'agit donc davantage de pouvoir retrouver une continuité dans ce monde discret.\\
 Cette bipolarité du continu et du discret traverse ainsi, à des degrés variés, les questions de design qui se présentent dans la conception des instruments numériques, que cela soit au niveau de l'encodage du geste capté ou de celui de la synthèse audio. Les développements présentés dans ce travail sont orientés par les possibilités de passage fluide du continu au discret et inversement, animés par la conviction qu'une partie du jeu musical se joue dans cette ambivalence, en soutenant l'aspect suversif du geste musical.
 
+\subsubsection*{Hypothèse 3 : les DMIs sont métamorphiques}
+
+L'écriture de nouvelles relations entre le geste et le son peut s'appuyer sur la possibilité de pouvoir redéfinir dynamiquement 
 
 \section{Interviews}
 
@@ -199,39 +191,37 @@ Les contributions pratiques sont les suivantes :
 \item \textbf{MP} : un protocole de communication pour le contrôle de la synthèse, venant palier un certain nombre de limitations rencontrées dans le protocole MIDI, ainsi qu'un package Max rassemblant un certain nombre d'objets supportant ce protocole;
 \item \textbf{mp.TUI} : un package pour Max permettant la création d'interfaces graphique tangibles personnalisables et polyphoniques, basées sur le protocole MP;
 \item \textbf{sagrada} : un package Max de synthèse granulaire modulaire contrôlé par signal;
-\item \textbf{John} : un logiciel pour la (semi-) composition et conduite d'improvisation électroacoustique, éditable collectivement;
+\item \textbf{John} : un logiciel pour la (semi-)composition et conduite d'improvisation électroacoustique, éditable collectivement et permettant la génération automatiques de partitions;
 \end{itemize}
 
 
 \section{Structure de la thèse}
 \label{sec:preamble:structure}
 
-\textbf{Chapitre \ref{ch:introduction}} \\[0.2em]
-Vous êtes ici.
+\subsubsection*{\hyperref[ch:introduction]{Chapitre 1 - Introduction}} 
+\noindent Le présent chapitre présentant les motivations, les concepts principaux, la problématique et les enjeux de cette thèse, ses contributions et sa structure.
 
-\textbf{Chapitre \ref{ch:ephemeral}} \\[0.2em]
-Le chapitre \ref{ch:ephemeral} présente un certain nombre de considérations sur les \glspl{DMI} et le contexte de leur utilisation. En particulier, la nature éphémère des assemblages modulaires, souvent ignorée, est ici considérée comme une des caractéristiques essentielles venant influencer leur design. Un distribution entre répertoire, musicien et contexte permet de re-définir la façon dont s'articulent ces différents pôles ainsi à l'œuvre dans la création et l'évolution des DMIs.
+\subsubsection*{\hyperref[ch:ephemeral]{Chapitre 2 - Instances éphémères d'agencements modulaires}} 
+\noindent Le chapitre \ref{ch:ephemeral} présente un certain nombre de considérations sur les \glspl{DMI} et le contexte de leur utilisation. En particulier, la nature éphémère des assemblages modulaires, souvent ignorée, est ici considérée comme une des caractéristiques essentielles venant influencer leur design. Un distribution entre répertoire, musicien et contexte permet de re-définir la façon dont s'articulent ces différents pôles ainsi à l'œuvre dans la création et l'évolution des DMIs.
 
-\textbf{Chapitre \ref{ch:gesture}} \\[0.2em]
+\subsubsection*{\hyperref[ch:gesture]{Chapitre 3 - L'instrument et le geste}} 
 Le chapitre \ref{ch:gesture} vient questionner la notion de geste musical dans le cas de la pratique avec des DMIs. En particulier, la lisibilité du geste et de sa relation à la synthèse sonore, souvent considérée comme un critère de design souhaitable, y est remise en question en prenant en compte les fins subversives de l'art musical. 
 
 L'étude des artefacts qui en résultent et viennent bouleverser la perception de continuité(s) permet d'introduire la notion de morpho-dynamisme des DMIs, son intérêt dans la création et la pratique musicale et son intégration dans le corps de l'instrument.
 
-\textbf{Chapitre \ref{ch:interfaces}} \\[0.2em]
-Le chapitre \ref{ch:interfaces} présente une exemple particulier d'interface instrumentale et retrace l'histoire de son évolution à travers plusieurs générations, partant d'une interface standard et disponible dans le commerce (la tablette graphique) et évoluant vers une personnalisation et un enrichissement du dispositif. 
+\subsubsection*{\hyperref[ch:interfaces]{Chapitre 4 - Interfaces sensibles / hardware}} 
+\noindent Le chapitre \ref{ch:interfaces} présente une exemple particulier d'interface instrumentale et retrace l'histoire de son évolution à travers plusieurs générations, partant d'une interface standard et disponible dans le commerce (la tablette graphique) et évoluant vers une personnalisation et un enrichissement du dispositif. 
 Seront discutées les raisons motivant l'ajout de capteurs, l'organisation de l'espace de jeu, la polyphonie des sources sonores, etc.
 
-\textbf{Chapitre \ref{ch:algorithms}} \\[0.2em]
-Le chapitre \ref{ch:algorithms} présente des développement réalisés pour la conception du ``mapping'' de l'instrument en tentant notamment de répondre aux problématiques soulevées dans les chapitres \ref{ch:ephemeral} et \ref{ch:gesture}. Sont présentés dans ce chapitre les concepts de modèle intermédiaire, ainsi qu'un protocole de contrôle expressif polyphonique, nommé ``MP'', permettant la communication entre interfaces, modules de transformation et de synthèse. Une extension des idées de MP dans le domaine du signal et appliqué à la synthèse granulaire, nommé Sagrada, est également présenté.
+\subsubsection*{\hyperref[ch:algorithms]{Chapitre 5 - Algorithmes interactifs / software}} 
+\noindent Le chapitre \ref{ch:algorithms} présente des développement réalisés pour la conception du ``mapping'' de l'instrument en tentant notamment de répondre aux problématiques soulevées dans les chapitres \ref{ch:ephemeral} et \ref{ch:gesture}. Sont présentés dans ce chapitre les concepts de modèle intermédiaire, ainsi qu'un protocole de contrôle expressif polyphonique, nommé ``MP'', permettant la communication entre interfaces, modules de transformation et de synthèse. Une extension des idées de MP dans le domaine du signal et appliqué à la synthèse granulaire, nommé Sagrada, est également présenté.
 
-\textbf{Chapitre \ref{ch:visual_representation}} \\[0.2em]
-Le chapitre \ref{ch:visual_representation} présente un système d'interface graphique tangible (TUI) basée sur le protocole présenté au chapitre  \ref{ch:algorithms}, afin de permettre notamment une reconfiguration dynamique de l'interface de jeu et une représentation graphique des processus utilisés pour la performance musicale. Ces interfaces graphiques permettent également d'intégrer des éléments de représentation musicale (forme d'onde, échelle, motifs rythmiques, etc.) ou non-musicale comme composants interactifs pour le contrôle expressif.
+\subsubsection*{\hyperref[ch:visual_representation]{Chapitre 6 - Représentations visuelles}} 
+\noindent Le chapitre \ref{ch:visual_representation} présente un système d'interface graphique tangible (TUI) basée sur le protocole présenté au chapitre  \ref{ch:algorithms}, afin de permettre notamment une reconfiguration dynamique de l'interface de jeu et une représentation graphique des processus utilisés pour la performance musicale. Ces interfaces graphiques permettent également d'intégrer des éléments de représentation musicale (forme d'onde, échelle, motifs rythmiques, etc.) ou non-musicale comme composants interactifs pour le contrôle expressif.
 
-\textbf{Chapitre \ref{ch:notation}} \\[0.2em]
-Le chapitre \ref{ch:notation} présente des travaux portant sur la notation musicale dans le domaine de la performance électroacoustique utilisant des DMI. Les questions de composition collective, d'édition collaborative et d'écologie de l'attention sont abordées et sont mises en œuvre dans ``John, the semi-conductor'', un logiciel permettant la génération automatique et l'édition collective de partitions minimales, utilisé dans l'ensemble d'improvisation électroacoustique ONE. 
+\subsubsection*{\hyperref[ch:notation]{Chapitre 7 - Notations pour les DMIs}} 
+\noindent Le chapitre \ref{ch:notation} présente des travaux portant sur la notation musicale dans le domaine de la performance électroacoustique utilisant des DMI. Les questions de composition collective, d'édition collaborative et d'écologie de l'attention sont abordées et sont mises en œuvre dans ``John, the semi-conductor'', un logiciel permettant la génération automatique et l'édition collective de partitions minimales, utilisé dans l'ensemble d'improvisation électroacoustique ONE. 
 
-\textbf{Chapitre \ref{ch:conclusion}} \\[0.2em]
-Pistes de recherches à suivre...
+\subsubsection*{\hyperref[ch:conclusion]{Chapitre 8 - Conclusion}} 
+\noindent Pistes de recherches à suivre...
 
-
-\section*{extra material}
