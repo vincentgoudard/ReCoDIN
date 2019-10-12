@@ -666,37 +666,35 @@ $$ z[n] = \Big(y[n] + jump\big[y[n]\big]\Big)\mod N $$
 
 
 %--------------------------------------------------------------
-\subsection{Performances comparée}
+\subsection{Performances comparées}
 
-\noindent L'avantage principal de Sagrada est de pouvoir composer une synthèse granulaire \textit{ad hoc} en traitant chaque grain de la manière souhaitée. En adoptant un système de déclenchement des grains via un signal \gls{MSP}, Sagrada bénéficie des mêmes avantages que le système \gls{GMU} (présentés dans \cite{bascou_gmu_2005}), en particulier la possibilité de ré-utiliser les systèmes de déclenchement stochastiques de grains fournis dans \gls{GMU}\footnote{Une réimplémentation partielle en a été faite dans la LAM-lib, notamment sa fonction de probabilité à densité [rand\_dist\_list\textasciitilde{}] dans l'objet [LAM.pdf\textasciitilde{}]}. Un avantage d'utiliser des impulsions par rapport au \textit{zéro-crossing} utilisé dans GMU est de diminuer de moitié (un échantillon au lieu de deux) l'intervalle entre deux grains successifs et de faciliter un déclenchement des grains par signaux d'horloges concurrentes\footnote{La raison en est que plusieurs trains d'impulsions \textit{s'additionnent} simplement (en limitant le signal crête à 1)}.\\
-\indent Cependant, cette modularité implémentée dans le langage Max a un coût. À nombre de voix actives égales, le système \gls{GMU} consomme trois fois moins de ressources \gls{CPU} que Sagrada.
-
-
-gen\textasciitilde{ } OLA, granularized, ftm, mc.*
-
-\section{Conclusion}
+\noindent L'intérêt principal de Sagrada est de pouvoir composer une synthèse granulaire \textit{ad hoc} en traitant chaque grain de la manière souhaitée. En adoptant un système de déclenchement des grains via un signal \gls{MSP}, Sagrada bénéficie des mêmes avantages que le système \gls{GMU} (présentés dans \cite{bascou_gmu_2005}), en particulier la possibilité de ré-utiliser les systèmes de déclenchement stochastiques de grains fournis dans \gls{GMU}\footnote{Une réimplémentation partielle en a été faite dans la LAM-lib, notamment sa fonction de probabilité à densité [rand\_dist\_list\textasciitilde{}] dans l'objet [LAM.pdf\textasciitilde{}]}. Un avantage d'utiliser des impulsions plutôt que le \textit{zéro-crossing} utilisé dans \gls{GMU} est de diminuer de moitié (un échantillon au lieu de deux) l'intervalle entre deux grains successifs et de faciliter un déclenchement des grains par signaux d'horloges concurrentes\footnote{La raison en est que plusieurs trains d'impulsions peuvent s'additionner simplement (en limitant le signal crête à 1), alors que la concurrence de signaux alternatifs est mois évidente.}.\\
+\indent Cette modularité implémentée dans le langage Max a toutefois un coût. À nombre de voix actives égales, le système \gls{GMU} consomme trois fois moins de ressources \gls{CPU} que Sagrada. Cependant, un intérêt non-négligeable d'une implémentation avec les objets natifs de Max est une meilleure garantie de sa durée de vie, de nombreuses librairies basée sur des objets compilés devenant inutilisables quand elles ne sont plus mises à jour\footnote{C'est le cas de la librairie Gabor/FTM de l'IRCAM, permettant également le traitement de grains séparés mais via une implémentation hors du \gls{DSP} de Max, aujourd'hui incompatible due à l'absence de portage de la librairie sur les nouveaux systèmes \textit{64-bits}. La librairie Mubu qui la remplace ne permet pas, pour sa part, d'appliquer des traitements arbitraires sur des grains séparés, ni de définir le déclenchement des grains par un signal externe.}.\\
+\indent La récente intégration de signaux multicanaux dans la dernière version de Max\footnote{Les objets mc.* dans Max8.} permettent de simplifier certains aspects de patch proposés dans Sagrada, ainsi que de bénéficier de l'évolution des différentes interfaces de Max (notamment graphiques) pour la prise en charge de cette nouvelle fonctionnalité. Le système multi-canal de Max8 étant une simple encapsulation des canaux audio pré-existant, aucun gain de performance n'est cependant obtenu lors de son utilisation.\\
+\indent Une piste à explorer pour l'optimisation des performance serait la traduction du système proposé dans Sagrada dans \textit{gen\textasciitilde{ }}\footnote{\textit{gen\textasciitilde{ }} est un environnement intégré à Max permettant la programmation de processus audio de bas-niveau et compilés à la volée, avec le même paradigme de programmation visuelle que Max. Cf. \url{https://docs.cycling74.com/max7/vignettes/gen_overview}.} ou dans dans le langage \gls{FAUST}, mais il n'a pas encore été trouvé comment retrouver la même ergonomie et modularité que celle proposée dans Sagrada.
 
 
+\section{Conclusion TODO}
 
-\section*{[extra material]}
+% \section*{[extra material]}
 
-la production de hauteur dans les instruments acoustiques est systématiquement liée à un phénomène de résonance, c'est-à-dire un phénomène de bouclage, de feedback. 
+% la production de hauteur dans les instruments acoustiques est systématiquement liée à un phénomène de résonance, c'est-à-dire un phénomène de bouclage, de feedback. 
 
-La sélection de différentes hauteurs peut ensuite être obtenue 
-- en jouant sur une multitude d'éléments accordés différemment (les cordes d'une harpe, les lames
-d'un marimba, etc.) ;
-- en modifiant les caractéristiques d'un élément résonnant, le plus souvent sa longueur (tube des
-instruments à vent, corde d'un violoncelle) ;
-- en sélectionnant des harmoniques précis d'un son riche (didgeridoo, chant diphonique).
+% La sélection de différentes hauteurs peut ensuite être obtenue 
+% - en jouant sur une multitude d'éléments accordés différemment (les cordes d'une harpe, les lames
+% d'un marimba, etc.) ;
+% - en modifiant les caractéristiques d'un élément résonnant, le plus souvent sa longueur (tube des
+% instruments à vent, corde d'un violoncelle) ;
+% - en sélectionnant des harmoniques précis d'un son riche (didgeridoo, chant diphonique).
 
 
-Dans les DMIs la production de hauteur est essentiellement possible de deux manières: 
-- par la lecture, éventuellement en boucle, d'une table d'onde
-- par le délai de réinjection d'un filtre résonnant (synthèse soustractive, Karplus, etc.)
-- par un calcul mathématique impliquant des fonctions périodiques (telles que les sinus dans la FFT).
+% Dans les DMIs la production de hauteur est essentiellement possible de deux manières: 
+% - par la lecture, éventuellement en boucle, d'une table d'onde
+% - par le délai de réinjection d'un filtre résonnant (synthèse soustractive, Karplus, etc.)
+% - par un calcul mathématique impliquant des fonctions périodiques (telles que les sinus dans la FFT).
 
-L'acoustique physique présente naturellement des non-linéarités qui contribuent à la richesse du son et l'identité de son timbre. L'électronique analogique permet également d'obtenir --~sur l'espace restreint d'un signal mono-dimensionnel par rapport à l'acoustique physique généralement bi- ou tri-dimensionnelle~-- des systèmes résonants non-linéaires et stables, via l'utilisation de composants électroniques passifs.
+% L'acoustique physique présente naturellement des non-linéarités qui contribuent à la richesse du son et l'identité de son timbre. L'électronique analogique permet également d'obtenir --~sur l'espace restreint d'un signal mono-dimensionnel par rapport à l'acoustique physique généralement bi- ou tri-dimensionnelle~-- des systèmes résonants non-linéaires et stables, via l'utilisation de composants électroniques passifs.
 
-Les choses sont plus compliquées pour le son numérique, s'il est possible d'obtenir des systèmes résonants stables (en maintenant les pôles dans le cercle unitaire du plan complexe), la garantie de stabilité devient très complexe à évaluer dès que l'on introduit de la non-linéarité.
-Malgré de récentes avancées dans ce domaine (cf. travaux de Thomas Hélie sur les systèmes Hamiltoniens à ports)
+% Les choses sont plus compliquées pour le son numérique, s'il est possible d'obtenir des systèmes résonants stables (en maintenant les pôles dans le cercle unitaire du plan complexe), la garantie de stabilité devient très complexe à évaluer dès que l'on introduit de la non-linéarité.
+% Malgré de récentes avancées dans ce domaine (cf. travaux de Thomas Hélie sur les systèmes Hamiltoniens à ports)
 
