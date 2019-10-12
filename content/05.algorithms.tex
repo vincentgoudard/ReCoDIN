@@ -58,29 +58,28 @@ La conséquence en est que tout matériaux numérique est potentiellement un mat
 \indent Si ces différentes distinctions résultent de contraintes techniques, d'évolutions historiques, de choix conceptuels voire de représentations musicales sous-jacentes, j'ai choisi de regrouper dans ce chapitre des aspects concernant à la fois le mapping et la synthèse. Ce choix est motivé par la porosité évidente qu'il existe entre ces différentes catégories et par les développements que je présenterai, qui visent à rapprocher l'ergonomie de leur interaction.
 
 
-\subsection{Modèles numériques}
-\label{ch:algorithms:digital-material:models}
+% \subsection{Modèles numériques}
+% \label{ch:algorithms:digital-material:models}
 
-Enfin, il faut inclure dans les ``matériaux'' à disposition du luthier numérique tous les algorithmes et modèles numériques implémentant des représentations musicales et extra-musicales, développés dans l'ensemble des domaines de recherches et développement en informatique. Ces modèles fournissent autant d'algorithmes potentiellement exploitables pour la synthèse et la transformation du son, permettant de lui appliquer diverses qualités de mouvements que ces modèles traduisent, parmi l'infini variation des qualités de mouvement imaginables : modélisation de mouvements organiques, algorithmes de tri, 
-
-
-Ils constituent un répertoire de matériaux ``diagrammatiques''\footnote{cf. section \ref{sec:gesture:instrumental_to_musical:geste_programme}} dans lequel le luthier numérique peut puiser pour élaborer les modèles intermédiaires dynamiques que nous présentons ci-après.
-
-%Mouvements des reflets sur l'eau, modélisation de la résonance des matériaux, des espaces réverbérants,  modélisation de la perception acoustique, modélisation des mouvements de 
+% Enfin, il faut inclure dans les ``matériaux'' à disposition du luthier numérique tous les algorithmes et modèles numériques implémentant des représentations musicales et extra-musicales, développés dans l'ensemble des domaines de recherches et développement en informatique. Ces modèles fournissent autant d'algorithmes potentiellement exploitables pour la synthèse et la transformation du son, permettant de lui appliquer diverses qualités de mouvements que ces modèles traduisent, parmi l'infini variation des qualités de mouvement imaginables : modélisation de mouvements organiques (figure \ref{fig:algorithms:FIBR-voronoi}), algorithmes issus d'autres domaine\footnote{Par exemple des automates cellulaires : \url{https://vimeo.com/365983341}}, sonification de données
 
 
+% Ils constituent un répertoire de matériaux ``diagrammatiques''\footnote{cf. section \ref{sec:gesture:instrumental_to_musical:geste_programme}} dans lequel le luthier numérique peut puiser pour élaborer les modèles intermédiaires dynamiques que nous présentons ci-après.
+
+% %Mouvements des reflets sur l'eau, modélisation de la résonance des matériaux, des espaces réverbérants,  modélisation de la perception acoustique, modélisation des mouvements de 
+
+% %------------------ Figure : MID ---------------------
+% \begin{figure}[!htbp]
+% 	\captionsetup{format=plain}
+% 	\includegraphics[width=\textwidth]{gfx/04_algorithms/FIBR-Voronoi.jpg}
+% 	\caption[Utilisation d'un diagramme de Voronoï dans FIB\_R]{Capture d'écran d'un extrait de la performance FIB\_R. Un algorithme permettant le calcul d'un diagramme de Voronoï (simulant la coadaptation organique d'un réseau de cellules) a été adapté pour moduler le son.}
+% 	\label{fig:algorithms:FIBR-voronoi}
+% \end{figure}
 %------------------ Figure : MID ---------------------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}
-	\includegraphics[width=\textwidth]{gfx/04_algorithms/FIBR-Voronoi.jpg}
-	\caption[TODO]{TODO : Capture d'écran d'un extrait de la performance FIB\_R. Un algorithme permettant le calcul d'un diagramme de Voronoï (simulation de ...) a été adapté pour moduler le son par des variations d'apparence organique.}
-	\label{fig:algorithms:FIBR-patch}
-\end{figure}
-%------------------ Figure : MID ---------------------
 
 
 
-permettant d'intégrer dans l'instrument des processus d'écriture musicale, des modèles de perception psycho-acoustique (courbes isotoniques, ), des modèles de résonance des matériaux et des espaces (réverbérations, modèles physiques)
+% permettant d'intégrer dans l'instrument des processus d'écriture musicale, des modèles de perception psycho-acoustique (courbes isotoniques, ), des modèles de résonance des matériaux et des espaces (réverbérations, modèles physiques)
 
 % Intégration dans les algorithmes de modèles décrivant la réalité qui nous entoure, pour simuler le réel par des stimulus trompant notre perception. (cf. gestes subversifs)
 % Eg. modélisation de la résonance des matériaux, des lieux (eg. logiciels de spat)
@@ -95,19 +94,19 @@ permettant d'intégrer dans l'instrument des processus d'écriture musicale, des
 
 
 
-L’atomisation jusqu’au sample, plutôt que séparation entre DSP et messages de contrôle
-=> faust, gen\textasciitilde{ } et cie : l’export vers des plateformes multiples.\\
-\indent D'après Hunt et Wanderley \cite{hunt_mapping_2002}, deux directions dans le design de mapping :
-\vspace{-1em}
-\begin{itemize}[noitemsep]
-	\item \textbf{generative mechanisms}, such as neural networks to perform mapping;
-	\item \textbf{explicitly defined mapping strategies}.
-\end{itemize}
-Exemples de schéma de mapping de Wanderley dans \cite{wanderley_escher-modeling_1998}.\\
-MnM : \cite{bevilacqua_mnm_2005}\\
-``complex mappings are more satisfactory, after a learning phase, than one-to-one mapping'' in \cite{wanderley_mapping_2002}\\
-\extra{\cite{hunt_mapping_2002}: \iquote{(...) we define mapping as the act of taking real-time performance data from an input device and using it to control the parameters of a synthesis engine.}}
-Sound is the interface, \cite{di_scipio_sound_2003}
+% L’atomisation jusqu’au sample, plutôt que séparation entre DSP et messages de contrôle
+% => faust, gen\textasciitilde{ } et cie : l’export vers des plateformes multiples.\\
+% \indent D'après Hunt et Wanderley \cite{hunt_mapping_2002}, deux directions dans le design de mapping :
+% \vspace{-1em}
+% \begin{itemize}[noitemsep]
+% 	\item \textbf{generative mechanisms}, such as neural networks to perform mapping;
+% 	\item \textbf{explicitly defined mapping strategies}.
+% \end{itemize}
+% Exemples de schéma de mapping de Wanderley dans \cite{wanderley_escher-modeling_1998}.\\
+% MnM : \cite{bevilacqua_mnm_2005}\\
+% ``complex mappings are more satisfactory, after a learning phase, than one-to-one mapping'' in \cite{wanderley_mapping_2002}\\
+% \extra{\cite{hunt_mapping_2002}: \iquote{(...) we define mapping as the act of taking real-time performance data from an input device and using it to control the parameters of a synthesis engine.}}
+% Sound is the interface, \cite{di_scipio_sound_2003}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -190,7 +189,7 @@ Sound is the interface, \cite{di_scipio_sound_2003}
 \subsection{Rôle des modèles intermédiaires}
 
 \noindent Un ``modèle intermédiaire dynamique'', selon notre définition, est un processus de traitement d'un signal apparenté à du geste et qui produit un signal transformé, apparenté, lui aussi, à du geste\footnote{J'utilise l'expression ``apparenté à du geste'' car d'une part, ce signal n'est que son image captée et numérisée, et d'autre part car la frontière entre ce qui est ``geste'', ``image'', ``son'', ... une fois le signal numérisé, est éminemment poreuse.}.\\
-\indent Parmi les qualités recherchées lors de l'utilisation de MID, se trouvent en bonne place les qualités que l'on trouve sur les instruments acoustiques, perdues dans leur transposition numérique : finesse et richesse de l'interaction avec des matériaux (frottement, grincement, râclement... et tous les phénomènes subtils et non-linéaires qui se produisent en fonction de l'état de surface, de la viscosité et des propriétés élastico-mécaniques des matériaux). Certains de ces modèles s'inspirent ainsi d'équivalents dans le domaine des instruments acoustiques, qui usent eux aussi de systèmes --~plutôt que de modèles~-- intermédiaires (si l'on considère, par exemple, l'archet comme un système intermédiaire entre le geste du violoniste et la corde). D'autres sont plus spécifiques au numérique, tels que les modèles agissant sur l'aspect temporel du geste ou sur sa reconnaissance.\\
+\indent Parmi les qualités recherchées lors de l'utilisation de modèles intermédiaires, se trouvent en bonne place les qualités que l'on trouve sur les instruments acoustiques, perdues dans leur transposition numérique : finesse et richesse de l'interaction avec des matériaux (frottement, grincement, râclement... et tous les phénomènes subtils et non-linéaires qui se produisent en fonction de l'état de surface, de la viscosité et des propriétés élastico-mécaniques des matériaux). Certains de ces modèles s'inspirent ainsi de systèmes intérmédiaires rencontrés dans le domaine des instruments acoustiques (si l'on considère, par exemple, l'archet comme un système intermédiaire entre le geste du violoniste et la corde). D'autres sont plus spécifiques au numérique, tels que les modèles agissant sur l'aspect temporel du geste ou sur sa reconnaissance.\\
 \indent La liste suivante présente plusieurs axes selon lesquels ces modèles affectent le mouvement :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
@@ -209,7 +208,7 @@ Sound is the interface, \cite{di_scipio_sound_2003}
 \end{itemize}
 
 
-\noindent Indépendemment de leur fonctionnement interne, les MIDs présentent également une certaine affordance, qui facilite leur usage au sein d'un agencement instrumental. La liste ci-après résume quelques aspects souhaitables de cette affordance :
+\noindent Indépendemment de leur fonctionnement interne, les modèles intermédiaires présentent également certaines affordances, qui facilitent leur usage au sein d'un agencement instrumental. La liste ci-après résume quelques aspects souhaitables de cette affordance :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{disponibilité} : pouvoir les convoquer et les délaisser à tout instant (i.e. en cours de geste);
@@ -698,18 +697,17 @@ $$ z[n] = \Big(y[n] + jump\big[y[n]\big]\Big)\mod N $$
 
 \section{Conclusion}
 
-\noindent Après une remise à plat des matériaux numériques avec lesquel le luthier numérique doit composer 
-
-\noindent Plusieurs stratégies ont ensuite été présentées dans ce chapitre pour répondre aux constats présentés dans les chapitres précédents.\\
-\indent Tout d'abord, la notion de ``modèle intermédiaire dynamique'' vient proposer une perspective d'implémentation des ``gestes programmés'' évoqués au chapitre \label{ch:gesture} et propose un graphe d'agencement de ces modèles intermédiaire comme alternative à la notion de \textit{mapping}, qui ne semble pas rendre compte de la complexité du design de l'interaction.
-
-des paramètres de contrôle issus de l'interface de jeu vers les paramètres des algorithmes de synthèse 
+\noindent Après une exposition rapide des ``matériaux numériques'' avec lesquels le programmeur de \glspl{DMI} doit composer, et prenant soin de questionner la pertinence des catégorisations établies, plusieurs stratégies ont été présentées dans ce chapitre pour répondre aux constats présentés dans les chapitres précédents.\\
+\indent Tout d'abord, la notion de ``modèle intermédiaire dynamique'' vient proposer une perspective d'implémentation des ``gestes programmés'' évoqués au chapitre \label{ch:gesture} et propose un graphe d'agencement de ces modèles intermédiaire comme alternative à la notion de \textit{mapping}, qui ne semble pas rendre compte de la complexité du design de l'interaction. Les modèles intermédiaires peuvent agir sur l'interaction instrumentale de différentes manières, soit en enrichissant le signal (en quantité, par sa démultiplication, ou en qualité en lui attribuant les qualités d'un geste programmé), soit en restreignant sa richesse pour le conformer à une grille particulière (quantification de hauteur, de rythme, etc).\\
+\indent Ensuite, poursuivant une modularité motivée par les possibilités de métamorphisme de l'interaction présentées au chapitre \ref{ch:gesture}, il nous a fallu définir la manière d'assurer l'interconnection de différents modèles intermédiaires. Cette interconnection implique l'usage d'un protocole de communication qui permette d'exprimer la complexité des signaux à l'œuvre, en particulier leur polyphonie. Nous avons donc procédé à une revue des protocoles existants pour la connection de processus de traitement audio, en soulignant les qualités et limitations de chacun d'entre eux. Le protocole MP a été défini sur la base de cette revue critique et son fonctionnement a été décrit, permettant la communication asynchrone entre des processus polyphoniques, tout en conservant des possibilités de modulation individuelles des voix.\\
+\indent Enfin, la librairie Sagrada propose une implémentation modulaire d'un système de synthèse granulaire. La communication entre les modules Sagrada est ici synchrone, à la différence de MP, mais le déclenchement des grains peut également se faire de manière asynchrone, en utilisant le delta de Kronecker comme signal événementiel asynchrone sur un canal audio. D'une certaine manière, la librairie Sagrada représente la transposition des idées poursuivies dans MP dans le domaine synchrone du signal audio. L'exemple d'une polyphonie de flux de grains, impliquant l'usage de ces deux aspects --~contrôle synchrone et asynchrone~--, est présenté comme illustration de la manière dont ces deux protocoles peuvent s'articuler.
 
 
-Plusieurs critères 
 
-et d'autre 
-  concernant la modularité de l'agencement instrumental d'une part et le métamorphisme de l'instrument dans la perspective de relations instrumentales subversives, s'appyant sur la  
+
+
+% et d'autre 
+%   concernant la modularité de l'agencement instrumental d'une part et le métamorphisme de l'instrument dans la perspective de relations instrumentales subversives, s'appyant sur la  
 
 % \section*{[extra material]}
 
