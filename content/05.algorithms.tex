@@ -68,14 +68,14 @@ La conséquence en est que tout matériaux numérique est potentiellement un mat
 
 % %Mouvements des reflets sur l'eau, modélisation de la résonance des matériaux, des espaces réverbérants,  modélisation de la perception acoustique, modélisation des mouvements de 
 
-% %------------------ Figure : MID ---------------------
-% \begin{figure}[!htbp]
-% 	\captionsetup{format=plain}
-% 	\includegraphics[width=\textwidth]{gfx/04_algorithms/FIBR-Voronoi.jpg}
-% 	\caption[Utilisation d'un diagramme de Voronoï dans FIB\_R]{Capture d'écran d'un extrait de la performance FIB\_R. Un algorithme permettant le calcul d'un diagramme de Voronoï (simulant la coadaptation organique d'un réseau de cellules) a été adapté pour moduler le son.}
-% 	\label{fig:algorithms:FIBR-voronoi}
-% \end{figure}
-%------------------ Figure : MID ---------------------
+%------------------ Figure : FIBR-Voronoi ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}
+	\includegraphics[width=\textwidth]{gfx/04_algorithms/FIBR-Voronoi.png}
+	\caption[Utilisation d'un diagramme de Voronoï dans FIB\_R]{Un modèle intermédiaire développé pour la performance audiovisuelle FIB\_R, à partir d'un algorithme de calcul d'un diagramme de Voronoï (simulant la coadaptation organique d'un réseau de cellules). L'algorithme a été adapté pour permettre la modulation polyphonique du son en fonction de la forme que prennent les cellules quand elles sont déformées par l'interaction directes sur écran tactile (les cercles de couleur représentent ici la position des doigts).}
+	\label{fig:algorithms:FIBR-voronoi}
+\end{figure}
+%------------------ Figure : FIBR-Voronoi ---------------------
 
 
 
@@ -701,11 +701,6 @@ $$ z[n] = \Big(y[n] + jump\big[y[n]\big]\Big)\mod N $$
 \indent Tout d'abord, la notion de ``modèle intermédiaire dynamique'' vient proposer une perspective d'implémentation des ``gestes programmés'' évoqués au chapitre \label{ch:gesture} et propose un graphe d'agencement de ces modèles intermédiaire comme alternative à la notion de \textit{mapping}, qui ne semble pas rendre compte de la complexité du design de l'interaction. Les modèles intermédiaires peuvent agir sur l'interaction instrumentale de différentes manières, soit en enrichissant le signal (en quantité, par sa démultiplication, ou en qualité en lui attribuant les qualités d'un geste programmé), soit en restreignant sa richesse pour le conformer à une grille particulière (quantification de hauteur, de rythme, etc).\\
 \indent Ensuite, poursuivant une modularité motivée par les possibilités de métamorphisme de l'interaction présentées au chapitre \ref{ch:gesture}, il nous a fallu définir la manière d'assurer l'interconnection de différents modèles intermédiaires. Cette interconnection implique l'usage d'un protocole de communication qui permette d'exprimer la complexité des signaux à l'œuvre, en particulier leur polyphonie. Nous avons donc procédé à une revue des protocoles existants pour la connection de processus de traitement audio, en soulignant les qualités et limitations de chacun d'entre eux. Le protocole MP a été défini sur la base de cette revue critique et son fonctionnement a été décrit, permettant la communication asynchrone entre des processus polyphoniques, tout en conservant des possibilités de modulation individuelles des voix.\\
 \indent Enfin, la librairie Sagrada propose une implémentation modulaire d'un système de synthèse granulaire. La communication entre les modules Sagrada est ici synchrone, à la différence de MP, mais le déclenchement des grains peut également se faire de manière asynchrone, en utilisant le delta de Kronecker comme signal événementiel asynchrone sur un canal audio. D'une certaine manière, la librairie Sagrada représente la transposition des idées poursuivies dans MP dans le domaine synchrone du signal audio. L'exemple d'une polyphonie de flux de grains, impliquant l'usage de ces deux aspects --~contrôle synchrone et asynchrone~--, est présenté comme illustration de la manière dont ces deux protocoles peuvent s'articuler.
-
-
-
-
-
 % et d'autre 
 %   concernant la modularité de l'agencement instrumental d'une part et le métamorphisme de l'instrument dans la perspective de relations instrumentales subversives, s'appyant sur la  
 
