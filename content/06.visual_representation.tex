@@ -497,25 +497,23 @@ Apprendre indépendamment de la transposition
 
 \subsection{Performances}
 
-\noindent La bibliothèque mp.TUI est entièrement développée avec des objets natifs de la distribution Max. Cette approche, bien que plus coûteuse en charge \gls{CPU} que des objets compilés, a l'avantage de permettre à tout utilisateur de Max de modifier facilement les composants et de les adapter à ses besoins. De plus, les composants mp.TUI s'appuient essentiellement sur OpenGL, de sorte que la majeure partie de la charge de calcul est laissée au \gls{GPU}, ce qui en fait une solution plus réactive que la solution envisagée dans la libririe MMF. L'interaction tangible avec les objets de la \gls{GUI} se fait à l'aide du moteur physique Bullet-Physics\footnote{\url{http://bulletphysics.org/}} intégré dans Max. Bien que cela puisse être plus coûteux pour certaines formes simples, cela nous permet de concevoir des composants \gls{GUI} de n'importe quelle forme et orientation, comme des \textit{sliders} courbes ou des formes creuses, et de les animer potentiellement, comme dans l'exemple des "balles rebondissantes" où plusieurs curseurs 2D peuvent être déplacés et lancés dans une zone délimitées.
+\noindent La bibliothèque mp.TUI est entièrement développée avec des objets natifs de la distribution Max. Cette approche, bien que plus coûteuse en charge \gls{CPU} que des objets compilés, a l'avantage de permettre à tout utilisateur de Max de modifier facilement les composants et de les adapter à ses besoins. De plus, les composants mp.TUI s'appuient essentiellement sur OpenGL, de sorte que la majeure partie de la charge de calcul est laissée au \gls{GPU}, ce qui en fait une solution plus réactive que la solution envisagée dans la libririe MMF. L'interaction tangible avec les objets de la \gls{GUI} se fait à l'aide du moteur physique Bullet-Physics\footnote{\url{http://bulletphysics.org/}} intégré dans Max. Bien que cela puisse être plus coûteux pour certaines formes simples, cela nous permet de concevoir des composants \gls{GUI} de n'importe quelle forme et orientation, comme des \textit{sliders} courbes ou des formes évidées, et de les animer avec toutes les possibilités offertes par une modèle physique : champ de forces animant des ensembles d'objets, collisions entre composants, articulations selon des liaisons mécaniques, déplacements inertiels, etc.
 
 \subsection{Travaux futurs}
 
-\noindent Des optimisations sont très probablement possibles pour améliorer les performances de mp.TUI, notamment au niveau du calcul de l'intersection entre position des pointeurs et objets graphiques, en traitant les cas simples séparément plutôt que dans le modèle générique du moteur \textit{Bullet-Physics}.
-\noindent La librairie mp.TUI permet d'introduire la notion de programmation gestuelle de type multitouch dans l'environnement Max, en bénéficiant des passerelles dont celle-ci peut bénéficier avec les possibilités audio, graphiques et de mapping disponibles dans Max. De nombreuses stratégies de contrôle basées sur ce paradigme restent à implémenter, explorer et inventer, notamment sur la gestion d'événements conjoints définissant des primitives gestuelles, tel que présenté dans \cite{oney_implementing_2019}, ou la détection d'objets tagués tels que présenté dans \cite{yu_tuic_2011}.
+\noindent Des optimisations sont très probablement possibles pour améliorer les performances de mp.TUI, notamment au niveau du calcul de l'intersection entre position des pointeurs et objets graphiques, en traitant les cas simples séparément plutôt que de les traiter systématiquement dans le modèle générique du moteur \textit{Bullet-Physics}. Cependant, si l'optimisation est toujours utile à la fluidité du rendu graphique, la principale raison d'être de la librairie mp.TUI est le protoypage rapide pour des créateurs non-experts en programmation, et non la finalisation d'une application industrielle pour laquelle des langages plus optimisés (mais plus techniques) offre d'autres solutions.\\
+\noinednt La librairie mp.TUI permet d'introduire la notion de programmation gestuelle de type multitouch dans l'environnement Max, en bénéficiant des passerelles dont celle-ci peut bénéficier avec les possibilités audio, graphiques et de mapping disponibles dans Max. De nombreuses stratégies de contrôle basées sur ce paradigme restent à implémenter, explorer et inventer, notamment sur la gestion d'événements conjoints définissant des primitives gestuelles, tel que présenté dans \cite{oney_implementing_2019}, ou la détection d'objets tagués tels que présenté dans \cite{yu_tuic_2011}. Enfin, le logiciel Max a donné lieu à d'innombrables projets impliquant l'interaction entre le son et l'image, dont les modèles pourraient donner lieu à de nouveaux éléments graphique d'interaction.
 
 
-\section{Conclusion:TODO}
-
+\section{Conclusion}
 
 Nous avons vu que l'apparence visuelle d'un \gls{DMI} peut être lié à un grand nombre de facteurs à la fois esthétiques et fonctionnels.
 
 Nous avions déjà évoqué dans les chapitres précédents la manière dont les DMI intègrent des aspects traditionnellement liés à des domaines différenciés, concernant la production du son, la composition, l'acoustique de l'espace de jeu ou encore le répertoire musical enregistré, dans lequel il est possible de venir piocher des échantillons.
 
-Les représentations visuelle se prête à l'articulation des représentations visuelles liées à ces différents domaines et appelle à leur interaction. On peut être amené à ``accorder'' l'acoustique virtuelle d'une salle (sa réverbération), selon les fréquences d'une échelle musicale et donc exprimer sous forme de hauteur tonale des paramètres habituellement exprimés en termes de réponse impulsionnelle ou en temps de décroissance (T60).
+Les représentations visuelles se prêtent à l'articulation des représentations visuelles liées à ces différents domaines et appelle à leur interaction. Par exemple, on peut être amené à ``accorder'' l'acoustique virtuelle d'une salle (sa réverbération), selon les fréquences d'une échelle musicale et donc exprimer sous forme de hauteur tonale des paramètres habituellement exprimés en termes de réponse impulsionnelle ou en temps de décroissance (T60). Des représentations visuelles hybrides proposant différentes ``vues'' d'un même modèle pourrait amener à reconsidérer leur usage pour la performance expressive en directe.
 
 
-L'usage de l'écran comme interface 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -526,10 +524,6 @@ NIME 2019 : ``From Mondrian to Modular Synth: Rendering NIME using Generative Ad
 
 Chamagne
 
-\begin{quote}
-Visual language is one of the oldest forms of knowledge representation and predates conventional written language by almost 25,000 years
-\end{quote}
-\cite{tufte_visual_2001}
 
 \cite{moody_physics_2009}
 
