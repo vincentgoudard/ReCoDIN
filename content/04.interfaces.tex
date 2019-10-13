@@ -509,7 +509,7 @@ correpondance entre l'anatomie corporelle et celle de l'interface\\
 \label{sec:interfaces:phylogenese}
 
 \noindent Cette partie retrace le développement d'une série d'interfaces de \glspl{DMI}, basée sur un archétype d'instrument de type ``tablette''. On peut voir dans la tablette graphique des liens évidents avec les gestes du dessin et de l'écriture, tandis que l'usage généralisé des écrans \textit{multitouch} sur les smartphones a fait émergé un grand nombre d'habitudes d'interaction (ainsi que les attentes que ces habitudes génèrent) telles que les mouvements de balyage, de \textit{pinch-to-zoom}, de défilement à deux doigts, etc.\\
-\indent La conception d’une nouvelle interface pour la performance musicale est une tâche complexe, nécessitant de nombreux aller-retours entre conception, fabrication et pratique musicale. Le filigramophone est une interface qui a connu plusieurs versions, suffisamment différentes pour avoir envie de leur donner un nouveau nom à chaque fois et suffisamment similaire pour y voir la continuité d’un seul et même \gls{DMI}.
+\indent La conception d’une nouvelle interface pour la performance musicale est une tâche complexe, nécessitant de nombreux aller-retours entre conception, fabrication et pratique musicale. Le filigramophone est une interface qui a connu plusieurs versions, suffisamment différentes pour les considérer comme des instruments distincts et suffisamment similaires pour y voir la continuité d’une seule et même famille d'instruments.
 
 %----------------------------------------------------------------------------------------------------------
 \subsection{Origine : la tablette graphique (2005)}
@@ -533,7 +533,7 @@ correpondance entre l'anatomie corporelle et celle de l'interface\\
 	\end{minipage}
 \end{figure}
 %------------ Figure : fairlight CMI et UPIC -----------
-\indent À l'origine destinée aux graphistes, les tablettes à stylet ont également été utilisées pour la composition. Le système \textit{UPIC} inventé par Iannis Xénakis (figure \ref{fig:interface:UPIC}) ou le \textit{Fairlight CMI}  (figure \ref{fig:interface:fairlightCMI}) utilisaient tous les deux, dans des directions relativement différentes, une interface basée sur la tablette et le stylet. En dehors de son usage pour la composition, un certain nombre de musiciens, compositeurs et concepteurs de \gls{NIME} l’ont par ailleurs adoptée pour la performance\footnote{Notamment à l'\gls{IRCAM} (voir \cite{wanderley_choice_2000}), au \gls{CNMAT} (voir \cite{zbyszynski_ten_2007}, au \gls{LMA} \cite{couturier_utilisation_2004}, au \gls{LIMSI} \cite{feugere_chorus_2011} puis dans l'équipe \gls{LAM} \cite{xiao_t-voks_2019}, mais on peut également citer Pierre Jodlowski (voir \url{https://youtu.be/pLARXmGwIO4}) ou Jesper Nordin (voir \url{https://gestrument.com/})}. Nicolas d’Alessandro a consacré une partie de son travail de thèse \cite{dalessandro_realtime_2009} à ce sujet, en proposant une étude détaillée des différentes échelles de mouvements dans le geste du dessin et de l'écriture, liées à l'articulation entre doigts, poignet et épaule. J'avais pour ma part utilisé la tablette graphique dans différents projets\footnote{filigram, Media Music rooM, cf. \url{http://vincentgoudard.com}}, comme un composant parmi d'autres interfaces \gls{MIDI} ou de type joystick, avant de développer plus particulièrement des programmes pour cette interface.\\
+\indent À l'origine destinée aux graphistes, les tablettes à stylet ont également été utilisées pour la composition. Le système \textit{UPIC} inventé par Iannis Xénakis (figure \ref{fig:interface:UPIC}) ou le \textit{Fairlight CMI}  (figure \ref{fig:interface:fairlightCMI}) utilisaient tous les deux, dans des directions relativement différentes, une interface basée sur la tablette et le stylet. En dehors de son usage pour la composition, un certain nombre de musiciens, compositeurs et concepteurs de \gls{NIME} l’ont par ailleurs adoptée pour la performance\footnote{Notamment à l'\gls{IRCAM} (voir \cite{wanderley_choice_2000}), au \gls{CNMAT} (voir \cite{zbyszynski_ten_2007}, au \gls{LMA} \cite{couturier_utilisation_2004}, au \gls{LIMSI} \cite{feugere_chorus_2011} puis dans l'équipe \gls{LAM} \cite{xiao_t-voks_2019}, mais on peut également citer Pierre Jodlowski (voir \url{https://youtu.be/pLARXmGwIO4}) ou Jesper Nordin (voir \url{https://gestrument.com/})}. Nicolas d’Alessandro a consacré une partie de son travail de thèse \cite{dalessandro_realtime_2009} à ce sujet, en proposant une étude détaillée des différentes échelles de mouvements dans le geste du dessin et de l'écriture, liées à l'articulation entre doigts, poignet et épaule. J'avais pour ma part utilisé la tablette graphique dans différents projets\footnote{\textit{filigram}, \textit{Media Music rooM}, cf. \url{http://vincentgoudard.com}}, comme un composant parmi d'autres interfaces \gls{MIDI} ou de type joystick, avant de développer plus particulièrement des programmes pour cette interface.\\
 \indent Un des inconvénient de la tablette Wacom est que les contours de la surface utile, plus petite que la surface de la tablette\footnote{Cela permet de ne pas ``tomber'' hors de la tablette.}, sont à peine perceptibles, tant visuellement qu'au niveau tactile. Cela s'avère problématique quand on manipule certains processus sonores (et non un pinceau dans PhotoShop, tel que l'usage de la tablette le prévoit), car le regard de l'instrumentiste est souvent déjà occupé par l'attention qu'il/elle aux autres instrumentistes, à une partition, ou un chef d'orchestre. Une première adaptation a donc consisté à rajouter des bandes adhésives permettant de matérialiser cette frontière, visuellement et tactilement (cf. figure \ref{fig:interface:wacom}).\\
 %-------------------------- Figure : wacom ---------
 \begin{figure}[!htbp]
@@ -543,7 +543,7 @@ correpondance entre l'anatomie corporelle et celle de l'interface\\
 	\label{fig:interface:wacom}
 \end{figure}
 %-------------------------- Figure : wacom ---------
-\indent En 2007, dans l'équipe \gls{LAM}, Hugues Genevois avait acquis de nouveaux transducteurs tactiles large bande\footnote{Cette nouvelle génération offrait une bande passante de l'ordre du Hz jusqu'à plusieurs kHz, bien supérieure aux actuateurs linéaires, ainsi qu'une dynamique supérieure à celle des transducteurs piezo. Cette technologie a depuis équipé de nombreux cinéma pour transmettre une sensation plus tactile}. Nous avons fait l'expérience d'en placer un sous une tablette graphique, sur laquelle nous contrôlions la lecture d'un échantillon en se servant du stylet comme d'une tête de lecture virtuelle. La sensation haptique résultant était tout à fait saisissante et donnait l'impression que la surface de la tablette avait un relief physique similaire aux reliefs perçus dans le son : littéralement, l'impression de ``toucher le son''. Ce ``relief'' artificiel est bien entendu éphémère car ces transducteurs ne transmettent pas le continu et leur course est faible\footnote{Ceci les différencie nettement des systèmes de retours haptiques tels que développés, en particulier, à l'\gls{ACROE}}, mais la sensation est tout à fait confondante. J'ai donc utilisé ce système directement sur la tablette graphique, qui était une sorte de prototype du Filigramophone présenté ci-après.
+\indent En 2007, dans l'équipe \gls{LAM}, Hugues Genevois avait acquis de nouveaux transducteurs tactiles large bande\footnote{Cette nouvelle génération offrait une bande passante de l'ordre du Hz jusqu'à plusieurs kHz, bien supérieure aux actuateurs linéaires, ainsi qu'une dynamique supérieure à celle des transducteurs piezo. Cette technologie a depuis équipé de nombreux cinémas pour donner au spectateur une expérience plus tactile du son.}. Nous avons fait l'expérience d'en placer un sous une tablette graphique, sur laquelle nous contrôlions la lecture d'un échantillon en se servant du stylet comme d'une tête de lecture virtuelle. La sensation haptique résultant était tout à fait saisissante et donnait l'impression que la surface de la tablette avait un relief physique similaire aux reliefs perçus dans le son : littéralement, l'impression de ``toucher le son''. Ce ``relief'' artificiel est bien entendu éphémère car ces transducteurs ne transmettent pas le continu et leur course est faible\footnote{Ceci les différencie nettement des systèmes de retours haptiques tels que développés, en particulier, à l'\gls{ACROE}}, mais la sensation est tout à fait confondante. J'ai donc utilisé ce système directement sur la tablette graphique, qui était une sorte de prototype du Filigramophone présenté ci-après.
 
 %----------------------------------------------------
 \subsection{Le Filigramophone: une tablette augmentée (2013)}
@@ -717,31 +717,31 @@ correpondance entre l'anatomie corporelle et celle de l'interface\\
 \section{Conclusion : TODO}
 \label{sec:interfaces:conclusion}
 
-Les \glspl{DMI} ne sont pas purement virtuels: 
+\noindent L'importance croissante du découplage énergétique entre les gestes de l'instrumentiste et la production du son, depuis l'orgue, qui en donne les premiers signes manifestes, jusqu'aux \glspl{DMI}, qui finissent d'achever cette scission, a entrainé l'apparition de la notion d'\textit{interface de jeu}. En effet, comme l'énonce Thor Magnusson, \iquote{on peut dire que l'instrument électronique ou numérique \textit{a} une interface, tandis que l'instrument acoustique \textit{est} l'interface.}\footnote{``We can state that the electronic or digital instrument \textit{has} an interface, whereas the acoustic instrument \textit{is} the interface.''\cite{magnusson_sonic_2019}}
 
-L'interface de jeu des \glspl{DMI} définit la manière dont la part virtuelle intangible des DMI s'inscrit dans le monde physique en définissant leur affordance. 
+L'interface de jeu définit la manière dont la part virtuelle et intangible des \glspl{DMI} s'inscrit dans le monde physique en définissant leur affordance. 
 
-Le design de cette interface est donc polarisé par un certain nombre de facteurs matériels : poids, encombrement, matériaux physique, temps de montage, portabilité qui conditionne leur usage effectif pour la performance musicale.
+Le design de cette interface est polarisé par un certain nombre de facteurs matériels (poids, encombrement, matériaux physique, temps de montage, portabilité, etc.) qui conditionnent l'usage effectif des \glspl{DMI} pour la performance musicale.
 
-Avant même que le musicien ne soit présent pour interagir avec son instrument, la présence physique de l'instrument (ou son absence) se manifeste par son interface sensible. Cette présence évoque à la fois les postures corporelles et les gestes qu'appelle cette interface, mais possède également une force propre d'évocation poétique.
+Avant même que le musicien ne soit présent pour interagir avec son instrument, la présence physique de l'instrument (ou son absence) se manifeste par son interface sensible. Sa configuration évoque à la fois les postures corporelles et les gestes qu'appelle cette interface, mais possède également une force propre d'évocation poétique.
 
-Les \glspl{DMI} ne sont plus nécessairement des ``objets que l'on touche'' comme les instruments acoustiques (et comme l'évoquent les termes italiens \textit{toccare, toccata}), dans la mesure où les capteurs permettent à la fois d'étendre l'interaction à un espace externe à l'objet qui capte le mouvement (e.g. dans la captation de la danse), ou interne au corps même de l'instrumentiste (bio-capteurs).
+Les \glspl{DMI} ne sont plus nécessairement des ``objets que l'on touche'' comme les instruments acoustiques (et comme l'évoquent l'italien \textit{toccare}), dans la mesure où les capteurs permettent à la fois d'étendre l'interaction à un espace externe à l'objet qui capte le mouvement (e.g. dans la captation de la danse), ou interne au corps même de l'instrumentiste (en utilisant des bio-capteurs).
 
-Les interviews menées auprès de musiciens et l'étude des pratiques musicales impliquant des \gls{DMI} indiquent un éventail très large de configurations d'interface, de l'objet physique imposant à sa disparition la plus complète, de sa référence à l'instrument traditionnel (dans les instruments augmentés)
+Les interviews menées auprès de musiciens et l'étude des pratiques musicales impliquant des \glspl{DMI} indiquent un éventail très large de configurations d'interface, de l'objet physique imposant à sa disparition la plus complète, de sa référence à l'instrument traditionnel (dans les instruments augmentés)
 à sa prise de distance la plus manifeste (The Sponge), de sa fonctionnalité la plus technique (e.g. les interfaces de contrôle à potentiomètres) à sa présence essentiellement scénographique et poétique (e.g. Lungta).
 
 
 Leur diversité les rend ainsi difficiles à classer en raison des multiples héritages dont s'inspire leur design.
 
 L'agencement de ces matériaux hérite de différents domaines: la lutherie acoustique mais également du design industriel des interface de contrôle et de l'ingénierie du son, ainsi que d'une part plus scénographique et poétique.
-
-L'interface de jeu est à la fois une concrétisation tangible des fonctions instrumentales, mais également 
+ 
 
 L'interface de jeu peut à la fois être caractérisée par ses aspects fonctionnels, qui permettent de pouvoir effectivement interagir avec la partie informatique, mais également par sa présence physique, qui définit à la fois le rapport du corps et de ses gestes à l'interaction mais également une force d'évocation poétique et métaphorique. 
 
 L'évolution des capacités de calcul des ordinateurs a permi leur intégration progressive dans le corps même de l'instrument.
 
 
+Les \glspl{DMI}, à la différence des instruments acoustiques, ne sont jamais entièrement construit par une seule et même personne, car les capteurs et processeurs qui les composent sont issus d'une fabrication industrielle qui les rendent dépendants d'une logique de production externe au luthier. Leur fabrication (des DMI) procède ainsi par assemblage de matériaux déjà complexes
 
 
 Les interfaces hardware sont des objets auxquels on s'attache, plus que le virtuel (cf. Dumeaux, Dallio). Rapport sensuel.
@@ -754,8 +754,9 @@ La question de l'acoustique, de l'haptique, de l'électronique et du numérique 
 
 L'agencement des capteurs sur l'interface de jeu définit la topologie spatiale de l'interaction gestuelle possible. Il est cependant difficile, comme nous l'avons ici objecté, d'établir un lien entre les types de capteurs utilisés et les fonctions musicales que l'on cherche à moduler, tant il est possible d'interpréter et de re-segmenter les données issues des capteurs de différentes manières à l'aide d'algorithmes de \textit{mapping}. 
 
-Le choix de cet agencement semble ainsi inséparable d'une considération globale de l'interaction musicale. Cependant 
+Le choix de cet agencement semble ainsi inséparable d'une considération globale de l'interaction musicale.
 
+La présentation des différentes version du Filigramophone met en évidence les contraintes imposées par les différents types de capteurs, dont une variation.
 
 %\section*{extra material}
 
@@ -770,4 +771,4 @@ Le choix de cet agencement semble ainsi inséparable d'une considération global
 % \end{itemize}
 
 
-% Thor Magnusson : \iquote{On peut dire que l'instrument électronique ou numérique \textit{a} une interface, tandis que l'instrument acoustique \textit{est} l'interface.}\footnote{``We can state that the electronic or digital instrument \textit{has} an interface, whereas the acouystic instrument \textit{is} the interface.''\cite{magnusson_sonic_2019}}
+% Thor Magnusson : \iquote{On peut dire que l'instrument électronique ou numérique \textit{a} une interface, tandis que l'instrument acoustique \textit{est} l'interface.}\footnote{``We can state that the electronic or digital instrument \textit{has} an interface, whereas the acoustic instrument \textit{is} the interface.''\cite{magnusson_sonic_2019}}
