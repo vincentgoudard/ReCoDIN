@@ -311,11 +311,11 @@ Les limitations du \gls{MIDI} ont pourtant été identifiées peu de temps aprè
 
 \subsubsection{Minuit/Jamoma}
 
-TODO : \cite{de_la_hogue_jamoma_2011}
+\noindent Une autre direction de développement basée sur \gls{OSC} est le protocole  \textit{Minuit} \cite{de_la_hogue_jamoma_2011}, qui implémente en particulier un système de d'auto-déclaration / découverte sur un réseau de modules connectés. \textit{Minuit} a été utilisé comme protocole dans le projet Jamoma\footnote{\url{http://jamoma.org/}} et dans le séquenceur interactif i-score/OSSIA développé par le LaBRI \cite{celerier_ossia:_2015}.
 
 \subsubsection{Le signal}
 
-\noindent S'il n'est généralement pas envisagé tant comme un signal de contrôle que comme un support pour l'audio numérique\footnote{David Zicarelli parle encore d'\textit{audio channels} dans une conférence présentant la nouvelle version de Max sensée changer la manière de les considérer : \url{https://www.youtube.com/watch?v=Y4YLy7kqcr8}}, le signal peut être utilisé à cette fin et même permettre la transmission d'événements asynchrones. Le développement de la librairie ``Sagrada'', présentée dans la section \ref{sec:algorithms:sagrada}, en donne un example.\\
+\noindent S'il n'est généralement pas envisagé tant comme un signal de contrôle que comme un support pour l'audio numérique\footnote{David Zicarelli parle encore d'\textit{audio channels} dans une conférence présentant la nouvelle version de Max sensée changer la manière de les considérer : \url{https://www.youtube.com/watch?v=Y4YLy7kqcr8}}, le signal peut être utilisé à cette fin et même permettre la transmission d'événements asynchrones. Le développement de la librairie ``Sagrada'', présentée dans la section \ref{sec:algorithms:sagrada}, en donne un example.
 
 %-----------------------------------------------------------------------------------
 \subsection{Description générale}
@@ -334,7 +334,7 @@ TODO : \cite{de_la_hogue_jamoma_2011}
 	\item{\verb|[42 pitch 112| : le \textit{MP-event} \#42 règle le paramètre de pitch à la valeur 112;}
 	\item{\verb|[123 scale 0 2 4 5 7 9 11]| : le \textit{MP-event} \#123 définit une gamme diatonique.}
 \end{itemize}
-\todo{formater les messages code en verbatim et ou avec une box}
+%\todo{formater les messages code en verbatim et ou avec une box}
 
 \noindent Deux noms de paramètre sont réservés pour un usage particulier: \texttt{state} et \texttt{guests}. Ils seront détaillés dans les prochaines sections. Nous verrons également qu'un \textit{MP-event} peut suivre plusieurs chemins de traitement en parallèle et être fusionné avec d'autres \textit{MP-event}. 
 

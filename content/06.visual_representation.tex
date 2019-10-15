@@ -12,8 +12,8 @@ conférence donnée à la FEMIS \cite{deleuze_deux_2003}}
 
 \vspace*{\fill}
 
-TODO : résumé\\
-voir mp.TUI.key pour les images à inclure
+%TODO : résumé\\
+%voir mp.TUI.key pour les images à inclure
 
 \noindent Divers facteurs contribuent à l'aspect visuel des instruments de musique, et y joue un rôle esthétique mais également fonctionnel, notamment en tant qu'ils contribuent à y définir la topologie de l'interaction. Nous avons vu dans les chapitres précédents que les \glspl{DMI} intègrent des fonctions liées à l'interprétation du geste, à la production du son, à la composition musicale ainsi qu'à l'utilisation de toute sorte de modèles intermédiaires pour le design de l'interaction. Chacun de ces aspects hérite de représentations qui leur sont attachées: représentations du son (temporelles, fréquentielles, intensités de paramètres audio, etc.), représentations musicales (l'énorme héritage de la notation musicale traditionnelle), auquel s'ajoute potentiellement tout le langage du design graphique.\\
 \indent Dans les \glspl{DMI}, la possibilité d'afficher des éléments graphiques de manière dynamique sur un moniteur, mais également d'interagir directement avec ces éléments quand le moniteur est tactile, laisse envisager un vaste terrain où peuvent s'entrecroiser diverses représentations liées aux aspects susmentionés dans des composites hybrides. L'interaction sur ces objets graphiques est elle-même un champ d'exploration ouvert dans lequel les interactions traditionnelles héritées de la bureautique s'avèrent très vite insuffisantes.\\
@@ -28,7 +28,7 @@ voir mp.TUI.key pour les images à inclure
 
 \subsection{Adaptation à la production du son}
 
-\todo{éliminer les redites du chapitre hardware}
+%\todo{éliminer les redites du chapitre hardware}
 
 \noindent L'apparence des instruments est en partie définie par la recherche d'une certaine qualité de son. Bien que cela soit particulièrement évident pour les instruments acoustiques dont les formes ont des conséquences directes sur le rendement sonore (cf. exemple figure \ref{fig:visual_representation:fhole}), les profils particuliers issues de la lutherie traditionnelle ont également donné naissance à un certain nombre d'éléments iconiques (par exemple, les ouïes du violons ou les touches noires et blanches du piano) et de facteurs de forme (par exemple, une taille plus grande produit un son plus grave) associés à l'idée d'un instrument, comme le rappelle Trevor Pinch dans son interview de Robert Moog \cite{pinch_why_2001}: \iquote{Les claviers étaient toujours là, et chaque fois que quelqu'un voulait prendre une photo, pour une raison ou une autre, c'était mieux si on jouait du clavier. Les gens comprennent alors vous faîtes de la musique. (...) Cette pose [prenant la pose, bras gauche tendu tandis que la main droite joue du clavier] associe graphiquement la musique et la technologie.}\footnote{``The keyboards were always there, and whenever someone wanted to take a picture, for some reason or other it looks good if you’re playing a keyboard. People understand that then you’re making music. (...) This pose here [acts out the pose of the left arm extended while the right hand plays a keyboard] graphically ties in the music and the technology.''}.\\
 \indent De plus, les \glspl{DMI} peuvent intégrer des transducteurs acoustiques, tels que des microphones piézoélectriques ou des haut-parleurs tactiles (comme nous l'avons vu à la section \ref{sec:interfaces:part_acoustique}), qui influencent la conception acoustique de leurs composants matériels et donc les facteurs de forme évoqués précédemment.
@@ -53,7 +53,7 @@ voir mp.TUI.key pour les images à inclure
 
 \subsection{Adaptations ergonomiques}
 
-\todo{éliminer les redites du chapitre algorithms}
+%\todo{éliminer les redites du chapitre algorithms}
 
 \noindent L'instrument s'adapte également au corps. Un exemple intéressant est l'évolution du traverso vers la flûte de concert occidentale, à l'aide du système Boehm dans les années 1840 (cf. figure \ref{fig:visual_representation:boehm}). Ce système de clétage découple la topologie gestuelle de la topologie du flux d'air et de la topologie de résonance. En utilisant des manches et des platines, il permet d'acroître la puissance sonore par l'élargissement des trous et leur déplacement à des endroits adéquats pour la résonance, tandis que les touches peuvent être placées à des endroits adaptés à la position des doigts du flûtiste.\\
 \indent Le système Boehm peut être qualifié de ``modèle intermédiaire'' entre le geste et la production sonore, fait d'un système mécanique dans ce cas. La plupart des instruments combinent divers ``modèles intermédiaires'' pour amplifier, enrichir, déplacer, focaliser, multiplier les gestes des interprètes et générer des mouvements hors du champ des possibilités du corps humain : pédales de grosse caisse, marteaux et amortisseurs pour piano, archets et plectres, etc.
@@ -157,10 +157,8 @@ voir mp.TUI.key pour les images à inclure
 	\end{minipage}
 \end{figure}
 %------------ Figure : skeuomorphisme et soin du design -----------
-
-\noindent TODO : En tant qu'élément scénographique, la représentation visuelle joue un rôle essentiel dans l'esthétique et la poésie de l'instrument.
-Exemple dans FIB\_R : toute la performance visuelle re-projetée sur l'écran correspond à ce que les instrumentistes ont face à eux sur leur tablette. A la fois espace d'interaction et création visuelle esthétique/poétique.
-
+%  TODO : amémiorer ce paragraphe
+\noindent En tant qu'élément scénographique, la représentation visuelle joue un rôle essentiel dans l'esthétique et la poésie de l'instrument. Par exemple, dans la performance \textit{FIB\_R} : toute la performance visuelle video-projetée sur l'écran visible du public correspond à ce que les instrumentistes ont face à eux sur leur tablette. Le design de l'interface graphique est donc autant motivé par des aspects fonctionnels d'interaction, que des aspects esthétiques et poétiques.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -314,10 +312,10 @@ mouse limitations without adding indirections, interfaces should be able to refl
 \noindent Si dans un instrument acoustique, l'énergie se transmet des gestes du musicien à l'instrument qui produit le son, cette chaîne d'interaction peut se retrouver perceptivement renversée dans les \glspl{DMI}. Le processus, ou ``modèle intermédiaire'' (cf. \ref{sec:algorithms:MID}) qui \textit{tourne} sur la machine possède son propre mouvement autonome, que les doigts viennent perturber, infléchir, canaliser, étouffer, aiguiser, filtrer... La représentation visuelle de modèles intermédiaires dynamiques vient rendre manifeste ces \textit{forces invisibles}\footnote{\iquote{En art, et en peinture comme en musique, il ne s’agit pas de reproduire ou d’inventer des formes, mais de capter des forces. (...) La tâche de la peinture est définie comme la tentative de rendre visibles des forces qui ne le sont pas. De même la musique s’efforce de rendre sonores des forces qui ne le sont pas.} Gilles Deleuze \cite{deleuze_francis_1981} p 57.} et appelle ainsi des gestes \textit{en réponse} aux mouvements internes du modèle, qui redéfinit en permanence l'espace de son interaction, dont la topologie n'est pas donnée d'avance et qu'il s'agit apprivoiser (cf. figure \ref{fig:visual_representation:xypre-live}).
 
 
-\subsection*{Extra material : todo remove}
+%\subsection*{Extra material : todo remove}
 
-Apprendre indépendamment de la transposition
-\iquote{I love the piano sound but not the difficulty of learning the variations from one key to another.  The LinnStrument with its 4th tuning avoids all of those issues.} Jeff Moen about the linnstrument (\url{http://jeffmoen.com/how_i_got_here.html})
+% Apprendre indépendamment de la transposition
+% \iquote{I love the piano sound but not the difficulty of learning the variations from one key to another.  The LinnStrument with its 4th tuning avoids all of those issues.} Jeff Moen about the linnstrument (\url{http://jeffmoen.com/how_i_got_here.html})
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{La librairie mp.TUI pour Max}
