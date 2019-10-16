@@ -571,7 +571,6 @@ Dans un premier temps, nous associons les coordonnées x et y d'un \textit{MP-ev
 \label{sec:algorithms:example-mpTUI}
 \noindent Le système MP est également amplement utilisé dans la librairie MP.TUI, détaillée au chapitre suivant.
 
-
 \subsection{Limitations et optimisations}
 
 \noindent Séparer les différents processus de traitement d'un design d'interaction polyphonique a l'avantage de permettre une meilleure modularité et, par suite, une meilleure stabilité des processus mis en œuvre, qui n'auront pas à être modifiés en interne pour être adaptés à une autre situation. Le choix a également été fait de ne pas s'appuyer sur une mémoire globale ou des pointeurs externes aux modules (e.g. pour sauver la guestlist), de sorte que les \textit{MP-blocks} sont réellement indépendants et autonomes et que le design d'interaction général puisse être réparti sur plusieurs applications et/ou machines en réseau.\\
