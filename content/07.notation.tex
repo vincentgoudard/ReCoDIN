@@ -240,9 +240,9 @@ A l'origine de notre collaboration, il n'y avait pas d'autre projet que celui de
 \subsubsection{Partitions pour humains \emph{et} machines}
 \label{sec:notation:score_for_humans_and_machines}
 
-\noindent Pendant la lecture de la partition, le serveur envoie des données au format MP\footnote{Cf. supra, section \ref{sec:algorithms:MP}} aux clients lorsque des événements commencent ou se terminent (cf. figure TODO). Ces informations peuvent être utilisées par l'instrument du musicien (si toutefois son \gls{DMI} est connecté au réseau). Mais, comme John n'est qu'un ``semi-conducteur'', ses messages peuvent tout aussi bien être soumis à l'approbation du musicien/client pour permettre une certaine flexibilité dans la façon dont le musicien adhère à la partition.\\
+\noindent Pendant la lecture de la partition, le serveur envoie des données au format MP\footnote{Cf. supra, section \ref{sec:algorithms:MP}} aux clients lorsque des événements commencent ou se terminent. Ces informations peuvent être utilisées par l'instrument du musicien (si toutefois son \gls{DMI} est connecté au réseau). Mais, comme John n'est qu'un ``semi-conducteur'', ses messages peuvent tout aussi bien être soumis à l'approbation du musicien/client pour permettre une certaine flexibilité dans la façon dont le musicien adhère à la partition.\\
 \indent Ainsi, il est possible d'imaginer qu'un \textit{karma} spécifique rappelle un pré-réglage dans l'instrument du musicien, correspondant à l'esprit de ce \textit{karma}. Mais si le musicien est encore en train de jouer le \textit{karma} précédent, il/elle ne voudra probablement pas que cette notification change automatiquement sa configuration avant d'avoir terminé la phrase musicale en cours. Cette ``évaluation paresseuse''\footnote{J'emprunte ici ce terme utilisé dans le domaine de la programmation récursive, qui consiste à évaluer une expression uniquement quand le résultat de cette expression devient nécessaire. Dans notre cas toutefois, c'est possiblement le musicien qui décide de cette évaluation.} rend l'utilisation de John un peu différente de celle des séquenceurs traditionnels.
-
+% TODO : rajouter une figure du patcher Max de réception des data
 %----------------------------------------------------------------------------------------------------------
 \subsubsection{Montrer la partition ?}
 
