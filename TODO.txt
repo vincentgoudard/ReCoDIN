@@ -65,3 +65,6 @@ Les notions de plaisir (à jouer, à écouter, à voir), de challenge (à conçe
 
 side-chain demo:
 https://www.youtube.com/watch?v=8F-v9RZt1Z8
+
+remplacer le nom chapitre, par le nom "Annexe"
+https://tex.stackexchange.com/questions/21047/how-to-change-appendix-chapter-name
