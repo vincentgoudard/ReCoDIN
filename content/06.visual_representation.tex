@@ -103,6 +103,7 @@ conférence donnée à la FEMIS \cite{deleuze_deux_2003}}
 	\end{minipage}
 \end{figure}
 %------------ Figure : keyboard et TUI - scale -----------
+\index[people]{dowland@Dowland, John!firstbookofsonges@\textit{First Booke of Songes or Ayres}}
 
 %------------ Figure : spat et PM -----------
 \begin{figure}[!htbp]
@@ -121,6 +122,7 @@ conférence donnée à la FEMIS \cite{deleuze_deux_2003}}
 	\end{minipage}
 \end{figure}
 %------------ Figure : spat et PM -----------
+\index[people]{delaubier@De Laubier, Serge!traverse@\textit{Traverse de façade}}
 
 \subsection{Représentations liées à l'expérimentation}
 
@@ -152,13 +154,15 @@ conférence donnée à la FEMIS \cite{deleuze_deux_2003}}
 	\hspace{.02\linewidth}
 	\begin{minipage}[t]{0.48\textwidth}
 	    \includegraphics[width=\linewidth]{gfx/06_visual_representation/2018_06_26_PAN_GENERATOR_APPARATUM0396.jpg}
-		\caption[Apparatum, par panGenerator]{Le design minimal et soigné de l'instrument Apparatum. © panGenerator}
+		\caption[Apparatum, par PanGenerator]{Le design minimal et soigné de l'instrument Apparatum. © panGenerator}
 		\label{fig:visual_representation:apparatum}
 	\end{minipage}
 \end{figure}
+\index[people]{pangenerator@PanGenerator (groupe)!apparatum@\textit{Apparatum}}
+
 %------------ Figure : skeuomorphisme et soin du design -----------
 %  TODO : amémiorer ce paragraphe
-\noindent En tant qu'élément scénographique, la représentation visuelle joue un rôle essentiel dans l'esthétique et la poésie de l'instrument. Par exemple, dans la performance \textit{FIB\_R} : toute la performance visuelle video-projetée sur l'écran visible du public correspond à ce que les instrumentistes ont face à eux sur leur tablette. Le design de l'interface graphique est donc autant motivé par des aspects fonctionnels d'interaction, que des aspects esthétiques et poétiques.
+\noindent En tant qu'élément scénographique, la représentation visuelle joue un rôle essentiel dans l'esthétique et la poésie de l'instrument. Par exemple, dans la performance \textit{FIB\_R}\index[people]{forages@FORAGES (groupe)!fibr@\textit{FIB\_R}} : toute la performance visuelle video-projetée sur l'écran visible du public correspond à ce que les instrumentistes ont face à eux sur leur tablette. Le design de l'interface graphique est donc autant motivé par des aspects fonctionnels d'interaction, que des aspects esthétiques et poétiques.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -319,7 +323,7 @@ mouse limitations without adding indirections, interfaces should be able to refl
 
 %\todo{Rajouter des figures pour édition directe (shipped with handles) et modèle voronoi}
 
-\noindent La bibliothèque mp.TUI\footnote{Sources disponible sur \url{https://github.com/LAM-IJLRA/ModularPolyphony-TUI/}.} pour Max propose des composants graphiques permettant le contrôle et la représentation d'une interaction polyphonique et modulaire. Elle offre également (et surtout) un environnement ouvert pour la programmation de nouveaux objets graphiques et de nouvelles interactions en mettant à disposition des briques de base prenant en charge les fonctions élémentaires usuelles. Cette section présente une brève revue des outils existants et des motivations avant de détailler le fonctionnement de la librairie.
+\noindent La bibliothèque mp.TUI\footnote{Sources disponible sur \url{https://github.com/LAM-IJLRA/ModularPolyphony-TUI}.} pour Max propose des composants graphiques permettant le contrôle et la représentation d'une interaction polyphonique et modulaire. Elle offre également (et surtout) un environnement ouvert pour la programmation de nouveaux objets graphiques et de nouvelles interactions en mettant à disposition des briques de base prenant en charge les fonctions élémentaires usuelles. Cette section présente une brève revue des outils existants et des motivations avant de détailler le fonctionnement de la librairie.
 
 \subsection{Motivations}
 
@@ -328,9 +332,9 @@ mouse limitations without adding indirections, interfaces should be able to refl
 \noindent Plusieurs développements ont été réalisés depuis 2003 permettant de contrôler, de différentes manières, des patchs Max via une interface \textit{multitouch}. Parmi les réalisations, on peut noter notamment :
 \vspace{-1em}
 \begin{itemize}[noitemsep]
-	\item \textbf{le Lemur} : une interface \textit{multitouch} personnalisable développé par la société JazzMutant entre 2003 et 2011, d'abord sur une interface hardware dédiée avant d'être portée sous la forme d'une application pour tablettes et smartphones\footnote{distribuée par la société Liine \url{https://liine.net/en/products/lemur/}}. Cette interface était pionnière, à la fois à une époque où le \textit{multitouch} grand public était naissant, et par la possibilité de personnaliser l'interface à l'aide d'un éditeur tournant sur un ordinateur standard. La personnalisation était cependant limitée au fait de choisir les composants graphiques parmi un ensemble de composants alignables sur une grille;
+	\item \textbf{le Lemur} : une interface \textit{multitouch} personnalisable développé par la société JazzMutant entre 2003 et 2011, d'abord sur une interface hardware dédiée avant d'être portée sous la forme d'une application pour tablettes et smartphones\footnote{distribuée par la société Liine \url{https://liine.net/en/products/lemur}}. Cette interface était pionnière, à la fois à une époque où le \textit{multitouch} grand public était naissant, et par la possibilité de personnaliser l'interface à l'aide d'un éditeur tournant sur un ordinateur standard. La personnalisation était cependant limitée au fait de choisir les composants graphiques parmi un ensemble de composants alignables sur une grille;
 
-	\item \textbf{la librairie MMF} : ``Max Multitouch Framework''\footnote{Vidéo présentant MMF: \url{https://www.youtube.com/watch?v=EEkj85GU_is}} développé par Mathieu Chamagne dans le cadre du projet \gls{ANR} Virage (2008-2010), qui permettait de contrôler certains éléments de \gls{GUI} de Max. La contrainte principale réside dans le fait que le contrôle des éléments de \gls{GUI} de Max est assez gourmand en \gls{CPU} et rend difficile l'usage de plusieurs doigts;
+	\item \textbf{la librairie MMF} : ``Max Multitouch Framework''\footnote{Vidéo présentant MMF: \url{https://www.youtube.com/watch?v=EEkj85GU_is}} développé par Mathieu Chamagne\index[people]{chamagne@Chamagne, Mathieu} dans le cadre du projet \gls{ANR} Virage (2008-2010), qui permettait de contrôler certains éléments de \gls{GUI} de Max. La contrainte principale réside dans le fait que le contrôle des éléments de \gls{GUI} de Max est assez gourmand en \gls{CPU} et rend difficile l'usage de plusieurs doigts;
 
 	\item \textbf{TouchOSC} : développé en 2008, touchOSC\footnote{\url{https://hexler.net/products/touchosc}} est basé sur les principes du Lemur mais développé comme une application pour tablette et smartPhones, permettant de renvoyer des données \gls{MIDI} ou \gls{OSC};
 
@@ -413,7 +417,7 @@ mouse limitations without adding indirections, interfaces should be able to refl
 
 \subsection{Groupement d'objets graphiques}
 
-\noindent L'objet \verb|mp.TUI.groups| permet de rattacher différents éléments de GUI à un groupe, comme on le fait dans la plupart des logiciels d'édition vectorielle, afin de gérer leur position, échelle et orientation de manière globale. Cela permet de définir un ensemble de composants dans des coordonnées relatives, puis de venir ajuster l'emplacement d'un seul et unique bloc. Il est possible de procéder à l'ajustement de ces coordonnées par des valeurs passées explicitement au composant, ou bien par une manipulation directe du groupe, selon le même mode opératoire que pour les objets usuels.\\
+\noindent L'objet \verb|mp.TUI.groups| permet de rattacher différents éléments de \gls{GUI} à un groupe, comme on le fait dans la plupart des logiciels d'édition vectorielle, afin de gérer leur position, échelle et orientation de manière globale. Cela permet de définir un ensemble de composants dans des coordonnées relatives, puis de venir ajuster l'emplacement d'un seul et unique bloc. Il est possible de procéder à l'ajustement de ces coordonnées par des valeurs passées explicitement au composant, ou bien par une manipulation directe du groupe, selon le même mode opératoire que pour les objets usuels.\\
 \indent Un exemple est présenté sur la figure \ref{fig:visual_representation:groups_patch} et son rendu graphique figure \ref{fig:visual_representation:groups}.
 
 %-------------------------- Figure : groups ----------------------
@@ -492,7 +496,7 @@ mouse limitations without adding indirections, interfaces should be able to refl
 
 \subsection{Performances}
 
-\noindent La bibliothèque mp.TUI est entièrement développée avec des objets natifs de la distribution Max. Cette approche, bien que plus coûteuse en charge \gls{CPU} que des objets compilés, a l'avantage de permettre à tout utilisateur de Max de modifier facilement les composants et de les adapter à ses besoins. De plus, les composants mp.TUI s'appuient essentiellement sur OpenGL, de sorte que la majeure partie de la charge de calcul est laissée au \gls{GPU}, ce qui en fait une solution plus réactive que la solution envisagée dans la libririe MMF. L'interaction tangible avec les objets de la \gls{GUI} se fait à l'aide du moteur physique Bullet-Physics\footnote{\url{http://bulletphysics.org/}} intégré dans Max. Bien que cela puisse être plus coûteux pour certaines formes simples, cela nous permet de concevoir des composants \gls{GUI} de n'importe quelle forme et orientation, comme des \textit{sliders} courbes ou des formes évidées, et de les animer avec toutes les possibilités offertes par une modèle physique : champ de forces animant des ensembles d'objets, collisions entre composants, articulations selon des liaisons mécaniques, déplacements inertiels, etc.
+\noindent La bibliothèque mp.TUI est entièrement développée avec des objets natifs de la distribution Max. Cette approche, bien que plus coûteuse en charge \gls{CPU} que des objets compilés, a l'avantage de permettre à tout utilisateur de Max de modifier facilement les composants et de les adapter à ses besoins. De plus, les composants mp.TUI s'appuient essentiellement sur OpenGL, de sorte que la majeure partie de la charge de calcul est laissée au \gls{GPU}, ce qui en fait une solution plus réactive que la solution envisagée dans la libririe MMF. L'interaction tangible avec les objets de la \gls{GUI} se fait à l'aide du moteur physique Bullet-Physics\footnote{\url{http://bulletphysics.org}} intégré dans Max. Bien que cela puisse être plus coûteux pour certaines formes simples, cela nous permet de concevoir des composants \gls{GUI} de n'importe quelle forme et orientation, comme des \textit{sliders} courbes ou des formes évidées, et de les animer avec toutes les possibilités offertes par une modèle physique : champ de forces animant des ensembles d'objets, collisions entre composants, articulations selon des liaisons mécaniques, déplacements inertiels, etc.
 
 \subsection{Travaux futurs}
 

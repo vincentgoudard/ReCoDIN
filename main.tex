@@ -25,6 +25,11 @@
 ]{scrreprt}%
 
 
+\usepackage{imakeidx}
+\makeindex[name=people,title=Artistes et œuvres cités, intoc]
+%\makeindex[name=works,title=Index des œuvres citées]
+
+
 % for highlight
 \usepackage{soulutf8}
 
@@ -183,11 +188,18 @@
 % Glossary of acronyms
 % **************************************************
 \usepackage[acronym, nogroupskip]{glossaries}
-% \newglossary[tlg]{people}{tld}{tdn}{Index des noms propres} % used 
+
+%Alternative glossary for top-level domains
+%\newglossary[tlg]{domain}{tld}{tdn}{Top-Level Domains}
+
 \setlength{\glsdescwidth}{0.5\textwidth}
 \makenoidxglossaries
 \loadglsentries{content/glossary}
+
+% define glossary for Noms propres
+%\loadglsentries{content/glossaryNames}
 \glstoctrue
+
 
 %% modsuper glossary display style (pour ne pas avoir de marge à gauche)
 %% cf. : https://tex.stackexchange.com/questions/415275/flush-glossaries-super-style-to-left
@@ -211,6 +223,8 @@
 \definecolor{glscolor}{rgb}{0.4, 0., 0.} %kinda darkcerulean
 
 \renewcommand*{\glstextformat}[1]{\textcolor{glscolor}{#1}}
+
+
 
 % **************************************************
 % Annexes
@@ -370,8 +384,10 @@
 \printnoidxglossaries
 %\printglossaries
 % \cleardoublepage
+%\printglossary[type=domain]
 
-
+\printindex[people]
+%\printindex[works]
 
 % --------------------------
 % Back matter
