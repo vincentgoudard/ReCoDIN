@@ -47,7 +47,7 @@ La conséquence en est que tout matériaux numérique est potentiellement un mat
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{des signaux synchrones}, représentant par exemple des signaux audio, échantillonnés à une fréquence précise et traités généralement par bloc dans un \gls{DSP};
-	\item \textbf{des événements asynchrones}, arrivant de manière sporadique, tels que les messages \gls{MIDI}, \gls{OSC} ou d'autres types de messages propres au programme et traités dans un graphe de contrôle réactif.
+	\item \textbf{des événements asynchrones}, arrivant de manière sporadique, tels que les messages \gls{MIDI}, \gls{OSC}          ou d'autres types de messages propres au programme et traités dans un graphe de contrôle réactif.
 \end{itemize}
 
 \noindent Si cette distinction reflète une différence ontologique entre le domaine du continu et celui du catégoriel, ces deux types de flux traduisent également deux granularités temporelles différentes et sont généralement associés aux notions d'\textit{audio-rate} et de \textit{control-rate}\footnote{On retrouve cette distinction dans tous les logiciels basés sur l'utilisation du \gls{MIDI}, mais également dans Max, dans SuperCollider, dans Csound et même dans Chuck qui permet pourtant que le contrôle soit cadencé à une fréquence arbitraire aussi élevée, voire plus, que celle de l'échantillonage audio.}. Il est intéressant de noter que le contrôle est ainsi implicitement défini comme un signal sporadique et de fréquence moindre que le signal audio-numérique, ce qui relève en soi d'une représentation musicale qui pourrait être discutée.\\
