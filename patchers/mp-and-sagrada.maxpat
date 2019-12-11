@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 366.0, 240.0, 625.0, 411.0 ],
+		"rect" : [ 240.0, 397.0, 625.0, 411.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -60,7 +60,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -191,12 +191,12 @@
 					"patching_rect" : [ 15.0, 345.43994100000009, 274.0, 26.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_mmax" : 6.0,
 							"parameter_shortname" : "live.gain~",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
-							"parameter_longname" : "live.gain~"
+							"parameter_longname" : "live.gain~",
+							"parameter_mmax" : 6.0
 						}
 
 					}
@@ -219,13 +219,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1091.0, 402.0, 640.0, 480.0 ],
+						"rect" : [ 1006.0, 402.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -260,7 +260,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 183.666666666666686, 238.0, 107.0, 22.0 ],
-									"text" : "scale 0. 1. -12. 12."
+									"text" : "scale 0. 1. 0 24"
 								}
 
 							}
@@ -284,7 +284,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 295.0, 332.0, 50.0, 22.0 ],
-									"text" : "0 6.35"
+									"text" : "0 11."
 								}
 
 							}
@@ -388,7 +388,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 60.666666666666686, 218.0, 103.0, 22.0 ],
-									"text" : "scale 0. 1. 1. 100."
+									"text" : "scale 0. 1. 1. 10."
 								}
 
 							}
@@ -668,7 +668,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -952,7 +952,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1485,7 +1485,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2231,7 +2231,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2345,7 +2345,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2836,161 +2836,161 @@
 		"dependency_cache" : [ 			{
 				"name" : "sagrada.multilayer~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.multilayer~.p.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.trigger~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.voicerouter.gendsp",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.trigger~.p.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.multienveloppe~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.multienveloppe~.p.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.clickramp~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.multibuffer~.p.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.multiout~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.multiout~.p.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.iosetter~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.multiin~.p.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.paramhandler.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.play~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.play~.p.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.clickramp.bipolar~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.pan2~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.pan2~.p.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "pan2S.maxpat",
-				"bootpath" : "~/Library/Application Support/Cycling '74/Max 8/Examples/spatialization/panning/lib",
-				"patcherrelativepath" : "../../../../../../Library/Application Support/Cycling '74/Max 8/Examples/spatialization/panning/lib",
+				"bootpath" : "~/Documents/Max/Packages/lam-lib/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max/Packages/lam-lib/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sagrada.multiin~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/Sagrada/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/Sagrada/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/Sagrada/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "mp.TUIO.input.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/ModularPolyphony/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/ModularPolyphony/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/ModularPolyphony/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "mp.poly.maxpat",
 				"bootpath" : "~/Documents/Max 7/Packages/ModularPolyphony/patchers",
-				"patcherrelativepath" : "../../../../../Max 7/Packages/ModularPolyphony/patchers",
+				"patcherrelativepath" : "../../../../../Documents/Max 7/Packages/ModularPolyphony/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
