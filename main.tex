@@ -1,6 +1,6 @@
 % TODO : double entrie in media music room index
 % mettre aussi Varèse aux côté de Cage dasn le préambule en ce qui concerne l'art des sons organisés
-
+% remplacer appendices par annexes
 
 %% LLT: Turn off some annoying warnings...
 \RequirePackage{silence}
@@ -28,6 +28,10 @@
 	draft=false,				% value for draft version
 ]{scrreprt}%
 
+\usepackage{draftwatermark}
+\SetWatermarkAngle{55}
+\SetWatermarkLightness{0.9}
+\SetWatermarkScale{1.6}
 
 \usepackage{imakeidx}
 \makeindex[name=people,title=Artistes et œuvres cités, intoc]
