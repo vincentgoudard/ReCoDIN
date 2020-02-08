@@ -17,7 +17,7 @@ conférence donnée à la FEMIS \cite{deleuze_deux_2003}}
 
 \noindent Divers facteurs contribuent à l'aspect visuel des instruments de musique, et y jouent un rôle esthétique mais également fonctionnel, notamment en tant qu'ils contribuent à y définir la topologie de l'interaction. Nous avons vu dans les chapitres précédents que les \glspl{DMI} intègrent des fonctions liées à l'interprétation du geste, à la production du son, à la composition musicale ainsi qu'à l'utilisation de toute sorte de modèles intermédiaires pour le design de l'interaction. Chacun de ces aspects hérite de représentations qui leur sont attachées: représentations du son (temporelles, fréquentielles, intensités de paramètres audio, etc.), représentations musicales (le vaste héritage de la notation musicale traditionnelle), auquel s'ajoute potentiellement tout le langage du design graphique.\\
 \indent Dans les \glspl{DMI}, la possibilité d'afficher des éléments graphiques de manière dynamique sur un moniteur, mais également d'interagir directement avec ces éléments quand le moniteur est tactile, laisse envisager un vaste terrain où peuvent s'entrecroiser diverses représentations liées aux aspects susmentionnés dans des composites hybrides. L'interaction sur ces objets graphiques est elle-même un champ d'exploration ouvert dans lequel les interactions traditionnelles héritées de la bureautique s'avèrent très vite insuffisantes.\\
-\indent Après une étude de ces différents aspects, je présenterai la librairie mp.TUI, dont le développement illustre l'effort entrepris dans cette perspective, ainsi qu'une application pratique de l'utilisation du protocole MP décrit au chapitre précédent.
+\indent Après une étude de ces différents aspects, je présenterai la librairie logicielle ``mp.TUI'', dont le développement illustre l'effort entrepris dans cette perspective, ainsi qu'une application pratique de l'utilisation du protocole MP décrit au chapitre précédent.
 
 \clearpage
 
@@ -236,7 +236,7 @@ conférence donnée à la FEMIS \cite{deleuze_deux_2003}}
 \noindent La cohésion entre la représentation et le contrôle d'un objet virtuel\footnote{... qui, rappelons-le, n'est qu'une ``synchrèse'', c'est-à-dire un artéfact liant les deux phénomènes par leur concommittence spatio-temporelle.} facilite l'intuitivité de l'interface en abolissant la distance entre ces deux aspects de l'interaction. Au-delà de cet intérêt ergonomique, cela permet d'imaginer de nouveaux scénarios d'interactions dynamiques. Même de simples interactions usuelles, comme celle de la bureautique (sliders, boutons, etc), peuvent être ré-inventées avec des comportements alternatifs, dans une perspective d'utilisation musicale, comme nous le verrons plus loin.\\
 \indent Cette idée est notamment poursuivie dans le domaine des \gls{IHM}, avec le dessein d'intégration du numérique dans les objets du monde physique, telle que présenté notamment dans l'article ``Tangible Bits'' d'Ishii et Ullmer \cite{ishii_tangible_1997} et reprise par Sergi Jordà dans les 25 principes qu'il adopte pour le développement de la ReacTable\footnote{``For including realtime interactive visualizations and, at the same time, overcoming
 mouse limitations without adding indirections, interfaces should be able to reflect their own states and behaviors. They should integrate, like the abacus, both representation and control.'' \cite{jorda_digital_2005}}.\\
-\indent Ce faisant, la cohésion entre le geste et la représentation ``acquise'' dans les écrans tactile laisse la place à des scénarios d'interaction subersifs (sur le geste subversif, cf. section \ref{sec:gesture:subversion}) qui se jouent de cette synchrèse artificielle\footnote{Voir par exemple la série de performances ``Screen to screen'' de l'artiste Vincent Brocquaire, basées sur cette duplicité de l'écran/interface. \url{http://www.vincentbroquaire.com/screen-to-screen.html}}.\\
+\indent Ce faisant, la cohésion entre le geste et la représentation ``acquise'' dans les écrans tactile laisse la place à des scénarios d'interaction subersifs\footnote{Sur le geste subversif, cf. section \ref{sec:gesture:subversion}.}, qui se jouent de cette synchrèse artificielle\footnote{Voir en particulier la série de performances ``Screen to screen'' de l'artiste Vincent Brocquaire\index[people]{brocquaire@Brocquaire, Vincent!screentoscreen@\textit{Screen to screen}}, basées sur cette duplicité de l'écran/interface. \url{http://www.vincentbroquaire.com/screen-to-screen.html}}.\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -356,13 +356,13 @@ mouse limitations without adding indirections, interfaces should be able to refl
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{des composants système}, qui implémentent les fonctions de base permettant la communication entre les objets de la \gls{GUI}. En particulier, l'objet \verb|mp.TUI.hub| récupère les données de la souris ainsi que les messages \gls{TUIO} reçus par \gls{UDP} et les envoie aux composants graphiques sélectionnés;
-	\item \textbf{des éléments de GUI}, qui sont des instances prêtes à l'emploi de composants courants ou moins courants tels que curseurs, claviers, graphes, etc.;
+	\item \textbf{des éléments de GUI}, (cf. figure \ref{fig:visual_representation:mp.TUI}) qui sont des instances prêtes à l'emploi de composants courants ou moins courants tels que curseurs, claviers, graphes, etc.;
 	\item \textbf{des outils}, un ensemble d'abstractions qui permettent de créer facilement de nouveaux composants en proposant des fonctions utiles pour la conception d'interaction (transformation de la visualisation, gestion de la polyphonie sur un élément, interaction tels que pinch-zoom, calcul de dérivées, etc.).
 \end{itemize}
 
 \subsection{Les composants de la librairie mp.TUI}
 
-\noindent Les composants utilisent des transformations géométriques hiérarchiques\footnote{à l'aide de l'objet jit.anim.node de Max}, qui permettent d'obtenir des coordonnées relatives à l'écran ou au composant, indépendamment de la position, de l'échelle et de l'orientation du composant. Cela permet également de créer des groupes de composants, comme on le ferait dans n'importe quel logiciel d'édition graphique vectoriel. Suivant la nature empirique de la lutherie numérique revendiquée ci-dessus, un ``mode édition'' est également disponible pour manipuler rapidement à la main la position, l'échelle et l'orientation des composants de l'interface utilisateur (figure \ref{fig:visual_representation:groups_patch} et \ref{fig:visual_representation:groups}).
+\noindent Les composants mp.TUI se présentent comme des abstractions Max, qui instancient des éléments graphiques interactifs (cf. figure \ref{fig:visual_representation:mp.TUI.slider}). Ils utilisent des transformations géométriques hiérarchiques\footnote{à l'aide de l'objet jit.anim.node de Max}, qui permettent d'obtenir des coordonnées relatives à l'écran ou au composant, indépendamment de la position, de l'échelle et de l'orientation du composant. Cela permet également de créer des groupes de composants, comme on le ferait dans n'importe quel logiciel d'édition graphique vectoriel. Suivant la nature empirique de la lutherie numérique revendiquée ci-dessus, un ``mode édition'' est également disponible pour manipuler rapidement à la main la position, l'échelle et l'orientation des composants de l'interface utilisateur (figure \ref{fig:visual_representation:groups_patch} et \ref{fig:visual_representation:groups}).
 
 %-------------------------- Figure : phonétogramme ----------------------------------
 \begin{figure}[!htbp]
@@ -388,6 +388,7 @@ mouse limitations without adding indirections, interfaces should be able to refl
 		\end{subfigure}%
 	}
 	\caption{Un simple slider dans la librairie mp.TUI}
+	\label{fig:visual_representation:mp.TUI.slider}
 \end{figure}
 
 \subsection{Outils pour l'interaction multitouch}
