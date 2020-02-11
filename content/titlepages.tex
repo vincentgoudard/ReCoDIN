@@ -22,59 +22,106 @@
 	\tgherosfont
 	\centering
 
-	{\Large \thesisUniversity} \\[4mm]
+	%{\Large \thesisUniversity} \\[4mm]
 	\includegraphics[width=6cm]{gfx/SU-logo.png} \\[2mm]
-	\textsf{\thesisUniversityDepartment} \\
+	\textsf{\thesisSubject} \\
 	\textsf{\thesisUniversityInstitute} \\
+	\textsf{\thesisUniversityDepartment} \\
+	\textsf{\thesisUniversityCollegium}
+
 	%\textsf{\thesisUniversityGroup} \\
 
 	\vfill
-	{\large \thesisSubject} \\[5mm]
-	{\LARGE \color{ctcolortitle}\textbf{\thesisTitle} \\[10mm]}
-	{\Large \thesisName} \\
+
+	{\fontfamily{pag}\selectfont 
+		{\huge \color{ctcolortitle}{\thesisTitle} \\[10mm]}
+		{\Large \thesisName} \\
+	}
 
 	\vfill
-	\begin{minipage}[t]{.27\textwidth}
-		\raggedleft
-		\textit{1. Rapporteur}
-	\end{minipage}
-	\hspace*{15pt}
-	\begin{minipage}[t]{.65\textwidth}
-		{\Large \thesisFirstReviewer} \\
-	  	{\small \thesisFirstReviewerDepartment} \\[-1mm]
-		{\small \thesisFirstReviewerUniversity}
-	\end{minipage} \\[5mm]
-	\begin{minipage}[t]{.27\textwidth}
-		\raggedleft
-		\textit{2. Rapporteur}
-	\end{minipage}
-	\hspace*{15pt}
-	\begin{minipage}[t]{.65\textwidth}
-		{\Large \thesisSecondReviewer} \\
-	  	{\small \thesisSecondReviewerDepartment} \\[-1mm]
-		{\small \thesisSecondReviewerUniversity}
-	\end{minipage} \\[10mm]
-	
-	% supervisors
-	\begin{minipage}[t]{.27\textwidth}
-		\raggedleft
-		\textit{Direction}
-	\end{minipage}
-	\hspace*{15pt}
-	\begin{minipage}[t]{.65\textwidth}
-		\thesisFirstSupervisor\ et \thesisSecondSupervisor
-	\end{minipage} \\[0mm]
-	
-	\begin{minipage}[t]{.27\textwidth}
-		\raggedleft
-		\textit{Co-encadrement}
-	\end{minipage}
-	\hspace*{15pt}
-	\begin{minipage}[t]{.65\textwidth}
-		\thesisFirstAdvisor
-	\end{minipage} \\[10mm]
 
-	\thesisDate \\
+	% supervisors
+	% \begin{minipage}[t]{.27\textwidth}
+	% 	\raggedleft
+	% 	\textit{Direction}
+	% \end{minipage}
+	% \hspace*{15pt}
+	% \begin{minipage}[t]{.65\textwidth}
+	% 	\thesisFirstSupervisor\ et \thesisSecondSupervisor
+	% \end{minipage} \\[0mm]
+	
+	% \begin{minipage}[t]{.27\textwidth}
+	% 	\raggedleft
+	% 	\textit{Co-encadrement}
+	% \end{minipage}
+	% \hspace*{15pt}
+	% \begin{minipage}[t]{.65\textwidth}
+	% 	\thesisFirstAdvisor
+	% \end{minipage} \\[10mm]
+
+
+	\begin{minipage}[t]{\textwidth}
+		\raggedright
+		\noindent Thèse de doctorat en sciences et musicologie, dirigée par \thesisFirstSupervisor\ et \thesisSecondSupervisor, co-encadrée par \thesisFirstAdvisor.
+	\end{minipage} \\[5mm]
+
+	\begin{minipage}[t]{\textwidth}
+		\raggedright
+		\noindent  Soutenue publiquement le 24 janvier 2020, devant un jury composé de~:
+	\end{minipage} \\[2mm]
+
+
+	% \begin{minipage}[t]{.65\textwidth}
+	% 	\raggedleft
+	% 	{\Large \thesisFirstReviewer} \\
+	%   	%{\small \thesisFirstReviewerDepartment} \\[-1mm]
+	% 	{\small \thesisFirstReviewerUniversity}
+	% \end{minipage}
+	% \hspace*{15pt}
+	% \begin{minipage}[t]{.27\textwidth}
+	% 	\textit{\thesisFirstReviewerJury}
+	% \end{minipage} \\[5mm]
+
+	% \begin{minipage}[t]{.27\textwidth}
+	% 	\raggedleft
+	% 	\textit{2. Rapporteur}
+	% \end{minipage}
+	% \hspace*{15pt}
+	% \begin{minipage}[t]{.65\textwidth}
+	% 	{\Large \thesisSecondReviewer} \\
+	%   	%{\small \thesisSecondReviewerDepartment} \\[-1mm]
+	% 	{\small \thesisSecondReviewerUniversity}
+	% \end{minipage} \\[10mm]
+
+	% \begin{tabular}{l r}
+ %  		\thesisFirstReviewer, \thesisFirstReviewerPosition, \thesisFirstReviewerUniversity & \thesisFirstReviewerJury \\
+ %  		\thesisSecondReviewer, \thesisSecondReviewerPosition, \thesisSecondReviewerUniversity & \thesisSecondReviewerJury \\
+ %  		\thesisThirdReviewer, \thesisThirdReviewerPosition, \thesisThirdReviewerUniversity & \thesisThirdReviewerJury \\
+ %  		\thesisFourthReviewer, \thesisFourthReviewerPosition, \thesisFourthReviewerUniversity & \thesisFourthReviewerJury \\
+ %  		\thesisFirstSupervisor, \thesisFirstSupervisorPosition, \thesisFirstSupervisorUniversity & co-directeur \\
+ %  		\thesisSecondSupervisor, \thesisSecondSupervisorPosition, \thesisSecondSupervisorUniversity & co-directeur \\
+ %  		\thesisFirstAdvisor, \thesisFirstAdvisorPosition, \thesisFirstAdvisorUniversity & co-encadrant \\
+	% \end{tabular}
+
+
+	\begin{tabular}{@{} l r}
+  		\hspace{-1.5em} \thesisFourthReviewer &  \\ [-3pt]
+  		\hspace{-1.5em} \small{\thesisFourthReviewerPosition, \thesisFourthReviewerUniversity} & \small{\thesisFourthReviewerJury} \\ [3pt]
+  		\hspace{-1.5em} \thesisFirstSupervisor &  \\ [-3pt]
+  		\hspace{-1.5em} \small{\thesisFirstSupervisorPosition, \thesisFirstSupervisorUniversity} & \small{co-directeur} \\ [3pt]
+ 		\hspace{-1.5em} \thesisFirstReviewer & \\ [-3pt]
+  		\hspace{-1.5em} \small{\thesisFirstReviewerPosition, \thesisFirstReviewerUniversity}  & \small{\thesisFirstReviewerJury} \\ [3pt]
+  		\hspace{-1.5em} \thesisFirstAdvisor &  \\ [-3pt]
+  		\hspace{-1.5em} \small{\thesisFirstAdvisorPosition, \thesisFirstAdvisorUniversity} & \small{co-encadrant} \\ [3pt]
+  		\hspace{-1.5em} \thesisSecondSupervisor &  \\ [-3pt]
+  		\hspace{-1.5em} \small{\thesisSecondSupervisorPosition, \thesisSecondSupervisorUniversity} & \small{co-directeur} \\ [3pt]
+  		\hspace{-1.5em} \thesisSecondReviewer &  \\ [-3pt]
+  		\hspace{-1.5em} \small{\thesisSecondReviewerPosition, \thesisSecondReviewerUniversity} & \small{\thesisSecondReviewerJury} \\ [3pt]
+  		\hspace{-1.5em} \thesisThirdReviewer &  \\ [-3pt]
+  		\hspace{-1.5em} \small{\thesisThirdReviewerPosition, \thesisThirdReviewerUniversity} & \small{\thesisThirdReviewerJury} \\ [3pt]
+	\end{tabular}
+
+	%\thesisDate \\
 
 \end{titlepage}
 
@@ -83,17 +130,20 @@
 \hfill
 \vfill
 {
+	\selectlanguage{french}
 	\small
 	\noindent\textbf{\thesisName} \\
 	\textit{\thesisTitle} \\
-	\thesisSubject, \thesisDate \\
-	Rapporteur: \thesisFirstReviewer\ et \thesisSecondReviewer \\
-	Rapporteur: \thesisFirstSupervisor\ et \thesisSecondSupervisor \\
-	Co-encadrant: \thesisFirstAdvisor \\[1.5em]
+	\thesisSubject \\
+	%Rapporteurs: \thesisFirstReviewer\ et \thesisSecondReviewer \\
+	Directeurs: \thesisFirstSupervisor\ et \thesisSecondSupervisor \\
+	Co-encadrant: \thesisFirstAdvisor \\
+	Version finale, publiée le \thesisVersion. \\[1.5em]
+	%
 	\textbf{\thesisUniversity} \\
+	\thesisUniversityCollegium \\
 	%\textit{\thesisUniversityGroup} \\
 	\thesisUniversityInstitute \\
 	\thesisUniversityDepartment \\
-	\thesisUniversityStreetAddress \\
-	\thesisUniversityPostalCode\ \thesisUniversityCity
+	\thesisUniversityStreetAddress\ \thesisUniversityPostalCode\ \thesisUniversityCity
 }
