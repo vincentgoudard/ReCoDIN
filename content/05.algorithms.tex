@@ -33,11 +33,11 @@
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}
 	\includegraphics[width=\textwidth]{gfx/04_algorithms/TrahisonDesimages.jpg}
-	\caption[L'image d'un son n'est pas un son]{L'image d'un son n'est pas un son: les sons enregistrés sur un ordinateur sont des modèles complexes, des gestes programmés.}
+	\caption[L'image d'un son n'est pas un son]{L'image d'un son n'est pas un son: les sons enregistrés sur un ordinateur sont des données numériques utilisables dans des modèles complexes, des gestes programmés.}
 	\label{fig:algorithms:TrahisonDesimages}
 \end{figure}
 %------------------ Figure : FIBR-Voronoi ---------------------
-\indent Les données numériques sont à la fois extrêmement diverses en terme de contenu (son, image, texte, vidéo, structure, processus, etc.) et extrêmement uniformes en terme de représentation (une séquence de 0 et de 1). Cette uniformité de la représentation numérique permet de stocker ces diverses informations sur des supports identiques, de les transmettre sur les mêmes câbles, mais également de leur appliquer les mêmes processus de traitement\footnote{Par exemple, lire un fichier PDF comme s'il s'agissait d'un son, comme dans la composition audiovisuelle \textit{107724404x8}: \url{https://vimeo.com/242484484}. \index[people]{goudard@Goudard, Vincent!107724404x8@\textit{107724404x8}}}.\\
+\indent Les données numériques sont à la fois extrêmement diverses en terme de contenu (son, image, texte, vidéo, structure, processus, etc.) et extrêmement uniformes en terme de représentation (une séquence de 0 et de 1). Cette uniformité de la représentation numérique permet de stocker ces diverses informations sur des supports identiques, de les transmettre sur les mêmes câbles, mais également de leur appliquer les mêmes processus de traitement\footnote{Par exemple, lire un fichier PDF comme s'il s'agissait d'un signal audio, comme dans la composition audiovisuelle \textit{107724404x8}: \url{https://vimeo.com/242484484}. \index[people]{goudard@Goudard, Vincent!107724404x8@\textit{107724404x8}}}.\\
 \indent Au regard de cette uniformité de représentation, il nous faut donc compléter la remarque précédente : tous les sons produits par un ordinateur sont des sons de synthèse et tout matériau numérique est potentiellement un matériau sonore et musical.
 
 \subsection{Contrôle de la synthèse, synthèse du contrôle}
@@ -72,16 +72,6 @@
 % Ils constituent un répertoire de matériaux ``diagrammatiques''\footnote{cf. section \ref{sec:gesture:instrumental_to_musical:geste_programme}} dans lequel le luthier numérique peut puiser pour élaborer les modèles intermédiaires dynamiques que nous présentons ci-après.
 
 % %Mouvements des reflets sur l'eau, modélisation de la résonance des matériaux, des espaces réverbérants,  modélisation de la perception acoustique, modélisation des mouvements de 
-
-%------------------ Figure : FIBR-Voronoi ---------------------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}
-	\includegraphics[width=\textwidth]{gfx/04_algorithms/FIBR-Voronoi.png}
-	\caption[Utilisation d'un diagramme de Voronoï dans FIB\_R]{Un modèle intermédiaire développé pour la performance audiovisuelle FIB\_R, à partir d'un algorithme de calcul d'un diagramme de Voronoï (simulant la coadaptation organique d'un réseau de cellules). L'algorithme a été adapté pour permettre la modulation polyphonique du son en fonction de la forme que prennent les cellules quand elles sont déformées par l'interaction directes sur écran tactile (les cercles de couleur représentent ici la position des doigts).}
-	\label{fig:algorithms:FIBR-voronoi}
-\end{figure}
-%------------------ Figure : FIBR-Voronoi ---------------------
-
 
 
 % permettant d'intégrer dans l'instrument des processus d'écriture musicale, des modèles de perception psycho-acoustique (courbes isotoniques, ), des modèles de résonance des matériaux et des espaces (réverbérations, modèles physiques)
@@ -257,7 +247,16 @@
 %------------------ Figure : MP-event et MP-block ---------------------
 
 \noindent Ces dix dernières années, plusieurs modèles intermédiaires dynamiques ont été développés dans l'équipe \gls{LAM}, dans le cadre de plusieurs projets de recherche\footnote{\textit{OrJo} (Orchestre de Joysticks), 2009-2012, projet FEDER, financé par la Région Ile-de-France et \textit{Panam} (Pédagogie Artistique Numérique Accessible et Multimodale), 2012-2015, projet \gls{ANR}.} et donnant lieu à des publications, dans la continuité des développements pionniers d'Ali Momeni et Cyrille Henry \cite{momeni_dynamic_2006}, sur le contrôle de modèles audio-graphiques. En particulier, des recherches ont été menées sur les possibilités d'interconnexion de ces modèles\footnote{Une vidéo réalisée durant le projet OrJo donne un aperçu de la manière dont ils peuvent être interconnectés dans un scénario évolutif : \url{https://vimeo.com/25740547}} (figure \ref{fig:algorithms:MP-MID} et voir \cite{goudard_dynamic_2011}). D'autres développements se sont focalisés sur des algorithmes génératifs comme l'automate cellulaire du ``jeu de la vie''\footnote{Une vidéo montre son utilisation dans le logiciel Méta-Mallette : \url{https://vimeo.com/158323394}} (voir \cite{goudard_modeintermediaire_2012}). Enfin, des développements se sont concentrés sur l'étude verticale de la gestion du contrôle de la hauteur monophonique \cite{goudard_playing_2014}, en s'intéressant à ses possibles représentations sur une interface bi-dimensionnelle (de type tablette)(figure \ref{fig:algorithms:MID-hexakeyboard}) et sur ses altérations (figure \ref{fig:algorithms:MID-dynamic-pitch-correction}).\\
-\indent Ces différents modèles ont été intégrés dans la LAM-lib, un package pour Max librement téléchargeable\footnote{\url{https://github.com/LAM-IJLRA/lam-lib}}. Ils ont notamment été utilisés dans le cadre d'une pratique d'ensemble avec le logiciel Méta-Mallette\footnote{Logiciel développé par l'association Puce Muse (\url{https://pucemuse.com}).}, ainsi que dans des créations personnelles comme ``FIB\_R''.
+\indent Ces différents modèles ont été intégrés dans la LAM-lib, un package pour Max librement téléchargeable\footnote{\url{https://github.com/LAM-IJLRA/lam-lib}}. Ils ont notamment été utilisés dans le cadre d'une pratique d'ensemble avec le logiciel Méta-Mallette\footnote{Logiciel développé par l'association Puce Muse (\url{https://pucemuse.com}).}, ainsi que dans des créations personnelles comme ``FIB\_R'' (cf. figure \ref{fig:algorithms:FIBR-voronoi}).
+
+%------------------ Figure : FIBR-Voronoi ---------------------
+\begin{figure}[!htbp]
+	\captionsetup{format=plain}
+	\includegraphics[width=\textwidth]{gfx/04_algorithms/FIBR-Voronoi.png}
+	\caption[Utilisation d'un diagramme de Voronoï dans FIB\_R]{Un modèle intermédiaire développé pour la performance audiovisuelle FIB\_R, à partir d'un algorithme de calcul d'un diagramme de Voronoï (simulant la coadaptation organique d'un réseau de cellules). L'algorithme a été adapté pour permettre la modulation polyphonique du son en fonction de la forme que prennent les cellules quand elles sont déformées par l'interaction directes sur écran tactile (les cercles de couleur représentent ici la position des doigts).}
+	\label{fig:algorithms:FIBR-voronoi}
+\end{figure}
+%------------------ Figure : FIBR-Voronoi ---------------------
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -512,13 +511,13 @@ Les limitations du \gls{MIDI} ont pourtant été identifiées peu de temps aprè
 	\centering
 	\begin{minipage}[t]{0.485\textwidth}
 		\includegraphics[width=\linewidth]{gfx/04_algorithms/MP-mappingPure.png}
-		\caption[Exemple de patch MP : fonction pure]{Exemple de patch MP : mapping avec une fonction pure.}
+		\caption[MP : mapping avec une fonction pure]{Exemple de patch MP : mapping avec une fonction pure.}
 		\label{fig:algorithms:MP-pure}
 	\end{minipage}
 	\hspace{.01\linewidth}
 	\begin{minipage}[t]{0.485\textwidth}
 	  	\includegraphics[width=\linewidth]{gfx/04_algorithms/MP-mappingRecursive.png}
-		\caption[Exemple de patch MP : fonction récursive]{Exemple de patch MP : mapping avec une fonction récursive.}
+		\caption[MP : mapping avec une fonction récursive]{Exemple de patch MP : mapping avec une fonction récursive.}
 		\label{fig:algorithms:MP-recursive}
 	\end{minipage}
 \end{figure}
@@ -551,13 +550,13 @@ Dans un premier temps, nous associons les coordonnées x et y d'un \textit{MP-ev
 	\centering
 	\begin{minipage}[t]{0.38\textwidth}
 		\includegraphics[width=\linewidth]{gfx/04_algorithms/MP-mappingGuest.png}
-		\caption[Exemple de patch MP : Utilisation de la guestlist pour un mapping divergent]{Utilisation de la guestlist pour un mapping divergent.}
+		\caption[MP : guestlist et mapping divergent]{Utilisation de la guestlist pour un mapping divergent.}
 		\label{fig:algorithms:MP-mappingDivergent}
 	\end{minipage}
 	\hspace{.01\linewidth}
 	\begin{minipage}[t]{0.58\textwidth}
 	  	\includegraphics[width=\linewidth]{gfx/04_algorithms/MP-mappingConvergent.png}
-		\caption[Exemple de patch MP : Utilisation de la guestlist pour un mapping convergent]{Utilisation de la guestlist pour un mapping convergent.}
+		\caption[MP : guestlist et mapping convergent]{Utilisation de la guestlist pour un mapping convergent.}
 		\label{fig:algorithms:MP-convergent}
 	\end{minipage}
 \end{figure}
@@ -652,7 +651,7 @@ $$ z[n] = \Big(y[n] + jump\big[y[n]\big]\Big)\mod N $$
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}
 	\includegraphics[width=0.6\textwidth]{gfx/04_algorithms/sagrada-jumpBuffer.pdf}
-	\caption[Sagrada : schéma fonctionnel de la computation synchrone du \textit{jump-buffer}]{Schéma fonctionnel de la computation synchrone du \textit{jump-buffer}}
+	\caption[Sagrada : schéma fonctionnel du \textit{jump-buffer}]{Schéma fonctionnel de la computation synchrone du \textit{jump-buffer}}
 	\label{fig:algorithms:sagrada-jumpBuffer}
 \end{figure}
 %------------------ Figure : Sagrada-jump-buffer ---------------------
