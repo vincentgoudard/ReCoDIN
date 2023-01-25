@@ -4,4 +4,7 @@
 ## This is a draft
 Not to be published
 
+## Compilation
+bibtex
+
 Copyrights Vincent Goudard
