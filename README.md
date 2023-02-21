@@ -5,6 +5,11 @@
 Not to be published
 
 ## Compilation
-bibtex
+In a terminal, run "pdflatex", "biber", "pdflatex", "pdflatex".
+(You'll need to install a latex distro first, like MacTex or BasicTex on Mac)
 
-Copyrights Vincent Goudard
+Alternatively, if you use Sublime text editor, you can install the LaTeXing package.
+https://packagecontrol.io/installation
+https://packagecontrol.io/packages/LaTeXing
+
+© Vincent Goudard
