@@ -5,7 +5,12 @@
 Not to be published
 
 ## Compilation
-In a terminal, run "pdflatex", "biber", "pdflatex", "pdflatex".
+In a terminal, run :
+- `pdflatex main.tex`;
+- `biber main.bcf`;
+- `pdflatex main.tex`;
+- `pdflatex main.tex` (again);
+
 (You'll need to install a latex distro first, like MacTex or BasicTex on Mac)
 
 Alternatively, if you use Sublime text editor, you can install the LaTeXing package.
