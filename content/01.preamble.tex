@@ -110,7 +110,7 @@ Cette écoute musicale s'écarte de la posture consciente décrite par Schaeffer
 \indent Dans ce contexte, on pourrait être amené à envisager les \glspl{DMI} comme des \glspl{IHM}, tel que cela a pu être le cas au moment de leur apparition. Cependant, la performance musicale a cela de particulier qu'elle ne possède pas de cahier des charges préalable (la partition ne saurait être considérée comme telle!) et que loin de se plier à la nécessité d'exécuter une tâche précise, comme il pourrait être le cas dans le design d'autres \glspl{IHM}, les instruments sont des objets techniques dont les musiciens \textit{abusent} (plus qu'ils en usent), dont les artefacts peuvent être appréciables et souhaitables, dont la compréhension n'est pas un préalable requis pour leur utilisation, pas davantage que leur fiabilité n'est garante d'une performance musicale intéressante. Le design des \glspl{DMI}, ainsi que le design des outils-mêmes du luthier numérique, doivent être informés de ces particularités propres à la création artistique si l'on souhaite qu'ils se prêtent à une interprétation \textit{vivante} du répertoire, à la création de musiques nouvelles et à l'exploration de territoires sonores inexplorés.
 
 
-\section{Problématique}
+\section{Questions et hypothèses}
 
 \noindent La conception des \glspl{DMI} rassemble des pratiques qui sont relativement dissociées dans la lutherie acoustique occidentales de ces derniers siècles : les rôles du facteur d'instrument, du compositeur, de l'interprète et de l'auditeur y sont souvent assumés par des personnes distinctes. En contraste, les nouvelles lutheries, et particulièrement celles usant de technologies numériques, redistribuent 
 % ces fonctions, qui prennent place au sein de l'instrument-même, et
@@ -131,46 +131,47 @@ ces rôles qui se retrouvent parfois assumés par une même personne. En particu
 % \item  Quelles représentations privilégieront, pour le contrôle de paramètres identiques, tantôt la virtuosité, la précision, l'étendue de la palette sonore, la polyphonie gestuelle ou encore la structure temporelle ?
 % \end{itemize}
 
-\section{Enjeux et hypothèses}
+%\section{Enjeux et hypothèses}
 
-\noindent L'enjeu de ce travail de recherche est de répondre à cette problématique en vue de discerner des caractéristiques transversales dans les lutheries numériques en l'absence de tradition, de répertoire, de notation et de méthode d'apprentissage clairement établis.\\
-\indent Il s'appuie pour cela sur une étude globale du ``cycle de vie'' d'un \gls{DMI}, s'étendant de sa conception à sa pratique en concert, en passant par sa réalisation matérielle, sa programmation algorithmique, le design de son interface, la composition et l'interprétation avec cet instrument, avec l'enjeu de confronter au réel de la performance les concepts théoriques et leur implémentation.\\
+\noindent Cette ouvrage propose quelques éléments de réponse, mais davantage, de réflexion, en vue de discerner des caractéristiques transversales dans les lutheries numériques en l'absence de tradition, de répertoire, de notation et de méthode d'apprentissage clairement établis. Il s'appuie pour cela sur une étude globale du ``cycle de vie'' d'un \gls{DMI}, s'étendant de sa conception à sa pratique en concert, en passant par sa réalisation matérielle, sa programmation algorithmique, le design de son interface, la composition et l'interprétation avec cet instrument, avec l'enjeu de confronter au réel de la performance les concepts théoriques et leur implémentation.\\
 \indent Ce manuscrit se présente donc comme une vue ``en coupe'' d'un travail de lutherie numérique, dans ce qu'il comporte de réflexions, de choix de matériaux physiques et numériques, d'assemblages, de notations, de pratiques, et comment ces différents aspects interfèrent dans le cas particulier des instruments intégrant le numérique dans le design de leur interaction. La perspective globale que propose ce cycle complet est cependant polarisée par la singularité de choix personnels (il ne s'agit pas ici de concevoir un instrument universel). Cette singularité est précisément envisagée comme une caractéristique des nouvelles lutheries, dont je tenterai d'analyser les causes.\\
 \indent Afin de croiser l'approche personnelle présentée ici avec celles d'autres musiciens numériques, cette recherche sera complétée par une réflexion plus générale, nourrie des échanges réalisés lors d'interviews, durant lesquelles ressortent la diversité des motivations, ainsi que certaines similarités de pratiques.
 
 \subsubsection*{Hypothèse 1 : l'instrument atomisé, recomposé}
 
-\noindent L'instrument est atomisé et se retrouve configuré comme un agencement modulaire évolutif qui se cristallise ponctuellement dans des instances contextuelles. Une mise en parallèle est faite entre l'apparition de l'écriture musicale, il y a un millénaire, et l'émergence contemporaine d'une \textit{écriture de l'instrument}, qui développe à sa manière un \textit{répertoire} de formes, d'associations gestuelles-sonores, de processus dynamiques et de structures de représentation.
+\noindent L'instrument est \textit{atomisé} par le numérique en un agencement modulaire évolutif qui se cristallise ponctuellement dans des instances contextuelles. Ce caractère modulaire des \glspl{DMI} en fait des instruments fondamentalement inachevés, dont on peut constater qu'ils sont souvent vendus en \textit{pièces détachées}: contrôleurs, synthétiseurs, effets, ampli, haut-parleurs sont autant d'éléments nécessaires, mais commercialisés séparément. Pour le dire autrement, l'instrument numérique est rarement ``prêt à l'emploi''\footnote{En témoigne la popularite de l'expression ``plug'n play'', slogan commercial qui résonne en creux comme un aveu que les outils numériques ne le sont généralement pas...} et le musicien numérique aura toujours une part plus ou moins importante de finalisation de son instrument, contribuant à singulariser celui-ci. Une mise en parallèle est ainsi faite entre l'apparition de l'écriture musicale, il y a un millénaire, et l'émergence contemporaine d'une \textit{écriture de l'instrument}, qui développe à sa manière un \textit{répertoire} de formes, d'associations gestuelles-sonores, de processus dynamiques et de structures de représentation.
 
 \subsubsection*{Hypothèse 2 : l'instrument est subversif}
 
-\noindent Si le design des \glspl{IHM} est largement motivé par la recherche de transparence de l'interaction et la poursuite d'une élimination de l'effort et du risque, la création musicale et les instruments qui la soutiennent se fondent sur une subversion des sens afin de redéfinir des continuités (e.g. le \textit{legato}) entre des espaces \textit{a priori} disjoints et d'introduire des ruptures (e.g. rythmiques) dans ce que nous percevons habituellement comme un \textit{continuum}. À l'opposé du dessein poursuivi par les \gls{IHM} conventionnelles, cet acte créatif passe par un effort (physique, attentionnel, mental) soutenu et une prise de risque qui ne cherche pas à exclure la possibilité de l'accident, parfois recherché en tant que source fertile d'idées musicales nouvelles.
+\noindent Si le design des \glspl{IHM} est largement motivé par la recherche de transparence de l'interaction et la poursuite d'une élimination de l'effort et du risque, la création musicale et les instruments qui la soutiennent se fondent à l'inverse sur une subversion des sens afin de redéfinir des continuités entre des espaces \textit{a priori} disjoints et d'introduire des ruptures dans ce que nous percevons habituellement comme un \textit{continuum}. À l'opposé du dessein poursuivi par les \glspl{IHM} conventionnelles, cet acte créatif passe par un effort soutenu du corps et de l'esprit, et par une prise de risque qui ne cherche pas à exclure la possibilité de l'accident, parfois recherché en tant que source fertile de créations musicales nouvelles.
 
 
 \subsubsection*{Hypothèse 3 : l'articulation du continu et du discret comme mode de jeu}
-
+\todo{passage foireux}
 \noindent Si la continuité de la vibration physique semble être une donnée constitutive des instruments acoustiques, qui recréent artificiellement des espaces discrets (tels que les échelles harmoniques et rythmiques), le domaine du numérique part d'une certaine manière dans la direction opposée. Les \glspl{DMI} sont caractérisés par la nature discrète (et même binaire) de l'encodage symbolique sous-jacent aux données traitées. Il s'agit donc davantage de pouvoir retrouver une continuité dans ce monde discret.\\
-\indent Cette bipolarité du continu et du discret traverse ainsi, à des degrés variés, les questions de design qui se présentent dans la conception des \glspl{DMI}, que cela soit au niveau de l'encodage du geste capté ou de celui de la synthèse audio. Les développements présentés dans ce travail sont orientés par les possibilités de passage fluide du continu au discret et inversement, animés par la conviction qu'une partie du jeu musical se joue dans cette ambivalence, en soutenant l'aspect subversif du geste musical.
+\indent Cette bipolarité du continu et du discret traverse ainsi, à des degrés variés, les questions de design qui se présentent dans la conception des \glspl{DMI}, que cela soit au niveau de l'encodage du geste capté ou de celui de la synthèse audio. Les développements présentés dans ce travail sont orientés par les possibilités de passage fluide du continu au discret et inversement, animés par la conviction qu'une partie du jeu musical se joue précisément dans cette ambivalence, en soutenant l'aspect subversif du geste musical.
 
 \subsubsection*{Hypothèse 4 : les DMIs sont métamorphiques et appellent à d'autres virtuosités}
 
 \noindent La stabilité de l'instrument présentée comme condition nécessaire au développement d'une pratique musicale s'appuie sur une conception héritée de l'instrument acoustique traditionnel et de son écosystème, dans lequel un musicien professionnel pratique généralement un instrument de manière exclusive et interprète un ensemble varié d'œuvres écrites pour cet instrument, et qui mettent notamment à profit la virtuosité gestuelle qu'il acquiert.\\
 \indent Un certain nombre de facteurs contribuent à l'instabilité des \glspl{DMI} et vient contrarier cette tradition. Mais dans le même temps, cette instabilité consubstantielle au médium numérique est la contrepartie d'un \textit{métamorphisme} (c'est à dire une capacité à la métamorphose) dont il est possible d'utiliser le potentiel expressif pour développer de nouvelles pratiques et d'autres types de virtuosité.
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Interviews}
 
-\noindent Une caractéristique notable des lutheries numériques est leur diversité et le foisonnement d'approches, de propositions, de positions prises par ceux qui les inventent et les pratiquent. Un certain nombre d'entretiens ont été menés durant le travail de thèse afin d'élargir le champ de la réflexion à différentes approches sur les \glspl{DMI}.\\
-\indent Ces entretiens ont pris la forme de discussions libres, orientées par un certain nombre de questions concernant les motivations originales ayant amené les personnes interviewées à concevoir et utiliser des \glspl{DMI}, ainsi que les choix particuliers de design qui ont orienté leur élaboration. Le contenu de chacun de ces entretiens est reproduit intégralement dans les retranscriptions en annexe, accompagnés d'une brève biographie présentant les personnes ayant accepté de présenter leur travail et leurs réflexions.
+\noindent Une caractéristique notable des lutheries numériques est leur diversité et le foisonnement d'approches, de propositions, de positions prises par ceux qui les inventent et les pratiquent. Un certain nombre d'entretiens ont été menés durant le travail de thèse afin d'élargir le champ de la réflexion à différentes approches sur les \glspl{DMI}. Ces entretiens ont pris la forme de discussions libres, orientées par un certain nombre de questions concernant les motivations originales ayant amené les personnes interviewées à concevoir et utiliser des \glspl{DMI}, ainsi que les choix particuliers de design qui ont orienté leur élaboration.\\ 
+%Le contenu de chacun de ces entretiens est reproduit intégralement dans les retranscriptions en annexe, accompagnés d'une brève biographie présentant les personnes ayant accepté de présenter leur travail et leurs réflexions.
+\indent Je me dois toutefois de faire ici une auto-critique : ces entretiens ont été réalisés au fil de ma recherche, sans agenda préalable, ni méthode concernant le choix des interviewés. Il en ressort un biais sociologique manifeste : la surreprésentation des hommes blancs dans le milieu auquel je m'intéresse ici --~biais très infortunément amplifié dans cette liste par l'absence de planification préalable de ma part, quand une démarche proactive aurait été nécessaire en ce domaine pour contrebalancer ces inégalités de représentations. A défaut d'avoir eu le temps de conduire de nouveaux entretiens après m'être rendu compte de ce déséquilibre, j'espère que cette auto-critique permettra au lecteur d'avoir conscience de ce biais et de ne pas reproduire mon erreur.
 
 \subsubsection*{Personnes interviewées}
-\noindent \textit(Les hyperliens sur les noms renvoient aux annexes correspondantes.)
+%\noindent \textit(Les hyperliens sur les noms renvoient aux annexes correspondantes.)
 
-\vspace{-1em}
+%\vspace{-1em}
 \begin{itemize}[noitemsep]
 \item \textbf{\hyperref[appendix:bernier]{Nicolas Bernier}} (né en 1977), compositeur et artiste sonore canadien créant des installations et performances audio-visuelles. Il enseigne la ``musique numérique'' à l'Université de Montréal;
-\item \textbf{\hyperref[appendix:collins]{Nicolas Collins}} (né en 1954), compositeur, artiste sonore, professeur au département son à la \textit{School of the Art Institute} de Chicago et auteur notable du livre "Handmade Electronic Music – The Art of Hardware Hacking";
+\item \textbf{\hyperref[appendix:collins]{Nicolas Collins}} (né en 1954), compositeur, artiste sonore, professeur au département son à la \textit{School of the Art Institute} de Chicago et auteur notable du livre ``Handmade Electronic Music – The Art of Hardware Hacking''\cite{collins_handmade_2006};
 \item \textbf{\hyperref[appendix:dumeaux]{François Dumeaux}} (né en 1978), musicien improvisateur  et compositeur de musiques électro-acoustiques, dont la pratique est également ancrée dans celle des musiques traditionnelles;
 \item \textbf{\hyperref[appendix:delaubier]{Serge De Laubier}} (né en 1958), musicien, inventeur du Méta-Instrument et directeur artistique de l'association Puce Muse depuis sa création en 1982;
 \item \textbf{\hyperref[appendix:fernandez]{Jose-Miguel Fernandez}} (né en 1978), musicien et compositeur de musiques électro-acoustiques, doctorant en composition à l'\textit{IRCAM};
@@ -181,24 +182,24 @@ ces rôles qui se retrouvent parfois assumés par une même personne. En particu
 \item \textbf{\hyperref[appendix:zamborlin]{Bruno Zamborlin}} (né en 1984), fondateur et CEO de Mogees, un capteur intelligent qui ``transforme n'importe quelle surface en instrument de musique'', et de HyperSurfaces, entreprise commercialisant cette technologie. 
 \end{itemize}
 
-\noindent Je me dois toutefois de faire ici une auto-critique : ces entretiens ont été réalisés au fil de ma recherche, sans agenda préalable, ni méthode concernant le choix des interviewés. Il en ressort un biais sociologique manifeste : la surreprésentation des hommes blancs dans le milieu auquel je m'intéresse ici --~biais très infortunément amplifié dans cette liste par l'absence de planification préalable de ma part, quand une démarche proactive aurait été nécessaire en ce domaine pour contrebalancer ces inégalités de représentations. A défaut d'avoir eu le temps de conduire de nouveaux entretiens après m'être rendu compte de ce déséquilibre, j'espère que cette auto-critique permettra au lecteur d'avoir conscience de ce biais et de ne pas reproduire mon erreur.
 
-\section{Contributions de cette thèse}
 
-\noindent Cette thèse propose plusieurs contributions théoriques dans le domaine de la recherche sur les \glspl{DMI}, ainsi que plusieurs contributions pratiques sous la forme de \glspl{LogicielLibre} et disponibles sur le web.
+% \section{Contributions de cette thèse}
 
-\subsubsection*{Contributions théoriques}
+% \noindent Cette thèse propose plusieurs contributions théoriques dans le domaine de la recherche sur les \glspl{DMI}, ainsi que plusieurs contributions pratiques sous la forme de \glspl{LogicielLibre} et disponibles sur le web.
 
-%\vspace{-1em}
-\begin{itemize}[noitemsep]
-\item une articulation générale des questions de représentation et de contrôle, considérées selon les différentes perspectives qui composent les chapitres de cette thèse, mais où se font écho de manière transversale plusieurs concepts développés au long de cette recherche;
-\item une réflexion critique sur la pérennité des \glspl{DMI}, leur cycle de vie, la notion d'assemblage éphémère et ses conséquences sur leur design et leur pratique (chapitre~\ref{ch:ephemeral});
-\item une caractérisation du geste musical dans la pratique des \glspl{DMI}, en particulier la proposition d'une nomenclature qui s'émancipe du modèle instrumental acoustique (chapitre \ref{ch:gesture});
-\item la mise en perspective de cette typologie gestuelle avec des stratégies d'interaction intégrant la part subversive de la performance musicale et son inscription dans le design de l'instrument (chapitre \ref{ch:gesture});
-\item une revue globale des matériaux physiques composant l'interface de jeu et une analyse de leur agencement, étayée par une présentation phylogénétique de trois versions successives d'une interface de jeu développée ces dernières années (cf. chapitre \ref{ch:interfaces});
-\item la proposition d'un modèle de communication asynchrone entre modules de traitements, adapté à une architecture modulaire de processus polyphoniques dynamiques (cf. chapitre \ref{ch:algorithms}). Ce modèle est étayé par une implémentation opérationnelle et son application dans des librairies graphiques et audio  (MP, MP.TUI, Sagrada, cf. contributions pratiques ci-dessous);
-\item une réflexion sur la notion de partition dynamique sur écran, élaborée dans la perspective d'une pratique de l'improvisation électroacoustique, dans laquelle les éléments de la partition et son design sont repensé pour laisser un rôle central à l'écoute mutuelle (chapitre \ref{ch:interfaces});
-\end{itemize}
+% \subsubsection*{Contributions théoriques}
+
+% %\vspace{-1em}
+% \begin{itemize}[noitemsep]
+% \item une articulation générale des questions de représentation et de contrôle, considérées selon les différentes perspectives qui composent les chapitres de cette thèse, mais où se font écho de manière transversale plusieurs concepts développés au long de cette recherche;
+% \item une réflexion critique sur la pérennité des \glspl{DMI}, leur cycle de vie, la notion d'assemblage éphémère et ses conséquences sur leur design et leur pratique (chapitre~\ref{ch:ephemeral});
+% \item une caractérisation du geste musical dans la pratique des \glspl{DMI}, en particulier la proposition d'une nomenclature qui s'émancipe du modèle instrumental acoustique (chapitre \ref{ch:gesture});
+% \item la mise en perspective de cette typologie gestuelle avec des stratégies d'interaction intégrant la part subversive de la performance musicale et son inscription dans le design de l'instrument (chapitre \ref{ch:gesture});
+% \item une revue globale des matériaux physiques composant l'interface de jeu et une analyse de leur agencement, étayée par une présentation phylogénétique de trois versions successives d'une interface de jeu développée ces dernières années (cf. chapitre \ref{ch:interfaces});
+% \item la proposition d'un modèle de communication asynchrone entre modules de traitements, adapté à une architecture modulaire de processus polyphoniques dynamiques (cf. chapitre \ref{ch:algorithms}). Ce modèle est étayé par une implémentation opérationnelle et son application dans des librairies graphiques et audio  (MP, MP.TUI, Sagrada, cf. contributions pratiques ci-dessous);
+% \item une réflexion sur la notion de partition dynamique sur écran, élaborée dans la perspective d'une pratique de l'improvisation électroacoustique, dans laquelle les éléments de la partition et son design sont repensé pour laisser un rôle central à l'écoute mutuelle (chapitre \ref{ch:interfaces});
+% \end{itemize}
 
 \subsubsection*{Contributions pratiques}
 
@@ -213,11 +214,11 @@ ces rôles qui se retrouvent parfois assumés par une même personne. En particu
 \end{itemize}
 
 
-\section{Structure de la thèse}
+\section{Structure de cet ouvrage}
 \label{sec:preamble:structure}
 
-\subsubsection*{\hyperref[ch:introduction]{Chapitre 1 - Introduction}} 
-\noindent Le présent chapitre présentant les motivations, les concepts principaux, la problématique et les enjeux de cet ouvrage, ses contributions et sa structure.
+%\subsubsection*{\hyperref[ch:introduction]{Chapitre 1 - Introduction}} 
+%\noindent Le présent chapitre présentant les motivations, les concepts principaux, la problématique et les enjeux de cet ouvrage, ses contributions et sa structure.
 
 \subsubsection*{\hyperref[ch:ephemeral]{Chapitre 2 - Instances éphémères d'agencements modulaires}}
 
@@ -242,12 +243,12 @@ ces rôles qui se retrouvent parfois assumés par une même personne. En particu
 \subsubsection*{\hyperref[ch:notation]{Chapitre 7 - Notations pour les DMIs}} 
 \noindent Le chapitre \ref{ch:notation} présente des travaux portant sur la notation musicale dans le domaine de la performance électroacoustique utilisant des \glspl{DMI}. Les questions de composition collective, d'édition collaborative et d'écologie de l'attention sont abordées et sont mises en œuvre dans \iquote{John, the semi-conductor}, un logiciel permettant la génération automatique et l'édition collective de partitions minimales, utilisé dans l'ensemble d'improvisation électroacoustique ONE. 
 
-\subsubsection*{\hyperref[ch:conclusion]{Chapitre 8 - Conclusion}} 
-%TODO\\
-\noindent La conclusion présentera un récapitulatif du travail présenté dans ce document ainsi qu'une ouverture sur les perspectives et questions ouvertes par cette recherche.
+% \subsubsection*{\hyperref[ch:conclusion]{Chapitre 8 - Conclusion}} 
+% %TODO\\
+% \noindent La conclusion présentera un récapitulatif du travail présenté dans ce document ainsi qu'une ouverture sur les perspectives et questions ouvertes par cette recherche.
 
-\subsubsection*{\hyperref[appendix:delaubier]{Annexes}} 
-\noindent Les annexes contiennent l'intégralité des retranscriptions d'interviews réalisées. Elles sont des documents bruts, nécessaires à cette recherche et n'ont pas vocation à être publiées.
+% \subsubsection*{\hyperref[appendix:delaubier]{Annexes}} 
+% \noindent Les annexes contiennent l'intégralité des retranscriptions d'interviews réalisées. Elles sont des documents bruts, nécessaires à cette recherche et n'ont pas vocation à être publiées.
 
 
 
