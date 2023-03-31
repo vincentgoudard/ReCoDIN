@@ -7,3 +7,5 @@ TODO book
 - vérfier les TODO et les "??" (pour réf manquantes)
 - supprimer la partie "Enjeux et hypothèses" en redispatchant son contenu dans les intros et conclusions de parties.
 - supprimer la partie 1.6 (contributions). Mettre éventuellement la liste des outils en fin d'ouvrage.
+
+dans l'intro, je dis que l'instrument est personnel ("singularité de choix personnels"), mais ne présente pas cela comme une hypothèse.
