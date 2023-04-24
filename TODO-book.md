@@ -11,3 +11,6 @@ TODO book
 dans l'intro, je dis que l'instrument est personnel ("singularité de choix personnels"), mais ne présente pas cela comme une hypothèse.
 
 - écriture inclusive
+- vérifier les références :
+	+ URL pour docs en ligne
+	+ maison d'édition (pour les films comme "Ecoute")
