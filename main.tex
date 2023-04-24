@@ -85,6 +85,17 @@
 
 \bibliography{thesis.bib}
 
+% converts all @miscs with a URL field to @online, so that online resources have url in reference
+% see https://tex.stackexchange.com/questions/428959/get-biblatex-to-show-url-for-webpage-references
+% \DeclareSourcemap{
+  % \maps[datatype=bibtex, overwrite=true]{
+    % \map{
+      % \step[fieldsource=url, final]
+      % \step[typesource=misc, typetarget=online]
+    % }
+  % }
+% }
+
 %\usepackage[yyyymmdd,hhmmss]{datetime}
 
 \hypersetup{					% setup the hyperref-package options
