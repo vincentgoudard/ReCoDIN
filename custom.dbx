@@ -1,0 +1,6 @@
+\DeclareDatamodelConstraints[misc]{
+  \constraint[type=mandatory]{
+    \constraintfield{publisher}
+    \constraintfield{url}
+  }
+}
