@@ -178,7 +178,7 @@
 \begin{figure}[!htbp]
 	\captionsetup{format=plain}
 	\includegraphics[width=\textwidth]{gfx/04_algorithms/FIBR-patch.png}
-	\caption[Aperçu très partiel d'un patch Max]{Aperçu très partiel du patch Max utilisé dans la performance ``FIB\_R''.}
+	\caption[Aperçu très partiel d'un patch Max]{Aperçu très partiel du patch Max utilisé dans la performance ``FIB\_R'' de Forages\index[people]{forages@FORAGES (groupe)!fibr@\textit{FIB\_R}}.}
 	\label{fig:algorithms:FIBR-patch}
 \end{figure}
 %------------------ Figure : MID ---------------------
@@ -191,16 +191,16 @@
 \vspace{-1em}
 \begin{itemize}[noitemsep]
 	\item \textbf{en qualité}: les modèles intermédiaires peuvent venir enrichir le mouvement, que cela soit de manière statique, en modifiant sa plage de valeur, ou dynamique, en le modulant pour lui ajouter un contenu fréquentiel absent dans le geste capté, excédant potentiellement les capacités motrices humaines\footnote{Nick Collins présente ainsi son algorithme BBcut (pour \iquote{Break Beat Cutter}), qui opère un découpage et un ré-ordonnancement d'un échantillon audio (typiquement une boucle de batterie) dans le style frénétique de la drum'n bass: ``\textit{The sort of audio cutting assumed here is usually at haptic or human rhythmic rates, with the obvious capability to reach inhuman speeds.}'' dans \cite{collins_bbcut_2002}. }, par exemple, un vibrato, un tremolo, une distorsion, etc. Le champ des possibilités est très vaste, tant la richesse du signal fourni par les capteurs gestuels sur les \glspl{DMI} est généralement bien en-deçà de la richesse des interactions se produisant dans les instruments acoustiques.\\
-	\indent Il est ainsi plus rare, quoique possible, qu'un modèle intermédiaire \textit{réduise} la richesse du mouvement. Cela peut cependant se présenter, dans le cas de modèles qui visent à borner son amplitude, ou réduire ses variations. Un exemple notoire dans les musiques pop actuelles est l'\textit{auto-tune} qui vient réduire les variations de hauteur dans la voix naturelle, pour la contraindre sur une hauteur fixe. Dans le cas du geste, le système de quantification dynamique de la hauteur présenté dans \cite{goudard_playing_2014} en est un exemple (cf. figure \ref{fig:algorithms:MID-dynamic-pitch-correction}).\\
+	\indent Il est aussi possible qu'un modèle intermédiaire \textit{réduise} la richesse du mouvement, pour borner son amplitude ou réduire ses variations. Un exemple notoire dans les musiques actuelles est l'\textit{auto-tune} qui vient réduire les variations de hauteur dans la voix naturelle, pour la contraindre sur une hauteur fixe. Dans le cas du geste, le système de quantification dynamique de la hauteur présenté dans \cite{goudard_playing_2014} en est un exemple (cf. figure \ref{fig:algorithms:MID-dynamic-pitch-correction}).\\
 	\indent La nature de l'altération vient conférer une identité musicale au modèle intermédiaire, un ``son'' spécifique. Par exemple, l'algorithme BBcut \cite{collins_bbcut_2002} et ses variations\footnote{Notamment : \textit{modsquad} (2000) de Atau Tanaka\index[people]{tanaka@Tanaka, Atau} dans Max, \textit{LiveCut} de Rémy Muller, ou encore \textit{BeatRepeat} (2005) dans Ableton Live.} est une signature qui, associée à une famille de boucles rythmiques\footnote{Notamment les samples ``\textit{Amen Break}'' des Winstons, ``\textit{Funky Drummer}'' de James Brown, ou encore ``\textit{Think}'' de Lyn Collins.}, est audible dans toute la musique breakbeat et ``incorpore'' --~pour reprendre l'expression de Manovitch en exergue de ce chapitre~-- les techniques de scratch des DJs et de segmentation de boucles rythmiques re-séquencées dans les boites à rythmes.
 
-	\item \textbf{en quantité}: le geste peut également être augmenté quantitativement, en le démultipliant et en créant une polyphonie à partir d'un mouvement unique. C'est le cas, par exemple, de l'arpégiateur qui génère un accord arpège à partir d'un accord plaqué ou simplement de sa note fondamentale, des algorithmes de foule (e.g. algorithme de Boids), ou des modèles physiques qui permettent de générer une multitude de mouvements constituant la réponse d'un matériau virtuel sur lequel on exerce une simple force\footnote{Voir par exemple le projet ``Silicat'' de Mathieu Constans, qui manipule en direct des personnages virtuels (et sonores) tel un marionnetiste: \url{https://vimeo.com/362433354}, ou le projet ``Espaces croisés'' de Mathieu Chamagne, qui manipule en temps réel des modèles physiques: \url{https://youtu.be/InY8bwlVOsg}}. Le mouvement peut également être réduit en quantité, notamment par des systèmes de cribles qui ne laissent passer que certaines valeurs.
+	\item \textbf{en quantité}: le geste peut également être augmenté quantitativement, en le démultipliant et en créant une polyphonie à partir d'un mouvement unique. C'est le cas, par exemple, de l'arpégiateur qui génère un accord arpège à partir d'un accord plaqué ou simplement de sa note fondamentale, ou encore des algorithmes qui permettent de générer une multitude de mouvements comme la réponse d'un objet virtuel sur lequel on exerce une simple force\footnote{Voir par exemple le projet ``Silicat'' de Mathieu Constans, qui manipule en direct des personnages virtuels (et sonores) tel un marionnetiste: \url{https://vimeo.com/362433354}, ou le projet ``Espaces croisés'' de Mathieu Chamagne, qui manipule en temps réel des modèles physiques: \url{https://youtu.be/InY8bwlVOsg}}. Le mouvement peut également être réduit en quantité, notamment par des systèmes de cribles qui ne laissent passer que certaines valeurs.
 	
 	\item \textbf{dans sa continuité}: les algorithmes permettant de quantifier le mouvement en sont des exemples, de même que les algorithmes d'analyse qui permettent la reconnaissance de formes labellisées.
 	
-	\item \textbf{dans sa temporalité}: les machines permettant l'enregistrement et le temps différé offrent de multiples possibilités d'étirer, de contracter, de différer le mouvement, que cela soit sous la forme d'échos, de boucles enregistrées, d'alignements temporels sur une partition\footnote{Voir par exemple le système \textit{Antescofo} qui permet de suivre une partition en temps-réel, et de déclencher des événements pré-enregistrés, en s'adaptant à la vitesse de l'instrumentiste.} ou sur un motif rythmique, comme les ``\textit{grooves}'' dans Ableton Live qui permette d'introduire différentes sortes de \textit{swing} sur des motifs rythmiques.
+	\item \textbf{dans sa temporalité}: les machines permettant l'enregistrement et le temps différé offrent de multiples possibilités d'étirer, de contracter, de différer le mouvement, que cela soit sous la forme d'échos, de boucles enregistrées, d'alignements temporels sur une partition\footnote{Voir par exemple le système \textit{Antescofo} qui permet de suivre une partition en temps-réel, et de déclencher des événements pré-enregistrés, en s'adaptant à la vitesse de l'instrumentiste.} ou sur un motif rythmique, comme les ``\textit{grooves}'' dans Ableton Live qui permettent d'introduire différentes sortes de \textit{swing} sur des motifs rythmiques. %De même, les algorithmes de reconnaissance de formes permettent de traduire la continuité d'un geste en un événement discret, comme c'est le cas dans les 
 
-	\item \textbf{dans son contenu}: un geste peut également être le simple déclenchement de processus possédant leurs propres mouvements autonomes, comme cela peut être le cas dans les algorithmes stochastiques ou génératifs (cf. modèle basé sur le ``jeu de la vie'', présenté dans les exemples en section \ref{sec:algorithms:MID:examples}). Un autre exemple intéressant est celui du sélecteur de bande radio, qui transforme un simple geste de rotation de potentiomètre en des changements disruptifs de contenus musicaux, tel qu'utilisé par John Cage dans sa pièce ``Imaginary Landscape No. 4'', et qui a été adapté dans un module Eurorack.
+	\item \textbf{dans son contenu}: un geste peut également être le simple déclenchement de processus possédant leurs propres mouvements autonomes, comme cela peut être le cas dans les algorithmes stochastiques ou génératifs (cf. modèle basé sur le ``jeu de la vie'', présenté dans les exemples en section \ref{sec:algorithms:MID:examples}). Un autre exemple intéressant est celui du sélecteur de bande radio, qui transforme un simple geste de rotation de potentiomètre en des changements disruptifs de contenus musicaux, tel qu'utilisé par John Cage dans sa pièce ``Imaginary Landscape No. 4''\index[people]{cage@Cage, John!imaginarylandscapenofour@\textit{Imaginary landscape No 4}}, et qui a été adapté dans un module de synthèse modulaire Eurorack.
 \end{itemize}
 
 \noindent Indépendamment de leur fonctionnement interne, les modèles intermédiaires présentent également certaines potentialités, qui facilitent leur usage au sein d'un agencement instrumental. La liste ci-après résume quelques aspects souhaitables de cette affordance :
@@ -216,47 +216,47 @@
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Exemples}
-\label{sec:algorithms:MID:examples}
-\todo{Virer toute cette partie}
-%------------------ Figure : MID ---------------------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}
-	\includegraphics[width=\textwidth]{gfx/04_algorithms/OrJo_MID_1200x300px.png}
-	\caption[Modèles intermédiaires dynamiques pour la synthèse audio-graphique]{Modèles intermédiaires dynamiques pour la synthèse audio-graphique. De gauche à droite : a) un modèle géométrique basé sur les courbes cycloïdes, b) un modèle pseudo-physique basé sur l'algorithme de Verlet, c) les modèles de Cycloïdes et de Verlet interconnectés, d) un algorithme génératif basé sur le ``jeu de la vie''.}
-	\label{fig:algorithms:MP-MID}
-\end{figure}
-%------------------ Figure : MID ---------------------
+% \subsection{Exemples}
+% \label{sec:algorithms:MID:examples}
+% \todo{Virer toute cette partie}
+% %------------------ Figure : MID ---------------------
+% \begin{figure}[!htbp]
+% 	\captionsetup{format=plain}
+% 	\includegraphics[width=\textwidth]{gfx/04_algorithms/OrJo_MID_1200x300px.png}
+% 	\caption[Modèles intermédiaires dynamiques pour la synthèse audio-graphique]{Modèles intermédiaires dynamiques pour la synthèse audio-graphique. De gauche à droite : a) un modèle géométrique basé sur les courbes cycloïdes, b) un modèle pseudo-physique basé sur l'algorithme de Verlet, c) les modèles de Cycloïdes et de Verlet interconnectés, d) un algorithme génératif basé sur le ``jeu de la vie''.}
+% 	\label{fig:algorithms:MP-MID}
+% \end{figure}
+% %------------------ Figure : MID ---------------------
 
-%------------------ Figure : représentation du mapping #3 #4 ---------------------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}%
-	\centering
-	\begin{minipage}[t]{0.48\textwidth}
-	 	\includegraphics[width=\linewidth]{gfx/04_algorithms/MID-HarmonicHexa-mapping.png}
-		\caption[Clavier isomorphique dans Max]{Mapping de clavier isomorphique dans la librairie LAM-lib/mp.TUI.}
-		\label{fig:algorithms:MID-hexakeyboard}
-	\end{minipage}
-	\hspace{.02\linewidth}
-	\begin{minipage}[t]{0.48\textwidth}
-	  \includegraphics[width=\linewidth]{gfx/04_algorithms/MID-dynamic-pitch-correction.pdf}
-		\caption[Correction dynamique de la hauteur]{Correction dynamique de la hauteur à l'attaque de note par anamorphose de la surface de jeu, d'après \cite{perrotin_adaptive_2013}.}
-		\label{fig:algorithms:MID-dynamic-pitch-correction}
-	\end{minipage}
-\end{figure}
-%------------------ Figure : MP-event et MP-block ---------------------
+% %------------------ Figure : représentation du mapping #3 #4 ---------------------
+% \begin{figure}[!htbp]
+% 	\captionsetup{format=plain}%
+% 	\centering
+% 	\begin{minipage}[t]{0.48\textwidth}
+% 	 	\includegraphics[width=\linewidth]{gfx/04_algorithms/MID-HarmonicHexa-mapping.png}
+% 		\caption[Clavier isomorphique dans Max]{Mapping de clavier isomorphique dans la librairie LAM-lib/mp.TUI.}
+% 		\label{fig:algorithms:MID-hexakeyboard}
+% 	\end{minipage}
+% 	\hspace{.02\linewidth}
+% 	\begin{minipage}[t]{0.48\textwidth}
+% 	  \includegraphics[width=\linewidth]{gfx/04_algorithms/MID-dynamic-pitch-correction.pdf}
+% 		\caption[Correction dynamique de la hauteur]{Correction dynamique de la hauteur à l'attaque de note par anamorphose de la surface de jeu, d'après \cite{perrotin_adaptive_2013}.}
+% 		\label{fig:algorithms:MID-dynamic-pitch-correction}
+% 	\end{minipage}
+% \end{figure}
+% %------------------ Figure : MP-event et MP-block ---------------------
 
-\noindent Ces dix dernières années, plusieurs modèles intermédiaires dynamiques ont été développés dans l'équipe \gls{LAM}, dans le cadre de plusieurs projets de recherche\footnote{\textit{OrJo} (Orchestre de Joysticks), 2009-2012, projet FEDER, financé par la Région Ile-de-France et \textit{Panam} (Pédagogie Artistique Numérique Accessible et Multimodale), 2012-2015, projet \gls{ANR}.} dans la continuité des développements pionniers d'Ali Momeni et Cyrille Henry \cite{momeni_dynamic_2006}, sur le contrôle de modèles audio-graphiques. En particulier, des recherches ont été menées sur les possibilités d'interconnexion de ces modèles\footnote{Une vidéo réalisée durant le projet OrJo donne un aperçu de la manière dont ils peuvent être interconnectés dans un scénario évolutif : \url{https://vimeo.com/25740547}} (figure \ref{fig:algorithms:MP-MID} et voir \cite{goudard_dynamic_2011}). D'autres développements se sont focalisés sur des algorithmes génératifs comme l'automate cellulaire du ``jeu de la vie''\footnote{Une vidéo montre son utilisation dans le logiciel Méta-Mallette : \url{https://vimeo.com/158323394}} (voir \cite{goudard_modeintermediaire_2012}). Enfin, des développements se sont concentrés sur l'étude verticale de la gestion du contrôle de la hauteur monophonique \cite{goudard_playing_2014}, en s'intéressant à ses possibles représentations sur une interface bi-dimensionnelle (de type tablette)(figure \ref{fig:algorithms:MID-hexakeyboard}) et sur ses altérations (figure \ref{fig:algorithms:MID-dynamic-pitch-correction}).\\
-\indent Ces différents modèles ont été intégrés dans la LAM-lib, un package pour Max librement téléchargeable\footnote{\url{https://github.com/LAM-IJLRA/lam-lib}}. Ils ont notamment été utilisés dans le cadre d'une pratique d'ensemble avec le logiciel Méta-Mallette\footnote{Logiciel développé par l'association Puce Muse (\url{https://pucemuse.com}).}, ainsi que dans des créations personnelles comme ``FIB\_R'' (cf. figure \ref{fig:algorithms:FIBR-voronoi}).
+% \noindent Ces dix dernières années, plusieurs modèles intermédiaires dynamiques ont été développés dans l'équipe \gls{LAM}, dans le cadre de plusieurs projets de recherche\footnote{\textit{OrJo} (Orchestre de Joysticks), 2009-2012, projet FEDER, financé par la Région Ile-de-France et \textit{Panam} (Pédagogie Artistique Numérique Accessible et Multimodale), 2012-2015, projet \gls{ANR}.} dans la continuité des développements pionniers d'Ali Momeni et Cyrille Henry \cite{momeni_dynamic_2006}, sur le contrôle de modèles audio-graphiques. En particulier, des recherches ont été menées sur les possibilités d'interconnexion de ces modèles\footnote{Une vidéo réalisée durant le projet OrJo donne un aperçu de la manière dont ils peuvent être interconnectés dans un scénario évolutif : \url{https://vimeo.com/25740547}} (figure \ref{fig:algorithms:MP-MID} et voir \cite{goudard_dynamic_2011}). D'autres développements se sont focalisés sur des algorithmes génératifs comme l'automate cellulaire du ``jeu de la vie''\footnote{Une vidéo montre son utilisation dans le logiciel Méta-Mallette : \url{https://vimeo.com/158323394}} (voir \cite{goudard_modeintermediaire_2012}). Enfin, des développements se sont concentrés sur l'étude verticale de la gestion du contrôle de la hauteur monophonique \cite{goudard_playing_2014}, en s'intéressant à ses possibles représentations sur une interface bi-dimensionnelle (de type tablette)(figure \ref{fig:algorithms:MID-hexakeyboard}) et sur ses altérations (figure \ref{fig:algorithms:MID-dynamic-pitch-correction}).\\
+% \indent Ces différents modèles ont été intégrés dans la LAM-lib, un package pour Max librement téléchargeable\footnote{\url{https://github.com/LAM-IJLRA/lam-lib}}. Ils ont notamment été utilisés dans le cadre d'une pratique d'ensemble avec le logiciel Méta-Mallette\footnote{Logiciel développé par l'association Puce Muse (\url{https://pucemuse.com}).}, ainsi que dans des créations personnelles comme ``FIB\_R'' (cf. figure \ref{fig:algorithms:FIBR-voronoi}).
 
-%------------------ Figure : FIBR-Voronoi ---------------------
-\begin{figure}[!htbp]
-	\captionsetup{format=plain}
-	\includegraphics[width=\textwidth]{gfx/04_algorithms/FIBR-Voronoi.png}
-	\caption[Utilisation d'un diagramme de Voronoï dans FIB\_R]{Un modèle intermédiaire développé pour la performance audiovisuelle FIB\_R, à partir d'un algorithme de calcul d'un diagramme de Voronoï (simulant la coadaptation organique d'un réseau de cellules). L'algorithme a été adapté pour permettre la modulation polyphonique du son en fonction de la forme que prennent les cellules quand elles sont déformées par l'interaction directes sur écran tactile (les cercles de couleur représentent ici la position des doigts).}
-	\label{fig:algorithms:FIBR-voronoi}
-\end{figure}
-%------------------ Figure : FIBR-Voronoi ---------------------
+% %------------------ Figure : FIBR-Voronoi ---------------------
+% \begin{figure}[!htbp]
+% 	\captionsetup{format=plain}
+% 	\includegraphics[width=\textwidth]{gfx/04_algorithms/FIBR-Voronoi.png}
+% 	\caption[Utilisation d'un diagramme de Voronoï dans FIB\_R]{Un modèle intermédiaire développé pour la performance audiovisuelle FIB\_R, à partir d'un algorithme de calcul d'un diagramme de Voronoï (simulant la coadaptation organique d'un réseau de cellules). L'algorithme a été adapté pour permettre la modulation polyphonique du son en fonction de la forme que prennent les cellules quand elles sont déformées par l'interaction directes sur écran tactile (les cercles de couleur représentent ici la position des doigts).}
+% 	\label{fig:algorithms:FIBR-voronoi}
+% \end{figure}
+% %------------------ Figure : FIBR-Voronoi ---------------------
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -265,15 +265,16 @@
 %---------------------------------------------------------------------------
 \subsection{Une note sur les polyphonies}
 
-\noindent La polyphonie dans les \glspl{DMI} peut être envisagée à plusieurs niveaux: polyphonie de gestes (e.g. plusieurs doigts en contact sur une tablette multitouch), de sons (e.g. plusieurs ``notes'' qui résonnent en même temps) ou de modèles intermédiaires (e.g. plusieurs processus qui tournent en parallèle). Concevoir le design d'un \gls{DMI} poly-poly-polyphonique nécessite par conséquence d'établir les connexions entre ces différentes multiplicités.\\
+\noindent Nous avons vu dans la section précédente comment le concept de modèle intermédiaire dynamique pouvait enrichir le geste capté et améliorer l’ergonomie des \glspl{DMI}. Cependant, un des facteurs critiques rencontré lors de ces développements se situait dans la manière de faire communiquer différents modules polyphoniques entre eux. En effet, la polyphonie dans les \glspl{DMI} peut être envisagée à plusieurs niveaux: polyphonie de gestes (par exemple, plusieurs doigts en contact sur une tablette multitouch), de sons (par exemple, plusieurs ``notes'' qui résonnent en même temps) ou de modèles intermédiaires (par exemple, plusieurs processus qui tournent en parallèle). Concevoir le design d'un \gls{DMI} poly-poly-polyphonique nécessite par conséquence d'établir les connexions entre ces différentes multiplicités.\\
 \indent Les notions de mapping \textit{one-to-one}, \textit{many-to-one}, \textit{one-to-many} et \textit{many-to-many}, telles que définie par \cite{hunt_mapping_2002}, peuvent ainsi s'agencer sur plusieurs niveaux, selon la polyphonie de chaque modèle en jeu, ou être organisées en sous-groupes. Prenons l'exemple de doigts contrôlant chacun une multiplicité d'agents autonomes, venant chacun contrôler une polyphonie de notes sur une synthèse \gls{FM}. Un scénario souhaitable (c'est un exemple) est que les agents et les notes contrôlés par un même doigt partagent des caractéristiques communes, ce qui nécessite une traçabilité de la source gestuelle jusqu'à la synthèse et/ou un moyen de fusionner les informations nécessaires de part et d'autre des différentes sources concourant au résultat sonore final.\\
 \indent Inversement, nous pouvons consider un mapping \textit{many-to-one}, en prenant l'exemple de plusieurs doigts venant agir sur un même objet virtuel. Dans ce cas, le résultat monophonique produit par l'objet virtuel peut être fonction de l'information polyphonique des différents doigts qui agissent sur lui. Cette différence d'appréciation peut être comparée à la manière dont sont envisagées les différentes notes d'un clavier. On peut soit considérer les différentes hauteurs produites par les touches comme une multiplicité d'événements indépendants (comme c'est le cas sur le clavier polyphonique d'un piano, sur lequel s'appuie le concept de note \gls{MIDI}), soit envisager la hauteur comme un paramètre monophonique (comme c'est le cas sur le clavier monophonique d'une onde Martenot)\footnote{On notera l'existence possible de cas hybrides comme celui du clavier de la vielle à roue, une ``duo-phonie'', dont les 23 touches (en général) se répartissent sur les deux (voire trois ou quatre) cordes chanterelles.}.\\
-\indent Il est important de préciser ici que ces différentes manières de gérer la polyphonie se traduisent par des modes de jeu différents, qui peuvent modifier l'instrument jusque dans son identité, et ne doivent pas être considérées comme de simples facteurs d'échelle quantitatifs.
+%\indent Il est important de préciser ici que ces différentes manières de gérer la polyphonie se traduisent par des modes de jeu différents, qui peuvent modifier l'instrument jusque dans son identité, et ne doivent pas être considérées comme de simples facteurs d'échelle quantitatifs.
+\todo{Add a note on why this matters + intégrer cette partie dans la sous-section suivante}
 
 %---------------------------------------------------------------------------
 \subsection{Motivations et revue des protocoles existants}
 
-\noindent Nous avons vu dans la section précédente comment le concept de modèle intermédiaire dynamique pouvait enrichir le geste capté et améliorer l’ergonomie des \glspl{DMI}. Cependant, un des facteurs critiques rencontré lors de ces développements se situait dans la manière de faire communiquer différents modules polyphoniques\footnote{Par « module polyphonique », on entend ici des processeurs traitant simultanément plusieurs flux de données de contrôle de même nature en parallèle, e.g. le filtrage des points de contact sur une interface multi-touch ou encore la modulation des différentes notes d'un accord.} entre eux.\\
+
 \indent Un certain nombre de protocoles asynchrones\footnote{Les protocoles de contrôle que nous envisageons ici sont asynchrones, fondés sur l’idée que les lutheries numériques sont des systèmes complexes composés d’éléments hétérogènes et intégrant notamment des interfaces \textit{hardware} elles-mêmes asynchrones. Bien que la synthèse audio soit un processus synchrone, le design global d'un \gls{DMI} est le plus souvent un système \gls{GALS}, tel que défini par Daniel M. Chapiro \cite{chapiro_globally-asynchronous_1984}.} dédiés au contrôle temps-réel de la synthèse numérique ont vu le jour depuis les années 1980. Au-delà de proposer des solutions techniques concrètes, ces protocoles sont porteurs d’un modèle implicite représentant les objets en présence dans un contexte d'interaction musicale. Une brève revue montrera comment ceux-ci se sont progressivement ouverts, à mesure que les capacités de calcul se sont accrues et que la notion même d’instrument s’élargissait à de nouveaux champs tels que les installations sonores ou les applications musicales interactives.
 
 \subsubsection{MIDI}
