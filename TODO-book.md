@@ -14,3 +14,5 @@ dans l'intro, je dis que l'instrument est personnel ("singularité de choix pers
 - vérifier les références :
 	+ URL pour docs en ligne
 	+ maison d'édition (pour les films comme "Ecoute")
+	
+- mettre un \people pour ONE
