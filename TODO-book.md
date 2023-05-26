@@ -16,3 +16,8 @@ dans l'intro, je dis que l'instrument est personnel ("singularité de choix pers
 	+ maison d'édition (pour les films comme "Ecoute")
 	
 - mettre un \people pour ONE
+
+typos:
+- p. 3 "cette âge"
+- p.4 virgule (et S) avant "comme on parle de modeS de jeu"
+- p.5 virgule dans "des situées, aux esthétiques multiples"
